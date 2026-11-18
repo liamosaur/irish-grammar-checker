@@ -11,14 +11,12 @@ word list are his work. The word list is extended with the
 [Irish National Morphology Database](https://github.com/michmech/BuNaMo)
 (BuNaMo, © Foras na Gaeilge).
 
-Status: beta. Not affiliated with or endorsed by Kevin P. Scannell or Foras na
-Gaeilge.
+Not affiliated with or endorsed by Kevin P. Scannell or Foras na Gaeilge.
 
 ## Feedback
 
 If it flags something that is correct, or misses a mistake, please
-[open an issue](https://github.com/liamosaur/irish-grammar-checker/issues) with
-the sentence.
+[open an issue](https://github.com/liamosaur/irish-grammar-checker/issues).
 
 ## Running it locally
 
