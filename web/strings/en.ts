@@ -70,7 +70,7 @@ export const en = {
 
   'about.title': 'About',
   'about.what': 'A grammar checker for Irish. It marks words and phrases that look wrong, such as a missing or unnecessary mutation, a repeated word or a non-standard spelling, and says why. [It may make mistakes](#how).',
-  'about.author': 'This website was made by [Liam O](https://bsky.app/profile/liamosaur.ragequ.it).',
+  'about.author': 'This website was made by [Liam O](https://bsky.app/profile/liamosar.bsky.social).',
   'about.credits.1': 'This tool is a port of [An Gramadóir](https://cadhan.com/gramadoir/foirm-en.html), the Irish grammar checker written by Kevin P. Scannell, available at [github.com/kscanne/gramadoir](https://github.com/kscanne/gramadoir). The grammar rules and most of the word list come from his work. It is a derivative work, released under the GNU General Public License, version 2 or (at your option) any later version.',
   'about.credits.2': 'The word list also contains information from the Irish National Morphology Database (Bunachar Náisiúnta Moirfeolaíochta), © Foras na Gaeilge, available at [github.com/michmech/BuNaMo](https://github.com/michmech/BuNaMo). The database is made available under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1.0/), and its individual contents under the [Database Contents License 1.0](https://opendatacommons.org/licenses/dbcl/1.0/). Only word forms, which forms belong to the same word (for example, which is the genitive of which), and grammatical tags derived from them are used.',
   'about.source': 'The source code of this site is at [github.com/liamosaur/irish-grammar-checker](https://github.com/liamosaur/irish-grammar-checker).',
