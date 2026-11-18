@@ -30,8 +30,9 @@ npm run build     # static site in dist/
 ```
 
 The built site is plain static files, so it can be hosted anywhere. It is
-deployed on Cloudflare Pages (build command `npm run build`, output directory
-`dist`), with Cloudflare Web Analytics for a cookieless visit count.
+deployed on Cloudflare Workers as static assets (build command `npm run build`,
+deploy command `npx wrangler deploy`, configured in `wrangler.jsonc`), with
+Cloudflare Web Analytics for a cookieless visit count.
 
 ## Layout
 

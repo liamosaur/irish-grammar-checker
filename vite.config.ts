@@ -5,12 +5,12 @@ import { defineConfig, type Plugin } from 'vite';
 import { APP_NAME } from './web/config.ts';
 
 // Nothing may be fetched from anywhere but our own origin, except Cloudflare Web
-// Analytics (a cookieless visit counter that Cloudflare Pages injects into the page:
-// its script, and the endpoint it reports page views to). The CSP makes the browser
-// enforce that rather than us merely promising it. Applied to the production build only, because the dev
-// server needs inline scripts and a websocket. It goes into the page as a <meta>
-// tag (works on any host) and into Cloudflare Pages' _headers file as a real
-// header, which can also forbid framing (frame-ancestors is ignored in <meta>).
+// Analytics (a cookieless visit counter: its script, and the endpoint it reports page
+// views to). The CSP makes the browser enforce that rather than us merely promising it.
+// Applied to the production build only, because the dev server needs inline scripts and
+// a websocket. It goes into the page as a <meta> tag (works on any host) and into
+// Cloudflare's _headers file as a real header, which can also forbid framing
+// (frame-ancestors is ignored in <meta>).
 const CSP_DIRECTIVES = [
   "default-src 'none'",
   "script-src 'self' https://static.cloudflareinsights.com",
@@ -23,7 +23,7 @@ const CSP_DIRECTIVES = [
 ];
 const CSP = CSP_DIRECTIVES.join('; ');
 
-// Cloudflare Pages _headers (https://developers.cloudflare.com/pages/configuration/headers/).
+// _headers file, read by Cloudflare's static asset hosting (Workers static assets and Pages).
 // Hashed assets never change; the page, service worker and size list must be revalidated
 // so that a new deployment is picked up.
 const HEADERS = `/*
@@ -75,7 +75,7 @@ function site(): Plugin {
       const build = createHash('sha1').update(files.join('\n')).digest('hex').slice(0, 10);
       const tpl = fs.readFileSync(path.resolve('web/sw.template.js'), 'utf8');
       fs.writeFileSync(path.join(outDir, 'sw.js'), tpl.replace('__BUILD__', () => build).replace('__SHELL__', () => JSON.stringify(shell)));
-      // Not served by Cloudflare Pages itself, so it must not be in the service worker's list above.
+      // Read by Cloudflare but not served, so it must not be in the service worker's list above.
       fs.writeFileSync(path.join(outDir, '_headers'), HEADERS);
     },
   };

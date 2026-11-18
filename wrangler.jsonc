@@ -1,0 +1,7 @@
+// Cloudflare Workers deployment: the site is static files only (no Worker code).
+// `npm run build` writes them to dist/, including the _headers file (see vite.config.ts).
+{
+  "name": "irish-grammar-checker",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./dist" }
+}
