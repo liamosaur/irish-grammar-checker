@@ -1,5 +1,8 @@
-// Rebuilds the rule set from the *upstream source* (github.com/kscanne/gramadoir),
-// mirroring what Makefile-xx.in does, then extracts it to JSON for the TS engine.
+// Rebuilds the rule set, mirroring what upstream's Makefile-xx.in does
+// (github.com/kscanne/gramadoir), then extracts it to JSON for the TS engine.
+// The rule files themselves (rialacha, aonchiall, comhshuite) and the macros are
+// our modified copies in grammar/; everything else (compiler scripts, tagset,
+// giorr, unigram) comes from the upstream checkout.
 //
 // Perl is only needed here, at data-build time (the original rule "compiler" is a
 // chain of small Perl filter scripts). The runtime engine never uses Perl.
@@ -32,11 +35,30 @@ const attrtags = [
   ...new Set(read('ga/pos-ga.txt').split('\n').filter((l) => /<[A-Z] /.test(l)).map((l) => l.replace(/^[0-9]* <([A-Z]).*/, '$1'))),
 ].sort().join('');
 
+// The rule files we maintain: grammar/<name>-ga.in, our modified copies of upstream's
+// ga/<name>-ga.in (UTF-8 here; the compiler works in Latin-1). tools/upstream-diff.mjs
+// shows how they differ from the upstream checkout.
+function readGrammar(name) {
+  const file = path.join(here, '..', 'grammar', `${name}-ga.in`);
+  const s = fs.readFileSync(file, 'utf8').replace(/\r/g, '');
+  const bad = /[^\u0000-ÿ]/.exec(s);
+  if (bad) throw new Error(`${file}: character outside Latin-1: ${bad[0]}`);
+  return s;
+}
+
+// The macros (grammar/macra-ga.meta.pl, our modified copy of upstream's): a Perl
+// script with Latin-1 characters in its patterns, kept in UTF-8, so a Latin-1 copy is
+// what Perl runs.
+const macraSrc = fs.readFileSync(path.join(here, '..', 'grammar', 'macra-ga.meta.pl'), 'utf8').replace(/\r/g, '');
+if (/[^\u0000-ÿ]/.test(macraSrc)) throw new Error('grammar/macra-ga.meta.pl: characters outside Latin-1');
+const macra = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'gr-macra-')), 'macra-ga.meta.pl');
+fs.writeFileSync(macra, macraSrc, 'latin1');
+
 // aonchiall / comhshuite / rialacha: .in -> gin -> macra -> <name>.meta.pl
 function generate(name) {
-  let s = read(`ga/${name}-ga.in`);
+  let s = readGrammar(name);
   s = run([path.join(up, 'gin.meta.pl'), attrtags], s);
-  s = run(['-p', path.join(up, 'ga/macra-ga.meta.pl')], s);
+  s = run(['-p', macra], s);
   s = run([path.join(up, `${name}.meta.pl`)], s);
   return s.split('\n').map((l) => (l === '' ? l : '\t' + l)).join('\n');
 }
@@ -78,3 +100,44 @@ fs.writeFileSync(asm, pm, 'latin1');
 console.log('attribute tags:', attrtags);
 console.log('assembled', asm, pm.length, 'bytes');
 execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.join(outDir, 'rules')], { stdio: 'inherit' });
+
+// CLAUSEEND, written as the last word of a local rule, matches the end of a
+// clause: punctuation straight after the previous word, or the end of the
+// sentence. CLAUSESTART, written as the first word, matches the start of one:
+// the start of the sentence, or punctuation before the next word. Upstream's
+// rule syntax cannot say this (gin turns every "(" into "(?:", so no lookahead
+// or lookbehind), so the compiled word is replaced by one here.
+const CLAUSEEND_WORD = ' <[A-DF-Z][^>]*>CLAUSEEND</[A-DF-Z]>';
+const CLAUSEEND_RE = '(?=[.,;:!?)"\']| </line>)'; // the checker sees curly quotes folded to ASCII
+// The word as compiled in rialacha, and in aonchiall (where a word may still carry
+// several tags).
+const CLAUSESTART_WORDS = ['<[A-DF-Z][^>]*>CLAUSESTART</[A-DF-Z]> ', '(?:<[/A-DF-Z][^>]*>)+CLAUSESTART</[A-DF-Z]> '];
+const CLAUSESTART_RE = '(?<=(?:<line>|[.,;:!?("\']) )';
+for (const name of ['rialacha', 'aonchiall']) {
+  const file = path.join(outDir, 'rules', `${name}.json`);
+  const rules = JSON.parse(fs.readFileSync(file, 'utf8'));
+  let n = 0;
+  const fix = (rs) => rs.forEach((r) => {
+    if (typeof r.re === 'string' && r.re.includes('CLAUSEEND')) {
+      const parts = r.re.split(CLAUSEEND_WORD);
+      // The compiler closes the match with ")" and, for error rules, "(?![<>])"; the lookahead goes before them.
+      if (parts.length !== 2 || !/^\)(\(\?!\[<>\]\))?$/.test(parts[1])) throw new Error(`${name}: CLAUSEEND must be the last word of a rule: ${r.re}`);
+      r.re = parts[0] + CLAUSEEND_RE + parts[1];
+      n++;
+    }
+    if (typeof r.re === 'string' && r.re.includes('CLAUSESTART')) {
+      const word = CLAUSESTART_WORDS.find((w) => r.re.includes(w)) ?? CLAUSESTART_WORDS[0];
+      const parts = r.re.split(word);
+      // The compiler opens the match with "(" and, for error rules, "(?<![<>])" before it.
+      if (parts.length !== 2 || !/^(\(\?<!\[<>\]\))?\($/.test(parts[0])) throw new Error(`${name}: CLAUSESTART must be the first word of a rule: ${r.re}`);
+      r.re = parts[0] + CLAUSESTART_RE + parts[1];
+      n++;
+    }
+    if (r.then) fix(r.then);
+  });
+  fix(rules);
+  if (n) {
+    fs.writeFileSync(file, JSON.stringify(rules));
+    console.log(`${name}: ${n} CLAUSEEND/CLAUSESTART replacements`);
+  }
+}

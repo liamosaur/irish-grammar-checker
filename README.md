@@ -41,6 +41,7 @@ Cloudflare Web Analytics for a cookieless visit count.
 | `src/` | the checker itself, ported from the Perl `Lingua::GA::Gramadoir` |
 | `web/` | the website; interface text is in `web/strings/en.ts` |
 | `data/` | the rules and word lists, generated from the original sources |
+| `grammar/` | the grammar rules, our modified copies of the original rule files, and our word-list corrections |
 | `tools/` | scripts that build `data/` and compare with the Perl engine (see [tools/README.md](tools/README.md)) |
 | `test/` | tests |
 

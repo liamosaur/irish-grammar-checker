@@ -108,6 +108,8 @@ describe("h-, t- and d'-prefixes", () => {
     assert.equal(unHPrefix('hÉire'), 'Éire');
     assert.equal(unHPrefix('holc'), 'olc');
     assert.equal(unHPrefix('bean'), null);
+    assert.equal(unHPrefix('Habair'), 'Abair'); // a capital H moves to the vowel
+    assert.equal(unHPrefix('HATA'), 'ATA');
   });
   it('t- before a vowel, t before s', () => {
     assert.equal(tPrefix('alt'), 't-alt');
@@ -169,6 +171,23 @@ describe('proposeFix', () => {
     assert.equal(proposeFix('DUBAILTE', 'leor leor leor'), 'leor');
     assert.equal(proposeFix('DUBAILTE', 'na'), null);
     assert.equal(proposeFix('DUBAILTE', 'na ná'), null);
+  });
+  it('puts a missing h on the last word that can take it, inside a set phrase too', () => {
+    assert.equal(proposeFix('PREFIXH', 'Ní aithne go haontíos'), 'Ní haithne go haontíos');
+    assert.equal(proposeFix('PREFIXH', 'Ní uair chairde'), 'Ní huair chairde');
+    assert.equal(proposeFix('PREFIXH', 'go'), null);
+  });
+  it('writes ná for na before the imperative, with h before a vowel', () => {
+    assert.equal(proposeFix('NAIMPER', 'Na abair'), 'Ná habair');
+    assert.equal(proposeFix('NAIMPER', 'na déan'), 'ná déan');
+    assert.equal(proposeFix('NAIMPER', 'Na habair'), 'Ná habair');
+    assert.equal(proposeFix('NAIMPER', 'an déan'), null);
+  });
+  it('removes unnecessary lenition from the last lenited word, inside a phrase too', () => {
+    assert.equal(proposeFix('NISEIMHIU', 'sách fhuar'), 'sách fuar');
+    assert.equal(proposeFix('NISEIMHIU', 'Maidin shách fuar'), 'Maidin sách fuar');
+    assert.equal(proposeFix('NISEIMHIU', 'chothrom le dáta'), 'cothrom le dáta');
+    assert.equal(proposeFix('NISEIMHIU', 'an bean'), null);
   });
   it('lenites an eclipsed word after sa', () => {
     assert.equal(proposeFix('SEIMHIU', 'sa gCabhán'), 'sa Chabhán');

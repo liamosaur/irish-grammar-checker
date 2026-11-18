@@ -1,0 +1,41 @@
+# Local corrections to the word list (An Gramadóir 0.70 lexicon, data/lexicon.json).
+# Built into data/lexicon-corrections.json by tools/build-data.mjs and applied when the
+# checker loads, after the BuNaMo overlay (src/lexicon.ts). Our own work, under
+# the project's licence; kept apart from the BuNaMo overlay, which is ODbL.
+#
+# One word per line, tab-separated: the word, its tags (as in ga/pos-ga.txt,
+# written one after another), and the reason. The tags replace all the word's
+# tags; the word keeps its frequency tier. The word must already be in the word
+# list. Lines starting with # are comments.
+#
+# Reference: CO17 = Gramadach na Gaeilge: An Caighdeán Oifigiúil, 2017.
+
+# A preposition or conjunction fused with the copula (CO17 7.3.2, 7.3.3, Táblaí
+# 7O-7R). The word list has most of these as the copula (inarb, lenarb, darb,
+# faoinarbh, sularbh, ...) but these only as rare words, so they were reported
+# as rare, and the word after them as needing the copula (ónarb áil, sularb eol).
+faoinarb	<V cop="y">	CO17 Tábla 7O: Is ábhar é sin faoinarb éasca labhairt.
+ónarb	<V cop="y">	CO17 Tábla 7O: Bhí sé i dteannta an dreama ónarb áil leis teitheadh.
+trínarb	<V cop="y">	CO17 Tábla 7O: Cén fhoirmle atá agat trínarb éasca an cheist a fhreagairt?
+trínarbh	<V cop="y">	CO17 Tábla 7P: Dúnadh an tollán trínarbh fhéidir tiomáint.
+sularb	<V cop="y">	CO17 Tábla 7Q: Sularb eol di é a bheith ann, beidh an cat imithe.
+
+# cabar (rafter), masculine: gen. sg. and nom. pl. cabair, gen. pl. cabar (as in
+# BuNaMo). All its forms were rare words (CO17 10.2.8: Is ar na cabair tí a
+# bhíonn meáchan an dín uile). Tagged like abar / abair.
+cabar	<N pl="n" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	cabar
+chabar	<N pl="n" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	cabar, lenited
+gcabar	<N pl="n" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	cabar, eclipsed
+cabair	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m">	CO17 10.2.8: na cabair tí
+chabair	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m">	cabair, lenited
+gcabair	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m">	cabair, eclipsed
+
+# The demonstrative eo, like seo and siúd a pronoun (CO17 7.2.1B(c)(iii), 7.2.5A(b),
+# 10.13.2: B'eo amach é; Ní heo é an rud atá le déanamh). Both were rare words,
+# so Ní eo é was reported only as rare, not as missing h.
+eo	<P>	CO17 10.13.2
+heo	<P h="y">	CO17 10.13.2: Ní heo é an rud atá le déanamh.
+
+# h before the autonomous form after ná (CO17 10.14.1: Ná hóltar sa Dánlann).
+# hóltar was a rare word; tagged as óltar is.
+hóltar	<V p="n" t="láith"><V p="n" t="ord">	CO17 10.14.1: Ná hóltar sa Dánlann.

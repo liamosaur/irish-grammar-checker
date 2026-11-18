@@ -2,7 +2,7 @@
 // so repeat visits skip the network), then checks text one chunk at a time so
 // it can report progress, be cancelled, and reuse results for unchanged text.
 import { Gramadoir } from '../src/engine.ts';
-import { applyOverlay, type LexiconOverlay } from '../src/lexicon.ts';
+import { applyLexiconCorrections, applyOverlay, type LexiconOverlay } from '../src/lexicon.ts';
 import type { GramadoirData, GrammarError } from '../src/types.ts';
 import type { CheckedError } from './annotate.ts';
 import { chunkText } from './chunk.ts';
@@ -11,6 +11,7 @@ import { addFixes, Forms, type FormsData } from './forms.ts';
 
 import lexiconUrl from '../data/lexicon.json?url';
 import overlayUrl from '../data/bunamo-overlay.json?url';
+import lexiconCorrectionsUrl from '../data/lexicon-corrections.json?url';
 import eileUrl from '../data/eile.json?url';
 import earraidiUrl from '../data/earraidi.json?url';
 import posUrl from '../data/pos.json?url';
@@ -43,7 +44,7 @@ const CACHE_NAME = 'gramadoir-data-v1';
 
 const URLS = [
   lexiconUrl, eileUrl, earraidiUrl, posUrl, tokenUrl, morphUrl, gramsUrl, nocomboUrl, messagesUrl,
-  aonchiallUrl, comhshuiteUrl, giorrUrl, rialachaUrl, unigramUrl, formsUrl, overlayUrl,
+  aonchiallUrl, comhshuiteUrl, giorrUrl, rialachaUrl, unigramUrl, formsUrl, overlayUrl, lexiconCorrectionsUrl,
 ].map((u) => new URL(u, self.location.href).href);
 
 /** Sizes of the data files (decoded bytes), written by the build; absent in dev. */
@@ -179,15 +180,16 @@ self.onmessage = (ev: MessageEvent<WorkerRequest>) => {
     const data = await loadAll();
     post({ type: 'progress', phase: 'prepare', loaded: 1, total: 1 });
     await yieldToEvents();
-    const [lexicon, eile, earraidi, pos, token, morph, grams, nocombo, messages, aonchiall, comhshuite, giorr, rialacha, unigram, formsData, overlay] =
+    const [lexicon, eile, earraidi, pos, token, morph, grams, nocombo, messages, aonchiall, comhshuite, giorr, rialacha, unigram, formsData, overlay, lexiconCorrections] =
       data as [
         GramadoirData['lexicon'], GramadoirData['eile'], GramadoirData['earraidi'], GramadoirData['pos'],
         GramadoirData['token'], GramadoirData['morph'], GramadoirData['grams'], GramadoirData['nocombo'],
         GramadoirData['messages'], GramadoirData['rules']['aonchiall'], GramadoirData['rules']['comhshuite'],
         GramadoirData['rules']['giorr'], GramadoirData['rules']['rialacha'], GramadoirData['rules']['unigram'],
-        FormsData, LexiconOverlay,
+        FormsData, LexiconOverlay, Record<string, string>,
       ];
     applyOverlay(lexicon, overlay); // the BuNaMo additions (ODbL) are a separate file, merged here
+    applyLexiconCorrections(lexicon, lexiconCorrections); // our own corrections (grammar/lexicon-corrections.tsv)
     forms = new Forms(formsData);
     engine = new Gramadoir({
       lexicon, eile, earraidi, pos, token, morph, grams, nocombo, messages,

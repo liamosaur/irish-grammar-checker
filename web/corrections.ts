@@ -115,6 +115,12 @@ export function planReplacement(line: string, range: { y: number; from: number; 
       if (a) to += Array.from(a[0]).length;
     }
   }
+  // An elided form ("b'", "mb'") is written joined to the next word: "Ba eol" -> "B'eol".
+  if (/^\S+['’]$/.test(replacement)) {
+    let gap = to;
+    while (gap < chars.length && /[ \t]/.test(chars[gap])) gap++;
+    if (gap > to && gap < chars.length && /\p{L}/u.test(chars[gap])) to = gap;
+  }
   const original = chars.slice(from, to).join('');
   const word = matchCase(original, replacement);
   return word === original ? null : { range: { y: range.y, from, to }, word }; // a button that changes nothing is not offered
@@ -210,7 +216,12 @@ export function uneclipse(w: string): string | null {
 /** iontach -> hiontach. */
 export function hPrefix(w: string): string | null { return isVowel(w[0]) ? `h${w}` : null; }
 /** hiontach -> iontach. */
-export function unHPrefix(w: string): string | null { return lc(w[0]) === 'h' && isVowel(w[1]) ? w.slice(1) : null; }
+/** hata -> ata, hÉireann -> Éireann, Habair -> Abair (the capital moves to the vowel). */
+export function unHPrefix(w: string): string | null {
+  if (lc(w[0]) !== 'h' || !isVowel(w[1])) return null;
+  const rest = w.slice(1);
+  return isUpper(w[0]) && !isUpper(rest[0]) ? rest[0].toUpperCase() + rest.slice(1) : rest;
+}
 
 /** alt -> t-alt, Acht -> tAcht, sráid -> tsráid. */
 export function tPrefix(w: string): string | null {
@@ -237,6 +248,7 @@ export function unBPrefix(w: string): string | null { return /^b'./i.test(w) ? w
 /** Which change fixes which rule. The change is made to the last word of the flagged words. */
 const FIXES: Record<string, (w: string) => string | null> = {
   SEIMHIU: lenite,
+  WEAKSEIMHIUGEN: lenite, // a hint: lenition is usual but may not apply (grammar/rialacha-ga.in)
   NISEIMHIU: unlenite,
   NIDARASEIMHIU: unlenite,
   URU: eclipse,
@@ -270,6 +282,28 @@ export function proposeFix(rule: string, flagged: string): string | null {
   if (rule === 'DUBAILTE') {
     const words = flagged.trim().split(/\s+/);
     return words.length > 1 && words.every((w) => w.toLowerCase() === words[0].toLowerCase()) ? words[0] : null;
+  }
+  // "Prefix h missing" and "Unnecessary lenition": the change goes on the last word
+  // that can take it. That is the last word for most rules, but some flag a phrase
+  // with that word inside it ("Ní aithne go haontíos", "Ní uair chairde",
+  // "Maidin shách fuar", "chothrom le dáta": grammar/rialacha-ga.in).
+  // "na" for "ná" before the imperative: write ná, and h on a verb beginning with a
+  // vowel ("Na abair é" -> "Ná habair é"; grammar/rialacha-ga.in, NAIMPER).
+  if (rule === 'NAIMPER') {
+    const m = /^(\s*)(\S+)(\s+)(\S+)([\s\S]*)$/.exec(flagged);
+    if (!m || lc(m[2]) !== 'na') return null;
+    return m[1] + matchCase(m[2], 'ná') + m[3] + (hPrefix(m[4]) ?? m[4]) + m[5];
+  }
+  const inside = rule === 'PREFIXH' ? hPrefix : rule === 'NISEIMHIU' ? unlenite : null;
+  if (inside) {
+    const words = [...flagged.matchAll(/\S+/g)];
+    for (let i = words.length - 1; i >= 0; i--) {
+      const changed = inside(words[i][0]);
+      if (changed === null) continue;
+      const at = words[i].index!;
+      return flagged.slice(0, at) + changed + flagged.slice(at + words[i][0].length);
+    }
+    return null;
   }
   const fix = FIXES[rule];
   if (!fix) return null;

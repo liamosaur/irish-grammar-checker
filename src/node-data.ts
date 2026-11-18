@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { applyOverlay, type LexiconOverlay } from './lexicon.ts';
+import { applyLexiconCorrections, applyOverlay, type LexiconOverlay } from './lexicon.ts';
 import type { GramadoirData } from './types.ts';
 
 export interface LoadOptions {
@@ -9,6 +9,11 @@ export interface LoadOptions {
    * untouched 0.70 lexicon (for exact Perl 0.70 parity).
    */
   overlay?: boolean;
+  /**
+   * Apply our own word-list corrections (lexicon-corrections.json, from grammar/lexicon-corrections.tsv) after the
+   * overlay. Defaults to the value of `overlay`.
+   */
+  lexiconCorrections?: boolean;
 }
 
 /**
@@ -25,6 +30,7 @@ export function loadData(dataDir: string, fallbackDir?: string, options: LoadOpt
   };
   const lexicon = j('lexicon.json');
   if (options.overlay ?? true) applyOverlay(lexicon, j('bunamo-overlay.json') as LexiconOverlay);
+  if (options.lexiconCorrections ?? options.overlay ?? true) applyLexiconCorrections(lexicon, j('lexicon-corrections.json'));
   return {
     lexicon,
     eile: j('eile.json'),

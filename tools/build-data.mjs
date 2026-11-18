@@ -7,6 +7,7 @@
 // Perl engine does internally (it transcodes input to iso-8859-1).
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const [, , distDir, outDir, ...rest] = process.argv;
 // Optional: --upstream <checkout of github.com/kscanne/gramadoir> to take the newer
@@ -89,6 +90,28 @@ for (const line of latin1Lines('pos.bs')) {
 }
 write('pos.json', pos);
 
+// ---- our word-list corrections: grammar/lexicon-corrections.tsv -> lexicon-corrections.json
+// {word: code chars}, applied after the BuNaMo overlay (src/lexicon.ts).
+const localLexicon = fileURLToPath(new URL('../grammar/lexicon-corrections.tsv', import.meta.url));
+const codeOf = new Map(Object.entries(pos).map(([ch, tag]) => [tag, ch]));
+const corrections = {};
+for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '').split('\n').entries()) {
+  if (!/\S/.test(line) || line.startsWith('#')) continue;
+  const where = `${localLexicon}:${i + 1}`;
+  const [word, tags] = line.split('\t');
+  if (!word || !tags) throw new Error(`${where}: expected word<TAB>tags<TAB>reason`);
+  if (/[^\u0000-ÿ]/.test(word)) throw new Error(`${where}: characters outside Latin-1`);
+  if (!lex.some((tier) => Object.hasOwn(tier, word))) throw new Error(`${where}: ${word} is not in the word list`);
+  const list = tags.match(/<[^>]+>/g) ?? [];
+  if (list.join('') !== tags.trim()) throw new Error(`${where}: tags must be written <...><...>`);
+  corrections[word] = list.map((t) => {
+    if (!codeOf.has(t)) throw new Error(`${where}: unknown tag ${t}`);
+    return codeOf.get(t);
+  }).sort().join('');
+}
+write('lexicon-corrections.json', corrections);
+console.log('word-list corrections', Object.keys(corrections).length);
+
 // ---- token rules -------------------------------------------------------
 const token = [];
 for (const line of latin1Lines('token.bs')) {
@@ -150,6 +173,13 @@ for (const line of latin1Lines('messages.bs')) {
   if (!m) { console.warn('messages: unparsed', line); continue; }
   const msgid = m[2].replace(/\\'/g, "'"); // same unescaping as Makefile.PL
   for (const name of m[1].split('=')) messages[name] = msgid;
+}
+// Messages for rules we added in grammar/rialacha-ga.in.
+const localMessages = fileURLToPath(new URL('../grammar/extra-messages.json', import.meta.url));
+for (const [name, msgid] of Object.entries(JSON.parse(fs.readFileSync(localMessages, 'utf8')))) {
+  if (/[^\u0000-ÿ]/.test(msgid)) throw new Error(`${localMessages}: ${name}: characters outside Latin-1`);
+  if (name in messages) throw new Error(`${localMessages}: ${name} is already an upstream message`);
+  messages[name] = msgid;
 }
 write('messages.json', messages);
 console.log('messages', Object.keys(messages).length);

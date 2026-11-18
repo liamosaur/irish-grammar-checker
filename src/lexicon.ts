@@ -36,3 +36,17 @@ export function applyOverlay(lexicon: Lexicon, overlay: LexiconOverlay): Lexicon
   });
   return lexicon;
 }
+
+/**
+ * Applies our own corrections (data/lexicon-corrections.json, built from grammar/lexicon-corrections.tsv) to
+ * `lexicon` in place and returns it: each word's code chars are replaced, in the tier it is in.
+ * Applied after the BuNaMo overlay.
+ */
+export function applyLexiconCorrections(lexicon: Lexicon, corrections: Record<string, string>): Lexicon {
+  for (const [w, codes] of Object.entries(corrections)) {
+    const tiers = lexicon.filter((tier) => Object.hasOwn(tier, w));
+    if (!tiers.length) throw new Error(`local word-list correction for a word not in the word list: ${w}`);
+    for (const tier of tiers) tier[w] = merged(codes);
+  }
+  return lexicon;
+}

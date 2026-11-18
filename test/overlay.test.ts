@@ -8,7 +8,7 @@ import path from 'node:path';
 import { before, describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { Gramadoir } from '../src/engine.ts';
-import { applyOverlay } from '../src/lexicon.ts';
+import { applyLexiconCorrections, applyOverlay } from '../src/lexicon.ts';
 import { loadData } from '../src/node-data.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -30,7 +30,7 @@ const has = (s: Set<string>, re: RegExp) => [...s].some((t) => re.test(t));
 
 before(() => {
   const l = loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false });
-  const n = loadData(dataDir);
+  const n = loadData(dataDir, undefined, { lexiconCorrections: false }); // the BuNaMo overlay alone, without grammar/lexicon-corrections.tsv
   legacy = new Gramadoir(l);
   now = new Gramadoir(n);
   legacyLex = l.lexicon as unknown as Tiers;
@@ -52,6 +52,21 @@ describe('merging the overlay', () => {
     // the overlay with different BuNaMo data or decisions changes this (update it then).
     assert.deepEqual(nowLex.map((t) => Object.keys(t).length), [12660, 13794, 14080, 14483, 14999, 20174, 418218]);
     assert.equal(createHash('sha256').update(JSON.stringify(nowLex)).digest('hex'), '5730e48a2ca6f8f8d5d25940d10f69a37ce1a8a42a22bed9c0399a20224bbbdb');
+  });
+
+  it('applies our own corrections after it: replaces the codes, keeps the tier', () => {
+    const lex: Record<string, string>[] = [{ a: 'xy' }, { b: 'q' }];
+    applyLexiconCorrections(lex, { b: 'zc' });
+    assert.deepEqual(lex, [{ a: 'xy' }, { b: 'cz' }]);
+    assert.throws(() => applyLexiconCorrections(lex, { nua: 'a' }));
+  });
+
+  it('tags the words in grammar/lexicon-corrections.tsv as corrected', () => {
+    const full = loadData(dataDir).lexicon as unknown as Tiers;
+    for (const w of ['faoinarb', 'ónarb', 'trínarb', 'trínarbh', 'sularb']) assert.deepEqual([...tagsOf(full, w)], ['<V cop="y">'], w);
+    assert.deepEqual([...tagsOf(full, 'eo')], ['<P>']);
+    assert.deepEqual([...tagsOf(full, 'heo')], ['<P h="y">']);
+    assert.ok(has(tagsOf(full, 'cabair'), /<N pl="y" gnt="n" gnd="m">/));
   });
 
   it('the base lexicon is the untouched 0.70 one', () => {

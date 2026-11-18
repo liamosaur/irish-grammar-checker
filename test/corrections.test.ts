@@ -68,6 +68,10 @@ describe('planReplacement', () => {
   it('keeps the capital of the word that is replaced', () => {
     assert.equal(applyPlan('In Páras', 'i'), 'I Páras');
   });
+  it('joins an elided form to the next word', () => {
+    assert.equal(applyPlan('Ba eol', "b'"), "B'eol");
+    assert.equal(applyPlan('mba altra', "mb'"), "mb'altra");
+  });
   it('leaves the spacing and the rest of the line alone', () => {
     assert.equal(applyPlan('a in  Páras b', 'i', 2, 11), 'a i  Páras b');
   });
