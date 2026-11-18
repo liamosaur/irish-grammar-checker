@@ -71,9 +71,10 @@ function site(): Plugin {
       const sizes: Record<string, number> = {};
       for (const f of files.filter((x) => x.endsWith('.json'))) sizes[path.basename(f)] = fs.statSync(path.join(outDir, f)).size;
       fs.writeFileSync(path.join(outDir, 'assets.json'), JSON.stringify(sizes));
-      const shell = ['./', ...files.filter((f) => !f.endsWith('.json'))];
-      const build = createHash('sha1').update(files.join('\n')).digest('hex').slice(0, 10);
+      // The page is cached as ./ only (see sw.template.js), not also as index.html.
+      const shell = ['./', ...files.filter((f) => !f.endsWith('.json') && f !== 'index.html')];
       const tpl = fs.readFileSync(path.resolve('web/sw.template.js'), 'utf8');
+      const build = createHash('sha1').update(files.join('\n')).update(tpl).digest('hex').slice(0, 10);
       fs.writeFileSync(path.join(outDir, 'sw.js'), tpl.replace('__BUILD__', () => build).replace('__SHELL__', () => JSON.stringify(shell)));
       // Read by Cloudflare but not served, so it must not be in the service worker's list above.
       fs.writeFileSync(path.join(outDir, '_headers'), HEADERS);

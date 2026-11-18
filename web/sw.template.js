@@ -1,7 +1,7 @@
 // Service worker (generated into dist/sw.js by vite.config.ts, which fills in the build
-// hash and the list of page files). It only makes the page itself work offline
-// and load instantly on repeat visits. The large data files are cached by the
-// worker script, not here, so nothing is downloaded twice.
+// hash and the list of page files). It makes the page itself work offline, and
+// serves its hashed scripts and styles from the cache. The large data files are
+// cached by the worker script, not here, so nothing is downloaded twice.
 const CACHE = 'gramadoir-shell-__BUILD__';
 const SHELL = __SHELL__;
 
@@ -26,18 +26,17 @@ self.addEventListener('fetch', (event) => {
   if (url.origin !== self.location.origin || url.pathname.endsWith('.json')) return;
 
   if (req.mode === 'navigate') {
-    // Show the cached page at once and refresh it in the background.
-    const page = new URL('./index.html', self.location).href;
+    // Network first, with the browser's own request: the page is small, a new deployment
+    // shows at once, and the host sees a real page load (Cloudflare adds its analytics
+    // beacon only to those). The cached copy is for when there is no network. It is kept
+    // under ./ only: some hosts redirect index.html to ./, and a redirected response
+    // cannot answer a page load.
+    const page = new URL('./', self.location).href;
     event.respondWith(
-      caches.open(CACHE).then(async (c) => {
-        const cached = await c.match(page);
-        const fresh = fetch(new URL('./', self.location).href).then((res) => {
-          if (res.ok) c.put(page, res.clone());
-          return res;
-        });
-        if (cached) { fresh.catch(() => {}); return cached; }
-        return fresh;
-      }),
+      fetch(req).then((res) => {
+        if (res.ok && !res.redirected) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(page, copy)); }
+        return res;
+      }).catch(async () => (await caches.match(page)) ?? Response.error()),
     );
     return;
   }
