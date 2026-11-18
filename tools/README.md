@@ -71,7 +71,17 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   except for spelling suggestions; for those, see `perl-wsl.sh`.
 - `make-golden.ts`, `make-golden-spelling.ts`: record new Perl output as test fixtures.
 - `drift.mjs`: agreement with the expected output in upstream `ga/triail.xml`
-  (currently 466 of 479 sentences identical). Some differences are intended: the
+  (currently 465 of 479 sentences identical). Some differences are intended: the
   rules in `grammar/` follow *An Caighdeán Oifigiúil* where upstream does not
-  (e.g. *Ní hamháin*, *in 1982*).
+  (e.g. *Ní hamháin*, *in 1982*), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
 - `browser-smoke.mjs`: checks a sentence in the built site in headless Edge or Chrome.
+
+## Derived error sentences for review
+
+`derive-variants.ts` takes the sentences in the Caighdeán suites (`test/caighdean/chNN.json`)
+that the checker accepts, undoes one initial mutation at a time, and writes the results to
+`test/caighdean/variants.tsv` with what the checker currently does with each. It does not
+judge them: a variant may be an error, correct Irish with another meaning, or not a real
+mutation. A reviewer marks each row `wrong`, `ok` or `skip` in the verdict column, and
+`test/caighdean-variants.test.ts` tests the rows marked `wrong` or `ok`. Re-running the tool
+keeps the verdicts and refreshes the checker column.

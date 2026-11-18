@@ -15,6 +15,30 @@
 # on the web page:  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
 # future releases: <kscanne@gmail.com>
+######## Units with a verbal noun at their core (CO17 3.3.1(b), 3.3.3(c))
+# cur chun cinn, cur chuige, teacht i bhfeidhm, ...: after the article the
+# article is the masculine singular one in every case and the unit is not
+# inflected, though the article mutates it as a masculine genitive (luas an dul
+# chun cinn; fad an chur síos; de dheasca an tsracfhéachaint ar gcúl); when
+# indefinite it is neither inflected nor lenited (fad cur síos). Taken as one
+# masculine noun. These come first: later entries join i láthair, i bhfeidhm
+# and in airde, after which these would no longer match.
+g?[Cc]h?ur [Ss]íos:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?ur [Cc]huige:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?ur [Ii] gcéill:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?ur [Ii] láthair:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?ur [Cc]hun cinn:<N pl="n" gnt="n" gnd="m">
+n?[Dd]h?ul [Cc]hun cinn:<N pl="n" gnt="n" gnd="m">
+d?[Tt]h?eacht [Ii] bhfeidhm:<N pl="n" gnt="n" gnd="m">
+d?[Tt]h?abhairt [Aa]mach:<N pl="n" gnt="n" gnd="m">
+d?[Tt]h?abhairt [Ss]uas:<N pl="n" gnt="n" gnd="m">
+n-éirí [Aa]mach:<N pl="n" gnt="n" gnd="m">
+[Éé]irí [Aa]mach:<N pl="n" gnt="n" gnd="m">
+n-éirí [Ii]n airde:<N pl="n" gnt="n" gnd="m">
+[Éé]irí [Ii]n airde:<N pl="n" gnt="n" gnd="m">
+t?[Ss]h?racfhéachaint [Aa]r gcúl:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?éim [Aa]r gcúl:<N pl="n" gnt="n" gnd="m">
+[Ll]eagan [Aa]mach:<N pl="n" gnt="n" gnd="m">
 [Aa]s [Aa] chéile:<R>
 [Aa] chéile:<R>
 [Aa] [Cc]hloi?g:<R>

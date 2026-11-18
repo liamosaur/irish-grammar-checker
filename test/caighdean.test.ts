@@ -20,7 +20,10 @@
 // alternative in place of the word before them; those entries have `variant`. In
 // chapter 7, a word in brackets is optional ("Nach (é) Seán atá ina mhúinteoir?"): the
 // sentence is given without it, then with it as a `variant`. Chapter 7's tables wrap
-// and sit side by side, so their examples were copied out by hand.
+// and sit side by side, so their examples were copied out by hand; so were chapter
+// 3's, where a pair "X. à Y." (a sentence and the same words under a word that takes
+// the genitive) gives two sentences, and alternatives and optional phrases in brackets
+// are treated as in chapters 4 and 7.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -35,7 +38,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'test', 'caighdean');
 
 type Example = { section: string; page: number; text: string; known?: string; hint?: string; phrase?: boolean; variant?: boolean };
-const TITLES: Record<string, string> = { '4': 'adjectives', '7': 'the copula', '10': 'initial mutations' };
+const TITLES: Record<string, string> = { '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '7': 'the copula', '10': 'initial mutations' };
 const chapters = fs.readdirSync(dir).filter((f) => /^ch\d+\.json$/.test(f)).sort();
 
 // Messages about the word list rather than grammar: a word the database lacks says

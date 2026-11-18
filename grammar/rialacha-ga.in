@@ -507,6 +507,10 @@ n[Dd]eire:IONADAI{ndeireadh}
 # CB p.138
 #. Scriúáil sé an glas seo ar chúl an doras.
 <S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:GENITIVE
+# CO17 3.3.1(b)(i): a verbal-noun unit after the article is not inflected, only
+# mutated as a masculine genitive (le linn an tabhairt amach; i mbun an chur i
+# láthair). Unmutated (le linn an cur síos) it is still reported.
+<S>COMPOUND</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNITGEN</N>:OK
 #. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis (OK).
 #. Bhain sé sult as clár toghcháin TG4 a chur i láthair an mhí seo caite (OK).
 <S>[Aa]g?</S> <N>ANYTHING</N> <E><S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E>:OK
@@ -1033,6 +1037,10 @@ n[Dd]eire:IONADAI{ndeireadh}
 #  BUT, not OK before common-form prepositions so these must be trapped
 #  elsewhere: see ach, amhail, seachas, etc.
 <S>ANYTHING</S> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
+# CO17 3.3.1(b)(i): no t- on a verbal-noun unit in the genitive after a noun
+# (ag cáineadh an éirí in airde). In the nominative (an t-éirí amach) it is
+# still reported.
+<N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
 # "aon/ocht" rules are the same as the Noun rules above
 <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT
 <S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
@@ -4456,6 +4464,11 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 #############################################################################
 # CB p.12
 <T>[Aa]n</T> <NMCS>LENITED</NMCS>:NISEIMHIU
+# CO17 3.3.1(b)(i): a verbal-noun unit after the article is lenited as a
+# masculine genitive after a noun or preposition (fad an chur síos; castacht an
+# chur chuige; d'ainneoin an chéim ar gcúl). In the nominative (Rinne sé an chur
+# síos) it is still reported.
+<[NS]>ANYTHING</[NS]> <E><T>[Aa]n</T> <NMCS>VNUNIT</NMCS></E>:OK
 <S>([Aa][grs]|[Cc]huig|[Ii]onsar|[Ll]eis|[Rr]oimh|[Tt]har|[Tt]ríd|[Uu]m)</S> <E><T>[Aa]n</T> <NMCS>LENITED</NMCS></E>:OK
 <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Mm]heán</N></E> <NG>([Ll]ae|[Oo]íche)</NG>:OK
 # CB; "baile dhúchais" bad

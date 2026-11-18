@@ -177,6 +177,10 @@ describe('proposeFix', () => {
     assert.equal(proposeFix('PREFIXH', 'Ní uair chairde'), 'Ní huair chairde');
     assert.equal(proposeFix('PREFIXH', 'go'), null);
   });
+  it('puts a missing t on the word after the article, even in a phrase taken as one noun', () => {
+    assert.equal(proposeFix('PREFIXT', 'an éan'), 'an t-éan');
+    assert.equal(proposeFix('PREFIXT', 'an éirí amach'), 'an t-éirí amach');
+  });
   it('writes ná for na before the imperative, with h before a vowel', () => {
     assert.equal(proposeFix('NAIMPER', 'Na abair'), 'Ná habair');
     assert.equal(proposeFix('NAIMPER', 'na déan'), 'ná déan');

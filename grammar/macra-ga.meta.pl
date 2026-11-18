@@ -204,6 +204,12 @@ s/ANYNFPL/(?:<[^>]+>)*<N pl="y" gnt="n" gnd="f".>(?:<[^>]+>)*/g;
 s/ANYGENITIVE/(?:<[^>]+>)*<N pl="." gnt="y"[^>]+>(?:<[^>]+>)*/g;
 s/ANYCOPULA/(?:<[^>]+>)*<V cop="y".>(?:<[^>]+>)*/g;
 s/ANYPASTIMPER/(?:<[^>]+>)*<V p="y" t="ord".><V p="y" t="caite".>(?:<[^>]+>)*/g;
+# Units with a verbal noun at their core, taken as one noun in
+# grammar/comhshuite-ga.in (CO17 3.3.1(b)): VNUNITGEN is the form after an in
+# the genitive (an chur síos, an dul chun cinn, an tsracfhéachaint ar gcúl, an
+# éirí amach), VNUNIT any form. VNUNITGEN must come first (it contains VNUNIT).
+s/VNUNITGEN/(?:[Cc]h(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|[Dd]ul [Cc]hun cinn|[Tt]eacht [Ii] bhfeidhm|[Tt]abhairt (?:[Aa]mach|[Ss]uas)|[Éé]irí (?:[Aa]mach|[Ii]n airde)|tsracfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
+s/VNUNIT/(?:g?[Cc]h?(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|n?[Dd]h?ul [Cc]hun cinn|d?[Tt]h?(?:eacht [Ii] bhfeidhm|abhairt (?:[Aa]mach|[Ss]uas))|(?:n-)?[Éé]irí (?:[Aa]mach|[Ii]n airde)|t?[Ss]h?racfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
 s/ANYIMPER/(?:<[^>]+>)*<V p="y" t="ord".>(?:<[^>]+>)*/g;
 s/ANYPASTAUT/(?:<[^>]+>)*<V p="n" t="caite".>(?:<[^>]+>)*/g;
 s/ANYPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;

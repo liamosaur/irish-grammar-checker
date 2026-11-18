@@ -287,6 +287,12 @@ export function proposeFix(rule: string, flagged: string): string | null {
   // that can take it. That is the last word for most rules, but some flag a phrase
   // with that word inside it ("Ní aithne go haontíos", "Ní uair chairde",
   // "Maidin shách fuar", "chothrom le dáta": grammar/rialacha-ga.in).
+  // "Prefix t missing" after the article: the t goes on the word after "an", which may
+  // be the first of a phrase taken as one noun ("an éirí amach" -> "an t-éirí amach").
+  if (rule === 'PREFIXT') {
+    const m = /^(\s*an\s+)(\S+)([\s\S]*)$/i.exec(flagged);
+    if (m) { const changed = tPrefix(m[2]); return changed === null ? null : m[1] + changed + m[3]; }
+  }
   // "na" for "ná" before the imperative: write ná, and h on a verb beginning with a
   // vowel ("Na abair é" -> "Ná habair é"; grammar/rialacha-ga.in, NAIMPER).
   if (rule === 'NAIMPER') {
