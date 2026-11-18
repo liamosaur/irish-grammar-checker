@@ -55,3 +55,4 @@ terms as Perl. This port is a derivative work, licensed under the
 The data derived from BuNaMo is kept in separate files, `data/bunamo-overlay.json`
 and `data/forms.json`, licensed under the **Open Database License 1.0**
 ([LICENSE-ODbL.txt](LICENSE-ODbL.txt)). See [NOTICE.md](NOTICE.md) for details.
+
