@@ -107,12 +107,19 @@ execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.
 // the start of the sentence, or punctuation before the next word. Upstream's
 // rule syntax cannot say this (gin turns every "(" into "(?:", so no lookahead
 // or lookbehind), so the compiled word is replaced by one here.
+// AFTERFEMNAME, also a first word, matches after a feminine singular noun and a
+// capitalised unknown word (a trade name: sa scarbhileog Excel chéanna). The
+// unknown word carries the word list's message, and an :OK removes only the first
+// error mark it matches, so the context has to sit outside the match.
 const CLAUSEEND_WORD = ' <[A-DF-Z][^>]*>CLAUSEEND</[A-DF-Z]>';
 const CLAUSEEND_RE = '(?=[.,;:!?)"\']| </line>)'; // the checker sees curly quotes folded to ASCII
 // The word as compiled in rialacha, and in aonchiall (where a word may still carry
 // several tags).
-const CLAUSESTART_WORDS = ['<[A-DF-Z][^>]*>CLAUSESTART</[A-DF-Z]> ', '(?:<[/A-DF-Z][^>]*>)+CLAUSESTART</[A-DF-Z]> '];
-const CLAUSESTART_RE = '(?<=(?:<line>|[.,;:!?("\']) )';
+const startWords = (w) => [`<[A-DF-Z][^>]*>${w}</[A-DF-Z]> `, `(?:<[/A-DF-Z][^>]*>)+${w}</[A-DF-Z]> `];
+const STARTS = {
+  CLAUSESTART: '(?<=(?:<line>|[.,;:!?("\']) )',
+  AFTERFEMNAME: '(?<=<N pl="n" gnt="n" gnd="f">[^<]+</N> <E[^>]*><X>[A-ZÁÉÍÓÚ][^<]*</X></E> )',
+};
 for (const name of ['rialacha', 'aonchiall']) {
   const file = path.join(outDir, 'rules', `${name}.json`);
   const rules = JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -125,12 +132,13 @@ for (const name of ['rialacha', 'aonchiall']) {
       r.re = parts[0] + CLAUSEEND_RE + parts[1];
       n++;
     }
-    if (typeof r.re === 'string' && r.re.includes('CLAUSESTART')) {
-      const word = CLAUSESTART_WORDS.find((w) => r.re.includes(w)) ?? CLAUSESTART_WORDS[0];
+    for (const [start, lookbehind] of Object.entries(STARTS)) {
+      if (typeof r.re !== 'string' || !r.re.includes(start)) continue;
+      const word = startWords(start).find((w) => r.re.includes(w)) ?? startWords(start)[0];
       const parts = r.re.split(word);
       // The compiler opens the match with "(" and, for error rules, "(?<![<>])" before it.
-      if (parts.length !== 2 || !/^(\(\?<!\[<>\]\))?\($/.test(parts[0])) throw new Error(`${name}: CLAUSESTART must be the first word of a rule: ${r.re}`);
-      r.re = parts[0] + CLAUSESTART_RE + parts[1];
+      if (parts.length !== 2 || !/^(\(\?<!\[<>\]\))?\($/.test(parts[0])) throw new Error(`${name}: ${start} must be the first word of a rule: ${r.re}`);
+      r.re = parts[0] + lookbehind + parts[1];
       n++;
     }
     if (r.then) fix(r.then);
@@ -138,6 +146,6 @@ for (const name of ['rialacha', 'aonchiall']) {
   fix(rules);
   if (n) {
     fs.writeFileSync(file, JSON.stringify(rules));
-    console.log(`${name}: ${n} CLAUSEEND/CLAUSESTART replacements`);
+    console.log(`${name}: ${n} CLAUSEEND/CLAUSESTART/AFTERFEMNAME replacements`);
   }
 }

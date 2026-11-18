@@ -5,8 +5,11 @@
 #
 # One word per line, tab-separated: the word, its tags (as in ga/pos-ga.txt,
 # written one after another), and the reason. The tags replace all the word's
-# tags; the word keeps its frequency tier. The word must already be in the word
-# list. Lines starting with # are comments.
+# tags; the word keeps its frequency tier. A word not in the word list must be in
+# upstream's table of non-standard forms (data/eile.json): the correction says it
+# is standard, so it is removed from that table and added to the word list (in
+# the rarest tier). Any other word not in the word list stops the build. Lines
+# starting with # are comments.
 #
 # Reference: CO17 = Gramadach na Gaeilge: An Caighdeán Oifigiúil, 2017.
 
@@ -39,3 +42,25 @@ heo	<P h="y">	CO17 10.13.2: Ní heo é an rud atá le déanamh.
 # h before the autonomous form after ná (CO17 10.14.1: Ná hóltar sa Dánlann).
 # hóltar was a rare word; tagged as óltar is.
 hóltar	<V p="n" t="láith"><V p="n" t="ord">	CO17 10.14.1: Ná hóltar sa Dánlann.
+
+# Standard words upstream lists only as non-standard forms. Tags as the
+# dictionary gives them (Foclóir Gaeilge-Béarla, teanglann.ie); no more than it
+# states.
+geallúint	<N pl="n" gnt="n" gnd="f">	FGB: "geallúint, f. 1 = GEALLADH. 2 = GEALLTANAS." CO17 Tábla 3A: An bhfuil siad ag geallúint an airgid dúinn? (upstream: non-standard for gealladh, gealltanas)
+# ardteist, a compound of ard + teist (not in the dictionary): tagged as the word
+# list tags teist (nom. sg. f.) and teiste (gen. sg. f.). CO17 3.1.3: an Ardteist,
+# scrúdú Ardteiste; 1.5.1: na hArdteiste. (upstream: non-standard for
+# ardteistiméireacht)
+ardteist	<N pl="n" gnt="n" gnd="f">	compound of ard + teist; as teist in the word list
+ardteiste	<N pl="n" gnt="y" gnd="f">	compound of ard + teist; as teiste in the word list
+# Its mutated forms, which upstream also lists as non-standard (the plural
+# ardteisteanna is left out: the word list has no plural of teist to follow).
+hardteist	<N pl="n" gnt="n" gnd="f" h="y">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+hardteiste	<N pl="n" gnt="y" gnd="f" h="y">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+n-ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+n-ardteiste	<N pl="n" gnt="y" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+d'ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+d'ardteiste	<N pl="n" gnt="y" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+m'ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+m'ardteiste	<N pl="n" gnt="y" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+b'ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht

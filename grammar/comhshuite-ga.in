@@ -39,6 +39,13 @@ n-éirí [Ii]n airde:<N pl="n" gnt="n" gnd="m">
 t?[Ss]h?racfhéachaint [Aa]r gcúl:<N pl="n" gnt="n" gnd="m">
 g?[Cc]h?éim [Aa]r gcúl:<N pl="n" gnt="n" gnd="m">
 [Ll]eagan [Aa]mach:<N pl="n" gnt="n" gnd="m">
+# CO17 3.1.7: uair an chloig is a unit that takes the article as a whole (an
+# uair an chloig), like a feminine noun.
+[Uu]air an chloig:<N pl="n" gnt="n" gnd="f">
+# Garraithe Náisiúnta na Lus (National Botanic Gardens): na Lus is the fixed form
+# in the name. The genitive plural of lus is otherwise lusanna (focloir.ie: lus,
+# m3, g.u. lusa, a.i. lusanna, g.i. lusanna), which the word list has.
+na Lus:<N pl="y" gnt="y" gnd="m">
 [Aa]s [Aa] chéile:<R>
 [Aa] chéile:<R>
 [Aa] [Cc]hloi?g:<R>

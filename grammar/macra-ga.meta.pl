@@ -39,7 +39,8 @@ s/CHEADCOMPOUND/[^< ]+ chéad/g;
 s/NONCOMPOUND/[^< ]+/g;
 s/COMPOUND/[^< ]+ [^<]+/g;
 s/SYNTHPAST/[^<]+[md]ar/g;
-s/ALLGENITIVEPREPS/(?:[Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
+# d'ainneoin added: it takes the genitive (CO17 3.3.2(b): D'ainneoin na Coda sin).
+s/ALLGENITIVEPREPS/(?:[Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna|[Dd]'ainneoin)/g;
 s/GENITIVEPREP/(?:[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
 s/IRREGULARPAST/(?:raibh|dtáinig|dtug|ndearnadh|gcuala|bhfuair)/g;
 # separate fuarthas to avoid "fuaraíodh", etc.
@@ -210,6 +211,10 @@ s/ANYPASTIMPER/(?:<[^>]+>)*<V p="y" t="ord".><V p="y" t="caite".>(?:<[^>]+>)*/g;
 # éirí amach), VNUNIT any form. VNUNITGEN must come first (it contains VNUNIT).
 s/VNUNITGEN/(?:[Cc]h(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|[Dd]ul [Cc]hun cinn|[Tt]eacht [Ii] bhfeidhm|[Tt]abhairt (?:[Aa]mach|[Ss]uas)|[Éé]irí (?:[Aa]mach|[Ii]n airde)|tsracfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
 s/VNUNIT/(?:g?[Cc]h?(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|n?[Dd]h?ul [Cc]hun cinn|d?[Tt]h?(?:eacht [Ii] bhfeidhm|abhairt (?:[Aa]mach|[Ss]uas))|(?:n-)?[Éé]irí (?:[Aa]mach|[Ii]n airde)|t?[Ss]h?racfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
+# The forms of bí that begin a clause with a subject and a predicate (Tá an
+# aimsir fuar; Tá téarmaí an Achta soiléir): used to recognise a predicative
+# adjective at the end of the clause. (grammar/rialacha-ga.in)
+s/BIVERB/(?:[Tt]á|[Tt]áim|[Bb]hí|[Bb]híodh|[Bb]íonn|[Bb]eidh|[Bb]headh|[Nn]íl|[Ff]uil|bhfuil|[Rr]aibh|mbíonn|mbíodh|mbeidh|mbeadh)/g;
 s/ANYIMPER/(?:<[^>]+>)*<V p="y" t="ord".>(?:<[^>]+>)*/g;
 s/ANYPASTAUT/(?:<[^>]+>)*<V p="n" t="caite".>(?:<[^>]+>)*/g;
 s/ANYPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;

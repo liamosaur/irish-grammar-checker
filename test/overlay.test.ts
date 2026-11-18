@@ -54,11 +54,10 @@ describe('merging the overlay', () => {
     assert.equal(createHash('sha256').update(JSON.stringify(nowLex)).digest('hex'), '5730e48a2ca6f8f8d5d25940d10f69a37ce1a8a42a22bed9c0399a20224bbbdb');
   });
 
-  it('applies our own corrections after it: replaces the codes, keeps the tier', () => {
+  it('applies our own corrections after it: replaces the codes, keeps the tier, adds new words to the last tier', () => {
     const lex: Record<string, string>[] = [{ a: 'xy' }, { b: 'q' }];
-    applyLexiconCorrections(lex, { b: 'zc' });
-    assert.deepEqual(lex, [{ a: 'xy' }, { b: 'cz' }]);
-    assert.throws(() => applyLexiconCorrections(lex, { nua: 'a' }));
+    applyLexiconCorrections(lex, { b: 'zc', nua: 'a' });
+    assert.deepEqual(lex, [{ a: 'xy' }, { b: 'cz', nua: 'a' }]);
   });
 
   it('tags the words in grammar/lexicon-corrections.tsv as corrected', () => {
@@ -67,6 +66,7 @@ describe('merging the overlay', () => {
     assert.deepEqual([...tagsOf(full, 'eo')], ['<P>']);
     assert.deepEqual([...tagsOf(full, 'heo')], ['<P h="y">']);
     assert.ok(has(tagsOf(full, 'cabair'), /<N pl="y" gnt="n" gnd="m">/));
+    assert.deepEqual([...tagsOf(full, 'geallúint')], ['<N pl="n" gnt="n" gnd="f">']); // added: upstream had it only as non-standard
   });
 
   it('the base lexicon is the untouched 0.70 one', () => {

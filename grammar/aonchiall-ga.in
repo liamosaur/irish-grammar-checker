@@ -64,6 +64,26 @@ CLAUSESTART [Nn]a <B><Z>ANYIMPER</Z>ANYTHING</B>:<V p="y" t="ord">
 # definite noun (Ba é an fear). The article is matched as a word, because an is
 # still ambiguous when this runs.
 <B>ba</B> [Aa]n|[Nn]a:<N pl="y" gnt="n" gnd="f">
+# CO17 3.3.4(b), 3.3.9: a noun with a possessive is definite, and a definite object
+# of a verbal noun after ag is in the genitive (Bhí sí ag glanadh a bróg peile:
+# bróg is the genitive plural, iol.). So after ag + a word + a possessive, a word
+# with a genitive reading takes it: the singular if it has one, else the plural.
+# A word with no genitive reading is left alone (ag déanamh a cuid oibre: cuid is
+# not inflected, 3.3.2(b)). Not the masculine singular: many verbal nouns have the
+# same form for nominative and genitive, and a after a verbal noun may be the
+# particle before another (ag iarraidh a dheimhniú, 3.3.3(a)). Words are matched
+# as words: they are still ambiguous.
+[Aa]g ANYTHING [Aa]|[Mm]o|[Dd]o|[Áá]r|[Bb]hur <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+[Aa]g ANYTHING [Aa]|[Mm]o|[Dd]o|[Áá]r|[Bb]hur <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
+[Aa]g ANYTHING [Aa]|[Mm]o|[Dd]o|[Áá]r|[Bb]hur <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
+# CO17 3.3.2(a): a noun joined to a following verbal noun by a is its object and
+# stays in the nominative, even after a word that takes the genitive (le linn an
+# cluiche a imirt; i mbun an teach a thógáil). So after an, a word with a
+# masculine nominative reading followed by a and a noun (the verbal noun) is the
+# nominative, whether or not its genitive has the same spelling. Before a + verb
+# (le linn an chluiche a bhí ann) the a is the relative particle and this does
+# not apply. (an and a are matched as words: they are still ambiguous here.)
+[Aa]n <B><Z>ANYNMC</Z>ANYTHING</B> [Aa] <N>ANYTHING</N>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]a</B>:<V cop="y">
 [Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
 [Dd]h?á <B>m[Bb]a</B>:<V cop="y">

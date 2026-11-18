@@ -38,7 +38,8 @@ follow *An Caighdeán Oifigiúil* (2017); `node tools/upstream-diff.mjs
 `generate-rules.mjs`. Also in `grammar/`:
 `extra-messages.json`, the messages for rule ids we added (merged by
 `build-data.mjs`), and `lexicon-corrections.tsv`, corrections to words' tags
-in the word list, which `build-data.mjs` turns into `data/lexicon-corrections.json`,
+in the word list (or standard words upstream lists only as non-standard forms,
+which are then removed from `data/eile.json`), which `build-data.mjs` turns into `data/lexicon-corrections.json`,
 applied when the checker loads, after the BuNaMo overlay and kept separate from it
 (`src/lexicon.ts`). The parity tests use the 0.70 rules in `data/legacy-0.70/`,
 so they are unaffected. `data/lexicon.json` is the 0.70

@@ -3,3 +3,5 @@ node_modules/
 .scratch/
 dist/
 .sources/
+CLAUDE.md
+roadmap.md

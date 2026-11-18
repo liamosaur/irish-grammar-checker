@@ -82,6 +82,24 @@ const cases: Case[] = [
   { section: '3.3.1(b)', text: 'Bhí sé le linn an cur síos.', rule: 'GENITIVE', words: 'le linn an cur síos', fixed: null },
   { section: '3.3.1(b)', text: 'Rinne sé an chur síos.', rule: 'NISEIMHIU', words: 'an chur síos', fixed: 'Rinne sé an cur síos.' },
   { section: '3.3.1(b)', text: 'Bhí an éirí amach ann.', rule: 'PREFIXT', words: 'an éirí amach', fixed: 'Bhí an t-éirí amach ann.' },
+  // h after le, as before, but not on an abbreviation (see clean)
+  { section: '10.11.1', text: 'Tá sé le Aoife.', rule: 'PREFIXH', words: 'le Aoife', fixed: 'Tá sé le hAoife.' },
+  // the genitive after a compound preposition, as before, unless a + verbal noun follows (see clean)
+  { section: '3.3.2(a)', text: 'Cuideachta áitiúil atá i mbun an teach.', rule: 'GENITIVE', words: 'i mbun an teach', fixed: null },
+  // an adjective after a feminine noun is lenited, as before (the ag + verbal noun exception does not apply)
+  { section: '10.3.1(a)', text: 'Is bean cabhrach í.', rule: 'SEIMHIU', words: 'bean cabhrach', fixed: 'Is bean chabhrach í.' },
+  // the genitive adjective after a definite genitive, as before, when not predicative after bí
+  { section: '4.4.1', text: 'Chonaic mé teach an fhir mór.', rule: 'GENITIVE', words: 'an fhir mór', fixed: null },
+  { section: '4.4.1', text: 'Tá teach an fhir mór ann.', rule: 'GENITIVE', words: 'an fhir mór', fixed: null },
+  // a noun joined to a verbal noun by a stays nominative (3.3.2(a)); the genitive otherwise
+  { section: '3.3.2(a)', text: 'Tharla sé le linn an chluiche a imirt.', rule: 'NISEIMHIU', words: 'an chluiche', fixed: 'Tharla sé le linn an cluiche a imirt.' },
+  { section: '10.2.1', text: 'Tharla sé le linn an cluiche.', rule: 'SEIMHIU', words: 'an cluiche', fixed: 'Tharla sé le linn an chluiche.' },
+  // a simple preposition that does not take the genitive, as before (d'ainneoin now does)
+  { section: '3.3.2(b)', text: 'Chuaigh sé ar na scoile.', rule: 'NOGENITIVE', words: 'ar na scoile', fixed: null },
+  // a lenited adjective after a masculine noun and a trade name is still reported
+  { section: '3.1.5', text: 'Bhí an fear Excel chéanna ann.', rule: 'NISEIMHIU', words: 'chéanna', fixed: 'Bhí an fear Excel céanna ann.' },
+  // na + a singular noun, as before; the place name Garraithe Náisiúnta na Lus is the exception
+  { section: '1.6', text: 'Chonaic mé na lus.', rule: 'BACHOIR', words: 'na lus', fixed: 'Chonaic mé an lus.' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
@@ -125,6 +143,15 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Thug sé an cur i láthair.', note: 'cur i láthair, joined before i láthair is' },
   { text: 'Tá sé i láthair.', note: 'i láthair on its own is still a phrase' },
   { text: 'Tháinig sé i bhfeidhm.', note: 'i bhfeidhm on its own is still a phrase' },
+  { text: 'Rinne sé é le ÍMAT.', note: 'an abbreviation is not mutated after le' },
+  { text: 'Is fostaí de chuid CIN rannpháirteach í.', note: 'an abbreviation in capitals is not reported as the rare word cin' },
+  { text: 'Tharla sé le linn an cluiche a imirt.', note: 'nominative before a + verbal noun, though the genitive is spelt the same', reviewed: true },
+  { text: 'Tharla sé le linn an chluiche a bhí ann.', note: 'a + verb is the relative particle: genitive, lenited' },
+  { text: 'Bhí sé ann ar feadh uair an chloig.', note: 'uair an chloig taken as one noun' },
+  { text: 'Tá sí ag déanamh a cuid oibre.', note: 'cuid after a possessive and a verbal noun has no genitive reading and is left alone' },
+  { text: 'Tá sé ag iarraidh a dheimhniú go mbeidh gach ní ina cheart.', note: 'a before a verbal noun is the particle, not a possessive' },
+  { text: 'Tá an bhean cabhrach.', note: 'predicative adjective, not lenited' },
+  { text: 'Cuideachta áitiúil atá i mbun an teach a thógáil.', note: 'nominative before a + verbal noun after a compound preposition' },
 ];
 
 let engine: Gramadoir | undefined;

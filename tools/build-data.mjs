@@ -77,7 +77,7 @@ function readRepl(f) {
   }
   return h;
 }
-write('eile.json', readRepl('eile.bs'));
+const eile = readRepl('eile.bs'); // written after the word-list corrections below, which can remove entries
 write('earraidi.json', readRepl('earraidi.bs'));
 
 // ---- pos ---------------------------------------------------------------
@@ -101,7 +101,12 @@ for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '')
   const [word, tags] = line.split('\t');
   if (!word || !tags) throw new Error(`${where}: expected word<TAB>tags<TAB>reason`);
   if (/[^\u0000-ÿ]/.test(word)) throw new Error(`${where}: characters outside Latin-1`);
-  if (!lex.some((tier) => Object.hasOwn(tier, word))) throw new Error(`${where}: ${word} is not in the word list`);
+  // A word not in the word list is accepted only if it is in the non-standard forms table: the
+  // correction says it is standard, so it is removed from there and added to the word list.
+  if (!lex.some((tier) => Object.hasOwn(tier, word))) {
+    if (!Object.hasOwn(eile, word)) throw new Error(`${where}: ${word} is neither in the word list nor a non-standard form`);
+    delete eile[word];
+  }
   const list = tags.match(/<[^>]+>/g) ?? [];
   if (list.join('') !== tags.trim()) throw new Error(`${where}: tags must be written <...><...>`);
   corrections[word] = list.map((t) => {
@@ -110,6 +115,7 @@ for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '')
   }).sort().join('');
 }
 write('lexicon-corrections.json', corrections);
+write('eile.json', eile);
 console.log('word-list corrections', Object.keys(corrections).length);
 
 // ---- token rules -------------------------------------------------------

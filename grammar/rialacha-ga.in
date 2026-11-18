@@ -485,6 +485,10 @@ sin sin:OK
 <F>[Tt]uige</F>:IONADAI{cad chuige}
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
+# CO17 3.2: an abbreviation (two or more capitals or digits, as in the rules for
+# in before an abbreviation) is not reported as a rare word when the word list has
+# a rare word of the same letters (Is fostaí de chuid CIN rannpháirteach í).
+<E><F>[A-ZÁÉÍÓÚ][A-ZÁÉÍÓÚ0-9]+</F></E>:OK
 <E><F>m?[Bb]'eo</F></E>:OK
 # this is here for the clearer error message, otherwise it's NOSUBJ
 # eclipsed/lenited are subjunctive only, "deara" is <N> only
@@ -511,6 +515,10 @@ n[Dd]eire:IONADAI{ndeireadh}
 # mutated as a masculine genitive (le linn an tabhairt amach; i mbun an chur i
 # láthair). Unmutated (le linn an cur síos) it is still reported.
 <S>COMPOUND</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNITGEN</N>:OK
+# CO17 3.3.2(a), Tábla 3A: a noun joined to a verbal noun by a stays in the
+# nominative after a word that takes the genitive (i mbun an teach a thógáil;
+# ar tí na doirse a dhúnadh).
+<E><S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E> <S>[Aa]</S> <N>ANYTHING</N>:OK
 #. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis (OK).
 #. Bhain sé sult as clár toghcháin TG4 a chur i láthair an mhí seo caite (OK).
 <S>[Aa]g?</S> <N>ANYTHING</N> <E><S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E>:OK
@@ -589,6 +597,11 @@ n[Dd]eire:IONADAI{ndeireadh}
 # CB p.16 #9.a  (needs shallow parse) -- subsumes CB p.17 #9.gh after <S>
 #. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU
+# CO17 3.3.5, 10.2.7(h): after ag and a verbal noun, the word that follows is not
+# lenited (ag fágáil slán; ag tabhairt cabhrach). It is often tagged as an
+# adjective (slán, cabhrach), so this is the adjective rule's counterpart of
+# the exception for a genitive noun after ag further on.
+<S>[Aa]g</S> <E><NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNLENITED</A></E>:OK
 # corpas; most compound adjs are #'s
 # NB "ceannann céanna" lenites as it should, but handled by comhshuite.
 #. Bhí na ranganna seo ar siúl an bhliain seo caite (OK).
@@ -599,7 +612,7 @@ n[Dd]eire:IONADAI{ndeireadh}
 # be predicative when it follows bí + an + noun and ends the clause; CLAUSEEND
 # (see tools/generate-rules.mjs) matches punctuation or the end of the
 # sentence. Tá an aimsir fhuar ag teacht is still read as attributive.
-<V>([Tt]á|[Tt]áim|[Bb]hí|[Bb]híodh|[Bb]íonn|[Bb]eidh|[Bb]headh|[Nn]íl|[Ff]uil|bhfuil|[Rr]aibh|mbíonn|mbíodh|mbeidh|mbeadh)</V> <T>[Aa]n</T> <E><NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNLENITED</A></E> CLAUSEEND:OK
+<V>BIVERB</V> <T>[Aa]n</T> <E><NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNLENITED</A></E> CLAUSEEND:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
 <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNBOUNDADJ</A>:OK
@@ -783,6 +796,12 @@ n[Dd]eire:IONADAI{ndeireadh}
 #. Tugadh cuireadh dó a theacht i láthair an fhir móir.
 #. Tugaimid é amach le haghaidh béile Polainéisigh. 
 <NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="m">UNLENITED</A>:SEIMHIU
+# CO17 3.3.1(a), 4.11: an adjective at the end of a clause after bí + a noun
+# phrase ending in a definite genitive is predicative, not part of the genitive
+# (Tá téarmaí an Achta soiléir). One to three nouns may come before the article.
+<V>BIVERB</V> <N>ANYTHING</N> <T>ANYTHING</T> <E><NMGS>ANYTHING</NMGS> <A>ANYTHING</A></E> CLAUSEEND:OK
+<V>BIVERB</V> <N>ANYTHING</N> <N>ANYTHING</N> <T>ANYTHING</T> <E><NMGS>ANYTHING</NMGS> <A>ANYTHING</A></E> CLAUSEEND:OK
+<V>BIVERB</V> <N>ANYTHING</N> <N>ANYTHING</N> <N>ANYTHING</N> <T>ANYTHING</T> <E><NMGS>ANYTHING</NMGS> <A>ANYTHING</A></E> CLAUSEEND:OK
 # in case of tagging error:
 #. Bhí torann an dorais cloiste agam (OK).
 <NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="m">UNBOUNDADJ</A>:OK
@@ -2664,6 +2683,10 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P), LGG p.112-113
 #. Tógann siad cuid de le iad féin a théamh.
 <S>[Ll]e</S> <[ANPY]>INITIALVOWEL</[ANPY]>:PREFIXH
+# CO17 3.2.1(a): an abbreviation is never mutated (Tá agallamh aige le OÉ
+# Gaillimh). An abbreviation is taken to be two or more capitals or digits, as
+# in the rules for in before an abbreviation.
+<S>[Ll]e</S> [A-ZÁÉÍÓÚ][A-ZÁÉÍÓÚ0-9]+:OK
 # CB p.113
 <S>[Ll]e</S> <V cop="y">(is|ar|arb)</V>:BACHOIR{lenar, lenarb}
 <S>[Ll]e</S> <V cop="y">(ba|ab|arbh)</V>:BACHOIR{lenar, lenarbh}
@@ -4369,7 +4392,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 # CO17 4.11: a predicative adjective lenited (Tá an aimsir fhuar.), in the
 # position where the predicative exception further up accepts it unlenited.
 # Not céanna, which is lenited at the end of a clause too (an fhadhb chéanna).
-<V>([Tt]á|[Tt]áim|[Bb]hí|[Bb]híodh|[Bb]íonn|[Bb]eidh|[Bb]headh|[Nn]íl|[Ff]uil|bhfuil|[Rr]aibh|mbíonn|mbíodh|mbeidh|mbeadh)</V> <T>[Aa]n</T> <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">LENITED</A> CLAUSEEND:NISEIMHIU
+<V>BIVERB</V> <T>[Aa]n</T> <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">LENITED</A> CLAUSEEND:NISEIMHIU
 <V>ANYTHING</V> <T>[Aa]n</T> <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">[Cc]héanna</A>:OK
 <A>LENITED</A>:NISEIMHIU
 # irritation; might miss some real egs though  "an fear the"
@@ -4395,6 +4418,11 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 <S>[Dd]á</S> <E><A>LENITED</A></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
 # Bríd bheag
 <Y>ANYTHING</Y> <E><A>LENITED</A></E>:OK
+# CO17 3.1.5: a trade name used as a qualifier between a feminine noun and its
+# adjective (sa scarbhileog Excel chéanna): the adjective agrees with the noun.
+# AFTERFEMNAME (see tools/generate-rules.mjs): after a feminine singular noun and
+# a capitalised unknown word, which keeps its own message.
+AFTERFEMNAME <E><A>LENITED</A></E>:OK
 ######## Lenited adjectives that upstream reports as unnecessary lenition (CO17 4.2-4.4)
 # The masculine vocative: the adjective is lenited, in the genitive form if that
 # differs (a fhir bhig; a pheileadóir chlúitigh; a óstóir fhlaithiúil: 4.2.2(a)(i),
@@ -4571,6 +4599,11 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 #. Oíche na gaoithe móra.
 #. Oíche na gaoithe mór.
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="." gnt="n">ANYTHING</A>:GENITIVE
+# CO17 3.3.1(a), 4.11: the same, for an adjective in the common form (Dúradh go
+# bhfuil cobhsaíocht fhorais chreidmheasa an Stáit ríthábhachtach).
+<V>BIVERB</V> <N>ANYTHING</N> <E><T>ANYTHING</T> <NGS>ANYTHING</NGS> <A>ANYTHING</A></E> CLAUSEEND:OK
+<V>BIVERB</V> <N>ANYTHING</N> <N>ANYTHING</N> <E><T>ANYTHING</T> <NGS>ANYTHING</NGS> <A>ANYTHING</A></E> CLAUSEEND:OK
+<V>BIVERB</V> <N>ANYTHING</N> <N>ANYTHING</N> <N>ANYTHING</N> <E><T>ANYTHING</T> <NGS>ANYTHING</NGS> <A>ANYTHING</A></E> CLAUSEEND:OK
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">COMPOUND</A>:OK
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">UNBOUNDADJ</A>:OK
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">[Aa]raon</A>:OK
