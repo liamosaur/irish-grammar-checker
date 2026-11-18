@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <title>%APP_NAME%</title>
+  <meta name="description" content="Check Irish text for grammar mistakes. Runs entirely in your browser; your text is never uploaded.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-state="loading">
+<a class="skip" href="#input" data-i18n="nav.skip"></a>
+
+<header class="top">
+  <a class="brand" href="./" id="brand"></a>
+  <nav data-i18n-aria-label="nav.label">
+    <button type="button" class="quiet" data-open="how" data-i18n="nav.how"></button>
+    <button type="button" class="quiet" data-open="about" data-i18n="nav.about"></button>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- Step 1: write -->
+  <section id="editor" data-i18n-aria-label="editor.region">
+    <label for="input" class="sr" data-i18n="editor.label"></label>
+    <textarea id="input" lang="ga" spellcheck="false" autocapitalize="off" autocomplete="off" rows="3" data-i18n-placeholder="editor.placeholder"></textarea>
+
+    <div class="row">
+      <button type="button" class="btn primary" id="check" data-i18n="btn.check"></button>
+      <button type="button" class="quiet" id="example" data-i18n="btn.example"></button>
+      <button type="button" class="quiet" id="clear" data-i18n="btn.clear" hidden></button>
+    </div>
+
+    <!-- Loading, shown quietly until the checker is ready -->
+    <div id="loading" class="loading">
+      <progress id="load-bar" max="100" aria-labelledby="load-detail"></progress>
+      <p id="load-detail" class="muted small"></p>
+      <p class="muted small" data-i18n="loading.first" id="load-first"></p>
+      <div id="loading-failed" hidden>
+        <p role="alert"><strong data-i18n="loading.fail.title"></strong></p>
+        <p id="load-error-detail" class="muted small"></p>
+        <button type="button" class="btn" id="retry" data-i18n="loading.retry"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Check in progress (only for long texts) -->
+  <section id="checking" hidden>
+    <p id="checking-label" class="muted"></p>
+    <progress id="check-bar" max="100" aria-labelledby="checking-label"></progress>
+    <div class="row"><button type="button" class="btn" id="cancel" data-i18n="btn.cancel"></button></div>
+  </section>
+
+  <!-- Step 2: results -->
+  <section id="results" hidden aria-labelledby="summary">
+    <div id="annotated" lang="ga" tabindex="0" role="group" aria-labelledby="summary text-group"></div>
+    <p class="sr" id="text-group"></p>
+
+    <div class="results-head">
+      <h1 id="summary" tabindex="-1"></h1>
+      <div class="row">
+        <button type="button" class="btn primary" id="edit" data-i18n="btn.edit"></button>
+      </div>
+    </div>
+    <p class="muted small" id="note-none" data-i18n="result.noneNote" hidden></p>
+    <p class="muted small" id="note-unreadable" hidden></p>
+
+    <ol id="list" aria-labelledby="summary"></ol>
+  </section>
+
+  <!-- Status line: also the screen-reader announcement area. -->
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+</main>
+
+<footer class="foot">
+  <p class="muted small"><span data-i18n-rich="footer.credit"></span></p>
+</footer>
+
+<!-- How it works -->
+<dialog id="how" aria-labelledby="how-title">
+  <form method="dialog" class="dlg-close"><button class="quiet" data-i18n="btn.close"></button></form>
+  <h2 id="how-title" data-i18n="how.title"></h2>
+  <ol class="steps">
+    <li data-i18n="how.1"></li>
+    <li data-i18n="how.2"></li>
+    <li data-i18n="how.3"></li>
+  </ol>
+  <h3 data-i18n="how.limits.h"></h3>
+  <ul>
+    <li data-i18n-rich="how.limits.1"></li>
+    <li data-i18n="how.limits.2"></li>
+    <li data-i18n="how.limits.3"></li>
+    <li data-i18n="how.limits.4"></li>
+  </ul>
+  <p class="muted small" data-i18n-rich="how.about"></p>
+</dialog>
+
+<!-- About -->
+<dialog id="about" aria-labelledby="about-title">
+  <form method="dialog" class="dlg-close"><button class="quiet" data-i18n="btn.close"></button></form>
+  <h2 id="about-title" data-i18n="about.title"></h2>
+  <p data-i18n-rich="about.what"></p>
+  <p data-i18n-rich="about.author"></p>
+  <p data-i18n-rich="about.credits.1"></p>
+  <p data-i18n-rich="about.source"></p>
+  <p class="small" data-i18n-rich="about.credits.2"></p>
+  <p class="small" data-i18n="about.credits.3"></p>
+  <p class="muted small" data-i18n-rich="about.how"></p>
+</dialog>
+
+<noscript><p class="note">This checker needs JavaScript, because it runs in your browser. Nothing is sent anywhere.</p></noscript>
+<script type="module" src="./main.ts"></script>
+</body>
+</html>

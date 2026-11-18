@@ -1,0 +1,46 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { applyOverlay, type LexiconOverlay } from './lexicon.ts';
+import type { GramadoirData } from './types.ts';
+
+export interface LoadOptions {
+  /**
+   * Merge the BuNaMo overlay (bunamo-overlay.json) into the lexicon. Default true; false gives the
+   * untouched 0.70 lexicon (for exact Perl 0.70 parity).
+   */
+  overlay?: boolean;
+}
+
+/**
+ * Loads the JSON data produced by tools/build-data.mjs + tools/generate-rules.mjs, with the lexicon
+ * extended by tools/overlay-bunamo.mjs's overlay (see src/lexicon.ts).
+ * Files missing from `dataDir` are taken from `fallbackDir` (used to overlay
+ * data/legacy-0.70 on top of data/ for exact Perl 0.70 parity tests).
+ */
+export function loadData(dataDir: string, fallbackDir?: string, options: LoadOptions = {}): GramadoirData {
+  const j = (f: string) => {
+    let file = path.join(dataDir, f);
+    if (fallbackDir && !fs.existsSync(file)) file = path.join(fallbackDir, f);
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  };
+  const lexicon = j('lexicon.json');
+  if (options.overlay ?? true) applyOverlay(lexicon, j('bunamo-overlay.json') as LexiconOverlay);
+  return {
+    lexicon,
+    eile: j('eile.json'),
+    earraidi: j('earraidi.json'),
+    pos: j('pos.json'),
+    token: j('token.json'),
+    morph: j('morph.json'),
+    grams: j('grams.json'),
+    nocombo: j('nocombo.json'),
+    messages: j('messages.json'),
+    rules: {
+      aonchiall: j('rules/aonchiall.json'),
+      comhshuite: j('rules/comhshuite.json'),
+      giorr: j('rules/giorr.json'),
+      rialacha: j('rules/rialacha.json'),
+      unigram: j('rules/unigram.json'),
+    },
+  };
+}
