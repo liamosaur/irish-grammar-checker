@@ -89,6 +89,11 @@ m?[Bb]h?eirt|g?[Cc]h?eathrar|g?[Cc]h?úigear|n?[Dd]h?áréag|n?[Dd]h?eichniúr|[
 # (le linn an chluiche a bhí ann) the a is the relative particle and this does
 # not apply. (an and a are matched as words: they are still ambiguous here.)
 [Aa]n <B><Z>ANYNMC</Z>ANYTHING</B> [Aa] <N>ANYTHING</N>:<N pl="n" gnt="n" gnd="m">
+# CO17 9.3.9(a), (d): after a multiple of ten the noun is the nominative singular,
+# with no initial mutation, in the genitive too (caoga císte milis; costas an
+# chaoga císte milis).
+DECADE <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+DECADE <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
 [Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
 [Dd]h?á <B>m[Bb]a</B>:<V cop="y">
@@ -463,6 +468,9 @@ a <B>sé</B>:<A pl="n" gnt="n">
 #  this is slow but gets the job done; other attempts don't 
 #  have the same accuracy
 <[^V]>ANYTHING</[^V]> <B>[Ss]é</B>:<A pl="n" gnt="n">
+# CO17 9.3.3: at the start of a clause, sé before a noun is the number (sé leabhar
+# mhóra); the pronoun does not begin a clause.
+CLAUSESTART <B>[Ss]é</B> <N>ANYTHING</N>:<A pl="n" gnt="n">
 <B>[Ss]é</B>:<P>
 # almost always "ó shin"; now in comhshuite
 #<B>shin</B>:<P>
@@ -612,6 +620,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # na fir comhaimseartha
 <NP>ANYTHING</NP> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich)</A> <N>ANYTHING</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
+# CO17 9.4.4: the same after a number from 2 to 19 written in figures (7 bhfeirmeoir
+# shaibhre).
+<A>TWOTONINETEEN</A> <N>ANYTHING</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 # are next two a bad idea? "crann tógála buí" => "buí" genitive;
 # see rialacha-ga.in also for discussion regarding agreement between

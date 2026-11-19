@@ -98,6 +98,19 @@ const cases: Case[] = [
   { section: '3.3.2(b)', text: 'Chuaigh sé ar na scoile.', rule: 'NOGENITIVE', words: 'ar na scoile', fixed: null },
   // a lenited adjective after a masculine noun and a trade name is still reported
   { section: '3.1.5', text: 'Bhí an fear Excel chéanna ann.', rule: 'NISEIMHIU', words: 'chéanna', fixed: 'Bhí an fear Excel céanna ann.' },
+  // t- on aon, aonú, ochtú, ochtar, ochtó after an in the nominative, as before; not in the genitive after a noun (see clean)
+  { section: '9.3.7(a)', text: 'Tá an aon leabhar amháin agam.', rule: 'PREFIXT', words: 'an aon leabhar', fixed: 'Tá an t-aon leabhar amháin agam.' },
+  { section: '9.5.4(c)', text: 'Bhí an ochtú haois déag ann.', rule: 'PREFIXT', words: 'an ochtú haois', fixed: 'Bhí an t-ochtú haois déag ann.' },
+  { section: '9.4.3(b)', text: 'Bhí an ochtar daltaí ann.', rule: 'PREFIXT', words: 'an ochtar', fixed: 'Bhí an t-ochtar daltaí ann.' },
+  // ordinals above 100 (9.5.3): céad the cardinal unlenited, but lenited in the genitive; h after míliú
+  { section: '9.5.4(d)', text: 'beithígh an céad is ceathrú feirmeoir', rule: 'CLAOCHLU', words: 'an céad', fixed: null },
+  { section: '9.5.3', text: 'Seo an míliú eitilt.', rule: 'PREFIXH', words: 'an míliú eitilt', fixed: 'Seo an míliú heitilt.' },
+  { section: '10.2.1', text: 'Bhí an céad fear ann.', rule: 'CLAOCHLU', words: 'an céad', fixed: null },
+  { section: '9.2.3', text: 'Tá trí déag litir san fhocal seo.', rule: 'INPHRASE', words: 'trí déag', fixed: null },
+  // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
+  { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
+  // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported
+  { section: '9.3.3', text: 'Sé bairille a bhí ann.', rule: 'SEIMHIU', words: 'Sé bairille', fixed: 'Sé bhairille a bhí ann.' },
   // na + a singular noun, as before; the place name Garraithe Náisiúnta na Lus is the exception
   { section: '1.6', text: 'Chonaic mé na lus.', rule: 'BACHOIR', words: 'na lus', fixed: 'Chonaic mé an lus.' },
   // the adjective after a number is still lenited after an ordinary noun (9.3.3)
@@ -158,6 +171,18 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Bhí sé ann naoi mbliana fada ó shin.', note: 'no lenition after a special plural form ending in a vowel' },
   { text: 'Chuir sé na chéad cheithre ghloine ar an mbord.', note: 'céad lenites the number after it' },
   { text: 'Tá cúig cheathrú den chíste fágtha.', note: 'a fraction: the denominator is lenited after 2-6' },
+  { text: 'Seo ainm an aon duine amháin.', note: 'no t- on aon after an in the genitive (9.3.7(a)(iii))' },
+  { text: 'Thosaigh sé ag tús an ochtú haois déag.', note: 'no t- on ochtú in the genitive (9.5.4(c))' },
+  { text: 'Rinne siad cístí an ochtar báicéirí.', note: 'no t- on ochtar with a noun after it, in the genitive (Tábla 9T)' },
+  { text: 'Bhí an céad is ceathrú feirmeoir ann.', note: 'céad the cardinal in an ordinal above 100 (9.5.3)' },
+  { text: 'Chonaic sé an deich míliú duine.', note: 'no na before a number followed by míliú (9.5.3)' },
+  { text: 'Bhí sé bhó ann.', note: 'bhó is lenited: LENITED now covers three-letter words in bh' },
+  { text: 'Ní chreidfeá a uaigní a bhí an áit.', note: 'a before the verb tagged as the relative particle (4.8.3)' },
+  { text: 'Tá caoga císte milis ann.', note: 'after a decade the noun is nominative singular, so the adjective is not lenited (9.3.9(a))' },
+  { text: 'Bhí seachtó bliain fhada ann.', note: 'a feminine noun after a decade: the adjective agrees with it (9.3.9(b))' },
+  { text: 'Sé leabhar mhóra a bhí ann.', note: 'sé the number at the start of a clause; plural adjective lenited (9.3.3)' },
+  { text: 'Thóg siad seolta na n-ocht mbád bheaga.', note: 'eclipsed n-ocht in the genitive plural, adjective lenited (9.3.7)' },
+  { text: 'Tá 7 bhfeirmeoir shaibhre ann.', note: 'a number in figures, plural adjective lenited (9.4.4)' },
   { text: 'Tá an bhean cabhrach.', note: 'predicative adjective, not lenited' },
   { text: 'Cuideachta áitiúil atá i mbun an teach a thógáil.', note: 'nominative before a + verbal noun after a compound preposition' },
 ];

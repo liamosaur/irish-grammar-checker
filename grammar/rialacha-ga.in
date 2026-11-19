@@ -540,6 +540,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 # cheathrú.
 <N>t-([Aa]onú|[Oo]chtú)</N> <NCS>INITIALVOWEL</NCS>:PREFIXH
 <T>[Aa]n</T> <N>[Cc]eathrú</N> <NCS>INITIALVOWEL</NCS>:PREFIXH
+# míliú and milliúnú are tagged as nouns too (an míliú heitilt; an milliúnú huair:
+# CO17 9.5.3, Tábla 9W).
+<T>[Aa]n</T> <N>([Mm]íliú|[Mm]illiúnú)</N> <NCS>INITIALVOWEL</NCS>:PREFIXH
 # CB p.24 #11.a.ix
 #. Sa dara alt, déan cur síos ar a bhfaca siad sa Spáinn.
 <A pl="n" gnt="n">[Dd]ara</A> <N>INITIALVOWEL</N>:PREFIXH
@@ -851,6 +854,12 @@ n[Dd]eire:IONADAI{ndeireadh}
 [Aa]n <A>[Gg]hnách</A>:IONADAI{an ghnáth}
 <A>POSITIVEINT</A> <NP>ANYTHING</NP>:UATHA
 <A>POSITIVEINT</A> <NP>(m?bh?liana|g?ch?inn|g?ch?loigne|bhfichid|fh?ichid|n-uaire|h?uaire|n-orlaí|h?orlaí)</NP>:OK
+# CO17 9.3.9(a): after a multiple of ten the noun is singular (caoga císte milis;
+# seachtó bliain fhada).
+DECADE <NP>ANYTHING</NP>:UATHA
+# A fraction's denominator is an ordinal, plural after the numerator (tríocha a trí
+# de chaoga seachtuithe: 9.6.1).
+<E>DECADE <NP>ANYTHINGuithe</NP></E>:OK
 # CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Bhí deich tobar fíoruisce agus seachtó crann pailme ann.
 #. Rinneadh an roinnt do na naoi treibh go leith ar chrainn.
@@ -1053,11 +1062,18 @@ n[Dd]eire:IONADAI{ndeireadh}
 # (ag cáineadh an éirí in airde). In the nominative (an t-éirí amach) it is
 # still reported.
 <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
+# CO17 Tábla 9T, 9.3.9: nor on ochtar or ochtó (tagged as nouns) with a noun after
+# them, where they keep the nominative form (cístí an ochtar báicéirí; gaois an
+# ochtó cloigeann maol).
+<N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]cht(ar|ó)</N></E> <N>ANYTHING</N>:OK
 # "aon/ocht" rules are the same as the Noun rules above
 <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT
 <S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
-# corpus -- "Ag tosach an ochtú haois déag" i.e. common form where you might expect a genitive "haoise"
-<T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>haois</NCS>:OK
+# CO17 9.3.7(a)(iii), 9.5.4(c): in the genitive singular the article takes no t- before
+# aon, aonú, ochtú, ochtódú, etc. (ainm an aon duine amháin; tús an aonú bliain déag).
+# Taken to be genitive after a noun, as for the verbal-noun units above (and so
+# Ag tosach an ochtú haois déag, but an t-ochtú haois déag in the nominative).
+<N>ANYTHING</N> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
 # catch before SEIMHIU for clearer message
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">mogha</N>:CAIGHDEAN{an mogh}
 # CB p.12 #1.b
@@ -1086,6 +1102,8 @@ n[Dd]eire:IONADAI{ndeireadh}
 #. Sheol an ceithre mhíle de na meirligh amach san fhásach (OK).
 <T>[Aa]n</T> <A pl="n" gnt="n">(trí|ceithre|cúig|sé|seacht|ocht|naoi|deich)</A>:BACHOIR{na}
 <E><T>[Aa]n</T> <A pl="n" gnt="n">ANYTHING</A></E> g?ch?éad|mh?íle|mh?illiún:OK
+# CO17 9.5.3: also before the ordinals míliú and milliúnú (an deich míliú lá).
+<E><T>[Aa]n</T> <A pl="n" gnt="n">ANYTHING</A></E> mh?íliú|mh?illiúnú:OK
 <E><T>[Aa]n</T> <A pl="n" gnt="n">ANYTHING</A></E> a chlog:OK
 # never with "hocht"
 <S>FUSEDPREP</S> <A pl="n" gnt="n">(th?rí|ch?eithre|ch?úig|sh?é|sh?eacht|ocht|naoi|dh?eich)</A>:BACHOIR{na}
@@ -1436,6 +1454,13 @@ INITIALMBAPOST:NIURU
 # OD céad^2 + corpus  (lenite in all cases except genitive plural => eclipse)
 #  a pretty common error....
 <T>ANYTHING</T> <A pl="n" gnt="n">céad</A>:CLAOCHLU
+# CO17 9.5.3: céad the cardinal (a hundred) is not lenited in an ordinal above
+# 100, which follows the counting numbers: an céad is ceathrú feirmeoir; an céad
+# tríocha is aonú capall. Taken to be the cardinal when is or a multiple of ten
+# follows. Not after a noun: in the genitive the article lenites it (beithígh an
+# chéad is ceathrú feirmeoir: 9.5.4(d), Tábla 9X).
+CLAUSESTART <E><T>[Aa]n</T> <A pl="n" gnt="n">céad</A></E> (is|DECADE):OK
+<[^N]>ANYTHING</[^N]> <E><T>[Aa]n</T> <A pl="n" gnt="n">céad</A></E> (is|DECADE):OK
 # corpus
 <S>[Ss]na</S> <A pl="n" gnt="n">céad</A>:SEIMHIU
 # corpus; version of the "chéad+UNLENITED" rule below, but spelled "céad"
@@ -1877,36 +1902,45 @@ d?[Tt]h?rí <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a trí déag, trí X déag
 <A pl="n" gnt="n">[Tt]rí [Dd]éag</A>:INPHRASE{a trí déag, trí X déag}
 # [Aa] <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
+# CO17 9.2.3(b): in the counting-number system above 10,000 the number is followed
+# by míle unchanged (trí déag míle, ceithre chéad caoga a dó).
+<E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E> míle:OK
 g?[Cc]h?eathair <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a ceathair déag, ceithre X déag}
 <A pl="n" gnt="n">[Aa] [Cc]eathair</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a ceathair déag, ceathair X déag}
 <A pl="n" gnt="n">[Cc]eathair [Dd]éag</A>:INPHRASE{a ceathair déag, ceithre X déag}
 # [Aa] <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
+<E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E> míle:OK
 g?[Cc]h?úig <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a cúig déag, cúig X déag}
 <A pl="n" gnt="n">[Aa] [Cc]úig</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a cúig déag, cúig X déag}
 <A pl="n" gnt="n">[Cc]úig [Dd]éag</A>:INPHRASE{a cúig déag, cúig X déag}
 # [Aa] <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
+<E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E> míle:OK
 [Ss]h?é <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a sé déag, sé X déag}
 <A pl="n" gnt="n">[Aa] [Ss]é</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a sé déag, sé X déag}
 <A pl="n" gnt="n">[Ss]é [Dd]éag</A>:INPHRASE{a sé déag, sé X déag}
 # [Aa] <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
+<E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E> míle:OK
 [Ss]h?eacht <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a seacht déag, seacht X déag}
 <A pl="n" gnt="n">[Aa] [Ss]eacht</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a seacht déag, seacht X déag}
 <A pl="n" gnt="n">[Ss]eacht [Dd]éag</A>:INPHRASE{a seacht déag, seacht X déag}
 # [Aa] <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
+<E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E> míle:OK
 h?[Oo]cht <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a hocht déag, ocht X déag}
 <A pl="n" gnt="n">[Aa] h[Oo]cht</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a hocht déag, ocht X déag}
 <A pl="n" gnt="n">[Oo]cht [Dd]éag</A>:INPHRASE{a hocht déag, ocht X déag}
 # [Aa] <E><A pl="n" gnt="n">h[Oo]cht [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Oo]cht [Dd]éag</A></E>:OK
+<E><A pl="n" gnt="n">[Oo]cht [Dd]éag</A></E> míle:OK
 [Nn]aoi <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a naoi déag, naoi X déag}
 <A pl="n" gnt="n">[Aa] [Nn]aoi</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a naoi déag, naoi X déag}
 <A pl="n" gnt="n">[Nn]aoi [Dd]éag</A>:INPHRASE{a naoi déag, naoi X déag}
 # [Aa] <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
+<E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E> míle:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">m[Bb]liain</N>:BACHOIR{mbliana}
@@ -4168,7 +4202,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <P>pé</P> <NG>ANYTHING</NG>:OK
 <E><S>[Dd]á</S> <N pl="n" gnt="y" gnd="f">ANYTHING</N></E> <P>ANYTHING</P>:OK
 <E><S>[Dd]á</S> <N pl="n" gnt="y" gnd="f">ANYTHING</N></E> <T>ANYTHING</T>:OK
-<E><S>[Dd]á</S> <N pl="n" gnt="y" gnd="f">ANYTHING</N></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
+<E><S>[Dd]á</S> <N pl="n" gnt="y" gnd="f">ANYTHING</N></E> <[GU]>[Aa]</[GU]> <V>ANYTHING</V>:OK
 # exception to 2nd exception above
 <S>[Gg]o dtí</S> <NG>ANYTHING</NG>:NOGENITIVE
 #. An raibh mórán daoine ag an tsiopa?
@@ -4194,7 +4228,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <V cop="y">is</V> <D>REGULARPOSS</D> <NG>ANYTHING</NG>:OK
 # Some comparatives are tagged as genitive nouns (bhinne, dheacra). After dá,
 # only the feminine genitive singular, the form a comparative takes.
-<E>ANYTHING <D>[Aa]</D> <NG>ANYTHING</NG></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
+<E>ANYTHING <D>[Aa]</D> <NG>ANYTHING</NG></E> <[GU]>[Aa]</[GU]> <V>ANYTHING</V>:OK
 # in phrases; see OD deo.  Temporarily disabled since <R> out of main rule
 #. Go deo na ndeor, go deo na díleann (OK).
 # <R>[Gg]o deo</R> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
@@ -4211,8 +4245,8 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 # The comparative, which has the form of the feminine genitive, after dá or a.
 <E><S>[Dd]á</S> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E> <P>ANYTHING</P>:OK
 <E><S>[Dd]á</S> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E> <T>ANYTHING</T>:OK
-<E><S>[Dd]á</S> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
-<E><D>[Aa]</D> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
+<E><S>[Dd]á</S> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E> <[GU]>[Aa]</[GU]> <V>ANYTHING</V>:OK
+<E><D>[Aa]</D> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E> <[GU]>[Aa]</[GU]> <V>ANYTHING</V>:OK
 <S>ANYTHING</S> <N>ANYTHING</N> <AG>ANYTHING</AG>:NOGENITIVE
 <S>ANYTHING</S> <N>ANYTHING</N> <A pl="n" gnt="y" gnd="f">(lúide|móide)</A>:OK
 <S>ANYTHING</S> <N>ANYTHING</N> <A pl="n" gnt="y" gnd="f">INITIALBAPOST</A>:OK
@@ -4338,6 +4372,7 @@ g?[Cc]h?eithre <E><NWITHH>hairde</NWITHH></E>:OK
 # CB p.23 #11.a.ix
 #. Tá sé i gcóip a rinneadh i lár na cúigiú haoise déag (OK).
 <A>ORDINALADJ</A> <E><NWITHH>ANYTHING</NWITHH></E>:OK
+<N>([Mm]íliú|[Mm]illiúnú)</N> <E><NWITHH>ANYTHING</NWITHH></E>:OK
 <N>t-([Aa]onú|[Oo]chtú)</N> <E><NWITHH>ANYTHING</NWITHH></E>:OK
 <T>[Aa]n</T> <N>[Cc]eathrú</N> <E><NWITHH>ANYTHING</NWITHH></E>:OK
 # CB p.23 #11.a.ii
@@ -4488,7 +4523,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 # The lenited adjective, after dá (after a, the possessive allows it).
 <S>[Dd]á</S> <E><A>LENITED</A></E> <P>ANYTHING</P>:OK
 <S>[Dd]á</S> <E><A>LENITED</A></E> <T>ANYTHING</T>:OK
-<S>[Dd]á</S> <E><A>LENITED</A></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
+<S>[Dd]á</S> <E><A>LENITED</A></E> <[GU]>[Aa]</[GU]> <V>ANYTHING</V>:OK
 # Bríd bheag
 <Y>ANYTHING</Y> <E><A>LENITED</A></E>:OK
 # CO17 3.1.5: a trade name used as a qualifier between a feminine noun and its
@@ -4535,8 +4570,8 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 <[CDST]>ANYTHING</[CDST]> <E><A>ORDINALADJ</A></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>[Dd]hara</A></E>:OK
 # next three rules handle nouns preceded by 2-19
-<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|h?[Oo]cht|[Nn]aoi|n?[Dd]h?eich)</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
-<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|h?[Oo]cht|[Nn]aoi|n?[Dd]h?eich)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|(h|n-)?[Oo]cht|[Nn]aoi|n?[Dd]h?eich)</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|(h|n-)?[Oo]cht|[Nn]aoi|n?[Dd]h?eich)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
 <A>TWOTONINETEEN</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
 ######## Adjective lenited after a singular noun preceded by trí to deich (CO17 10.3.1(d)(ii))
 # ga.py 10.3.1.d.ii. The rules above need the number tagged as one; trí is
@@ -4608,6 +4643,11 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 # fiche, milliún, tríocha, etc. tagged as <N> so no need for exception
 <T>[Aa]n</T> <A pl="n" gnt="n">([Aa]on|g?[Cc]h?éad|[Dd]á|[Dd]ara|[Uu]ile|[Mm]íle)</A>:OK
 <E><T>[Aa]n</T> <A pl="n" gnt="n">(trí|ceithre|cúig|sé|seacht|naoi|deich)</A></E> <N pl="n" gnt="n" gnd="m">(mhíle|mh?illiún)</N>:OK
+# CO17 9.5.3: also before míliú and milliúnú (an deich míliú lá), and before míle
+# after seacht, naoi, deich, which do not lenite it (an seacht míle, dhá chéad is
+# naoú méadar déag), as for gcéad below.
+<E><T>[Aa]n</T> <A pl="n" gnt="n">(trí|ceithre|cúig|sé|seacht|naoi|deich)</A></E> mh?(íliú|illiúnú):OK
+<E><T>[Aa]n</T> <A pl="n" gnt="n">(seacht|naoi|deich)</A></E> míle:OK
 <T>[Aa]n</T> <A pl="n" gnt="n">CHEADCOMPOUND</A>:OK
 <E><T>[Aa]n</T> <A pl="n" gnt="n">(seacht|naoi|deich)</A></E> <A pl="n" gnt="n">gcéad</A>:OK
 <T>ANYTHING</T> <[^AFNXY]>ANYTHING</[^AFNXY]>:CUPLA
@@ -4638,7 +4678,7 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 # dá + adjective, reported as an unusual combination.
 <E><S>[Dd]á</S> <A>ANYTHING</A></E> <P>ANYTHING</P>:OK
 <E><S>[Dd]á</S> <A>ANYTHING</A></E> <T>ANYTHING</T>:OK
-<E><S>[Dd]á</S> <A>ANYTHING</A></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
+<E><S>[Dd]á</S> <A>ANYTHING</A></E> <[GU]>[Aa]</[GU]> <V>ANYTHING</V>:OK
 # i 1995
 <S>ANYTHING</S> <A>POSITIVEINT</A>:OK
 <S>ANYTHING</S> <A>níos mó</A>:OK

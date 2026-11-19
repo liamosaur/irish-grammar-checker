@@ -120,7 +120,8 @@ s/LENITEDBMP/(?:[MmPp][Hh]|[Bb][Hh][^fF])[^<]+/g;
 s/MUTATEDDST/(?:n[Dd]|d[Tt]|[DdSsTt][Hh])[^<]+/g;
 s/LENITEDDFST/[DdFfSsTt][Hh][^<]+/g;
 s/LENITEDDST/[DdSsTt][Hh][^<]+/g;
-s/LENITED/(?:[CcDdFfGgMmPpSsTt][Hh]|[Bb]h[^fF])[^<]+/g;
+# bh then any letter but f (bhó, bhean); the other letters then h and at least one more.
+s/LENITED/(?:[CcDdFfGgMmPpSsTt][Hh][^<]+|[Bb]h[^fF<][^<]*)/g;
 # don't allow spaces; "ribí róibéis" is tagged as plural noun!
 s/SLENDERFINALCONSONANT/[^< ]*[eéií][^aeiouáéíóú<]+/g;
 s/BROADFINALCONSONANT/[^< ]*[aáoóuú][^aeiouáéíóú<]+/g;
@@ -214,6 +215,9 @@ s/VNUNIT/(?:g?[Cc]h?(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]h
 # The words that take h after the copula ní (CO17 10.11.8, Table 10E, 10.12.2).
 # (grammar/rialacha-ga.in)
 s/NIHWORDS/(?:áibhéil|áil|éigean|eol|ionadh|iontas|ualach|acmhainn|aitheanta|aithnid|éadáil|ealaín|amháin|aon|ionann|iondúil|amhlaidh|annamh|eagal|oircheas)/g;
+# The multiples of ten from fiche to nócha, with any initial mutation (CO17
+# 9.3.9). (grammar/rialacha-ga.in, grammar/aonchiall-ga.in)
+s/DECADE/(?:(?:bh)?[Ff]iche|d?[Tt]h?ríocha|n?[Dd]h?aichead|g?[Cc]h?aoga|[Ss]easca|[Ss]eachtó|h?[Oo]chtó|n?[Nn]ócha)/g;
 # The forms of bí that begin a clause with a subject and a predicate (Tá an
 # aimsir fuar; Tá téarmaí an Achta soiléir): used to recognise a predicative
 # adjective at the end of the clause. (grammar/rialacha-ga.in)
