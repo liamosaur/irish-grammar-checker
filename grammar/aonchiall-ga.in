@@ -670,6 +670,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # s?na=>plural
 <T>[Nn]a</T> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>[Nn]a</T> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+# a masculine noun after na with no plural nominative is a genitive plural (teacht na neach
+# neamhshaolta: CO17 2.1.3(b)), not a singular
+<T>[Nn]a</T> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <S>[Ss]na</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>[Ss]na</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # "saol pearsanta an iománaí";  compare PREFIXT rule in rialacha-ga.in

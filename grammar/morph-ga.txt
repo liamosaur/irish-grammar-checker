@@ -650,6 +650,10 @@ ains$			ann		1	<V p="y" t="láith">	<&> # glanains = glanann tú
 ^cói(mh[eéií])		$1		0	<[ANV].*>	<&>
 ^có(n[aáoóuú])		$1		0	<[ANV].*>	<&>
 ^cói(n[eéií])		$1		0	<[ANV].*>	<&>
+# CO17 2.1.7(d): a hyphen after do-, fo-, so- before bha-, bhla-, bhra-, dha-, gha-,
+# ghla-, ghra-, mha- (do-ghlanta, fo-bhaile, so-mharaithe); before ^fo-(..) below, which
+# reports any other hyphen after fo-.
+^[dfs]o-((bh[lr]?|dh|gh[lr]?|mh)a)	$1	0	<[ANV].*>	<&>
 ^do-([aeiouáéíóú])	$1		0	<[AN].*>	<&>
 # ^do([lnr]) BELOW
 ^do([bcdfgmpt]h)	$1		0	<[AN].*>	<&>
@@ -741,6 +745,8 @@ ains$			ann		1	<V p="y" t="láith">	<&> # glanains = glanann tú
 ^so([bcdfgmpt]h.)	$1		0	<[AN].*>	<&>
 ^so(sh[aeiouáéíóúlnr].)	$1		0	<[AN].*>	<&>
 ^so(s[^aeiouáéíóúlnrh]..)	$1		0	<[AN].*>	<&>
+# CO17 2.1.7 Nóta: a prefix keeps a hyphen before a compound that has one (iar-nua-aimseartha).
+^h?(ain|ath|comh|do|droch|fíor|for|fo|frith|iar|sain|so|tras)-([^-]+-.)	$2	0	<[ANV].*>	<&>
 ^tras([^bcfghmnps-])	$1		0	<[ANV].*>	<&>   # leave "^trasn" alone
 ^tras([bcfgmp]h)	$1		0	<[ANV].*>	<&>
 ^tras-(s)		$1		0	<[ANV].*>	<&>

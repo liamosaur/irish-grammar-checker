@@ -68,6 +68,12 @@ export interface GramadoirOptions {
    * CORASLARNACH (src/datives.ts). Off by default, as it is not in the Perl library.
    */
   datives?: boolean;
+  /**
+   * For a word whose only fault is a hyphen after a prefix (fo-ráiteas), give the word without it
+   * (foráiteas) as the correction, not the root (ráiteas). On by default; the Perl library gives
+   * the root, so the parity tests turn it off.
+   */
+  hyphenFix?: boolean;
 }
 
 function toMap(o: Record<string, string>): Map<string, string> {
@@ -101,7 +107,7 @@ export class Gramadoir {
   private foldIndex: Map<string, string[]>[] | null = null;
 
   constructor(data: GramadoirData, opts: GramadoirOptions = {}) {
-    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, ...opts };
+    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, ...opts };
     this.focail = data.lexicon.map(toMap);
     this.eile = toMap(data.eile);
     this.earraidi = toMap(data.earraidi);
@@ -173,11 +179,23 @@ export class Gramadoir {
     return '';
   }
 
+  /**
+   * For a word whose only fault is a hyphen (fo-ráiteas): the word without its first hyphen, if
+   * that is a standard word or one formed regularly from one. The morphology finds the root
+   * (ráiteas) by taking the prefix off too, so the root alone is not the correction.
+   */
+  private withoutHyphen(original: string): string | null {
+    if (!this.opts.hyphenFix || !original.includes('-')) return null;
+    const joined = original.replace('-', '');
+    const got = this.tagRecurse(joined, joined, -1, { v: '' }, 6);
+    return got && (!got.includes('<E') || got.startsWith('<E msg="MOIRF{')) ? joined : null;
+  }
+
   private lookup(original: string, current: string, level: number, posans: PosAns): string {
     posans.v = this.cleanLookup(current);
     if (posans.v) {
       if (level === 0) return `<E msg="MOIRF{${current}}"><X>${original}</X></E>`;
-      if (level === 1) return `<E msg="CAIGHDEAN{${current}}"><X>${original}</X></E>`;
+      if (level === 1) return `<E msg="CAIGHDEAN{${this.withoutHyphen(original) ?? current}}"><X>${original}</X></E>`;
       if (level === 2) return `<E msg="DROCHMHOIRF{${current}}"><X>${original}</X></E>`;
       return '<X>';
     }

@@ -33,7 +33,7 @@ a word's possible tags), `comhshuite-ga.in` (phrases tagged as one word) and
 Gramadóir checkout. The rules follow *An Caighdeán Oifigiúil* (2017);
 `node tools/upstream-diff.mjs .sources/gramadoir` lists the changes since the
 An Gramadóir commit they came from. Rules can also use `CLAUSESTART`,
-`AFTERFEMNAME` (first word) and `CLAUSEEND` (last word), which the rule
+`AFTERFEMNAME`, `AFTERMANNERNOUN` (first word) and `CLAUSEEND` (last word), which the rule
 compiler cannot express; see `generate-rules.mjs`. Also in `grammar/`:
 `morph-ga.txt`, the morphology rules (read by `build-data.mjs`; level -2, not in
 An Gramadóir 0.70, marks a regular inflection such as an emphatic suffix, which

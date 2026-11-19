@@ -918,6 +918,12 @@ DECADE <NP>ANYTHING</NP>:UATHA
 #  catch now for better message than rule that follows
 #  "Cén fáth a bhí tú" would give "BACHOIR{ar}" otherwise
 <H>[Aa]</H> <VPAST>ABSPASTVERB</VPAST>:RELATIVE
+# After áit, fáth, caoi and the like used adverbially the clause is indirect (ar + past),
+# but direct when the noun is the object of the verb (CO17 11.3.1(h) and its Nóta: Cén
+# fáth ar imigh siad?; Cad é an áit a cheannaigh sé?). The words cannot tell which: a hint.
+AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
+<H>[Aa]</H> <VPAST>PASTNORFORM</VPAST>:OK
+<H>[Aa]</H> <VPAST>PASTNORFORMLEN</VPAST>:OK
 # rule below, analogue of "cár", "níor", etc. (CB p.132 #5)
 # does not hold in general because "a" can also be the direct relative
 # conjunction, CB p. 132 #8; so can't have it with <U>a</U>...

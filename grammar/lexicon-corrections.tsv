@@ -125,3 +125,7 @@ cuirfeas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags cuirf
 gheobhas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags gheobhaidh
 rachas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags rachaidh
 thiocfas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags thiocfaidh
+# Old datives kept in set phrases (CO17 2.3.3(b): imithe le gealaigh; 2.7 Nóta: ar athló).
+gealaigh	<N pl="n" gnt="d">	CO17 2.3.3(b), the old dative of gealach in imithe le gealaigh; tagged as the word list tags láimh
+athló	<N pl="n" gnt="d">	CO17 2.7 Nóta, the old dative of lá in ar athló; tagged as the word list tags láimh
+so-mharaithe	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	FGB: so-mharaithe, a3. Easy to kill (CO17 2.1.7(d)); listed with no tags (rare); tagged as the word list tags nua-aimseartha, a3

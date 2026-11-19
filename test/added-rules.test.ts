@@ -154,6 +154,14 @@ const cases: Case[] = [
   { section: '11.6.2(a)', text: 'Sin é an stáisiún nach craoladh an clár.', rule: 'BACHOIR', words: 'nach craoladh', fixed: 'Sin é an stáisiún nár craoladh an clár.' },
   // the dependent form after fáth, which the interjected clause exception leaves alone
   { section: '11.3.1(h)', text: 'Cén fáth a chuaigh siad ann?', rule: 'RELATIVE', words: 'a chuaigh', fixed: null },
+  // a hint after áit, fáth, caoi ...: ar unless the noun is the verb's object
+  { section: '11.3.1(h)', text: 'Cén áit a chuir tú é?', rule: 'WEAKBACHOIRAR', words: 'a chuir', fixed: 'Cén áit ar chuir tú é?' },
+  // a masculine genitive plural after na, but not a nominative
+  { section: '2.1.3(b)', text: 'Tá na neach anseo.', rule: 'NOGENITIVE', words: 'Tá na neach', fixed: null },
+  // a hyphen after fo- that 2.1.7(d) does not call for: the fix keeps the prefix
+  { section: '2.1.7(d)', text: 'Bhí fo-ráiteas ann.', rule: 'CAIGHDEAN', words: 'fo-ráiteas', fixed: 'Bhí foráiteas ann.' },
+  // an old dative outside its set phrase
+  { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
@@ -261,6 +269,10 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Sin é an bord ar ar leag mé an leabhar.', note: 'preposition ar before the relative particle ar (11.3.1(c)(i))' },
   { text: 'Is duine é ar mhór aige an t-airgead.', note: 'copula ar and a lenited adjective (11.8.3)' },
   { text: 'Sin é an fear a cheannós an teach.', note: 'relative form of the future (11.7.4(a))' },
+  { text: 'Chuala mé glór na neach.', note: 'masculine genitive plural like the nominative singular after na (2.1.3(b))' },
+  { text: 'Bhí fo-ghlantóir ann.', note: 'hyphen after fo- before gla- (2.1.7(d))' },
+  { text: 'Is duine iar-nua-aimseartha é.', note: 'a prefix keeps its hyphen before a hyphenated compound (2.1.7 Nóta)' },
+  { text: 'Bhí an cruinniú ar athló.', note: 'old dative in its set phrase (2.7 Nóta)' },
 ];
 
 let engine: Gramadoir | undefined;

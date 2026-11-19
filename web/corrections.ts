@@ -2,7 +2,7 @@
 // of main.ts so they can be tested without a browser.
 
 /** Rules whose message quotes the word that should replace the flagged one. */
-export const QUOTES_REPLACEMENT = new Set(['MICHEART', 'BACHOIR', 'CAIGHDEAN', 'IONADAI', 'MIMHOIRF', 'INPHRASE']);
+export const QUOTES_REPLACEMENT = new Set(['MICHEART', 'BACHOIR', 'WEAKBACHOIRAR', 'CAIGHDEAN', 'IONADAI', 'MIMHOIRF', 'INPHRASE']);
 
 export interface Part {
   text: string;
