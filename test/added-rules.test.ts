@@ -164,6 +164,8 @@ const cases: Case[] = [
   { section: '5.1.7', text: 'Rinneadh sé inné.', rule: 'BACHOIR', words: 'Rinneadh sé', fixed: 'Rinneadh é inné.' },
   // ag + verbal noun + pronoun, still read as a noun after the verb-before-pronoun tagging
   { section: '5.5', text: 'Bhí sé ag moladh mé.', rule: 'BACHOIR', words: 'ag moladh mé', fixed: null },
+  // a doubled direction outside a compass point (Tábla 6C)
+  { section: 'Tábla 6C', text: 'Chuaigh sé siar siar.', rule: 'DUBAILTE', words: 'siar siar', fixed: 'Chuaigh sé siar.' },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];
@@ -284,6 +286,7 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Fanfaidh mé ach a dtaga sé.', note: 'subjunctive after ach a (5.1.5(a)(i))' },
   { text: 'Bhí an long sí ar an bhfarraige.', note: 'sí the noun after the article and a noun (10.2.7)' },
   { text: 'An bhfuil sé ann?', note: 'interrogative an and an eclipsed verb before a pronoun' },
+  { text: 'Tá sé siar siar ó thuaidh.', note: 'a compass point between west and north-west (Tábla 6C)' },
 ];
 
 let engine: Gramadoir | undefined;

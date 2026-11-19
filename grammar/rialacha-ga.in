@@ -54,6 +54,14 @@ fada fada:OK
 mé mé:OK
 #. Fanann réalta chobhsaí ar feadh idir milliún agus milliún milliún bliain (OK).
 milliún milliún:OK
+# The points between the main and the intercardinal points of the compass (CO17 Tábla 6C:
+# siar siar ó dheas, thiar thiar theas, aniar aniar aneas; ó dheas is one token).
+<E>siar siar</E> ó.(dheas|thuaidh):OK
+<E>soir soir</E> ó.(dheas|thuaidh):OK
+<E>thiar thiar</E> (theas|thuaidh):OK
+<E>thoir thoir</E> (theas|thuaidh):OK
+<E>aniar aniar</E> (aneas|aduaidh):OK
+<E>anoir anoir</E> (aneas|aduaidh):OK
 Late Late:OK
 #. Bhíodh an-tóir ar spíosraí go mór mór (OK).
 #. Bhí an dara cupán tae ólta agam nuair a tháinig an fear mór mór.
