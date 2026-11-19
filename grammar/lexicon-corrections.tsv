@@ -129,3 +129,18 @@ thiocfas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags thioc
 gealaigh	<N pl="n" gnt="d">	CO17 2.3.3(b), the old dative of gealach in imithe le gealaigh; tagged as the word list tags láimh
 athló	<N pl="n" gnt="d">	CO17 2.7 Nóta, the old dative of lá in ar athló; tagged as the word list tags láimh
 so-mharaithe	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	FGB: so-mharaithe, a3. Easy to kill (CO17 2.1.7(d)); listed with no tags (rare); tagged as the word list tags nua-aimseartha, a3
+# Forms CO17 gives that the word list has only as non-standard.
+dheineamar	<V p="y" t="caite">	CO17 Tábla 5R (past of déan, second form); tagged as the word list tags rinneamar
+deineadh	<V p="n" t="caite">	CO17 Tábla 5R (autonomous past of déan, second form); tagged as the word list tags rinneadh
+codalta	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.3.2(a), verbal adjective of codail; tagged as the word list tags codailte
+# Verbs CO17 conjugates that the word list has with no tags (so reported as rare).
+cneáigh	<V p="y" t="ord">	root of a verb conjugated like báigh (CO17 5.2.3 A(a)); tagged as the word list tags báigh
+cneáim	<V p="y" t="ord"><V p="y" t="láith">	CO17 5.2.3 A(a); tagged as the word list tags báim
+cneáite	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	verbal adjective (CO17 5.2.3 A(a)); tagged with the adjective tags the word list gives báite
+crúigh	<V p="y" t="ord">	root of a verb conjugated like brúigh (CO17 5.2.3 A(a)); tagged as the word list tags brúigh
+crúim	<V p="y" t="ord"><V p="y" t="láith">	CO17 5.2.3 A(a); tagged as the word list tags brúim
+buígh	<V p="y" t="ord">	root of a verb conjugated like cloígh (CO17 5.2.3 B(c)); tagged as the word list tags cloígh
+buím	<V p="y" t="ord"><V p="y" t="láith">	CO17 5.2.3 B(c); tagged as the word list tags cloím
+buíte	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	verbal adjective (CO17 5.2.3 B(c)); tagged with the adjective tags the word list gives cloíte
+righ	<V p="y" t="ord">	root of a verb conjugated like figh (CO17 5.2.3 B(c)); tagged as the word list tags figh
+athchomhairligh	<V p="y" t="ord">	CO17 5.1.4(b), conjugated like comhairligh; tagged with the verb tag the word list gives comhairligh

@@ -27,25 +27,27 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfuil → fuil	a	An é FSS a fuil freagracht air as cúrsaí sláinte?	An é FSS a bhfuil freagracht air as cúrsaí sláinte?	3	3.2.2	42	11	flagged:CLAOCHLU
 	eclipsis	bhfuil → fuil	a	Nach iad sin na CINanna a fuil dea-cháil orthu?	Nach iad sin na CINanna a bhfuil dea-cháil orthu?	3	3.2.3	43	26	flagged:CLAOCHLU
 	eclipsis	bhfuil → fuil	a	Tugadh aitheantas do ÍMAT mar chóras cánach a fuil ag éirí go maith leis.	Tugadh aitheantas do ÍMAT mar chóras cánach a bhfuil ag éirí go maith leis.	3	3.2.1	41	46	-
-	eclipsis	bhfuil → fuil	a	Cén chaoi a fuil tú, a athair beag?	Cén chaoi a bhfuil tú, a athair beag?	4	4.3.3	59	12	flagged:WEAKBACHOIRAR
+	eclipsis	bhfuil → fuil	a	Cén chaoi a fuil tú, a athair beag?	Cén chaoi a bhfuil tú, a athair beag?	4	4.3.3	59	12	flagged:URU
 	eclipsis	bhfuil → fuil	a	Cé aige a fuil na ticéid?	Cé aige a bhfuil na ticéid?	8	8.5.5	140	10	-
 	eclipsis	bhfuil → fuil	a	Céard faoi a fuil sibh ag caint?	Céard faoi a bhfuil sibh ag caint?	8	8.5.5	140	13	flagged:CLAOCHLU
-	eclipsis	bhfuil → fuil	a	an áit a fuil sibh in bhur gcónaí	an áit a bhfuil sibh in bhur gcónaí	10	10.6.4	189	9	flagged:WEAKBACHOIRAR
-	eclipsis	bhfuil → fuil	a	Cén chaoi a fuil tú?	Cén chaoi a bhfuil tú?	11	11.3.1(h)	208	12	flagged:WEAKBACHOIRAR
+	eclipsis	bhfuil → fuil	a	an áit a fuil sibh in bhur gcónaí	an áit a bhfuil sibh in bhur gcónaí	10	10.6.4	189	9	flagged:URU
+	eclipsis	bhfuil → fuil	a	Cén chaoi a fuil tú?	Cén chaoi a bhfuil tú?	11	11.3.1(h)	208	12	flagged:URU
 	eclipsis	bhfuil → fuil	a	Faigheann sí gach a fuil ag teastáil.	Faigheann sí gach a bhfuil ag teastáil.	11	11.9	218	20	flagged:URU
-	eclipsis	bhfuil → fuil	a	Ní maith liom an tslí a fuil sé á chur i bhfeidhm.	Ní maith liom an tslí a bhfuil sé á chur i bhfeidhm.	11	11.9	218	24	flagged:WEAKBACHOIRAR
-	eclipsis	bhfuil → fuil	a	Sin an dóigh a fuil sé anois.	Sin an dóigh a bhfuil sé anois.	11	11.9	218	15	flagged:WEAKBACHOIRAR
+	eclipsis	bhfuil → fuil	a	Ní maith liom an tslí a fuil sé á chur i bhfeidhm.	Ní maith liom an tslí a bhfuil sé á chur i bhfeidhm.	11	11.9	218	24	flagged:URU
+	eclipsis	bhfuil → fuil	a	Sin an dóigh a fuil sé anois.	Sin an dóigh a bhfuil sé anois.	11	11.9	218	15	flagged:URU
 	eclipsis	bhfuil → fuil	a	Tabhair sin don bhuachaill a fuil slaghdán air.	Tabhair sin don bhuachaill a bhfuil slaghdán air.	11	11.1.5	203	29	flagged:CLAOCHLU
 	eclipsis	bhfuilimid → fuilimid	a	Sin é an ní a fuilimid chun é a dhíol.	Sin é an ní a bhfuilimid chun é a dhíol.	11	11.6.1(b)(i)	210	14	flagged:CLAOCHLU
 	eclipsis	bpáircsean → páircsean	a	a páircsean	a bpáircsean	8	8.3.1	133	2	-
 	eclipsis	bpósta → pósta	a	Bhí a gcairde ag beannú a pósta.	Bhí a gcairde ag beannú a bpósta.	3	3.3.4	48	26	-
 	eclipsis	bpósta → pósta	a	Tá an lánúin óg ar tí a pósta.	Tá an lánúin óg ar tí a bpósta.	3	3.3.2	45	24	-
 	eclipsis	dtabharfaidh → tabharfaidh	a	Cé dó a tabharfaidh sé é?	Cé dó a dtabharfaidh sé é?	7	7.3.1	125	8	flagged:CLAOCHLU
+	eclipsis	dtaga → taga	a	Gheobhaimid an scéal ceart ach a taga Pól	Gheobhaimid an scéal ceart ach a dtaga Pól	5	5.1.5(a)	69	33	flagged:CLAOCHLU
 	eclipsis	dteach → teach	a	a teach siadsan	a dteach siadsan	8	8.3.2	133	2	-
 	eclipsis	dtéadh → téadh	a	Nach é sin an fear a téadh a pháistí go dtí na cluichí go léir?	Nach é sin an fear a dtéadh a pháistí go dtí na cluichí go léir?	11	11.6.1(b)(i)	210	21	-
 	eclipsis	dtéann → téann	a	An í sin an bhean a téann a hiníon go dtí na cluichí go léir?	An í sin an bhean a dtéann a hiníon go dtí na cluichí go léir?	11	11.6.1(b)(i)	210	20	flagged:CLAOCHLU
 	eclipsis	dteastaíonn → teastaíonn	a	Sin í an pháirc a teastaíonn uainn fál a thógáil idir í agus an bóthar.	Sin í an pháirc a dteastaíonn uainn fál a thógáil idir í agus an bóthar.	11	11.3.1(e)	207	18	flagged:CLAOCHLU
 	eclipsis	dteastódh → teastódh	a	Tá a teastódh uait i mbanna ceoil acu.	Tá a dteastódh uait i mbanna ceoil acu.	10	10.8.1	191	5	-
+	eclipsis	dtiocfaidh → tiocfaidh	a	Gheobhaimid an scéal ceart ach a tiocfaidh Pól	Gheobhaimid an scéal ceart ach a dtiocfaidh Pól	5	5.1.5(a)	69	33	flagged:CLAOCHLU
 	eclipsis	dtoghtar → toghtar	a	Cén tslí a toghtar comhaltaí an tSeanaid?	Cén tslí a dtoghtar comhaltaí an tSeanaid?	11	11.9	218	11	flagged:URU
 	eclipsis	dtugtar → tugtar	a	Is é sin an fear a tugtar aire dó san ionad cónaithe.	Is é sin an fear a dtugtar aire dó san ionad cónaithe.	10	10.8.1	190	19	flagged:CLAOCHLU
 	eclipsis	dtuilleann → tuilleann	a	Ólann sé a tuilleann sé.	Ólann sé a dtuilleann sé.	11	11.9	218	11	flagged:CLAOCHLU
@@ -133,15 +135,15 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfuil → fuil	An	An fuil an cur chuige bunaithe ar an Ionstraim Eorpach Aonair?	An bhfuil an cur chuige bunaithe ar an Ionstraim Eorpach Aonair?	3	3.2.1	42	3	flagged:SEIMHIU
 	eclipsis	bhfuil → fuil	An	An fuil an fhoráil sin faoi réir aon chomhaontuithe fostaíochta?	An bhfuil an fhoráil sin faoi réir aon chomhaontuithe fostaíochta?	3	3.3.10	52	3	flagged:SEIMHIU
 	eclipsis	bhfuil → fuil	An	An fuil an tArd-Rúnaí ag dréachtú an ordaithe?	An bhfuil an tArd-Rúnaí ag dréachtú an ordaithe?	3	3.3.4	48	3	flagged:SEIMHIU
-	eclipsis	bhfuil → fuil	An	An fuil sé chun iomáint le Corcaigh?	An bhfuil sé chun iomáint le Corcaigh?	3	3.3.3	46	3	flagged:SEIMHIU
+	eclipsis	bhfuil → fuil	An	An fuil sé chun iomáint le Corcaigh?	An bhfuil sé chun iomáint le Corcaigh?	3	3.3.3	46	3	flagged:URU
 	eclipsis	bhfuil → fuil	An	An fuil sí ag imirt peile leis na comharsana?	An bhfuil sí ag imirt peile leis na comharsana?	3	3.3.5	49	3	flagged:URU
 	eclipsis	bhfuil → fuil	An	An fuil sí ag imirt peile?	An bhfuil sí ag imirt peile?	3	3.3.5	49	3	flagged:URU
 	eclipsis	bhfuil → fuil	An	An fuil sí ag réiteach aon straitéis chun déileáil leis?	An bhfuil sí ag réiteach aon straitéis chun déileáil leis?	3	3.3.9	51	3	flagged:URU
 	eclipsis	bhfuil → fuil	An	An fuil siad ag geallúint an airgid dúinn?	An bhfuil siad ag geallúint an airgid dúinn?	3	3.3.2	45	3	flagged:URU
 	eclipsis	bhfuil → fuil	An	An fuil siad ag tógáil aon fhoirgnimh faoi láthair?	An bhfuil siad ag tógáil aon fhoirgnimh faoi láthair?	3	3.3.9	51	3	flagged:URU
-	eclipsis	bhfuil → fuil	An	An fuil tú ag iarraidh éirí?	An bhfuil tú ag iarraidh éirí?	3	3.3.4	47	3	flagged:SEIMHIU
-	eclipsis	bhfuil → fuil	An	An fuil tú ag iarraidh pósadh?	An bhfuil tú ag iarraidh pósadh?	3	3.3.4	47	3	flagged:SEIMHIU
-	eclipsis	bhfuil → fuil	An	An fuil tú ag iarraidh suí?	An bhfuil tú ag iarraidh suí?	3	3.3.4	47	3	flagged:SEIMHIU
+	eclipsis	bhfuil → fuil	An	An fuil tú ag iarraidh éirí?	An bhfuil tú ag iarraidh éirí?	3	3.3.4	47	3	flagged:URU
+	eclipsis	bhfuil → fuil	An	An fuil tú ag iarraidh pósadh?	An bhfuil tú ag iarraidh pósadh?	3	3.3.4	47	3	flagged:URU
+	eclipsis	bhfuil → fuil	An	An fuil tú ag iarraidh suí?	An bhfuil tú ag iarraidh suí?	3	3.3.4	47	3	flagged:URU
 	eclipsis	bhfuil → fuil	An	An fuil Tuarascáil Bhliantúil 2015 réidh?	An bhfuil Tuarascáil Bhliantúil 2015 réidh?	3	3.1.8	39	3	flagged:SEIMHIU
 	eclipsis	bhfuil → fuil	An	An fuil an bhean sin saibhir?	An bhfuil an bhean sin saibhir?	4	4.11	67	3	flagged:SEIMHIU
 	eclipsis	bhfuil → fuil	An	An fuil an té arb eol dó an freagra sa seomra?	An bhfuil an té arb eol dó an freagra sa seomra?	7	7.2.4	123	3	flagged:SEIMHIU
@@ -157,6 +159,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bPiarsach → Piarsach	an	Dán leis an Piarsach is ea A Éin Bhig.	Dán leis an bPiarsach is ea A Éin Bhig.	10	10.3.1	183	12	-
 	eclipsis	bpróiseas → próiseas	an	Tá súil ag na Náisiúin Aontaithe go mbeidh dea-thoradh ar an próiseas.	Tá súil ag na Náisiúin Aontaithe go mbeidh dea-thoradh ar an bpróiseas.	3	3.2.1	42	61	flagged:CLAOCHLU
 	eclipsis	bpróiseas → próiseas	an	Dúirt Séamas Ó hUiginn go raibh sé sásta leis an próiseas.	Dúirt Séamas Ó hUiginn go raibh sé sásta leis an bpróiseas.	10	10.11.5	194	49	flagged:CLAOCHLU
+	eclipsis	dtabharfadh → tabharfadh	An	An tabharfadh sí síob chun na scoile duit?	An dtabharfadh sí síob chun na scoile duit?	5	5.4.5(a)	88	3	-
 	eclipsis	dteastaíonn → teastaíonn	An	An teastaíonn roinnt arán cruithneachta uait?	An dteastaíonn roinnt arán cruithneachta uait?	3	3.3.11	53	3	flagged:URU
 	eclipsis	gcéad → céad	an	ar an céad duine	ar an gcéad duine	9	9.5.1	160	6	flagged:CLAOCHLU
 	eclipsis	gcéad → céad	an	leis an céad cheadúnas	leis an gcéad cheadúnas	9	9.5.1	160	8	flagged:CLAOCHLU
@@ -199,6 +202,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	ndearna → dearna	An	An dearna sí an dinnéar?	An ndearna sí an dinnéar?	8	8.2.4	132	3	flagged:BACHOIR
 	eclipsis	ndearna → dearna	An	An dearna siad an dinnéar?	An ndearna siad an dinnéar?	8	8.2.4	132	3	flagged:BACHOIR
 	eclipsis	ndúirt → dúirt	An	An dúirt sé go raibh sé i mbun eagarthóireacht air?	An ndúirt sé go raibh sé i mbun eagarthóireacht air?	3	3.3.10	52	3	flagged:URU
+	eclipsis	ndúirt → dúirt	An	An dúirt sé dada leatsa faoi?	An ndúirt sé dada leatsa faoi?	5	5.4.5(a)	88	3	flagged:URU
 	eclipsis	ngairdín → gairdín	an	tríd an gairdín breá	tríd an ngairdín breá	1	1.4.1	8	8	flagged:CLAOCHLU
 	eclipsis	ngarda → garda	an	fairis an garda béasach	fairis an ngarda béasach	1	1.4.1	8	10	flagged:CLAOCHLU
 	eclipsis	ngarda → garda	an	ag an garda cróga	ag an ngarda cróga	4	4.7	64	6	flagged:CLAOCHLU
@@ -244,8 +248,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-ainmniú → ainmniú	bhur	do bhur ainmniú	do bhur n-ainmniú	8	8.3.5	135	8	flagged:URU
 	eclipsis	n-aránsa → aránsa	bhur	bhur aránsa	bhur n-aránsa	8	8.3.1	133	5	flagged:URU
 	eclipsis	n-earraíse → earraíse	bhur	bhur earraíse	bhur n-earraíse	8	8.3.1	133	5	flagged:URU
+	eclipsis	bhfacamar → facamar	Cá	Cá facamar cheana é?	Cá bhfacamar cheana é?	5	5.4.5(a)	88	3	-
 	eclipsis	bhfios → fios	Cá	Cá fios dom?	Cá bhfios dom?	10	10.6.5	190	3	-
-	eclipsis	bhfuair → fuair	Cá	Cá fuair tú an t-airgead?	Cá bhfuair tú an t-airgead?	10	10.9.1	192	3	-
+	eclipsis	bhfuair → fuair	Cá	Cá fuair tú an t-airgead?	Cá bhfuair tú an t-airgead?	10	10.9.1	192	3	flagged:URU
 	eclipsis	bhfuil → fuil	Cá	Cá fuil an Príomh-Oifigeach Feidhmiúcháin?	Cá bhfuil an Príomh-Oifigeach Feidhmiúcháin?	1	1.1.5(a)	1	3	-
 	eclipsis	bhfuil → fuil	Cá	Cá fuil an t-ionad diúscartha crann Nollag?	Cá bhfuil an t-ionad diúscartha crann Nollag?	3	3.3.12	53	3	-
 	eclipsis	bhfuil → fuil	Cá	Cá fuil an tIonad Nuálaíochta Gnó?	Cá bhfuil an tIonad Nuálaíochta Gnó?	3	3.3.12	53	3	-
@@ -260,7 +265,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfuil → fuil	Cá	Cá fuil na daoine nár mhaith leo labhairt?	Cá bhfuil na daoine nár mhaith leo labhairt?	7	7.2.4	123	3	-
 	eclipsis	bhfuil → fuil	Cá	Cá fuil a cóipleabhar siúd?	Cá bhfuil a cóipleabhar siúd?	8	8.6.1	140	3	-
 	eclipsis	bhfuil → fuil	Cá	Cá fuil bhur gcuidse?	Cá bhfuil bhur gcuidse?	8	8.3.4	135	3	-
-	eclipsis	bhfuil → fuil	Cá	Cá fuil tú ag dul?	Cá bhfuil tú ag dul?	8	8.5.1	139	3	-
+	eclipsis	bhfuil → fuil	Cá	Cá fuil tú ag dul?	Cá bhfuil tú ag dul?	8	8.5.1	139	3	flagged:URU
 	eclipsis	bhfuil → fuil	Cá	Cá fuil bhur dtríú haiste don tionscadal?	Cá bhfuil bhur dtríú haiste don tionscadal?	10	10.7	190	3	-
 	eclipsis	bhfuil → fuil	Cá	Cá fuil an bhean ar bronnadh céim uirthi?	Cá bhfuil an bhean ar bronnadh céim uirthi?	11	11.6.1(b)(ii)	211	3	-
 	eclipsis	bhfuil → fuil	Cá	Cá fuil an madra a fuair sí?	Cá bhfuil an madra a fuair sí?	11	11.1.4	203	3	-
@@ -314,20 +319,69 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfilíocht → filíocht	faoin	An rud is deacra faoin filíocht, a léamh mar is cóir.	An rud is deacra faoin bhfilíocht, a léamh mar is cóir.	4	4.8.1	66	23	flagged:CLAOCHLU
 	eclipsis	bhfógra → fógra	faoin	faoin fógra práinneach	faoin bhfógra práinneach	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	gcóisir → cóisir	faoin	Ná habair dada leis faoin cóisir.	Ná habair dada leis faoin gcóisir.	10	10.14.1	196	26	flagged:CLAOCHLU
+	eclipsis	gcruinniú → cruinniú	faoin	Nár chuala tú faoin cruinniú?	Nár chuala tú faoin gcruinniú?	5	5.4.5(a)	88	20	flagged:CLAOCHLU
 	eclipsis	ngrian → grian	faoin	faoin grian bhreá	faoin ngrian bhreá	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	bhfuil → fuil	faoina	Cuir ríomhphost chugam faoina fuil socraithe agat.	Cuir ríomhphost chugam faoina bhfuil socraithe agat.	8	8.3.8	137	30	-
 	eclipsis	ndíolann → díolann	faoina	Is é sin an t-ainm faoina díolann sé earraí ar líne.	Is é sin an t-ainm faoina ndíolann sé earraí ar líne.	10	10.8.1	191	26	flagged:URU
 	eclipsis	bhfaca → faca	go	Sílim go faca mé iníon na mná sin ar an teilifís aréir.	Sílim go bhfaca mé iníon na mná sin ar an teilifís aréir.	11	11.3.1(e)	207	9	flagged:CAIGHDEAN
 	eclipsis	bhfaca → faca	go	Sin í an bhean a sílim go faca mé a hiníon ar an teilifís aréir.	Sin í an bhean a sílim go bhfaca mé a hiníon ar an teilifís aréir.	11	11.3.1(e)	207	26	flagged:CAIGHDEAN
+	eclipsis	bhfaighe → faighe	go	go faighe mé	go bhfaighe mé	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaighe → faighe	go	go faighe sé	go bhfaighe sé	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaighe → faighe	go	go faighe sí	go bhfaighe sí	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaighe → faighe	go	go faighe siad	go bhfaighe siad	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaighe → faighe	go	go faighe sibh	go bhfaighe sibh	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaighe → faighe	go	go faighe tú	go bhfaighe tú	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaighimid → faighimid	go	go faighimid	go bhfaighimid	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfaightear → faightear	go	go faightear	go bhfaightear	5	Tábla 5S	94	3	flagged:URU
+	eclipsis	bhfása → fása	go	Beidh tú ann nó go fása coincleach ort	Beidh tú ann nó go bhfása coincleach ort	5	5.1.5(a)	69	19	flagged:NEAMHCHOIT
+	eclipsis	bhfásfaidh → fásfaidh	go	Beidh tú ann nó go fásfaidh coincleach ort	Beidh tú ann nó go bhfásfaidh coincleach ort	5	5.1.5(a)	69	19	flagged:URU
 	eclipsis	bhféadfaidh → féadfaidh	go	Abair leis go féadfaidh sé imeacht.	Abair leis go bhféadfaidh sé imeacht.	10	10.8.2	191	14	flagged:URU
+	eclipsis	bhfeice → feice	go	Féach é go feice tú	Féach é go bhfeice tú	5	5.1.5(a)	69	11	flagged:CAIGHDEAN
+	eclipsis	bhfeice → feice	go	go feice mé	go bhfeice mé	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	eclipsis	bhfeice → feice	go	go feice sé	go bhfeice sé	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	eclipsis	bhfeice → feice	go	go feice sí	go bhfeice sí	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	eclipsis	bhfeice → feice	go	go feice siad	go bhfeice siad	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	eclipsis	bhfeice → feice	go	go feice sibh	go bhfeice sibh	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	eclipsis	bhfeice → feice	go	go feice tú	go bhfeice tú	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	eclipsis	bhfeicfidh → feicfidh	go	Féach é go feicfidh tú	Féach é go bhfeicfidh tú	5	5.1.5(a)	69	11	flagged:URU
 	eclipsis	bhfeicfimid → feicfimid	go	Nára fada go feicfimid a chéile arís.	Nára fada go bhfeicfimid a chéile arís.	7	7.4	130	13	flagged:URU
+	eclipsis	bhfeicimid → feicimid	go	go feicimid	go bhfeicimid	5	Tábla 5T	95	3	flagged:URU
+	eclipsis	bhfeictear → feictear	go	go feictear	go bhfeictear	5	Tábla 5T	95	3	flagged:URU
 	eclipsis	bhfios → fios	go	go fios dom	go bhfios dom	10	10.6.4	189	3	flagged:URU
 	eclipsis	bhfuil → fuil	go	Dúradh go fuil cobhsaíocht fhorais chreidmheasa an Stáit ríthábhachtach.	Dúradh go bhfuil cobhsaíocht fhorais chreidmheasa an Stáit ríthábhachtach.	3	3.3.1	44	10	other:GENITIVE
 	eclipsis	bhfuil → fuil	go	Is léir go fuil na mic léinn ag baint taitneamh as an oíche.	Is léir go bhfuil na mic léinn ag baint taitneamh as an oíche.	3	3.3.5	48	11	-
 	eclipsis	bhfuil → fuil	go	Ní léir dom go fuil siad ag déanamh aon iarracht.	Ní léir dom go bhfuil siad ag déanamh aon iarracht.	3	3.3.9	51	15	flagged:URU
+	eclipsis	bhfuil → fuil	go	go fuil mé	go bhfuil mé	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuil → fuil	go	go fuil sé	go bhfuil sé	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuil → fuil	go	go fuil sí	go bhfuil sí	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuil → fuil	go	go fuil siad	go bhfuil siad	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuil → fuil	go	go fuil sibh	go bhfuil sibh	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuil → fuil	go	go fuil tú	go bhfuil tú	5	Tábla 5P	91	3	flagged:URU
 	eclipsis	bhfuil → fuil	go	Deir sé go fuil na leabhair ghramadaí uile léite aige.	Deir sé go bhfuil na leabhair ghramadaí uile léite aige.	10	10.2.8	179	11	-
+	eclipsis	bhfuilim → fuilim	go	go fuilim	go bhfuilim	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuilimid → fuilimid	go	go fuilimid	go bhfuilimid	5	Tábla 5P	91	3	flagged:URU
+	eclipsis	bhfuiltear → fuiltear	go	go fuiltear	go bhfuiltear	5	Tábla 5P	91	3	flagged:CAIGHDEAN
+	eclipsis	dtaga → taga	go	go taga mé	go dtaga mé	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtaga → taga	go	go taga muid	go dtaga muid	5	Tábla 5A	71	3	flagged:URU
+	eclipsis	dtaga → taga	go	go taga sé	go dtaga sé	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtaga → taga	go	go taga sí	go dtaga sí	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtaga → taga	go	go taga siad	go dtaga siad	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtaga → taga	go	go taga sibh	go dtaga sibh	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtaga → taga	go	go taga tú	go dtaga tú	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtagaimid → tagaimid	go	go tagaimid	go dtagaimid	5	Tábla 5W	98	3	flagged:URU
+	eclipsis	dtagann → tagann	go	Dúirt siad go tagann sí ar cuairt gach Satharn.	Dúirt siad go dtagann sí ar cuairt gach Satharn.	5	5.4.5(a)	88	14	flagged:URU
+	eclipsis	dtagtar → tagtar	go	go tagtar	go dtagtar	5	Tábla 5W	98	3	flagged:URU
 	eclipsis	dtarlódh → tarlódh	go	Níor mhaith léi go tarlódh sé sin.	Níor mhaith léi go dtarlódh sé sin.	7	7.2.1	117	19	flagged:CAIGHDEAN
-	eclipsis	dtéadh → téadh	go	B’eol dúinn go téadh sí an cóngar nuair a bhíodh sé tirim.	B’eol dúinn go dtéadh sí an cóngar nuair a bhíodh sé tirim.	7	7.2.1	117	15	flagged:BACHOIR
+	eclipsis	dté → té	go	go té mé	go dté mé	5	Tábla 5X	99	3	flagged:NEEDART
+	eclipsis	dté → té	go	go té sé	go dté sé	5	Tábla 5X	99	3	flagged:NEEDART
+	eclipsis	dté → té	go	go té sí	go dté sí	5	Tábla 5X	99	3	flagged:BACHOIR
+	eclipsis	dté → té	go	go té siad	go dté siad	5	Tábla 5X	99	3	flagged:BACHOIR
+	eclipsis	dté → té	go	go té sibh	go dté sibh	5	Tábla 5X	99	3	flagged:NEEDART
+	eclipsis	dté → té	go	go té tú	go dté tú	5	Tábla 5X	99	3	flagged:NEEDART
+	eclipsis	dté → té	Go	Go té tú slán.	Go dté tú slán.	5	5.1.5(a)	69	3	flagged:NEEDART
+	eclipsis	dtéadh → téadh	go	B’eol dúinn go téadh sí an cóngar nuair a bhíodh sé tirim.	B’eol dúinn go dtéadh sí an cóngar nuair a bhíodh sé tirim.	7	7.2.1	117	15	flagged:URU
+	eclipsis	dtéimid → téimid	go	go téimid	go dtéimid	5	Tábla 5X	99	3	flagged:URU
+	eclipsis	dtéitear → téitear	go	go téitear	go dtéitear	5	Tábla 5X	99	3	flagged:URU
 	eclipsis	dtí → tí	go	Chuaigh Seán go tí an Oifig um Rialú Tobac.	Chuaigh Seán go dtí an Oifig um Rialú Tobac.	1	1.1.5(b)	1	16	flagged:URU
 	eclipsis	dtí → tí	go	Chuaigh sé ar ais go tí an tír ónar dhíbeartach é.	Chuaigh sé ar ais go dtí an tír ónar dhíbeartach é.	7	7.3.2	127	21	flagged:URU
 	eclipsis	dtí → tí	go	Bhíomar ann go tí a dó dhéag.	Bhíomar ann go dtí a dó dhéag.	8	8.3.8	137	15	flagged:URU
@@ -349,6 +403,65 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	dtí → tí	go	Sin í an bhean a rachadh a hiníon go tí an cluiche dá bhféadfadh sí.	Sin í an bhean a rachadh a hiníon go dtí an cluiche dá bhféadfadh sí.	11	11.6.1(b)(i)	210	37	flagged:URU
 	eclipsis	dtí → tí	go	Sin í an bhean a rachadh go tí an cluiche dá bhféadfadh sí.	Sin í an bhean a rachadh go dtí an cluiche dá bhféadfadh sí.	11	11.6.1(a)(i)	210	28	flagged:URU
 	eclipsis	dtiocfaidh → tiocfaidh	go	An fada go tiocfaidh sé?	An fada go dtiocfaidh sé?	7	7.2.1	116	11	flagged:URU
+	eclipsis	dtíolaca → tíolaca	go	go tíolaca mé	go dtíolaca mé	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolaca → tíolaca	go	go tíolaca sé	go dtíolaca sé	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolaca → tíolaca	go	go tíolaca sí	go dtíolaca sí	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolaca → tíolaca	go	go tíolaca siad	go dtíolaca siad	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolaca → tíolaca	go	go tíolaca sibh	go dtíolaca sibh	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolaca → tíolaca	go	go tíolaca tú	go dtíolaca tú	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolacaimid → tíolacaimid	go	go tíolacaimid	go dtíolacaimid	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtíolactar → tíolactar	go	go tíolactar	go dtíolactar	5	Tábla 5E	75	3	flagged:URU
+	eclipsis	dtuga → tuga	go	go tuga	go dtuga	5	5.4.3	88	3	flagged:NEAMHCHOIT
+	eclipsis	dtuga → tuga	go	go tuga mé	go dtuga mé	5	Tábla 5V	97	3	flagged:NEAMHCHOIT
+	eclipsis	dtuga → tuga	go	go tuga sé	go dtuga sé	5	Tábla 5V	97	3	flagged:NEAMHCHOIT
+	eclipsis	dtuga → tuga	go	go tuga sí	go dtuga sí	5	Tábla 5V	97	3	flagged:NEAMHCHOIT
+	eclipsis	dtuga → tuga	go	go tuga siad	go dtuga siad	5	Tábla 5V	97	3	flagged:NEAMHCHOIT
+	eclipsis	dtuga → tuga	go	go tuga sibh	go dtuga sibh	5	Tábla 5V	97	3	flagged:NEAMHCHOIT
+	eclipsis	dtuga → tuga	go	go tuga tú	go dtuga tú	5	Tábla 5V	97	3	flagged:NEAMHCHOIT
+	eclipsis	dtugaimid → tugaimid	go	go tugaimid	go dtugaimid	5	Tábla 5V	97	3	flagged:URU
+	eclipsis	dtugtar → tugtar	go	go tugtar	go dtugtar	5	Tábla 5V	97	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí mé	go gceanglaí mé	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí muid	go gceanglaí muid	5	Tábla 5A	71	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí sé	go gceanglaí sé	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí sí	go gceanglaí sí	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí siad	go gceanglaí siad	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí sibh	go gceanglaí sibh	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaí → ceanglaí	go	go ceanglaí tú	go gceanglaí tú	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaímid → ceanglaímid	go	go ceanglaímid	go gceanglaímid	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gceanglaítear → ceanglaítear	go	go ceanglaítear	go gceanglaítear	5	Tábla 5L	85	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise	go gcloise	5	5.4.3	88	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise mé	go gcloise mé	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise sé	go gcloise sé	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise sí	go gcloise sí	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise siad	go gcloise siad	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise sibh	go gcloise sibh	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloise → cloise	go	go cloise tú	go gcloise tú	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloisimid → cloisimid	go	go cloisimid	go gcloisimid	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcloistear → cloistear	go	go cloistear	go gcloistear	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluine → cluine	go	go cluine mé	go gcluine mé	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluine → cluine	go	go cluine sé	go gcluine sé	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluine → cluine	go	go cluine sí	go gcluine sí	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluine → cluine	go	go cluine siad	go gcluine siad	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluine → cluine	go	go cluine sibh	go gcluine sibh	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluine → cluine	go	go cluine tú	go gcluine tú	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluinimid → cluinimid	go	go cluinimid	go gcluinimid	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcluintear → cluintear	go	go cluintear	go gcluintear	5	Tábla 5Q	92	3	flagged:URU
+	eclipsis	gcrá → crá	go	go crá mé	go gcrá mé	5	Tábla 5F	77	3	-
+	eclipsis	gcrá → crá	go	go crá sé	go gcrá sé	5	Tábla 5F	77	3	-
+	eclipsis	gcrá → crá	go	go crá sí	go gcrá sí	5	Tábla 5F	77	3	flagged:BACHOIR
+	eclipsis	gcrá → crá	go	go crá siad	go gcrá siad	5	Tábla 5F	77	3	flagged:BACHOIR
+	eclipsis	gcrá → crá	go	go crá sibh	go gcrá sibh	5	Tábla 5F	77	3	-
+	eclipsis	gcrá → crá	go	go crá tú	go gcrá tú	5	Tábla 5F	77	3	-
+	eclipsis	gcráimid → cráimid	go	go cráimid	go gcráimid	5	Tábla 5F	77	3	flagged:URU
+	eclipsis	gcráitear → cráitear	go	go cráitear	go gcráitear	5	Tábla 5F	77	3	flagged:URU
+	eclipsis	gcruinní → cruinní	go	go cruinní mé	go gcruinní mé	5	Tábla 5K	84	3	-
+	eclipsis	gcruinní → cruinní	go	go cruinní sé	go gcruinní sé	5	Tábla 5K	84	3	-
+	eclipsis	gcruinní → cruinní	go	go cruinní sí	go gcruinní sí	5	Tábla 5K	84	3	flagged:BACHOIR
+	eclipsis	gcruinní → cruinní	go	go cruinní siad	go gcruinní siad	5	Tábla 5K	84	3	flagged:BACHOIR
+	eclipsis	gcruinní → cruinní	go	go cruinní sibh	go gcruinní sibh	5	Tábla 5K	84	3	-
+	eclipsis	gcruinní → cruinní	go	go cruinní tú	go gcruinní tú	5	Tábla 5K	84	3	-
+	eclipsis	gcruinnímid → cruinnímid	go	go cruinnímid	go gcruinnímid	5	Tábla 5K	84	3	flagged:URU
+	eclipsis	gcruinnítear → cruinnítear	go	go cruinnítear	go gcruinnítear	5	Tábla 5K	84	3	flagged:URU
 	eclipsis	gcuimhin → cuimhin	go	go cuimhin liom	go gcuimhin liom	10	10.6.4	189	3	flagged:URU
 	eclipsis	gcuireann → cuireann	go	Ní hionadh ar bith é go cuireann siad fáilte roimh chách	Ní hionadh ar bith é go gcuireann siad fáilte roimh chách	7	7.2.5	124	24	flagged:URU
 	eclipsis	mb’altra → b’altra	go	Bronnadh teastas uirthi á rá go b’altra cáilithe in Éirinn í	Bronnadh teastas uirthi á rá go mb’altra cáilithe in Éirinn í	7	7.2.2	120	32	flagged:URU
@@ -365,16 +478,83 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	mba → ba	go	Shíl mé go ba ann dó	Shíl mé go mba ann dó	7	7.2.2	120	11	flagged:URU
 	eclipsis	mba → ba	go	Sílim go ba fhliúit dhaor a cheannaigh sé.	Sílim go mba fhliúit dhaor a cheannaigh sé.	7	7.2.2	121	9	flagged:URU
 	eclipsis	mbeadh → beadh	go	Gheall sí go beadh sí ann Dé hAoine.	Gheall sí go mbeadh sí ann Dé hAoine.	10	10.11.6	194	13	flagged:URU
+	eclipsis	mbeannaí → beannaí	go	go beannaí mé	go mbeannaí mé	5	Tábla 5J	83	3	flagged:NOGENITIVE
+	eclipsis	mbeannaí → beannaí	go	go beannaí sé	go mbeannaí sé	5	Tábla 5J	83	3	flagged:NOGENITIVE
+	eclipsis	mbeannaí → beannaí	go	go beannaí sí	go mbeannaí sí	5	Tábla 5J	83	3	flagged:BACHOIR
+	eclipsis	mbeannaí → beannaí	go	go beannaí siad	go mbeannaí siad	5	Tábla 5J	83	3	flagged:BACHOIR
+	eclipsis	mbeannaí → beannaí	go	go beannaí sibh	go mbeannaí sibh	5	Tábla 5J	83	3	flagged:NOGENITIVE
+	eclipsis	mbeannaí → beannaí	go	go beannaí tú	go mbeannaí tú	5	Tábla 5J	83	3	flagged:NOGENITIVE
+	eclipsis	mbeannaí → beannaí	go	Ná beannaigh don diabhal go beannaí sé duit	Ná beannaigh don diabhal go mbeannaí sé duit	5	5.1.5(a)	69	28	flagged:NOGENITIVE
+	eclipsis	mbeannaímid → beannaímid	go	go beannaímid	go mbeannaímid	5	Tábla 5J	83	3	flagged:URU
+	eclipsis	mbeannaítear → beannaítear	go	go beannaítear	go mbeannaítear	5	Tábla 5J	83	3	flagged:URU
+	eclipsis	mbeannóidh → beannóidh	go	Ná beannaigh don diabhal go beannóidh sé duit	Ná beannaigh don diabhal go mbeannóidh sé duit	5	5.1.5(a)	69	28	flagged:URU
 	eclipsis	mbeidh → beidh	go	Tá sé ag iarraidh a dheimhniú go beidh gach ní ina cheart.	Tá sé ag iarraidh a dheimhniú go mbeidh gach ní ina cheart.	3	3.3.3	46	33	flagged:URU
 	eclipsis	mbeidh → beidh	go	Tá súil ag na Náisiúin Aontaithe go beidh dea-thoradh ar an bpróiseas.	Tá súil ag na Náisiúin Aontaithe go mbeidh dea-thoradh ar an bpróiseas.	3	3.2.1	42	36	flagged:URU
+	eclipsis	mbeidh → beidh	go	Suigh nó go beidh do scíth déanta agat	Suigh nó go mbeidh do scíth déanta agat	5	5.1.5(a)	69	12	flagged:URU
 	eclipsis	mbeidh → beidh	go	Is gearr go beidh a fhios againn.	Is gearr go mbeidh a fhios againn.	7	7.1.1	114	12	flagged:URU
 	eclipsis	mbeidh → beidh	go	Ba éard a bhí mé a rá go beidh sé críochnaithe go luath.	Ba éard a bhí mé a rá go mbeidh sé críochnaithe go luath.	8	8.6.3	140	25	flagged:URU
 	eclipsis	mbeidís → beidís	go	Dúirt siad go beidís ann.	Dúirt siad go mbeidís ann.	10	10.4.1	186	14	flagged:URU
+	eclipsis	mbeire → beire	go	go beire mé	go mbeire mé	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeire → beire	go	go beire sé	go mbeire sé	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeire → beire	go	go beire sí	go mbeire sí	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeire → beire	go	go beire siad	go mbeire siad	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeire → beire	go	go beire sibh	go mbeire sibh	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeire → beire	go	go beire tú	go mbeire tú	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeirimid → beirimid	go	go beirimid	go mbeirimid	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbeirtear → beirtear	go	go beirtear	go mbeirtear	5	Tábla 5O	90	3	flagged:URU
+	eclipsis	mbrise → brise	go	go brise mé	go mbrise mé	5	Tábla 5C	72	3	flagged:NOGENITIVE
+	eclipsis	mbrise → brise	go	go brise sé	go mbrise sé	5	Tábla 5C	72	3	flagged:NOGENITIVE
+	eclipsis	mbrise → brise	go	go brise sí	go mbrise sí	5	Tábla 5C	72	3	flagged:BACHOIR
+	eclipsis	mbrise → brise	go	go brise siad	go mbrise siad	5	Tábla 5C	72	3	flagged:BACHOIR
+	eclipsis	mbrise → brise	go	go brise sibh	go mbrise sibh	5	Tábla 5C	72	3	flagged:NOGENITIVE
+	eclipsis	mbrise → brise	go	go brise tú	go mbrise tú	5	Tábla 5C	72	3	flagged:NOGENITIVE
+	eclipsis	mbrisimid → brisimid	go	go brisimid	go mbrisimid	5	Tábla 5C	72	3	flagged:URU
+	eclipsis	mbristear → bristear	go	go bristear	go mbristear	5	Tábla 5C	72	3	flagged:URU
+	eclipsis	n-itear → itear	go	go itear	go n-itear	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithe → ithe	go	go ithe mé	go n-ithe mé	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithe → ithe	go	go ithe sé	go n-ithe sé	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithe → ithe	go	go ithe sí	go n-ithe sí	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithe → ithe	go	go ithe siad	go n-ithe siad	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithe → ithe	go	go ithe sibh	go n-ithe sibh	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithe → ithe	go	go ithe tú	go n-ithe tú	5	Tábla 5U	96	3	flagged:URU
+	eclipsis	n-ithimid → ithimid	go	go ithimid	go n-ithimid	5	Tábla 5U	96	3	flagged:URU
 	eclipsis	ndeachaigh → deachaigh	go	Chuala mé go deachaigh sibh ar thuras timpeall an domhain.	Chuala mé go ndeachaigh sibh ar thuras timpeall an domhain.	1	1.5.1	11	13	flagged:NEAMHCHOIT
+	eclipsis	ndéana → déana	go	go déana mé	go ndéana mé	5	Tábla 5R	93	3	flagged:URU
+	eclipsis	ndéana → déana	go	go déana sé	go ndéana sé	5	Tábla 5R	93	3	flagged:URU
+	eclipsis	ndéana → déana	go	go déana sí	go ndéana sí	5	Tábla 5R	93	3	flagged:URU
+	eclipsis	ndéana → déana	go	go déana siad	go ndéana siad	5	Tábla 5R	93	3	flagged:URU
+	eclipsis	ndéana → déana	go	go déana sibh	go ndéana sibh	5	Tábla 5R	93	3	flagged:URU
+	eclipsis	ndéana → déana	go	go déana tú	go ndéana tú	5	Tábla 5R	93	3	flagged:URU
+	eclipsis	ndéanaimid → déanaimid	go	go déanaimid	go ndéanaimid	5	Tábla 5R	93	3	flagged:URU
 	eclipsis	ndéanfaí → déanfaí	go	Bhí eagla orthu go déanfaí an t-éiceachóras a scriosadh.	Bhí eagla orthu go ndéanfaí an t-éiceachóras a scriosadh.	10	10.9.1	192	19	flagged:CAIGHDEAN
 	eclipsis	ndéanfaidh → déanfaidh	go	Tá sé tar éis a rá go déanfaidh sé é.	Tá sé tar éis a rá go ndéanfaidh sé é.	3	3.3.3	46	22	flagged:URU
+	eclipsis	ndéantar → déantar	go	go déantar	go ndéantar	5	Tábla 5R	93	3	flagged:URU
 	eclipsis	ndearnadh → dearnadh	go	Shílfeadh duine gurb éard atá á chur i gcéill agat ná go dearnadh d’aon ghnó é.	Shílfeadh duine gurb éard atá á chur i gcéill agat ná go ndearnadh d’aon ghnó é.	8	8.6.3	140	57	flagged:CAIGHDEAN
+	eclipsis	ndeire → deire	go	go deire mé	go ndeire mé	5	Tábla 5N	89	3	flagged:IONADAI
+	eclipsis	ndeire → deire	go	go deire sé	go ndeire sé	5	Tábla 5N	89	3	flagged:IONADAI
+	eclipsis	ndeire → deire	go	go deire sí	go ndeire sí	5	Tábla 5N	89	3	flagged:IONADAI
+	eclipsis	ndeire → deire	go	go deire siad	go ndeire siad	5	Tábla 5N	89	3	flagged:IONADAI
+	eclipsis	ndeire → deire	go	go deire sibh	go ndeire sibh	5	Tábla 5N	89	3	flagged:IONADAI
+	eclipsis	ndeire → deire	go	go deire tú	go ndeire tú	5	Tábla 5N	89	3	flagged:IONADAI
+	eclipsis	ndeirimid → deirimid	go	go deirimid	go ndeirimid	5	Tábla 5N	89	3	flagged:URU
+	eclipsis	ndeirtear → deirtear	go	go deirtear	go ndeirtear	5	Tábla 5N	89	3	flagged:URU
+	eclipsis	ndíbrí → díbrí	go	go díbrí mé	go ndíbrí mé	5	Tábla 5M	86	3	flagged:NOGENITIVE
+	eclipsis	ndíbrí → díbrí	go	go díbrí sé	go ndíbrí sé	5	Tábla 5M	86	3	flagged:NOGENITIVE
+	eclipsis	ndíbrí → díbrí	go	go díbrí sí	go ndíbrí sí	5	Tábla 5M	86	3	flagged:BACHOIR
+	eclipsis	ndíbrí → díbrí	go	go díbrí siad	go ndíbrí siad	5	Tábla 5M	86	3	flagged:BACHOIR
+	eclipsis	ndíbrí → díbrí	go	go díbrí sibh	go ndíbrí sibh	5	Tábla 5M	86	3	flagged:NOGENITIVE
+	eclipsis	ndíbrí → díbrí	go	go díbrí tú	go ndíbrí tú	5	Tábla 5M	86	3	flagged:NOGENITIVE
+	eclipsis	ndíbrímid → díbrímid	go	go díbrímid	go ndíbrímid	5	Tábla 5M	86	3	flagged:URU
+	eclipsis	ndíbrítear → díbrítear	go	go díbrítear	go ndíbrítear	5	Tábla 5M	86	3	flagged:URU
 	eclipsis	ndíth → díth	go	Cath go díth ab ea é, gan aon agó.	Cath go ndíth ab ea é, gan aon agó.	10	10.6.4	189	8	flagged:URU
+	eclipsis	ndó → dó	go	go dó mé	go ndó mé	5	Tábla 5G	78	3	-
+	eclipsis	ndó → dó	go	go dó sé	go ndó sé	5	Tábla 5G	78	3	-
+	eclipsis	ndó → dó	go	go dó sí	go ndó sí	5	Tábla 5G	78	3	flagged:BACHOIR
+	eclipsis	ndó → dó	go	go dó siad	go ndó siad	5	Tábla 5G	78	3	flagged:BACHOIR
+	eclipsis	ndó → dó	go	go dó sibh	go ndó sibh	5	Tábla 5G	78	3	-
+	eclipsis	ndó → dó	go	go dó tú	go ndó tú	5	Tábla 5G	78	3	-
+	eclipsis	ndóimid → dóimid	go	go dóimid	go ndóimid	5	Tábla 5G	78	3	flagged:URU
+	eclipsis	ndóitear → dóitear	go	go dóitear	go ndóitear	5	Tábla 5G	78	3	flagged:URU
 	eclipsis	bhfuinneog → fuinneog	hocht	na hocht fuinneog	na hocht bhfuinneog	9	9.3.5	149	9	flagged:URU
 	eclipsis	bhfuinneog → fuinneog	hocht	na hocht fuinneog déag	na hocht bhfuinneog déag	9	9.3.5	149	9	flagged:URU
 	eclipsis	dtroithe → troithe	hocht	na hocht troithe déag	na hocht dtroithe déag	9	9.3.5	149	9	flagged:URU
@@ -382,6 +562,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-úll → úll	hocht	Cár cheannaigh tú na hocht úll dhearga sin?	Cár cheannaigh tú na hocht n-úll dhearga sin?	10	10.12.3	195	27	flagged:URU
 	eclipsis	bhfabhar → fabhar	i	Bhí gach duine i fabhar an fheachtais thionsclaíoch.	Bhí gach duine i bhfabhar an fheachtais thionsclaíoch.	4	4.4.1	60	17	flagged:URU
 	eclipsis	bhfad → fad	i	Ní fhanann sé i fad tar éis dinnéir.	Ní fhanann sé i bhfad tar éis dinnéir.	3	3.3.2	45	16	flagged:URU
+	eclipsis	bhfad → fad	i	Nár fhana sé i fad.	Nár fhana sé i bhfad.	5	5.1.5(b)	70	15	flagged:URU
 	eclipsis	bhfad → fad	i	Tá na scáileáin gutháin nua i fad níos mó ná mar a bhíodh.	Tá na scáileáin gutháin nua i bhfad níos mó ná mar a bhíodh.	10	10.2.8	180	30	flagged:URU
 	eclipsis	bhfeidhm → feidhm	i	ag moladh an teacht i feidhm	ag moladh an teacht i bhfeidhm	3	3.3.1	45	22	flagged:URU
 	eclipsis	bhfeidhm → feidhm	i	i bhfianaise teacht i feidhm	i bhfianaise teacht i bhfeidhm	3	3.3.3	47	22	flagged:URU
@@ -480,6 +661,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	gcarr → carr	inár	Fuair sé inár carr é.	Fuair sé inár gcarr é.	8	8.3.8	136	14	flagged:URU
 	eclipsis	gCearr → Cearr	Muileann	Is as an Muileann Cearr di.	Is as an Muileann gCearr di.	7	7.1.1	113	18	-
 	eclipsis	bhfuil → fuil	mura	Ná hosclaígí an doras mura fuil a fhios agaibh cé atá ann.	Ná hosclaígí an doras mura bhfuil a fhios agaibh cé atá ann.	10	10.14.1	196	27	-
+	eclipsis	gcuire → cuire	Mura	Mura cuire tú, ní bhainfidh tú.	Mura gcuire tú, ní bhainfidh tú.	5	5.1.5(a)	69	5	-
+	eclipsis	gcuirfidh → cuirfidh	Mura	Mura cuirfidh tú, ní bhainfidh tú.	Mura gcuirfidh tú, ní bhainfidh tú.	5	5.1.5(a)	69	5	flagged:URU
 	eclipsis	mbeadh → beadh	mura	B’álainn an pictiúr é mura beadh an polla sin sa chúlra.	B’álainn an pictiúr é mura mbeadh an polla sin sa chúlra.	7	7.2.1	117	27	flagged:URU
 	eclipsis	n-iarrfaidh → iarrfaidh	Mura	Mura iarrfaidh tú é ní bhfaighidh tú é.	Mura n-iarrfaidh tú é ní bhfaighidh tú é.	10	10.8.2	191	5	flagged:URU
 	eclipsis	n-inseoidh → inseoidh	Mura	Mura inseoidh tú an scéal, cuirfidh mé ceist ar dhuine éigin eile!	Mura n-inseoidh tú an scéal, cuirfidh mé ceist ar dhuine éigin eile!	10	10.8.2	191	5	flagged:URU
@@ -518,6 +701,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	mban → ban	na	clanna na ban cáiliúil	clanna na mban cáiliúil	4	4.2.5	58	10	flagged:URU
 	eclipsis	mban → ban	na	pá na ban gairmiúil	pá na mban gairmiúil	4	4.7	65	6	flagged:URU
 	eclipsis	mban → ban	na	teach na ban beag	teach na mban beag	4	4.7	65	9	flagged:URU
+	eclipsis	mbeithíoch → beithíoch	na	fear ceannaithe na beithíoch	fear ceannaithe na mbeithíoch	5	Tábla 5FF	105	19	flagged:URU
 	eclipsis	mbó → bó	na	cró na bó	cró na mbó	2	2.1.3(b)	22	7	-
 	eclipsis	mbuachaillí → buachaillí	na	rang na buachaillí ciúine	rang na mbuachaillí ciúine	4	4.7	65	8	-
 	eclipsis	n-ainmhithe → ainmhithe	na	Tá cait mhóra fhiáine i ngairdín na ainmhithe.	Tá cait mhóra fhiáine i ngairdín na n-ainmhithe.	4	4.2.1	57	36	flagged:PREFIXH
@@ -562,6 +746,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-inseodh → inseodh	nach	Cheap mé nach inseodh an duine sin an fhírinne choíche.	Cheap mé nach n-inseodh an duine sin an fhírinne choíche.	11	11.3.1(e)	207	14	flagged:URU
 	eclipsis	n-íosfadh → íosfadh	nach	An í sin an cháis nach íosfadh an fear?	An í sin an cháis nach n-íosfadh an fear?	11	11.6.2(a)(i)	212	23	flagged:URU
 	eclipsis	n-ólann → ólann	Nach	Nach ólann sé bainne?	Nach n-ólann sé bainne?	10	10.8.2	191	5	flagged:URU
+	eclipsis	ndeachaigh → deachaigh	Nach	Nach deachaigh sibh abhaile fós?	Nach ndeachaigh sibh abhaile fós?	5	5.4.5(a)	88	5	flagged:NEAMHCHOIT
 	eclipsis	ndeachaigh → deachaigh	nach	Cad a rinne sibh an uair sin nach deachaigh sibh ar saoire?	Cad a rinne sibh an uair sin nach ndeachaigh sibh ar saoire?	11	11.6.2(a)(iii)	212	34	flagged:NEAMHCHOIT
 	eclipsis	ndéanfaí → déanfaí	nach	Dúirt siad nach déanfaí an próiseas a athrú gan cúis chóir.	Dúirt siad nach ndéanfaí an próiseas a athrú gan cúis chóir.	10	10.2.5	174	16	flagged:CAIGHDEAN
 	eclipsis	ndearna → dearna	nach	Is cuma liom cé acu a rinne sé é nó nach dearna.	Is cuma liom cé acu a rinne sé é nó nach ndearna.	11	11.9	217	41	-
@@ -601,10 +786,27 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-oíche → oíche	naoi	tréimhse naoi oíche	tréimhse naoi n-oíche	9	9.3.6	149	14	flagged:URU
 	eclipsis	ndeichiú → deichiú	naoi	naoi deichiú	naoi ndeichiú	9	9.6.3	166	5	-
 	eclipsis	nduine → duine	naoi	naoi duine ghnóthacha is nócha	naoi nduine ghnóthacha is nócha	9	9.8	170	5	flagged:URU
+	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sé	ní bhfaigheadh sé	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sí	ní bhfaigheadh sí	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sibh	ní bhfaigheadh sibh	5	Tábla 5S	94	3	flagged:SEIMHIU
 	eclipsis	bhfaigheadh → faigheadh	ní	Murar shíntiúsóir cláraithe í, ní faigheadh sí an iris sa phost.	Murar shíntiúsóir cláraithe í, ní bhfaigheadh sí an iris sa phost.	7	7.3.4	129	34	flagged:SEIMHIU
+	eclipsis	bhfaighfeá → faighfeá	ní	ní faighfeá	ní bhfaighfeá	5	Tábla 5S	94	3	-
 	eclipsis	bhfaighfeá → faighfeá	Ní	Ní faighfeá san ollmhargadh sin é.	Ní bhfaighfeá san ollmhargadh sin é.	10	10.8.2	191	3	-
+	eclipsis	bhfaighfear → faighfear	ní	ní faighfear	ní bhfaighfear	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighfí → faighfí	ní	ní faighfí	ní bhfaighfí	5	Tábla 5S	94	3	-
+	eclipsis	bhfaighidh → faighidh	ní	ní faighidh mé	ní bhfaighidh mé	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighidh → faighidh	ní	ní faighidh sé	ní bhfaighidh sé	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighidh → faighidh	ní	ní faighidh sí	ní bhfaighidh sí	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighidh → faighidh	ní	ní faighidh siad	ní bhfaighidh siad	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighidh → faighidh	ní	ní faighidh sibh	ní bhfaighidh sibh	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighidh → faighidh	ní	ní faighidh tú	ní bhfaighidh tú	5	Tábla 5S	94	3	flagged:SEIMHIU
 	eclipsis	bhfaighidh → faighidh	ní	Mura n-iarrfaidh tú é ní faighidh tú é.	Mura n-iarrfaidh tú é ní bhfaighidh tú é.	10	10.8.2	191	25	flagged:SEIMHIU
+	eclipsis	bhfaighidís → faighidís	ní	ní faighidís	ní bhfaighidís	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighimid → faighimid	ní	ní faighimid	ní bhfaighimid	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighimis → faighimis	ní	ní faighimis	ní bhfaighimis	5	Tábla 5S	94	3	flagged:SEIMHIU
+	eclipsis	bhfaighinn → faighinn	ní	ní faighinn	ní bhfaighinn	5	Tábla 5S	94	3	-
 	eclipsis	bhfaighinn → faighinn	Ní	Ní faighinn aon chabhair uathu	Ní bhfaighinn aon chabhair uathu	10	10.4.2	187	3	-
+	eclipsis	bhfuair → fuair	Ní	Ní fuair sé an t-airgead fós.	Ní bhfuair sé an t-airgead fós.	5	5.4.5(a)	88	3	flagged:URU
 	eclipsis	bhfuair → fuair	Ní	Ní fuair siad a gcuidsean.	Ní bhfuair siad a gcuidsean.	8	8.3.4	135	3	flagged:URU
 	eclipsis	bhfuair → fuair	Ní	Ní fuair mé aon chaife ar maidin.	Ní bhfuair mé aon chaife ar maidin.	10	10.8.2	191	3	flagged:URU
 	eclipsis	bhfuair → fuair	Ní	Ní fuair tú ansin iad	Ní bhfuair tú ansin iad	10	10.4.2	187	3	flagged:URU
@@ -669,7 +871,13 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-oíche → oíche	seacht	seacht oíche dhéag	seacht n-oíche dhéag	9	9.3.1	145	7	flagged:URU
 	eclipsis	ngabhar → gabhar	seacht	úinéir seacht gabhar	úinéir seacht ngabhar	9	9.3.6	149	14	flagged:URU
 	eclipsis	ngabhar → gabhar	seacht	úinéir seacht gabhar chrosta	úinéir seacht ngabhar chrosta	9	9.3.6	149	14	flagged:URU
+	eclipsis	bhfeicfí → feicfí	sula	Tháinig sí isteach sula feicfí í.	Tháinig sí isteach sula bhfeicfí í.	5	5.1.5(b)	70	24	-
+	eclipsis	bhfeictí → feictí	sula	Thagadh sí isteach sula feictí í.	Thagadh sí isteach sula bhfeictí í.	5	5.1.5(b)	70	24	-
+	eclipsis	bhfeictí → feictí	sula	Tháinig sí isteach sula feictí í.	Tháinig sí isteach sula bhfeictí í.	5	5.1.5(b)	70	24	-
+	eclipsis	bhfeictí → feictí	sula	Thiocfadh sí isteach sula feictí í.	Thiocfadh sí isteach sula bhfeictí í.	5	5.1.5(b)	70	26	-
 	eclipsis	dtiocfaidh → tiocfaidh	sula	Ní mór é a chríochnú sula tiocfaidh sé.	Ní mór é a chríochnú sula dtiocfaidh sé.	10	10.8.2	191	26	flagged:URU
+	eclipsis	mbuailfear → buailfear	sula	Beidh siad ann sula buailfear clog an aingil	Beidh siad ann sula mbuailfear clog an aingil	5	5.1.5(a)	69	20	flagged:URU
+	eclipsis	mbuailtear → buailtear	sula	Beidh siad ann sula buailtear clog an aingil	Beidh siad ann sula mbuailtear clog an aingil	5	5.1.5(a)	69	20	flagged:URU
 	eclipsis	ndíoltar → díoltar	sula	Ní mór d’eolaithe láidreacht cumaisc a thástáil sula díoltar é.	Ní mór d’eolaithe láidreacht cumaisc a thástáil sula ndíoltar é.	10	10.2.7	177	53	flagged:URU
 	h-	Háítí → Áítí		Áítí	Háítí	1	1.1.5(i)	3	0	flagged:DROCHMHOIRF
 	h-	hata → ata		ata an fhir	hata an fhir	1	1.5.2	12	0	flagged:IONADAI
@@ -818,6 +1026,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	h-	huair → uair	milliúnú	an milliúnú uair	an milliúnú huair	9	9.5.3	162	12	flagged:PREFIXH
 	h-	habairte → abairte	na	lár na abairte	lár na habairte	1	1.1.4	1	7	flagged:PREFIXH
 	h-	habhann → abhann	na	Shiúlamar cois na abhann.	Shiúlamar cois na habhann.	1	1.5.1	11	18	flagged:PREFIXH
+	h-	hachainí → achainí	na	uair na achainí	uair na hachainí	5	5.6.1(b)(ii)	103	8	flagged:PREFIXH
 	h-	hAchtanna → Achtanna	na	na Achtanna tábhachtacha	na hAchtanna tábhachtacha	1	1.6.1	13	3	flagged:PREFIXH
 	h-	hAchtanna → Achtanna	na	um na Achtanna	um na hAchtanna	1	1.6.2	14	6	flagged:PREFIXH
 	h-	hailtirí → ailtirí	na	Ba iad na ailtirí a bhí i mbun an scrúdaithe.	Ba iad na hailtirí a bhí i mbun an scrúdaithe.	1	1.5.1	11	10	flagged:PREFIXH
@@ -993,6 +1202,59 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Bhain → Bain		Bain sí an hata dá ceann.	Bhain sí an hata dá ceann.	8	8.3.7	136	0	-
 	lenition	Bhain → Bain		Bain siad na hataí dá gceann.	Bhain siad na hataí dá gceann.	8	8.3.7	136	0	-
 	lenition	Bhain → Bain		Bain sí an séú háit amach sa rás.	Bhain sí an séú háit amach sa rás.	10	10.3.2	184	0	-
+	lenition	bheadh → beadh		beadh sé	bheadh sé	5	Tábla 5P	91	0	-
+	lenition	bheadh → beadh		beadh sí	bheadh sí	5	Tábla 5P	91	0	-
+	lenition	bheadh → beadh		beadh sibh	bheadh sibh	5	Tábla 5P	91	0	-
+	lenition	bheannaídís → beannaídís		beannaídís	bheannaídís	5	Tábla 5J	83	0	-
+	lenition	bheannaigh → beannaigh		beannaigh mé	bheannaigh mé	5	Tábla 5J	83	0	-
+	lenition	bheannaigh → beannaigh		beannaigh sé	bheannaigh sé	5	Tábla 5J	83	0	-
+	lenition	bheannaigh → beannaigh		beannaigh sí	bheannaigh sí	5	Tábla 5J	83	0	-
+	lenition	bheannaigh → beannaigh		beannaigh siad	bheannaigh siad	5	Tábla 5J	83	0	-
+	lenition	bheannaigh → beannaigh		beannaigh sibh	bheannaigh sibh	5	Tábla 5J	83	0	-
+	lenition	bheannaigh → beannaigh		beannaigh tú	bheannaigh tú	5	Tábla 5J	83	0	-
+	lenition	bheannaímis → beannaímis		beannaímis	bheannaímis	5	Tábla 5J	83	0	-
+	lenition	bheannaínn → beannaínn		beannaínn	bheannaínn	5	Tábla 5J	83	0	-
+	lenition	bheannaíodh → beannaíodh		beannaíodh sé	bheannaíodh sé	5	Tábla 5J	83	0	-
+	lenition	bheannaíodh → beannaíodh		beannaíodh sí	bheannaíodh sí	5	Tábla 5J	83	0	-
+	lenition	bheannaíodh → beannaíodh		beannaíodh sibh	bheannaíodh sibh	5	Tábla 5J	83	0	-
+	lenition	bheannaíomar → beannaíomar		beannaíomar	bheannaíomar	5	Tábla 5J	83	0	-
+	lenition	bheannaíteá → beannaíteá		beannaíteá	bheannaíteá	5	Tábla 5J	83	0	-
+	lenition	bheannaítí → beannaítí		beannaítí	bheannaítí	5	Tábla 5J	83	0	-
+	lenition	bheannódh → beannódh		beannódh sé	bheannódh sé	5	Tábla 5J	83	0	-
+	lenition	bheannódh → beannódh		beannódh sí	bheannódh sí	5	Tábla 5J	83	0	-
+	lenition	bheannódh → beannódh		beannódh sibh	bheannódh sibh	5	Tábla 5J	83	0	-
+	lenition	bheannófá → beannófá		beannófá	bheannófá	5	Tábla 5J	83	0	-
+	lenition	bheannófaí → beannófaí		beannófaí	bheannófaí	5	Tábla 5J	83	0	-
+	lenition	bheannóidís → beannóidís		beannóidís	bheannóidís	5	Tábla 5J	83	0	-
+	lenition	bheannóimis → beannóimis		beannóimis	bheannóimis	5	Tábla 5J	83	0	-
+	lenition	bheannóinn → beannóinn		beannóinn	bheannóinn	5	Tábla 5J	83	0	-
+	lenition	bhéarfá → béarfá		béarfá	bhéarfá	5	Tábla 5O	90	0	-
+	lenition	bhéarfadh → béarfadh		béarfadh sé	bhéarfadh sé	5	Tábla 5O	90	0	-
+	lenition	bhéarfadh → béarfadh		béarfadh sí	bhéarfadh sí	5	Tábla 5O	90	0	-
+	lenition	bhéarfadh → béarfadh		béarfadh sibh	bhéarfadh sibh	5	Tábla 5O	90	0	-
+	lenition	bhéarfaí → béarfaí		béarfaí	bhéarfaí	5	Tábla 5O	90	0	flagged:CAIGHDEAN
+	lenition	bhéarfaidís → béarfaidís		béarfaidís	bhéarfaidís	5	Tábla 5O	90	0	-
+	lenition	bhéarfaimis → béarfaimis		béarfaimis	bhéarfaimis	5	Tábla 5O	90	0	-
+	lenition	bhéarfainn → béarfainn		béarfainn	bhéarfainn	5	Tábla 5O	90	0	-
+	lenition	bheidís → beidís		beidís	bheidís	5	Tábla 5P	91	0	-
+	lenition	bheifeá → beifeá		beifeá	bheifeá	5	Tábla 5P	91	0	-
+	lenition	bheifí → beifí		beifí	bheifí	5	Tábla 5P	91	0	-
+	lenition	bheimis → beimis		beimis	bheimis	5	Tábla 5P	91	0	-
+	lenition	bheinn → beinn		beinn	bheinn	5	Tábla 5P	91	0	flagged:CAIGHDEAN
+	lenition	bheireadh → beireadh		beireadh sé	bheireadh sé	5	Tábla 5O	90	0	-
+	lenition	bheireadh → beireadh		beireadh sí	bheireadh sí	5	Tábla 5O	90	0	-
+	lenition	bheireadh → beireadh		beireadh sibh	bheireadh sibh	5	Tábla 5O	90	0	-
+	lenition	bheiridís → beiridís		beiridís	bheiridís	5	Tábla 5O	90	0	-
+	lenition	bheirimis → beirimis		beirimis	bheirimis	5	Tábla 5O	90	0	-
+	lenition	bheirinn → beirinn		beirinn	bheirinn	5	Tábla 5O	90	0	-
+	lenition	bheirteá → beirteá		beirteá	bheirteá	5	Tábla 5O	90	0	-
+	lenition	bheirtí → beirtí		beirtí	bheirtí	5	Tábla 5O	90	0	-
+	lenition	bhí → bí		bí mé	bhí mé	5	Tábla 5P	91	0	-
+	lenition	bhí → bí		bí sé	bhí sé	5	Tábla 5P	91	0	-
+	lenition	bhí → bí		bí sí	bhí sí	5	Tábla 5P	91	0	-
+	lenition	bhí → bí		bí siad	bhí siad	5	Tábla 5P	91	0	-
+	lenition	bhí → bí		bí sibh	bhí sibh	5	Tábla 5P	91	0	-
+	lenition	bhí → bí		bí tú	bhí tú	5	Tábla 5P	91	0	-
 	lenition	bhí → bí		bí an dáréag ann	bhí an dáréag ann	9	9.4.2	154	0	-
 	lenition	Bhí → Bí		Bí aithne mhaith agam ar an Seabhac	Bhí aithne mhaith agam ar an Seabhac	1	1.1.2	1	0	-
 	lenition	Bhí → Bí		Bí an Béarla go maith aici.	Bhí an Béarla go maith aici.	1	1.1.5(n)	5	0	-
@@ -1057,9 +1319,42 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Bhí → Bí		Bí sé i bpriacal a anama.	Bhí sé i bpriacal a anama.	10	10.6.4	189	0	-
 	lenition	Bhí → Bí		Bí siad ag imirt i gcoinne Scoil Naomh Fionnbarra.	Bhí siad ag imirt i gcoinne Scoil Naomh Fionnbarra.	10	10.2.10	181	0	-
 	lenition	Bhí → Bí		Bí iníon na mná sin ar an teilifís aréir.	Bhí iníon na mná sin ar an teilifís aréir.	11	11.3.1(d)	207	0	-
+	lenition	bhídís → bídís		bídís	bhídís	5	Tábla 5P	91	0	-
+	lenition	bhímis → bímis		bímis	bhímis	5	Tábla 5P	91	0	-
+	lenition	bhínn → bínn		bínn	bhínn	5	Tábla 5P	91	0	flagged:CAIGHDEAN
+	lenition	bhíodh → bíodh		bíodh sé	bhíodh sé	5	Tábla 5P	91	0	-
+	lenition	bhíodh → bíodh		bíodh sí	bhíodh sí	5	Tábla 5P	91	0	-
+	lenition	bhíodh → bíodh		bíodh sibh	bhíodh sibh	5	Tábla 5P	91	0	-
+	lenition	bhíomar → bíomar		bíomar	bhíomar	5	Tábla 5P	91	0	-
 	lenition	Bhíomar → Bíomar		Bíomar ann go dtí a dó dhéag.	Bhíomar ann go dtí a dó dhéag.	8	8.3.8	137	0	-
+	lenition	bhíothas → bíothas		bíothas	bhíothas	5	Tábla 5P	91	0	flagged:CAIGHDEAN
 	lenition	Bhisigh → Bisigh		Bisigh an aimsir ó shin.	Bhisigh an aimsir ó shin.	10	10.5.1	187	0	-
+	lenition	bhíteá → bíteá		bíteá	bhíteá	5	Tábla 5P	91	0	-
+	lenition	bhítí → bítí		bítí	bhítí	5	Tábla 5P	91	0	-
+	lenition	bhris → bris		bris mé	bhris mé	5	Tábla 5C	72	0	-
+	lenition	bhris → bris		bris sé	bhris sé	5	Tábla 5C	72	0	-
+	lenition	bhris → bris		bris sí	bhris sí	5	Tábla 5C	72	0	-
+	lenition	bhris → bris		bris siad	bhris siad	5	Tábla 5C	72	0	-
+	lenition	bhris → bris		bris sibh	bhris sibh	5	Tábla 5C	72	0	-
+	lenition	bhris → bris		bris tú	bhris tú	5	Tábla 5C	72	0	-
 	lenition	Bhris → Bris		Bris sé ceann de na cupáin sa chistin.	Bhris sé ceann de na cupáin sa chistin.	3	3.1.11	41	0	-
+	lenition	bhriseadh → briseadh		briseadh sé	bhriseadh sé	5	Tábla 5C	72	0	-
+	lenition	bhriseadh → briseadh		briseadh sí	bhriseadh sí	5	Tábla 5C	72	0	-
+	lenition	bhriseadh → briseadh		briseadh sibh	bhriseadh sibh	5	Tábla 5C	72	0	-
+	lenition	bhriseamar → briseamar		briseamar	bhriseamar	5	Tábla 5C	72	0	-
+	lenition	bhrisfeá → brisfeá		brisfeá	bhrisfeá	5	Tábla 5C	72	0	-
+	lenition	bhrisfeadh → brisfeadh		brisfeadh sé	bhrisfeadh sé	5	Tábla 5C	72	0	-
+	lenition	bhrisfeadh → brisfeadh		brisfeadh sí	bhrisfeadh sí	5	Tábla 5C	72	0	-
+	lenition	bhrisfeadh → brisfeadh		brisfeadh sibh	bhrisfeadh sibh	5	Tábla 5C	72	0	-
+	lenition	bhrisfí → brisfí		brisfí	bhrisfí	5	Tábla 5C	72	0	-
+	lenition	bhrisfidís → brisfidís		brisfidís	bhrisfidís	5	Tábla 5C	72	0	-
+	lenition	bhrisfimis → brisfimis		brisfimis	bhrisfimis	5	Tábla 5C	72	0	-
+	lenition	bhrisfinn → brisfinn		brisfinn	bhrisfinn	5	Tábla 5C	72	0	-
+	lenition	bhrisidís → brisidís		brisidís	bhrisidís	5	Tábla 5C	72	0	-
+	lenition	bhrisimis → brisimis		brisimis	bhrisimis	5	Tábla 5C	72	0	-
+	lenition	bhrisinn → brisinn		brisinn	bhrisinn	5	Tábla 5C	72	0	-
+	lenition	bhristeá → bristeá		bristeá	bhristeá	5	Tábla 5C	72	0	-
+	lenition	bhristí → bristí		bristí	bhristí	5	Tábla 5C	72	0	flagged:NEAMHCHOIT
 	lenition	Bhuaigh → Buaigh		Buaigh siad ticéid i gcomhair turas chun na Fraince.	Bhuaigh siad ticéid i gcomhair turas chun na Fraince.	3	3.3.10	52	0	-
 	lenition	Bhuail → Buail		Buail mé le Príomhfheidhmeannach Trócaire ann.	Bhuail mé le Príomhfheidhmeannach Trócaire ann.	3	3.3.2	46	0	-
 	lenition	Bhuail → Buail		Buail mé le bhur gcairde ag an mbainis.	Bhuail mé le bhur gcairde ag an mbainis.	10	10.6.2	188	0	-
@@ -1083,6 +1378,33 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Chaith → Caith		Caith sé tréimhse thar sáile sular thosaigh sé ag obair anseo.	Chaith sé tréimhse thar sáile sular thosaigh sé ag obair anseo.	10	10.2.5	175	0	-
 	lenition	Chaith → Caith		Caith siad dhá uair an chloig ann.	Chaith siad dhá uair an chloig ann.	10	10.3.3	185	0	-
 	lenition	Chaith → Caith		Caith sé éadaí nár mheas mé a chaithfeadh sé go deo.	Chaith sé éadaí nár mheas mé a chaithfeadh sé go deo.	11	11.4.3	209	0	-
+	lenition	chaithfeá → caithfeá		caithfeá	chaithfeá	5	5.2.1(d)	73	0	-
+	lenition	chaithfí → caithfí		caithfí	chaithfí	5	5.2.1(d)	73	0	-
+	lenition	chaití → caití		caití	chaití	5	5.2.1(b)	73	0	flagged:NEAMHCHOIT
+	lenition	cheangail → ceangail		ceangail mé	cheangail mé	5	Tábla 5L	85	0	-
+	lenition	cheangail → ceangail		ceangail sé	cheangail sé	5	Tábla 5L	85	0	-
+	lenition	cheangail → ceangail		ceangail sí	cheangail sí	5	Tábla 5L	85	0	-
+	lenition	cheangail → ceangail		ceangail siad	cheangail siad	5	Tábla 5L	85	0	-
+	lenition	cheangail → ceangail		ceangail sibh	cheangail sibh	5	Tábla 5L	85	0	-
+	lenition	cheangail → ceangail		ceangail tú	cheangail tú	5	Tábla 5L	85	0	-
+	lenition	cheanglaídís → ceanglaídís		ceanglaídís	cheanglaídís	5	Tábla 5L	85	0	-
+	lenition	cheanglaímis → ceanglaímis		ceanglaímis	cheanglaímis	5	Tábla 5L	85	0	-
+	lenition	cheanglaínn → ceanglaínn		ceanglaínn	cheanglaínn	5	Tábla 5L	85	0	-
+	lenition	cheanglaíodh → ceanglaíodh		ceanglaíodh sé	cheanglaíodh sé	5	Tábla 5L	85	0	-
+	lenition	cheanglaíodh → ceanglaíodh		ceanglaíodh sí	cheanglaíodh sí	5	Tábla 5L	85	0	-
+	lenition	cheanglaíodh → ceanglaíodh		ceanglaíodh sibh	cheanglaíodh sibh	5	Tábla 5L	85	0	-
+	lenition	cheanglaíomar → ceanglaíomar		ceanglaíomar	cheanglaíomar	5	Tábla 5L	85	0	-
+	lenition	cheanglaíteá → ceanglaíteá		ceanglaíteá	cheanglaíteá	5	Tábla 5L	85	0	-
+	lenition	cheanglaítí → ceanglaítí		ceanglaítí	cheanglaítí	5	Tábla 5L	85	0	-
+	lenition	cheanglódh → ceanglódh		ceanglódh sé	cheanglódh sé	5	Tábla 5L	85	0	-
+	lenition	cheanglódh → ceanglódh		ceanglódh sí	cheanglódh sí	5	Tábla 5L	85	0	-
+	lenition	cheanglódh → ceanglódh		ceanglódh sibh	cheanglódh sibh	5	Tábla 5L	85	0	-
+	lenition	cheanglófá → ceanglófá		ceanglófá	cheanglófá	5	Tábla 5L	85	0	-
+	lenition	cheanglófaí → ceanglófaí		ceanglófaí	cheanglófaí	5	Tábla 5L	85	0	-
+	lenition	cheanglóidís → ceanglóidís		ceanglóidís	cheanglóidís	5	Tábla 5L	85	0	-
+	lenition	cheanglóimis → ceanglóimis		ceanglóimis	cheanglóimis	5	Tábla 5L	85	0	-
+	lenition	cheanglóinn → ceanglóinn		ceanglóinn	cheanglóinn	5	Tábla 5L	85	0	-
+	lenition	cheannaigh → ceannaigh		ceannaigh muid	cheannaigh muid	5	Tábla 5A	70	0	-
 	lenition	Cheannaigh → Ceannaigh		Ceannaigh mé leabhair dóibh in ionad bréagáin úra.	Cheannaigh mé leabhair dóibh in ionad bréagáin úra.	3	3.3.10	52	0	-
 	lenition	Cheannaigh → Ceannaigh		Ceannaigh sé casóg fir nua sa siopa.	Cheannaigh sé casóg fir nua sa siopa.	10	10.2.7	176	0	-
 	lenition	Cheannaigh → Ceannaigh		Ceannaigh sí trí leabhar fhada dá laethanta saoire.	Cheannaigh sí trí leabhar fhada dá laethanta saoire.	10	10.3.1	183	0	-
@@ -1092,18 +1414,113 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Cheannaigh → Ceannaigh		Ceannaigh sí an gúna a raibh mé ag iarraidh é a fháil.	Cheannaigh sí an gúna a raibh mé ag iarraidh é a fháil.	11	11.3.1(b)	205	0	-
 	lenition	Cheannaigh → Ceannaigh		Ceannaigh sí an gúna. Bhí mé á iarraidh.	Cheannaigh sí an gúna. Bhí mé á iarraidh.	11	11.2.1(c)	204	0	-
 	lenition	Cheannaigh → Ceannaigh		Ceannaigh sí an gúna. Bhí mé ag iarraidh é a fháil.	Cheannaigh sí an gúna. Bhí mé ag iarraidh é a fháil.	11	11.3.1(b)	205	0	-
+	lenition	cheannaíomar → ceannaíomar		ceannaíomar	cheannaíomar	5	Tábla 5A	70	0	-
 	lenition	Cheap → Ceap		Ceap mé nach n-inseodh an duine sin an fhírinne choíche.	Cheap mé nach n-inseodh an duine sin an fhírinne choíche.	11	11.3.1(e)	207	0	-
 	lenition	Cheapamar → Ceapamar		Ceapamar gur fhlaithiúil an duine ab ea é.	Cheapamar gur fhlaithiúil an duine ab ea é.	7	7.2.2	120	0	-
 	lenition	Cheartaigh → Ceartaigh		Ceartaigh sé ceacht gach linbh.	Cheartaigh sé ceacht gach linbh.	3	3.3.1	44	0	-
+	lenition	chloiseadh → cloiseadh		cloiseadh sé	chloiseadh sé	5	Tábla 5Q	92	0	-
+	lenition	chloiseadh → cloiseadh		cloiseadh sí	chloiseadh sí	5	Tábla 5Q	92	0	-
+	lenition	chloiseadh → cloiseadh		cloiseadh sibh	chloiseadh sibh	5	Tábla 5Q	92	0	-
+	lenition	chloisfeá → cloisfeá		cloisfeá	chloisfeá	5	Tábla 5Q	92	0	-
+	lenition	chloisfeadh → cloisfeadh		cloisfeadh muid	chloisfeadh muid	5	Tábla 5A	71	0	-
+	lenition	chloisfeadh → cloisfeadh		cloisfeadh sé	chloisfeadh sé	5	Tábla 5Q	92	0	-
+	lenition	chloisfeadh → cloisfeadh		cloisfeadh sí	chloisfeadh sí	5	Tábla 5Q	92	0	-
+	lenition	chloisfeadh → cloisfeadh		cloisfeadh sibh	chloisfeadh sibh	5	Tábla 5Q	92	0	-
+	lenition	chloisfí → cloisfí		cloisfí	chloisfí	5	Tábla 5Q	92	0	-
+	lenition	chloisfidís → cloisfidís		cloisfidís	chloisfidís	5	Tábla 5Q	92	0	-
+	lenition	chloisfimis → cloisfimis		cloisfimis	chloisfimis	5	Tábla 5A	71	0	-
+	lenition	chloisfinn → cloisfinn		cloisfinn	chloisfinn	5	Tábla 5Q	92	0	-
+	lenition	chloisidís → cloisidís		cloisidís	chloisidís	5	Tábla 5Q	92	0	-
+	lenition	chloisimis → cloisimis		cloisimis	chloisimis	5	Tábla 5Q	92	0	-
+	lenition	chloisinn → cloisinn		cloisinn	chloisinn	5	Tábla 5Q	92	0	-
+	lenition	chloisteá → cloisteá		cloisteá	chloisteá	5	Tábla 5Q	92	0	-
+	lenition	chloistí → cloistí		cloistí	chloistí	5	Tábla 5Q	92	0	-
+	lenition	chluineadh → cluineadh		cluineadh sé	chluineadh sé	5	Tábla 5Q	92	0	-
+	lenition	chluineadh → cluineadh		cluineadh sí	chluineadh sí	5	Tábla 5Q	92	0	-
+	lenition	chluineadh → cluineadh		cluineadh sibh	chluineadh sibh	5	Tábla 5Q	92	0	-
+	lenition	chluinfeá → cluinfeá		cluinfeá	chluinfeá	5	Tábla 5Q	92	0	-
+	lenition	chluinfeadh → cluinfeadh		cluinfeadh sé	chluinfeadh sé	5	Tábla 5Q	92	0	-
+	lenition	chluinfeadh → cluinfeadh		cluinfeadh sí	chluinfeadh sí	5	Tábla 5Q	92	0	-
+	lenition	chluinfeadh → cluinfeadh		cluinfeadh sibh	chluinfeadh sibh	5	Tábla 5Q	92	0	-
+	lenition	chluinfí → cluinfí		cluinfí	chluinfí	5	Tábla 5Q	92	0	-
+	lenition	chluinfidís → cluinfidís		cluinfidís	chluinfidís	5	Tábla 5Q	92	0	-
+	lenition	chluinfimis → cluinfimis		cluinfimis	chluinfimis	5	Tábla 5Q	92	0	-
+	lenition	chluinfinn → cluinfinn		cluinfinn	chluinfinn	5	Tábla 5Q	92	0	-
+	lenition	chluinidís → cluinidís		cluinidís	chluinidís	5	Tábla 5Q	92	0	-
+	lenition	chluinimis → cluinimis		cluinimis	chluinimis	5	Tábla 5Q	92	0	-
+	lenition	chluininn → cluininn		cluininn	chluininn	5	Tábla 5Q	92	0	-
+	lenition	chluinteá → cluinteá		cluinteá	chluinteá	5	Tábla 5Q	92	0	-
+	lenition	chluintí → cluintí		cluintí	chluintí	5	Tábla 5Q	92	0	flagged:NEAMHCHOIT
 	lenition	chomh → comh		comh híseal seo	chomh híseal seo	8	8.6.1	140	0	flagged:CAIGHDEAN
 	lenition	chomh → comh		comh híseal sin	chomh híseal sin	8	8.6.1	140	0	flagged:CAIGHDEAN
 	lenition	chomh → comh		comh híseal siúd	chomh híseal siúd	8	8.6.1	140	0	flagged:CAIGHDEAN
 	lenition	chomh → comh		comh mór seo	chomh mór seo	8	8.6.1	140	0	flagged:CAIGHDEAN
 	lenition	chomh → comh		comh mór sin	chomh mór sin	8	8.6.1	140	0	flagged:CAIGHDEAN
 	lenition	chomh → comh		comh mór siúd	chomh mór siúd	8	8.6.1	140	0	flagged:CAIGHDEAN
+	lenition	chonacthas → conacthas		conacthas	chonacthas	5	Tábla 5T	95	0	-
+	lenition	chonaic → conaic		conaic mé	chonaic mé	5	Tábla 5T	95	0	-
+	lenition	chonaic → conaic		conaic sé	chonaic sé	5	Tábla 5T	95	0	-
+	lenition	chonaic → conaic		conaic sí	chonaic sí	5	Tábla 5T	95	0	-
+	lenition	chonaic → conaic		conaic siad	chonaic siad	5	Tábla 5T	95	0	-
+	lenition	chonaic → conaic		conaic sibh	chonaic sibh	5	Tábla 5T	95	0	-
+	lenition	chonaic → conaic		conaic tú	chonaic tú	5	Tábla 5T	95	0	-
 	lenition	Chonaic → Conaic		Conaic mé é ar do shuíomh gréasáin.	Chonaic mé é ar do shuíomh gréasáin.	10	10.3.2	184	0	-
 	lenition	Chonaic → Conaic		Conaic sé naoi n-éan sa spéir.	Chonaic sé naoi n-éan sa spéir.	10	10.6.3	188	0	-
+	lenition	chonaiceamar → conaiceamar		conaiceamar	chonaiceamar	5	Tábla 5T	95	0	-
+	lenition	chrádh → crádh		crádh muid	chrádh muid	5	Tábla 5A	70	0	-
+	lenition	chrádh → crádh		crádh sé	chrádh sé	5	Tábla 5F	77	0	-
+	lenition	chrádh → crádh		crádh sí	chrádh sí	5	Tábla 5F	77	0	-
+	lenition	chrádh → crádh		crádh sibh	chrádh sibh	5	Tábla 5F	77	0	-
+	lenition	chráfá → cráfá		cráfá	chráfá	5	Tábla 5F	77	0	-
+	lenition	chráfadh → cráfadh		cráfadh sé	chráfadh sé	5	Tábla 5F	77	0	-
+	lenition	chráfadh → cráfadh		cráfadh sí	chráfadh sí	5	Tábla 5F	77	0	-
+	lenition	chráfadh → cráfadh		cráfadh sibh	chráfadh sibh	5	Tábla 5F	77	0	-
+	lenition	chráfaí → cráfaí		cráfaí	chráfaí	5	Tábla 5F	77	0	-
+	lenition	chráfaidís → cráfaidís		cráfaidís	chráfaidís	5	Tábla 5F	77	0	-
+	lenition	chráfaimis → cráfaimis		cráfaimis	chráfaimis	5	Tábla 5F	77	0	-
+	lenition	chráfainn → cráfainn		cráfainn	chráfainn	5	Tábla 5F	77	0	-
+	lenition	chráidís → cráidís		cráidís	chráidís	5	Tábla 5F	77	0	-
+	lenition	chráigh → cráigh		cráigh mé	chráigh mé	5	Tábla 5F	77	0	-
+	lenition	chráigh → cráigh		cráigh sé	chráigh sé	5	Tábla 5F	77	0	-
+	lenition	chráigh → cráigh		cráigh sí	chráigh sí	5	Tábla 5F	77	0	-
+	lenition	chráigh → cráigh		cráigh siad	chráigh siad	5	Tábla 5F	77	0	-
+	lenition	chráigh → cráigh		cráigh sibh	chráigh sibh	5	Tábla 5F	77	0	-
+	lenition	chráigh → cráigh		cráigh tú	chráigh tú	5	Tábla 5F	77	0	-
+	lenition	chráimis → cráimis		cráimis	chráimis	5	Tábla 5F	77	0	-
+	lenition	chráinn → cráinn		cráinn	chráinn	5	Tábla 5F	77	0	-
+	lenition	chráiteá → cráiteá		cráiteá	chráiteá	5	Tábla 5F	77	0	-
+	lenition	chráití → cráití		cráití	chráití	5	Tábla 5F	77	0	flagged:CAIGHDEAN
+	lenition	chrámar → crámar		crámar	chrámar	5	Tábla 5F	77	0	-
 	lenition	Chríochnaigh → Críochnaigh		Críochnaigh sí an obair gan Micheál.	Chríochnaigh sí an obair gan Micheál.	10	10.2.5	174	0	-
+	lenition	chruinneodh → cruinneodh		cruinneodh sé	chruinneodh sé	5	Tábla 5K	84	0	-
+	lenition	chruinneodh → cruinneodh		cruinneodh sí	chruinneodh sí	5	Tábla 5K	84	0	-
+	lenition	chruinneodh → cruinneodh		cruinneodh sibh	chruinneodh sibh	5	Tábla 5K	84	0	-
+	lenition	chruinneofá → cruinneofá		cruinneofá	chruinneofá	5	Tábla 5K	84	0	-
+	lenition	chruinneofaí → cruinneofaí		cruinneofaí	chruinneofaí	5	Tábla 5K	84	0	-
+	lenition	chruinneoidís → cruinneoidís		cruinneoidís	chruinneoidís	5	Tábla 5K	84	0	-
+	lenition	chruinneoimis → cruinneoimis		cruinneoimis	chruinneoimis	5	Tábla 5K	84	0	-
+	lenition	chruinneoinn → cruinneoinn		cruinneoinn	chruinneoinn	5	Tábla 5K	84	0	-
+	lenition	chruinnídís → cruinnídís		cruinnídís	chruinnídís	5	Tábla 5K	84	0	-
+	lenition	chruinnigh → cruinnigh		cruinnigh mé	chruinnigh mé	5	Tábla 5K	84	0	-
+	lenition	chruinnigh → cruinnigh		cruinnigh sé	chruinnigh sé	5	Tábla 5K	84	0	-
+	lenition	chruinnigh → cruinnigh		cruinnigh sí	chruinnigh sí	5	Tábla 5K	84	0	-
+	lenition	chruinnigh → cruinnigh		cruinnigh siad	chruinnigh siad	5	Tábla 5K	84	0	-
+	lenition	chruinnigh → cruinnigh		cruinnigh sibh	chruinnigh sibh	5	Tábla 5K	84	0	-
+	lenition	chruinnigh → cruinnigh		cruinnigh tú	chruinnigh tú	5	Tábla 5K	84	0	-
+	lenition	chruinnímis → cruinnímis		cruinnímis	chruinnímis	5	Tábla 5K	84	0	-
+	lenition	chruinnínn → cruinnínn		cruinnínn	chruinnínn	5	Tábla 5K	84	0	-
+	lenition	chruinníodh → cruinníodh		cruinníodh sé	chruinníodh sé	5	Tábla 5K	84	0	-
+	lenition	chruinníodh → cruinníodh		cruinníodh sí	chruinníodh sí	5	Tábla 5K	84	0	-
+	lenition	chruinníodh → cruinníodh		cruinníodh sibh	chruinníodh sibh	5	Tábla 5K	84	0	-
+	lenition	chruinníomar → cruinníomar		cruinníomar	chruinníomar	5	Tábla 5K	84	0	-
+	lenition	chruinníteá → cruinníteá		cruinníteá	chruinníteá	5	Tábla 5K	84	0	-
+	lenition	chruinnítí → cruinnítí		cruinnítí	chruinnítí	5	Tábla 5K	84	0	-
+	lenition	chuaigh → cuaigh		cuaigh mé	chuaigh mé	5	Tábla 5X	99	0	flagged:CAIGHDEAN
+	lenition	chuaigh → cuaigh		cuaigh sé	chuaigh sé	5	Tábla 5X	99	0	flagged:CAIGHDEAN
+	lenition	chuaigh → cuaigh		cuaigh sí	chuaigh sí	5	Tábla 5X	99	0	flagged:CAIGHDEAN
+	lenition	chuaigh → cuaigh		cuaigh siad	chuaigh siad	5	Tábla 5X	99	0	flagged:CAIGHDEAN
+	lenition	chuaigh → cuaigh		cuaigh sibh	chuaigh sibh	5	Tábla 5X	99	0	flagged:CAIGHDEAN
+	lenition	chuaigh → cuaigh		cuaigh tú	chuaigh tú	5	Tábla 5X	99	0	flagged:CAIGHDEAN
 	lenition	Chuaigh → Cuaigh		Cuaigh Seán go dtí an Oifig um Rialú Tobac.	Chuaigh Seán go dtí an Oifig um Rialú Tobac.	1	1.1.5(b)	1	0	flagged:CAIGHDEAN
 	lenition	Chuaigh → Cuaigh		Cuaigh sé i gcomhair a chupáin tae.	Chuaigh sé i gcomhair a chupáin tae.	3	3.1.2	37	0	flagged:CAIGHDEAN
 	lenition	Chuaigh → Cuaigh		Cuaigh sé i gcomhair cupán tae.	Chuaigh sé i gcomhair cupán tae.	3	3.3.10	52	0	flagged:CAIGHDEAN
@@ -1117,7 +1534,17 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Chuaigh → Cuaigh		Cuaigh siad ar stailc i bpáirt le hoibrithe eile.	Chuaigh siad ar stailc i bpáirt le hoibrithe eile.	10	10.11.3	193	0	flagged:CAIGHDEAN
 	lenition	Chuaigh → Cuaigh		Cuaigh siad go dtí an pháirc pheile.	Chuaigh siad go dtí an pháirc pheile.	10	10.2.7	175	0	flagged:CAIGHDEAN
 	lenition	Chuaigh → Cuaigh		Cuaigh mé go dtí an siopa éadaí mar a ndíoltar geansaithe áille olla.	Chuaigh mé go dtí an siopa éadaí mar a ndíoltar geansaithe áille olla.	11	11.9	218	0	flagged:CAIGHDEAN
+	lenition	chuala → cuala		cuala mé	chuala mé	5	Tábla 5Q	92	0	flagged:CAIGHDEAN
+	lenition	chuala → cuala		cuala sé	chuala sé	5	Tábla 5Q	92	0	flagged:CAIGHDEAN
+	lenition	chuala → cuala		cuala sí	chuala sí	5	Tábla 5Q	92	0	flagged:CAIGHDEAN
+	lenition	chuala → cuala		cuala siad	chuala siad	5	Tábla 5Q	92	0	flagged:CAIGHDEAN
+	lenition	chuala → cuala		cuala sibh	chuala sibh	5	Tábla 5Q	92	0	flagged:CAIGHDEAN
+	lenition	chuala → cuala		cuala tú	chuala tú	5	Tábla 5Q	92	0	flagged:CAIGHDEAN
 	lenition	Chuala → Cuala		Cuala mé go ndeachaigh sibh ar thuras timpeall an domhain.	Chuala mé go ndeachaigh sibh ar thuras timpeall an domhain.	1	1.5.1	11	0	flagged:CAIGHDEAN
+	lenition	chualamar → cualamar		cualamar	chualamar	5	Tábla 5Q	92	0	-
+	lenition	chualathas → cualathas		cualathas	chualathas	5	Tábla 5Q	92	0	-
+	lenition	chuamar → cuamar		cuamar	chuamar	5	Tábla 5X	99	0	-
+	lenition	chuathas → cuathas		cuathas	chuathas	5	Tábla 5X	99	0	-
 	lenition	Chugam → Cugam		Cugam aniar thú!	Chugam aniar thú!	8	8.2.2	131	0	-
 	lenition	Chuideodh → Cuideodh		Cuideodh sé leat dá gcuirfeá ceist air.	Chuideodh sé leat dá gcuirfeá ceist air.	10	10.4.1	186	0	-
 	lenition	chuig → cuig		cuig an Aire ilteangach	chuig an Aire ilteangach	1	1.7.5	18	0	flagged:MICHEART
@@ -1140,6 +1567,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Chuir → Cuir		Cuir siad fáilte roimh an gcuairteoir.	Chuir siad fáilte roimh an gcuairteoir.	10	10.6.1	188	0	-
 	lenition	Chum → Cum		Cum an fear an dán sin.	Chum an fear an dán sin.	11	11.2.1(b)	204	0	-
 	lenition	chun → cun		cun an diabhail	chun an diabhail	1	1.5.2	12	0	flagged:CAIGHDEAN
+	lenition	chun → cun		cun bheith	chun bheith	5	Tábla 5P	91	0	flagged:CAIGHDEAN
 	lenition	dhá → dá		dá ábhar	dhá ábhar	9	9.3.1	145	0	-
 	lenition	dhá → dá		dá aondéagú	dhá aondéagú	9	9.6.3	166	0	-
 	lenition	dhá → dá		dá bhád	dhá bhád	9	9.3.1	145	0	-
@@ -1171,41 +1599,202 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dháréag → dáréag		dáréag	dháréag	9	9.4.1	154	0	flagged:BACHOIR
 	lenition	dháréag → dáréag		dáréag bádóirí	dháréag bádóirí	9	9.4.3	157	0	flagged:BACHOIR
 	lenition	dháréag → dáréag		dáréag scoláirí borba	dháréag scoláirí borba	9	9.4.3	159	0	flagged:BACHOIR
+	lenition	dhéanadh → déanadh		déanadh sé	dhéanadh sé	5	Tábla 5R	93	0	-
+	lenition	dhéanadh → déanadh		déanadh sí	dhéanadh sí	5	Tábla 5R	93	0	-
+	lenition	dhéanadh → déanadh		déanadh sibh	dhéanadh sibh	5	Tábla 5R	93	0	-
+	lenition	dhéanaidís → déanaidís		déanaidís	dhéanaidís	5	Tábla 5R	93	0	-
+	lenition	dhéanaimis → déanaimis		déanaimis	dhéanaimis	5	Tábla 5R	93	0	-
+	lenition	dhéanainn → déanainn		déanainn	dhéanainn	5	Tábla 5R	93	0	-
+	lenition	dhéanfá → déanfá		déanfá	dhéanfá	5	Tábla 5R	93	0	-
+	lenition	dhéanfadh → déanfadh		déanfadh sé	dhéanfadh sé	5	Tábla 5R	93	0	-
+	lenition	dhéanfadh → déanfadh		déanfadh sí	dhéanfadh sí	5	Tábla 5R	93	0	-
+	lenition	dhéanfadh → déanfadh		déanfadh sibh	dhéanfadh sibh	5	Tábla 5R	93	0	-
+	lenition	dhéanfaí → déanfaí		déanfaí	dhéanfaí	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dhéanfaidís → déanfaidís		déanfaidís	dhéanfaidís	5	Tábla 5R	93	0	-
+	lenition	dhéanfaimis → déanfaimis		déanfaimis	dhéanfaimis	5	Tábla 5R	93	0	-
+	lenition	dhéanfainn → déanfainn		déanfainn	dhéanfainn	5	Tábla 5R	93	0	-
+	lenition	dhéantá → déantá		déantá	dhéantá	5	Tábla 5R	93	0	-
+	lenition	dhéantaí → déantaí		déantaí	dhéantaí	5	Tábla 5R	93	0	flagged:CAIGHDEAN
 	lenition	Dhearbhaigh → Dearbhaigh		Dearbhaigh sé go mb’fhéimheach é.	Dhearbhaigh sé go mb’fhéimheach é.	7	7.2.2	121	0	-
 	lenition	Dhearbhaigh → Dearbhaigh		Dearbhaigh sé gurbh fhéimheach é.	Dhearbhaigh sé gurbh fhéimheach é.	7	7.2.2	120	0	-
+	lenition	dhein → dein		dein mé	dhein mé	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dhein → dein		dein sé	dhein sé	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dhein → dein		dein sí	dhein sí	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dhein → dein		dein siad	dhein siad	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dhein → dein		dein sibh	dhein sibh	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dhein → dein		dein tú	dhein tú	5	Tábla 5R	93	0	flagged:CAIGHDEAN
+	lenition	dheineamar → deineamar		deineamar	dheineamar	5	Tábla 5R	93	0	-
+	lenition	dhíbir → díbir		díbir mé	dhíbir mé	5	Tábla 5M	86	0	-
+	lenition	dhíbir → díbir		díbir sé	dhíbir sé	5	Tábla 5M	86	0	-
+	lenition	dhíbir → díbir		díbir sí	dhíbir sí	5	Tábla 5M	86	0	-
+	lenition	dhíbir → díbir		díbir siad	dhíbir siad	5	Tábla 5M	86	0	-
+	lenition	dhíbir → díbir		díbir sibh	dhíbir sibh	5	Tábla 5M	86	0	-
+	lenition	dhíbir → díbir		díbir tú	dhíbir tú	5	Tábla 5M	86	0	-
 	lenition	Dhíbir → Díbir		Díbir siad í thar tír amach.	Dhíbir siad í thar tír amach.	10	10.2.5	175	0	-
+	lenition	dhíbreodh → díbreodh		díbreodh sé	dhíbreodh sé	5	Tábla 5M	86	0	-
+	lenition	dhíbreodh → díbreodh		díbreodh sí	dhíbreodh sí	5	Tábla 5M	86	0	-
+	lenition	dhíbreodh → díbreodh		díbreodh sibh	dhíbreodh sibh	5	Tábla 5M	86	0	-
+	lenition	dhíbreofá → díbreofá		díbreofá	dhíbreofá	5	Tábla 5M	86	0	-
+	lenition	dhíbreofaí → díbreofaí		díbreofaí	dhíbreofaí	5	Tábla 5M	86	0	-
+	lenition	dhíbreoidís → díbreoidís		díbreoidís	dhíbreoidís	5	Tábla 5M	86	0	-
+	lenition	dhíbreoimis → díbreoimis		díbreoimis	dhíbreoimis	5	Tábla 5M	86	0	-
+	lenition	dhíbreoinn → díbreoinn		díbreoinn	dhíbreoinn	5	Tábla 5M	86	0	-
+	lenition	dhíbrídís → díbrídís		díbrídís	dhíbrídís	5	Tábla 5M	86	0	-
+	lenition	dhíbrímis → díbrímis		díbrímis	dhíbrímis	5	Tábla 5M	86	0	-
+	lenition	dhíbrínn → díbrínn		díbrínn	dhíbrínn	5	Tábla 5M	86	0	-
+	lenition	dhíbríodh → díbríodh		díbríodh sé	dhíbríodh sé	5	Tábla 5M	86	0	-
+	lenition	dhíbríodh → díbríodh		díbríodh sí	dhíbríodh sí	5	Tábla 5M	86	0	-
+	lenition	dhíbríodh → díbríodh		díbríodh sibh	dhíbríodh sibh	5	Tábla 5M	86	0	-
+	lenition	dhíbríomar → díbríomar		díbríomar	dhíbríomar	5	Tábla 5M	86	0	-
+	lenition	dhíbríteá → díbríteá		díbríteá	dhíbríteá	5	Tábla 5M	86	0	-
+	lenition	dhíbrítí → díbrítí		díbrítí	dhíbrítí	5	Tábla 5M	86	0	-
 	lenition	Dhíol → Díol		Díol sé na leabhair ar euro an ceann.	Dhíol sé na leabhair ar euro an ceann.	1	1.1.5(k)	4	0	-
 	lenition	Dhíol → Díol		Díol siad an chathaoir a bhí mé ag moladh a choimeád	Dhíol siad an chathaoir a bhí mé ag moladh a choimeád	11	11.3.1(b)	205	0	-
 	lenition	Dhíol → Díol		Díol siad an chathaoir a raibh mé ag moladh í a choimeád.	Dhíol siad an chathaoir a raibh mé ag moladh í a choimeád.	11	11.3.1(b)	205	0	-
 	lenition	Dhíol → Díol		Díol siad an chathaoir. Bhí mé ag moladh í a choimeád.	Dhíol siad an chathaoir. Bhí mé ag moladh í a choimeád.	11	11.3.1(b)	205	0	-
+	lenition	dhódh → dódh		dódh sé	dhódh sé	5	Tábla 5G	78	0	-
+	lenition	dhódh → dódh		dódh sí	dhódh sí	5	Tábla 5G	78	0	-
+	lenition	dhódh → dódh		dódh sibh	dhódh sibh	5	Tábla 5G	78	0	-
+	lenition	dhófá → dófá		dófá	dhófá	5	Tábla 5G	78	0	-
+	lenition	dhófadh → dófadh		dófadh sé	dhófadh sé	5	Tábla 5G	78	0	-
+	lenition	dhófadh → dófadh		dófadh sí	dhófadh sí	5	Tábla 5G	78	0	-
+	lenition	dhófadh → dófadh		dófadh sibh	dhófadh sibh	5	Tábla 5G	78	0	-
+	lenition	dhófaí → dófaí		dófaí	dhófaí	5	Tábla 5G	78	0	-
+	lenition	dhófaidís → dófaidís		dófaidís	dhófaidís	5	Tábla 5G	78	0	-
+	lenition	dhófaimis → dófaimis		dófaimis	dhófaimis	5	Tábla 5G	78	0	-
+	lenition	dhófainn → dófainn		dófainn	dhófainn	5	Tábla 5G	78	0	-
+	lenition	dhóidís → dóidís		dóidís	dhóidís	5	Tábla 5G	78	0	-
+	lenition	dhóigh → dóigh		dóigh mé	dhóigh mé	5	Tábla 5G	78	0	-
+	lenition	dhóigh → dóigh		dóigh sé	dhóigh sé	5	Tábla 5G	78	0	-
+	lenition	dhóigh → dóigh		dóigh sí	dhóigh sí	5	Tábla 5G	78	0	-
+	lenition	dhóigh → dóigh		dóigh siad	dhóigh siad	5	Tábla 5G	78	0	-
+	lenition	dhóigh → dóigh		dóigh sibh	dhóigh sibh	5	Tábla 5G	78	0	-
+	lenition	dhóigh → dóigh		dóigh tú	dhóigh tú	5	Tábla 5G	78	0	-
+	lenition	dhóimis → dóimis		dóimis	dhóimis	5	Tábla 5G	78	0	-
+	lenition	dhóinn → dóinn		dóinn	dhóinn	5	Tábla 5G	78	0	-
+	lenition	dhóiteá → dóiteá		dóiteá	dhóiteá	5	Tábla 5G	78	0	-
+	lenition	dhóití → dóití		dóití	dhóití	5	Tábla 5G	78	0	-
+	lenition	dhómar → dómar		dómar	dhómar	5	Tábla 5G	78	0	-
 	lenition	Gheall → Geall		Geall sí go mbeadh sí ann Dé hAoine.	Gheall sí go mbeadh sí ann Dé hAoine.	10	10.11.6	194	0	-
+	lenition	gheobhadh → geobhadh		geobhadh sé	gheobhadh sé	5	Tábla 5S	94	0	-
+	lenition	gheobhadh → geobhadh		geobhadh sí	gheobhadh sí	5	Tábla 5S	94	0	-
+	lenition	gheobhadh → geobhadh		geobhadh sibh	gheobhadh sibh	5	Tábla 5S	94	0	-
+	lenition	gheobhaidh → geobhaidh		geobhaidh mé	gheobhaidh mé	5	Tábla 5S	94	0	flagged:CAIGHDEAN
+	lenition	gheobhaidh → geobhaidh		geobhaidh sé	gheobhaidh sé	5	Tábla 5S	94	0	flagged:CAIGHDEAN
+	lenition	gheobhaidh → geobhaidh		geobhaidh sí	gheobhaidh sí	5	Tábla 5S	94	0	flagged:CAIGHDEAN
+	lenition	gheobhaidh → geobhaidh		geobhaidh siad	gheobhaidh siad	5	Tábla 5S	94	0	flagged:CAIGHDEAN
+	lenition	gheobhaidh → geobhaidh		geobhaidh sibh	gheobhaidh sibh	5	Tábla 5S	94	0	flagged:CAIGHDEAN
+	lenition	gheobhaidh → geobhaidh		geobhaidh tú	gheobhaidh tú	5	Tábla 5S	94	0	flagged:CAIGHDEAN
 	lenition	Gheobhaidh → Geobhaidh		Geobhaidh mé bia beir leat ar mo shlí abhaile dom.	Gheobhaidh mé bia beir leat ar mo shlí abhaile dom.	3	3.3.6	49	0	flagged:CAIGHDEAN
 	lenition	Gheobhaidh → Geobhaidh		Geobhaidh tú san oifig í, mar a mbíonn sí gach oíche.	Gheobhaidh tú san oifig í, mar a mbíonn sí gach oíche.	11	11.3.1(i)	208	0	flagged:CAIGHDEAN
+	lenition	gheobhaidís → geobhaidís		geobhaidís	gheobhaidís	5	Tábla 5S	94	0	-
+	lenition	gheobhaimid → geobhaimid		geobhaimid	gheobhaimid	5	Tábla 5S	94	0	-
+	lenition	Gheobhaimid → Geobhaimid		Geobhaimid an scéal ceart ach a dtaga Pól	Gheobhaimid an scéal ceart ach a dtaga Pól	5	5.1.5(a)	69	0	-
+	lenition	Gheobhaimid → Geobhaimid		Geobhaimid an scéal ceart ach a dtiocfaidh Pól	Gheobhaimid an scéal ceart ach a dtiocfaidh Pól	5	5.1.5(a)	69	0	-
+	lenition	gheobhaimis → geobhaimis		geobhaimis	gheobhaimis	5	Tábla 5S	94	0	-
+	lenition	gheobhainn → geobhainn		geobhainn	gheobhainn	5	Tábla 5S	94	0	-
+	lenition	gheofá → geofá		geofá	gheofá	5	Tábla 5S	94	0	-
+	lenition	gheofaí → geofaí		geofaí	gheofaí	5	Tábla 5S	94	0	-
+	lenition	gheofar → geofar		geofar	gheofar	5	Tábla 5S	94	0	-
 	lenition	Ghlac → Glac		Glac deich gcinn de chumainn foirgníochta páirt sa suirbhé.	Ghlac deich gcinn de chumainn foirgníochta páirt sa suirbhé.	10	10.2.8	179	0	-
 	lenition	Ghoid → Goid		Goid an gadaí carr na mná óige.	Ghoid an gadaí carr na mná óige.	11	11.3.1(d)	207	0	-
 	lenition	Mhair → Mair		Mair an cúrsa seacht mí dhéag.	Mhair an cúrsa seacht mí dhéag.	10	10.3.4	185	0	-
 	lenition	Mheallfadh → Meallfadh		Meallfadh sí an t-éan den chrann.	Mheallfadh sí an t-éan den chrann.	10	10.2.1	171	0	-
 	lenition	Mheas → Meas		Meas mé go mba ar an mbád a tháinig siad	Mheas mé go mba ar an mbád a tháinig siad	7	7.2.2	120	0	-
 	lenition	Mhill → Mill		Mill sé a chuidsean gruaige.	Mhill sé a chuidsean gruaige.	8	8.3.4	135	0	-
+	lenition	mhol → mol		mol mé	mhol mé	5	Tábla 5B	71	0	-
+	lenition	mhol → mol		mol sé	mhol sé	5	Tábla 5B	71	0	-
+	lenition	mhol → mol		mol sí	mhol sí	5	Tábla 5B	71	0	-
+	lenition	mhol → mol		mol siad	mhol siad	5	Tábla 5B	71	0	-
+	lenition	mhol → mol		mol sibh	mhol sibh	5	Tábla 5B	71	0	-
+	lenition	mhol → mol		mol tú	mhol tú	5	Tábla 5B	71	0	-
+	lenition	mholadh → moladh		moladh sé	mholadh sé	5	Tábla 5B	71	0	-
+	lenition	mholadh → moladh		moladh sí	mholadh sí	5	Tábla 5B	71	0	-
+	lenition	mholadh → moladh		moladh sibh	mholadh sibh	5	Tábla 5B	71	0	-
+	lenition	mholaidís → molaidís		molaidís	mholaidís	5	Tábla 5B	71	0	-
+	lenition	mholaimis → molaimis		molaimis	mholaimis	5	Tábla 5B	71	0	-
+	lenition	mholainn → molainn		molainn	mholainn	5	Tábla 5B	71	0	-
+	lenition	mholamar → molamar		molamar	mholamar	5	Tábla 5B	71	0	-
+	lenition	mholfá → molfá		molfá	mholfá	5	Tábla 5B	71	0	-
+	lenition	mholfadh → molfadh		molfadh sé	mholfadh sé	5	Tábla 5B	71	0	-
+	lenition	mholfadh → molfadh		molfadh sí	mholfadh sí	5	Tábla 5B	71	0	-
+	lenition	mholfadh → molfadh		molfadh sibh	mholfadh sibh	5	Tábla 5B	71	0	-
+	lenition	mholfaí → molfaí		molfaí	mholfaí	5	Tábla 5B	71	0	-
+	lenition	mholfaidís → molfaidís		molfaidís	mholfaidís	5	Tábla 5B	71	0	-
+	lenition	mholfaimis → molfaimis		molfaimis	mholfaimis	5	Tábla 5B	71	0	-
+	lenition	mholfainn → molfainn		molfainn	mholfainn	5	Tábla 5B	71	0	-
+	lenition	mholtá → moltá		moltá	mholtá	5	Tábla 5B	71	0	-
+	lenition	mholtaí → moltaí		moltaí	mholtaí	5	Tábla 5B	71	0	-
 	lenition	Phóg → Póg		Póg an bhean sin Gearóid.	Phóg an bhean sin Gearóid.	11	11.2.1(a)	203	0	-
 	lenition	Phóg → Póg		Póg Gearóid an bhean sin.	Phóg Gearóid an bhean sin.	11	11.2.1(b)	204	0	-
+	lenition	shábháil → sábháil		sábháil mé	shábháil mé	5	Tábla 5D	74	0	-
+	lenition	shábháil → sábháil		sábháil sé	shábháil sé	5	Tábla 5D	74	0	-
+	lenition	shábháil → sábháil		sábháil sí	shábháil sí	5	Tábla 5D	74	0	-
+	lenition	shábháil → sábháil		sábháil siad	shábháil siad	5	Tábla 5D	74	0	-
+	lenition	shábháil → sábháil		sábháil sibh	shábháil sibh	5	Tábla 5D	74	0	-
+	lenition	shábháil → sábháil		sábháil tú	shábháil tú	5	Tábla 5D	74	0	-
 	lenition	Shábháil → Sábháil		Sábháil mé sa scarbhileog Excel chéanna é.	Shábháil mé sa scarbhileog Excel chéanna é.	3	3.1.5	39	0	-
 	lenition	Shábháil → Sábháil		Sábháil sí go leor airgid.	Shábháil sí go leor airgid.	10	10.4.1	186	0	-
 	lenition	Shábháil → Sábháil		Sábháil mé an t-airgead sa chomhar creidmheasa.	Shábháil mé an t-airgead sa chomhar creidmheasa.	11	11.2.1(f)	205	0	-
+	lenition	shábháilteá → sábháilteá		sábháilteá	shábháilteá	5	Tábla 5D	74	0	-
+	lenition	shábháiltí → sábháiltí		sábháiltí	shábháiltí	5	Tábla 5D	74	0	-
+	lenition	shábháladh → sábháladh		sábháladh sé	shábháladh sé	5	Tábla 5D	74	0	-
+	lenition	shábháladh → sábháladh		sábháladh sí	shábháladh sí	5	Tábla 5D	74	0	-
+	lenition	shábháladh → sábháladh		sábháladh sibh	shábháladh sibh	5	Tábla 5D	74	0	-
+	lenition	shábhálaidís → sábhálaidís		sábhálaidís	shábhálaidís	5	Tábla 5D	74	0	-
+	lenition	shábhálaimis → sábhálaimis		sábhálaimis	shábhálaimis	5	Tábla 5D	74	0	-
+	lenition	shábhálainn → sábhálainn		sábhálainn	shábhálainn	5	Tábla 5D	74	0	-
+	lenition	shábhálamar → sábhálamar		sábhálamar	shábhálamar	5	Tábla 5D	74	0	-
+	lenition	shábhálfá → sábhálfá		sábhálfá	shábhálfá	5	Tábla 5D	74	0	-
+	lenition	shábhálfadh → sábhálfadh		sábhálfadh sé	shábhálfadh sé	5	Tábla 5D	74	0	-
+	lenition	shábhálfadh → sábhálfadh		sábhálfadh sí	shábhálfadh sí	5	Tábla 5D	74	0	-
+	lenition	shábhálfadh → sábhálfadh		sábhálfadh sibh	shábhálfadh sibh	5	Tábla 5D	74	0	-
+	lenition	shábhálfaí → sábhálfaí		sábhálfaí	shábhálfaí	5	Tábla 5D	74	0	-
+	lenition	shábhálfaidís → sábhálfaidís		sábhálfaidís	shábhálfaidís	5	Tábla 5D	74	0	-
+	lenition	shábhálfaimis → sábhálfaimis		sábhálfaimis	shábhálfaimis	5	Tábla 5D	74	0	-
+	lenition	shábhálfainn → sábhálfainn		sábhálfainn	shábhálfainn	5	Tábla 5D	74	0	-
 	lenition	Shíl → Síl		Síl mé go mba ann dó	Shíl mé go mba ann dó	7	7.2.2	120	0	-
 	lenition	Shílfeadh → Sílfeadh		Sílfeadh duine gurb éard atá á chur i gcéill agat ná go ndearnadh d’aon ghnó é.	Shílfeadh duine gurb éard atá á chur i gcéill agat ná go ndearnadh d’aon ghnó é.	8	8.6.3	140	0	-
 	lenition	Shiúlamar → Siúlamar		Siúlamar cois na habhann.	Shiúlamar cois na habhann.	1	1.5.1	11	0	-
+	lenition	shleabhac → sleabhac		sleabhac siad	shleabhac siad	5	5.2.2	76	0	-
 	lenition	Shocraigh → Socraigh		Socraigh sí gan géilleadh.	Shocraigh sí gan géilleadh.	10	10.2.5	174	0	-
 	lenition	Shuigh → Suigh		Suigh siad cois abhainn chiúin.	Shuigh siad cois abhainn chiúin.	3	3.3.10	52	0	-
+	lenition	thabharfá → tabharfá		tabharfá	thabharfá	5	Tábla 5V	97	0	-
+	lenition	thabharfadh → tabharfadh		tabharfadh sé	thabharfadh sé	5	Tábla 5V	97	0	-
+	lenition	thabharfadh → tabharfadh		tabharfadh sí	thabharfadh sí	5	Tábla 5V	97	0	-
+	lenition	thabharfadh → tabharfadh		tabharfadh sibh	thabharfadh sibh	5	Tábla 5V	97	0	-
+	lenition	thabharfaí → tabharfaí		tabharfaí	thabharfaí	5	Tábla 5V	97	0	-
+	lenition	thabharfaidís → tabharfaidís		tabharfaidís	thabharfaidís	5	Tábla 5V	97	0	-
+	lenition	thabharfaimis → tabharfaimis		tabharfaimis	thabharfaimis	5	Tábla 5V	97	0	-
+	lenition	thabharfainn → tabharfainn		tabharfainn	thabharfainn	5	Tábla 5V	97	0	-
+	lenition	thagadh → tagadh		tagadh sé	thagadh sé	5	Tábla 5W	98	0	-
+	lenition	thagadh → tagadh		tagadh sí	thagadh sí	5	Tábla 5W	98	0	-
+	lenition	thagadh → tagadh		tagadh sibh	thagadh sibh	5	Tábla 5W	98	0	-
+	lenition	Thagadh → Tagadh		Tagadh sí isteach sula bhfeictí í.	Thagadh sí isteach sula bhfeictí í.	5	5.1.5(b)	70	0	-
+	lenition	thagaidís → tagaidís		tagaidís	thagaidís	5	Tábla 5W	98	0	-
+	lenition	thagaimis → tagaimis		tagaimis	thagaimis	5	Tábla 5W	98	0	-
+	lenition	thagainn → tagainn		tagainn	thagainn	5	Tábla 5W	98	0	-
+	lenition	thagtá → tagtá		tagtá	thagtá	5	Tábla 5W	98	0	-
+	lenition	thagtaí → tagtaí		tagtaí	thagtaí	5	Tábla 5W	98	0	-
+	lenition	tháinig → táinig		táinig mé	tháinig mé	5	Tábla 5W	98	0	flagged:CAIGHDEAN
+	lenition	tháinig → táinig		táinig sé	tháinig sé	5	Tábla 5W	98	0	flagged:CAIGHDEAN
+	lenition	tháinig → táinig		táinig sí	tháinig sí	5	Tábla 5W	98	0	flagged:CAIGHDEAN
+	lenition	tháinig → táinig		táinig siad	tháinig siad	5	Tábla 5W	98	0	flagged:CAIGHDEAN
+	lenition	tháinig → táinig		táinig sibh	tháinig sibh	5	Tábla 5W	98	0	flagged:CAIGHDEAN
+	lenition	tháinig → táinig		táinig tú	tháinig tú	5	Tábla 5W	98	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig na ceisteanna ó dhaoine den phobal.	Tháinig na ceisteanna ó dhaoine den phobal.	3	3.1.10	40	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig na fir agus na mná gnaíúla isteach.	Tháinig na fir agus na mná gnaíúla isteach.	4	4.2.1	57	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig na mná agus na fir ghnaíúla isteach.	Tháinig na mná agus na fir ghnaíúla isteach.	4	4.2.1	57	0	flagged:CAIGHDEAN
+	lenition	Tháinig → Táinig		Táinig sí isteach sula bhfeicfí í.	Tháinig sí isteach sula bhfeicfí í.	5	5.1.5(b)	70	0	flagged:CAIGHDEAN
+	lenition	Tháinig → Táinig		Táinig sí isteach sula bhfeictí í.	Tháinig sí isteach sula bhfeictí í.	5	5.1.5(b)	70	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig ann don choigilteas ó ba lú an caiteachas ná mar a bhíothas ag súil.	Tháinig ann don choigilteas ó ba lú an caiteachas ná mar a bhíothas ag súil.	7	7.3.3	128	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig sé isteach.	Tháinig sé isteach.	8	8.2.4	132	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig sí isteach.	Tháinig sí isteach.	8	8.2.4	132	0	flagged:CAIGHDEAN
 	lenition	Tháinig → Táinig		Táinig siad isteach.	Tháinig siad isteach.	8	8.2.4	132	0	flagged:CAIGHDEAN
 	lenition	thairis-sean → tairis-sean		tairis-sean	thairis-sean	8	8.4	138	0	flagged:CAIGHDEAN
 	lenition	Thaitin → Taitin		Taitin téama na haiste iontaí liom.	Thaitin téama na haiste iontaí liom.	4	4.4.1	61	0	-
+	lenition	thángamar → tángamar		tángamar	thángamar	5	Tábla 5W	98	0	-
+	lenition	thángthas → tángthas		tángthas	thángthas	5	Tábla 5W	98	0	-
 	lenition	thar → tar		tar an bhfarraige chiúin	thar an bhfarraige chiúin	1	1.4.1	8	0	other:SEIMHIU,NISEIMHIU
 	lenition	thar → tar		tar an chnoc bhán	thar an chnoc bhán	1	1.7.3	16	0	other:NISEIMHIU
 	lenition	thar → tar		tar an diallait nua	thar an diallait nua	1	1.7.6	18	0	-
@@ -1221,10 +1810,50 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	thar → tar		tar ceann an duine chuí	thar ceann an duine chuí	4	4.7	64	0	-
 	lenition	Tharla → Tarla		Tarla sé le linn na tréimhse sin.	Tharla sé le linn na tréimhse sin.	3	3.3.2	45	0	flagged:CAIGHDEAN
 	lenition	Tharla → Tarla		Tarla sé tamall maith ó shin.	Tharla sé tamall maith ó shin.	10	10.5.1	187	0	flagged:CAIGHDEAN
+	lenition	théadh → téadh		téadh sé	théadh sé	5	Tábla 5X	99	0	-
+	lenition	théadh → téadh		téadh sí	théadh sí	5	Tábla 5X	99	0	-
+	lenition	théadh → téadh		téadh sibh	théadh sibh	5	Tábla 5X	99	0	-
 	lenition	Theastaigh → Teastaigh		Teastaigh uathu scoil buachaillí a bhunú san fhoirgneamh sin.	Theastaigh uathu scoil buachaillí a bhunú san fhoirgneamh sin.	10	10.2.7	176	0	-
+	lenition	théidís → téidís		téidís	théidís	5	Tábla 5X	99	0	-
 	lenition	Théidís → Téidís		Téidís abhaile láithreach nuair a d’fhágaidís an áit.	Théidís abhaile láithreach nuair a d’fhágaidís an áit.	10	10.15	196	0	-
 	lenition	Théidís → Téidís		Téidís ann gach lá.	Théidís ann gach lá.	10	10.4.1	186	0	-
+	lenition	théimis → téimis		téimis	théimis	5	Tábla 5X	99	0	-
+	lenition	théinn → téinn		téinn	théinn	5	Tábla 5X	99	0	-
 	lenition	Theip → Teip		Teip uirthi trí huaire as a chéile.	Theip uirthi trí huaire as a chéile.	10	10.11.2	193	0	-
+	lenition	théiteá → téiteá		téiteá	théiteá	5	Tábla 5X	99	0	-
+	lenition	théití → téití		téití	théití	5	Tábla 5X	99	0	-
+	lenition	thiocfá → tiocfá		tiocfá	thiocfá	5	Tábla 5W	98	0	-
+	lenition	thiocfadh → tiocfadh		tiocfadh sé	thiocfadh sé	5	Tábla 5W	98	0	flagged:MICHEART
+	lenition	thiocfadh → tiocfadh		tiocfadh sí	thiocfadh sí	5	Tábla 5W	98	0	flagged:MICHEART
+	lenition	thiocfadh → tiocfadh		tiocfadh sibh	thiocfadh sibh	5	Tábla 5W	98	0	flagged:MICHEART
+	lenition	Thiocfadh → Tiocfadh		Tiocfadh sí isteach sula bhfeictí í.	Thiocfadh sí isteach sula bhfeictí í.	5	5.1.5(b)	70	0	flagged:MICHEART
+	lenition	thiocfaí → tiocfaí		tiocfaí	thiocfaí	5	Tábla 5W	98	0	-
+	lenition	thiocfaidís → tiocfaidís		tiocfaidís	thiocfaidís	5	Tábla 5W	98	0	-
+	lenition	thiocfaimis → tiocfaimis		tiocfaimis	thiocfaimis	5	Tábla 5W	98	0	-
+	lenition	thiocfainn → tiocfainn		tiocfainn	thiocfainn	5	Tábla 5W	98	0	-
+	lenition	thíolacadh → tíolacadh		tíolacadh sé	thíolacadh sé	5	Tábla 5E	75	0	-
+	lenition	thíolacadh → tíolacadh		tíolacadh sí	thíolacadh sí	5	Tábla 5E	75	0	-
+	lenition	thíolacadh → tíolacadh		tíolacadh sibh	thíolacadh sibh	5	Tábla 5E	75	0	-
+	lenition	thíolacaidís → tíolacaidís		tíolacaidís	thíolacaidís	5	Tábla 5E	75	0	-
+	lenition	thíolacaimis → tíolacaimis		tíolacaimis	thíolacaimis	5	Tábla 5E	75	0	-
+	lenition	thíolacainn → tíolacainn		tíolacainn	thíolacainn	5	Tábla 5E	75	0	-
+	lenition	thíolacamar → tíolacamar		tíolacamar	thíolacamar	5	Tábla 5E	75	0	-
+	lenition	thíolacfá → tíolacfá		tíolacfá	thíolacfá	5	Tábla 5E	75	0	-
+	lenition	thíolacfadh → tíolacfadh		tíolacfadh sé	thíolacfadh sé	5	Tábla 5E	75	0	-
+	lenition	thíolacfadh → tíolacfadh		tíolacfadh sí	thíolacfadh sí	5	Tábla 5E	75	0	-
+	lenition	thíolacfadh → tíolacfadh		tíolacfadh sibh	thíolacfadh sibh	5	Tábla 5E	75	0	-
+	lenition	thíolacfaí → tíolacfaí		tíolacfaí	thíolacfaí	5	Tábla 5E	75	0	-
+	lenition	thíolacfaidís → tíolacfaidís		tíolacfaidís	thíolacfaidís	5	Tábla 5E	75	0	-
+	lenition	thíolacfaimis → tíolacfaimis		tíolacfaimis	thíolacfaimis	5	Tábla 5E	75	0	-
+	lenition	thíolacfainn → tíolacfainn		tíolacfainn	thíolacfainn	5	Tábla 5E	75	0	-
+	lenition	thíolactá → tíolactá		tíolactá	thíolactá	5	Tábla 5E	75	0	-
+	lenition	thíolactaí → tíolactaí		tíolactaí	thíolactaí	5	Tábla 5E	75	0	-
+	lenition	thíolaic → tíolaic		tíolaic mé	thíolaic mé	5	Tábla 5E	75	0	-
+	lenition	thíolaic → tíolaic		tíolaic sé	thíolaic sé	5	Tábla 5E	75	0	-
+	lenition	thíolaic → tíolaic		tíolaic sí	thíolaic sí	5	Tábla 5E	75	0	-
+	lenition	thíolaic → tíolaic		tíolaic siad	thíolaic siad	5	Tábla 5E	75	0	-
+	lenition	thíolaic → tíolaic		tíolaic sibh	thíolaic sibh	5	Tábla 5E	75	0	-
+	lenition	thíolaic → tíolaic		tíolaic tú	thíolaic tú	5	Tábla 5E	75	0	-
 	lenition	Thit → Tit		Tit go leor báisteach throm an tseachtain seo caite.	Thit go leor báisteach throm an tseachtain seo caite.	3	3.3.11	53	0	-
 	lenition	Thit → Tit		Tit sí ar mhullach a cinn.	Thit sí ar mhullach a cinn.	3	3.3.2	46	0	-
 	lenition	Thit → Tit		Tit sí ar a dhá glúin.	Thit sí ar a dhá glúin.	8	8.3.3	134	0	-
@@ -1234,13 +1863,28 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Thosaigh → Tosaigh		Tosaigh sé ag cniotáil geansaí aréir.	Thosaigh sé ag cniotáil geansaí aréir.	10	10.2.7	177	0	-
 	lenition	Thosaigh → Tosaigh		Tosaigh troid idir beirt fhear lasmuigh den siopa.	Thosaigh troid idir beirt fhear lasmuigh den siopa.	10	10.2.5	174	0	-
 	lenition	Thréig → Tréig		Tréig sí thú ar fhear eile.	Thréig sí thú ar fhear eile.	8	8.2.2	131	0	-
+	lenition	thug → tug		tug mé	thug mé	5	Tábla 5V	97	0	flagged:CAIGHDEAN
+	lenition	thug → tug		tug sé	thug sé	5	Tábla 5V	97	0	flagged:CAIGHDEAN
+	lenition	thug → tug		tug sí	thug sí	5	Tábla 5V	97	0	flagged:CAIGHDEAN
+	lenition	thug → tug		tug siad	thug siad	5	Tábla 5V	97	0	flagged:CAIGHDEAN
+	lenition	thug → tug		tug sibh	thug sibh	5	Tábla 5V	97	0	flagged:CAIGHDEAN
+	lenition	thug → tug		tug tú	thug tú	5	Tábla 5V	97	0	flagged:CAIGHDEAN
 	lenition	Thug → Tug		Tug sé cuairt ar theach a iníne.	Thug sé cuairt ar theach a iníne.	3	3.1.2	38	0	flagged:CAIGHDEAN
 	lenition	Thug → Tug		Tug sé dá athair é.	Thug sé dá athair é.	8	8.3.7	136	0	flagged:CAIGHDEAN
 	lenition	Thug → Tug		Tug sí dá hathair é.	Thug sí dá hathair é.	8	8.3.7	136	0	flagged:CAIGHDEAN
 	lenition	Thug → Tug		Tug siad dá n-athair é.	Thug siad dá n-athair é.	8	8.3.7	136	0	flagged:CAIGHDEAN
 	lenition	Thug → Tug		Tug sé tuairisc ar cé a bhí i láthair.	Thug sé tuairisc ar cé a bhí i láthair.	10	10.5.2	187	0	flagged:CAIGHDEAN
 	lenition	Thug → Tug		Tug siad don chúigiú cuairteoir é.	Thug siad don chúigiú cuairteoir é.	10	10.3.2	184	0	flagged:CAIGHDEAN
+	lenition	thugadh → tugadh		tugadh sé	thugadh sé	5	Tábla 5V	97	0	-
+	lenition	thugadh → tugadh		tugadh sí	thugadh sí	5	Tábla 5V	97	0	-
+	lenition	thugadh → tugadh		tugadh sibh	thugadh sibh	5	Tábla 5V	97	0	-
+	lenition	thugaidís → tugaidís		tugaidís	thugaidís	5	Tábla 5V	97	0	-
+	lenition	thugaimis → tugaimis		tugaimis	thugaimis	5	Tábla 5V	97	0	-
+	lenition	thugainn → tugainn		tugainn	thugainn	5	Tábla 5V	97	0	-
+	lenition	thugamar → tugamar		tugamar	thugamar	5	Tábla 5V	97	0	-
 	lenition	Thugamar → Tugamar		Tugamar dár n-aintíní iad.	Thugamar dár n-aintíní iad.	8	8.3.7	136	0	-
+	lenition	thugtá → tugtá		tugtá	thugtá	5	Tábla 5V	97	0	-
+	lenition	thugtaí → tugtaí		tugtaí	thugtaí	5	Tábla 5V	97	0	flagged:CAIGHDEAN
 	lenition	Chuarda → Cuarda	“Cúirt	Ciallaíonn “Cúirt Cuarda” an Chúirt Chuarda arna bunú le dlí.	Ciallaíonn “Cúirt Chuarda” an Chúirt Chuarda arna bunú le dlí.	8	8.3.9	137	18	-
 	lenition	bhileog → bileog	1	1 bileog ghlan	1 bhileog ghlan	9	9.8	169	2	-
 	lenition	chapall → capall	1	1 capall mór	1 chapall mór	9	9.3.8	151	2	-
@@ -1297,6 +1941,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bheith → beith	a	Ní mór na hiarratais a beith faighte faoin Aoine, an 16 Bealtaine.	Ní mór na hiarratais a bheith faighte faoin Aoine, an 16 Bealtaine.	1	1.1.5(e)	2	23	flagged:NEAMHCHOIT
 	lenition	bheith → beith	a	Nach iontach a beith ag siúl trasna sráid a tógadh sa 14ú haois!	Nach iontach a bheith ag siúl trasna sráid a tógadh sa 14ú haois!	3	3.3.10	52	15	flagged:NEAMHCHOIT
 	lenition	bheith → beith	a	Ní fiú a beith i mbun obair in aisce.	Ní fiú a bheith i mbun obair in aisce.	3	3.3.10	52	9	flagged:NEAMHCHOIT
+	lenition	bheith → beith	a	a beith	a bheith	5	Tábla 5P	91	2	flagged:NEAMHCHOIT
 	lenition	bheith → beith	a	B’aoibhinn linn a beith ag éisteacht leis gach oíche.	B’aoibhinn linn a bheith ag éisteacht leis gach oíche.	7	7.2.1	117	18	flagged:NEAMHCHOIT
 	lenition	bheith → beith	a	Ba dheas liom an seans a beith faighte againn	Ba dheas liom an seans a bheith faighte againn	7	7.2.5	125	25	flagged:NEAMHCHOIT
 	lenition	bheith → beith	a	Is í sin an oifig inar mian léi a beith ag obair.	Is í sin an oifig inar mian léi a bheith ag obair.	7	7.3.2	126	34	flagged:NEAMHCHOIT
@@ -1346,7 +1991,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhí → bí	a	Ba aici a bí an ceart.	Ba aici a bhí an ceart.	7	7.2.1	117	10	-
 	lenition	bhí → bí	a	Ba ann a bí sé	Ba ann a bhí sé	7	7.2.1	116	9	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Dúirt sise gurb é Sorcha an t-ainm a bí uirthi féin	Dúirt sise gurb é Sorcha an t-ainm a bhí uirthi féin	7	7.2.2	118	37	-
-	lenition	bhí → bí	a	Is ag ceannach bainne a bí mé.	Is ag ceannach bainne a bhí mé.	7	7.1.1	114	24	-
+	lenition	bhí → bí	a	Is ag ceannach bainne a bí mé.	Is ag ceannach bainne a bhí mé.	7	7.1.1	114	24	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Is aici a bí an ceart.	Is aici a bhí an ceart.	7	7.1.1	114	10	-
 	lenition	bhí → bí	a	Is buachaill darbh ainm Gearóid a bí i láthair.	Is buachaill darbh ainm Gearóid a bhí i láthair.	7	7.3.2	127	34	-
 	lenition	bhí → bí	a	Má ba dhuine macánta é, b’ait an gnó a bí ar siúl aige.	Má ba dhuine macánta é, b’ait an gnó a bhí ar siúl aige.	7	7.3.4	129	39	-
@@ -1354,7 +1999,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhí → bí	a	Murarbh éan é, b’ialtóg a bí ann.	Murarbh éan é, b’ialtóg a bhí ann.	7	7.3.4	129	26	-
 	lenition	bhí → bí	a	Níor bheag an méid a bí le scrúdú.	Níor bheag an méid a bhí le scrúdú.	7	7.2.5	125	21	-
 	lenition	bhí → bí	a	Níorbh é sin an cineál comórtais a bí ann in 1998.	Níorbh é sin an cineál comórtais a bhí ann in 1998.	7	7.1.1	114	35	-
-	lenition	bhí → bí	a	Ba éard a bí mé a rá go mbeidh sé críochnaithe go luath.	Ba éard a bhí mé a rá go mbeidh sé críochnaithe go luath.	8	8.6.3	140	10	-
+	lenition	bhí → bí	a	Ba éard a bí mé a rá go mbeidh sé críochnaithe go luath.	Ba éard a bhí mé a rá go mbeidh sé críochnaithe go luath.	8	8.6.3	140	10	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Bhí carr ag mo mháthair nuair a bí sí óg.	Bhí carr ag mo mháthair nuair a bhí sí óg.	8	8.3.6	135	32	flagged:SEIMHIU
 	lenition	bhí → bí	a	An-drochrud a bí sa bhean sin	An-drochrud a bhí sa bhean sin	10	10.2.12	182	14	-
 	lenition	bhí → bí	a	Ba mheicneoir í nuair a bí sí óg.	Ba mheicneoir í nuair a bhí sí óg.	10	10.2.13	182	24	flagged:SEIMHIU
@@ -1364,12 +2009,12 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhí → bí	a	Níor fhéad sé cur síos a dhéanamh ar pé rud a bí ag cur isteach air.	Níor fhéad sé cur síos a dhéanamh ar pé rud a bhí ag cur isteach air.	10	10.3.2	184	46	-
 	lenition	bhí → bí	a	Níor thrácht sé ar cad a bí le déanamh.	Níor thrácht sé ar cad a bhí le déanamh.	10	10.5.2	187	25	flagged:SEIMHIU
 	lenition	bhí → bí	a	Thug sé tuairisc ar cé a bí i láthair.	Thug sé tuairisc ar cé a bhí i láthair.	10	10.5.2	187	25	flagged:SEIMHIU
-	lenition	bhí → bí	a	Ba leis-sean a bí mé ag caint.	Ba leis-sean a bhí mé ag caint.	11	11.8.4	216	15	-
+	lenition	bhí → bí	a	Ba leis-sean a bí mé ag caint.	Ba leis-sean a bhí mé ag caint.	11	11.8.4	216	15	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Cá fhad a bí sibh ann?	Cá fhad a bhí sibh ann?	11	11.9	217	10	flagged:SEIMHIU
 	lenition	bhí → bí	a	Cé a bí leat?	Cé a bhí leat?	11	11.9	217	5	flagged:SEIMHIU
-	lenition	bhí → bí	a	Cheannaigh sí an gúna a bí mé a iarraidh.	Cheannaigh sí an gúna a bhí mé a iarraidh.	11	11.2.1(c)	204	24	-
-	lenition	bhí → bí	a	Cheannaigh sí an gúna a bí mé ag iarraidh a fháil	Cheannaigh sí an gúna a bhí mé ag iarraidh a fháil	11	11.3.1(b)	205	24	-
-	lenition	bhí → bí	a	Dhíol siad an chathaoir a bí mé ag moladh a choimeád	Dhíol siad an chathaoir a bhí mé ag moladh a choimeád	11	11.3.1(b)	205	26	-
+	lenition	bhí → bí	a	Cheannaigh sí an gúna a bí mé a iarraidh.	Cheannaigh sí an gúna a bhí mé a iarraidh.	11	11.2.1(c)	204	24	flagged:CLAOCHLU
+	lenition	bhí → bí	a	Cheannaigh sí an gúna a bí mé ag iarraidh a fháil	Cheannaigh sí an gúna a bhí mé ag iarraidh a fháil	11	11.3.1(b)	205	24	flagged:CLAOCHLU
+	lenition	bhí → bí	a	Dhíol siad an chathaoir a bí mé ag moladh a choimeád	Dhíol siad an chathaoir a bhí mé ag moladh a choimeád	11	11.3.1(b)	205	26	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Sin an leabhar a bí sé a léamh.	Sin an leabhar a bhí sé a léamh.	11	11.2.1(c)	204	17	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Sin é an leabhar a bí sé a léamh.	Sin é an leabhar a bhí sé a léamh.	11	11.2.1(c)	204	19	flagged:CLAOCHLU
 	lenition	bhinne → binne	a	B’aoibhinn liom a binne a labhair sí.	B’aoibhinn liom a bhinne a labhair sí.	4	4.8.3	66	18	flagged:CUPLA
@@ -1384,6 +2029,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhíonn → bíonn	a	Sin í an bhean a bíonn ar an teilifís.	Sin í an bhean a bhíonn ar an teilifís.	11	11.2.1(a)	203	17	flagged:CLAOCHLU
 	lenition	bhíothas → bíothas	a	Tháinig ann don choigilteas ó ba lú an caiteachas ná mar a bíothas ag súil.	Tháinig ann don choigilteas ó ba lú an caiteachas ná mar a bhíothas ag súil.	7	7.3.3	128	59	flagged:CAIGHDEAN
 	lenition	bhois → bois	a	bíonn a chroí ar a bois i gcónaí aige	bíonn a chroí ar a bhois i gcónaí aige	2	2.3.3	28	19	-
+	lenition	bhraite → braite	a	fear a braite	fear a bhraite	5	Tábla 5FF	105	7	-
 	lenition	bhraithfimid → braithfimid	a	Cathain a braithfimid deireadh na géarchéime eacnamaíche?	Cathain a bhraithfimid deireadh na géarchéime eacnamaíche?	4	4.4.1	61	10	flagged:SEIMHIU
 	lenition	bhris → bris	a	Ba bhréagán le Caoimhe an bréagán a bris sé.	Ba bhréagán le Caoimhe an bréagán a bhris sé.	3	3.1.10	40	36	flagged:CLAOCHLU
 	lenition	bhriseadh → briseadh	a	Is éasca lámh buicéid a briseadh.	Is éasca lámh buicéid a bhriseadh.	10	10.2.7	177	24	-
@@ -1543,6 +2189,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dhíol → díol	a	Sin é an ní a bhfuilimid chun é a díol.	Sin é an ní a bhfuilimid chun é a dhíol.	11	11.6.1(b)(i)	210	34	-
 	lenition	dhíol → díol	a	Sin é an ní atáimid chun a díol.	Sin é an ní atáimid chun a dhíol.	11	11.6.1(a)(ii)	210	27	-
 	lenition	dhonacht → donacht	a	Ní chreidfeá a donacht a bhí an áit.	Ní chreidfeá a dhonacht a bhí an áit.	4	4.8.3	66	15	-
+	lenition	dhóthain → dóthain	a	Ar ith sé a dóthain?	Ar ith sé a dhóthain?	5	5.4.5(a)	88	12	-
 	lenition	dhuine → duine	a	a duine uasail	a dhuine uasail	3	3.1.2	38	2	-
 	lenition	dhuine → duine	a	a duine chóir	a dhuine chóir	4	4.7	64	2	-
 	lenition	dhuine → duine	a	a duine chuí	a dhuine chuí	4	4.7	64	2	-
@@ -1668,7 +2315,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	tharlóidh → tarlóidh	a	Cad a shíleann tú a tarlóidh di?	Cad a shíleann tú a tharlóidh di?	11	11.4.3	209	20	flagged:CLAOCHLU
 	lenition	thástáil → tástáil	a	Ní mór d’eolaithe láidreacht cumaisc a tástáil sula ndíoltar é.	Ní mór d’eolaithe láidreacht cumaisc a thástáil sula ndíoltar é.	10	10.2.7	177	39	flagged:SEIMHIU
 	lenition	theach → teach	a	Díoladh a teach siúd inné.	Díoladh a theach siúd inné.	4	4.10	67	10	-
-	lenition	théadh → téadh	a	Dúirt sé go mb’annamh a téadh sé ann.	Dúirt sé go mb’annamh a théadh sé ann.	7	7.2.2	120	24	flagged:BACHOIR
+	lenition	théadh → téadh	a	Dúirt sé go mb’annamh a téadh sé ann.	Dúirt sé go mb’annamh a théadh sé ann.	7	7.2.2	120	24	flagged:CLAOCHLU
 	lenition	théadh → téadh	a	An é sin an fear a téadh go dtí na cluichí go léir?	An é sin an fear a théadh go dtí na cluichí go léir?	11	11.7.1(a)	213	19	-
 	lenition	théadh → téadh	a	Nach é sin an fear a téadh go dtí na cluichí go léir?	Nach é sin an fear a théadh go dtí na cluichí go léir?	11	11.6.1(a)(i)	210	21	-
 	lenition	théann → téann	a	An í sin an bhean a téann go dtí na cluichí go léir?	An í sin an bhean a théann go dtí na cluichí go léir?	11	11.6.1(a)(i)	210	20	flagged:CLAOCHLU
@@ -1676,6 +2323,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	theastaigh → teastaigh	a	Ba é an rud ba mhó é a teastaigh uaithi.	Ba é an rud ba mhó é a theastaigh uaithi.	11	11.5.2	209	23	flagged:CLAOCHLU
 	lenition	theip → teip	a	Bhí sí i mbun an chur i láthair nuair a teip ar an ríomhaire.	Bhí sí i mbun an chur i láthair nuair a theip ar an ríomhaire.	3	3.3.1	45	40	flagged:SEIMHIU
 	lenition	theip → teip	a	Bhí sí i mbun cur i láthair nuair a teip ar an teilgeoir.	Bhí sí i mbun cur i láthair nuair a theip ar an teilgeoir.	3	3.3.3	47	36	flagged:SEIMHIU
+	lenition	thiocfaidh → tiocfaidh	a	Glan é nuair a tiocfaidh tú isteach amárach.	Glan é nuair a thiocfaidh tú isteach amárach.	5	5.1.9	70	15	flagged:SEIMHIU
 	lenition	thiomáineann → tiomáineann	a	An bhfaca tú an gluaisteán a tiomáineann sí?	An bhfaca tú an gluaisteán a thiomáineann sí?	10	10.4.1	186	29	flagged:CLAOCHLU
 	lenition	thiomáint → tiomáint	a	Sin an cineál cairr atá sé a tiomáint.	Sin an cineál cairr atá sé a thiomáint.	11	11.2.1(c)	204	29	flagged:SEIMHIU
 	lenition	thionól → tionól	a	Moladh cruinnithe a tionól i ngach contae.	Moladh cruinnithe a thionól i ngach contae.	10	10.7	190	20	-
@@ -1724,6 +2372,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dhéag → déag	aiste	ag ceartú an aon aiste déag shuimiúla	ag ceartú an aon aiste dhéag shuimiúla	9	9.3.7	150	23	flagged:SEIMHIU
 	lenition	ghonta → gonta	aiste	an aiste gonta	an aiste ghonta	4	4.7	64	9	-
 	lenition	ghonta → gonta	aiste	san aiste gonta	san aiste ghonta	4	4.7	64	10	-
+	lenition	chónaithe → cónaithe	áit	áit cónaithe	áit chónaithe	5	Tábla 5AA	102	4	flagged:WEAKSEIMHIUGEN
 	lenition	dheas → deas	áit	Is dóigh liom gur áit deas an t-óstán sin	Is dóigh liom gur áit dheas an t-óstán sin	7	7.2.2	118	22	flagged:SEIMHIU
 	lenition	mhaith → maith	aithne	Bhí aithne maith agam ar an Seabhac	Bhí aithne mhaith agam ar an Seabhac	1	1.1.2	1	11	flagged:SEIMHIU
 	lenition	thú → tú	aithním	aithním tú	aithním thú	8	8.2.2	131	8	-
@@ -2135,8 +2784,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chead → cead	ar	Sin é an foirgneamh a gcreideann an t-oifigeach gur cuireadh iarratas ar cead pleanála isteach ina leith.	Sin é an foirgneamh a gcreideann an t-oifigeach gur cuireadh iarratas ar chead pleanála isteach ina leith.	11	11.3.1(e)	207	73	flagged:WEAKSEIMHIU
 	lenition	chead → cead	ar	Sin é an foirgneamh ar cuireadh iarratas ar cead pleanála isteach ina leith.	Sin é an foirgneamh ar cuireadh iarratas ar chead pleanála isteach ina leith.	11	11.3.1(c)	206	44	flagged:WEAKSEIMHIU
 	lenition	chead → cead	ar	Sin é an foirgneamh ar ina leith a cuireadh iarratas ar cead pleanála isteach.	Sin é an foirgneamh ar ina leith a cuireadh iarratas ar chead pleanála isteach.	11	11.3.1(c)	206	56	flagged:WEAKSEIMHIU
-	lenition	cheannaigh → ceannaigh	ar	Sin í an bhean ar ceannaigh mé na héadaí uaithi.	Sin í an bhean ar cheannaigh mé na héadaí uaithi.	11	11.6.1(b)(ii)	211	18	-
-	lenition	cheap → ceap	ar	Ba dhuine é ar ceap mé nach n-inseodh sé an fhírinne choíche.	Ba dhuine é ar cheap mé nach n-inseodh sé an fhírinne choíche.	11	11.3.1(e)	207	15	-
+	lenition	cheannaigh → ceannaigh	ar	Sin í an bhean ar ceannaigh mé na héadaí uaithi.	Sin í an bhean ar cheannaigh mé na héadaí uaithi.	11	11.6.1(b)(ii)	211	18	flagged:SEIMHIU
+	lenition	cheap → ceap	ar	Ba dhuine é ar ceap mé nach n-inseodh sé an fhírinne choíche.	Ba dhuine é ar cheap mé nach n-inseodh sé an fhírinne choíche.	11	11.3.1(e)	207	15	flagged:SEIMHIU
 	lenition	Choláiste → Coláiste	ar	Dúirt siad gur fhreastail siad ar Coláiste Cholmáin.	Dúirt siad gur fhreastail siad ar Choláiste Cholmáin.	10	10.2.10	181	34	flagged:WEAKSEIMHIU
 	lenition	chor → cor	ar	Ba léir nárbh ionann an dá stoca ar cor ar bith.	Ba léir nárbh ionann an dá stoca ar chor ar bith.	7	7.2.2	121	36	flagged:WEAKSEIMHIU
 	lenition	chor → cor	ar	Ní hionann an dá rud ar cor ar bith.	Ní hionann an dá rud ar chor ar bith.	10	10.12.2	195	24	flagged:WEAKSEIMHIU
@@ -2147,19 +2796,20 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chuala → cuala	ar	Tá an scannán ar cuala mé faoi ar taispeáint sa phictiúrlann.	Tá an scannán ar chuala mé faoi ar taispeáint sa phictiúrlann.	11	11.6.1(b)(ii)	211	17	flagged:CAIGHDEAN
 	lenition	chuir → cuir	Ar	Ar cuir sé i bhfolach é?	Ar chuir sé i bhfolach é?	10	10.4.2	187	3	flagged:SEIMHIU
 	lenition	chuir → cuir	Ar	Ar cuir sí a hathair in aithne duit go fóill?	Ar chuir sí a hathair in aithne duit go fóill?	10	10.11.7	194	3	flagged:SEIMHIU
+	lenition	chúl → cúl	ar	ar cúl éaga	ar chúl éaga	5	Tábla 5BB	103	3	flagged:IONADAI
 	lenition	chum → cum	ar	Bhuail mé le fear ar cum a mhac amhráin Ghaeilge.	Bhuail mé le fear ar chum a mhac amhráin Ghaeilge.	11	11.6.1(b)(ii)	211	21	flagged:SEIMHIU
 	lenition	dheacair → deacair	Ar	Ar deacair leat é?	Ar dheacair leat é?	7	7.2.1	117	3	-
 	lenition	dhíol → díol	Ar	Ar díol siad a dhá n-árasán?	Ar dhíol siad a dhá n-árasán?	8	8.3.3	134	3	flagged:BACHOIR
 	lenition	dhoras → doras	ar	Chuir sí ola ar doras an bhealaigh chúng.	Chuir sí ola ar dhoras an bhealaigh chúng.	4	4.4.1	61	16	flagged:WEAKSEIMHIU
 	lenition	dhuine → duine	ar	Mura n-inseoidh tú an scéal, cuirfidh mé ceist ar duine éigin eile!	Mura n-inseoidh tú an scéal, cuirfidh mé ceist ar dhuine éigin eile!	10	10.8.2	191	50	flagged:WEAKSEIMHIU
-	lenition	dhún → dún	Ar	Ar dún sé an fhuinneog?	Ar dhún sé an fhuinneog?	10	10.2.1	171	3	-
+	lenition	dhún → dún	Ar	Ar dún sé an fhuinneog?	Ar dhún sé an fhuinneog?	10	10.2.1	171	3	flagged:SEIMHIU
 	lenition	fhad → fad	ar	Bhí scuaine gluaisteán trí mhíle ar fad sa tranglam tráchta.	Bhí scuaine gluaisteán trí mhíle ar fhad sa tranglam tráchta.	10	10.2.7	176	36	-
 	lenition	fhear → fear	ar	Thréig sí thú ar fear eile.	Thréig sí thú ar fhear eile.	8	8.2.2	131	17	flagged:WEAKSEIMHIU
 	lenition	ghoid → goid	ar	Ba bhean óg an bhean ar goid an gadaí a carr.	Ba bhean óg an bhean ar ghoid an gadaí a carr.	11	11.3.1(d)	207	24	flagged:WEAKSEIMHIU
 	lenition	ghoid → goid	ar	Sin í an bhean ar goid an gadaí a carr.	Sin í an bhean ar ghoid an gadaí a carr.	11	11.7.2(a)	213	18	flagged:WEAKSEIMHIU
 	lenition	mhac → mac	ar	Cuireadh agallamh ar mac an fhir sin.	Cuireadh agallamh ar mhac an fhir sin.	11	11.3.1(d)	207	21	flagged:WEAKSEIMHIU
 	lenition	mhaith → maith	Ar	Ar maith leat é?	Ar mhaith leat é?	10	10.3.6	185	3	-
-	lenition	mheas → meas	ar	Fuair mé é in áit ar meas mé a gheobhainn é	Fuair mé é in áit ar mheas mé a gheobhainn é	11	11.4.3	209	21	-
+	lenition	mheas → meas	ar	Fuair mé é in áit ar meas mé a gheobhainn é	Fuair mé é in áit ar mheas mé a gheobhainn é	11	11.4.3	209	21	flagged:SEIMHIU
 	lenition	mhéid → méid	ar	Tá laghdú tagtha ar méid mo chuid oibre.	Tá laghdú tagtha ar mhéid mo chuid oibre.	3	3.3.2	46	20	flagged:WEAKSEIMHIU
 	lenition	mhinic → minic	ar	Sin é teach m’aintín mar ar minic mo chuairt.	Sin é teach m’aintín mar ar mhinic mo chuairt.	11	11.9	218	28	-
 	lenition	mhol → mol	ar	Cheannaigh mé leabhar nua ar mol an léirmheastóir é.	Cheannaigh mé leabhar nua ar mhol an léirmheastóir é.	11	11.6.1(b)(ii)	211	29	flagged:WEAKSEIMHIU
@@ -2168,7 +2818,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhullach → mullach	ar	Thit sí ar mullach a cinn.	Thit sí ar mhullach a cinn.	3	3.3.2	46	11	flagged:WEAKSEIMHIU
 	lenition	phóg → póg	ar	Sin í an bhean ar póg Gearóid í.	Sin í an bhean ar phóg Gearóid í.	11	11.3.1(a)	205	18	flagged:WEAKSEIMHIU
 	lenition	shagart → sagart	Ar	Ar sagart é?	Ar shagart é?	10	10.2.13	182	3	-
-	lenition	sheiceáil → seiceáil	Ar	Ar seiceáil tú Aguisín A?	Ar sheiceáil tú Aguisín A?	3	3.1.2	37	3	-
+	lenition	sheiceáil → seiceáil	Ar	Ar seiceáil tú Aguisín A?	Ar sheiceáil tú Aguisín A?	3	3.1.2	37	3	flagged:SEIMHIU
 	lenition	thagair → tagair	ar	Is ábhar é seo ar tagair mé dó le linn cainteanna leis.	Is ábhar é seo ar thagair mé dó le linn cainteanna leis.	3	3.3.10	52	18	flagged:SEIMHIU
 	lenition	tháinig → táinig	ar	Fágadh gan mhaoiniú iad de bharr scéim ar táinig deireadh léi.	Fágadh gan mhaoiniú iad de bharr scéim ar tháinig deireadh léi.	3	3.3.10	52	42	flagged:CAIGHDEAN
 	lenition	tháinig → táinig	ar	An raibh ionadh ar an mbean ar táinig a mac abhaile ón Astráil?	An raibh ionadh ar an mbean ar tháinig a mac abhaile ón Astráil?	11	11.6.1(b)(ii)	211	31	flagged:CAIGHDEAN
@@ -2196,6 +2846,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fhiú → fiú	arbh	Níor tharla aon ní arbh fiú trácht air.	Níor tharla aon ní arbh fhiú trácht air.	11	11.8.3	215	24	flagged:SEIMHIU
 	lenition	bhfoilsiú → bfoilsiú	arna	doiciméid arna bfoilsiú	doiciméid arna bhfoilsiú	8	8.3.9	137	15	flagged:DROCHMHOIRF
 	lenition	thoghadh → toghadh	arna	Measfar é a bheith arna toghadh faoin Acht seo.	Measfar é a bheith arna thoghadh faoin Acht seo.	8	8.3.9	137	24	-
+	lenition	bheith → beith	as	as beith	as bheith	5	Tábla 5P	91	3	flagged:NEAMHCHOIT
 	lenition	thú → tú	as	Cárb as tú?	Cárb as thú?	8	8.5.4	139	8	-
 	lenition	chun → cun	atáimid	Sin é an ní atáimid cun a dhíol.	Sin é an ní atáimid chun a dhíol.	11	11.6.1(a)(ii)	210	20	flagged:CAIGHDEAN
 	lenition	bhainisteoir → bainisteoir	ba	Ba í ba bainisteoir orthu.	Ba í ba bhainisteoir orthu.	11	11.8.3	215	8	flagged:SEIMHIU
@@ -2299,6 +2950,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	ghramadóirí → gramadóirí	bheirt	saothar bheirt gramadóirí chliste	saothar bheirt ghramadóirí chliste	9	9.4.3	158	15	flagged:SEIMHIU
 	lenition	mhisniúla → misniúla	bheirt	moltaí bheirt misniúla	moltaí bheirt mhisniúla	9	9.4.2	155	14	-
 	lenition	gheal → geal	bheoir	gloine den bheoir geal	gloine den bheoir gheal	3	3.1.10	40	18	flagged:SEIMHIU
+	lenition	cheana → ceana	bhfacamar	Cá bhfacamar ceana é?	Cá bhfacamar cheana é?	5	5.4.5(a)	88	13	flagged:NOGENITIVE
 	lenition	chiúin → ciúin	bhfarraige	thar an bhfarraige ciúin	thar an bhfarraige chiúin	1	1.4.1	8	19	flagged:SEIMHIU
 	lenition	shaibhre → saibhre	bhfeirmeoir	7 bhfeirmeoir saibhre	7 bhfeirmeoir shaibhre	9	9.4.4	159	14	flagged:SEIMHIU
 	lenition	bhur → bur	bhfuil	Cá bhfuil bur gcuidse?	Cá bhfuil bhur gcuidse?	8	8.3.4	135	10	other:NIURU
@@ -2339,6 +2991,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhán → bán	bó	bainne an seasca bó bán	bainne an seasca bó bhán	9	9.3.9	151	20	flagged:SEIMHIU
 	lenition	bhán → bán	bó	bainne seasca bó bán	bainne seasca bó bhán	9	9.3.9	151	17	flagged:SEIMHIU
 	lenition	bhán → bán	bó	seasca bó bán	seasca bó bhán	9	9.3.9	151	10	flagged:SEIMHIU
+	lenition	bhradaíola → bradaíola	bó	bó bradaíola	bó bhradaíola	5	Tábla 5CC	103	3	flagged:WEAKSEIMHIUGEN
 	lenition	chrosta → crosta	bó	míle, ceithre chéad daichead a sé bó crosta	míle, ceithre chéad daichead a sé bó chrosta	9	9.3.11	153	37	-
 	lenition	mhór → mór	bó	53 bó mór	53 bó mhór	9	9.3.12	153	6	flagged:SEIMHIU
 	lenition	mhór → mór	bó	ochtó a sé bó mór	ochtó a sé bó mhór	9	9.3.10	152	14	flagged:SEIMHIU
@@ -2346,6 +2999,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chéanna → céanna	bpáirc	as an bpáirc céanna	as an bpáirc chéanna	1	1.4.1	8	13	flagged:SEIMHIU
 	lenition	cheacht → ceacht	bun	Chuir sé réalta órga ag bun ceacht gach linbh.	Chuir sé réalta órga ag bun cheacht gach linbh.	3	3.3.1	44	28	-
 	lenition	fhoireann → foireann	bus	Bhí bus foireann Chorcaí ann.	Bhí bus fhoireann Chorcaí ann.	3	3.3.1	44	8	-
+	lenition	bhfacamar → bfacamar	Cá	Cá bfacamar cheana é?	Cá bhfacamar cheana é?	5	5.4.5(a)	88	3	flagged:DROCHMHOIRF
 	lenition	bhfios → bfios	Cá	Cá bfios dom?	Cá bhfios dom?	10	10.6.5	190	3	flagged:DROCHMHOIRF
 	lenition	bhfuair → bfuair	Cá	Cá bfuair tú an t-airgead?	Cá bhfuair tú an t-airgead?	10	10.9.1	192	3	flagged:DROCHMHOIRF
 	lenition	bhfuil → bfuil	Cá	Cá bfuil an Príomh-Oifigeach Feidhmiúcháin?	Cá bhfuil an Príomh-Oifigeach Feidhmiúcháin?	1	1.1.5(a)	1	3	flagged:MICHEART
@@ -2373,9 +3027,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chuige → cuige	Cad	Cad cuige a ndearna tú sin?	Cad chuige a ndearna tú sin?	11	11.9	218	4	-
 	lenition	mhóra → móra	cait	Tá cait móra fhiáine i ngairdín na n-ainmhithe.	Tá cait mhóra fhiáine i ngairdín na n-ainmhithe.	4	4.2.1	57	8	flagged:SEIMHIU
 	lenition	ghlasa → glasa	capaill	na capaill glasa	na capaill ghlasa	1	1.6.1	13	11	flagged:SEIMHIU
-	lenition	cheannaigh → ceannaigh	Cár	Cár ceannaigh tú na hocht n-úll dhearga sin?	Cár cheannaigh tú na hocht n-úll dhearga sin?	10	10.12.3	195	4	-
+	lenition	cheannaigh → ceannaigh	Cár	Cár ceannaigh tú na hocht n-úll dhearga sin?	Cár cheannaigh tú na hocht n-úll dhearga sin?	10	10.12.3	195	4	flagged:BACHOIR
 	lenition	chuir → cuir	Cár	Cár cuir tú é?	Cár chuir tú é?	8	8.5.4	139	4	flagged:BACHOIR
-	lenition	fhág → fág	Cár	Cár fág tú eochair an chairr?	Cár fhág tú eochair an chairr?	1	1.5.1	11	4	-
+	lenition	fhág → fág	Cár	Cár fág tú eochair an chairr?	Cár fhág tú eochair an chairr?	1	1.5.1	11	4	flagged:BACHOIR
 	lenition	fhág → fág	Cár	Cár fág sé hata an fhir mhóir?	Cár fhág sé hata an fhir mhóir?	4	4.4.1	60	4	flagged:BACHOIR
 	lenition	fhág → fág	Cár	Cár fág sé a charr?	Cár fhág sé a charr?	10	10.2.3	172	4	flagged:BACHOIR
 	lenition	ghortaigh → gortaigh	Cár	Cár gortaigh sé é féin?	Cár ghortaigh sé é féin?	10	10.4.2	187	4	flagged:BACHOIR
@@ -2491,6 +3145,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	charr → carr	chúig	plátaí clárúcháin na chéad chúig carr	plátaí clárúcháin na chéad chúig charr	9	9.5.4	162	33	flagged:SEIMHIU
 	lenition	Chuarda → Cuarda	Chúirt	Ciallaíonn “Cúirt Chuarda” an Chúirt Cuarda arna bunú le dlí.	Ciallaíonn “Cúirt Chuarda” an Chúirt Chuarda arna bunú le dlí.	8	8.3.9	137	37	-
 	lenition	shamhlaíocha → samhlaíocha	chumadóirí	ag moladh beirt chumadóirí samhlaíocha	ag moladh beirt chumadóirí shamhlaíocha	9	9.4.3	158	27	flagged:SEIMHIU
+	lenition	bheith → beith	chun	chun beith	chun bheith	5	Tábla 5P	91	5	flagged:NEAMHCHOIT
 	lenition	bheith → beith	chun	Roghnaigh siad dháréag chun beith páirteach sa chomórtas.	Roghnaigh siad dháréag chun bheith páirteach sa chomórtas.	10	10.3.3	185	28	flagged:NEAMHCHOIT
 	lenition	ghlasa → glasa	chupán	2 chupán glasa	2 chupán ghlasa	9	9.8	169	9	flagged:SEIMHIU
 	lenition	ghlasa → glasa	chupán	dhá chupán glasa	dhá chupán ghlasa	9	9.8	169	11	flagged:SEIMHIU
@@ -2540,6 +3195,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	shéú → séú	cúig	cúig séú	cúig shéú	9	9.1.1	141	5	-
 	lenition	theach → teach	cúig	cúig teach tábhairne dhéag	cúig theach tábhairne dhéag	9	9.3.1	145	5	flagged:SEIMHIU
 	lenition	chóir → cóir	cúis	Dúirt siad nach ndéanfaí an próiseas a athrú gan cúis cóir.	Dúirt siad nach ndéanfaí an próiseas a athrú gan cúis chóir.	10	10.2.5	174	54	flagged:SEIMHIU
+	lenition	ghearáin → gearáin	cúis	cúis gearáin	cúis ghearáin	5	Tábla 5EE	104	5	flagged:WEAKSEIMHIUGEN
+	lenition	mhagaidh → magaidh	cúis	cúis magaidh	cúis mhagaidh	5	Tábla 5CC	103	5	flagged:WEAKSEIMHIUGEN
+	lenition	bháistí → báistí	cuma	cuma báistí	cuma bháistí	5	Tábla 5CC	103	5	flagged:WEAKSEIMHIUGEN
 	lenition	chuige → cuige	cur	An bhfuil an cur cuige bunaithe ar an Ionstraim Eorpach Aonair?	An bhfuil an cur chuige bunaithe ar an Ionstraim Eorpach Aonair?	3	3.2.1	42	17	-
 	lenition	chuige → cuige	cur	Cén cineál cur cuige a d’úsáid siad?	Cén cineál cur chuige a d’úsáid siad?	3	3.3.3	47	15	-
 	lenition	ghnó → gnó	d’aon	Shílfeadh duine gurb éard atá á chur i gcéill agat ná go ndearnadh d’aon gnó é.	Shílfeadh duine gurb éard atá á chur i gcéill agat ná go ndearnadh d’aon ghnó é.	8	8.6.3	140	73	-
@@ -2666,6 +3324,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhí → mí	den	den mí fhada	den mhí fhada	4	4.7	64	4	flagged:SEIMHIU
 	lenition	pháipéar → páipéar	den	Ní eagrán nua den páipéar atá á léamh agat	Ní eagrán nua den pháipéar atá á léamh agat	7	7.2.5	124	18	flagged:SEIMHIU
 	lenition	phobal → pobal	den	Tháinig na ceisteanna ó dhaoine den pobal.	Tháinig na ceisteanna ó dhaoine den phobal.	3	3.1.10	40	36	flagged:SEIMHIU
+	lenition	bheochana → beochana	deoch	deoch beochana	deoch bheochana	5	Tábla 5EE	105	6	flagged:WEAKSEIMHIUGEN
 	lenition	fhuar → fuar	deoch	sa deoch fuar	sa deoch fhuar	1	1.7.6	18	9	flagged:SEIMHIU
 	lenition	bhád → bád	dhá	dhá bád	dhá bhád	9	9.3.1	145	4	flagged:SEIMHIU
 	lenition	bhád → bád	dhá	dhá bád déag	dhá bhád déag	9	9.3.1	145	4	flagged:SEIMHIU
@@ -2811,6 +3470,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Bhealtaine → Bealtaine	faoi	faoi Bealtaine	faoi Bhealtaine	1	1.1.5(d)	2	5	flagged:SEIMHIU
 	lenition	bhois → bois	faoi	faoi bois an chait	faoi bhois an chait	2	2.3.3	28	5	flagged:SEIMHIU
 	lenition	bhráid → bráid	faoi	Luadh an dáta faoinarbh fhéidir litir a chur faoi bráid an Aire.	Luadh an dáta faoinarbh fhéidir litir a chur faoi bhráid an Aire.	7	7.3.2	127	50	flagged:SEIMHIU
+	lenition	bhrí → brí	faoi	faoi brí na guí	faoi bhrí na guí	5	5.6.1(b)(ii)	103	5	flagged:SEIMHIU
 	lenition	Cháisc → Cáisc	faoi	faoi Cáisc	faoi Cháisc	1	1.1.5(d)	2	5	flagged:SEIMHIU
 	lenition	chomhair → comhair	faoi	faoi comhair	faoi chomhair	1	1.5.1	11	5	flagged:SEIMHIU
 	lenition	chúram → cúram	faoi	Cuireadh na bailiúcháin faoi cúram leabharlanna ar leith.	Cuireadh na bailiúcháin faoi chúram leabharlanna ar leith.	3	3.3.10	52	29	flagged:SEIMHIU
@@ -2899,6 +3559,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhór → mór	fuinneog	45 fuinneog mór	45 fuinneog mhór	10	10.3.1	183	12	flagged:SEIMHIU
 	lenition	fhoinn → foinn	gabháil	Bhí siad ag gabháil foinn sa teach.	Bhí siad ag gabháil fhoinn sa teach.	3	3.3.5	49	20	flagged:SEIMHIU
 	lenition	fhoinn → foinn	gabháil	Bhí siad ag gabháil foinn.	Bhí siad ag gabháil fhoinn.	3	3.3.5	49	20	flagged:SEIMHIU
+	lenition	bheith → beith	gan	gan beith	gan bheith	5	Tábla 5P	91	4	flagged:NEAMHCHOIT
 	lenition	chosaint → cosaint	gan	D’fhág na saighdiúirí an geata isteach gan cosaint.	D’fhág na saighdiúirí an geata isteach gan chosaint.	10	10.2.5	174	43	-
 	lenition	mhaith → maith	gan	Teastaíonn uathu cláir nua-aimseartha a chur in ionad seanchláir gan maith.	Teastaíonn uathu cláir nua-aimseartha a chur in ionad seanchláir gan mhaith.	3	3.3.10	52	69	flagged:WEAKSEIMHIU
 	lenition	mhaoiniú → maoiniú	gan	Fágadh gan maoiniú iad de bharr scéim ar tháinig deireadh léi.	Fágadh gan mhaoiniú iad de bharr scéim ar tháinig deireadh léi.	3	3.3.10	52	11	-
@@ -2936,13 +3597,42 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	thar → tar	gníomhú	Tá an dlíodóir ag gníomhú tar ceann eagraíocht áitiúil.	Tá an dlíodóir ag gníomhú thar ceann eagraíocht áitiúil.	3	3.3.10	52	26	-
 	lenition	bhfaca → bfaca	go	Sílim go bfaca mé iníon na mná sin ar an teilifís aréir.	Sílim go bhfaca mé iníon na mná sin ar an teilifís aréir.	11	11.3.1(e)	207	9	flagged:DROCHMHOIRF
 	lenition	bhfaca → bfaca	go	Sin í an bhean a sílim go bfaca mé a hiníon ar an teilifís aréir.	Sin í an bhean a sílim go bhfaca mé a hiníon ar an teilifís aréir.	11	11.3.1(e)	207	26	flagged:DROCHMHOIRF
+	lenition	bhfaighe → bfaighe	go	go bfaighe mé	go bhfaighe mé	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighe → bfaighe	go	go bfaighe sé	go bhfaighe sé	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighe → bfaighe	go	go bfaighe sí	go bhfaighe sí	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighe → bfaighe	go	go bfaighe siad	go bhfaighe siad	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighe → bfaighe	go	go bfaighe sibh	go bhfaighe sibh	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighe → bfaighe	go	go bfaighe tú	go bhfaighe tú	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighimid → bfaighimid	go	go bfaighimid	go bhfaighimid	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaightear → bfaightear	go	go bfaightear	go bhfaightear	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfása → bfása	go	Beidh tú ann nó go bfása coincleach ort	Beidh tú ann nó go bhfása coincleach ort	5	5.1.5(a)	69	19	flagged:DROCHMHOIRF
+	lenition	bhfásfaidh → bfásfaidh	go	Beidh tú ann nó go bfásfaidh coincleach ort	Beidh tú ann nó go bhfásfaidh coincleach ort	5	5.1.5(a)	69	19	flagged:DROCHMHOIRF
 	lenition	bhféadfaidh → bféadfaidh	go	Abair leis go bféadfaidh sé imeacht.	Abair leis go bhféadfaidh sé imeacht.	10	10.8.2	191	14	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	Féach é go bfeice tú	Féach é go bhfeice tú	5	5.1.5(a)	69	11	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	go bfeice mé	go bhfeice mé	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	go bfeice sé	go bhfeice sé	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	go bfeice sí	go bhfeice sí	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	go bfeice siad	go bhfeice siad	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	go bfeice sibh	go bhfeice sibh	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeice → bfeice	go	go bfeice tú	go bhfeice tú	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeicfidh → bfeicfidh	go	Féach é go bfeicfidh tú	Féach é go bhfeicfidh tú	5	5.1.5(a)	69	11	flagged:DROCHMHOIRF
 	lenition	bhfeicfimid → bfeicfimid	go	Nára fada go bfeicfimid a chéile arís.	Nára fada go bhfeicfimid a chéile arís.	7	7.4	130	13	flagged:DROCHMHOIRF
+	lenition	bhfeicimid → bfeicimid	go	go bfeicimid	go bhfeicimid	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
+	lenition	bhfeictear → bfeictear	go	go bfeictear	go bhfeictear	5	Tábla 5T	95	3	flagged:DROCHMHOIRF
 	lenition	bhfios → bfios	go	go bfios dom	go bhfios dom	10	10.6.4	189	3	flagged:DROCHMHOIRF
 	lenition	bhfuil → bfuil	go	Dúradh go bfuil cobhsaíocht fhorais chreidmheasa an Stáit ríthábhachtach.	Dúradh go bhfuil cobhsaíocht fhorais chreidmheasa an Stáit ríthábhachtach.	3	3.3.1	44	10	flagged:MICHEART
 	lenition	bhfuil → bfuil	go	Is léir go bfuil na mic léinn ag baint taitneamh as an oíche.	Is léir go bhfuil na mic léinn ag baint taitneamh as an oíche.	3	3.3.5	48	11	flagged:MICHEART
 	lenition	bhfuil → bfuil	go	Ní léir dom go bfuil siad ag déanamh aon iarracht.	Ní léir dom go bhfuil siad ag déanamh aon iarracht.	3	3.3.9	51	15	flagged:MICHEART
+	lenition	bhfuil → bfuil	go	go bfuil mé	go bhfuil mé	5	Tábla 5P	91	3	flagged:MICHEART
+	lenition	bhfuil → bfuil	go	go bfuil sé	go bhfuil sé	5	Tábla 5P	91	3	flagged:MICHEART
+	lenition	bhfuil → bfuil	go	go bfuil sí	go bhfuil sí	5	Tábla 5P	91	3	flagged:MICHEART
+	lenition	bhfuil → bfuil	go	go bfuil siad	go bhfuil siad	5	Tábla 5P	91	3	flagged:MICHEART
+	lenition	bhfuil → bfuil	go	go bfuil sibh	go bhfuil sibh	5	Tábla 5P	91	3	flagged:MICHEART
+	lenition	bhfuil → bfuil	go	go bfuil tú	go bhfuil tú	5	Tábla 5P	91	3	flagged:MICHEART
 	lenition	bhfuil → bfuil	go	Deir sé go bfuil na leabhair ghramadaí uile léite aige.	Deir sé go bhfuil na leabhair ghramadaí uile léite aige.	10	10.2.8	179	11	flagged:MICHEART
+	lenition	bhfuilim → bfuilim	go	go bfuilim	go bhfuilim	5	Tábla 5P	91	3	flagged:DROCHMHOIRF
+	lenition	bhfuilimid → bfuilimid	go	go bfuilimid	go bhfuilimid	5	Tábla 5P	91	3	flagged:DROCHMHOIRF
+	lenition	bhfuiltear → bfuiltear	go	go bfuiltear	go bhfuiltear	5	Tábla 5P	91	3	flagged:DROCHMHOIRF
 	lenition	mhóra → móra	goirt	na goirt móra	na goirt mhóra	4	4.2.5	58	9	flagged:SEIMHIU
 	lenition	Bhí → Bí	gúna.	Cheannaigh sí an gúna. Bí mé á iarraidh.	Cheannaigh sí an gúna. Bhí mé á iarraidh.	11	11.2.1(c)	204	23	-
 	lenition	Bhí → Bí	gúna.	Cheannaigh sí an gúna. Bí mé ag iarraidh é a fháil.	Cheannaigh sí an gúna. Bhí mé ag iarraidh é a fháil.	11	11.3.1(b)	205	23	-
@@ -2976,6 +3666,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	cháiliúla → cáiliúla	húdair	na húdair cáiliúla	na húdair cháiliúla	4	4.2.5	58	10	flagged:SEIMHIU
 	lenition	bhfabhar → bfabhar	i	Bhí gach duine i bfabhar an fheachtais thionsclaíoch.	Bhí gach duine i bhfabhar an fheachtais thionsclaíoch.	4	4.4.1	60	17	flagged:DROCHMHOIRF
 	lenition	bhfad → bfad	i	Ní fhanann sé i bfad tar éis dinnéir.	Ní fhanann sé i bhfad tar éis dinnéir.	3	3.3.2	45	16	flagged:DROCHMHOIRF
+	lenition	bhfad → bfad	i	Nár fhana sé i bfad.	Nár fhana sé i bhfad.	5	5.1.5(b)	70	15	flagged:DROCHMHOIRF
 	lenition	bhfad → bfad	i	Tá na scáileáin gutháin nua i bfad níos mó ná mar a bhíodh.	Tá na scáileáin gutháin nua i bhfad níos mó ná mar a bhíodh.	10	10.2.8	180	30	flagged:DROCHMHOIRF
 	lenition	bhfeidhm → bfeidhm	i	ag moladh an teacht i bfeidhm	ag moladh an teacht i bhfeidhm	3	3.3.1	45	22	flagged:DROCHMHOIRF
 	lenition	bhfeidhm → bfeidhm	i	i bhfianaise teacht i bfeidhm	i bhfianaise teacht i bhfeidhm	3	3.3.3	47	22	flagged:DROCHMHOIRF
@@ -3026,6 +3717,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fhomhír → fomhír	lár	Luaigh, tá an fhaisnéis i lár fomhír (i).	Luaigh, tá an fhaisnéis i lár fhomhír (i).	3	3.3.1	44	30	-
 	lenition	bhean → bean	láthair	Dúirt sé i láthair bean an tí é.	Dúirt sé i láthair bhean an tí é.	10	10.2.6	175	19	-
 	lenition	champála → campála	láthair	láthair campála	láthair champála	9	9.3.1	145	8	flagged:WEAKSEIMHIUGEN
+	lenition	bheith → beith	le	le beith	le bheith	5	Tábla 5P	91	3	flagged:NEAMHCHOIT
 	lenition	bhur → bur	le	Bhuail mé le bur gcairde ag an mbainis.	Bhuail mé le bhur gcairde ag an mbainis.	10	10.6.2	188	13	other:NIURU
 	lenition	chéile → céile	le	Tagann Airí Bhallstáit AE le céile sa Chomhairle.	Tagann Airí Bhallstáit AE le chéile sa Chomhairle.	3	3.2.2	42	29	-
 	lenition	chéile → céile	le	Tagann Airí Bhallstáit an AE le céile sa Chomhairle.	Tagann Airí Bhallstáit an AE le chéile sa Chomhairle.	3	3.2.2	43	32	-
@@ -3054,6 +3746,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	shothuigthe → sothuigthe	lipéid	Ní mór lipéid sothuigthe a chur ar earraí glantacháin.	Ní mór lipéid shothuigthe a chur ar earraí glantacháin.	10	10.3.1	183	14	-
 	lenition	shláintiúla → sláintiúla	lóin	Bímse ag ullmhú lóin sláintiúla dom féin.	Bímse ag ullmhú lóin shláintiúla dom féin.	3	3.3.9	51	21	-
 	lenition	bhí → bí	Má	Má bí leabhar ann riamh ab fhiú a léamh, seo é.	Má bhí leabhar ann riamh ab fhiú a léamh, seo é.	7	7.2.3	122	3	-
+	lenition	bhíonn → bíonn	má	Déanfaidh mé um thráthnóna é má bíonn deis agam.	Déanfaidh mé um thráthnóna é má bhíonn deis agam.	5	5.1.9	70	32	flagged:SEIMHIU
 	lenition	bhíonn → bíonn	Má	Má bíonn sé ann tabhair leat é.	Má bhíonn sé ann tabhair leat é.	10	10.4.1	186	3	flagged:SEIMHIU
 	lenition	chaillimid → caillimid	má	Tuigimid nach é deireadh an domhain é má caillimid.	Tuigimid nach é deireadh an domhain é má chaillimid.	7	7.2.2	119	41	flagged:SEIMHIU
 	lenition	Mhór → Mór	Máire	Máire Mór	Máire Mhór	4	4.3.4	59	6	-
@@ -3205,19 +3898,21 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhris → bris	nár	Sin é an gaothscáth nár bris an buachaill.	Sin é an gaothscáth nár bhris an buachaill.	11	11.7.3(b)	214	24	flagged:SEIMHIU
 	lenition	bhuail → buail	nár	Sin é an sliotar nár buail an bhean é.	Sin é an sliotar nár bhuail an bhean é.	11	11.7.3(b)	214	21	flagged:BACHOIR
 	lenition	bhuail → buail	nár	Sin é an sliotar nár buail an bhean.	Sin é an sliotar nár bhuail an bhean.	11	11.7.3(b)	214	21	flagged:BACHOIR
-	lenition	cheannaigh → ceannaigh	nár	Sin é an fear nár ceannaigh mé aon earraí uaidh.	Sin é an fear nár cheannaigh mé aon earraí uaidh.	11	11.6.2(a)(ii)	212	18	flagged:SEIMHIU
+	lenition	cheannaigh → ceannaigh	nár	Sin é an fear nár ceannaigh mé aon earraí uaidh.	Sin é an fear nár cheannaigh mé aon earraí uaidh.	11	11.6.2(a)(ii)	212	18	flagged:BACHOIR
 	lenition	cheannaigh → ceannaigh	nár	Sin í an bhean nár ceannaigh an buachaill a carr.	Sin í an bhean nár cheannaigh an buachaill a carr.	11	11.7.3(b)	214	19	flagged:SEIMHIU
 	lenition	cheoltóir → ceoltóir	Nár	Nár ceoltóir maith é?	Nár cheoltóir maith é?	10	10.2.13	182	4	flagged:SEIMHIU
 	lenition	chneasta → cneasta	nár	B’fhéidir nár cneasta uaim é	B’fhéidir nár chneasta uaim é	10	10.3.6	185	14	flagged:SEIMHIU
 	lenition	chóir → cóir	nár	Is é mo bharúilse nár cóir dó éirí as.	Is é mo bharúilse nár chóir dó éirí as.	8	8.2.6	132	22	flagged:SEIMHIU
 	lenition	chraol → craol	nár	Sin é an clár nár craol an stáisiún é.	Sin é an clár nár chraol an stáisiún é.	11	11.6.2(a)(ii)	212	18	flagged:BACHOIR
 	lenition	chraol → craol	nár	Sin é an stáisiún nár craol an clár.	Sin é an stáisiún nár chraol an clár.	11	11.6.2(a)(ii)	212	22	flagged:BACHOIR
+	lenition	chuala → cuala	Nár	Nár cuala tú faoin gcruinniú?	Nár chuala tú faoin gcruinniú?	5	5.4.5(a)	88	4	flagged:CAIGHDEAN
 	lenition	chuala → cuala	nár	Tá scannán nár cuala mé trácht air ar siúl sa phictiúrlann anocht.	Tá scannán nár chuala mé trácht air ar siúl sa phictiúrlann anocht.	11	11.6.2(a)(ii)	212	15	flagged:CAIGHDEAN
 	lenition	chuí → cuí	nár	Ní dhearna mé aon ní nár cuí liom.	Ní dhearna mé aon ní nár chuí liom.	11	11.8.3	215	25	flagged:SEIMHIU
 	lenition	dhána → dána	Nár	Nár dána an mhaise dó é!	Nár dhána an mhaise dó é!	7	7.2.1	117	4	flagged:SEIMHIU
 	lenition	dhochar → dochar	nár	Deir sé nár dochar é	Deir sé nár dhochar é	10	10.2.13	182	12	flagged:SEIMHIU
 	lenition	dhochtúir → dochtúir	nár	Ba léir nár dochtúir cáilithe é.	Ba léir nár dhochtúir cáilithe é.	7	7.2.2	121	12	flagged:SEIMHIU
 	lenition	dhona → dona	Nár	Nár dona an lá é?	Nár dhona an lá é?	10	10.3.6	185	4	flagged:SEIMHIU
+	lenition	fhana → fana	Nár	Nár fana sé i bhfad.	Nár fhana sé i bhfad.	5	5.1.5(b)	70	4	flagged:SEIMHIU
 	lenition	fhlichshneachta → flichshneachta	nár	Dúirt sí nár flichshneachta ceart é.	Dúirt sí nár fhlichshneachta ceart é.	7	7.2.2	121	13	flagged:SEIMHIU
 	lenition	ghlac → glac	nár	Ba dhuine é nár glac comhairle.	Ba dhuine é nár ghlac comhairle.	11	11.6.2(a)(ii)	212	16	flagged:WEAKSEIMHIUGEN
 	lenition	ghlac → glac	nár	Is í sin an bhean nár glac a hiníon dea-chomhairle.	Is í sin an bhean nár ghlac a hiníon dea-chomhairle.	11	11.6.2(a)(ii)	212	22	flagged:SEIMHIU
@@ -3240,12 +3935,31 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	ghalánta → galánta	ngirseach	49 ngirseach galánta	49 ngirseach ghalánta	9	9.4.4	160	13	-
 	lenition	shaora → saora	ngluaisteán	17 ngluaisteán saora	17 ngluaisteán shaora	9	9.3.8	151	15	flagged:SEIMHIU
 	lenition	bhreá → breá	ngrian	faoin ngrian breá	faoin ngrian bhreá	1	1.4.1	8	13	flagged:SEIMHIU
+	lenition	bhainfidh → bainfidh	ní	Mura gcuire tú, ní bainfidh tú.	Mura gcuire tú, ní bhainfidh tú.	5	5.1.5(a)	69	19	flagged:SEIMHIU
+	lenition	bhainfidh → bainfidh	ní	Mura gcuirfidh tú, ní bainfidh tú.	Mura gcuirfidh tú, ní bhainfidh tú.	5	5.1.5(a)	69	22	flagged:SEIMHIU
 	lenition	bheadh → beadh	Ní	Ní beadh an bua againn gan tú.	Ní bheadh an bua againn gan tú.	8	8.2.3	131	3	flagged:SEIMHIU
 	lenition	bheidh → beidh	ní	A mháthair bheag, ní beidh deireadh go deo le do chuid oibre.	A mháthair bheag, ní bheidh deireadh go deo le do chuid oibre.	4	4.3.3	59	21	flagged:SEIMHIU
+	lenition	bhfaigheadh → bfaigheadh	ní	ní bfaigheadh sé	ní bhfaigheadh sé	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaigheadh → bfaigheadh	ní	ní bfaigheadh sí	ní bhfaigheadh sí	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaigheadh → bfaigheadh	ní	ní bfaigheadh sibh	ní bhfaigheadh sibh	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
 	lenition	bhfaigheadh → bfaigheadh	ní	Murar shíntiúsóir cláraithe í, ní bfaigheadh sí an iris sa phost.	Murar shíntiúsóir cláraithe í, ní bhfaigheadh sí an iris sa phost.	7	7.3.4	129	34	flagged:DROCHMHOIRF
+	lenition	bhfaighfeá → bfaighfeá	ní	ní bfaighfeá	ní bhfaighfeá	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
 	lenition	bhfaighfeá → bfaighfeá	Ní	Ní bfaighfeá san ollmhargadh sin é.	Ní bhfaighfeá san ollmhargadh sin é.	10	10.8.2	191	3	flagged:DROCHMHOIRF
+	lenition	bhfaighfear → bfaighfear	ní	ní bfaighfear	ní bhfaighfear	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighfí → bfaighfí	ní	ní bfaighfí	ní bhfaighfí	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighidh → bfaighidh	ní	ní bfaighidh mé	ní bhfaighidh mé	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighidh → bfaighidh	ní	ní bfaighidh sé	ní bhfaighidh sé	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighidh → bfaighidh	ní	ní bfaighidh sí	ní bhfaighidh sí	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighidh → bfaighidh	ní	ní bfaighidh siad	ní bhfaighidh siad	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighidh → bfaighidh	ní	ní bfaighidh sibh	ní bhfaighidh sibh	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighidh → bfaighidh	ní	ní bfaighidh tú	ní bhfaighidh tú	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
 	lenition	bhfaighidh → bfaighidh	ní	Mura n-iarrfaidh tú é ní bfaighidh tú é.	Mura n-iarrfaidh tú é ní bhfaighidh tú é.	10	10.8.2	191	25	flagged:DROCHMHOIRF
+	lenition	bhfaighidís → bfaighidís	ní	ní bfaighidís	ní bhfaighidís	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighimid → bfaighimid	ní	ní bfaighimid	ní bhfaighimid	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighimis → bfaighimis	ní	ní bfaighimis	ní bhfaighimis	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
+	lenition	bhfaighinn → bfaighinn	ní	ní bfaighinn	ní bhfaighinn	5	Tábla 5S	94	3	flagged:DROCHMHOIRF
 	lenition	bhfaighinn → bfaighinn	Ní	Ní bfaighinn aon chabhair uathu	Ní bhfaighinn aon chabhair uathu	10	10.4.2	187	3	flagged:DROCHMHOIRF
+	lenition	bhfuair → bfuair	Ní	Ní bfuair sé an t-airgead fós.	Ní bhfuair sé an t-airgead fós.	5	5.4.5(a)	88	3	flagged:DROCHMHOIRF
 	lenition	bhfuair → bfuair	Ní	Ní bfuair siad a gcuidsean.	Ní bhfuair siad a gcuidsean.	8	8.3.4	135	3	flagged:DROCHMHOIRF
 	lenition	bhfuair → bfuair	Ní	Ní bfuair mé aon chaife ar maidin.	Ní bhfuair mé aon chaife ar maidin.	10	10.8.2	191	3	flagged:DROCHMHOIRF
 	lenition	bhfuair → bfuair	Ní	Ní bfuair tú ansin iad	Ní bhfuair tú ansin iad	10	10.4.2	187	3	flagged:DROCHMHOIRF
@@ -3259,11 +3973,36 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chreidfeá → creidfeá	Ní	Ní creidfeá a olcas a bhí an áit.	Ní chreidfeá a olcas a bhí an áit.	4	4.8.3	66	3	-
 	lenition	chreidfeá → creidfeá	Ní	Ní creidfeá a shleamhaine a bhí an áit.	Ní chreidfeá a shleamhaine a bhí an áit.	4	4.8.3	66	3	-
 	lenition	chreidfeá → creidfeá	Ní	Ní creidfeá a uaigní a bhí an áit.	Ní chreidfeá a uaigní a bhí an áit.	4	4.8.3	66	3	-
+	lenition	dheachaigh → deachaigh	ní	ní deachaigh mé	ní dheachaigh mé	5	Tábla 5X	99	3	flagged:NEAMHCHOIT
+	lenition	dheachaigh → deachaigh	ní	ní deachaigh sé	ní dheachaigh sé	5	Tábla 5X	99	3	flagged:NEAMHCHOIT
+	lenition	dheachaigh → deachaigh	ní	ní deachaigh sí	ní dheachaigh sí	5	Tábla 5X	99	3	flagged:NEAMHCHOIT
+	lenition	dheachaigh → deachaigh	ní	ní deachaigh siad	ní dheachaigh siad	5	Tábla 5X	99	3	flagged:NEAMHCHOIT
+	lenition	dheachaigh → deachaigh	ní	ní deachaigh sibh	ní dheachaigh sibh	5	Tábla 5X	99	3	flagged:NEAMHCHOIT
+	lenition	dheachaigh → deachaigh	ní	ní deachaigh tú	ní dheachaigh tú	5	Tábla 5X	99	3	flagged:NEAMHCHOIT
+	lenition	dheachamar → deachamar	ní	ní deachamar	ní dheachamar	5	Tábla 5X	99	3	-
 	lenition	dheachamar → deachamar	Ní	Ní deachamar go dtí ár gcóisir féin.	Ní dheachamar go dtí ár gcóisir féin.	8	8.3.8	137	3	-
+	lenition	dheachthas → deachthas	ní	ní deachthas	ní dheachthas	5	Tábla 5X	99	3	-
+	lenition	dhearna → dearna	ní	ní dearna mé	ní dhearna mé	5	Tábla 5R	93	3	-
+	lenition	dhearna → dearna	ní	ní dearna sé	ní dhearna sé	5	Tábla 5R	93	3	flagged:SEIMHIU
+	lenition	dhearna → dearna	ní	ní dearna sí	ní dhearna sí	5	Tábla 5R	93	3	flagged:BACHOIR
+	lenition	dhearna → dearna	ní	ní dearna siad	ní dhearna siad	5	Tábla 5R	93	3	flagged:BACHOIR
+	lenition	dhearna → dearna	ní	ní dearna sibh	ní dhearna sibh	5	Tábla 5R	93	3	-
+	lenition	dhearna → dearna	ní	ní dearna tú	ní dhearna tú	5	Tábla 5R	93	3	-
 	lenition	dhearna → dearna	Ní	Ní dearna mé aon ní nár chuí liom.	Ní dhearna mé aon ní nár chuí liom.	11	11.8.3	215	3	-
 	lenition	dhearnadh → dearnadh	Ní	Ní dearnadh gearán i gcoinne aon mhúinteoir sa scoil seo.	Ní dhearnadh gearán i gcoinne aon mhúinteoir sa scoil seo.	3	3.3.10	52	3	flagged:CAIGHDEAN
+	lenition	dhearnadh → dearnadh	ní	ní dearnadh	ní dhearnadh	5	Tábla 5R	93	3	flagged:CAIGHDEAN
+	lenition	dhearnamar → dearnamar	ní	ní dearnamar	ní dhearnamar	5	Tábla 5R	93	3	-
 	lenition	Dhúill → Dúill	Ní	Ar bhuail tú riamh le Gobnait Ní Dúill?	Ar bhuail tú riamh le Gobnait Ní Dhúill?	10	10.2.11	181	33	flagged:SEIMHIU
+	lenition	fhaca → faca	ní	ní faca mé	ní fhaca mé	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	lenition	fhaca → faca	ní	ní faca muid	ní fhaca muid	5	Tábla 5A	70	3	flagged:CAIGHDEAN
+	lenition	fhaca → faca	ní	ní faca sé	ní fhaca sé	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	lenition	fhaca → faca	ní	ní faca sí	ní fhaca sí	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	lenition	fhaca → faca	ní	ní faca siad	ní fhaca siad	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	lenition	fhaca → faca	ní	ní faca sibh	ní fhaca sibh	5	Tábla 5T	95	3	flagged:CAIGHDEAN
+	lenition	fhaca → faca	ní	ní faca tú	ní fhaca tú	5	Tábla 5T	95	3	flagged:CAIGHDEAN
 	lenition	fhaca → faca	Ní	Ní faca sé mé.	Ní fhaca sé mé.	10	10.4.2	187	3	flagged:CAIGHDEAN
+	lenition	fhacamar → facamar	ní	ní facamar	ní fhacamar	5	Tábla 5T	95	3	-
+	lenition	fhacthas → facthas	ní	ní facthas	ní fhacthas	5	Tábla 5T	95	3	flagged:CAIGHDEAN
 	lenition	fhanann → fanann	Ní	Ní fanann sé i bhfad tar éis dinnéir.	Ní fhanann sé i bhfad tar éis dinnéir.	3	3.3.2	45	3	flagged:SEIMHIU
 	lenition	ghlacfar → glacfar	Ní	Ní glacfar le haon iarratas a gheofar tar éis an 7 Márta 2016.	Ní ghlacfar le haon iarratas a gheofar tar éis an 7 Márta 2016.	1	1.1.5(g)	3	3	flagged:SEIMHIU
 	lenition	ghlacfar → glacfar	Ní	Ní glacfar le haon iarratas tar éis 5 p.m. Dé hAoine.	Ní ghlacfar le haon iarratas tar éis 5 p.m. Dé hAoine.	10	10.12.1	195	3	flagged:SEIMHIU
@@ -3275,12 +4014,19 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	cheannaigh → ceannaigh	Níor	Níor ceannaigh siad úlla nárbh úlla dearga.	Níor cheannaigh siad úlla nárbh úlla dearga.	7	7.2.3	122	5	flagged:BACHOIR
 	lenition	cheart → ceart	níor	Murarbh fhíor é, níor ceart a leithéid a rá.	Murarbh fhíor é, níor cheart a leithéid a rá.	10	10.3.6	185	22	flagged:SEIMHIU
 	lenition	chóir → cóir	Níor	Níor cóir pasfhocail múinteora a roinnt leis na daltaí riamh.	Níor chóir pasfhocail múinteora a roinnt leis na daltaí riamh.	10	10.2.8	179	5	flagged:SEIMHIU
-	lenition	dhearmad → dearmad	Níor	Níor dearmad sé thú riamh.	Níor dhearmad sé thú riamh.	8	8.2.2	131	5	flagged:SEIMHIU
+	lenition	dhearmad → dearmad	Níor	Níor dearmad sé thú riamh.	Níor dhearmad sé thú riamh.	8	8.2.2	131	5	flagged:BACHOIR
+	lenition	dhein → dein	níor	níor dein mé	níor dhein mé	5	Tábla 5R	93	5	flagged:CAIGHDEAN
+	lenition	dhein → dein	níor	níor dein sé	níor dhein sé	5	Tábla 5R	93	5	flagged:CAIGHDEAN
+	lenition	dhein → dein	níor	níor dein sí	níor dhein sí	5	Tábla 5R	93	5	flagged:CAIGHDEAN
+	lenition	dhein → dein	níor	níor dein siad	níor dhein siad	5	Tábla 5R	93	5	flagged:CAIGHDEAN
+	lenition	dhein → dein	níor	níor dein sibh	níor dhein sibh	5	Tábla 5R	93	5	flagged:CAIGHDEAN
+	lenition	dhein → dein	níor	níor dein tú	níor dhein tú	5	Tábla 5R	93	5	flagged:CAIGHDEAN
+	lenition	dheineamar → deineamar	níor	níor deineamar	níor dheineamar	5	Tábla 5R	93	5	-
 	lenition	dhochtúir → dochtúir	Níor	Níor dochtúir é	Níor dhochtúir é	10	10.2.13	182	5	flagged:SEIMHIU
 	lenition	dhóigh → dóigh	níor	Cé gur impigh sí air, níor dóigh leis go mba chóir an madra a choinneáil.	Cé gur impigh sí air, níor dhóigh leis go mba chóir an madra a choinneáil.	7	7.2.2	120	27	flagged:SEIMHIU
 	lenition	dhóigh → dóigh	níor	D’ainneoin an méid a d’impigh sí air, níor dóigh leis gur chóir an madra a choinneáil.	D’ainneoin an méid a d’impigh sí air, níor dhóigh leis gur chóir an madra a choinneáil.	7	7.2.2	119	43	flagged:SEIMHIU
-	lenition	dhóigh → dóigh	Níor	Níor dóigh siad aon bhreosla nár ghual é.	Níor dhóigh siad aon bhreosla nár ghual é.	7	7.2.3	122	5	flagged:SEIMHIU
-	lenition	dhóigh → dóigh	Níor	Níor dóigh siad aon bhreosla nár ghual.	Níor dhóigh siad aon bhreosla nár ghual.	7	7.2.3	122	5	flagged:SEIMHIU
+	lenition	dhóigh → dóigh	Níor	Níor dóigh siad aon bhreosla nár ghual é.	Níor dhóigh siad aon bhreosla nár ghual é.	7	7.2.3	122	5	flagged:BACHOIR
+	lenition	dhóigh → dóigh	Níor	Níor dóigh siad aon bhreosla nár ghual.	Níor dhóigh siad aon bhreosla nár ghual.	7	7.2.3	122	5	flagged:BACHOIR
 	lenition	fhéad → féad	Níor	Níor féad mé é a dhéanamh.	Níor fhéad mé é a dhéanamh.	10	10.4.2	187	5	flagged:BACHOIR
 	lenition	fhéad → féad	Níor	Níor féad sé cur síos a dhéanamh ar pé rud a bhí ag cur isteach air.	Níor fhéad sé cur síos a dhéanamh ar pé rud a bhí ag cur isteach air.	10	10.3.2	184	5	flagged:BACHOIR
 	lenition	mhaith → maith	Níor	Níor maith léi go dtarlódh sé sin.	Níor mhaith léi go dtarlódh sé sin.	7	7.2.1	117	5	flagged:SEIMHIU
@@ -3415,6 +4161,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhadra → madra	scéal	scéal madra na n-ocht gcos	scéal mhadra na n-ocht gcos	1	1.1.1	1	6	-
 	lenition	mhadra → madra	scéal	Rinne sí scéal madra na n-ocht gcos as.	Rinne sí scéal mhadra na n-ocht gcos as.	10	10.7	190	15	-
 	lenition	chun → cun	scéimeanna	Bunaíodh scéimeanna cun sábháilteacht bia a áirithiú.	Bunaíodh scéimeanna chun sábháilteacht bia a áirithiú.	10	10.2.7	177	20	flagged:CAIGHDEAN
+	lenition	bhearrtha → bearrtha	scian	scian bearrtha	scian bhearrtha	5	Tábla 5AA	102	6	-
 	lenition	bheag → beag	scoil	ón scoil beag	ón scoil bheag	1	1.7.4	17	9	flagged:SEIMHIU
 	lenition	chumasacha → cumasacha	scoláirí	an bheirt scoláirí cumasacha	an bheirt scoláirí chumasacha	9	9.8	169	19	flagged:SEIMHIU
 	lenition	chumasacha → cumasacha	scoláirí	beirt scoláirí cumasacha	beirt scoláirí chumasacha	9	9.4.3	159	15	flagged:SEIMHIU
@@ -3460,6 +4207,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	thall → tall	sin	Is san fhoirgneamh sin tall atá an Roinn Oideachais agus Scileanna.	Is san fhoirgneamh sin thall atá an Roinn Oideachais agus Scileanna.	1	1.1.5(b)	1	23	flagged:CAIGHDEAN
 	lenition	thar → tar	sin	Níl an leabhar sin tar mholadh beirte.	Níl an leabhar sin thar mholadh beirte.	10	10.2.5	174	19	other:NOGENITIVE
 	lenition	chreidfinn → creidfinn	sin,	Dá mba é d’athair a déarfadh sin, creidfinn é.	Dá mba é d’athair a déarfadh sin, chreidfinn é.	7	7.3.5	129	34	-
+	lenition	chun → cun	síob	An dtabharfadh sí síob cun na scoile duit?	An dtabharfadh sí síob chun na scoile duit?	5	5.4.5(a)	88	23	flagged:CAIGHDEAN
+	lenition	mhaireachtála → maireachtála	slí	slí maireachtála	slí mhaireachtála	5	5.6.1(b)(ii)	103	4	flagged:WEAKSEIMHIUGEN
 	lenition	dháréag → dáréag	soitheach	soitheach dáréag bádóirí	soitheach dháréag bádóirí	9	9.4.3	157	10	flagged:BACHOIR
 	lenition	chearta → cearta	son	Tá siad ag gníomhú ar son cearta gach aon saoránaigh.	Tá siad ag gníomhú ar son chearta gach aon saoránaigh.	3	3.3.1	44	26	-
 	lenition	mhír → mír	sonraí	sonraí mír (b)	sonraí mhír (b)	3	3.1.2	38	7	-
@@ -3471,6 +4220,10 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	pheile → peile	staid	Sin í an bhean a chuaigh go dtí an staid peile.	Sin í an bhean a chuaigh go dtí an staid pheile.	11	11.6.1(a)(i)	210	41	flagged:WEAKSEIMHIUGEN
 	lenition	chun → cun	straitéis	An bhfuil sí ag réiteach aon straitéis cun déileáil leis?	An bhfuil sí ag réiteach aon straitéis chun déileáil leis?	3	3.3.9	51	39	flagged:CAIGHDEAN
 	lenition	ghéar → géar	súil	Tá siad ag coinneáil súil géar ar na himeachtaí.	Tá siad ag coinneáil súil ghéar ar na himeachtaí.	3	3.3.9	51	26	flagged:SEIMHIU
+	lenition	bhfeicfí → bfeicfí	sula	Tháinig sí isteach sula bfeicfí í.	Tháinig sí isteach sula bhfeicfí í.	5	5.1.5(b)	70	24	flagged:DROCHMHOIRF
+	lenition	bhfeictí → bfeictí	sula	Thagadh sí isteach sula bfeictí í.	Thagadh sí isteach sula bhfeictí í.	5	5.1.5(b)	70	24	flagged:DROCHMHOIRF
+	lenition	bhfeictí → bfeictí	sula	Tháinig sí isteach sula bfeictí í.	Tháinig sí isteach sula bhfeictí í.	5	5.1.5(b)	70	24	flagged:DROCHMHOIRF
+	lenition	bhfeictí → bfeictí	sula	Thiocfadh sí isteach sula bfeictí í.	Thiocfadh sí isteach sula bhfeictí í.	5	5.1.5(b)	70	26	flagged:DROCHMHOIRF
 	lenition	shroich → sroich	sular	Bhí na milseáin ba dheise ite sular sroich mé an chóisir.	Bhí na milseáin ba dheise ite sular shroich mé an chóisir.	7	7.1.1	114	36	flagged:SEIMHIU
 	lenition	tháinig → táinig	sular	Bhí mise anseo sular táinig Seán.	Bhí mise anseo sular tháinig Seán.	10	10.4.2	187	21	flagged:CAIGHDEAN
 	lenition	thosaigh → tosaigh	sular	Chaith sé tréimhse thar sáile sular tosaigh sé ag obair anseo.	Chaith sé tréimhse thar sáile sular thosaigh sé ag obair anseo.	10	10.2.5	175	36	flagged:BACHOIR
@@ -3606,6 +4359,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	cheoil → ceoil	uirlis	An seinneann tú uirlis ceoil?	An seinneann tú uirlis cheoil?	10	10.2.7	175	23	flagged:WEAKSEIMHIUGEN
 	lenition	ghlan → glan	uisce	as an uisce glan	as an uisce ghlan	1	1.7.5	18	12	-
 	lenition	Thacaíocht → Tacaíocht	um	An Ghníomhaireacht um Tacaíocht Teaghlaigh	An Ghníomhaireacht um Thacaíocht Teaghlaigh	1	1.1.3	1	22	flagged:SEIMHIU
+	lenition	thráthnóna → tráthnóna	um	Déanfaidh mé um tráthnóna é má bhíonn deis agam.	Déanfaidh mé um thráthnóna é má bhíonn deis agam.	5	5.1.9	70	16	flagged:SEIMHIU
 	t-	t-acht → acht	an	Baineann an acht leasaithe le gach uile fheithicil inneallghluaiste.	Baineann an t-acht leasaithe le gach uile fheithicil inneallghluaiste.	3	3.1.2	37	12	flagged:PREFIXT
 	t-	t-agallamh → agallamh	an	Cuireadh an agallamh ar an mbean sin.	Cuireadh an t-agallamh ar an mbean sin.	11	11.3.1(c)	206	12	flagged:PREFIXT
 	t-	t-agallamh → agallamh	an	Sin í an bhean ar ar cuireadh an agallamh.	Sin í an bhean ar ar cuireadh an t-agallamh.	11	11.3.1(c)	206	33	flagged:PREFIXT
@@ -3614,6 +4368,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	t-	t-ainm → ainm	an	Is é sin an ainm faoina ndíolann sé earraí ar líne.	Is é sin an t-ainm faoina ndíolann sé earraí ar líne.	10	10.8.1	191	12	-
 	t-	t-airgead → airgead	an	Níl aon duine ag bagairt an airgead a thógáil ar ais.	Níl aon duine ag bagairt an t-airgead a thógáil ar ais.	3	3.3.2	45	28	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Is aige siúd a bhí an airgead.	Is aige siúd a bhí an t-airgead.	4	4.10	67	22	flagged:PREFIXT
+	t-	t-airgead → airgead	an	Ní bhfuair sé an airgead fós.	Ní bhfuair sé an t-airgead fós.	5	5.4.5(a)	88	17	flagged:PREFIXT
 	t-	t-airgead → airgead	an	An é Micheál a chaill an airgead?	An é Micheál a chaill an t-airgead?	8	8.2.5	132	25	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Cá bhfuair tú an airgead?	Cá bhfuair tú an t-airgead?	10	10.9.1	192	17	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Dá mbeadh an airgead aige, chaithfeadh sé é.	Dá mbeadh an t-airgead aige, chaithfeadh sé é.	10	10.8.2	191	13	flagged:PREFIXT

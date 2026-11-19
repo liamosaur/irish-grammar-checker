@@ -97,6 +97,19 @@ DECADE <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
 [Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
 [Dd]h?á <B>m[Bb]a</B>:<V cop="y">
+# A word with a verb reading before a pronoun is the verb (CO17 Táblaí 5B-5X: go mbrise mé,
+# moladh sé); before the defaults below, which prefer a noun or the autonomous form. sé, sí,
+# siad and tú are subject forms, so the verb is a personal one; mé, sibh and muid can also be
+# the object of an autonomous verb.
+# Not after ag, where the word is a verbal noun (ag moladh mé, for do mo mholadh: BACHOIR in
+# rialacha-ga.in).
+[Aa]g <B><Z>WITHVERBTAG</Z>ANYTHING</B> (mé|tú|SUBJECTPRONOUN|muid|sibh|sinn):!<V[^<]*>
+# But sí is also a noun (fairy): after the article an uneclipsed word before it is a noun
+# (an long sí, a fairy ship: CO17 10.2.7). Lowercase only: the interrogative An opens a
+# sentence (An dearna sí ...? is an error for An ndearna).
+(an|na) <B><Z>WITHFINITE</Z>NOTECLIPSED</B> [Ss]í:!<V[^<]*>
+<B><Z>WITHFINITE</Z>ANYTHING</B> (tú|SUBJECTPRONOUN):!<([^V]|V p="n")[^<]*>
+<B><Z>WITHVERBTAG</Z>ANYTHING</B> (mé|muid|sibh|sinn):!<[^V][^<]*>
 # go n-éirí, go n-oibrí, etc. 
 [Gg]o <B><Z>NMFOURSUBJ</Z>ECLIPSED</B>:<V p="y" t="foshuit">
 [Nn]ár <B>[Cc]huma</B>:<A pl="n" gnt="n">
@@ -462,6 +475,9 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Ss]í</B> <N pl="n" gnt="y" gnd="f">gaoithe</N>:<N pl="n" gnt="y" gnd="m">
 <B>[Ss]í</B> <N pl="n" gnt="y" gnd="m">deannaigh</N>:<N pl="n" gnt="y" gnd="m">
 <T>[Nn]a</T> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
+# after the article and a noun, sí is the noun too: a pronoun follows a verb (an long sí, CO17
+# 10.2.7; lowercase, as above)
+(an|na) <N>ANYTHING</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
 # capital Sí is sometimes the noun; need for sé below
 <B>sí</B>:<P>
 Ó <B>Sé</B>:<Y>
@@ -812,6 +828,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # choinníodh, etc. -- otherwise unigram=>PAUT and need to explain lenition...
 <B><Z>PAUTGNATH</Z>LENITED</B>:<V p="y" t="gnáth">
 # bhíodh, etc. -- otherwise unigram=>ORD and need to explain lenition...
+# but the habitual past of a verb in a vowel or f takes d', so without it the form is the
+# imperative (ithimis: CO17 Tábla 5U)
+<B><Z>WITHIMPER</Z>INITIALVOWELORF</B>:!<V p="y" t="gnáth">
 <B><Z>BHIODHLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
 <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
 # D'fhás Caoimhín.
@@ -844,6 +863,9 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>[Aa]r</B>:<S>
 # safe to do this now that 'ar' is handled
 <B>ANYTHING</B> <P>SUBJECTPRONOUN</P>:!<[^V][^<]*>
+# A lenited word with a verb reading at the start of a clause is the verb (sb. mholfaí,
+# bhristí: CO17 Táblaí 5B, 5C): nothing there lenites a noun or an adjective.
+CLAUSESTART <B><Z>WITHVERBTAG</Z>LENITED</B>:!<[^V][^<]*>
 # next rule kills possibility of catching "de a:BACHOIR{dá}"
 # Bhain sé de a bhróga. 
 <B>[Dd]e</B> a:<O>

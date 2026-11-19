@@ -36,6 +36,8 @@
 // Chapter 2 is mostly tables of noun forms: each form in a cell is a one-word phrase, and
 // the examples in the running text are phrases; dative forms given in a cell's note
 // (Éirinn, fichid) are left out, as the dative is used only in set phrases.
+// Chapter 5's conjugation tables give each cell as a phrase (the autonomous form's label
+// "sb." dropped, sé/sí and slash alternatives split), and its tables of roots each word.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -50,7 +52,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'test', 'caighdean');
 
 type Example = { section: string; page: number; text: string; known?: string; hint?: string; phrase?: boolean; variant?: boolean };
-const TITLES: Record<string, string> = { '1': 'the article', '2': 'the noun', '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '7': 'the copula', '8': 'pronouns', '9': 'numbers', '10': 'initial mutations', '11': 'the relative clause' };
+const TITLES: Record<string, string> = { '1': 'the article', '2': 'the noun', '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '5': 'the verb', '7': 'the copula', '8': 'pronouns', '9': 'numbers', '10': 'initial mutations', '11': 'the relative clause' };
 const chapters = fs.readdirSync(dir).filter((f) => /^ch\d+\.json$/.test(f)).sort();
 
 // Messages about the word list rather than grammar: a word the database lacks says

@@ -503,6 +503,8 @@ n[Dd]eire:IONADAI{ndeireadh}
 #. Is iad na trí cholún sin le cheile an tAontas Eorpach.
 <VSUBJ>ANYTHING</VSUBJ>:NOSUBJ
 <C>([Dd]á|[Gg]o|[Ss]ula|[Mm]ura)</C> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
+# ach a, a conjunction of time (CO17 5.1.5(a)(i): ach a dtaga Pól)
+[Aa]ch [Aa] <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 <U>[Nn]ár</U> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 # corpus; clearer message before the :GENITIVE message below
 <T>[Nn]a</T> <N pl="n" gnt="n" gnd="m">(n-uasal|nUasal)</N>:BACHOIR{na n-uaisle}
@@ -4117,7 +4119,9 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <V>SLENDERFIRSTPRES</V> <P>sinn</P>:SYNTHETIC{-imid}
 <V>BROADSECONDPRES</V> <P>sinn</P>:SYNTHETIC{-aímid}
 <V>SLENDERSECONDPRES</V> <P>sinn</P>:SYNTHETIC{-ímid}
-<V p="y" t="láith">n?[Dd]eir</V> <P>(muid|sinn)</P>:BACHOIR{deirimid}
+# CO17 5.1.10: muid with the analytic form has the same standing as the synthetic form in
+# every mood and tense, so these are for sinn only.
+<V p="y" t="láith">n?[Dd]eir</V> <P>sinn</P>:BACHOIR{deirimid}
 # future; including "muid" is a bit radical for me
 <V>BROADFIRSTFUTURE</V> <P>sinn</P>:SYNTHETIC{-faimid}
 <V>SLENDERFIRSTFUTURE</V> <P>sinn</P>:SYNTHETIC{-fimid}
@@ -4144,10 +4148,12 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <V p="y" t="coinn">bh[Ff]aigheadh</V> <P>tú</P>:BACHOIR{bhfaighfeá}
 <V p="y" t="coinn">[Rr]achadh</V> <P>tú</P>:BACHOIR{rachfá}
 <V p="y" t="coinn">m?[Bb]h?eadh</V> <P>tú</P>:BACHOIR{bheifeá}
-<V>BROADFIRSTCOND</V> <P>(muid|sinn)</P>:SYNTHETIC{-faimis}
-<V>SLENDERFIRSTCOND</V> <P>(muid|sinn)</P>:SYNTHETIC{-fimis}
-<V>BROADSECONDCOND</V> <P>(muid|sinn)</P>:SYNTHETIC{-óimis}
-<V>SLENDERSECONDCOND</V> <P>(muid|sinn)</P>:SYNTHETIC{-eoimis}
+# CO17 5.1.10: muid with the analytic form has the same standing as the synthetic form in
+# every mood and tense, so these are for sinn only.
+<V>BROADFIRSTCOND</V> <P>sinn</P>:SYNTHETIC{-faimis}
+<V>SLENDERFIRSTCOND</V> <P>sinn</P>:SYNTHETIC{-fimis}
+<V>BROADSECONDCOND</V> <P>sinn</P>:SYNTHETIC{-óimis}
+<V>SLENDERSECONDCOND</V> <P>sinn</P>:SYNTHETIC{-eoimis}
 <V p="y" t="coinn">n?[Gg]h?eobhadh</V> <P>(muid|sinn)</P>:BACHOIR{gheobhaimis}
 <V p="y" t="coinn">bh[Ff]aigheadh</V> <P>(muid|sinn)</P>:BACHOIR{bhfaighimis}
 <V p="y" t="coinn">[Rr]achadh</V> <P>(muid|sinn)</P>:BACHOIR{rachaimis}
@@ -4170,10 +4176,12 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <V p="y" t="gnáth">SLENDERFIRSTIMP</V> <P>tú</P>:SYNTHETIC{-teá}
 <V p="y" t="gnáth">BROADSECONDIMP</V> <P>tú</P>:SYNTHETIC{-aíteá}
 <V p="y" t="gnáth">SLENDERSECONDIMP</V> <P>tú</P>:SYNTHETIC{-íteá}
-<V p="y" t="gnáth">BROADFIRSTIMP</V> <P>(muid|sinn)</P>:SYNTHETIC{-aimis}
-<V p="y" t="gnáth">SLENDERFIRSTIMP</V> <P>(muid|sinn)</P>:SYNTHETIC{-imis}
-<V p="y" t="gnáth">BROADSECONDIMP</V> <P>(muid|sinn)</P>:SYNTHETIC{-aímis}
-<V p="y" t="gnáth">SLENDERSECONDIMP</V> <P>(muid|sinn)</P>:SYNTHETIC{-ímis}
+# CO17 5.1.10: muid with the analytic form has the same standing as the synthetic form in
+# every mood and tense, so these are for sinn only.
+<V p="y" t="gnáth">BROADFIRSTIMP</V> <P>sinn</P>:SYNTHETIC{-aimis}
+<V p="y" t="gnáth">SLENDERFIRSTIMP</V> <P>sinn</P>:SYNTHETIC{-imis}
+<V p="y" t="gnáth">BROADSECONDIMP</V> <P>sinn</P>:SYNTHETIC{-aímis}
+<V p="y" t="gnáth">SLENDERSECONDIMP</V> <P>sinn</P>:SYNTHETIC{-ímis}
 <V p="y" t="gnáth">BROADFIRSTIMP</V> <P>siad</P>:SYNTHETIC{-aidís}
 <V p="y" t="gnáth">SLENDERFIRSTIMP</V> <P>siad</P>:SYNTHETIC{-idís}
 <V p="y" t="gnáth">BROADSECONDIMP</V> <P>siad</P>:SYNTHETIC{-aídís}
@@ -4493,6 +4501,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 <[HU]>[Aa]</[HU]> <E><V>DEPENDENT</V></E>:OK
 #. Chan fhacthas dom go raibh an saibhreas céanna i mBéarla (OK).
 [Aa]n|[Cc]á|[Cc]ha|[Cc]han|[Dd]á|[Nn]ach|[Nn]í <E><V>DEPENDENT</V></E>:OK
+# ná before the present subjunctive of bí (CO17 5.4.5(c): Ná raibh maith agat)
+[Nn]á <E><V>raibh</V></E>:OK
 #############################################################################
 #  Note that we only need non-eclipsing particles as exceptions
 #  Also, INITIALVOWELORF macro allows unlenited "f", but never happens here!

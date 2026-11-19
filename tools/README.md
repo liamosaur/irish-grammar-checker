@@ -74,7 +74,7 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   except for spelling suggestions; for those, see `perl-wsl.sh`.
 - `make-golden.ts`, `make-golden-spelling.ts`: record new Perl output as test fixtures.
 - `drift.mjs`: agreement with the expected output in upstream `ga/triail.xml`
-  (currently 463 of 479 sentences identical). Some differences are intended: the
+  (currently 464 of 479 sentences identical). Some differences are intended: the
   rules in `grammar/` follow *An Caighdeán Oifigiúil* where upstream does not
   (e.g. *Ní hamháin*, *in 1982*, *mórsheisear iníonacha*, and *ag an tsiopa*, the
   dative of Córas an tSéimhithe), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).

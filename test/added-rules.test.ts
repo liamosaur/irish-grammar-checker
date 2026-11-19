@@ -160,6 +160,10 @@ const cases: Case[] = [
   { section: '2.1.3(b)', text: 'Tá na neach anseo.', rule: 'NOGENITIVE', words: 'Tá na neach', fixed: null },
   // a hyphen after fo- that 2.1.7(d) does not call for: the fix keeps the prefix
   { section: '2.1.7(d)', text: 'Bhí fo-ráiteas ann.', rule: 'CAIGHDEAN', words: 'fo-ráiteas', fixed: 'Bhí foráiteas ann.' },
+  // the autonomous form takes the object pronoun, and the rule still sees it before sé
+  { section: '5.1.7', text: 'Rinneadh sé inné.', rule: 'BACHOIR', words: 'Rinneadh sé', fixed: 'Rinneadh é inné.' },
+  // ag + verbal noun + pronoun, still read as a noun after the verb-before-pronoun tagging
+  { section: '5.5', text: 'Bhí sé ag moladh mé.', rule: 'BACHOIR', words: 'ag moladh mé', fixed: null },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];
@@ -273,6 +277,13 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Bhí fo-ghlantóir ann.', note: 'hyphen after fo- before gla- (2.1.7(d))' },
   { text: 'Is duine iar-nua-aimseartha é.', note: 'a prefix keeps its hyphen before a hyphenated compound (2.1.7 Nóta)' },
   { text: 'Bhí an cruinniú ar athló.', note: 'old dative in its set phrase (2.7 Nóta)' },
+  { text: 'Moladh sé an Tiarna.', note: 'third person imperative with sé (Tábla 5B)' },
+  { text: 'Ithimis ár ndinnéar.', note: "imperative in a vowel needs no d' (Tábla 5U)" },
+  { text: 'Mholfaí é dá ndéanfadh sé é.', note: 'lenited autonomous conditional at the start of a clause (Tábla 5B)' },
+  { text: 'Chloisfeadh muid é.', note: 'muid with the analytic form (5.1.10)' },
+  { text: 'Fanfaidh mé ach a dtaga sé.', note: 'subjunctive after ach a (5.1.5(a)(i))' },
+  { text: 'Bhí an long sí ar an bhfarraige.', note: 'sí the noun after the article and a noun (10.2.7)' },
+  { text: 'An bhfuil sé ann?', note: 'interrogative an and an eclipsed verb before a pronoun' },
 ];
 
 let engine: Gramadoir | undefined;

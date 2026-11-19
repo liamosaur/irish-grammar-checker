@@ -26,7 +26,8 @@ s/FAIGHFC/bhfaigh[^<]+/g;
 s/ABSPASTVERB/(?:rinne[^<]*|chonai?c[^<]*|chua(?:igh|[md]ar|thas)|bhí(?:o[md]ar|othas)?)/g;
 s/ABSNONPASTVERB/(?:n?gh?eo[bf][^<]+|d'íosf[^<]+|tá(?:im|imid|thar)?)/g;
 # "ní bhfaighimid" is dep fut, but "faighimid" is abs pres so leave it out
-s/DEPENDENT/(?:rai?bh(?:a[md]ar|thas)?|bhfuil(?:im|imid|tear)?|n?dh?each(?:aigh|a[md]ar|thas)|íosf[aá][^<]+|(?:bhf|fh)ac(?:a|a[dm]ar|thas)|(?:bhf|fh)aigh(?:idh|fear|inn|feá|eadh|imis|idís|fí)|n?dh?earn[^<]+)/g;
+# The dependent forms of the irregular verbs (íosfaidh is independent: CO17 Tábla 5U).
+s/DEPENDENT/(?:rai?bh(?:a[md]ar|thas)?|bhfuil(?:im|imid|tear)?|n?dh?each(?:aigh|a[md]ar|thas)|(?:bhf|fh)ac(?:a|a[dm]ar|thas)|(?:bhf|fh)aigh(?:idh|fear|inn|feá|eadh|imis|idís|fí)|n?dh?earn[^<]+)/g;
 s/JUSTTA/[Tt]á(?:i[dm]|imid|thar)?/g;
 s/JUSTATA/atá(?:i[dm]|imid|thar)?/g;
 s/NONRFORMCONJ/(?:[Gg]o|[Mm]ura|[Ss]ula)/g;
@@ -64,6 +65,8 @@ s/NONVOWELNONF/(?:[^aeiouAEIOUáéíóúÁÉÍÓÚfF]|[Ff]h?[lr])[^<]+/g;
 s/UNECLIPSEDDT/(?:[tT]|[Dd][^Tt'])[^<]+/g;
 # note this rule doesn't represent all possible eclipses since m/n don't ecl.
 s/UNECLIPSEDCONS/(?:[cfptCFPT]|[Dd][^Tt']|[Gg][^Cc]|[Bb][^Pph]|[Bb]h[^fF])[^<]+/g;
+# A word without an eclipsis (any initial); before ECLIPSED, whose name it contains.
+s/NOTECLIPSED/(?:[^bBdDgGmMnN]|[bB][^hHpP]|[bB][hH][^fF]|[dD][^tT]|[gG][^cC]|[mM][^bB]|[nN][^dDgG-])[^<]*/g;
 s/UNECLIPSED/(?:[aeiouAEIOUáéíóúÁÉÍÓÚcfptCFPT]|[Dd][^Tt']|[Gg][^Cc]|[Bb][^Pph]|[Bb]h[^fF])[^<]*/g;
 s/ECLIPSEDVOWEL/n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])[^<]*/g;
 s/ECLIPSEDDT/(?:d[Tt]|n[Dd])[^<]+/g;
@@ -210,6 +213,12 @@ s/ANYNFPLH/(?:<[^>]+>)*<N pl="y" gnt="n" gnd="f" h="y".>(?:<[^>]+>)*/g;
 s/ANYNFPL/(?:<[^>]+>)*<N pl="y" gnt="n" gnd="f".>(?:<[^>]+>)*/g;
 s/ANYGENITIVE/(?:<[^>]+>)*<N pl="." gnt="y"[^>]+>(?:<[^>]+>)*/g;
 s/ANYCOPULA/(?:<[^>]+>)*<V cop="y".>(?:<[^>]+>)*/g;
+# A word with a finite (personal) verb among its tags; one with a verb other than the copula;
+# one with an imperative.
+s/PERSONALPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;
+s/WITHFINITE/(?:<[^>]+>)*<V p="y"[^>]*>(?:<[^>]+>)*/g;
+s/WITHVERBTAG/(?:<[^>]+>)*<V p=[^>]*>(?:<[^>]+>)*/g;
+s/WITHIMPER/(?:<[^>]+>)*<V p="y" t="ord".>(?:<[^>]+>)*/g;
 # A word with a past-tense verb among its tags.
 s/PASTOPTION/(?:<[^>]+>)*<V p="." t="caite".>(?:<[^>]+>)*/g;
 s/ANYPASTIMPER/(?:<[^>]+>)*<V p="y" t="ord".><V p="y" t="caite".>(?:<[^>]+>)*/g;
