@@ -122,6 +122,15 @@ const cases: Case[] = [
   // dosaen + a noun with no genitive plural of the same spelling: still reported; an ordinary plural after a figure, as before
   { section: '9.3.9', text: 'Bhí dosaen ubh ann.', rule: 'GENITIVE', words: 'dosaen ubh', fixed: null },
   { section: '9.3.12', text: 'Tá 5 cathaoireacha ann.', rule: 'UATHA', words: '5 cathaoireacha', fixed: null },
+  // seisean after a noun with no possessive, as before; eo and iúd after is (8.6.2); ní + iúd needs h; faoi a outside a question
+  { section: '8.2.5', text: 'Chonaic mé an fear seisean.', rule: 'BACHOIR', words: 'fear seisean', fixed: 'Chonaic mé an fear eisean.' },
+  { section: '8.6.2', text: 'Is iúd é.', rule: 'BACHOIR', words: 'Is iúd', fixed: 'Siúd é.' },
+  { section: '8.6.2', text: 'Is eo é.', rule: 'BACHOIR', words: 'Is eo', fixed: 'Seo é.' },
+  { section: '10.13.2', text: 'Ní iúd é.', rule: 'PREFIXH', words: 'Ní iúd', fixed: 'Ní hiúd é.' },
+  { section: '8.3.8', text: 'Cuireann sí a neart faoi a coim.', rule: 'BACHOIR', words: 'faoi a', fixed: 'Cuireann sí a neart faoina coim.' },
+  // an emphatic form is tagged as its noun, so the mutation rules apply to it; a known word is not split (daoine)
+  { section: '8.3.1', text: 'Chaill siad ár páircne.', rule: 'URU', words: 'ár páircne', fixed: 'Chaill siad ár bpáircne.' },
+  { section: '9.4.3', text: 'Níl a fhios agam cé mhéad daoine a bhí ann.', rule: 'UATHA', words: 'cé mhéad daoine', fixed: null },
   // na + a singular noun, as before; the place name Garraithe Náisiúnta na Lus is the exception
   { section: '1.6', text: 'Chonaic mé na lus.', rule: 'BACHOIR', words: 'na lus', fixed: 'Chonaic mé an lus.' },
   // the adjective after a number is still lenited after an ordinary noun (9.3.3)
@@ -206,6 +215,19 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Tá 89 dtroithe cearnacha ann.', note: 'a special plural after a figure (9.3.2, Tábla 9G)' },
   { text: 'Is é a trí ar fiche a ceathair an codán.', note: 'fiche is not lenited in a fraction (9.6.1(e)(i))' },
   { text: 'Tá trí fichiú fágtha.', note: 'trí before an ordinal is the number; fichiú is not lenited (9.6.1(e)(iii))' },
+  { text: 'Chonaic mé a gheansaí seisean.', note: 'the emphatic seisean after a possessive and its noun (8.3.2)' },
+  { text: 'Bhuail sé a dhá bhos ar a chéile.', note: 'the singular after dhá, not the dual bois (8.3.3)' },
+  { text: 'Is dócha gurbh iúd é é.', note: 'iúd after the copula (8.6.2); now a pronoun in the word list' },
+  { text: 'Beidh mé ann óna ceathair a chlog.', note: 'the numeral a joined to the preposition (8.3.8(b))' },
+  { text: 'Céard faoi a raibh sibh ag caint?', note: 'no faoina after an interrogative (8.5.5)' },
+  { text: 'Bhí siad ag imeacht ar cosa in airde.', note: 'the set phrase ar cosa in airde' },
+  { text: 'Bhí sé ag caint lena mhodúil.', note: 'after lena the noun is plural, not genitive (8.3.2, 8.3.8(a))' },
+  { text: 'Chonaic mé mo chapallsa ansin.', note: 'an emphatic suffix on a noun (8.3.1); not read as the pre-standard chapal' },
+  { text: 'Tháinig ár mbádna isteach.', note: 'an emphatic suffix on a noun (8.3.1); not read as mbánna' },
+  { text: 'Ní aithnímse an fear sin.', note: 'an emphatic suffix on a verb (8.2.2)' },
+  { text: 'Mhill sé a chuidsean gruaige.', note: 'emphatic cuid before a genitive, not lenited (8.3.4(b))' },
+  { text: 'Déan do chuidse oibre.', note: 'cuidse, a rare word in the word list, tagged as cuid' },
+  { text: 'Chuaigh sé go dtí an teach mór.', note: 'a known word ending like a suffix is not changed (mór)' },
   { text: 'Tá an bhean cabhrach.', note: 'predicative adjective, not lenited' },
   { text: 'Cuideachta áitiúil atá i mbun an teach a thógáil.', note: 'nominative before a + verbal noun after a compound preposition' },
 ];

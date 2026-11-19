@@ -611,6 +611,10 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>NONCOMPOUND</S> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <S>NONCOMPOUND</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>NONCOMPOUND</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+# After a simple preposition joined to the possessive (lena, ina, faoina, óna, trína:
+# CO17 8.3.8(a)) the noun is not genitive, so a masculine word whose genitive singular
+# is also its plural is the plural (lena mhodúil seisean, 8.3.2).
+([Ll]ena|[Ii]na|[Ff]aoina|[Óó]na|[Tt]rína) <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # see rialacha
 # CO17 Tábla 9M, note: the genitive plural after dosaen and scór (dosaen amhrán;
 # scór daoine), and after dís and péire.

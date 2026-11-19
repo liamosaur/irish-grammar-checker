@@ -38,6 +38,10 @@ gcabair	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m">	cabair, eclipsed
 # so Ní eo é was reported only as rare, not as missing h.
 eo	<P>	CO17 10.13.2
 heo	<P h="y">	CO17 10.13.2: Ní heo é an rud atá le déanamh.
+# iúd, likewise, after the copula (CO17 8.6.2: Is dócha gurbh iúd é é; An iúd iad na
+# comharsana?). eile.json had both as non-standard forms of siúd.
+iúd	<P>	CO17 8.6.2
+hiúd	<P h="y">	CO17 10.13.2: ní hiúd
 
 # h before the autonomous form after ná (CO17 10.14.1: Ná hóltar sa Dánlann).
 # hóltar was a rare word; tagged as óltar is.
@@ -69,3 +73,24 @@ b'ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags
 # chlocharacha are left as they are (CO17 9.3.7: achar na ndeich ngairdín chlocharacha).
 clocharach	<A pl="n" gnt="n">	FGB: "clocharach, a1. Stony, ridged with stone."
 chlocharach	<A pl="n" gnt="n">	mutated form, tagged as the word list tags the same form of salach (shalach)
+
+# Emphatic forms (CO17 8.3.1, 8.3.4: mo chuidse; a cuidse) that the word list has as rare
+# words, found there before the morphology could read them as the noun + suffix
+# (grammar/morph-ga.txt, level -2). Tagged as the word they are formed from.
+cuidse	<N pl="n" gnt="n" gnd="f">	emphatic form of cuid, tagged as the word list tags cuid
+chuidse	<N pl="n" gnt="n" gnd="f">	emphatic form of chuid, tagged as the word list tags chuid
+gcuidse	<N pl="n" gnt="n" gnd="f">	emphatic form of gcuid, tagged as the word list tags gcuid
+bráthairse	<N pl="n" gnt="n" gnd="m">	emphatic form of bráthair, tagged as the word list tags bráthair
+bhráthairse	<N pl="n" gnt="n" gnd="m">	emphatic form of bhráthair, tagged as the word list tags bhráthair
+mbráthairse	<N pl="n" gnt="n" gnd="m">	emphatic form of mbráthair, tagged as the word list tags mbráthair
+bósan	<N pl="n" gnt="n" gnd="f"><N pl="n" gnt="y" gnd="f"><N pl="y" gnt="y" gnd="f">	emphatic form of bó, tagged as the word list tags bó
+bhósan	<N pl="n" gnt="n" gnd="f"><N pl="n" gnt="y" gnd="f"><N pl="y" gnt="y" gnd="f">	emphatic form of bhó, tagged as the word list tags bhó
+mbósan	<N pl="n" gnt="n" gnd="f"><N pl="n" gnt="y" gnd="f"><N pl="y" gnt="y" gnd="f">	emphatic form of mbó, tagged as the word list tags mbó
+# The stem checked on teanglann.ie (FGB); the emphatic form itself is not a headword.
+paistíse	<N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	emphatic form of paistí (FGB: paiste, pl. -tí), tagged as the word list tags paistí
+bpaistíse	<N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	emphatic form of bpaistí (FGB: paiste, pl. -tí), tagged as the word list tags bpaistí
+phaistíse	<N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	emphatic form of phaistí (FGB: paiste, pl. -tí), tagged as the word list tags phaistí
+líse	<N pl="n" gnt="n" gnd="f"><N pl="n" gnt="y" gnd="f"><V p="y" t="foshuit">	emphatic form of lí (FGB: lí1, f.), tagged as the word list tags lí
+glacana	<N pl="y" gnt="n" gnd="f">	emphatic form of glaca (FGB: glac1, f., npl. ~a), tagged as the word list tags glaca
+ghlacana	<N pl="y" gnt="n" gnd="f"><V p="y" t="foshuit">	emphatic form of ghlaca (FGB: glac1, f., npl. ~a), tagged as the word list tags ghlaca
+nglacana	<N pl="y" gnt="n" gnd="f"><V p="y" t="foshuit">	emphatic form of nglaca (FGB: glac1, f., npl. ~a), tagged as the word list tags nglaca

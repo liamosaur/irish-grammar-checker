@@ -79,6 +79,8 @@ export class Gramadoir {
   private token: { re: RegExp; tag: string; tail: string }[];
   private morph: Morph[];
   private puremorph: Morph[];
+  /** Level -2 rules (not in Perl 0.70): regular inflections, such as the emphatic suffixes. */
+  private inflect: Morph[];
   private messages: Record<string, string>;
   private aonchiall: CompiledRule[];
   private comhshuite: CompiledRule[];
@@ -109,6 +111,7 @@ export class Gramadoir {
       pos: m.poscompiled ? new RegExp(m.poscompiled) : null,
     }));
     this.puremorph = this.morph.filter((m) => m.src.level === -1);
+    this.inflect = this.morph.filter((m) => m.src.level === -2);
     this.messages = data.messages;
     this.aonchiall = data.rules.aonchiall.map(compileRule);
     this.comhshuite = data.rules.comhshuite.map(compileRule);
@@ -254,18 +257,36 @@ export class Gramadoir {
   }
 
   private tagOneWordClean(word: string): string {
-    let ans = this.cleanTagRecurse(word, 4);
-    if (ans) {
-      const seen = new Set<string>();
-      for (const m of ans.matchAll(/<[^>]+>/g)) {
-        const cod = this.sop.get(m[0]);
-        if (cod !== undefined) seen.add(cod);
-      }
-      let codez = [...seen].sort().join('');
-      if ([...codez].length > 1) codez = codez.replace('\u007f', '');
-      ans = this.addGrammarTags(word, codez);
+    const ans = this.cleanTagRecurse(word, 4);
+    return ans ? this.tagsFor(word, ans) : ans;
+  }
+
+  /** The word tagged with the tags in `ans` (a string of tags), as tag_one_word does. */
+  private tagsFor(word: string, ans: string): string {
+    const seen = new Set<string>();
+    for (const m of ans.matchAll(/<[^>]+>/g)) {
+      const cod = this.sop.get(m[0]);
+      if (cod !== undefined) seen.add(cod);
     }
-    return ans;
+    let codez = [...seen].sort().join('');
+    if ([...codez].length > 1) codez = codez.replace('\u007f', '');
+    return this.addGrammarTags(word, codez);
+  }
+
+  /**
+   * A word not in the word list that is a regular inflection (a level -2 rule) of one that is:
+   * tagged as the stem, with the tags the rule allows, and no message. Tried before the full
+   * morphology search, whose first match may otherwise be a pre-standard spelling.
+   */
+  private tagInflected(word: string): string {
+    let ans = '';
+    for (const rule of this.inflect) {
+      if (!rule.re.test(word)) continue;
+      for (const m of this.cleanTagRecurse(this.applyMorph(rule, word), 4).matchAll(/<[^>]+>/g)) {
+        if (rule.pos === null || rule.pos.test(m[0])) ans += m[0];
+      }
+    }
+    return ans ? this.tagsFor(word, ans) : '';
   }
 
   private tagAsCompound(word: string): string {
@@ -416,6 +437,8 @@ export class Gramadoir {
 
   private tagOneWordUncached(word: string): string {
     let ans = this.tagOneWordClean(word);
+    if (ans) return ans;
+    ans = this.tagInflected(word);
     if (ans) return ans;
     const dummy: PosAns = { v: '' };
     ans = this.tagRecurse(word, word, -1, dummy, 6);

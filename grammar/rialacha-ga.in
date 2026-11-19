@@ -96,10 +96,10 @@ sin sin:OK
 # adverbs in 10.12.2 (the macro NIHWORDS), demonstratives in 10.13.2. Nothing
 # else takes it (Ní amadán é; Ní Eoin is ainm dom; Ní eolas oideachas): the
 # NIAITCH rules.
-# CO17 10.13.2: ní hin, ní hiúd. The word list has hin and hiúd as non-standard
-# forms of sin and siúd, so this goes with the other exceptions to word-list
-# messages, which must come first.
-[Nn]í <E><X>(hin|hiúd)</X></E>:OK
+# CO17 10.13.2: ní hin. The word list has hin as a non-standard form of sin, so this
+# goes with the other exceptions to word-list messages, which must come first.
+# (hiúd is a pronoun in grammar/lexicon-corrections.tsv.)
+[Nn]í <E><X>hin</X></E>:OK
 <N pl="n" gnt="n" gnd="f">g?Ch?ill</N> <X>Mantáin</X>:SEIMHIU
 <S>[Aa]r</S> <X>ndoigh</X>:MICHEART{ar ndóigh}
 <X>ealú</X>:MICHEART{éalú}
@@ -1196,6 +1196,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 #. Cosc a bheith ar cic a thabhairt don sliotar.
 #. Cosc a bheith ar CIC leabhair a dhíol (OK).
 <S>[Aa]r</S> <N>UNLENITED</N>:WEAKSEIMHIU{ar}
+# The set phrase ar cosa in airde (CO17 8.6.2: B'iúd iad ag imeacht ar cosa in airde).
+<E><S>[Aa]r</S> <N>cosa</N></E> <R>[Ii]n airde</R>:OK
 # most of the time the construction here means "ar" is a copula,
 # but I'm not sure enough to move this to a "aonchiall" rule.
 #. Beidh cairde dá cuid ar Gaeilgeoirí iad (OK).
@@ -1490,6 +1492,8 @@ CLAUSESTART <E><T>[Aa]n</T> <A pl="n" gnt="n">céad</A></E> (is|DECADE):OK
 g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <C>[Nn]ó</C> <E>[Cc]eathair</E>:OK
 <E>[Cc]eathair</E> <C>[Nn]ó</C>:OK
+# CO17 8.3.8(b): the numeral a is joined to the preposition (óna ceathair a chlog).
+([Ff]aoina|[Ii]na|[Ll]ena|[Óó]na|[Tt]rína) <E>[Cc]eathair</E>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
 # CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
 # weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
@@ -2037,10 +2041,9 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 <A pl="n" gnt="n">[Dd]h?á</A> [Uu]ibhe:BACHOIR{ubh}
 <A pl="n" gnt="n">[Dd]h?á</A> h?uaire:BACHOIR{uair}
 <A pl="n" gnt="n">[Dd]h?á</A> h?orlaí:BACHOIR{orlach}
-# CB p.77 #8.d; no such rule in OD/LGG
-<A pl="n" gnt="n">[Dd]h?á</A> m?[Bb]h?os:BACHOIR{bhois}
-# CB p.77 #8.d; no such rule in OD/LGG
-<A pl="n" gnt="n">[Dd]h?á</A> m?[Bb]h?róg:BACHOIR{bhróig}
+# CB p.77 #8.d gives dual forms after dhá (dhá bhois, dhá bhróig). CO17 has the
+# singular for these two (do dhá bhos, 8.3.3; mo dhá bhróg, 10.3.3), so they are not
+# reported; the rules below for cluas, cos and lámh are of the same kind.
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "mo dhá chluas" explicitly in OD
 <A pl="n" gnt="n">[Dd]h?á</A> g?[Cc]h?luas:BACHOIR{chluais}
 # CB p.77 #8.d; no such rule in OD/LGG
@@ -2229,6 +2232,9 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.84 #8, p.132 #2
 #. Cuireann sí a neart mar chrios faoi a coim.
 [Ff]aoin? a:BACHOIR{faoina}
+# CO17 8.5.5: after an interrogative the preposition is not joined to the relative a
+# (Céard faoi a bhfuil sibh ag caint?).
+([Cc]éard|[Cc]é|[Cc]ad) <E>[Ff]aoi a</E>:OK
 # CB p.132 #2; disambiguate to <O> in this context => never applied
 #<S>[Ff]aoi</S> ar:BACHOIR{faoinar}
 # CB p.84 #8
@@ -3186,6 +3192,9 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # this off the noun ní, "thing" (aon ní amháin). in is left out: after ní it is
 # usually the preposition (Ní in Éirinn a rugadh é).
 <V cop="y">[Nn]í</V> <[ANR]>NIHWORDS</[ANR]>:PREFIXH
+# CO17 8.6.2: eo and iúd (for seo and siúd) are not used after is.
+<V cop="y">[Ii]s</V> <P>eo</P>:BACHOIR{seo}
+<V cop="y">[Ii]s</V> <P>iúd</P>:BACHOIR{siúd}
 <V cop="y">[Nn]í</V> <P>(éard|iúd)</P>:PREFIXH
 # CO17 10.11.8(c): the two proverbs.
 <V cop="y">[Nn]í</V> <N>(aithne|eolas)</N> [Gg]o haontíos:PREFIXH
@@ -3695,12 +3704,16 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]é</P>:BACHOIR{é}
 <VAUT>ANYTHING</VAUT> <P>[Ss]é</P>:BACHOIR{é}
 <[^V]>ANYTHING</[^V]> <P>[Ss]eisean</P>:BACHOIR{eisean}
+# CO17 8.3.2: the emphatic seisean, sise, siadsan after a possessive and its noun
+# (a gheansaí seisean; a cóta sise; a dteach siadsan).
+<D>ANYTHING</D> <E><N>ANYTHING</N> <P>[Ss]eisean</P></E>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]eisean</P>:BACHOIR{eisean}
 <VAUT>ANYTHING</VAUT> <P>[Ss]eisean</P>:BACHOIR{eisean}
 <[^V]>ANYTHING</[^V]> <P>[Ss]í</P>:BACHOIR{í}
 <V cop="y">ANYTHING</V> <P>[Ss]í</P>:BACHOIR{í}
 <VAUT>ANYTHING</VAUT> <P>[Ss]í</P>:BACHOIR{í}
 <[^V]>ANYTHING</[^V]> <P>[Ss]ise</P>:BACHOIR{ise}
+<D>ANYTHING</D> <E><N>ANYTHING</N> <P>[Ss]ise</P></E>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]ise</P>:BACHOIR{ise}
 <VAUT>ANYTHING</VAUT> <P>[Ss]ise</P>:BACHOIR{ise}
 <[^V]>ANYTHING</[^V]> <P>[Ss]iad</P>:BACHOIR{iad}
@@ -3708,6 +3721,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]iad</P>:BACHOIR{iad}
 <VAUT>ANYTHING</VAUT> <P>[Ss]iad</P>:BACHOIR{iad}
 <[^V]>ANYTHING</[^V]> <P>[Ss]iadsan</P>:BACHOIR{iadsan}
+<D>ANYTHING</D> <E><N>ANYTHING</N> <P>[Ss]iadsan</P></E>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]iadsan</P>:BACHOIR{iadsan}
 <VAUT>ANYTHING</VAUT> <P>[Ss]iadsan</P>:BACHOIR{iadsan}
 #   sh?il -> síl is on the margins of an IONADAI rule but tough to pick

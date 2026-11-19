@@ -25,7 +25,9 @@
 // the genitive) gives two sentences, and alternatives and optional phrases in brackets
 // are treated as in chapters 4 and 7. Chapter 9 is almost all phrases from its tables;
 // alternatives with a slash are split, and an article in brackets in Tábla 9U gives a
-// variant. The builder's header lists the tables left out.
+// variant. The builder's header lists the tables left out. Chapter 8 is copied the same
+// way, with the word in brackets ("Tháinig sé (sí, siad) isteach.") treated as in chapter 4;
+// the labels (fir.), (bain.), (iol.) after its examples are dropped.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -40,7 +42,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'test', 'caighdean');
 
 type Example = { section: string; page: number; text: string; known?: string; hint?: string; phrase?: boolean; variant?: boolean };
-const TITLES: Record<string, string> = { '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '7': 'the copula', '9': 'numbers', '10': 'initial mutations' };
+const TITLES: Record<string, string> = { '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '7': 'the copula', '8': 'pronouns', '9': 'numbers', '10': 'initial mutations' };
 const chapters = fs.readdirSync(dir).filter((f) => /^ch\d+\.json$/.test(f)).sort();
 
 // Messages about the word list rather than grammar: a word the database lacks says

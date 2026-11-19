@@ -35,6 +35,9 @@ Gramadóir checkout. The rules follow *An Caighdeán Oifigiúil* (2017);
 An Gramadóir commit they came from. Rules can also use `CLAUSESTART`,
 `AFTERFEMNAME` (first word) and `CLAUSEEND` (last word), which the rule
 compiler cannot express; see `generate-rules.mjs`. Also in `grammar/`:
+`morph-ga.txt`, the morphology rules (read by `build-data.mjs`; level -2, not in
+An Gramadóir 0.70, marks a regular inflection such as an emphatic suffix, which
+`src/engine.ts` accepts without a message for a word not in the word list);
 `extra-messages.json`, the messages for rule ids not in An Gramadóir (merged by
 `build-data.mjs`), and `lexicon-corrections.tsv`, corrections to words' tags
 in the word list (or standard words upstream lists only as non-standard forms,

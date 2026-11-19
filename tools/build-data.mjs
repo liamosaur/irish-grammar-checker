@@ -25,7 +25,14 @@ const share = path.join(distDir, 'share');
 fs.mkdirSync(outDir, { recursive: true });
 
 const readBuf = (f) => fs.readFileSync(path.join(share, f));
+// Files maintained in grammar/ (UTF-8) instead of taken from the source distribution.
+const GRAMMAR_FILES = { 'morph.bs': 'morph-ga.txt' };
 const latin1Lines = (f) => {
+  if (GRAMMAR_FILES[f]) {
+    const s = fs.readFileSync(fileURLToPath(new URL(`../grammar/${GRAMMAR_FILES[f]}`, import.meta.url)), 'utf8').replace(/\r/g, '');
+    if (/[^\u0000-ÿ]/.test(s)) throw new Error(`grammar/${GRAMMAR_FILES[f]}: character outside Latin-1`);
+    return s.split('\n');
+  }
   if (upstream && UPSTREAM_FILES[f]) {
     return fs.readFileSync(path.join(upstream, UPSTREAM_FILES[f])).toString('latin1').replace(/\r/g, '').split('\n');
   }

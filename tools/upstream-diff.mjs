@@ -1,7 +1,7 @@
 // Shows how our files in grammar/ differ from the upstream An Gramadóir files they
 // were copied from (in the checkout given, Latin-1).
 //
-// Usage: node tools/upstream-diff.mjs <upstream-checkout> [rialacha|aonchiall|comhshuite|macra ...]
+// Usage: node tools/upstream-diff.mjs <upstream-checkout> [rialacha|aonchiall|comhshuite|macra|morph ...]
 //   default: all four. Output is a unified diff (git diff --no-index).
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -10,8 +10,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const [, , up, ...names] = process.argv;
-if (!up) { console.error('usage: node tools/upstream-diff.mjs <upstream-checkout> [rialacha|aonchiall|comhshuite|macra ...]'); process.exit(2); }
-const FILES = { rialacha: 'rialacha-ga.in', aonchiall: 'aonchiall-ga.in', comhshuite: 'comhshuite-ga.in', macra: 'macra-ga.meta.pl' };
+if (!up) { console.error('usage: node tools/upstream-diff.mjs <upstream-checkout> [rialacha|aonchiall|comhshuite|macra|morph ...]'); process.exit(2); }
+const FILES = { rialacha: 'rialacha-ga.in', aonchiall: 'aonchiall-ga.in', comhshuite: 'comhshuite-ga.in', macra: 'macra-ga.meta.pl', morph: 'morph-ga.txt' };
 const here = path.dirname(fileURLToPath(import.meta.url));
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'upstream-diff-'));
 
