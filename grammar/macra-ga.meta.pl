@@ -102,6 +102,9 @@ s/REGULARPOSS/(?:[MmDd]o|[Aa]|[Áá]r|[Bb]hur)/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]ár?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rí)n(?:a|ár))/g;
 s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[Óó]n)/g;
+# The prepositions written apart from the article that take the dative singular
+# (CO17 1.3.1, 1.3.5: fairis an, leis an, tríd an).
+s/ARTPREP/(?:[Aa][grs]|[Cc]huig|[Ff]airis|[Ii]onsar|[Ll]eis|[Rr]oimh|[Tt]har|[Tt]ríd|[Uu]m)/g;
 # LGG p.32, CB p.134 (omitting infreq "dar", "ionsar", "os")
 # neither lists "gan" but in practice dative forms used after it
 # ok to include "tríd" here since it won't be resolved as <S>

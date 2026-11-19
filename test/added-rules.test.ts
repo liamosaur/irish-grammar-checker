@@ -137,6 +137,17 @@ const cases: Case[] = [
   { section: '9.3.3', text: 'Bhí seacht leabhar móra ann.', rule: 'SEIMHIU', words: 'seacht leabhar móra', fixed: 'Bhí seacht leabhar mhóra ann.' },
   // an + a lenited personal number, not after a noun (nominative)
   { section: '9.4.2(b)', text: 'Chonaic mé an cheathrar.', rule: 'NISEIMHIU', words: 'an cheathrar', fixed: 'Chonaic mé an ceathrar.' },
+  // t before a masculine noun in s, in the nominative (it belongs to the genitive and to
+  // the dative of Córas an tSéimhithe)
+  { section: '1.2, 1.7.4', text: 'Tá an tsalann ar an mbord.', rule: 'NITEE', words: 'tsalann', fixed: 'Tá an salann ar an mbord.' },
+  { section: '1.2, 1.7.4', text: 'Tá an tSeapánach anseo.', rule: 'NITEE', words: 'tSeapánach', fixed: 'Tá an Seapánach anseo.' },
+  // fairis an takes the dative like leis an
+  { section: '1.3.5, 1.4.1', text: 'Rinne sé fairis an fear é.', rule: 'CLAOCHLU', words: 'fairis an fear', fixed: null },
+  // Óman, a country name without the article
+  { section: '1.1.5(i)', text: 'Tá sé san Óman.', rule: 'BADART', words: 'san Óman', fixed: 'Tá sé in Óman.' },
+  // Oman, which CO17 spells Óman
+  { section: '1.1.5(i)', text: 'Tá sé in Oman.', rule: 'CAIGHDEAN', words: 'Oman', fixed: 'Tá sé in Óman.' },
+  { section: '1.1.5(i)', text: 'Chuaigh mé go hOman.', rule: 'CAIGHDEAN', words: 'hOman', fixed: 'Chuaigh mé go hÓman.' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
@@ -230,6 +241,14 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Chuaigh sé go dtí an teach mór.', note: 'a known word ending like a suffix is not changed (mór)' },
   { text: 'Tá an bhean cabhrach.', note: 'predicative adjective, not lenited' },
   { text: 'Cuideachta áitiúil atá i mbun an teach a thógáil.', note: 'nominative before a + verbal noun after a compound preposition' },
+  { text: 'Bhí siad ag obair sa gcistin.', note: 'eclipsis after sa (CO17 1.4 N.B. (b))' },
+  { text: 'Thug sé don bhfear é.', note: 'eclipsis after don (1.4 N.B. (a))' },
+  { text: 'Chuaigh sé fairis na fir.', note: 'fairis before the article (1.6.2)' },
+  { text: 'Tháinig sé fairis.', note: 'fairis as a prepositional pronoun' },
+  { text: 'Bhí torthaí an tsuirbhé go maith.', note: 't before s in the masculine genitive, a word whose genitive is the same' },
+  { text: 'Shuigh sé ar an urlár fhuar.', note: 'Córas an tSéimhithe: lenited adjective after a masculine noun in a vowel (1.7.5)' },
+  { text: 'Labhair sé leis an tSeanadóir.', note: 'Córas an tSéimhithe: t before a masculine noun in s (1.7.4)' },
+  { text: 'Chuaigh mé go hÓman.', note: 'Óman, as CO17 spells it (1.1.5(i))' },
 ];
 
 let engine: Gramadoir | undefined;

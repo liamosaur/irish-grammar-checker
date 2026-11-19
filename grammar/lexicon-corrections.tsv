@@ -11,6 +11,10 @@
 # the rarest tier). Any other word not in the word list stops the build. Lines
 # starting with # are comments.
 #
+# Tags written =form mark a word in the word list as a spelling the standard does
+# not use: it is taken out of the word list and added to the non-standard forms,
+# with form as the correction.
+#
 # Reference: CO17 = Gramadach na Gaeilge: An Caighdeán Oifigiúil, 2017.
 
 # A preposition or conjunction fused with the copula (CO17 7.3.2, 7.3.3, Táblaí
@@ -94,3 +98,20 @@ líse	<N pl="n" gnt="n" gnd="f"><N pl="n" gnt="y" gnd="f"><V p="y" t="foshuit">	
 glacana	<N pl="y" gnt="n" gnd="f">	emphatic form of glaca (FGB: glac1, f., npl. ~a), tagged as the word list tags glaca
 ghlacana	<N pl="y" gnt="n" gnd="f"><V p="y" t="foshuit">	emphatic form of ghlaca (FGB: glac1, f., npl. ~a), tagged as the word list tags ghlaca
 nglacana	<N pl="y" gnt="n" gnd="f"><V p="y" t="foshuit">	emphatic form of nglaca (FGB: glac1, f., npl. ~a), tagged as the word list tags nglaca
+fairis	<S><O>	FGB: fairis : fara2, "Fairis an sagart, along with the priest"; CO17 1.3.5: fara + an > fairis an
+bhfasach	<N pl="n" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	eclipsed fasach (FGB: fasach, m. (gs. & npl. -aigh, gpl. ~), precedent), tagged as the word list tags fasach and bhfásach
+fhasach	<N pl="n" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	lenited fasach (FGB: fasach, m. (gs. & npl. -aigh, gpl. ~), precedent), tagged as the word list tags fasach and fhásach
+Óman	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags Oman
+hÓman	<N pl="n" gnt="n" gnd="m" h="y"><N pl="n" gnt="y" gnd="m" h="y">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags hOman
+tÓman	<N pl="n" gnt="n" gnd="m">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags tOman
+nÓman	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags nOman
+b'Óman	<N pl="n" gnt="n" gnd="m">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags b'Oman
+d'Óman	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags d'Oman
+m'Óman	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	CO17 1.1.5(i) B(i) spells it Óman; tagged as the word list tags m'Oman
+Oman	=Óman	CO17 1.1.5(i) B(i) spells it Óman
+hOman	=hÓman	CO17 1.1.5(i) B(i) spells it Óman
+tOman	=tÓman	CO17 1.1.5(i) B(i) spells it Óman
+nOman	=nÓman	CO17 1.1.5(i) B(i) spells it Óman
+b'Oman	=b'Óman	CO17 1.1.5(i) B(i) spells it Óman
+d'Oman	=d'Óman	CO17 1.1.5(i) B(i) spells it Óman
+m'Oman	=m'Óman	CO17 1.1.5(i) B(i) spells it Óman

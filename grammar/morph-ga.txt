@@ -809,6 +809,14 @@ uithe$			ú		0	<N.*>	<&>
 ([eiéí][^aeiouáéíóú-]*n)-ne$			$1	-2	<[NV].*>	<&>
 #  end emphatic suffixes
 #############################################################################
+#  Córas an tSéimhithe (CO17 1.7.4): after the article in the dative singular, a
+#  masculine noun in s takes t before it, except sc-, sf-, sm-, sp-, st-, sv- (ar an
+#  tsuíochán; don tSeanadóir). The word list has these forms only for the genitive,
+#  so this is level -1, which adds the reading to such a word too (ón tsuirbhé,
+#  whose genitive is the same). The rules (rialacha-ga.in, NITEE) report the form
+#  outside the dative.
+^t([Ss][lnraeiouáéíóú])	$1	-1	<N pl="n" gnt="n" gnd="m".*>	<&>
+#############################################################################
 #   common spelling errors
 # iri$			irí		2	<N.*>	<&>
 uil$			úil		2	<A.*>	<&>

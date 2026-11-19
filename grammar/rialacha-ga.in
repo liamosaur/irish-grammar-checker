@@ -585,6 +585,15 @@ n[Dd]eire:IONADAI{ndeireadh}
 <N pl="n" gnt="y" gnd="m">INITIALTS</N>:NITEE
 #. Bhí imní ag teacht ar dheartháir an tsagairt (OK).
 <T>[Aa]n</T> <E><N pl="n" gnt="y" gnd="m">INITIALTS</N></E>:OK
+# CO17 1.7.4: a masculine noun in s also takes t, in Córas an tSéimhithe, in the dative
+# singular after the article (ar an tsuíochán; den tsaighdiúir; ón tsuirbhé).
+<N pl="n" gnt="n" gnd="m">INITIALTS</N>:NITEE
+<S>ARTPREP</S> <T>[Aa]n</T> <E><N pl="n" gnt="n" gnd="m">INITIALTS</N></E>:OK
+<S>FUSEDPREP</S> <E><N pl="n" gnt="n" gnd="m">INITIALTS</N></E>:OK
+# The genitive of a personal number (CO17 9.4.3(b)(iv)) and of a verbal-noun unit
+# (3.3.1(b)(i)), which the word list gives only as nominatives (oifig an tseachtar
+# tréidlianna; de dheasca an tsracfhéachaint ar gcúl).
+<[NS]>ANYTHING</[NS]> <T>[Aa]n</T> <E><N pl="n" gnt="n" gnd="m">(t[Ss](eisear|eachtar)|VNUNIT)</N></E>:OK
 # noun "fríd" used almost exclusively in gen. "faic na fríde, oiread na fríde"
 # do this before <NFCS> lenition rules!
 <N pl="n" gnt="n" gnd="f">fríd</N>:CAIGHDEAN{trí, tríd}
@@ -2000,6 +2009,8 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 # CB p.12 #1.c.i
 #. Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna.
 <S>[Dd][eo]n</S> <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CO17 1.4 N.B. (a): eclipsis is allowed instead of lenition (den gcrann, don bhfear).
+<E><S>[Dd][eo]n</S> <N>(g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[Ff])ANYTHING</N></E>:OK
 # CB p.12 #1.c, p.20 #2a
 #. Daoine eile atá ina mbaill den dhream seo.
 <S>[Dd][eo]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
@@ -2801,12 +2812,12 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <S>[Ll]e</S> <V>leagadh</V>:IONADAI{le leagan}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá do scrios chomh leathan leis an farraige.
-<S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+<S>([Ff]airis|[Ll]eis)</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h  (feminine handled by more general rule)
-<S>[Ll]eis</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
-<S>[Ll]eis</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
+<S>([Ff]airis|[Ll]eis)</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>([Ff]airis|[Ll]eis)</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
 # CB p.22 #8.a
-<S>[Ll]eis</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
+<S>([Ff]airis|[Ll]eis)</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # CB p.132 #5
 <S>[Ll]ena</S> <VPAST>ANYTHING</VPAST>:BACHOIR{lenar}
 # CB p.133 #12 irreg. exceptions; lenited ones are wrong but want the clearer
@@ -3383,8 +3394,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <NFGS>([mdnh]?'?Ollainne|[mdnh]?'?Ostaire)</NFGS>:NEEDART
 <T>[Nn]a</T> <E><NFGS>ANYTHING</NFGS></E>:OK
 # FTP81
-<T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">tOman</N>:BADART
-<S>FUSEDPREP</S> <N pl="n" gnt="n" gnd="m">Oman</N>:BADART
+<T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">t[OÓ]man</N>:BADART
+<S>FUSEDPREP</S> <N pl="n" gnt="n" gnd="m">[OÓ]man</N>:BADART
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -3564,6 +3575,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.12 #1.c.i; prev. rule handles f+vowel, so next one is f[lr] only
 #. An bhfuil aon uachtar reoite agat sa cuisneoir?
 <S>[Ss]a</S> UNLENITEDBCFGMP:SEIMHIU
+# CO17 1.4 N.B. (b): eclipsis is allowed instead of lenition (sa bpáirc, sa gcarr).
+<E><S>[Ss]a</S> <N>(g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[Ff])ANYTHING</N></E>:OK
 # had an exception for "sa méid" at one point since it's common enough
 # in the corpus; but OF81 and OD77 both have "sa mhéid"
 # <S>[Ss]a</S> [Mm]éid:OK
@@ -4304,7 +4317,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <N>INITIALMBAPOST</N>:OK
 #  "de an gcrann" etc. won't even make it here, caught earlier
 <S>DATIVEPREP</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
-<S>[Ll]eis</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
+<S>([Ff]airis|[Ll]eis)</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
 #  "san? gcrann/n-eatramh" etc. never gets to this exception, caught earlier
 #. Cruthaíodh an chloch sin go domhain faoin gcrann (OK).
 <S>FUSEDPREP</S> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
@@ -4625,6 +4638,12 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 <N pl="n" gnt="n" gnd="m">LENITED</N> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 # ar an chomhréiteach shochrach shóúil
 <N pl="n" gnt="n" gnd="m">LENITED</N> <A>ANYTHING</A> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+# CO17 1.7.3-1.7.6: in Córas an tSéimhithe the adjective after a masculine noun in the
+# dative singular is lenited also when the article does not lenite the noun: a vowel, d
+# or t, or s with t before it (ag an Albanach chiallmhar; sa teas mhór; ar an
+# tsuíochán fhliuch). Lenited nouns are allowed by the two lines above.
+<S>ARTPREP</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">([DdTt]ANYTHING|INITIALVOWEL)</N> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+<S>FUSEDPREP</S> <N pl="n" gnt="n" gnd="m">([DdTt]ANYTHING|INITIALVOWEL)</N> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 <S>[Ii]dir</S> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 <S>[Ii]dir</S> <A pl="n" gnt="n">ANYTHING</A> <C>agus</C> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 <V cop="y">ANYTHING</V> <E><A>LENITED</A></E>:OK
@@ -4644,7 +4663,7 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 # genitive is lenited by the article as a masculine genitive (torthaí an cheathrar
 # scoláirí; costas an chaoga císte milis).
 <N>ANYTHING</N> <E><T>[Aa]n</T> <NMCS>(cheathrar|chúigear|chaoga|cheathracha)</NMCS></E>:OK
-<S>([Aa][grs]|[Cc]huig|[Ii]onsar|[Ll]eis|[Rr]oimh|[Tt]har|[Tt]ríd|[Uu]m)</S> <E><T>[Aa]n</T> <NMCS>LENITED</NMCS></E>:OK
+<S>ARTPREP</S> <E><T>[Aa]n</T> <NMCS>LENITED</NMCS></E>:OK
 <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Mm]heán</N></E> <NG>([Ll]ae|[Oo]íche)</NG>:OK
 # CB; "baile dhúchais" bad
 <NMCS>ANYTHING</NMCS> <NGS>LENITED</NGS>:NISEIMHIU

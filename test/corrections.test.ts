@@ -59,6 +59,19 @@ describe('planReplacement', () => {
     assert.equal(applyPlan('ceithre uaire', 'huaire'), 'ceithre huaire');
     assert.equal(applyPlan('Cad déarfaidh', 'a'), 'A déarfaidh'); // the capital of the word replaced carries over
   });
+  it('"i an" -> "sa" also gives the noun after it the dative of An Córas Lárnach (CO17 1.4.1)', () => {
+    const sa = (line: string, flagged: string, w: string) => {
+      const from = line.indexOf(flagged);
+      const p = plan(line, from, from + flagged.length, w);
+      return p && applyCorrection(line, p.range, p.word);
+    };
+    assert.equal(sa('Tá sé i an gCabhán.', 'i an', 'sa'), 'Tá sé sa Chabhán.');
+    assert.equal(sa('Tá sé i an carr mór.', 'i an', 'sa'), 'Tá sé sa charr mór.');
+    assert.equal(sa('Tá sé i an féar.', 'i an', 'sa'), 'Tá sé san fhéar.');
+    assert.equal(sa('Tá sé in an oifig.', 'in an', 'sa'), 'Tá sé san oifig.');
+    assert.equal(sa('Tá sé i an dteach.', 'i an', 'sa'), 'Tá sé sa teach.');
+    assert.equal(sa('Tá sé i an siopa.', 'i an', 'sa'), 'Tá sé sa siopa.');
+  });
   it('replaces everything when the replacement stands for the whole flagged text', () => {
     assert.equal(applyPlan('Cé an', 'cén'), 'Cén');
     assert.equal(applyPlan('a tá', 'atá'), 'atá');

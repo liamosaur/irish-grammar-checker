@@ -41,11 +41,15 @@ export function applyOverlay(lexicon: Lexicon, overlay: LexiconOverlay): Lexicon
  * Applies our own corrections (data/lexicon-corrections.json, built from grammar/lexicon-corrections.tsv) to
  * `lexicon` in place and returns it: each word's code chars are replaced, in the tier it is in. A
  * word not in the lexicon (one upstream listed only as a non-standard form) is added to the last,
- * rarest tier. Applied after the BuNaMo overlay.
+ * rarest tier. A word with no code chars is removed. Applied after the BuNaMo overlay.
  */
 export function applyLexiconCorrections(lexicon: Lexicon, corrections: Record<string, string>): Lexicon {
   for (const [w, codes] of Object.entries(corrections)) {
     const tiers = lexicon.filter((tier) => Object.hasOwn(tier, w));
+    if (!codes) { // a spelling the standard does not use: the build lists it as non-standard
+      for (const tier of tiers) delete tier[w];
+      continue;
+    }
     for (const tier of tiers.length ? tiers : [lexicon[lexicon.length - 1]]) tier[w] = merged(codes);
   }
   return lexicon;

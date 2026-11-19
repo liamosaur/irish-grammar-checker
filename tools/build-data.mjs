@@ -102,12 +102,21 @@ write('pos.json', pos);
 const localLexicon = fileURLToPath(new URL('../grammar/lexicon-corrections.tsv', import.meta.url));
 const codeOf = new Map(Object.entries(pos).map(([ch, tag]) => [tag, ch]));
 const corrections = {};
+const nonstandard = {};
 for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '').split('\n').entries()) {
   if (!/\S/.test(line) || line.startsWith('#')) continue;
   const where = `${localLexicon}:${i + 1}`;
   const [word, tags] = line.split('\t');
   if (!word || !tags) throw new Error(`${where}: expected word<TAB>tags<TAB>reason`);
-  if (/[^\u0000-ÿ]/.test(word)) throw new Error(`${where}: characters outside Latin-1`);
+  if (/[^\u0000-ÿ]/.test(word + tags)) throw new Error(`${where}: characters outside Latin-1`);
+  // =form: a word in the word list that the standard spells otherwise. It is taken out of the
+  // word list (no code chars) and reported as non-standard, with form as the correction.
+  if (tags.startsWith('=')) {
+    if (!lex.some((tier) => Object.hasOwn(tier, word))) throw new Error(`${where}: ${word} is not in the word list`);
+    corrections[word] = '';
+    nonstandard[word] = tags.slice(1).trim().replace(/ /g, '_');
+    continue;
+  }
   // A word not in the word list is accepted only if it is in the non-standard forms table: the
   // correction says it is standard, so it is removed from there and added to the word list.
   if (!lex.some((tier) => Object.hasOwn(tier, word))) {
@@ -122,7 +131,7 @@ for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '')
   }).sort().join('');
 }
 write('lexicon-corrections.json', corrections);
-write('eile.json', eile);
+write('eile.json', { ...eile, ...nonstandard });
 console.log('word-list corrections', Object.keys(corrections).length);
 
 // ---- token rules -------------------------------------------------------

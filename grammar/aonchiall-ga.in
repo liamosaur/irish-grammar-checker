@@ -383,6 +383,9 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>[Ll]eis</B> <T>[Nn]a</T>:<S>
 # "leis An Gharda" in corpus
 <B>[Ll]eis</B> [Aa]n:<S>
+# fairis, likewise: the preposition before the article (CO17 1.3.5, 1.6.2)
+<B>[Ff]airis</B> <T>[Nn]a</T>:<S>
+<B>[Ff]airis</B> [Aa]n:<S>
 <B>[Ll]eith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Ll]eo</B>:<O>
 # <T> should be "na" but plenty of errors like "i nGaeilge an linne seo"
@@ -765,6 +768,8 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+# t before s is, outside the dative (the line above), the genitive (torthaí an tsuirbhé: CO17 1.5.2)
+<T>[Aa]n</T> <B><Z>NMFOUR</Z>INITIALTS</B>:<N pl="n" gnt="y" gnd="m">
 <T>[Aa]n</T> <B><Z>NMFOUR</Z>UNLENITED</B>:<N pl="n" gnt="n" gnd="m">
 # exception to next one.  Note compound/genitive preps done above
 <S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -928,6 +933,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>dó</B>:<O>
 # functionally same as the adverb "too"; hopefully noun is picked up with <S>?
 <B>[Ll]eis</B>:<O>
+<B>[Ff]airis</B>:<O>
 # as, faoi (tríd only other handled above)
 # Baintear feidhm as chun aicídí súl a mhaolú => "as" is <O> (see rialacha)
 <B><Z>PREPPRONM</Z>ANYTHING</B> <[RS]>ANYTHING</[RS]>:<O>

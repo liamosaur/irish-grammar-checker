@@ -194,7 +194,7 @@ self.onmessage = (ev: MessageEvent<WorkerRequest>) => {
     engine = new Gramadoir({
       lexicon, eile, earraidi, pos, token, morph, grams, nocombo, messages,
       rules: { aonchiall, comhshuite, giorr, rialacha, unigram },
-    }, { fixSpelling: true }); // suggest similar words for unknown words
+    }, { fixSpelling: true, datives: true }); // suggest similar words for unknown words; mark a mix of dative systems
     post({ type: 'ready' });
     for (const req of queue.splice(0)) void runCheck(req.id, req.text);
   } catch (e) {

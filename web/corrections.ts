@@ -66,6 +66,8 @@ export interface Plan {
 export function planReplacement(line: string, range: { y: number; from: number; to: number }, replacement: string): Plan | null {
   const chars = Array.from(line);
   if (range.from < 0 || range.to <= range.from || range.to > chars.length) return null;
+  const sa = planSa(chars, range, replacement);
+  if (sa) return sa;
   const tokens: { from: number; to: number }[] = [];
   for (let i = range.from; i < range.to; i++) {
     if (/\s/.test(chars[i])) continue;
@@ -124,6 +126,34 @@ export function planReplacement(line: string, range: { y: number; from: number; 
   const original = chars.slice(from, to).join('');
   const word = matchCase(original, replacement);
   return word === original ? null : { range: { y: range.y, from, to }, word }; // a button that changes nothing is not offered
+}
+
+/**
+ * "i an" -> "sa": the noun after it takes the dative of An Córas Lárnach (CO17 1.4.1), so it
+ * is changed in the same click (i an gCabhán -> sa Chabhán; san fhéar; in an oifig -> san
+ * oifig). Null unless the flagged words are "i an" or "in an" and the replacement sa or san.
+ */
+function planSa(chars: string[], range: { y: number; from: number; to: number }, replacement: string): Plan | null {
+  const flagged = chars.slice(range.from, range.to).join('');
+  if (!/^\s*in?\s+an\s*$/i.test(flagged) || !/^san?$/i.test(replacement.trim())) return null;
+  const next = /^(\s+)([\p{L}\p{M}'’-]+)/u.exec(chars.slice(range.to).join(''));
+  if (!next) return null;
+  const noun = datAfterSa(next[2]);
+  const word = matchCase(flagged.trim(), noun.san ? 'san' : 'sa') + next[1] + noun.word;
+  const lead = Array.from(/^\s*/.exec(flagged)![0]).length;
+  return { range: { y: range.y, from: range.from + lead, to: range.to + Array.from(next[0]).length }, word };
+}
+
+/**
+ * A noun after "sa" in An Córas Lárnach (CO17 1.4.1-1.4.4): lenited (b, c, f, g, m, p), from its
+ * plain form if eclipsed; d, t and vowels unchanged; s left as written (whether it takes t
+ * depends on the gender). `san` before a vowel and before f + vowel.
+ */
+function datAfterSa(w: string): { word: string; san: boolean } {
+  const plain = uneclipse(w) ?? w;
+  const c = lc(plain[0]);
+  const word = 'bcfgmp'.includes(c) ? lenite(plain) ?? plain : plain;
+  return { word, san: isVowel(word[0]) || (lc(word[0]) === 'f' && lc(word[1]) === 'h' && isVowel(word[2])) };
 }
 
 /**

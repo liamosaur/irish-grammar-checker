@@ -41,7 +41,7 @@ An Gramadóir 0.70, marks a regular inflection such as an emphatic suffix, which
 `extra-messages.json`, the messages for rule ids not in An Gramadóir (merged by
 `build-data.mjs`), and `lexicon-corrections.tsv`, corrections to words' tags
 in the word list (or standard words upstream lists only as non-standard forms,
-which are then removed from `data/eile.json`), which `build-data.mjs` turns into `data/lexicon-corrections.json`,
+which are then removed from `data/eile.json`, or words the standard spells otherwise, which are moved there), which `build-data.mjs` turns into `data/lexicon-corrections.json`,
 applied when the checker loads, after the BuNaMo overlay and kept separate from it
 (`src/lexicon.ts`). The parity tests use the 0.70 rules in `data/legacy-0.70/`,
 so they are unaffected. `data/lexicon.json` is the 0.70
@@ -74,9 +74,10 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   except for spelling suggestions; for those, see `perl-wsl.sh`.
 - `make-golden.ts`, `make-golden-spelling.ts`: record new Perl output as test fixtures.
 - `drift.mjs`: agreement with the expected output in upstream `ga/triail.xml`
-  (currently 464 of 479 sentences identical). Some differences are intended: the
+  (currently 463 of 479 sentences identical). Some differences are intended: the
   rules in `grammar/` follow *An Caighdeán Oifigiúil* where upstream does not
-  (e.g. *Ní hamháin*, *in 1982*, *mórsheisear iníonacha*), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
+  (e.g. *Ní hamháin*, *in 1982*, *mórsheisear iníonacha*, and *ag an tsiopa*, the
+  dative of Córas an tSéimhithe), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
 - `browser-smoke.mjs`: checks a sentence in the built site in headless Edge or Chrome.
 
 ## Derived error sentences for review

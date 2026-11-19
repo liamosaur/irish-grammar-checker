@@ -5,6 +5,7 @@
 // matching the Perl engine which transcodes input to iso-8859-1.
 
 import type { GramadoirData, GrammarError, MorphRuleJson } from './types.ts';
+import { keepMinority, markDatives } from './datives.ts';
 import { applyRules, compileRule, type CompiledRule } from './rules.ts';
 
 const BD = '\u0001';
@@ -62,6 +63,11 @@ export interface GramadoirOptions {
    * as in the Perl library. Suggestions come back as `MOLADH{a, b}` errors with `suggestions` set.
    */
   fixSpelling?: boolean;
+  /**
+   * Mark the dative singulars that follow the system (CO17 1.7) the text uses less: CORASSEIMHIU,
+   * CORASLARNACH (src/datives.ts). Off by default, as it is not in the Perl library.
+   */
+  datives?: boolean;
 }
 
 function toMap(o: Record<string, string>): Map<string, string> {
@@ -95,7 +101,7 @@ export class Gramadoir {
   private foldIndex: Map<string, string[]>[] | null = null;
 
   constructor(data: GramadoirData, opts: GramadoirOptions = {}) {
-    this.opts = { unigramTagging: true, fixSpelling: false, ...opts };
+    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, ...opts };
     this.focail = data.lexicon.map(toMap);
     this.eile = toMap(data.eile);
     this.earraidi = toMap(data.earraidi);
@@ -555,6 +561,7 @@ export class Gramadoir {
     for (const plain of this.getSentencesReal(text)) {
       let s = this.addTagsReal(plain);
       s = applyRules(s, this.rialacha);
+      if (this.opts.datives) s = markDatives(s);
       if (!s.includes('<E')) continue;
       const buffered = stripEntities(` ${plain} `);
       let bufferedPos = 0;
@@ -637,7 +644,7 @@ export class Gramadoir {
         });
       }
     }
-    return errors;
+    return this.opts.datives ? keepMinority(errors, (id) => this.localizeMe(id)) : errors;
   }
 }
 
