@@ -111,6 +111,17 @@ const cases: Case[] = [
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported
   { section: '9.3.3', text: 'Sé bairille a bhí ann.', rule: 'SEIMHIU', words: 'Sé bairille', fixed: 'Sé bhairille a bhí ann.' },
+  // a weak genitive plural takes a singular adjective, as before, except after beirt (see clean)
+  { section: '4.2.5', text: 'Tá cumas na bhfear óga níos airde.', rule: 'UATHA', words: 'bhfear óga', fixed: null },
+  // ag + a feminine verbal noun in -irt: the genitive is not lenited, as before (beirt is not a verbal noun)
+  { section: '10.2.7(h)', text: 'Tá sé ag baint mhóna.', rule: 'NISEIMHIU', words: 'ag baint mhóna', fixed: 'Tá sé ag baint móna.' },
+  // a before a verbal noun in -ú is still the particle, so lenition is required (only an adjective-tagged ordinal makes it the possessive)
+  { section: '10.2.1', text: 'Moladh do na heolaithe spóir beacán a bailiú.', rule: 'SEIMHIU', words: 'a bailiú', fixed: 'Moladh do na heolaithe spóir beacán a bhailiú.' },
+  // the ordinal céad after a number but no article, as before
+  { section: '10.2.1', text: 'Bhí an chéad cruinniú ann.', rule: 'SEIMHIU', words: 'chéad cruinniú', fixed: 'Bhí an chéad chruinniú ann.' },
+  // dosaen + a noun with no genitive plural of the same spelling: still reported; an ordinary plural after a figure, as before
+  { section: '9.3.9', text: 'Bhí dosaen ubh ann.', rule: 'GENITIVE', words: 'dosaen ubh', fixed: null },
+  { section: '9.3.12', text: 'Tá 5 cathaoireacha ann.', rule: 'UATHA', words: '5 cathaoireacha', fixed: null },
   // na + a singular noun, as before; the place name Garraithe Náisiúnta na Lus is the exception
   { section: '1.6', text: 'Chonaic mé na lus.', rule: 'BACHOIR', words: 'na lus', fixed: 'Chonaic mé an lus.' },
   // the adjective after a number is still lenited after an ordinary noun (9.3.3)
@@ -183,6 +194,18 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Sé leabhar mhóra a bhí ann.', note: 'sé the number at the start of a clause; plural adjective lenited (9.3.3)' },
   { text: 'Thóg siad seolta na n-ocht mbád bheaga.', note: 'eclipsed n-ocht in the genitive plural, adjective lenited (9.3.7)' },
   { text: 'Tá 7 bhfeirmeoir shaibhre ann.', note: 'a number in figures, plural adjective lenited (9.4.4)' },
+  { text: 'Bhí sé ag beirt bhan.', note: 'beirt is not a verbal noun; the noun after it is lenited (9.4.3(a)(i))' },
+  { text: 'Chonaic mé beirt ghirseach chruthaitheacha.', note: 'after beirt + noun the adjective is plural and lenited (9.4.3(c)(i))' },
+  { text: 'Seo oifig na beirte ban mhisniúla.', note: 'the same after na beirte (9.4.3(c))' },
+  { text: 'Tá soitheach dháréag bádóirí ann.', note: 'dháréag is spelt with dh, not lenited (Tábla 9S)' },
+  { text: 'Seo a tríú bliain.', note: 'a before an ordinal is the possessive (9.5.2(c))' },
+  { text: "Is ball d'eagraíocht tríú tír é.", note: 'an ordinal goes with the noun after it, not the feminine noun before (9.5.4(b))' },
+  { text: 'Bhí an dá chéad fiche duine ann.', note: 'an dá chéad is 200 after the article (9.3.7(b))' },
+  { text: 'Bhí dosaen amhrán ann.', note: 'the genitive plural after dosaen (Tábla 9M note); the alternatives in the rule were not bracketed' },
+  { text: 'Bhí scór daoine ann.', note: 'the genitive plural after scór (Tábla 9M note)' },
+  { text: 'Tá 89 dtroithe cearnacha ann.', note: 'a special plural after a figure (9.3.2, Tábla 9G)' },
+  { text: 'Is é a trí ar fiche a ceathair an codán.', note: 'fiche is not lenited in a fraction (9.6.1(e)(i))' },
+  { text: 'Tá trí fichiú fágtha.', note: 'trí before an ordinal is the number; fichiú is not lenited (9.6.1(e)(iii))' },
   { text: 'Tá an bhean cabhrach.', note: 'predicative adjective, not lenited' },
   { text: 'Cuideachta áitiúil atá i mbun an teach a thógáil.', note: 'nominative before a + verbal noun after a compound preposition' },
 ];

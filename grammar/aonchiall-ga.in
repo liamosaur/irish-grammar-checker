@@ -297,6 +297,8 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <B>[Dd]eir</B>:<V p="y" t="láith">
 [Aa] <B>[Dd]eireadh</B>:<V p="y" t="gnáth">
 <B>[Aa]</B> <V p="y" t="gnáth">[Dd]eireadh</V>:<G>
+# CO17 9.5.2(c): a before an ordinal is the possessive (a tríú bliain).
+<B>[Aa]</B> <A pl="n" gnt="n">([Dd]h?ara|ORDINALADJ)</A>:<D>
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Dd]h?eiridh</B>:<N pl="n" gnt="y" gnd="m">
 <B>dío?bh</B>:<O>
@@ -519,6 +521,8 @@ CLAUSESTART <B>[Ss]é</B> <N>ANYTHING</N>:<A pl="n" gnt="n">
 # le trí chúilín, an trí chúilín
 <[ST]>ANYTHING</[ST]> <B>[Tt]rí</B>:<A pl="n" gnt="n">
 <B>[Tt]rí</B> bliana|cinn|fichid|seachtaine:<A pl="n" gnt="n">
+# CO17 9.6.1(e)(iii): before an ordinal trí is the number (trí fichiú, 3/20).
+<B>[Tt]rí</B> <A pl="n" gnt="n">ORDINALADJ</A>:<A pl="n" gnt="n">
 <B>[Tt]rí</B>:<S>
 <B>[Tt]ríd</B> <T>na</T>:<S>
 <B>[Tt]ríd</B> an:<S>
@@ -608,8 +612,10 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>NONCOMPOUND</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>NONCOMPOUND</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # see rialacha
-<N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
-<N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
+# CO17 Tábla 9M, note: the genitive plural after dosaen and scór (dosaen amhrán;
+# scór daoine), and after dís and péire.
+<N>([Dd]ís|[Dd]h?osaen|[Pp]h?éire|[Ss]cór)</N> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
+<N>([Dd]ís|[Dd]h?osaen|[Pp]h?éire|[Ss]cór)</N> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc

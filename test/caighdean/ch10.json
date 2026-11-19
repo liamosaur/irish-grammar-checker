@@ -160,7 +160,7 @@
   {"section":"10.3.1","page":183,"text":"cúig cinn mhóra is seasca","phrase":true},
   {"section":"10.3.2","page":184,"text":"Déanfar é laistigh de cheithre mhí."},
   {"section":"10.3.2","page":184,"text":"Thug siad don chúigiú cuairteoir é."},
-  {"section":"10.3.2","page":184,"text":"Ba é a thríú hiarracht é.","known":"CUPLA: \"a thríú\" (possessive + ordinal) is flagged as unusual (10.3.2(a))"},
+  {"section":"10.3.2","page":184,"text":"Ba é a thríú hiarracht é."},
   {"section":"10.3.2","page":184,"text":"Chuaigh bróga an chúigiú girseach amú."},
   {"section":"10.3.2","page":184,"text":"Bhí bia an fichiú fear le dáileadh fós."},
   {"section":"10.3.2","page":184,"text":"Is tusa an ceathrú duine a chuir an cheist sin orm."},

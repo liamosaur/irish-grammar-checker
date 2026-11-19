@@ -133,7 +133,8 @@ s/FINALDLNST/[^<]+[DdLlNnSsTt]/g;
 s/DAYOFTHEWEEK/Dé [^<]+/g;
 s/NOBEEAPOST/(?:[^b]|b[^'])[^<]+/g;
 # ilt = oscailt, tochailt, cuimilt
-s/FEMVN/(?:[^<]+i[lnr]t|[^<]+áil|breith|foghlaim|iarraidh|obair|seilg)/g;
+# (beirt ends in -irt but is not a verbal noun: ag beirt bhan, CO17 9.4.3(a)(i).)
+s/FEMVN/(?:(?![Mm]?[Bb]h?eirt<)[^<]+i[lnr]t|[^<]+áil|breith|foghlaim|iarraidh|obair|seilg)/g;
 s/SUBJECTPRONOUN/[Ss](?:[éí]|iad(?:san)?|ise|eisean)/g;
 # need "dul", "teacht" even though intransitive for "a'" rule!
 s/NOTVNISHUNLEN/(?:ceannach|cur|díol|dul|foghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|soláthar|teacht)/g;

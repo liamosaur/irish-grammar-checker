@@ -603,6 +603,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 # adjective (slán, cabhrach), so this is the adjective rule's counterpart of
 # the exception for a genitive noun after ag further on.
 <S>[Aa]g</S> <E><NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNLENITED</A></E>:OK
+# CO17 9.5.4(b): an ordinal before a noun goes with that noun, not with the
+# feminine noun before it (eagraíocht tríú tír; oideachas tríú leibhéal).
+<E><NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">([Dd]ara|ORDINALADJ)</A></E> <N>ANYTHING</N>:OK
 # corpas; most compound adjs are #'s
 # NB "ceannann céanna" lenites as it should, but handled by comhshuite.
 #. Bhí na ranganna seo ar siúl an bhliain seo caite (OK).
@@ -853,7 +856,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 [Aa] <V>JUSTTA</V>:BACHOIR{atá}
 [Aa]n <A>[Gg]hnách</A>:IONADAI{an ghnáth}
 <A>POSITIVEINT</A> <NP>ANYTHING</NP>:UATHA
-<A>POSITIVEINT</A> <NP>(m?bh?liana|g?ch?inn|g?ch?loigne|bhfichid|fh?ichid|n-uaire|h?uaire|n-orlaí|h?orlaí)</NP>:OK
+# The special plurals used after numbers (CO17 9.3.2, Tábla 9G: 89 dtroithe
+# cearnacha), and orlaí.
+<A>POSITIVEINT</A> <NP>(SPECIALPLDEAG|n-orlaí|h?orlaí)</NP>:OK
 # CO17 9.3.9(a): after a multiple of ten the noun is singular (caoga císte milis;
 # seachtó bliain fhada).
 DECADE <NP>ANYTHING</NP>:UATHA
@@ -1195,6 +1200,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # but I'm not sure enough to move this to a "aonchiall" rule.
 #. Beidh cairde dá cuid ar Gaeilgeoirí iad (OK).
 <E><S>[Aa]r</S> <N>UNLENITED</N></E> <P>ANYTHING</P>:OK
+# CO17 9.6.1(e)(i): fiche is not lenited in a fraction (a trí ar fiche a ceathair).
+<E><S>[Aa]r</S> <N>fiche</N></E> <A pl="n" gnt="n">[Aa] ANYTHING</A>:OK
 # CB p.19 #13, p.132 #5, OD ar^5
 #. Ar gcaith tú do chiall agus do chéadfaí ar fad?
 <[QU]>[Aa]r</[QU]> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -1573,6 +1580,10 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 # CB p.13 #3.c
 #. Bhí an chéad cruinniú den Choimisiún i Ros Muc i nGaeltacht na Gaillimhe.
 <A pl="n" gnt="n">[Cc]héad</A> <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CO17 9.3.7(b): after the article dá chéad is the number 200, not dá and the
+# ordinal (an dá chéad fiche is trí mhíle, ...). (Without the article, dá chéad
+# is usually do + a + chéad.)
+<T>[Aa]n</T> <A pl="n" gnt="n">[Dd]á</A> <E><A pl="n" gnt="n">[Cc]héad</A> <N>ANYTHING</N></E>:OK
 <A pl="n" gnt="n">[Cc]héad</A> <N>LENITEDDST</N>:NIDARASEIMHIU
 # CB p.24 #11.b.ii, LGG p.113
 #. Tá sé chomh iontach le sneachta dearg.
@@ -4625,6 +4636,9 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 <NMCS>ANYTHING</NMCS> <NGS>LENITED</NGS>:NISEIMHIU
 # cóta Sheáin, etc.
 <NMCS>ANYTHING</NMCS> <NGS>CAPITAL</NGS>:OK
+# CO17 Tábla 9S: dháréag is spelt with dh; it is not lenited (soitheach dháréag
+# bádóirí).
+<NMCS>ANYTHING</NMCS> <NGS>[Dd]háréag</NGS>:OK
 # genitive is a mistagging, d'aon ghnó
 <NMCS>(t-aon|tAon|d'[Aa]on)</NMCS> <NGS>LENITED</NGS>:OK
 # i lár bhaile Dhún Laoghaire
@@ -4739,10 +4753,11 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 # BROADFINALCONSONANT <=> "weak" genitive plural
 #. Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga.
 <NGP>BROADFINALCONSONANT</NGP> <A pl="y" gnt="n">ANYTHING</A>:UATHA
-# exception CB p.79 #13.b - using gpl "bhan" after beirt is itself exceptional,
-# but this actually occurs in the corpus:
+# CO17 9.4.3(c)(i), (ii): after beirt and a noun (genitive plural), the adjective is
+# nominative plural and lenited (beirt ghirseach chruthaitheacha; oifig na beirte ban
+# mhisniúla; moltaí bheirt léachtóirí acadúla).
 #. Beirt bhan Mheiriceánacha a bhí ann (OK).
-<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <E><N pl="y" gnt="y" gnd="f">[Bb]han</N> <A pl="y" gnt="n">ANYTHING</A></E>:OK
+<N>m?[Bb]h?eirte?</N> <E><NGP>ANYTHING</NGP> <A pl="y" gnt="n">ANYTHING</A></E>:OK
 <D>ANYTHING</D> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <D>ANYTHING</D> <C>ANYTHING</C>:CUPLA
 <D>ANYTHING</D> <D>ANYTHING</D>:CUPLA

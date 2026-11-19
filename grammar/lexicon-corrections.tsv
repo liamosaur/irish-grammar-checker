@@ -64,3 +64,8 @@ d'ardteiste	<N pl="n" gnt="y" gnd="f">	mutated form, tagged as the word list tag
 m'ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
 m'ardteiste	<N pl="n" gnt="y" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
 b'ardteist	<N pl="n" gnt="n" gnd="f">	mutated form, tagged as the word list tags the same form of ardteistiméireacht
+# clocharach (FGB: "clocharach, a1. Stony, ridged with stone."): tagged as the
+# headword only, with its lenited form; the entry gives no inflected forms, so clocharacha and
+# chlocharacha are left as they are (CO17 9.3.7: achar na ndeich ngairdín chlocharacha).
+clocharach	<A pl="n" gnt="n">	FGB: "clocharach, a1. Stony, ridged with stone."
+chlocharach	<A pl="n" gnt="n">	mutated form, tagged as the word list tags the same form of salach (shalach)
