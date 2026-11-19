@@ -983,23 +983,25 @@ DECADE <NP>ANYTHING</NP>:UATHA
 <S>[Aa]g</S> <P>[Ii]ad</P>:BACHOIR{acu}
 # LGG p.135, CB p.129
 #. Tá sí ag ullmhú é.
-<S>[Aa]g</S> <N>VNISH</N> <P>([ÉéÍí]|[Ii]ad)</P>:BACHOIR{á X}
+<S>[Aa]g</S> <N>(VNISH|NOTVNISHUNLEN)</N> <P>([ÉéÍí]|[Ii]ad)</P>:BACHOIR{á X}
 #. Chuir sí ag machnamh é (OK).
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
-<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>([ÉéÍí]|[Ii]ad)</P>:BACHOIR{á X}
+# The pronoun is the object of the verbal noun after it (CO17 11.3.1(b)):
+#. Dhíol siad an chathaoir a raibh mé ag moladh í a choimeád (OK).
+<E><S>[Aa]g</S> <N>ANYTHING</N> <P>ANYTHING</P></E> <[DGS]>[Aa]</[DGS]> <N>ANYTHING</N>:OK
 #. Bhí neach oilbhéasach ag leanúint mé.
-<S>[Aa]g</S> <N>VNISH</N> <P>[Mm]é</P>:BACHOIR{do mo X}
+<S>[Aa]g</S> <N>(VNISH|NOTVNISHUNLEN)</N> <P>[Mm]é</P>:BACHOIR{do mo X}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
-<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Mm]é</P>:BACHOIR{do mo X}
-<S>[Aa]g</S> <N>VNISH</N> <P>[Tt]hú</P>:BACHOIR{do do X}
+<E><S>[Aa]g</S> <N>ANYTHING</N> <P>ANYTHING</P></E> <[DGS]>[Aa]</[DGS]> <N>ANYTHING</N>:OK
+<S>[Aa]g</S> <N>(VNISH|NOTVNISHUNLEN)</N> <P>[Tt]hú</P>:BACHOIR{do do X}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
-<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Tt]hú</P>:BACHOIR{do do X}
-<S>[Aa]g</S> <N>VNISH</N> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dár X}
+<E><S>[Aa]g</S> <N>ANYTHING</N> <P>ANYTHING</P></E> <[DGS]>[Aa]</[DGS]> <N>ANYTHING</N>:OK
+<S>[Aa]g</S> <N>(VNISH|NOTVNISHUNLEN)</N> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dár X}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
-<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dár X}
-<S>[Aa]g</S> <N>VNISH</N> <P>[Ss]ibh</P>:BACHOIR{do bhur X}
+<E><S>[Aa]g</S> <N>ANYTHING</N> <P>ANYTHING</P></E> <[DGS]>[Aa]</[DGS]> <N>ANYTHING</N>:OK
+<S>[Aa]g</S> <N>(VNISH|NOTVNISHUNLEN)</N> <P>[Ss]ibh</P>:BACHOIR{do bhur X}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
-<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Ss]ibh</P>:BACHOIR{do bhur X}
+<E><S>[Aa]g</S> <N>ANYTHING</N> <P>ANYTHING</P></E> <[DGS]>[Aa]</[DGS]> <N>ANYTHING</N>:OK
 <S>[Aa]g</S> <S>sna</S>:CAIGHDEAN{ag na}
 <N pl="y" gnt="n" gnd="f">[Aa]icí</N>:IONADAI{aici}
 # common misspellings...
@@ -1179,8 +1181,9 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 <S>[Aa]r</S> <N pl="n" gnt="y" gnd="f">ndóighe</N>:CAIGHDEAN{ar ndóigh}
 # corpus; ar ndóigh, ar dtús, ar gcúl, ar ndiaidh tagged in comhshuite
 # so no need for exceptions here...
+# ar as a preposition or (after another ar) the relative particle, which lenites:
 #. Bhíomar ag féachaint ar an Ghaeltacht mar ionad chun feabhas a chur ar ar gcuid Gaeilge.
-<S>[Aa]r</S> ECLIPSED:BACHOIR{ár}
+<[SU]>[Aa]r</[SU]> ECLIPSED:BACHOIR{ár}
 # CB p.132 #4, OD ar^5
 # never applies since aonchiall only resolves "ar" as <Q> before VPAST
 #<Q>[Aa]r</Q> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{an}

@@ -148,6 +148,12 @@ const cases: Case[] = [
   // Oman, which CO17 spells Óman
   { section: '1.1.5(i)', text: 'Tá sé in Oman.', rule: 'CAIGHDEAN', words: 'Oman', fixed: 'Tá sé in Óman.' },
   { section: '1.1.5(i)', text: 'Chuaigh mé go hOman.', rule: 'CAIGHDEAN', words: 'hOman', fixed: 'Chuaigh mé go hÓman.' },
+  // á + verbal noun with a pronoun object, unless the pronoun is the object of a verbal noun after it
+  { section: '11.3.1(b)', text: 'Bhí sé ag moladh í.', rule: 'BACHOIR', words: 'ag moladh í', fixed: null },
+  // nach before the autonomous past (nár craoladh); an eclipsed form is the past habitual
+  { section: '11.6.2(a)', text: 'Sin é an stáisiún nach craoladh an clár.', rule: 'BACHOIR', words: 'nach craoladh', fixed: 'Sin é an stáisiún nár craoladh an clár.' },
+  // the dependent form after fáth, which the interjected clause exception leaves alone
+  { section: '11.3.1(h)', text: 'Cén fáth a chuaigh siad ann?', rule: 'RELATIVE', words: 'a chuaigh', fixed: null },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
@@ -249,6 +255,12 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Shuigh sé ar an urlár fhuar.', note: 'Córas an tSéimhithe: lenited adjective after a masculine noun in a vowel (1.7.5)' },
   { text: 'Labhair sé leis an tSeanadóir.', note: 'Córas an tSéimhithe: t before a masculine noun in s (1.7.4)' },
   { text: 'Chuaigh mé go hÓman.', note: 'Óman, as CO17 spells it (1.1.5(i))' },
+  { text: 'Bhí sé ag iarraidh í a phósadh.', note: 'pronoun object of the verbal noun after it (11.3.1(b))' },
+  { text: 'Sin é an fear nach gcuireadh aon cheist.', note: 'past habitual after nach, not the autonomous past (11.6.2(a)(i))' },
+  { text: 'Cén áit a cheapann tú a bhfuil sé?', note: 'interjected clause after áit is direct (11.4)' },
+  { text: 'Sin é an bord ar ar leag mé an leabhar.', note: 'preposition ar before the relative particle ar (11.3.1(c)(i))' },
+  { text: 'Is duine é ar mhór aige an t-airgead.', note: 'copula ar and a lenited adjective (11.8.3)' },
+  { text: 'Sin é an fear a cheannós an teach.', note: 'relative form of the future (11.7.4(a))' },
 ];
 
 let engine: Gramadoir | undefined;

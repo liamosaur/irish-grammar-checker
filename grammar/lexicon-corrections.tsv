@@ -115,3 +115,13 @@ nOman	=nÓman	CO17 1.1.5(i) B(i) spells it Óman
 b'Oman	=b'Óman	CO17 1.1.5(i) B(i) spells it Óman
 d'Oman	=d'Óman	CO17 1.1.5(i) B(i) spells it Óman
 m'Oman	=m'Óman	CO17 1.1.5(i) B(i) spells it Óman
+# The relative form of the future (CO17 11.7.4(a): a bheas, a dhéanfas), which the word
+# list has only as non-standard; other verbs get it from grammar/morph-ga.txt (level -2).
+dhéanfas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags dhéanfaidh
+déanfas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags déanfaidh
+déarfas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags déarfaidh
+chuirfeas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags chuirfidh
+cuirfeas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags cuirfidh
+gheobhas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags gheobhaidh
+rachas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags rachaidh
+thiocfas	<V p="y" t="fáist">	CO17 11.7.4(a); tagged as the word list tags thiocfaidh

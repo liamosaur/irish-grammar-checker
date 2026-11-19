@@ -140,7 +140,7 @@ DECADE <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # next two are exceptions to the one following
 <B>an</B> mhaith:<T>
 <B>ar</B> ea:<S>
-<B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|gh?nách|mh?aith|mh?ithid:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|gh?nách|mh?aith|mh?inic|mh?ithid|mh?ór:<V cop="y">
 # lowercase handled by PREPCONJ rules
 <B>Ach</B>:<C>
 # Clochán an Aifir, not verb
@@ -797,6 +797,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>PREPCONJ</Z>ANYTHING</B> sin:<S>
 #<B><Z>PREPCONJ</Z>ANYTHING</B> <[CSV]>ANYTHING</[CSV]>:<C>
 <B><Z>PREPCONJ</Z>ANYTHING</B>:<C>
+# After nach an eclipsed form is the past habitual, not the autonomous past, which
+# takes nár (CO17 11.6.2(a)(i-ii): nach gcraoladh; nár craoladh).
+[Nn]ach <B><Z>(VNPAUTGNATH|PAUTGNATH)</Z>ECLIPSED</B>:<V p="y" t="gnáth">
 # nach and nár only: lumping in what is properly <Q> with particle <U>
 <B><Z>COPULAPART</Z>ANYTHING</B> <V>ANYTHING</V>:<U>
 <B><Z>COPULAPART</Z>ANYTHING</B>:<V cop="y">
@@ -825,6 +828,11 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # e.g.  next rule gets "ar siad/sé/sí" since all are disambigd above
 # Actually a copula in IG but this flags "ar sise" as BACHOIR "ar ise", etc.
 <B>[Aa]r</B> <P>SUBJECTPRONOUN</P>:<V p="y" t="láith">
+# A preposition and the relative particle ar (CO17 11.3.1(c)(i): an bhean ar ar cuireadh
+# an t-agallamh); the word after it is the verb. (ar ar gcuid, for ár, is reported as
+# BACHOIR{ár} in rialacha-ga.in.)
+[Aa]r <B>[Aa]r</B>:<U>
+<U>[Aa]r</U> <B><Z>PASTOPTION</Z>ANYTHING</B>:!<[^V][^>]*>
 # don't use VPAST (even though that's correct) since verb might not be disambig
 # bean ar maraíodh a mac
 ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
@@ -905,6 +913,10 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <N pl="n" gnt="n" gnd="f">[Uu]air</N> <B>[Aa]</B>:<G>
 <N pl="n" gnt="n" gnd="f" h="y">h[Uu]air</N> <B>[Aa]</B>:<G>
 [Cc]á <N>[Ff]had</N> <B>[Aa]</B>:<G>
+# A clause of saying or thinking interjected before the relative clause is direct,
+# whatever the antecedent (CO17 11.4: Cén fáth a cheapann tú a ndeachaigh siad ann?;
+# Fuair mé é in áit a mheas mé a bhfaighinn é).
+<B>[Aa]</B> ([Cc]h?eap|[Ss]h?íl|[Mm]h?eas|[Mm]h?aí|[Dd]eir|[Dd]úirt|[Dd]éarf)[a-záéíóú]* (mé|tú|SUBJECTPRONOUN|muid|sinn|sibh) [Aa]:<G>
 # Ó Cóileán, corpus
 # I gcás a ndéanfaidh...
 # faoin gcaoi a bhfoghlaimíonn...

@@ -210,6 +210,8 @@ s/ANYNFPLH/(?:<[^>]+>)*<N pl="y" gnt="n" gnd="f" h="y".>(?:<[^>]+>)*/g;
 s/ANYNFPL/(?:<[^>]+>)*<N pl="y" gnt="n" gnd="f".>(?:<[^>]+>)*/g;
 s/ANYGENITIVE/(?:<[^>]+>)*<N pl="." gnt="y"[^>]+>(?:<[^>]+>)*/g;
 s/ANYCOPULA/(?:<[^>]+>)*<V cop="y".>(?:<[^>]+>)*/g;
+# A word with a past-tense verb among its tags.
+s/PASTOPTION/(?:<[^>]+>)*<V p="." t="caite".>(?:<[^>]+>)*/g;
 s/ANYPASTIMPER/(?:<[^>]+>)*<V p="y" t="ord".><V p="y" t="caite".>(?:<[^>]+>)*/g;
 # Units with a verbal noun at their core, taken as one noun in
 # grammar/comhshuite-ga.in (CO17 3.3.1(b)): VNUNITGEN is the form after an in

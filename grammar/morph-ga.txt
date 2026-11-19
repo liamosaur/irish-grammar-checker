@@ -498,13 +498,13 @@ idíst$			idís	1	<[VF].*>	<&>    # thugaidíst, gcaithfidíst, etc.
 imíst$			imis	1	<[VF].*>	<&>    # thugaimíst, etc. 
 uigh'e$			aithe		1	<.+>	<&>	# U019.txt
 fiomuid$		fimid		1	<[VF].*>	<&>
-# fas/feas/óchas/ós/eos here are future relatives
-# as on CB p.145, i.e. not synthetic
-fas$			faidh		1	<V p="y" t="fáist">	<&>
-feas$		fidh		1	<V p="y" t="fáist">	<&>
+# fas/feas/ós/eos are the relative form of the future (CO17 11.7.4(a): a bheas, a
+# dhéanfas), a regular inflection (level -2); óchas is a pre-standard spelling.
+fas$			faidh		-2	<V p="y" t="fáist">	<&>
+feas$		fidh		-2	<V p="y" t="fáist">	<&>
 óchas$		óidh		1	<V p="y" t="fáist">	<&> # meabhróchas->meabhrós->...
-ós$		óidh		1	<V p="y" t="fáist">	<&>
-eos$		eoidh		1	<V p="y" t="fáist">	<&>
+ós$		óidh		-2	<V p="y" t="fáist">	<&>
+eos$		eoidh		-2	<V p="y" t="fáist">	<&>
 # Common in achtanna to have -fidh,-fid ending on broad stem, lots of 
 # other slender/broad mismatches:
 ([aáoóuú][^aeiouáéíóú]*)fí$	$1faí	1	<V p="n" t="coinn">	<&>

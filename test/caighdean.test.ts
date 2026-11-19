@@ -30,6 +30,9 @@
 // the labels (fir.), (bain.), (iol.) after its examples are dropped. In chapter 1, each
 // row of a two-column table (masculine, feminine) gives two phrases; the tables of both
 // systems of the dative singular (An Córas Lárnach, Córas an tSéimhithe) are included.
+// Chapter 11 is copied by hand: a pair "X. à Y." gives both sentences, as in chapter 3,
+// and brackets are treated as in chapters 4 and 7. The "Cé hé + is ..." lines of
+// 11.3.1(f) are not sentences and are left out, as are the tables of forms (11C-11E).
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -44,7 +47,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'test', 'caighdean');
 
 type Example = { section: string; page: number; text: string; known?: string; hint?: string; phrase?: boolean; variant?: boolean };
-const TITLES: Record<string, string> = { '1': 'the article', '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '7': 'the copula', '8': 'pronouns', '9': 'numbers', '10': 'initial mutations' };
+const TITLES: Record<string, string> = { '1': 'the article', '3': 'definite and indefinite nouns, the nominative for the genitive', '4': 'adjectives', '7': 'the copula', '8': 'pronouns', '9': 'numbers', '10': 'initial mutations', '11': 'the relative clause' };
 const chapters = fs.readdirSync(dir).filter((f) => /^ch\d+\.json$/.test(f)).sort();
 
 // Messages about the word list rather than grammar: a word the database lacks says
