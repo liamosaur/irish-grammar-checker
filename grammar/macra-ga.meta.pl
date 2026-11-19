@@ -6,7 +6,7 @@
 # Gramadóir) from ga/macra-ga.meta.pl in github.com/kscanne/gramadoir, commit
 # daa63e64130a, under the same terms (GNU GPL, version 2 or later). Kept here in
 # UTF-8; tools/generate-rules.mjs runs a Latin-1 copy. tools/upstream-diff.mjs
-# lists every change against the upstream file.
+# lists the changes made since that commit.
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -211,10 +211,20 @@ s/ANYPASTIMPER/(?:<[^>]+>)*<V p="y" t="ord".><V p="y" t="caite".>(?:<[^>]+>)*/g;
 # éirí amach), VNUNIT any form. VNUNITGEN must come first (it contains VNUNIT).
 s/VNUNITGEN/(?:[Cc]h(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|[Dd]ul [Cc]hun cinn|[Tt]eacht [Ii] bhfeidhm|[Tt]abhairt (?:[Aa]mach|[Ss]uas)|[Éé]irí (?:[Aa]mach|[Ii]n airde)|tsracfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
 s/VNUNIT/(?:g?[Cc]h?(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|n?[Dd]h?ul [Cc]hun cinn|d?[Tt]h?(?:eacht [Ii] bhfeidhm|abhairt (?:[Aa]mach|[Ss]uas))|(?:n-)?[Éé]irí (?:[Aa]mach|[Ii]n airde)|t?[Ss]h?racfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
+# The words that take h after the copula ní (CO17 10.11.8, Table 10E, 10.12.2).
+# (grammar/rialacha-ga.in)
+s/NIHWORDS/(?:áibhéil|áil|éigean|eol|ionadh|iontas|ualach|acmhainn|aitheanta|aithnid|éadáil|ealaín|amháin|aon|ionann|iondúil|amhlaidh|annamh|eagal|oircheas)/g;
 # The forms of bí that begin a clause with a subject and a predicate (Tá an
 # aimsir fuar; Tá téarmaí an Achta soiléir): used to recognise a predicative
 # adjective at the end of the clause. (grammar/rialacha-ga.in)
 s/BIVERB/(?:[Tt]á|[Tt]áim|[Bb]hí|[Bb]híodh|[Bb]íonn|[Bb]eidh|[Bb]headh|[Nn]íl|[Ff]uil|bhfuil|[Rr]aibh|mbíonn|mbíodh|mbeidh|mbeadh)/g;
+# The special plural forms used after numbers (CO17 9.3.2, Tábla 9G), with any
+# initial mutation. SPECIALPLURAL: those ending in a vowel or a broad consonant,
+# after which an adjective is not lenited (9.3.4(b): naoi mbliana fada; seacht
+# bpingine beaga). SPECIALPLDEAG: all of them, after which déag is not lenited
+# (9.3.2(e): seacht bhfichid déag). (grammar/rialacha-ga.in)
+s/SPECIALPLDEAG/[^<]*(?:bliana|seachtaine|cinn|cloigne|fichid|pingine|treana|troithe|uaire)/g;
+s/SPECIALPLURAL/[^<]*(?:bliana|seachtaine|cloigne|pingine|treana|troithe|uaire)/g;
 s/ANYIMPER/(?:<[^>]+>)*<V p="y" t="ord".>(?:<[^>]+>)*/g;
 s/ANYPASTAUT/(?:<[^>]+>)*<V p="n" t="caite".>(?:<[^>]+>)*/g;
 s/ANYPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;

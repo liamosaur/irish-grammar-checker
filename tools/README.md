@@ -25,18 +25,17 @@ node tools/build-forms.mjs .sources/bunamo/repo data
 
 This reproduces the committed files exactly.
 
-The grammar rules we maintain are in `grammar/`: `rialacha-ga.in` (the rules),
-`aonchiall-ga.in` (the rules that choose between a word's possible tags) and
-`comhshuite-ga.in` (phrases tagged as one word) are our modified copies of
-upstream's `ga/*.in` files, as is `macra-ga.meta.pl` (the macros, such as
-`ANYTHING` and `NONCOMPOUND`), and `generate-rules.mjs` compiles them with the
-upstream checkout's compiler scripts. Edit them directly. Our changes
-follow *An Caighdeán Oifigiúil* (2017); `node tools/upstream-diff.mjs
-.sources/gramadoir` shows every change against upstream. Rules can also use
-`CLAUSESTART` and `CLAUSEEND` (start and end of a clause; `CLAUSESTART` in
-`aonchiall-ga.in` too), which the original syntax cannot express; see
-`generate-rules.mjs`. Also in `grammar/`:
-`extra-messages.json`, the messages for rule ids we added (merged by
+The grammar rules are in `grammar/` and are edited there directly:
+`rialacha-ga.in` (the rules), `aonchiall-ga.in` (the rules that choose between
+a word's possible tags), `comhshuite-ga.in` (phrases tagged as one word) and
+`macra-ga.meta.pl` (the macros, such as `ANYTHING` and `NONCOMPOUND`).
+`generate-rules.mjs` compiles them with the compiler scripts from the An
+Gramadóir checkout. The rules follow *An Caighdeán Oifigiúil* (2017);
+`node tools/upstream-diff.mjs .sources/gramadoir` lists the changes since the
+An Gramadóir commit they came from. Rules can also use `CLAUSESTART`,
+`AFTERFEMNAME` (first word) and `CLAUSEEND` (last word), which the rule
+compiler cannot express; see `generate-rules.mjs`. Also in `grammar/`:
+`extra-messages.json`, the messages for rule ids not in An Gramadóir (merged by
 `build-data.mjs`), and `lexicon-corrections.tsv`, corrections to words' tags
 in the word list (or standard words upstream lists only as non-standard forms,
 which are then removed from `data/eile.json`), which `build-data.mjs` turns into `data/lexicon-corrections.json`,
@@ -72,9 +71,9 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   except for spelling suggestions; for those, see `perl-wsl.sh`.
 - `make-golden.ts`, `make-golden-spelling.ts`: record new Perl output as test fixtures.
 - `drift.mjs`: agreement with the expected output in upstream `ga/triail.xml`
-  (currently 465 of 479 sentences identical). Some differences are intended: the
+  (currently 464 of 479 sentences identical). Some differences are intended: the
   rules in `grammar/` follow *An Caighdeán Oifigiúil* where upstream does not
-  (e.g. *Ní hamháin*, *in 1982*), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
+  (e.g. *Ní hamháin*, *in 1982*, *mórsheisear iníonacha*), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
 - `browser-smoke.mjs`: checks a sentence in the built site in headless Edge or Chrome.
 
 ## Derived error sentences for review

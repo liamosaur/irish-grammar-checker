@@ -100,6 +100,10 @@ const cases: Case[] = [
   { section: '3.1.5', text: 'Bhí an fear Excel chéanna ann.', rule: 'NISEIMHIU', words: 'chéanna', fixed: 'Bhí an fear Excel céanna ann.' },
   // na + a singular noun, as before; the place name Garraithe Náisiúnta na Lus is the exception
   { section: '1.6', text: 'Chonaic mé na lus.', rule: 'BACHOIR', words: 'na lus', fixed: 'Chonaic mé an lus.' },
+  // the adjective after a number is still lenited after an ordinary noun (9.3.3)
+  { section: '9.3.3', text: 'Bhí seacht leabhar móra ann.', rule: 'SEIMHIU', words: 'seacht leabhar móra', fixed: 'Bhí seacht leabhar mhóra ann.' },
+  // an + a lenited personal number, not after a noun (nominative)
+  { section: '9.4.2(b)', text: 'Chonaic mé an cheathrar.', rule: 'NISEIMHIU', words: 'an cheathrar', fixed: 'Chonaic mé an ceathrar.' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
@@ -150,6 +154,10 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Bhí sé ann ar feadh uair an chloig.', note: 'uair an chloig taken as one noun' },
   { text: 'Tá sí ag déanamh a cuid oibre.', note: 'cuid after a possessive and a verbal noun has no genitive reading and is left alone' },
   { text: 'Tá sé ag iarraidh a dheimhniú go mbeidh gach ní ina cheart.', note: 'a before a verbal noun is the particle, not a possessive' },
+  { text: 'Bhí ceathrar daltaí ann.', note: 'a weak plural after a personal number is the genitive plural' },
+  { text: 'Bhí sé ann naoi mbliana fada ó shin.', note: 'no lenition after a special plural form ending in a vowel' },
+  { text: 'Chuir sé na chéad cheithre ghloine ar an mbord.', note: 'céad lenites the number after it' },
+  { text: 'Tá cúig cheathrú den chíste fágtha.', note: 'a fraction: the denominator is lenited after 2-6' },
   { text: 'Tá an bhean cabhrach.', note: 'predicative adjective, not lenited' },
   { text: 'Cuideachta áitiúil atá i mbun an teach a thógáil.', note: 'nominative before a + verbal noun after a compound preposition' },
 ];

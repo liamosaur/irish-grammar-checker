@@ -3,10 +3,10 @@
 #
 # Modified for this project (the Irish grammar checker, a TypeScript port of An
 # Gramadóir) from ga/comhshuite-ga.in in github.com/kscanne/gramadoir, commit daa63e64130a,
-# under the same terms (GNU GPL, version 2 or later). Our changes follow
-# Gramadach na Gaeilge: An Caighdeán Oifigiúil (2017), cited as CO17; sections we
-# added start with "########" and their comments give the CO17 reference.
-# tools/upstream-diff.mjs lists every change against the upstream file.
+# under the same terms (GNU GPL, version 2 or later). The rules follow Gramadach
+# na Gaeilge: An Caighdeán Oifigiúil (2017), cited as CO17; sections headed
+# "########" give the CO17 reference. tools/upstream-diff.mjs lists the changes
+# made since that commit.
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -494,7 +494,7 @@ Mh?eán Fómhair:<N pl="n" gnt="n" gnd="m">
 [Mm]h?ór [Ll]e [Rr]á:<A pl="n" gnt="n">
 # CO17 4.3.7: an adjectival phrase of several words is neither inflected nor
 # lenited (tuarascáil cothrom le dáta; údar na tuarascála cothrom le dáta).
-# Taken as one adjective, like mór le rá upstream, so that the rules for a
+# Taken as one adjective, like mór le rá above, so that the rules for a
 # single adjective leave it alone.
 [Cc]h?othrom [Ll]e [Dd]áta:<A pl="n" gnt="n">
 # infrequent

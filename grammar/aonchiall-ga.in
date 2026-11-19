@@ -4,10 +4,10 @@
 #
 # Modified for this project (the Irish grammar checker, a TypeScript port of An
 # Gramadóir) from ga/aonchiall-ga.in in github.com/kscanne/gramadoir, commit daa63e64130a,
-# under the same terms (GNU GPL, version 2 or later). Our changes follow
-# Gramadach na Gaeilge: An Caighdeán Oifigiúil (2017), cited as CO17; sections we
-# added start with "########" and their comments give the CO17 reference.
-# tools/upstream-diff.mjs lists every change against the upstream file.
+# under the same terms (GNU GPL, version 2 or later). The rules follow Gramadach
+# na Gaeilge: An Caighdeán Oifigiúil (2017), cited as CO17; sections headed
+# "########" give the CO17 reference. tools/upstream-diff.mjs lists the changes
+# made since that commit.
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -64,6 +64,11 @@ CLAUSESTART [Nn]a <B><Z>ANYIMPER</Z>ANYTHING</B>:<V p="y" t="ord">
 # definite noun (Ba é an fear). The article is matched as a word, because an is
 # still ambiguous when this runs.
 <B>ba</B> [Aa]n|[Nn]a:<N pl="y" gnt="n" gnd="f">
+# CO17 9.4.3(a): after a personal number (beirt, triúr ... dáréag) the noun is in the
+# genitive plural (triúr bádóirí; beirt chumadóirí). Where the word list gives a word
+# both plurals, take the genitive. The numbers are matched as words.
+m?[Bb]h?eirt|g?[Cc]h?eathrar|g?[Cc]h?úigear|n?[Dd]h?áréag|n?[Dd]h?eichniúr|[Mm]h?órsheisear|[Nn]aonúr|t-ochtar|[Oo]chtar|t?[Ss]h?eachtar|t?[Ss]h?eisear|d?[Tt]h?riúr <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
+m?[Bb]h?eirt|g?[Cc]h?eathrar|g?[Cc]h?úigear|n?[Dd]h?áréag|n?[Dd]h?eichniúr|[Mm]h?órsheisear|[Nn]aonúr|t-ochtar|[Oo]chtar|t?[Ss]h?eachtar|t?[Ss]h?eisear|d?[Tt]h?riúr <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # CO17 3.3.4(b), 3.3.9: a noun with a possessive is definite, and a definite object
 # of a verbal noun after ag is in the genitive (Bhí sí ag glanadh a bróg peile:
 # bróg is the genitive plural, iol.). So after ag + a word + a possessive, a word
@@ -572,8 +577,8 @@ RFORMCONJ <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 GENITIVEPREP <T>an</T> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 # A noun the word list gives a masculine genitive with the same form as the
 # nominative (duine), after a noun and an, and before a lenited adjective, is
-# genitive: clann an duine chóir (CO17 4.2.2(a)(i), Tábla 4D). Like upstream's
-# rule after a compound preposition (GENITIVEPREP <T>an</T> ...).
+# genitive: clann an duine chóir (CO17 4.2.2(a)(i), Tábla 4D). Like the rule
+# above after a compound preposition (GENITIVEPREP <T>an</T> ...).
 # (The adjective is matched as a word: it may still be ambiguous, chóir.) Not
 # after the copula, where the definite noun is the subject (Is fear an duine
 # mór), so that case is settled first as the nominative.
@@ -614,7 +619,7 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <NFGS>ANYTHING</NFGS> <B><Z>ANYWITHGSF</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="f">
 <NFGS>ANYTHING</NFGS> <B><Z>ANYWITHGSF</Z>FAKEPP</B>:<A pl="n" gnt="y" gnd="f">
 # breátha after a feminine genitive singular noun is the feminine genitive
-# singular (Dath na tine breátha te, CO17 4.6.2). Upstream's rule for this
+# singular (Dath na tine breátha te, CO17 4.6.2). The rule above
 # leaves out words that look like verbal adjectives, and breátha ends in -tha.
 <NFGS>ANYTHING</NFGS> <B>bh?reátha</B>:<A pl="n" gnt="y" gnd="f">
 <NMGS>ANYTHING</NMGS> <B><Z>ANYWITHGSM</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="m">

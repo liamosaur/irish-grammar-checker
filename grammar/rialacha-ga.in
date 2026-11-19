@@ -3,12 +3,12 @@
 #
 # Modified for this project (the Irish grammar checker, a TypeScript port of An
 # Gramadóir) from ga/rialacha-ga.in in github.com/kscanne/gramadoir, commit daa63e64130a,
-# under the same terms (GNU GPL, version 2 or later). Our changes follow
-# Gramadach na Gaeilge: An Caighdeán Oifigiúil (2017), cited as CO17; sections we
-# added start with "########" and their comments give the CO17 reference.
-# tools/upstream-diff.mjs lists every change against the upstream file.
-# Two words not in the original syntax may start or end a rule: CLAUSESTART and
-# CLAUSEEND (the start or end of a clause; see tools/generate-rules.mjs).
+# under the same terms (GNU GPL, version 2 or later). The rules follow Gramadach
+# na Gaeilge: An Caighdeán Oifigiúil (2017), cited as CO17; sections headed
+# "########" give the CO17 reference. tools/upstream-diff.mjs lists the changes
+# made since that commit.
+# Beyond the syntax described on that page, CLAUSESTART or AFTERFEMNAME may be
+# the first word of a rule and CLAUSEEND the last (see tools/generate-rules.mjs).
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -91,16 +91,14 @@ sin sin:OK
 # b'iúd as non-standard and b'eo as rare.
 <E><X>m?[Bb]'(in|iúd)</X></E>:OK
 ######## h before a vowel after the copula ní
-# Upstream (following the Christian Brothers' grammar) allows h after ní only on
-# the pronouns é, í, ea, iad and on ionann. CO17 gives a closed list of words
-# that take it: nouns in 10.11.8 and Table 10E, adjectives and adverbs in
-# 10.12.2, demonstratives in 10.13.2. Nothing outside the list takes it
-# (Ní amadán é; Ní Eoin is ainm dom; Ní eolas oideachas), which the NIAITCH
-# rules already enforce. The list appears in several places below; keep them
-# in step.
-# CO17 10.13.2: ní hin, ní hiúd. These are taken by the word list for
-# non-standard forms of sin and siúd; this runs with upstream's other
-# exceptions to word-list messages, which must come first.
+# After the copula ní, h goes before a vowel on the pronouns (ní hé) and on a
+# closed list of words: nouns in CO17 10.11.8 and Table 10E, adjectives and
+# adverbs in 10.12.2 (the macro NIHWORDS), demonstratives in 10.13.2. Nothing
+# else takes it (Ní amadán é; Ní Eoin is ainm dom; Ní eolas oideachas): the
+# NIAITCH rules.
+# CO17 10.13.2: ní hin, ní hiúd. The word list has hin and hiúd as non-standard
+# forms of sin and siúd, so this goes with the other exceptions to word-list
+# messages, which must come first.
 [Nn]í <E><X>(hin|hiúd)</X></E>:OK
 <N pl="n" gnt="n" gnd="f">g?Ch?ill</N> <X>Mantáin</X>:SEIMHIU
 <S>[Aa]r</S> <X>ndoigh</X>:MICHEART{ar ndóigh}
@@ -534,10 +532,10 @@ n[Dd]eire:IONADAI{ndeireadh}
 # CB p.24 #11.a.ix, LGG p.113
 <A pl="n" gnt="n">ORDINALADJ</A> <N>INITIALVOWEL</N>:PREFIXH
 ######## h before a vowel after an ordinal (CO17 10.11.2(a))
-# ga.py 10.11.2.a. Upstream has the rule for ordinals tagged as adjectives.
-# The word list tags t-aonú and t-ochtú as nouns only, and the tagger takes
-# ceathrú as the noun "quarter" when the next word is ambiguous (an ceathrú
-# halt), so add the same rule and exception for those. The article (or the
+# ga.py 10.11.2.a. The rule above covers ordinals tagged as adjectives. The
+# word list tags t-aonú and t-ochtú as nouns only, and the tagger takes ceathrú
+# as the noun "quarter" when the next word is ambiguous (an ceathrú halt), so
+# these get the same rule and exception. The article (or the
 # t-) keeps out the fraction: "quarter" is feminine, so it would be an
 # cheathrú.
 <N>t-([Aa]onú|[Oo]chtú)</N> <NCS>INITIALVOWEL</NCS>:PREFIXH
@@ -608,7 +606,7 @@ n[Dd]eire:IONADAI{ndeireadh}
 <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">COMPOUND</A>:OK
 ######## A predicative adjective (CO17 4.11)
 # A predicative adjective is not lenited: Bhí an traein folamh; Tá an aimsir
-# fuar. Upstream takes it as qualifying the feminine noun before it. Taken to
+# fuar. The rule above would take it as qualifying the feminine noun. Taken to
 # be predicative when it follows bí + an + noun and ends the clause; CLAUSEEND
 # (see tools/generate-rules.mjs) matches punctuation or the end of the
 # sentence. Tá an aimsir fhuar ag teacht is still read as attributive.
@@ -621,10 +619,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 ######## An adverb before an adjective (CO17 4.3.5)
 # The adjective after cuibheasach, sách, measartha, réasúnta is neither
 # inflected nor lenited, and the adverb itself is not lenited after a feminine
-# noun (Maidin sách fuar; Bliain cuibheasach tirim). Upstream allows the
-# adjective after these (and iontach), but flags the adverb as an adjective
-# missing lenition; measartha and réasúnta escaped only because their ending
-# looks like a verbal adjective's. The exception requires an adjective after
+# noun (Maidin sách fuar; Bliain cuibheasach tirim); likewise iontach. The rule
+# above would report the adverb as an adjective missing lenition after the
+# noun. The exception requires an adjective after
 # the adverb, so sách or cuibheasach used as an adjective is still checked.
 <E><NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">(cuibheasach|iontach|measartha|réasúnta|sách)</A></E> <A>ANYTHING</A>:OK
 <NFCS>NONCOMPOUND</NFCS> <A>ANYTHING</A> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU
@@ -653,26 +650,25 @@ n[Dd]eire:IONADAI{ndeireadh}
 # record. Whatever the rules below cannot rule out is therefore reported as a
 # hint (WEAKSEIMHIUGEN), not as an error.
 <NFCS>NONCOMPOUND</NFCS> <NG>UNLENITED</NG>:WEAKSEIMHIUGEN
-# CO17 10.2.7(b): not when the second noun begins with f. Upstream had this only
-# after gloine, caor, scian and tonn. beirt and dís do lenite it: beirt has its
-# own rule further on, and dís gets one below.
+# CO17 10.2.7(b): not when the second noun begins with f. beirt and dís do
+# lenite it; they have their own rule further on.
 <NFCS>NONCOMPOUND</NFCS> <NG>INITIALF</NG>:OK
 # CO17 10.2.7(c): not when the second noun is genitive plural.
 <NFCS>NONCOMPOUND</NFCS> <NGP>ANYTHING</NGP>:OK
-# CO17 10.2.7(h): not after a verbal noun that follows ag. Upstream recognises a
-# feminine verbal noun by its ending (FEMVN), which misses many (seinm, éisteacht,
+# CO17 10.2.7(h): not after a verbal noun that follows ag. The exceptions below
+# recognise a feminine verbal noun by its ending (FEMVN), which misses many (seinm, éisteacht,
 # tarraingt, ...). After ag, a feminine noun followed by an indefinite genitive
 # is taken to be a verbal noun whatever its ending.
 <S>[Aa]g</S> <E><NFCS>NONCOMPOUND</NFCS> <NG>UNLENITED</NG></E>:OK
-# CO17 10.2.7(j): not after these nouns (comhairle, foireann and scéim were
-# already covered upstream).
+# CO17 10.2.7(j): not after these nouns (comhairle, foireann and scéim are
+# covered below).
 <N pl="n" gnt="n" gnd="f">(h?[Aa]icme|n-aicme|g?[Cc]h?orparáid|g?[Cc]h?uideachta|h?[Ee]arnáil|n-earnáil|(bh)?[Ff]h?eidhmeannacht|n?[Gg]h?níomhaireacht|h?[Ii]nstitiúid|n-institiúid|h?[Oo]ifig|n-oifig|[Rr]annóg|[Rr]oinn|t?[Ss]h?eirbhís)</N> <NG>ANYTHING</NG>:OK
 # CO17 10.2.7(k): dlí and sí are not lenited.
 <NFCS>NONCOMPOUND</NFCS> <NG>(dlí|sí)</NG>:OK
 # CO17 10.2.7(l): nor the units of time bliain, coicís, mí and seachtain.
 <NFCS>NONCOMPOUND</NFCS> <NG>(bliana|coicíse|míosa|seachtaine)</NG>:OK
 # CO17 10.2.7(m): nor a genitive that is itself qualified by another noun.
-# (Upstream already allows for one qualified by an adjective.)
+# (One qualified by an adjective is allowed below.)
 <E><NFCS>NONCOMPOUND</NFCS> <NG>ANYTHING</NG></E> <NG>ANYTHING</NG>:OK
 # CB p.16 8(a): never lenite "Dé": "lámh Dé"
 <NFCS>NONCOMPOUND</NFCS> <N pl="n" gnt="y" gnd="m">Dé</N>:OK
@@ -700,9 +696,6 @@ n[Dd]eire:IONADAI{ndeireadh}
 <NFCS>bheith</NFCS> <NG>UNLENITED</NG>:OK
 # OD, corpus; OD also has "dé sholais" so shouldn't have more general exception
 <N pl="n" gnt="n" gnd="f">n?[Dd]h?é</N> <N pl="n" gnt="y" gnd="m">deiridh</N>:OK
-# not sure why, OD and corpus are consistent though: gloine fíona, 
-# gloine fuinneoige, gloine formhéadúcháin, etc.
-<N pl="n" gnt="n" gnd="f">(n?[Gg]h?loine|g?[Cc]h?aor|[Ss]cian|d?[Tt]h?onn)</N> <NG>INITIALF</NG>:OK
 # See OD+corpus; also LGG p.59 (f) "collective nouns"?
 <N pl="n" gnt="n" gnd="f">([Ff]h?oireann|[Ff]h?oinse|[Mm]h?eitheal|[Ss]cuaine|[Tt]h?áin)</N> <NG>ANYTHING</NG>:OK
 # CO p.84 (a) -- all feminine abstract nouns, LGG p.59 (b)
@@ -824,16 +817,16 @@ n[Dd]eire:IONADAI{ndeireadh}
 #. Déanann siad na breiseáin brabhsála don tionscal ríomhaireachta.
 #. Is ar éisc mara agus ar na hainmhithe mara eile atáimid ag díriú.
 ######## Lenition of an indefinite genitive after a plural ending in a slender consonant
-# CO17 10.2.8 lists every case where it is not lenited, (a) to (f). Upstream had
-# only (a). As above, the cases that depend on meaning cannot be detected, so
+# CO17 10.2.8 lists every case where it is not lenited, (a) to (f); (a) is in
+# the rules above. As above, the cases that depend on meaning cannot be detected, so
 # what is left is a hint.
 <NP>SLENDERFINALCONSONANT</NP> <NG>UNLENITED</NG>:WEAKSEIMHIUGEN
 # CO17 10.2.8(b): not when the second noun begins with f.
 <NP>SLENDERFINALCONSONANT</NP> <NG>INITIALF</NG>:OK
 # CO17 10.2.8(c): not when the second noun is genitive plural.
 <NP>SLENDERFINALCONSONANT</NP> <NGP>ANYTHING</NGP>:OK
-# CO17 10.2.8(d)(i): not when the second noun is a person, using upstream's
-# test for the feminine singular rule (by ending, plus a few common words).
+# CO17 10.2.8(d)(i): not when the second noun is a person, using the same
+# test as the feminine singular rule (by ending, plus a few common words).
 <NP>SLENDERFINALCONSONANT</NP> <N pl="n" gnt="y" gnd="m">NGMPERSON</N>:OK
 <NP>SLENDERFINALCONSONANT</NP> <N pl="n" gnt="y" gnd="f">NGFPERSON</N>:OK
 # CO17 10.2.8(f): nor a genitive that is itself qualified by another noun or by
@@ -1254,9 +1247,9 @@ INITIALMBAPOST:NIURU
 <V cop="y">m?[Bb]a</V> <[AN]>UNLENITED</[AN]>:SEIMHIU
 # CB p.5 #17, note pronoun exception CB p.114
 #. Ba eol duit go hiomlán m'anam.
-# Upstream's rule for ba before a noun or adjective beginning with a vowel
-# suggests b', which after go and dá is mb' (go mb'altra, dá mb'fhear: 7.2.2B(b),
-# 7.3.5). mba occurs only after them, so it gets its own message.
+# Before a noun or adjective beginning with a vowel or f, ba becomes b', and
+# mba, which occurs only after go and dá, becomes mb' (go mb'altra, dá
+# mb'fhear: 7.2.2B(b), 7.3.5).
 <V cop="y">mba</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{mb'}
 <V cop="y">[Bb]a</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{b', ab}
 # OD77
@@ -1289,14 +1282,16 @@ INITIALMBAPOST:NIURU
 [Nn]á <E><V p="y" t="coinn">[Bb]einn</V></E>:OK
 # CB p.13 #3.e
 #. D'fhan beirt buachaill sa champa.
-<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N>UNLENITED</N>:SEIMHIU
-<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N>INITIALDST</N>:OK
 # CO17 10.2.7(b), (c), (e): dís, like beirt, lenites what follows (dís fhear,
-# dís bhreithiúna). Mirrors the upstream rule for beirt.
-<N pl="n" gnt="n" gnd="f">n?[Dd]h?ís</N> <N>UNLENITED</N>:SEIMHIU
-<N pl="n" gnt="n" gnd="f">n?[Dd]h?ís</N> <N>INITIALDST</N>:OK
+# dís bhreithiúna).
+<N pl="n" gnt="n" gnd="f">(m?[Bb]h?eirt|n?[Dd]h?ís)</N> <N>UNLENITED</N>:SEIMHIU
+<N pl="n" gnt="n" gnd="f">(m?[Bb]h?eirt|n?[Dd]h?ís)</N> <N>INITIALDST</N>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N pl="y" gnt="y" gnd="f">bhan</N>:OK
 <N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{bhan}
 # Caught as NISEIMHIU below, but clearer message here 
@@ -1304,6 +1299,8 @@ INITIALMBAPOST:NIURU
 # CB p.16 #9.d
 #. D'fhan beirt bhuachaill cancrach sa champa.
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<N>[Bb]h?eirte?</N> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 #. Mothóidh Pobal Osraí an bheirt laoch sin uathu (OK).
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 # corpus work; "na (naoi) mbéithe" common literary phrase; "mbeithe"
@@ -1462,7 +1459,11 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <C>[Nn]ó</C> <E>[Cc]eathair</E>:OK
 <E>[Cc]eathair</E> <C>[Nn]ó</C>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # CB p.24 #11.a.x; corpus examples lenited/eclipsed
@@ -1482,8 +1483,12 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <A pl="n" gnt="n">g?[Cc]eithre</A> <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NISEIMHIU
 <A pl="n" gnt="n">[Cc]heithre</A> <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NIDARASEIMHIU
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
@@ -1678,8 +1683,12 @@ g?[Cc]h?úig <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Pp]ingine|[Ss
 g?[Cc]úig <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NISEIMHIU
 [Cc]húig <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NIDARASEIMHIU
 g?[Cc]h?úig <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+g?[Cc]h?úig <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 g?[Cc]h?úig <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 g?[Cc]h?úig <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+g?[Cc]h?úig <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 g?[Cc]h?úig <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
@@ -1698,7 +1707,11 @@ g?[Cc]h?úig <N pl="n" gnt="n" gnd="f">[Uu]bh</N>:BACHOIR{uibhe}
 g?[Cc]h?úig <NP>ANYTHING</NP>:UATHA
 g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 #  great majority are correct; don't uncomment without care
@@ -1797,7 +1810,11 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 # CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
 [Dd]ár <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N>n?[Dd]h?áréag</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N>n?[Dd]h?áréag</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N>n?[Dd]h?áréag</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N>n?[Dd]h?áréag</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # corpus
@@ -1836,8 +1853,12 @@ Dé Aoine:PREFIXH
 # genitive is OK I think:
 #. D'fhás sé ag deireadh na naoú haoise déag agus fás an náisiúnachais (OK).
 <NCS>FINALVOWEL</NCS> <N pl="n" gnt="n">déag</N>:SEIMHIU
+# CO17 9.5.2(e): déag is not lenited in an ordinal (an tríú duine déag; an dara bosca déag).
+<A>(ANYTHINGú|[Dd]ara)</A> <E><NCS>ANYTHING</NCS> <N pl="n" gnt="n">déag</N></E>:OK
 # specifically in OD; but just "bhfichid, fh?ichid"?
 <NP>SLENDERFINALCONSONANT</NP> <N pl="n" gnt="n">déag</N>:SEIMHIU
+# CO17 9.3.2(e): nor after a special plural form (seacht bhfichid déag).
+<E><NP>SPECIALPLDEAG</NP> <N pl="n" gnt="n">déag</N></E>:OK
 # this exception and following rule from OD (+ corpus)
 <NP>g?ch?inn</NP> <N pl="n" gnt="n">déag</N>:OK
 <N pl="y" gnt="n" gnd="m">g?cinn</N> <N pl="n" gnt="n">dhéag</N>:NISEIMHIU
@@ -1904,9 +1925,15 @@ n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 n?[Dd]h?eich <NP>ANYTHING</NP>:UATHA
 n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+n?[Dd]h?eich <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 n?[Dd]h?eich <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # corpus
@@ -1946,8 +1973,12 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 #. Bhí Eibhlín ar a dhá glúin (OK).
 <D>([Aa]|[Áá]r|[Bb]hur)</D> <E><A pl="n" gnt="n">[Dd]há</A> UNLENITED</E>:OK
 <A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">[Dd]h?á</A> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 <A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">[Dd]h?á</A> <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.77 #8.e; these would be caught by "dhá+NP" below, but clearer message
 <A pl="n" gnt="n">[Dd]h?á</A> [Bb]hliana:BACHOIR{bhliain}
@@ -2345,10 +2376,8 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # The Caighdeán allows go mba / go mb' as well as gur / gurbh in the past,
 # the habitual past and the conditional (Dúirt Eoin go mba cheart é a dhíol;
 # Dhearbhaigh sé go mb'fhéimheach é; Dúirt sí go mba é leas an phobail é).
-# The original rules reported every go mba (as gur, or gurbh before a pronoun)
-# and every go mb' (as gurbh), with an exception for go mb'fhéidir / go mb'fhiú;
-# they have been removed. What 7.2.2B(b) does not allow is still reported by
-# the rules for the copula ba: lenition missing (go mba ceart) and mba before
+# So go mba and go mb' are not reported as such. What 7.2.2B(b) does not allow
+# is reported by the rules for the copula ba: lenition missing (go mba ceart) and mba before
 # a noun or adjective beginning with a vowel (use mb').
 # CB p.132 #5
 [Gg]o <VPAST>ANYTHING</VPAST>:BACHOIR{gur}
@@ -2531,12 +2560,11 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 #. Phós sí Pádraig, fear ón mBlascaod Mór, in 1982.
 ######## in before a consonant (CO17 10.6.4(a))
 # in goes before a vowel, and before a consonant in the cases listed in
-# 10.6.4(a)(i)-(iv). Upstream allows only bhur and dhá.
+# 10.6.4(a)(i)-(iv), and before bhur and dhá (below).
 <S>[Ii]n</S> INITIALCONSONANT:BACHOIR{i}
 # (i) in go leor cásanna.
 <S>[Ii]n</S> <R>[Gg]o leor</R>:OK
-# (iv) a year written in figures (in 1998; in 2017). Upstream decided by how
-# the number is read aloud, so only some years passed.
+# (iv) a year written in figures (in 1998; in 2017), however it is read aloud.
 <S>[Ii]n</S> [1-9][0-9][0-9][0-9]:OK
 # (ii) an abbreviation, taken to be any word of two or more capitals or digits
 # (in SAM; in FSS). With the article the rule for san applies instead.
@@ -2871,7 +2899,11 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # <D>[Mm]o</D> dhá UNLENITED:SEIMHIU
 # CB p.79 #13.a (implicit); but see Liz Warren's email Dec 2008
 #. Agus anois bhí mórsheisear iníonacha ag an sagart.
-<N pl="n" gnt="n" gnd="m">[Mm]h?órsheisear</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">[Mm]h?órsheisear</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">[Mm]h?órsheisear</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Mm]h?órsheisear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # exception to "lenite after fem"
@@ -3026,14 +3058,22 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <[^Y]>[Nn]aoi</[^Y]> <NP>ANYTHING</NP>:UATHA
 <[^Y]>[Nn]aoi</[^Y]> <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 <[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<[^Y]>[Nn]aoi</[^Y]> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 <[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 <[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<[^Y]>[Nn]aoi</[^Y]> <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 <[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.16 #8.c
 #. Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin.
 <N>Naomh</N> CAPITALLENITED:NISEIMHIU
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">[Nn]aonúr</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">[Nn]aonúr</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">[Nn]aonúr</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Nn]aonúr</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # CB p.132 #4 (implicit), OD nach/nár
@@ -3096,11 +3136,11 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 #. Ní iad sin do phíopaí ar an tábla!
 <V cop="y">[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH
 # (ní heo: eo and heo are tagged as pronouns in grammar/lexicon-corrections.tsv, so
-# upstream's rules for ní + pronoun cover them.)
+# the rules for ní + pronoun cover them.)
 # h missing on one of the listed words after the copula. The copula tag keeps
 # this off the noun ní, "thing" (aon ní amháin). in is left out: after ní it is
 # usually the preposition (Ní in Éirinn a rugadh é).
-<V cop="y">[Nn]í</V> <[ANR]>(áibhéil|áil|éigean|eol|ionadh|iontas|ualach|acmhainn|aitheanta|aithnid|éadáil|ealaín|amháin|aon|ionann|iondúil|amhlaidh|annamh|eagal|oircheas)</[ANR]>:PREFIXH
+<V cop="y">[Nn]í</V> <[ANR]>NIHWORDS</[ANR]>:PREFIXH
 <V cop="y">[Nn]í</V> <P>(éard|iúd)</P>:PREFIXH
 # CO17 10.11.8(c): the two proverbs.
 <V cop="y">[Nn]í</V> <N>(aithne|eolas)</N> [Gg]o haontíos:PREFIXH
@@ -3254,11 +3294,19 @@ h?[Oo]cht <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 h?[Oo]cht <NP>ANYTHING</NP>:UATHA
 h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 h?[Oo]cht <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+h?[Oo]cht <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 h?[Oo]cht <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+h?[Oo]cht <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # OD77 uaim
@@ -3521,8 +3569,12 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <A pl="n" gnt="n">[Ss]é</A> <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NISEIMHIU
 <A pl="n" gnt="n">[Ss]hé</A> <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NIDARASEIMHIU
 <A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">[Ss]h?é</A> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 <A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">[Ss]h?é</A> <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
@@ -3570,15 +3622,27 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # idiom in OD cúram
 [Ss]h?eacht <N pl="y" gnt="n" gnd="m">gcúraimí</N>:OK
 [Ss]h?eacht <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+[Ss]h?eacht <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 [Ss]h?eacht <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 [Ss]h?eacht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+[Ss]h?eacht <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 [Ss]h?eacht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">[Ss]h?eachtar</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">[Ss]h?eachtar</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">[Ss]h?eachtar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Ss]h?eachtar</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # CB p.82 #3
@@ -3797,8 +3861,12 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Pp]ingine|[Ss]
 d?[Tt]rí <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NISEIMHIU
 [Tt]hrí <N>([Bb]hliana|[Cc]hinn|[Cc]hloigne|[Cc]huarta|[Ff]hichid|[Pp]hingine|[Ss]heachtaine|[Tt]hroithe)</N>:NIDARASEIMHIU
 <A pl="n" gnt="n">d?[Tt]h?rí</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A pl="n" gnt="n">d?[Tt]h?rí</A> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 <A pl="n" gnt="n">d?[Tt]h?rí</A> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+d?[Tt]h?rí <N>SPECIALPLURAL</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>ANYTHING</A>:OK
 d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <S>[Tt]rí</S> <S>sna</S>:CAIGHDEAN{trí na}
 #   next batch needs disambiguation; "Rinne mé é trí bhliain a chaitheamh..."
@@ -3865,7 +3933,11 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 # corpus - lenited "thríthe" appears as alt tríthi in corpus!
 <N pl="y" gnt="n" gnd="m">[Tt]h?ríthe</N>:IONADAI{tríthi}
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
-<N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <NP>ANYTHING</NP>:UATHA
+# CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
+# weak plural is the same as the nominative plural (triúr bádóirí). So only a plural
+# with no genitive plural reading (triúr fir) is reported; the tagger gives the
+# genitive plural reading where there is one (grammar/aonchiall-ga.in).
+<N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <N pl="y" gnt="n">ANYTHING</N>:UATHA
 <N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # "a thuille" handled by NOSUBJ rule!
@@ -4184,8 +4256,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <S>[Ii]</S> <E><N>ECLIPSED</N></E>:OK
 [Cc]á|[Gg]o <E><N pl="n" gnt="n" gnd="m">bh[Ff]ios</N></E>:OK
 ######## Eclipsis after the preposition go in set phrases (CO17 10.6.4(b))
-# ga.py 10.6.4.b: go bhfios, go gcuimhin, go ndíth. Upstream allows only
-# go bhfios.
+# ga.py 10.6.4.b: go bhfios (above), go gcuimhin, go ndíth.
 [Gg]o <E><N>(n[Dd]íth|g[Cc]uimhin)</N></E>:OK
 <D>([Aa]|[Áá]r|[Bb]hur)</D> <A pl="n" gnt="n">[Dd]há</A> <E><N>ECLIPSED</N></E>:OK
 # numbers sometimes tagged as "<N>" so leave like this
@@ -4219,7 +4290,7 @@ MAYBEECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 <A pl="n" gnt="n" h="y">ANYTHING</A>:NIAITCH
 # The words in the list take h after the copula, whether tagged as adjective
 # or noun (CO17 10.11.8(a), (b), Table 10E; 10.12.2).
-<V cop="y">[Nn]í</V> <E><A pl="n" gnt="n" h="y">(háibhéil|háil|héigean|heol|hionadh|hiontas|hualach|hacmhainn|haitheanta|haithnid|héadáil|healaín|hamháin|haon|hionann|hiondúil|hamhlaidh|hannamh|heagal|hoircheas)</A></E>:OK
+<V cop="y">[Nn]í</V> <E><A pl="n" gnt="n" h="y">hNIHWORDS</A></E>:OK
 # CB p.24 #11.b
 #. Dún do bhéal, a mhiúil na haon chloiche (OK)!
 <T>[Nn]a</T> <E><A pl="n" gnt="n" h="y">(haon|hocht)</A></E>:OK
@@ -4247,7 +4318,7 @@ MAYBEECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 [Cc]é|[Nn]í|[Ll]e|[Pp]é <E><PWITHH>ANYTHING</PWITHH></E>:OK
 #. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
 <NWITHH>ANYTHING</NWITHH>:NIAITCH
-<V cop="y">[Nn]í</V> <E><NWITHH>(háibhéil|háil|héigean|heol|hionadh|hiontas|hualach|hacmhainn|haitheanta|haithnid|héadáil|healaín|hamháin|haon|hionann|hiondúil|hamhlaidh|hannamh|heagal|hoircheas)</NWITHH></E>:OK
+<V cop="y">[Nn]í</V> <E><NWITHH>hNIHWORDS</NWITHH></E>:OK
 # CO17 Table 10E: ní huair chairde í. Only in this phrase does uair take h.
 <V cop="y">[Nn]í</V> <E><NWITHH>huair</NWITHH></E> <N>chairde</N>:OK
 # "Dé hAoine" now in comhshuite
@@ -4371,6 +4442,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 [Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <VDEE>INITIALDAPOST</VDEE>:NIDEE
 #############################################################################
 <A>TWOTONINETEEN</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
+<A>TWOTONINETEEN</A> <N>SPECIALPLURAL</N> <A>ANYTHING</A>:OK
 <A>TWOTONINETEEN</A> <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 #  NISEIMHIU and exceptions for adjectives
 #  Note exceptions are too broad (any preceding copula e.g.) so there
@@ -4408,11 +4481,11 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 ######## dá and a with the comparative form of an adjective (CO17 4.8.3)
 # Dá chríonna é, ...; Dá oilte é, ...; Ní chreidfeá a uaigní a bhí an áit;
 # B'aoibhinn liom a bhinne a labhair sí. dá lenites the adjective (dá
-# ghránna), and so does a. Upstream reads dá as the preposition and the
+# ghránna), and so does a. The tagger reads dá as the preposition and the
 # comparative as a genitive. The exceptions require what follows in the
 # construction (é/í/iad, an article, or a + verb), to keep them off other uses
 # of dá and of the possessive a.
-# The lenited adjective, after dá (upstream already allows it after a).
+# The lenited adjective, after dá (after a, the possessive allows it).
 <S>[Dd]á</S> <E><A>LENITED</A></E> <P>ANYTHING</P>:OK
 <S>[Dd]á</S> <E><A>LENITED</A></E> <T>ANYTHING</T>:OK
 <S>[Dd]á</S> <E><A>LENITED</A></E> <U>[Aa]</U> <V>ANYTHING</V>:OK
@@ -4423,7 +4496,17 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:
 # AFTERFEMNAME (see tools/generate-rules.mjs): after a feminine singular noun and
 # a capitalised unknown word, which keeps its own message.
 AFTERFEMNAME <E><A>LENITED</A></E>:OK
-######## Lenited adjectives that upstream reports as unnecessary lenition (CO17 4.2-4.4)
+# CO17 9.3.3(b), (c): after a number, the adjective is plural and lenited, and comes
+# after déag (aon leabhar déag mhóra; sé chat crainn déag mhóra).
+[Dd]h?éag <E><A>LENITED</A></E>:OK
+# CO17 9.3.8, 9.3.12: the same with a number in figures ending in 2-9 (22 bhád mhóra).
+<A>[0-9]*[2-9]</A> <N>ANYTHING</N> <E><A pl="y" gnt="n">LENITED</A></E>:OK
+# CO17 9.4.2(c): after beirt, the adjective is plural and lenited (beirt mhisniúla).
+<N>m?[Bb]h?eirt</N> <E><A pl="y" gnt="n">LENITED</A></E>:OK
+# CO17 9.6.1(e)(iii), 9.6.3: fractions are counted as nouns, so the denominator (an
+# ordinal form, in -ú) is lenited after 2-6 (cúig cheathrú; ceithre sheachtú).
+d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Dd]h?á <E><A>[CcDdFfGgMmPpSsTt]hANYTHINGú</A></E>:OK
+######## Adjectives that are lenited (CO17 4.2-4.4)
 # The masculine vocative: the adjective is lenited, in the genitive form if that
 # differs (a fhir bhig; a pheileadóir chlúitigh; a óstóir fhlaithiúil: 4.2.2(a)(i),
 # 4.4.2, Tábla 4D). The vocative a is tagged as the possessive, so a vocative is
@@ -4432,7 +4515,7 @@ AFTERFEMNAME <E><A>LENITED</A></E>:OK
 CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A></E>:OK
 # A woman's name in the genitive: the adjective is lenited and not inflected
 # (teach Mháire Mhór: 4.3.4). Taken to be a capitalised feminine genitive with
-# no article; upstream allows the same after a name tagged as one (Bríd bheag).
+# no article. (A name tagged as one is allowed above: Bríd bheag.)
 <N pl="n" gnt="y" gnd="f">[A-ZÁÉÍÓÚ]ANYTHING</N> <E><A>LENITED</A></E>:OK
 # ailt is singular or plural; the tagger prefers the singular, so after it a
 # plural adjective, which is lenited after this slender plural (4.2.5), is
@@ -4445,23 +4528,23 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 #. Tá dún cosanta eile ar an taobh thoir den oileán (OK).
 #. Déan teagmháil leis an Rannóg ag an seoladh thuasluaite (OK).
 <A>([Dd]há|[Cc]héad|[Tt]heas|[Tt]hoir|[Tt]huasluaite|[Tt]híosluaite)</A>:OK
+# CO17 9.5.1(c): céad (an chéad) lenites what follows, a number too (na chéad cheithre
+# ghloine). After the line above, which clears chéad's own mark first.
+<A>[Cc]h?éad</A> <E><A>LENITED</A></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>([Tt]hrí|[Cc]heithre|[Cc]húig|[Ss]hé|[Ss]heacht|[Dd]heich)</A></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>ORDINALADJ</A></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>[Dd]hara</A></E>:OK
 # next three rules handle nouns preceded by 2-19
-<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|h?[Oo]cht|n?[Dd]h?eich)</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
-<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|h?[Oo]cht|n?[Dd]h?eich)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|h?[Oo]cht|[Nn]aoi|n?[Dd]h?eich)</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|h?[Oo]cht|[Nn]aoi|n?[Dd]h?eich)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
 <A>TWOTONINETEEN</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
 ######## Adjective lenited after a singular noun preceded by trí to deich (CO17 10.3.1(d)(ii))
-# ga.py 10.3.1.d.ii. Upstream has this rule, but only when the number is
-# tagged as one; trí is often tagged as the preposition. Under that reading a
+# ga.py 10.3.1.d.ii. The rules above need the number tagged as one; trí is
+# often tagged as the preposition. Under that reading a
 # lenited adjective after a masculine noun is the dative of Córas an
 # tSéimhithe (CO17 10.3.1(e)), so it is allowed either way.
 <S>d?[Tt]h?rí</S> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
 <S>d?[Tt]h?rí</S> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
-# Upstream's list of numbers leaves out naoi (naoi mbád bheaga).
-<A>[Nn]aoi</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
-<A>[Nn]aoi</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
 <R>NIBS</R> <E><A pl="n" gnt="y" gnd="f">ANYTHING</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">dhó</A></E>:OK
 # should be just <A pl="y" gnt="n"> in this exception but 
@@ -4497,6 +4580,10 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 # chur chuige; d'ainneoin an chéim ar gcúl). In the nominative (Rinne sé an chur
 # síos) it is still reported.
 <[NS]>ANYTHING</[NS]> <E><T>[Aa]n</T> <NMCS>VNUNIT</NMCS></E>:OK
+# CO17 9.4.3(b)(iv), 9.3.9(e): after a noun, an personal number or a ten in the
+# genitive is lenited by the article as a masculine genitive (torthaí an cheathrar
+# scoláirí; costas an chaoga císte milis).
+<N>ANYTHING</N> <E><T>[Aa]n</T> <NMCS>(cheathrar|chúigear|chaoga|cheathracha)</NMCS></E>:OK
 <S>([Aa][grs]|[Cc]huig|[Ii]onsar|[Ll]eis|[Rr]oimh|[Tt]har|[Tt]ríd|[Uu]m)</S> <E><T>[Aa]n</T> <NMCS>LENITED</NMCS></E>:OK
 <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Mm]heán</N></E> <NG>([Ll]ae|[Oo]íche)</NG>:OK
 # CB; "baile dhúchais" bad
@@ -4565,7 +4652,7 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 <S>[Ll]e</S> <A pl="n" gnt="n">(fada|gairid)</A>:OK
 <S>[Ll]e</S> <A pl="n" gnt="n" h="y">(haon|hocht)</A>:OK
 # ... and missing lenition, which that exception would otherwise let through
-# (Dá críonna é). Numbers are left out, as in upstream's exceptions above.
+# (Dá críonna é). Numbers are left out, as in the exceptions above.
 <S>[Dd]á</S> <A>UNLENITED</A>:SEIMHIU
 <S>[Dd]á</S> <A pl="n" gnt="n">(d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?eacht|n?[Dd]h?eich|g?[Cc]h?éad|[Mm]h?íle)</A>:OK
 #. Abairt a chuireann in iúl dearóile na hÉireann sa 18ú agus sa 19ú haois.

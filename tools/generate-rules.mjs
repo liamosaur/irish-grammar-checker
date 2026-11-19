@@ -1,8 +1,8 @@
-// Rebuilds the rule set, mirroring what upstream's Makefile-xx.in does
+// Rebuilds the rule set, mirroring what An Gramadóir's Makefile-xx.in does
 // (github.com/kscanne/gramadoir), then extracts it to JSON for the TS engine.
 // The rule files themselves (rialacha, aonchiall, comhshuite) and the macros are
-// our modified copies in grammar/; everything else (compiler scripts, tagset,
-// giorr, unigram) comes from the upstream checkout.
+// in grammar/; everything else (compiler scripts, tagset, giorr, unigram) comes
+// from the An Gramadóir checkout.
 //
 // Perl is only needed here, at data-build time (the original rule "compiler" is a
 // chain of small Perl filter scripts). The runtime engine never uses Perl.
@@ -35,9 +35,8 @@ const attrtags = [
   ...new Set(read('ga/pos-ga.txt').split('\n').filter((l) => /<[A-Z] /.test(l)).map((l) => l.replace(/^[0-9]* <([A-Z]).*/, '$1'))),
 ].sort().join('');
 
-// The rule files we maintain: grammar/<name>-ga.in, our modified copies of upstream's
-// ga/<name>-ga.in (UTF-8 here; the compiler works in Latin-1). tools/upstream-diff.mjs
-// shows how they differ from the upstream checkout.
+// The rule files: grammar/<name>-ga.in (UTF-8; the compiler works in Latin-1).
+// tools/upstream-diff.mjs lists the changes since the An Gramadóir commit they came from.
 function readGrammar(name) {
   const file = path.join(here, '..', 'grammar', `${name}-ga.in`);
   const s = fs.readFileSync(file, 'utf8').replace(/\r/g, '');
@@ -46,7 +45,7 @@ function readGrammar(name) {
   return s;
 }
 
-// The macros (grammar/macra-ga.meta.pl, our modified copy of upstream's): a Perl
+// The macros (grammar/macra-ga.meta.pl): a Perl
 // script with Latin-1 characters in its patterns, kept in UTF-8, so a Latin-1 copy is
 // what Perl runs.
 const macraSrc = fs.readFileSync(path.join(here, '..', 'grammar', 'macra-ga.meta.pl'), 'utf8').replace(/\r/g, '');
@@ -104,8 +103,8 @@ execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.
 // CLAUSEEND, written as the last word of a local rule, matches the end of a
 // clause: punctuation straight after the previous word, or the end of the
 // sentence. CLAUSESTART, written as the first word, matches the start of one:
-// the start of the sentence, or punctuation before the next word. Upstream's
-// rule syntax cannot say this (gin turns every "(" into "(?:", so no lookahead
+// the start of the sentence, or punctuation before the next word. The rule
+// syntax cannot say this (gin turns every "(" into "(?:", so no lookahead
 // or lookbehind), so the compiled word is replaced by one here.
 // AFTERFEMNAME, also a first word, matches after a feminine singular noun and a
 // capitalised unknown word (a trade name: sa scarbhileog Excel chéanna). The
