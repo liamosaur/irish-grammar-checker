@@ -88,7 +88,15 @@ m?[Bb]h?eirt|g?[Cc]h?eathrar|g?[Cc]h?úigear|n?[Dd]h?áréag|n?[Dd]h?eichniúr|[
 # nominative, whether or not its genitive has the same spelling. Before a + verb
 # (le linn an chluiche a bhí ann) the a is the relative particle and this does
 # not apply. (an and a are matched as words: they are still ambiguous here.)
+# After a preposition this holds only for one that governs such a clause (VNCLAUSEPREP), also with
+# words between the noun and a + the verbal noun (an Comhaontú seo a shíniú; na gnéithe sonracha a
+# bhaineann le headráin a bhreithniú): VNLATER in tools/generate-rules.mjs. After another compound
+# preposition the noun is the genitive (Maoin de chuid an Aire a aistriú: the object is Maoin).
+<S>VNCLAUSEPREP</S> [Aa]n <B><Z>ANYNMC</Z>ANYTHING</B> VNLATER:<N pl="n" gnt="n" gnd="m">
+<S>(COMPOUND|GENITIVEPREP)</S> [Aa]n <B><Z>ANYNMG</Z>ANYTHING</B> [Aa] VERBALNOUN:<N pl="n" gnt="y" gnd="m">
 [Aa]n <B><Z>ANYNMC</Z>ANYTHING</B> [Aa] <N>ANYTHING</N>:<N pl="n" gnt="n" gnd="m">
+<S>VNCLAUSEPREP</S> [Nn]a <B><Z>ANYNMPL</Z>ANYTHING</B> VNLATER:<N pl="y" gnt="n" gnd="m">
+<S>VNCLAUSEPREP</S> [Nn]a <B><Z>ANYNFPL</Z>ANYTHING</B> VNLATER:<N pl="y" gnt="n" gnd="f">
 # CO17 9.3.9(a), (d): after a multiple of ten the noun is the nominative singular,
 # with no initial mutation, in the genitive too (caoga císte milis; costas an
 # chaoga císte milis).
@@ -237,6 +245,9 @@ DECADE <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 [Aa]n <B>[Cc]héanna</B>:<N pl="n" gnt="y" gnd="m">
 [Aa]n <B>[Cc]éanna</B>:<N pl="n" gnt="n" gnd="m">
 <NMGS>ANYTHING</NMGS> <B>[Cc]h?éanna</B>:<A pl="n" gnt="y" gnd="m">
+# also before that noun is settled: after a compound preposition and an, a lenited noun is the
+# masculine genitive (de réir an phróisis chéanna)
+<S>COMPOUND</S> [Aa]n LENITED <B>[Cc]h?éanna</B>:<A pl="n" gnt="y" gnd="m">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # "dhó" is an exception to next, sometimes means "burning"
 a|á <B>dhó</B>:<N pl="n" gnt="n" gnd="m">
@@ -550,6 +561,8 @@ CLAUSESTART <B>[Ss]é</B> <N>ANYTHING</N>:<A pl="n" gnt="n">
 # Aire, aire; first one needs <S> resolved (leis, etc)
 # but do it before the <S> ANYNMC rule below!
 [Aa]r <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
+# a compound preposition, and those like it, take the genitive (de chuid an Aire, faoi bhráid an Aire)
+<S>(COMPOUND|GENITIVEPREP)</S> <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
 <S>ANYTHING</S> <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
 <B>Aire</B>:<N pl="n" gnt="n" gnd="m">

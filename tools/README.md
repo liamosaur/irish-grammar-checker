@@ -20,7 +20,7 @@ Perl is needed for the first step only (it runs the original rule generators).
 node tools/generate-rules.mjs .sources/gramadoir data
 node tools/build-data.mjs .sources/lingua-0.70/Lingua-GA-Gramadoir-0.70 data --upstream .sources/gramadoir
 node tools/overlay-bunamo.mjs .sources/bunamo/repo .sources/gramadoir data data --rare keep --decisions data/overlay-decisions.tsv --reports <dir>
-node tools/build-forms.mjs .sources/bunamo/repo data
+node tools/build-forms.mjs .sources/bunamo/repo data   # forms.json and verbal-nouns.json
 ```
 
 This reproduces the committed files exactly.
@@ -33,8 +33,10 @@ a word's possible tags), `comhshuite-ga.in` (phrases tagged as one word) and
 Gramadóir checkout. The rules follow *An Caighdeán Oifigiúil* (2017);
 `node tools/upstream-diff.mjs .sources/gramadoir` lists the changes since the
 An Gramadóir commit they came from. Rules can also use `CLAUSESTART`,
-`AFTERFEMNAME`, `AFTERMANNERNOUN` (first word) and `CLAUSEEND` (last word), which the rule
-compiler cannot express; see `generate-rules.mjs`. Also in `grammar/`:
+`AFTERFEMNAME`, `AFTERMANNERNOUN` (first word), `CLAUSEEND` and `VNLATER` (last word), which the rule
+compiler cannot express; see `generate-rules.mjs`. `VERBALNOUN` is a word that matches a verbal
+noun: `src/engine.ts` fills it in when the rules load, from `data/verbal-nouns.json` (BuNaMo, ODbL)
+and `data/verbal-nouns-extra.json` (built from `grammar/verbal-nouns.tsv`, verbal nouns BuNaMo lacks). Also in `grammar/`:
 `morph-ga.txt`, the morphology rules (read by `build-data.mjs`; level -2, not in
 An Gramadóir 0.70, marks a regular inflection such as an emphatic suffix, which
 `src/engine.ts` accepts without a message for a word not in the word list);
@@ -79,6 +81,15 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   (e.g. *Ní hamháin*, *in 1982*, *mórsheisear iníonacha*, and *ag an tsiopa*, the
   dative of Córas an tSéimhithe), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
 - `browser-smoke.mjs`: checks a sentence in the built site in headless Edge or Chrome.
+
+## Searching published Irish
+
+`gaois-corpus.mjs` builds a local search corpus from the Gaois parallel corpus of Irish
+legislation (the TMX files from <https://www.gaois.ie/en/corpora/parallel/data/>, unzipped under
+`.sources/gaois/raw`): `extract` writes every Irish segment once to a TSV, and `search` counts
+the segments a regular expression matches, by period (before 1958, 1958-2011, 2012 on; most texts
+predate the current standard), with examples. It is for evidence of usage, not test data: the
+texts are copyright Government of Ireland and are not copied into the repository.
 
 ## Derived error sentences for review
 

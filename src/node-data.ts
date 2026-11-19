@@ -41,6 +41,8 @@ export function loadData(dataDir: string, fallbackDir?: string, options: LoadOpt
     grams: j('grams.json'),
     nocombo: j('nocombo.json'),
     messages: j('messages.json'),
+    // BuNaMo's verbal nouns (ODbL, a separate file) and our additions (grammar/verbal-nouns.tsv)
+    verbalNouns: [...j('verbal-nouns.json'), ...j('verbal-nouns-extra.json')],
     rules: {
       aonchiall: j('rules/aonchiall.json'),
       comhshuite: j('rules/comhshuite.json'),

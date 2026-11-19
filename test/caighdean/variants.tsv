@@ -1129,7 +1129,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	h-	hoibre → oibre	na	Bhí scíth coicíse de dhíth uirthi tar éis na oibre.	Bhí scíth coicíse de dhíth uirthi tar éis na hoibre.	10	10.2.7	178	45	flagged:PREFIXH
 	h-	hoibre → oibre	na	Sin é an ríomhaire a n-úsáideann an bhean é le haghaidh na oibre.	Sin é an ríomhaire a n-úsáideann an bhean é le haghaidh na hoibre.	11	11.7.2(b)	213	59	flagged:PREFIXH
 	h-	hoibreacha → oibreacha	na	do na oibreacha	do na hoibreacha	1	1.6.2	14	6	flagged:PREFIXH
-	h-	hoibrithe → oibrithe	na	Is le linn na oibrithe a fhostú a tháinig an cheist sin chun cinn.	Is le linn na hoibrithe a fhostú a tháinig an cheist sin chun cinn.	3	3.3.2	45	14	flagged:URU
+	h-	hoibrithe → oibrithe	na	Is le linn na oibrithe a fhostú a tháinig an cheist sin chun cinn.	Is le linn na hoibrithe a fhostú a tháinig an cheist sin chun cinn.	3	3.3.2	45	14	flagged:PREFIXH
 	h-	hoifige → oifige	na	Ar labhair tú le bainisteoir na oifige?	Ar labhair tú le bainisteoir na hoifige?	3	3.3.1	44	32	flagged:PREFIXH
 	h-	hoifige → oifige	na	Briseadh ríomhaire de chuid na oifige.	Briseadh ríomhaire de chuid na hoifige.	3	3.1.10	40	31	flagged:PREFIXH
 	h-	hoifige → oifige	na	ceann de ríomhairí na oifige	ceann de ríomhairí na hoifige	3	3.1.11	41	22	flagged:PREFIXH
@@ -2186,7 +2186,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chur → cur	a	Tá siad ag moladh a cur chuige ó mhínigh sé dóibh é.	Tá siad ag moladh a chur chuige ó mhínigh sé dóibh é.	3	3.3.1	45	20	-
 	lenition	chur → cur	a	Teastaíonn uathu cláir nua-aimseartha a cur in ionad seanchláir gan mhaith.	Teastaíonn uathu cláir nua-aimseartha a chur in ionad seanchláir gan mhaith.	3	3.3.10	52	40	-
 	lenition	chur → cur	a	Bhí orthu an fhéile a cur ar siúl ag deireadh an tsamhraidh fhliuch.	Bhí orthu an fhéile a chur ar siúl ag deireadh an tsamhraidh fhliuch.	4	4.4.1	60	22	-
-	lenition	chur → cur	a	Luadh an dáta faoinarbh fhéidir litir a cur faoi bhráid an Aire.	Luadh an dáta faoinarbh fhéidir litir a chur faoi bhráid an Aire.	7	7.3.2	127	40	other:GENITIVE
+	lenition	chur → cur	a	Luadh an dáta faoinarbh fhéidir litir a cur faoi bhráid an Aire.	Luadh an dáta faoinarbh fhéidir litir a chur faoi bhráid an Aire.	7	7.3.2	127	40	-
 	lenition	chur → cur	a	Ní mór doirse an dá theach bheaga a cur faoi ghlas.	Ní mór doirse an dá theach bheaga a chur faoi ghlas.	10	10.3.1	183	36	-
 	lenition	chur → cur	a	Ní mór lipéid shothuigthe a cur ar earraí glantacháin.	Ní mór lipéid shothuigthe a chur ar earraí glantacháin.	10	10.3.1	183	28	-
 	lenition	chur → cur	a	Níl a fhios aici conas cnaipe a cur ar chóta.	Níl a fhios aici conas cnaipe a chur ar chóta.	10	10.2.5	173	32	-

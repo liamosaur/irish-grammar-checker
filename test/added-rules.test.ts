@@ -166,6 +166,12 @@ const cases: Case[] = [
   { section: '5.5', text: 'Bhí sé ag moladh mé.', rule: 'BACHOIR', words: 'ag moladh mé', fixed: null },
   // a doubled direction outside a compass point (Tábla 6C)
   { section: 'Tábla 6C', text: 'Chuaigh sé siar siar.', rule: 'DUBAILTE', words: 'siar siar', fixed: 'Chuaigh sé siar.' },
+  // the genitive after tar éis / le linn when no verbal noun follows the noun in its clause (3.3.2(a))
+  { section: '3.3.2(a)', text: 'Tháinig sé abhaile tar éis an cruinniú, agus é ag iarraidh dul a chodladh.', rule: 'SEIMHIU', words: 'an cruinniú', fixed: 'Tháinig sé abhaile tar éis an chruinniú, agus é ag iarraidh dul a chodladh.' },
+  { section: '3.3.2(a)', text: 'Bhí sé ag caint le linn an cluiche a bhí ar siúl.', rule: 'SEIMHIU', words: 'an cluiche', fixed: 'Bhí sé ag caint le linn an chluiche a bhí ar siúl.' },
+  // a + verbal noun after a compound preposition that does not govern such a clause: the object
+  // is the noun before it, and the noun after the preposition is still the genitive
+  { section: '3.3.2(a)', text: 'Maoin de chuid an rialtas a aistriú.', rule: 'GENITIVE', words: 'de chuid an rialtas', fixed: null },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];
@@ -287,6 +293,16 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Bhí an long sí ar an bhfarraige.', note: 'sí the noun after the article and a noun (10.2.7)' },
   { text: 'An bhfuil sé ann?', note: 'interrogative an and an eclipsed verb before a pronoun' },
   { text: 'Tá sé siar siar ó thuaidh.', note: 'a compass point between west and north-west (Tábla 6C)' },
+  { text: "D'imigh sé tar éis an cinneadh sin a dhéanamh.", note: 'object of a verbal noun with sin between (3.3.2(a))' },
+  { text: 'Bhí sé ann le linn an cluiche mór a imirt.', note: 'object of a verbal noun with an adjective between (3.3.2(a))' },
+  { text: 'Tháinig sé isteach tar éis an toiliú deireanach ón mbord a thabhairt.', note: 'object of a verbal noun further back in its clause (3.3.2(a))' },
+  { text: 'Cuireadh an tuarascáil faoi bhráid an Aire.', note: 'Aire, the same in the genitive, after a compound preposition' },
+  { text: 'Rinneadh é de réir an phróisis chéanna.', note: 'céanna in the genitive after a lenited masculine genitive' },
+  { text: 'Tháinig siad tar éis an obair a dhéanamh inné.', note: 'object of a verbal noun, with more words after it (3.3.2(a))' },
+  { text: 'Íocfar é i gcás an foras sin a bheith dúnta.', note: 'i gcás governs a verbal-noun clause (3.3.2(a))' },
+  { text: "D'fhan sé in ionad an comhchoiste a bheith ann.", note: 'in ionad governs a verbal-noun clause (3.3.2(a))' },
+  { text: "Leanfaidh sé d'ainneoin an comhlacht a dhíscaoileadh.", note: "d'ainneoin governs a verbal-noun clause (3.3.2(a))" },
+  { text: 'Tháinig sé i ndiaidh an fógra sin a thabhairt.', note: 'i ndiaidh governs a verbal-noun clause (3.3.2(a))' },
 ];
 
 let engine: Gramadoir | undefined;

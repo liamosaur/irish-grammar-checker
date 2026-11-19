@@ -1,5 +1,7 @@
 // Builds data/forms.json from a BuNaMo checkout: for each noun its nominative and genitive,
 // singular and plural; for each adjective its nominative, masculine/feminine genitive and plural.
+// Also data/verbal-nouns.json: the verbal noun of each verb (the tag set has no verbal-noun tag,
+// so rules that need one use this list: the VERBALNOUN placeholder, src/engine.ts).
 // The engine's lexicon says what case a word form is in but not which words belong together,
 // and the web page needs that to offer "the genitive of doras is dorais".
 //
@@ -46,8 +48,13 @@ for (const xml of read('adjective')) {
   adjectives.add([sgNom, values(xml, 'sgGenMasc'), values(xml, 'sgGenFem'), values(xml, 'plNom')].map((v) => v.join(',')).join('|'));
 }
 
+const verbalNouns = new Set();
+for (const xml of read('verb')) for (const v of values(xml, 'verbalNoun')) verbalNouns.add(v);
+
 const out = { n: [...nouns].sort(), a: [...adjectives].sort() };
 fs.mkdirSync(outDir, { recursive: true });
 const json = JSON.stringify(out);
 fs.writeFileSync(path.join(outDir, 'forms.json'), json);
 console.log(`nouns ${out.n.length}, adjectives ${out.a.length}, ${(json.length / 1024).toFixed(0)} KB (${(zlib.gzipSync(json).length / 1024).toFixed(0)} KB gzipped)`);
+fs.writeFileSync(path.join(outDir, 'verbal-nouns.json'), JSON.stringify([...verbalNouns].sort()));
+console.log(`verbal nouns ${verbalNouns.size}`);

@@ -4,7 +4,7 @@
 // All text inside the engine is "Latin-1 safe": every UTF-16 unit is < 256,
 // matching the Perl engine which transcodes input to iso-8859-1.
 
-import type { GramadoirData, GrammarError, MorphRuleJson } from './types.ts';
+import type { GramadoirData, GrammarError, MorphRuleJson, RuleJson } from './types.ts';
 import { keepMinority, markDatives } from './datives.ts';
 import { applyRules, compileRule, type CompiledRule } from './rules.ts';
 
@@ -125,10 +125,11 @@ export class Gramadoir {
     this.puremorph = this.morph.filter((m) => m.src.level === -1);
     this.inflect = this.morph.filter((m) => m.src.level === -2);
     this.messages = data.messages;
-    this.aonchiall = data.rules.aonchiall.map(compileRule);
+    const vn = withVerbalNouns(data.verbalNouns ?? []);
+    this.aonchiall = data.rules.aonchiall.map(vn).map(compileRule);
     this.comhshuite = data.rules.comhshuite.map(compileRule);
     this.giorr = data.rules.giorr.map(compileRule);
-    this.rialacha = data.rules.rialacha.map(compileRule);
+    this.rialacha = data.rules.rialacha.map(vn).map(compileRule);
     this.unigram = data.rules.unigram.map(compileRule);
   }
 
@@ -667,6 +668,27 @@ export class Gramadoir {
 }
 
 // ---------------------------------------------------------------- helpers
+
+/**
+ * The rule with the VERBALNOUN placeholder (a word in grammar/*.in) replaced by the verbal nouns,
+ * unmutated and lenited (a dhéanamh, a shíniú). The word list cannot say which nouns are verbal
+ * nouns, so the list comes from BuNaMo (data/verbal-nouns.json) and is joined in here, at load.
+ */
+function withVerbalNouns(words: string[]): (rule: RuleJson) => RuleJson {
+  const forms = new Set<string>();
+  for (const w of words) {
+    forms.add(w);
+    if (/^([bcdfgmpt][^h]|s[aeiouáéíóúlnr])/.test(w)) forms.add(`${w[0]}h${w.slice(1)}`);
+  }
+  const esc = [...forms].map((w) => toLatin1(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).sort((a, b) => b.length - a.length);
+  const alt = esc.length ? `(?:${esc.join('|')})` : '(?!)';
+  const fix = (r: RuleJson): RuleJson => ({
+    ...r,
+    re: r.re.includes('VERBALNOUN') ? r.re.split('VERBALNOUN').join(alt) : r.re,
+    ...(r.then ? { then: r.then.map(fix) } : {}),
+  });
+  return fix;
+}
 
 /** Perl's split /sep/, str: trailing empty fields removed, leading kept. */
 function perlSplit(s: string, sep: string): string[] {

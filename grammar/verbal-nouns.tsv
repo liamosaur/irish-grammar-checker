@@ -1,0 +1,3 @@
+# Verbal nouns the BuNaMo list (data/verbal-nouns.json) lacks, for the VERBALNOUN placeholder
+# in the rules. One per line, tab-separated: the verbal noun (unmutated) and the source (a
+# dictionary entry or CO17 section). Built into data/verbal-nouns-extra.json by tools/build-data.mjs.

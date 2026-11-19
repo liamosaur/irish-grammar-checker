@@ -42,6 +42,14 @@ s/COMPOUND/[^< ]+ [^<]+/g;
 s/SYNTHPAST/[^<]+[md]ar/g;
 # d'ainneoin added: it takes the genitive (CO17 3.3.2(b): D'ainneoin na Coda sin).
 s/ALLGENITIVEPREPS/(?:[Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna|[Dd]'ainneoin)/g;
+# Prepositions that govern a clause with a verbal noun, the object of which stays nominative
+# (CO17 3.3.2(a), Tábla 3A: chun an obair a dhéanamh, tar éis dinnéar a réiteach, le linn na
+# hoibrithe a fhostú, ar tí na doirse a dhúnadh, i mbun an teach a thógáil). Also those the
+# legislation translations use so (i ndiaidh an fógra sin a thabhairt, d'fhonn an cúiteamh a
+# fháil, i gcás an foras a bheith, in ionad an comhchoiste a bheith, d'ainneoin an comhlucht a
+# dhíscaoileadh); not de chuid, faoi bhráid, i leith, i dtaobh, de réir, os comhair, which keep
+# the genitive there.
+s/VNCLAUSEPREP/(?:[Tt]ar éis|[Cc]hun|[Ll]e linn|[Aa]r tí|[Ii] mbun|[Ii] ndiaidh|[Dd]'fhonn|[Ii] gcás|[Ii]n ionad|[Dd]'ainneoin)/g;
 s/GENITIVEPREP/(?:[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
 s/IRREGULARPAST/(?:raibh|dtáinig|dtug|ndearnadh|gcuala|bhfuair)/g;
 # separate fuarthas to avoid "fuaraíodh", etc.

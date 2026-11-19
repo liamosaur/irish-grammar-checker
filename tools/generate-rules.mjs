@@ -112,8 +112,19 @@ execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.
 // error mark it matches, so the context has to sit outside the match.
 // AFTERMANNERNOUN, a first word, matches after one of the nouns of CO17 11.3.1(h)
 // (áit, bealach, caoi, cúis, dóigh, fáth, réasún, slí, treo), kept out of the mark.
+// VNLATER, a last word, matches when a + a verbal noun follows in the same clause, at most 10
+// words on (CO17 3.3.2(a): tar éis an Coinbhinsiún seo a shíniú; le linn an tseirbhís ar mhaithe
+// leis an leas eacnamaíoch i gcoitinne a oibriú). No punctuation and no personal verb in between;
+// VERBALNOUN is the list of verbal nouns the engine fills in at load (src/engine.ts).
 const CLAUSEEND_WORD = ' <[A-DF-Z][^>]*>CLAUSEEND</[A-DF-Z]>';
 const CLAUSEEND_RE = '(?=[.,;:!?)"\']| </line>)'; // the checker sees curly quotes folded to ASCII
+const TOKEN = '(?:<E[^>]*>)?(?:<(?!V p=)[A-DF-Z][^>]*>[^<]+</[A-DF-Z]>|<B><Z>(?:<[^>]+>)+</Z>[^<]+</B>)(?:</E>)?';
+const WORD = (w) => `(?:<E[^>]*>)?(?:<[A-DF-Z][^>]*>|<B><Z>(?:<[^>]+>)+</Z>)${w}</[A-DF-Z]>(?:</E>)?`;
+// The verbal noun: a noun, or a word still ambiguous with a noun reading, not a finite verb (nuair a
+// theip: teip is also a verbal noun).
+const VNWORD = '(?:<E[^>]*>)?(?:<N[^>]*>|<B><Z>(?:<[^>]+>)*<N[^>]*>(?:<[^>]+>)*</Z>)VERBALNOUN</[A-DF-Z]>(?:</E>)?';
+const VNLATER_RE = `(?=(?: ${TOKEN}){0,10} ${WORD('[Aa]')} ${VNWORD})`;
+const VNLATER_WORDS = [' <[A-DF-Z][^>]*>VNLATER</[A-DF-Z]>', ' (?:<[/A-DF-Z][^>]*>)+VNLATER</[A-DF-Z]>'];
 // The word as compiled in rialacha, and in aonchiall (where a word may still carry
 // several tags).
 const startWords = (w) => [`<[A-DF-Z][^>]*>${w}</[A-DF-Z]> `, `(?:<[/A-DF-Z][^>]*>)+${w}</[A-DF-Z]> `];
@@ -134,6 +145,14 @@ for (const name of ['rialacha', 'aonchiall']) {
       r.re = parts[0] + CLAUSEEND_RE + parts[1];
       n++;
     }
+    if (typeof r.re === 'string' && r.re.includes('VNLATER')) {
+      const word = VNLATER_WORDS.find((w) => r.re.includes(w));
+      const parts = word ? r.re.split(word) : [];
+      // rialacha: the match closes with ')' (and '(?![<>])'); aonchiall: the context group closes with ')'.
+      if (parts.length !== 2 || !/^\)(\(\?!\[<>\]\))?$/.test(parts[1])) throw new Error(`${name}: VNLATER must be the last word of a rule: ${r.re}`);
+      r.re = parts[0] + VNLATER_RE + parts[1];
+      n++;
+    }
     for (const [start, lookbehind] of Object.entries(STARTS)) {
       if (typeof r.re !== 'string' || !r.re.includes(start)) continue;
       const word = startWords(start).find((w) => r.re.includes(w)) ?? startWords(start)[0];
@@ -148,6 +167,6 @@ for (const name of ['rialacha', 'aonchiall']) {
   fix(rules);
   if (n) {
     fs.writeFileSync(file, JSON.stringify(rules));
-    console.log(`${name}: ${n} CLAUSEEND/CLAUSESTART/AFTERFEMNAME/AFTERMANNERNOUN replacements`);
+    console.log(`${name}: ${n} placeholder replacements`);
   }
 }

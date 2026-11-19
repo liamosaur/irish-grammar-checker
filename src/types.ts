@@ -34,6 +34,11 @@ export interface GramadoirData {
   grams: string[];
   nocombo: string[];
   messages: Record<string, string>;
+  /**
+   * Verbal nouns (data/verbal-nouns.json from BuNaMo, and data/verbal-nouns-extra.json), for the
+   * VERBALNOUN placeholder in rules. Absent: the placeholder matches nothing.
+   */
+  verbalNouns?: string[];
   rules: {
     aonchiall: RuleJson[];
     comhshuite: RuleJson[];

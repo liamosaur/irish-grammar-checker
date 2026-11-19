@@ -4,7 +4,7 @@
 
 | Files | Licence |
 |---|---|
-| `data/bunamo-overlay.json`, `data/forms.json` (derived from BuNaMo) | Open Database License (ODbL) 1.0, see [LICENSE-ODbL.txt](LICENSE-ODbL.txt); individual contents under the Database Contents License (DbCL) 1.0 |
+| `data/bunamo-overlay.json`, `data/forms.json`, `data/verbal-nouns.json` (derived from BuNaMo) | Open Database License (ODbL) 1.0, see [LICENSE-ODbL.txt](LICENSE-ODbL.txt); individual contents under the Database Contents License (DbCL) 1.0 |
 | everything else: the code, `data/lexicon.json` (the An Gramadóir 0.70 lexicon), the other files in `data/` (including `data/legacy-0.70/` and `data/overlay-decisions.tsv`), the tests and the tools | GNU General Public License, version 2 or (at your option) any later version, see [COPYING](COPYING) |
 
 The BuNaMo-derived data is kept in its own files and is not merged into any
@@ -54,6 +54,12 @@ each adjective its nominative, genitive (masculine and feminine) and plural,
 so that the web page can offer the form a grammar note asks for (for example
 the genitive of *doras*). It contains only word forms and how they are related,
 is derived entirely from BuNaMo, and is kept in its own file.
+
+`data/verbal-nouns.json` is built by the same tool: the verbal noun of each BuNaMo
+verb, as a plain list of words. The checker's tag set has no verbal-noun tag, so
+rules that need to know whether a word is a verbal noun use a placeholder that
+`src/engine.ts` fills in from this list when the rules are loaded, in memory;
+the list is not copied into the rule files.
 
 ### Why the separate files
 

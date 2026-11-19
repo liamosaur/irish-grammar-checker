@@ -523,10 +523,12 @@ n[Dd]eire:IONADAI{ndeireadh}
 # mutated as a masculine genitive (le linn an tabhairt amach; i mbun an chur i
 # láthair). Unmutated (le linn an cur síos) it is still reported.
 <S>COMPOUND</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNITGEN</N>:OK
-# CO17 3.3.2(a), Tábla 3A: a noun joined to a verbal noun by a stays in the
-# nominative after a word that takes the genitive (i mbun an teach a thógáil;
-# ar tí na doirse a dhúnadh).
-<E><S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E> <S>[Aa]</S> <N>ANYTHING</N>:OK
+# CO17 3.3.2(a), Tábla 3A: a noun joined to a verbal noun by a stays in the nominative after
+# a preposition that governs a clause with a verbal noun (i mbun an teach a thógáil; ar tí na
+# doirse a dhúnadh), also with words between (le linn an cinneadh sin a dhéanamh; le linn an
+# tseirbhís ar mhaithe leis an leas ... a oibriú): VNLATER. Not after de chuid, faoi bhráid, etc.:
+# in Maoin de chuid an Aire a aistriú the object of the verbal noun is Maoin.
+<E><S>VNCLAUSEPREP</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E> VNLATER:OK
 #. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis (OK).
 #. Bhain sé sult as clár toghcháin TG4 a chur i láthair an mhí seo caite (OK).
 <S>[Aa]g?</S> <N>ANYTHING</N> <E><S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E>:OK

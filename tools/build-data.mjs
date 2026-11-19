@@ -131,6 +131,17 @@ for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '')
   }).sort().join('');
 }
 write('lexicon-corrections.json', corrections);
+// ---- verbal nouns BuNaMo lacks: grammar/verbal-nouns.tsv -> verbal-nouns-extra.json (word<TAB>reason)
+const localVn = fileURLToPath(new URL('../grammar/verbal-nouns.tsv', import.meta.url));
+const extraVn = [];
+for (const [i, line] of fs.readFileSync(localVn, 'utf8').replace(/\r/g, '').split('\n').entries()) {
+  if (!/\S/.test(line) || line.startsWith('#')) continue;
+  const [word, reason] = line.split('\t');
+  if (!word || !reason) throw new Error(`${localVn}:${i + 1}: expected word<TAB>reason`);
+  extraVn.push(word);
+}
+write('verbal-nouns-extra.json', extraVn.sort());
+
 write('eile.json', { ...eile, ...nonstandard });
 console.log('word-list corrections', Object.keys(corrections).length);
 
