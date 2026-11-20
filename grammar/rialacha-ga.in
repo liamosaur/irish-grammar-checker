@@ -4303,6 +4303,9 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 <Y>Leitir</Y> <A pl="n" gnt="y" gnd="m">Móir</A>:OK
 <[^AN]>ANYTHING</[^AN]> <A pl="n" gnt="y" gnd="f">(lúide|móide)</A>:OK
 <[^AN]>ANYTHING</[^AN]> <A pl="n" gnt="y" gnd="f">INITIALBAPOST</A>:OK
+# a second adjective joined by agus, nó or ná describes the same noun (údaráis dámhachtana
+# cheaptha nó aistrithigh; CO17 4.2)
+<A>ANYTHING</A> <E><C>([Aa]gus|[Nn]ó|[Nn]á)</C> <AG>ANYTHING</AG></E>:OK
 # is fearr, gurbh fhearr, ba suntasaí... 
 <V cop="y">ANYTHING</V> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
 <R>[Nn]íos</R> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK

@@ -309,6 +309,7 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Is ráitis bhréagacha agus mhíthreoracha iad.', note: 'two adjectives joined by agus take the same lenition (4.2)' },
   { text: 'Fuair sé post mar fhostaí téarma shocraithe.', note: 'adjective on a masculine genitive spelt like its nominative (4.2)' },
   { text: 'Cuireadh ar fáil é do sholáthraí seirbhíse poist uilechoitinne.', note: 'adjective after two genitives, describing the first (4.2)' },
+  { text: 'Is fostaí de chuid údaráis cheaptha nó aistrithigh é.', note: 'a second genitive adjective after nó (4.2)' },
 ];
 
 let engine: Gramadoir | undefined;
