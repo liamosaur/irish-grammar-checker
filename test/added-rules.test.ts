@@ -316,6 +316,8 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Is fostaí de chuid údaráis cheaptha nó aistrithigh é.', note: 'a second genitive adjective after nó (4.2)' },
   { text: 'Má sháraíonn sé nó sí an dlí, gearrfar fíneáil.', note: 'a second subject pronoun joined by nó' },
   { text: 'Rinne sé é chun é nó í a shábháil.', note: 'two pronouns, the object of the verbal noun after chun' },
+  { text: 'Is cás é ar páirtí ann an tAire.', note: 'the present relative copula ar does not lenite (11.8.1)' },
+  { text: 'Beidh an ráta ar comhréir leis an gcostas.', note: 'ar comhréir, a phrase of state (10.2.5(b))' },
 ];
 
 let engine: Gramadoir | undefined;

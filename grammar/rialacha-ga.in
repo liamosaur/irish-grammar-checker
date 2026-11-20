@@ -1226,6 +1226,10 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 #. Cosc a bheith ar cic a thabhairt don sliotar.
 #. Cosc a bheith ar CIC leabhair a dhíol (OK).
 <S>[Aa]r</S> <N>UNLENITED</N>:WEAKSEIMHIU{ar}
+# ar + a noun + a prepositional pronoun after its antecedent is the present relative copula,
+# which does not lenite (imeachtaí dlí ar páirtí iontu an tÚdarás; an mhaoin ar cuid di iad: CO17 11.8.1,
+# Tábla 11D)
+<N>ANYTHING</N> <E><S>[Aa]r</S> <N>UNLENITED</N></E> <O>ANYTHING</O>:OK
 # The set phrase ar cosa in airde (CO17 8.6.2: B'iúd iad ag imeacht ar cosa in airde).
 <E><S>[Aa]r</S> <N>cosa</N></E> <R>[Ii]n airde</R>:OK
 # most of the time the construction here means "ar" is a copula,
