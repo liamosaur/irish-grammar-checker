@@ -151,3 +151,12 @@ toilithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" g
 thoilithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m"><A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.6.2(b); tagged as the word list tags chruinnithe
 dtoilithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	CO17 5.6.2(b); tagged as the word list tags gcruinnithe
 ombudsman	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m"><N pl="y" gnt="y" gnd="m">	a borrowed word, not declined: the genitive singular is spelt as the nominative (Biúró an Ombudsman); the word list gave only the nominative singular and genitive plural
+# The plural of breithniú and of its compound athbhreithniú (CO17 5.6.2(b): cruinniú, cruinnithe),
+# tagged as the word list tags the same forms of cruinniú; the h- and n- forms of the
+# vowel-initial compound take the plural tags the word list gives hathruithe and n-athruithe.
+breithnithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m"><A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.6.2(b); tagged as the word list tags cruinnithe
+bhreithnithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m"><A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.6.2(b); tagged as the word list tags chruinnithe
+mbreithnithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	CO17 5.6.2(b); tagged as the word list tags gcruinnithe
+athbhreithnithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m"><A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.6.2(b); tagged as the word list tags cruinnithe
+hathbhreithnithe	<N pl="n" gnt="y" gnd="m" h="y"><N pl="y" gnt="n" gnd="m" h="y"><N pl="y" gnt="y" gnd="m" h="y"><A pl="n" gnt="n" h="y">	CO17 5.6.2(b); the plural tags the word list gives hathruithe added to its own
+n-athbhreithnithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	CO17 5.6.2(b); the plural tags the word list gives n-athruithe added to its own
