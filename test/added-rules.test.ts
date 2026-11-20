@@ -174,6 +174,8 @@ const cases: Case[] = [
   { section: '3.3.2(a)', text: 'Maoin de chuid an rialtas a aistriú.', rule: 'GENITIVE', words: 'de chuid an rialtas', fixed: null },
   // a lenited adjective that describes neither noun: lampa (masculine nominative) nor the feminine genitive
   { section: '4.2', text: 'Bhí lampa comharthaíochta cheadaithe ar an mbád.', rule: 'NISEIMHIU', words: 'cheadaithe', fixed: 'Bhí lampa comharthaíochta ceadaithe ar an mbád.' },
+  // a subject pronoun after a noun, not a verb
+  { section: '8.1', text: 'Chuaigh an fear agus sí go dtí an siopa.', rule: 'BACHOIR', words: 'agus sí', fixed: 'Chuaigh an fear agus í go dtí an siopa.' },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];
@@ -310,6 +312,8 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Fuair sé post mar fhostaí téarma shocraithe.', note: 'adjective on a masculine genitive spelt like its nominative (4.2)' },
   { text: 'Cuireadh ar fáil é do sholáthraí seirbhíse poist uilechoitinne.', note: 'adjective after two genitives, describing the first (4.2)' },
   { text: 'Is fostaí de chuid údaráis cheaptha nó aistrithigh é.', note: 'a second genitive adjective after nó (4.2)' },
+  { text: 'Má sháraíonn sé nó sí an dlí, gearrfar fíneáil.', note: 'a second subject pronoun joined by nó' },
+  { text: 'Rinne sé é chun é nó í a shábháil.', note: 'two pronouns, the object of the verbal noun after chun' },
 ];
 
 let engine: Gramadoir | undefined;

@@ -1797,10 +1797,13 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+# two pronouns joined by nó or agus, the object of the verbal noun (chun é nó í a uchtáil)
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <C>([Nn]ó|[Aa]gus)</C> <P>ANYTHING</P> <[DS]>[Aa]</[DS]> ANYTHING:OK
 <S>[Cc]hun</S> <P>[Íí]</P>:BACHOIR{chuici}
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <C>([Nn]ó|[Aa]gus)</C> <P>ANYTHING</P> <[DS]>[Aa]</[DS]> ANYTHING:OK
 <S>[Cc]hun</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{chugainn}
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
@@ -1811,6 +1814,7 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Cc]hun</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <C>([Nn]ó|[Aa]gus)</C> <P>ANYTHING</P> <[DS]>[Aa]</[DS]> ANYTHING:OK
 # corpus -- common misspelling of cúnta unless after "an" or before a name
 <N>g?[Cc]h?unta</N>:IONADAI{cúnta}
 <T>[Aa]n</T> <E><N>[Cc]h?unta</N></E>:OK
@@ -3735,6 +3739,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # CB p.82 #3
 <[^V]>ANYTHING</[^V]> <P>[Ss]é</P>:BACHOIR{é}
+# a second subject joined to the first by nó, agus or ná (má sháraíonn sé nó sí)
+<V>ANYTHING</V> <P>ANYTHING</P> <E><C>([Nn]ó|[Aa]gus|[Nn]á)</C> <P>[Ss]é</P></E>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]é</P>:BACHOIR{é}
 <VAUT>ANYTHING</VAUT> <P>[Ss]é</P>:BACHOIR{é}
 <[^V]>ANYTHING</[^V]> <P>[Ss]eisean</P>:BACHOIR{eisean}
@@ -3744,6 +3750,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]eisean</P>:BACHOIR{eisean}
 <VAUT>ANYTHING</VAUT> <P>[Ss]eisean</P>:BACHOIR{eisean}
 <[^V]>ANYTHING</[^V]> <P>[Ss]í</P>:BACHOIR{í}
+<V>ANYTHING</V> <P>ANYTHING</P> <E><C>([Nn]ó|[Aa]gus|[Nn]á)</C> <P>[Ss]í</P></E>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]í</P>:BACHOIR{í}
 <VAUT>ANYTHING</VAUT> <P>[Ss]í</P>:BACHOIR{í}
 <[^V]>ANYTHING</[^V]> <P>[Ss]ise</P>:BACHOIR{ise}
@@ -3751,6 +3758,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <V cop="y">ANYTHING</V> <P>[Ss]ise</P>:BACHOIR{ise}
 <VAUT>ANYTHING</VAUT> <P>[Ss]ise</P>:BACHOIR{ise}
 <[^V]>ANYTHING</[^V]> <P>[Ss]iad</P>:BACHOIR{iad}
+<V>ANYTHING</V> <P>ANYTHING</P> <E><C>([Nn]ó|[Aa]gus|[Nn]á)</C> <P>[Ss]iad</P></E>:OK
 #. Is siad na rudaí crua a mhairfidh.
 <V cop="y">ANYTHING</V> <P>[Ss]iad</P>:BACHOIR{iad}
 <VAUT>ANYTHING</VAUT> <P>[Ss]iad</P>:BACHOIR{iad}
