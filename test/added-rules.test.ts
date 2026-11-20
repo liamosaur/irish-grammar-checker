@@ -318,6 +318,8 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Rinne sé é chun é nó í a shábháil.', note: 'two pronouns, the object of the verbal noun after chun' },
   { text: 'Sin é an cás ar páirtí ann an tAire.', note: 'the present relative copula ar does not lenite (11.8.1)' },
   { text: 'Beidh an ráta ar comhréir leis an gcostas.', note: 'ar comhréir, a phrase of state (10.2.5(b))' },
+  { text: 'Tá sé de cheart aige an talamh a theachtadh.', note: 'teachtadh, the verbal noun of teacht (hold property; FGB teacht2), outside ar teachtadh' },
+  { text: 'Tá an talamh ar teachtadh aige.', note: 'the phrase ar teachtadh' },
 ];
 
 let engine: Gramadoir | undefined;

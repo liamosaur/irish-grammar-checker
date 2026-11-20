@@ -5240,7 +5240,6 @@ háirithe:INPHRASE{go háirithe}
 # sám is <F> as of Jan 05
 <N pl="n" gnt="n">[Ss][úá]m</N>:INPHRASE{súm sám}
 <N>d[Tt]aisce</N>:INPHRASE{i dtaisce}
-<N pl="n" gnt="n" gnd="m">d?[Tt]h?eachtadh</N>:INPHRASE{ar teachtadh}
 <N pl="n" gnt="n" gnd="f">d[Tt]eagmháil</N>:INPHRASE{i dteagmháil}
 <S>d[Tt]í</S>:INPHRASE{go dtí}
 <N pl="n" gnt="n">d[Tt]ólamh</N>:INPHRASE{i dtólamh}
