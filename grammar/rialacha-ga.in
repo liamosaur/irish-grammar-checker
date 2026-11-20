@@ -5277,9 +5277,13 @@ háirithe:INPHRASE{go háirithe}
 <S>[Ss]na</S> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 #. Cén t-ionadh sin (OK)?
 <Q>[Cc]én</Q> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+# after the copula the noun or adjective is the predicate and seo/sin/úd the subject pronoun
+# (CO17 7.1.1: Is fíor sin; Mura féidir sin a dhéanamh; gur gá sin)
+<V cop="y">ANYTHING</V> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:NEEDART
 <[ADN]>ANYTHING</[ADN]> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <T>ANYTHING</T> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <S>FUSEDPREP</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <S>[Ss]na</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <Q>[Cc]én</Q> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<V cop="y">ANYTHING</V> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
