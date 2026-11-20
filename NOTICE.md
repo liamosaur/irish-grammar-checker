@@ -5,6 +5,7 @@
 | Files | Licence |
 |---|---|
 | `data/bunamo-overlay.json`, `data/forms.json`, `data/verbal-nouns.json` (derived from BuNaMo) | Open Database License (ODbL) 1.0, see [LICENSE-ODbL.txt](LICENSE-ODbL.txt); individual contents under the Database Contents License (DbCL) 1.0 |
+| `test/gaois/confirmed.tsv`: the sentences (column 4), verbatim Irish legislation from the [Gaois parallel corpus](https://www.gaois.ie/en/corpora/parallel/data/) | the Government of Ireland's text; **licence for reuse here not yet settled**, and the file may have to be removed. The verdicts in the other columns are the project's |
 | everything else: the code, `data/lexicon.json` (the An Gramadóir 0.70 lexicon), the other files in `data/` (including `data/legacy-0.70/` and `data/overlay-decisions.tsv`), the tests and the tools | GNU General Public License, version 2 or (at your option) any later version, see [COPYING](COPYING) |
 
 The BuNaMo-derived data is kept in its own files and is not merged into any

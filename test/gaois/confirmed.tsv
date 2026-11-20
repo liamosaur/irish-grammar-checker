@@ -1,0 +1,46 @@
+# Sentences from Irish legislation, taken verbatim from the Gaois parallel corpus of Irish
+# legislation (https://www.gaois.ie/en/corpora/parallel/data/; Acts 2009-2011). The text is
+# the Government of Ireland's; its licence for reuse here is NOT YET SETTLED, and this file
+# may have to be removed. Not covered by the project's GPL (see NOTICE.md).
+# The verdicts (column 1) are the project's: ok = the checker's flag (column 2) was wrong;
+# wrong = the source has that error; unsure = undecided. Column 5, if present, notes a flag
+# not yet fixed. Run by test/gaois.test.ts.
+verdict	rule	act	sentence
+ok	GENITIVE	Uimhir 11 de 2011	Maoin agus dliteanais áirithe de chuid an Aire Talmhaíochta, Iascaigh agus Bia a aistriú.
+ok	GENITIVE	Uimhir 41 de 2011	An Bord do chur tuarascáil bhliantúil faoi bhráid an Aire.
+ok	GENITIVE	Uimhir 7 de 2010	Déanfar an Táille Seirbhíse a athleithroinnt ar na hIasachtóirí de réir an phróisis chéanna.
+ok	GENITIVE	Uimhir 1 de 2010	Ní dhéanfaidh an chúirt ina lorgaítear go ndéanfaí aithint agus forghníomhú athbhreithniú ar shubstaint an bhirt eatramhaigh, le linn an cinneadh sin a dhéanamh.
+ok	GENITIVE	Uimhir 21 de 2010	Dá fhianú sin tá na daoine sin a bhfuil a síniú anseo thíos, agus iad údaraithe go cuí chuige, tar éis an Coinbhinsiún seo a shíniú.
+ok	GENITIVE	Uimhir 23 de 2010	Má thoilíonn siad go léir amhlaidh, beidh éifeacht leis an rogha díreach tar éis an toiliú is déanaí de na toilithe sin a thabhairt.
+ok	GENITIVE	Uimhir 24 de 2009	Folaíonn na costais atá le cur san áireamh na costais go léir arna dtabhú le linn an tseirbhís ar mhaithe leis an leas eacnamaíoch i gcoitinne a oibriú.
+wrong	GENITIVE	Uimhir 23 de 2010	Feidhmeanna áirithe de chuid an Choimisiún, etc. a tharmligean.
+ok	NISEIMHIU	Uimhir 14 de 2010	Toirmeasc ar dhul chun farraige ar thuras idirnáisiúnta gan lampa comharthaíochta ceadaithe nó feiste comharthaíochta cheadaithe.
+ok	NISEIMHIU	Uimhir 24 de 2010	Caidrimh choigríche chláraithe a aithint.
+ok	NISEIMHIU	Uimhir 38 de 2010	An Bord Árachais Sláinte Shaorálaigh.
+ok	NISEIMHIU	Uimhir 4 de 2011	Fostaí nó fostaí téarma shocraithe de chuid údaráis dámhachtana cheaptha nó aistrithigh.
+ok	NISEIMHIU	Uimhir 21 de 2010	Toirmeasc ar ráitis bhréagacha nó mhíthreoracha nó ar fhaisnéis bhréagach nó mhíthreorach.
+ok	NISEIMHIU	Uimhir 36 de 2009	Tosach agus deireadh coimeádta shealadaigh.
+ok	NISEIMHIU	Uimhir 37 de 2009	Feidhmeanna an Choimisiúin a aistriú chuig Údarás Iompair Bhaile Átha Cliath.
+wrong	NISEIMHIU	Uimhir 41 de 2011	Déanfaidh altra chláraithe agus cnáimhseach chláraithe inniúlacht ghairmiúil a chothabháil ar bhonn leanúnach.
+wrong	NISEIMHIU	Uimhir 41 de 2011	Má thoilíonn altra chláraithe nó cnáimhseach chláraithe le cáineadh nó gníomh leigheasta, etc.
+ok	BACHOIR	Uimhir 1 de 2010	I bpríomhoifig an Bhainc Idirnáisiúnta Athfhoirgníochta agus Forbartha (dá ngairtear an Banc anseo feasta) a bheidh suíomh an Lárionaid.
+ok	BACHOIR	Uimhir 25 de 2010	Toirmeasc ar dhuine feithicil inneallghluaiste a thiomáint agus é nó í faoi bhrí meiscigh nó má sháraíonn sé nó sí na teorainneacha alcóil.
+unsure	BACHOIR	Uimhir 16 de 2010	Leagfar amach sa doiciméadacht maidir le heisiúint Ionstraimí Maoinithe agus na Ráthaíochtaí gaolmhara na meicnic íoca mhionsonraithe chun íocaíochtaí faoi na Ráthaíochtaí a chomhordú.
+ok	WEAKSEIMHIU	Uimhir 23 de 2010	Imeachtaí dlí ar páirtí iontu an tÚdarás Rialála.
+ok	WEAKSEIMHIU	Uimhir 41 de 2011	Cuirfear ainm an Bhoird in ionad ainm na Comhairle in aon imeachtaí dlí ar páirtí iontu an Chomhairle agus a bheidh ar feitheamh díreach roimh thosach feidhme an ailt seo.
+ok	WEAKSEIMHIU	Uimhir 34 de 2009	Féadfar daingneáin, gléasra agus innealra a théarbadh agus a dhíol ar leith ón maoin ar cuid di iad gan toiliú an mhuirearóra.
+ok	WEAKSEIMHIU	Uimhir 7 de 2010	Mura luaitear aon cheann de na rátaí úis sin mar a thuairiscítear, beidh an ráta úis tagartha don chéad Tréimhse Úis eile ar comhréir le costais cistithe iarbhír na nIasachtóirí.
+unsure	WEAKSEIMHIU	Uimhir 6 de 2010	Údaruithe ar seilbh ag comhpháirtíochtaí.
+unsure	WEAKSEIMHIU	Uimhir 5 de 2010	Loghadh nó aisíoc i leith cánach cláraithe feithiclí ar feithiclí leictreacha hibrideacha plugála áirithe, ar fheithiclí leictreacha áirithe agus ar ghluaisrothair leictreacha áirithe.
+unsure	SEIMHIU	Uimhir 12 de 2011	Dualgas na Comhairle breith a thabhairt i dtaobh smachtbhanna cuí i gcásanna áirithe (Rannán Maoirsithe).
+unsure	SEIMHIU	Uimhir 24 de 2009	Beidh feidhm ag an gcreat seo ar feadh tréimhse sé bliana ó dháta a fhoilsithe in Iris Oifigiúil an Aontais Eorpaigh.
+unsure	SEIMHIU	Uimhir 1 de 2010	Glacfaidh an séanadh éifeacht sé mhí tar éis an fógra sin a fháil.
+unsure	SEIMHIU	Uimhir 21 de 2010	Dá fhianú sin tá na daoine sin a bhfuil a síniú anseo thíos, agus iad údaraithe go cuí chuige, tar éis an Coinbhinsiún seo a shíniú.
+unsure	SEIMHIU	Uimhir 23 de 2010	Má thoilíonn siad go léir amhlaidh, beidh éifeacht leis an rogha díreach tar éis an toiliú is déanaí de na toilithe sin a thabhairt.
+ok	INPHRASE	Uimhir 31 de 2010	Forálacha a bhaineann le húsáid agus le teachtadh.
+ok	INPHRASE	Uimhir 24 de 2009	Féadfaidh an gnóthas a fhaigheann cúiteamh seirbhíse poiblí brabús réasúnach a theachtadh, áfach.
+wrong	INPHRASE	Uimhir 41 de 2011	Cinnteoidh an Bord go ndéanfar treoirlínte arna n-ullmhú aige faoin alt seo a fhoilsiú ar an modh forordaithe a luaithe is indéantatar éis na treoirlínte a ullmhú.
+ok	NEEDART	Uimhir 1 de 2010	Mura féidir sin a dhéanamh, bunófar Binse nua de réir Roinn 2 den Chaibidil seo.
+ok	NEEDART	Uimhir 1 de 2010	Féadfaidh an Binse, má mheasann sé gur gá sin sna himthosca, forghníomhú na dámhachtana a bhac fad a bheidh a chinneadh ar feitheamh.
+ok	PREFIXT	Uimhir 7 de 2010	Déantar, le síniú an Chomhaontaithe agus an MT ag [cuir isteach an t-ainm], Gobharnóir Bhanc na Gréige, Gníomhaire an Iasachtaí a cheangal go dlíthiúil bailí.	the genitive between a noun and a + verbal noun is read as the object (questions.md)
+ok	PREFIXT	Uimhir 5 de 2010	Biúró an Ombudsman um Sheirbhísí Airgeadais.
