@@ -1,6 +1,6 @@
 // Sentences from Irish legislation (the Gaois parallel corpus, Acts 2009-2011) that the
-// checker flagged, with Liam's verdict on each flag: test/gaois/confirmed.tsv (see the
-// notice at the top of that file: the licence of the text is not yet settled).
+// checker flagged, with a reviewer's verdict on each flag: test/gaois/confirmed.tsv (CC BY 4.0;
+// see the notice at the top of that file and NOTICE.md).
 // - ok: the flag was wrong; the sentence must not get that message.
 // - wrong: the source has the error; the message must still be given.
 // - unsure: not decided (questions.md); run as a todo.

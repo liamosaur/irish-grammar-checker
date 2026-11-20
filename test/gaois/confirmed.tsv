@@ -1,7 +1,9 @@
-# Sentences from Irish legislation, taken verbatim from the Gaois parallel corpus of Irish
-# legislation (https://www.gaois.ie/en/corpora/parallel/data/; Acts 2009-2011). The text is
-# the Government of Ireland's; its licence for reuse here is NOT YET SETTLED, and this file
-# may have to be removed. Not covered by the project's GPL (see NOTICE.md).
+# Sentences from Irish legislation, extracted unchanged from the Gaois parallel corpus of
+# legislation (https://www.gaois.ie/en/corpora/parallel/data/; Acts 2009-2011), © Fiontar &
+# Scoil na Gaeilge (DCU), CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). The
+# underlying legislation is © Houses of the Oireachtas / Government of Ireland, re-used under
+# the Oireachtas (Open Data) PSI Licence. Not the official text of any Act, nor an official
+# restatement. See NOTICE.md.
 # The verdicts (column 1) are the project's: ok = the checker's flag (column 2) was wrong;
 # wrong = the source has that error; unsure = undecided. Column 5, if present, notes a flag
 # not yet fixed. Run by test/gaois.test.ts.

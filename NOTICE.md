@@ -5,7 +5,8 @@
 | Files | Licence |
 |---|---|
 | `data/bunamo-overlay.json`, `data/forms.json`, `data/verbal-nouns.json` (derived from BuNaMo) | Open Database License (ODbL) 1.0, see [LICENSE-ODbL.txt](LICENSE-ODbL.txt); individual contents under the Database Contents License (DbCL) 1.0 |
-| `test/gaois/confirmed.tsv`: the sentences (column 4), verbatim Irish legislation from the [Gaois parallel corpus](https://www.gaois.ie/en/corpora/parallel/data/) | the Government of Ireland's text; **licence for reuse here not yet settled**, and the file may have to be removed. The verdicts in the other columns are the project's |
+| `test/caighdean/ch01.json` … `ch11.json`, and the `original` column of `test/caighdean/variants.tsv`: example sentences quoted verbatim from *An Caighdeán Oifigiúil* (2017) | © Houses of the Oireachtas; re-used with acknowledgement, see [An Caighdeán Oifigiúil](#an-caighdeán-oifigiúil-2017) below |
+| `test/gaois/confirmed.tsv`: the sentences (column 4), verbatim Irish legislation from the Gaois parallel corpus | Creative Commons Attribution 4.0 (CC BY 4.0), see [Gaois](#gaois-parallel-corpus-of-legislation) below. The verdicts in the other columns are the project's (GPL) |
 | everything else: the code, `data/lexicon.json` (the An Gramadóir 0.70 lexicon), the other files in `data/` (including `data/legacy-0.70/` and `data/overlay-decisions.tsv`), the tests and the tools | GNU General Public License, version 2 or (at your option) any later version, see [COPYING](COPYING) |
 
 The BuNaMo-derived data is kept in its own files and is not merged into any
@@ -75,10 +76,53 @@ two sets of terms apart. This is the project's reading of the licences, not
 legal advice, and has not been confirmed by Foras na Gaeilge or the original
 author.
 
+## An Caighdeán Oifigiúil (2017)
+
+The test suites in `test/caighdean/` quote the example sentences of *Gramadach na
+Gaeilge: An Caighdeán Oifigiúil, Caighdeán Athbhreithnithe 2017*, published by Seirbhís
+Thithe an Oireachtais (the Houses of the Oireachtas Service),
+<https://data.oireachtas.ie/ie/oireachtas/caighdeanOifigiul/2017/2017-08-03_an-caighdean-oifigiuil-2017_ga.pdf>.
+Section and page numbers refer to that edition. `variants.tsv` also holds sentences
+derived from those examples (one form changed), with the original beside each. The
+grammar rules' comments cite the standard by section but don't quote it at length.
+
+The publication carries no copyright or licence notice of its own. The Houses of the
+Oireachtas state that most of the information they publish is their copyright and may
+be re-used free of charge under the Oireachtas (Open Data) PSI Licence, which
+incorporates CC BY 4.0, unless otherwise indicated
+(<https://www.oireachtas.ie/en/copyright-and-reuse>,
+<https://www.oireachtas.ie/en/open-data/license>). The examples are used on that basis,
+for a tool that furthers the use of the standard, with this acknowledgement:
+
+> Example sentences quoted from *Gramadach na Gaeilge: An Caighdeán Oifigiúil* (2017),
+> Seirbhís Thithe an Oireachtais. © Houses of the Oireachtas; re-used under the
+> Oireachtas (Open Data) PSI Licence.
+
+Short quotations with acknowledgement are also allowed by section 52(4) of the
+Copyright and Related Rights Act 2000. Whether the PSI licence covers this publication
+hasn't been confirmed with the Houses of the Oireachtas.
+
+## Gaois parallel corpus of legislation
+
+The sentences in `test/gaois/confirmed.tsv` are segments extracted, unchanged, from the
+Gaois parallel corpus of Irish legislation
+(<https://www.gaois.ie/en/corpora/parallel/data/>):
+
+> The derivative machine-readable aligned translation memories are copyright Fiontar &
+> Scoil na Gaeilge (DCU) and are made available under the Creative Commons Attribution
+> 4.0 International (CC BY 4.0) licence (<https://creativecommons.org/licenses/by/4.0/>).
+> The original legislation is copyright Government of Ireland.
+
+The underlying legislation is © Houses of the Oireachtas / Government of Ireland, re-used
+under the Oireachtas (Open Data) PSI Licence (<https://www.oireachtas.ie/en/open-data/license>).
+This is not the official text of any Act or statutory instrument, nor an official
+restatement. Gaois provides the corpus as a language resource only, not as an
+authoritative legal resource (<https://www.gaois.ie/en/corpora/parallel/disclaimer>).
+
 ## Sources consulted but not included
 
-The review decisions in `data/overlay-decisions.tsv` were checked against
-*Foclóir Gaeilge-Béarla* (Ó Dónaill, 1977) on <https://www.teanglann.ie> and
-against the hyphenation rules in *An Caighdeán Oifigiúil* (Houses of the
-Oireachtas, 2017 edition, section 2.1.7). No text or data from either is
-included in this repository; only the resulting decisions are.
+The review decisions in `data/overlay-decisions.tsv` and the word-list corrections in
+`grammar/lexicon-corrections.tsv` were checked against *Foclóir Gaeilge-Béarla* (Ó Dónaill,
+1977) on <https://www.teanglann.ie>, and the hyphenation decisions against *An Caighdeán
+Oifigiúil* (2017, section 2.1.7). No text or data from the dictionary is included; only
+the resulting decisions are.
