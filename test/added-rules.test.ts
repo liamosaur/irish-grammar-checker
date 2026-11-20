@@ -176,6 +176,8 @@ const cases: Case[] = [
   { section: '4.2', text: 'Bhí lampa comharthaíochta cheadaithe ar an mbád.', rule: 'NISEIMHIU', words: 'cheadaithe', fixed: 'Bhí lampa comharthaíochta ceadaithe ar an mbád.' },
   // a subject pronoun after a noun, not a verb
   { section: '8.1', text: 'Chuaigh an fear agus sí go dtí an siopa.', rule: 'BACHOIR', words: 'agus sí', fixed: 'Chuaigh an fear agus í go dtí an siopa.' },
+  // a hint: dá "if" with a tense other than the conditional, or dá = de/do + a (11.6.1(c))
+  { section: '11.6.1(c)', text: 'Dá ndéanann sé é, beidh áthas orm.', rule: 'WEAKBACHOIRMA', words: 'Dá ndéanann', fixed: 'Má dhéanann sé é, beidh áthas orm.' },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];

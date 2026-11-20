@@ -1828,8 +1828,10 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 [Dd]á <N>[Mm]h?éid</N>:CAIGHDEAN{dá mhéad}
 # pre-standard corpus examples like "Dá bpósainn..." => "Dá bpósfainn..."
 <C>[Dd]á</C> <V p="y" t="gnáth">ANYTHING</V>:CONDITIONAL
-# CB p.121 #6
-<C>[Dd]á</C> <VNOTCOND>ANYTHING</VNOTCOND>:BACHOIR{má}
+# dá "if" takes the conditional (má the other tenses); but dá is also de/do + the relative a,
+# which takes any tense (CO17 5.1.8, 11.6.1(c), Tábla 11C: an leabhar dá ndéantar tagairt; dá
+# ngairtear an Banc anseo feasta). The words cannot tell which: a hint.
+<C>[Dd]á</C> <VNOTCOND>ANYTHING</VNOTCOND>:WEAKBACHOIRMA
 # exception in case of mistagged indir rel
 <[^C]>ANYTHING</[^C]> <E><C>[Dd]á</C> <VNOTCOND>ANYTHING</VNOTCOND></E>:OK
 # CB p.22 #7.h, p.132 #6 "if", but also p.132 #4 since it's de/do+a sometimes

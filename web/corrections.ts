@@ -2,7 +2,7 @@
 // of main.ts so they can be tested without a browser.
 
 /** Rules whose message quotes the word that should replace the flagged one. */
-export const QUOTES_REPLACEMENT = new Set(['MICHEART', 'BACHOIR', 'WEAKBACHOIRAR', 'CAIGHDEAN', 'IONADAI', 'MIMHOIRF', 'INPHRASE']);
+export const QUOTES_REPLACEMENT = new Set(['MICHEART', 'BACHOIR', 'WEAKBACHOIRAR', 'WEAKBACHOIRMA', 'CAIGHDEAN', 'IONADAI', 'MIMHOIRF', 'INPHRASE']);
 
 export interface Part {
   text: string;
@@ -66,7 +66,7 @@ export interface Plan {
 export function planReplacement(line: string, range: { y: number; from: number; to: number }, replacement: string): Plan | null {
   const chars = Array.from(line);
   if (range.from < 0 || range.to <= range.from || range.to > chars.length) return null;
-  const sa = planSa(chars, range, replacement);
+  const sa = planSa(chars, range, replacement) ?? planMa(chars, range, replacement);
   if (sa) return sa;
   const tokens: { from: number; to: number }[] = [];
   for (let i = range.from; i < range.to; i++) {
@@ -142,6 +142,22 @@ function planSa(chars: string[], range: { y: number; from: number; to: number },
   const word = matchCase(flagged.trim(), noun.san ? 'san' : 'sa') + next[1] + noun.word;
   const lead = Array.from(/^\s*/.exec(flagged)![0]).length;
   return { range: { y: range.y, from: range.from + lead, to: range.to + Array.from(next[0]).length }, word };
+}
+
+/**
+ * "dá" + verb -> "má": má lenites the verb where dá eclipsed it (Dá ndéanann -> Má dhéanann; Dá
+ * bhfuil -> Má tá is left to the user: tá and deir are not lenited after má, CO17 5.4.5(b)). Null
+ * unless the flagged words are dá and a verb and the replacement má.
+ */
+function planMa(chars: string[], range: { y: number; from: number; to: number }, replacement: string): Plan | null {
+  const flagged = chars.slice(range.from, range.to).join('');
+  const m = /^(\s*)(dá)(\s+)([\p{L}\p{M}'’-]+)\s*$/iu.exec(flagged);
+  if (!m || !/^má$/i.test(replacement.trim())) return null;
+  const plain = uneclipse(m[4]) ?? m[4];
+  if (/^(?:tá(?:im|imid|thar)?|(?:bh)?fuil(?:im|imid|tear)?|deir\p{L}*|dúirt|dúramar|déarf\p{L}*)$/iu.test(plain)) return null; // bí and abair: left alone
+  const verb = lenite(plain) ?? plain;
+  const lead = Array.from(m[1]).length;
+  return { range: { y: range.y, from: range.from + lead, to: range.to }, word: matchCase(m[2], 'má') + m[3] + verb };
 }
 
 /**
