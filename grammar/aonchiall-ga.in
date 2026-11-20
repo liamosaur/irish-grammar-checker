@@ -592,6 +592,11 @@ CLAUSESTART <B>[Ss]é</B> <N>ANYTHING</N>:<A pl="n" gnt="n">
 <B>Inis</B>:<N pl="n" gnt="n" gnd="f">
 # Ainmnigh dhá chineál múchtóirí dóiteán; no need for "F" since lenited =>
 # not an imperative and not lenited => not PASTIMPER
+# After a noun, a word with a genitive reading the same as the nominative (or a verb's too)
+# and then a lenited word is the genitive (fostaí téarma shocraithe; deireadh coimeádta
+# shealadaigh; Údarás Iompair Bhaile Átha Cliath; Bord Árachais Sláinte Shaorálaigh).
+<N>ANYTHING</N> <B><Z>ANYNMG</Z>ANYTHING</B> LENITED:<N pl="n" gnt="y" gnd="m">
+<N>ANYTHING</N> <B><Z>ANYNFG</Z>ANYTHING</B> LENITED:<N pl="n" gnt="y" gnd="f">
 <B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
 RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 <S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">

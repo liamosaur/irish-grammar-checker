@@ -4660,8 +4660,15 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 <NMGS>ANYTHING</NMGS> <A>ANYTHING</A> <E><A>LENITED</A></E>:OK
 <NFCS>ANYTHING</NFCS> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 <NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <E><A pl="n" gnt="n">LENITED</A></E>:OK
-# bileog bholscaireachta dhátheangach
+# bileog bholscaireachta dhátheangach; also when the genitive carries a hint, and after a masculine
+# genitive or a slender plural (feiste comharthaíochta cheadaithe, údaráis dámhachtana cheaptha,
+# caidrimh choigríche chláraithe): the adjective describes the first noun (CO17 4.2). AFTERNOUNANDGEN:
+# see tools/generate-rules.mjs.
+AFTERNOUNANDGEN <E><A>LENITED</A></E>:OK
 <NFCS>ANYTHING</NFCS> <NG>ANYTHING</NG> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+# Two adjectives joined by agus, nó or ná take the same lenition (ráitis bhréagacha nó
+# mhíthreoracha; CO17 4.2).
+<A>LENITED</A> <C>([Aa]gus|[Nn]ó|[Nn]á)</C> <E><A>LENITED</A></E>:OK
 # ceist shimplí ach thábhachtach
 <NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <C>ach</C> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 <N pl="n" gnt="n" gnd="m">LENITED</N> <E><A pl="n" gnt="n">LENITED</A></E>:OK
@@ -4739,7 +4746,11 @@ CLAUSESTART <D>[Aa]</D> <N pl="n" gnt="n" gnd="m">ANYTHING</N> <E><A>LENITED</A>
 <P>ANYTHING</P> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <O>ANYTHING</O> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:GENDER
+# An adjective after two genitive nouns may describe the first (seirbhíse poist uilechoitinne;
+# Bord Árachais Sláinte Shaorálaigh; CO17 4.2).
+<NFGS>ANYTHING</NFGS> <E><NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="f">ANYTHING</A></E>:OK
 <NFGS>ANYTHING</NFGS> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:GENDER
+<NMGS>ANYTHING</NMGS> <E><NFGS>ANYTHING</NFGS> <A pl="n" gnt="y" gnd="m">ANYTHING</A></E>:OK
 # "ar trí chéad duine" flagged here; le leamh, etc. the first should be "ar an..."
 <S>ANYTHING</S> <A>ANYTHING</A>:CUPLA
 <S>COMPOUND</S> <A pl="n" gnt="n">eile</A>:OK

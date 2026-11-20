@@ -172,6 +172,8 @@ const cases: Case[] = [
   // a + verbal noun after a compound preposition that does not govern such a clause: the object
   // is the noun before it, and the noun after the preposition is still the genitive
   { section: '3.3.2(a)', text: 'Maoin de chuid an rialtas a aistriú.', rule: 'GENITIVE', words: 'de chuid an rialtas', fixed: null },
+  // a lenited adjective that describes neither noun: lampa (masculine nominative) nor the feminine genitive
+  { section: '4.2', text: 'Bhí lampa comharthaíochta cheadaithe ar an mbád.', rule: 'NISEIMHIU', words: 'cheadaithe', fixed: 'Bhí lampa comharthaíochta ceadaithe ar an mbád.' },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
 ];
@@ -303,6 +305,10 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: "D'fhan sé in ionad an comhchoiste a bheith ann.", note: 'in ionad governs a verbal-noun clause (3.3.2(a))' },
   { text: "Leanfaidh sé d'ainneoin an comhlacht a dhíscaoileadh.", note: "d'ainneoin governs a verbal-noun clause (3.3.2(a))" },
   { text: 'Tháinig sé i ndiaidh an fógra sin a thabhairt.', note: 'i ndiaidh governs a verbal-noun clause (3.3.2(a))' },
+  { text: 'Bhí an fheiste chomharthaíochta cheadaithe ar an mbád.', note: 'adjective describing the feminine noun before a genitive (4.2)' },
+  { text: 'Is ráitis bhréagacha agus mhíthreoracha iad.', note: 'two adjectives joined by agus take the same lenition (4.2)' },
+  { text: 'Fuair sé post mar fhostaí téarma shocraithe.', note: 'adjective on a masculine genitive spelt like its nominative (4.2)' },
+  { text: 'Cuireadh ar fáil é do sholáthraí seirbhíse poist uilechoitinne.', note: 'adjective after two genitives, describing the first (4.2)' },
 ];
 
 let engine: Gramadoir | undefined;

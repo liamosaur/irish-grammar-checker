@@ -110,6 +110,10 @@ execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.
 // capitalised unknown word (a trade name: sa scarbhileog Excel chéanna). The
 // unknown word carries the word list's message, and an :OK removes only the first
 // error mark it matches, so the context has to sit outside the match.
+// AFTERNOUNANDGEN, a first word, matches after a noun that lenites an adjective (a feminine singular,
+// a masculine genitive singular, a plural in a slender consonant) and a genitive noun: an adjective
+// there may describe the first noun (feiste comharthaíochta cheadaithe; CO17 4.2). The genitive pair
+// may carry a hint of its own (WEAKSEIMHIUGEN), so the context sits outside the match.
 // AFTERMANNERNOUN, a first word, matches after one of the nouns of CO17 11.3.1(h)
 // (áit, bealach, caoi, cúis, dóigh, fáth, réasún, slí, treo), kept out of the mark.
 // VNLATER, a last word, matches when a + a verbal noun follows in the same clause, at most 10
@@ -131,6 +135,7 @@ const startWords = (w) => [`<[A-DF-Z][^>]*>${w}</[A-DF-Z]> `, `(?:<[/A-DF-Z][^>]
 const STARTS = {
   CLAUSESTART: '(?<=(?:<line>|[.,;:!?("\']) )',
   AFTERFEMNAME: '(?<=<N pl="n" gnt="n" gnd="f">[^<]+</N> <E[^>]*><X>[A-ZÁÉÍÓÚ][^<]*</X></E> )',
+  AFTERNOUNANDGEN: '(?<=(?:<E[^>]*>)?<N (?:pl="n" gnt="n" gnd="f"|pl="n" gnt="y" gnd="m"|pl="y" gnt="n"[^>]*(?=>[^<]*[eéií][^aeiouáéíóú<]+<))[^>]*>[^<]+</N> (?:<E[^>]*>)?<N[^>]* gnt="y"[^>]*>[^<]+</N>(?:</E>)? )',
   AFTERMANNERNOUN: '(?<=<N[^>]*>(?:h?[Áá]it|[Bb]h?ealach|g?[Cc]h?aoi|[Cc]h?úis|[Dd]h?óigh|[Ff]h?áth|[Rr]éasún|t?[Ss]lí|[Tt]reo)</N> )',
 };
 for (const name of ['rialacha', 'aonchiall']) {
