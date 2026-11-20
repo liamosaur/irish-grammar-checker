@@ -108,6 +108,7 @@ const cases: Case[] = [
   { section: '10.2.1', text: 'Bhí an céad fear ann.', rule: 'CLAOCHLU', words: 'an céad', fixed: null },
   { section: '9.2.3', text: 'Tá trí déag litir san fhocal seo.', rule: 'INPHRASE', words: 'trí déag', fixed: null },
   { section: '3.1.2', text: 'Chonaic mé fear sin inné.', rule: 'NEEDART', words: 'fear sin', fixed: 'Chonaic mé an fear sin inné.' },
+  { section: '1.1.5(a)', text: 'Tháinig an Ombudsman isteach.', rule: 'PREFIXT', words: 'an Ombudsman', fixed: 'Tháinig an tOmbudsman isteach.' },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported
@@ -323,6 +324,7 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Tá an talamh ar teachtadh aige.', note: 'the phrase ar teachtadh' },
   { text: 'Mura féidir sin a dhéanamh, fanfaidh sé.', note: 'sin the subject of the copula, not a demonstrative needing the article (7.1.1)' },
   { text: 'Deir sé gur gá sin anois.', note: 'sin the subject after the dependent copula gur (7.1.1)' },
+  { text: 'Tá oifig an Ombudsman dúnta.', note: 'Ombudsman, not declined, in the genitive: no t-' },
 ];
 
 let engine: Gramadoir | undefined;
