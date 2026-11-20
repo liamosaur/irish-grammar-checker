@@ -144,3 +144,9 @@ buím	<V p="y" t="ord"><V p="y" t="láith">	CO17 5.2.3 B(c); tagged as the word 
 buíte	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	verbal adjective (CO17 5.2.3 B(c)); tagged with the adjective tags the word list gives cloíte
 righ	<V p="y" t="ord">	root of a verb conjugated like figh (CO17 5.2.3 B(c)); tagged as the word list tags figh
 athchomhairligh	<V p="y" t="ord">	CO17 5.1.4(b), conjugated like comhairligh; tagged with the verb tag the word list gives comhairligh
+riaradh	<N pl="n" gnt="n" gnd="m"><V p="n" t="caite"><V p="y" t="ord"><V p="y" t="gnáth">	FGB: riar1, m. ... vn. of riar2 (Var: ~adh m); the noun reading added to the verb readings the word list gives
+# The plural of toiliú (CO17 5.6.2(b): toiliú, toilithe), tagged as the word list tags the
+# same forms of cruinniú (5.6.2(b): cruinniú, cruinnithe).
+toilithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m"><A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.6.2(b); tagged as the word list tags cruinnithe
+thoilithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m"><A pl="n" gnt="n"><A pl="n" gnt="y" gnd="f"><A pl="n" gnt="y" gnd="m"><A pl="y" gnt="n">	CO17 5.6.2(b); tagged as the word list tags chruinnithe
+dtoilithe	<N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	CO17 5.6.2(b); tagged as the word list tags gcruinnithe
