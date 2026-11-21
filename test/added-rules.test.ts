@@ -189,6 +189,8 @@ const cases: Case[] = [
   { section: '7.3.1', text: 'Cár tairbhe duit é?', rule: 'SEIMHIU', words: 'Cár tairbhe', fixed: 'Cár thairbhe duit é?' },
   // CO17 chapters 6 and 2 review
   { section: '6.1.1(d)', text: 'Cén caoi a bhfuil tú?', rule: 'SEIMHIU', words: 'Cén caoi', fixed: 'Cén chaoi a bhfuil tú?' },
+  // a lenited noun opening a clause before the article: a noun used for the verb (a hint)
+  { section: '5.1.7', text: 'Thuairisc an fear go raibh sé tinn.', rule: 'WEAKNOUNVERB', words: 'Thuairisc an', fixed: null },
   { section: '6.1.1(f)', text: 'Ba ghá dóibh dréimire níos fearr a fáil.', rule: 'SEIMHIU', words: 'níos fearr a fáil', fixed: 'Ba ghá dóibh dréimire níos fearr a fháil.' },
   { section: '7.3.4', text: 'Murar comhalta cláraithe é, ní raibh aon seans aige.', rule: 'SEIMHIU', words: 'Murar comhalta', fixed: 'Murar chomhalta cláraithe é, ní raibh aon seans aige.' },
   { section: '7.3.5', text: "Dá b'fhear saibhir é, thabharfadh sé síntiús.", rule: 'URU', words: "Dá b'fhear", fixed: "Dá mb'fhear saibhir é, thabharfadh sé síntiús." },

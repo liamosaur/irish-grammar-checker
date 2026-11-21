@@ -28,3 +28,4 @@ ok	NOGENITIVE	ELRC-801	An t-aon eisceacht dó seo ná comharthaí a bhí ar bhó
 ok	GENITIVE	ELRC-801	Ba léir gur forbraíodh an doiciméad seo mar dhoiciméad oibre i mí Feabhra 2014 agus go raibh an leagan críochnaitheach ar fáil i mí Bealtaine na bliana céanna.
 ok	NISEIMHIU	ELRC-784	Foireann gan Ghaeilge curtha i mbun dualgais sa scoil.
 wrong	BADART	ELRC-784	Rinneadh cinneadh Rialtais i mí an Aibreáin gan dul ar aghaidh leis an bplean a bhí ann an Oifig seo a chónascadh le hOifig an Ombudsman.
+wrong	WEAKNOUNVERB	ELRC-784	Thuairisc an Chomhairle go raibh iarrachtaí déanta aici nithe áirithe a thabhairt chun cinn lena gealltanais a chomhlíonadh go dtí na caighdeáin cuí.

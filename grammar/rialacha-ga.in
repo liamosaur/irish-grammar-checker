@@ -4627,6 +4627,9 @@ CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]
 # CO17 6.1.1(d): cén includes the article, which lenites a feminine noun (Cén chaoi a bhfuil tú?), but
 # not d, t (cén deoch) or s (cén tslí)
 <Q>[Cc]én</Q> <N pl="n" gnt="n" gnd="f">UNLENITEDBCFGMP</N>:SEIMHIU
+# A lenited noun opening a clause before the article is usually a noun used for the verb, whose
+# past is lenited there (Thuairisc an Chomhairle for Thuairiscigh): a hint, as the verb meant is unknown
+CLAUSESTART <N>LENITED</N> <T>ANYTHING</T>:WEAKNOUNVERB
 # a + bí is the relative with the past (an t-airgead a bhí aige; Maidin sách fuar a bhí ann): no
 # imperative follows a; bí is read as a noun here
 <[DGU]>[Aa]</[DGU]> <[NV]>[Bb]í</[NV]>:SEIMHIU

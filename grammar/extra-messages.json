@@ -8,5 +8,6 @@
   "WEAKBACHOIRMA": "If dá means \"if\", use /má/ with this tense (dá takes the conditional); but dá is also de or do with the relative a, which takes any tense (CO17 11.6.1(c))",
   "NOHYPHEN": "No hyphen between t and a capital vowel: /an tAlbanach/, /an tAire/ (CO17 1.1.4)",
   "MUID": "The ending already gives the subject: use the synthetic form or muid, not both (/táimid/ or /tá muid/; CO17 5.1.10)",
-  "WEAKSEIMHIUVOC": "Usually lenited here: the vocative (/a dhaoine uaisle/, /a fheara/), but not if a is the possessive her (Seán, a mac)"
+  "WEAKSEIMHIUVOC": "Usually lenited here: the vocative (/a dhaoine uaisle/, /a fheara/), but not if a is the possessive her (Seán, a mac)",
+  "WEAKNOUNVERB": "A lenited noun opening a clause before the article: if a verb is meant, use the verb (/Thuairiscigh an Chomhairle/, not /Thuairisc an Chomhairle/)"
 }
