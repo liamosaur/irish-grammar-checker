@@ -85,6 +85,17 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   dative of Córas an tSéimhithe), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
 - `browser-smoke.mjs`: checks a sentence in the built site in headless Edge or Chrome.
 
+## Checking a change to the rules
+
+- `rule-baseline.ts`: `snapshot` records what the checker reports for every sentence we have
+  (the local Gaois and ELRC runs, the book's examples, the variants, the review probes, the `#.`
+  lines of `grammar/rialacha-ga.in`, upstream's `triail.xml`); `diff` compares two snapshots;
+  `fire` counts, per rule (by source line, `data/rules/lines.json`), how often it matches and how
+  many reported errors it makes, and which marks each exception removes. Snapshots record
+  behaviour, not correctness: keep them local (`.sources/review/baseline/`).
+- `fix-check.ts`: applies the first one-click fix of every error in the same sentences, checks
+  again, and lists by rule the fixes that leave an error on the words they changed.
+
 ## Reasons
 
 `grammar/reasons.tsv` explains why a rule applies, with its section of *An Caighdeán Oifigiúil*
