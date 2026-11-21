@@ -1827,7 +1827,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	thall → tall		tall	thall	6	Tábla 6B	110	0	flagged:CAIGHDEAN
 	lenition	thángamar → tángamar		tángamar	thángamar	5	Tábla 5W	98	0	-
 	lenition	thángthas → tángthas		tángthas	thángthas	5	Tábla 5W	98	0	-
-	lenition	thar → tar		tar an bhfarraige chiúin	thar an bhfarraige chiúin	1	1.4.1	8	0	other:SEIMHIU,NISEIMHIU
+	lenition	thar → tar		tar an bhfarraige chiúin	thar an bhfarraige chiúin	1	1.4.1	8	0	other:SEIMHIU
 	lenition	thar → tar		tar an chnoc bhán	thar an chnoc bhán	1	1.7.3	16	0	other:NISEIMHIU
 	lenition	thar → tar		tar an diallait nua	thar an diallait nua	1	1.7.6	18	0	-
 	lenition	thar → tar		tar an fharraige chiúin	thar an fharraige chiúin	1	1.7.3	16	0	-

@@ -63,6 +63,16 @@ describe('the compiled rules', () => {
     assert.equal(reasons[e.reason!].co17, '10.14.1');
   });
 
+  it('an exception sees its context words when another rule has marked them', async () => {
+    const { Gramadoir } = await import('../src/engine.ts');
+    const { loadData } = await import('../src/node-data.ts');
+    // The book's "an chéad dáréag a cháiligh" (CO17 9.4.2) without the lenition of chéad
+    // (test/caighdean/variants.tsv). CLAOCHLU marks "an céad"; dáréag after céad, as in the book,
+    // is allowed by an exception whose context is that marked word.
+    const found = new Gramadoir(loadData(path.join(root, 'data'))).grammaticalErrors('an céad dáréag a cháiligh');
+    assert.deepEqual(found.map((e) => e.errortext), ['an céad']);
+  });
+
   const upstream = path.join(root, '.sources', 'gramadoir');
   it('data/rules/ is what grammar/ compiles to', { skip: fs.existsSync(upstream) ? undefined : 'needs the An Gramadoir checkout in .sources/gramadoir' }, () => {
     const out = fs.mkdtempSync(path.join(os.tmpdir(), 'rules-'));

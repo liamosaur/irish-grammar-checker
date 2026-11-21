@@ -105,18 +105,49 @@ if (failures.length) throw new Error(failures.join('\n'));
 // original strips whatever mark it finds, and runs over the whole sentence once its rule has
 // matched anywhere in it, so it could remove another rule's mark (the CUPLA exceptions removed
 // the PREFIXH of le aon). The exceptions at the top of the file, after no rule, still take any.
-let bound = 0;
+let bound = 0, behind = 0;
 for (const r of extracted.rialacha.rules) {
   if (!r.then) continue;
   const msg = /^<E msg="([A-Z]+)/.exec(r.repl ?? '')?.[1];
   if (!msg) throw new Error(`rialacha: exceptions after a rule without a message: ${r.re.slice(0, 120)}`);
   for (const t of r.then) {
     if (t.kind !== 'strip_errors' || !t.re.includes('<E[^>]*>')) throw new Error(`rialacha: an exception that is not an :OK: ${t.re.slice(0, 120)}`);
-    t.re = t.re.replace('<E[^>]*>', `<E msg="${msg}[{"][^>]*>`);
+    t.re = contextBehind(t.re.replace('<E[^>]*>', `<E msg="${msg}[{"][^>]*>`), msg);
     bound++;
   }
 }
-console.log(`rialacha: ${bound} exceptions bound to their rule's message`);
+console.log(`rialacha: ${bound} exceptions bound to their rule's message, ${behind} with their words before the mark in a lookbehind`);
+
+// An exception's words before the mark it removes (its context) are about those words' tags, and
+// they stay the same words when another rule has marked them: in "an bean bheag" the noun has a
+// mark of its own (the article should lenite it), and the adjective after this feminine noun is
+// still rightly lenited. So the context goes in a lookbehind, outside the match (strip_errors
+// removes the first <E> and </E> of the match, which must be this rule's), and may have another
+// mark's <E ...> and </E> between its words and before the mark.
+function contextBehind(re, msg) {
+  const at = re.indexOf(`<E msg="${msg}[`);
+  if (!re.startsWith('(') || !re.endsWith(')') || at <= 1) return re;
+  const before = re.slice(1, at);
+  // A context that starts with a placeholder (CLAUSESTART, AFTERFEMNAME, ...: lookbehinds already,
+  // filled in below) is left as it is.
+  if (!before.endsWith(' ') || !balancedWithoutTopLevelOr(before) || /CLAUSESTART|AFTER[A-Z]+/.test(before)) return re;
+  const loose = before.slice(0, -1).replace(/([>)]) (?=[<(])/g, '$1(?:</E>)? (?:<E[^>]*>)?');
+  behind++;
+  return `((?<=${loose}(?:</E>)? )${re.slice(at)}`;
+}
+function balancedWithoutTopLevelOr(s) {
+  let depth = 0, cls = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c === '\\') { i++; continue; }
+    if (cls) { if (c === ']') cls = false; continue; }
+    if (c === '[') cls = true;
+    else if (c === '(') depth++;
+    else if (c === ')') { if (--depth < 0) return false; }
+    else if (c === '|' && depth === 0) return false;
+  }
+  return depth === 0 && !cls;
+}
 fs.mkdirSync(path.join(outDir, 'rules'), { recursive: true });
 console.log('attribute tags:', attrtags);
 console.table(Object.fromEntries(Object.entries(extracted).map(([name, { rules }]) => [name, { rules: rules.length }])));
