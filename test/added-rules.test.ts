@@ -173,6 +173,10 @@ const cases: Case[] = [
   // CO17 chapter 4 review
   { section: '4.3.5', text: 'Maidin sách fuar a bí ann.', rule: 'SEIMHIU', words: 'a bí', fixed: 'Maidin sách fuar a bhí ann.' },
   { section: '4.8.1', text: 'Bhí sé ní ba mór ná sin.', rule: 'SEIMHIU', words: 'ní ba mór', fixed: 'Bhí sé ní ba mhór ná sin.' },
+  // CO17 chapter 11 review
+  { section: '11.9', text: 'Ní dearna mé aon ní.', rule: 'SEIMHIU', words: 'Ní dearna mé', fixed: 'Ní dhearna mé aon ní.' },
+  { section: '11.3.1(f)', text: 'Cad ina thaobh a dearna tú sin?', rule: 'URU', words: 'a dearna tú', fixed: 'Cad ina thaobh a ndearna tú sin?' },
+  { section: '11.2.1(f)', text: 'Déanfar an obair de réir a céile.', rule: 'SEIMHIU', words: 'de réir a céile', fixed: 'Déanfar an obair de réir a chéile.' },
   { section: '10.2.8', text: 'Deir sé go fuil na leabhair léite aige.', rule: 'URU', words: 'go fuil', fixed: 'Deir sé go bhfuil na leabhair léite aige.' },
   { section: '10.6.5', text: 'Cá fios dom?', rule: 'URU', words: 'Cá fios', fixed: 'Cá bhfios dom?' },
   { section: '10.11.1', text: 'Cliceáil faoi dó ar na híomhánna.', rule: 'SEIMHIU', words: 'faoi dó', fixed: 'Cliceáil faoi dhó ar na híomhánna.' },

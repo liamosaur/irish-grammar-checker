@@ -93,9 +93,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	ndéanfar → déanfar	a	Is é sin an chaoi is gasta a déanfar é.	Is é sin an chaoi is gasta a ndéanfar é.	11	11.5.2	209	29	flagged:CLAOCHLU
 	eclipsis	ndéantar → déantar	a	Cén dóigh a déantar an obair?	Cén dóigh a ndéantar an obair?	11	11.9	218	12	flagged:URU
 	eclipsis	ndéantar → déantar	a	Sin é an leabhar a déantar tagairt dó sa chlár.	Sin é an leabhar a ndéantar tagairt dó sa chlár.	11	11.3.1(c)	206	19	flagged:CLAOCHLU
-	eclipsis	ndearna → dearna	a	Cad chuige a dearna tú sin?	Cad chuige a ndearna tú sin?	11	11.9	218	13	flagged:CUPLA
-	eclipsis	ndearna → dearna	a	Cad é ina thaobh a dearna tú sin?	Cad é ina thaobh a ndearna tú sin?	11	11.3.1(f)	207	19	-
-	eclipsis	ndearna → dearna	a	Cad ina thaobh a dearna tú sin?	Cad ina thaobh a ndearna tú sin?	11	11.3.1(f)	207	17	-
+	eclipsis	ndearna → dearna	a	Cad chuige a dearna tú sin?	Cad chuige a ndearna tú sin?	11	11.9	218	13	flagged:URU
+	eclipsis	ndearna → dearna	a	Cad é ina thaobh a dearna tú sin?	Cad é ina thaobh a ndearna tú sin?	11	11.3.1(f)	207	19	flagged:URU
+	eclipsis	ndearna → dearna	a	Cad ina thaobh a dearna tú sin?	Cad ina thaobh a ndearna tú sin?	11	11.3.1(f)	207	17	flagged:URU
 	eclipsis	ndearnadh → dearnadh	a	Tá sé ar thóir leabhair a dearnadh scannáin díobh.	Tá sé ar thóir leabhair a ndearnadh scannáin díobh.	3	3.3.10	52	26	flagged:CAIGHDEAN
 	eclipsis	ndearnadh → dearnadh	a	Arbh é sin an leabhar a dearnadh tagairt dó?	Arbh é sin an leabhar a ndearnadh tagairt dó?	11	11.6.1(b)(iii)	211	24	flagged:CAIGHDEAN
 	eclipsis	ndearnadh → dearnadh	a	Sin é an comhlacht a dearnadh ráiteas thar a cheann.	Sin é an comhlacht a ndearnadh ráiteas thar a cheann.	11	11.3.1(c)	206	21	flagged:CAIGHDEAN
@@ -2126,10 +2126,10 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	cheartódh → ceartódh	a	Ba é an Rúnaí a ceartódh é sa chás sin.	Ba é an Rúnaí a cheartódh é sa chás sin.	7	7.2.1	117	16	-
 	lenition	chéile → céile	a	Nára fada go bhfeicfimid a céile arís.	Nára fada go bhfeicfimid a chéile arís.	7	7.4	130	27	-
 	lenition	chéile → céile	a	Buail do dhá bhos ar a céile.	Buail do dhá bhos ar a chéile.	8	8.3.3	134	23	-
-	lenition	chéile → céile	a	Theip uirthi trí huaire as a céile.	Theip uirthi trí huaire as a chéile.	10	10.11.2	193	29	-
-	lenition	chéile → céile	a	Déanfar an obair de réir a céile.	Déanfar an obair de réir a chéile.	11	11.2.1(f)	205	27	-
-	lenition	chéile → céile	a	Is de réir a céile a dhéanfar an obair.	Is de réir a chéile a dhéanfar an obair.	11	11.2.1(f)	205	13	-
-	lenition	chéile → céile	a	Is de réir a céile a dhéantar dul chun cinn.	Is de réir a chéile a dhéantar dul chun cinn.	11	11.8.4	216	13	-
+	lenition	chéile → céile	a	Theip uirthi trí huaire as a céile.	Theip uirthi trí huaire as a chéile.	10	10.11.2	193	29	flagged:SEIMHIU
+	lenition	chéile → céile	a	Déanfar an obair de réir a céile.	Déanfar an obair de réir a chéile.	11	11.2.1(f)	205	27	flagged:SEIMHIU
+	lenition	chéile → céile	a	Is de réir a céile a dhéanfar an obair.	Is de réir a chéile a dhéanfar an obair.	11	11.2.1(f)	205	13	flagged:SEIMHIU
+	lenition	chéile → céile	a	Is de réir a céile a dhéantar dul chun cinn.	Is de réir a chéile a dhéantar dul chun cinn.	11	11.8.4	216	13	flagged:SEIMHIU
 	lenition	Chléireach → Cléireach	a	a Cléireach na Dála	a Chléireach na Dála	2	2.2.3	25	2	-
 	lenition	chlog → clog	a	Beidh an scannán ar siúl óna ceathair a clog.	Beidh an scannán ar siúl óna ceathair a chlog.	8	8.3.8	136	40	flagged:SEIMHIU
 	lenition	chlog → clog	a	Beidh mé ann faoina sé a clog.	Beidh mé ann faoina sé a chlog.	8	8.3.8	136	25	flagged:SEIMHIU
@@ -4063,13 +4063,13 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dheachamar → deachamar	ní	ní deachamar	ní dheachamar	5	Tábla 5X	99	3	-
 	lenition	dheachamar → deachamar	Ní	Ní deachamar go dtí ár gcóisir féin.	Ní dheachamar go dtí ár gcóisir féin.	8	8.3.8	137	3	-
 	lenition	dheachthas → deachthas	ní	ní deachthas	ní dheachthas	5	Tábla 5X	99	3	-
-	lenition	dhearna → dearna	ní	ní dearna mé	ní dhearna mé	5	Tábla 5R	93	3	-
+	lenition	dhearna → dearna	ní	ní dearna mé	ní dhearna mé	5	Tábla 5R	93	3	flagged:SEIMHIU
 	lenition	dhearna → dearna	ní	ní dearna sé	ní dhearna sé	5	Tábla 5R	93	3	flagged:SEIMHIU
 	lenition	dhearna → dearna	ní	ní dearna sí	ní dhearna sí	5	Tábla 5R	93	3	flagged:BACHOIR
 	lenition	dhearna → dearna	ní	ní dearna siad	ní dhearna siad	5	Tábla 5R	93	3	flagged:BACHOIR
-	lenition	dhearna → dearna	ní	ní dearna sibh	ní dhearna sibh	5	Tábla 5R	93	3	-
-	lenition	dhearna → dearna	ní	ní dearna tú	ní dhearna tú	5	Tábla 5R	93	3	-
-	lenition	dhearna → dearna	Ní	Ní dearna mé aon ní nár chuí liom.	Ní dhearna mé aon ní nár chuí liom.	11	11.8.3	215	3	-
+	lenition	dhearna → dearna	ní	ní dearna sibh	ní dhearna sibh	5	Tábla 5R	93	3	flagged:SEIMHIU
+	lenition	dhearna → dearna	ní	ní dearna tú	ní dhearna tú	5	Tábla 5R	93	3	flagged:SEIMHIU
+	lenition	dhearna → dearna	Ní	Ní dearna mé aon ní nár chuí liom.	Ní dhearna mé aon ní nár chuí liom.	11	11.8.3	215	3	flagged:SEIMHIU
 	lenition	dhearnadh → dearnadh	Ní	Ní dearnadh gearán i gcoinne aon mhúinteoir sa scoil seo.	Ní dhearnadh gearán i gcoinne aon mhúinteoir sa scoil seo.	3	3.3.10	52	3	flagged:CAIGHDEAN
 	lenition	dhearnadh → dearnadh	ní	ní dearnadh	ní dhearnadh	5	Tábla 5R	93	3	flagged:CAIGHDEAN
 	lenition	dhearnamar → dearnamar	ní	ní dearnamar	ní dhearnamar	5	Tábla 5R	93	3	-

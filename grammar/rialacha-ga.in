@@ -4588,6 +4588,13 @@ CLAUSESTART <V p="y" t="gnáth">UNLENITED(inn|teá|tá|tí)</V>:SEIMHIU
 CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]ise|[Ss]eisean|[Ss]ise|[Ss]iadsan|[Ss]inne|[Ss]ibhse)</P>:SEIMHIU
 # CO17 4.8.1: ní ba lenites the comparative (ní ba mhó); before a vowel or f it is ní b' (ní b'fhearr)
 <R>[Nn]í ba</R> <A>([BbCcDdGgMmPpTt][^Hh']|[Ss][lnraeiouáéíóú])ANYTHING</A>:SEIMHIU
+# CO17 11.3.1(f), 11.9, 5.1.8: the dependent past of déan is lenited after ní and eclipsed after a
+# (indirect), nach, go, an, mura, sula; unmutated it is read as the noun dearna, but a subject
+# pronoun after it shows it is the verb (Ní dearna mé; Cad ina thaobh a dearna tú sin?)
+[Nn]í <N>dearna</N> <P>([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh)</P>:SEIMHIU
+([Aa]|[Nn]ach|[Gg]o|[Aa]n|[Mm]ura|[Ss]ula) <N>dearna</N> <P>([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh)</P>:URU
+# CO17 10.11.2, 11.2.1(f): the set phrases as a chéile, de réir a chéile
+<S>([Aa]s|[Dd]e réir)</S> <D>[Aa]</D> <N>céile</N>:SEIMHIU
 # a + bí is the relative with the past (an t-airgead a bhí aige; Maidin sách fuar a bhí ann): no
 # imperative follows a; bí is read as a noun here
 <[DGU]>[Aa]</[DGU]> <[NV]>[Bb]í</[NV]>:SEIMHIU

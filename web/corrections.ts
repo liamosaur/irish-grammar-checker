@@ -350,8 +350,9 @@ export function proposeFix(rule: string, flagged: string): string | null {
   }
   // A past verb with its subject pronoun (Socraigh sí -> Shocraigh sí, Ól sé -> D'ól sé): the
   // change goes on the verb.
-  if (rule === 'SEIMHIU' || rule === 'PREFIXD') {
-    const m = /^(\s*)(\S+)(\s+(?:mé|sé|sí|siad|sinn|muid|sibh|mise|seisean|sise|siadsan|sinne|sibhse)\s*)$/i.exec(flagged);
+  // The same for a verb after a particle (Ní dearna mé -> Ní dhearna mé; Mura cuire tú -> Mura gcuire tú).
+  if (rule === 'SEIMHIU' || rule === 'PREFIXD' || rule === 'URU') {
+    const m = /^([\s\S]*?)(\S+)(\s+(?:mé|tú|sé|sí|siad|sinn|muid|sibh|mise|seisean|sise|siadsan|sinne|sibhse)\s*)$/i.exec(flagged);
     if (m) { const changed = FIXES[rule](m[2]); return changed === null ? null : m[1] + changed + m[3]; }
   }
   // Bí before a noun phrase is the past missing its lenition (Bí na fir -> Bhí na fir).
