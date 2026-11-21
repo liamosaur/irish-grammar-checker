@@ -209,9 +209,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	ndeachaigh → deachaigh	An	An deachaigh Áine sall go Sasana inné?	An ndeachaigh Áine sall go Sasana inné?	6	Tábla 6B	110	3	flagged:NEAMHCHOIT
 	eclipsis	ndeachaigh → deachaigh	An	An deachaigh tú soir chucu?	An ndeachaigh tú soir chucu?	6	Tábla 6B	110	3	flagged:NEAMHCHOIT
 	eclipsis	ndeachaigh → deachaigh	An	An deachaigh sé amach chun iad a cheannach?	An ndeachaigh sé amach chun iad a cheannach?	8	8.2.5	132	3	flagged:NEAMHCHOIT
-	eclipsis	ndearna → dearna	An	An dearna sé an dinnéar?	An ndearna sé an dinnéar?	8	8.2.4	132	3	flagged:SEIMHIU
-	eclipsis	ndearna → dearna	An	An dearna sí an dinnéar?	An ndearna sí an dinnéar?	8	8.2.4	132	3	flagged:BACHOIR
-	eclipsis	ndearna → dearna	An	An dearna siad an dinnéar?	An ndearna siad an dinnéar?	8	8.2.4	132	3	flagged:BACHOIR
+	eclipsis	ndearna → dearna	An	An dearna sé an dinnéar?	An ndearna sé an dinnéar?	8	8.2.4	132	3	flagged:URU
+	eclipsis	ndearna → dearna	An	An dearna sí an dinnéar?	An ndearna sí an dinnéar?	8	8.2.4	132	3	flagged:URU
+	eclipsis	ndearna → dearna	An	An dearna siad an dinnéar?	An ndearna siad an dinnéar?	8	8.2.4	132	3	flagged:URU
 	eclipsis	ndúirt → dúirt	An	An dúirt sé go raibh sé i mbun eagarthóireacht air?	An ndúirt sé go raibh sé i mbun eagarthóireacht air?	3	3.3.10	52	3	flagged:URU
 	eclipsis	ndúirt → dúirt	An	An dúirt sé dada leatsa faoi?	An ndúirt sé dada leatsa faoi?	5	5.4.5(a)	88	3	flagged:URU
 	eclipsis	ngairdín → gairdín	an	tríd an gairdín breá	tríd an ngairdín breá	1	1.4.1	8	8	flagged:CLAOCHLU
@@ -1071,12 +1071,12 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	h-	hAlbanaigh → Albanaigh	na	na Albanaigh bhródúla	na hAlbanaigh bhródúla	1	1.6.1	13	3	flagged:PREFIXH
 	h-	hAlpa → Alpa	na	na Alpa	na hAlpa	1	1.1.5(h)	3	3	flagged:PREFIXH
 	h-	haoise → aoise	na	Bhí glacadh forleathan leis an tuairim sin faoi dheireadh na aoise seo caite.	Bhí glacadh forleathan leis an tuairim sin faoi dheireadh na haoise seo caite.	10	10.11.1	193	61	flagged:PREFIXH
-	h-	haon → aon	na	costas na aon fhuinneoige amháin	costas na haon fhuinneoige amháin	9	9.3.7	150	10	flagged:BACHOIR
-	h-	haon → aon	na	geansaí na aon mhná deise amháin	geansaí na haon mhná deise amháin	9	9.4.3	159	11	flagged:BACHOIR
-	h-	haon → aon	na	hata na aon mhná amháin	hata na haon mhná amháin	9	9.4.3	158	8	flagged:BACHOIR
+	h-	haon → aon	na	costas na aon fhuinneoige amháin	costas na haon fhuinneoige amháin	9	9.3.7	150	10	flagged:PREFIXH
+	h-	haon → aon	na	geansaí na aon mhná deise amháin	geansaí na haon mhná deise amháin	9	9.4.3	159	11	flagged:PREFIXH
+	h-	haon → aon	na	hata na aon mhná amháin	hata na haon mhná amháin	9	9.4.3	158	8	flagged:PREFIXH
 	h-	haon → aon	na	i gcaitheamh na aon oíche amháin sin	i gcaitheamh na haon oíche amháin sin	9	9.3.7	150	16	flagged:BACHOIR
-	h-	haon → aon	na	tréimhse na aon bhliana fada amháin	tréimhse na haon bhliana fada amháin	9	9.3.7	150	12	flagged:BACHOIR
-	h-	haon → aon	na	tús na aon bhileoige glaine amháin	tús na haon bhileoige glaine amháin	9	9.8	169	7	flagged:BACHOIR
+	h-	haon → aon	na	tréimhse na aon bhliana fada amháin	tréimhse na haon bhliana fada amháin	9	9.3.7	150	12	flagged:PREFIXH
+	h-	haon → aon	na	tús na aon bhileoige glaine amháin	tús na haon bhileoige glaine amháin	9	9.8	169	7	flagged:PREFIXH
 	h-	hArdteiste → Ardteiste	na	Is í Síle atá ag déanamh na Ardteiste i mbliana.	Is í Síle atá ag déanamh na hArdteiste i mbliana.	1	1.5.1	11	28	flagged:PREFIXH
 	h-	hAsóir → Asóir	na	na Asóir	na hAsóir	1	1.1.5(i)	4	3	flagged:PREFIXH
 	h-	hataí → ataí	na	Bhain siad na ataí dá gceann.	Bhain siad na hataí dá gceann.	8	8.3.7	136	14	flagged:PREFIXD
@@ -3714,11 +3714,11 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	cheart → ceart	gur	Dúirt Eoin gur ceart é a dhíol.	Dúirt Eoin gur cheart é a dhíol.	7	7.2.2	120	15	-
 	lenition	chóir → cóir	gur	D’ainneoin an méid a d’impigh sí air, níor dhóigh leis gur cóir an madra a choinneáil.	D’ainneoin an méid a d’impigh sí air, níor dhóigh leis gur chóir an madra a choinneáil.	7	7.2.2	119	59	-
 	lenition	fhlaithiúil → flaithiúil	gur	Cheapamar gur flaithiúil an duine ab ea é.	Cheapamar gur fhlaithiúil an duine ab ea é.	7	7.2.2	120	14	-
-	lenition	fhreastail → freastail	gur	Dúirt siad gur freastail siad ar Choláiste Cholmáin.	Dúirt siad gur fhreastail siad ar Choláiste Cholmáin.	10	10.2.10	181	15	flagged:BACHOIR
+	lenition	fhreastail → freastail	gur	Dúirt siad gur freastail siad ar Choláiste Cholmáin.	Dúirt siad gur fhreastail siad ar Choláiste Cholmáin.	10	10.2.10	181	15	flagged:SEIMHIU
 	lenition	ghadaí → gadaí	gur	Is dóigh leis gur gadaí a bhí ann	Is dóigh leis gur ghadaí a bhí ann	10	10.2.13	182	18	-
 	lenition	mhór → mór	gur	Dúirt sé gur mór an leas dó é.	Dúirt sé gur mhór an leas dó é.	10	10.3.6	185	13	-
 	lenition	theip → teip	gur	Ní déarfadh aon duine gur teip ort.	Ní déarfadh aon duine gur theip ort.	10	10.4.2	187	26	-
-	lenition	thuig → tuig	gur	Sílim gur tuig sé mé.	Sílim gur thuig sé mé.	10	10.4.2	187	10	flagged:BACHOIR
+	lenition	thuig → tuig	gur	Sílim gur tuig sé mé.	Sílim gur thuig sé mé.	10	10.4.2	187	10	flagged:SEIMHIU
 	lenition	fhéimheach → féimheach	gurbh	Dhearbhaigh sé gurbh féimheach é.	Dhearbhaigh sé gurbh fhéimheach é.	7	7.2.2	120	21	flagged:SEIMHIU
 	lenition	fhiú → fiú	gurbh	Dúirt sí gurbh fiú labhairt léi	Dúirt sí gurbh fhiú labhairt léi	10	10.2.13	182	15	flagged:SEIMHIU
 	lenition	bhainisteoir → bainisteoir	haghaidh	D’fhág mé nóta le haghaidh bainisteoir na hoifige.	D’fhág mé nóta le haghaidh bhainisteoir na hoifige.	3	3.3.1	44	27	-
@@ -3977,15 +3977,15 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhó → bó	nár	Níor ceannaíodh bó nár bó mhaith í.	Níor ceannaíodh bó nár bhó mhaith í.	7	7.2.3	122	23	flagged:SEIMHIU
 	lenition	bhó → bó	nár	Níor ceannaíodh bó nár bó mhaith.	Níor ceannaíodh bó nár bhó mhaith.	7	7.2.3	122	23	flagged:SEIMHIU
 	lenition	bhris → bris	nár	Sin é an gaothscáth nár bris an buachaill.	Sin é an gaothscáth nár bhris an buachaill.	11	11.7.3(b)	214	24	flagged:SEIMHIU
-	lenition	bhuail → buail	nár	Sin é an sliotar nár buail an bhean é.	Sin é an sliotar nár bhuail an bhean é.	11	11.7.3(b)	214	21	flagged:BACHOIR
-	lenition	bhuail → buail	nár	Sin é an sliotar nár buail an bhean.	Sin é an sliotar nár bhuail an bhean.	11	11.7.3(b)	214	21	flagged:BACHOIR
-	lenition	cheannaigh → ceannaigh	nár	Sin é an fear nár ceannaigh mé aon earraí uaidh.	Sin é an fear nár cheannaigh mé aon earraí uaidh.	11	11.6.2(a)(ii)	212	18	flagged:BACHOIR
+	lenition	bhuail → buail	nár	Sin é an sliotar nár buail an bhean é.	Sin é an sliotar nár bhuail an bhean é.	11	11.7.3(b)	214	21	flagged:SEIMHIU
+	lenition	bhuail → buail	nár	Sin é an sliotar nár buail an bhean.	Sin é an sliotar nár bhuail an bhean.	11	11.7.3(b)	214	21	flagged:SEIMHIU
+	lenition	cheannaigh → ceannaigh	nár	Sin é an fear nár ceannaigh mé aon earraí uaidh.	Sin é an fear nár cheannaigh mé aon earraí uaidh.	11	11.6.2(a)(ii)	212	18	flagged:SEIMHIU
 	lenition	cheannaigh → ceannaigh	nár	Sin í an bhean nár ceannaigh an buachaill a carr.	Sin í an bhean nár cheannaigh an buachaill a carr.	11	11.7.3(b)	214	19	flagged:SEIMHIU
 	lenition	cheoltóir → ceoltóir	Nár	Nár ceoltóir maith é?	Nár cheoltóir maith é?	10	10.2.13	182	4	flagged:SEIMHIU
 	lenition	chneasta → cneasta	nár	B’fhéidir nár cneasta uaim é	B’fhéidir nár chneasta uaim é	10	10.3.6	185	14	flagged:SEIMHIU
 	lenition	chóir → cóir	nár	Is é mo bharúilse nár cóir dó éirí as.	Is é mo bharúilse nár chóir dó éirí as.	8	8.2.6	132	22	flagged:SEIMHIU
-	lenition	chraol → craol	nár	Sin é an clár nár craol an stáisiún é.	Sin é an clár nár chraol an stáisiún é.	11	11.6.2(a)(ii)	212	18	flagged:BACHOIR
-	lenition	chraol → craol	nár	Sin é an stáisiún nár craol an clár.	Sin é an stáisiún nár chraol an clár.	11	11.6.2(a)(ii)	212	22	flagged:BACHOIR
+	lenition	chraol → craol	nár	Sin é an clár nár craol an stáisiún é.	Sin é an clár nár chraol an stáisiún é.	11	11.6.2(a)(ii)	212	18	flagged:SEIMHIU
+	lenition	chraol → craol	nár	Sin é an stáisiún nár craol an clár.	Sin é an stáisiún nár chraol an clár.	11	11.6.2(a)(ii)	212	22	flagged:SEIMHIU
 	lenition	chuala → cuala	Nár	Nár cuala tú faoin gcruinniú?	Nár chuala tú faoin gcruinniú?	5	5.4.5(a)	88	4	flagged:CAIGHDEAN
 	lenition	chuala → cuala	nár	Tá scannán nár cuala mé trácht air ar siúl sa phictiúrlann anocht.	Tá scannán nár chuala mé trácht air ar siúl sa phictiúrlann anocht.	11	11.6.2(a)(ii)	212	15	flagged:CAIGHDEAN
 	lenition	chuí → cuí	nár	Ní dhearna mé aon ní nár cuí liom.	Ní dhearna mé aon ní nár chuí liom.	11	11.8.3	215	25	flagged:SEIMHIU
@@ -4002,7 +4002,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhaith → maith	nár	Cá bhfuil na daoine nár maith leo labhairt?	Cá bhfuil na daoine nár mhaith leo labhairt?	7	7.2.4	123	24	flagged:SEIMHIU
 	lenition	mheas → meas	nár	Chaith sé éadaí nár meas mé a chaithfeadh sé go deo.	Chaith sé éadaí nár mheas mé a chaithfeadh sé go deo.	11	11.4.3	209	20	flagged:SEIMHIU
 	lenition	mhiste → miste	nár	Bhí mise den tuairim nár miste leis cabhrú leat.	Bhí mise den tuairim nár mhiste leis cabhrú leat.	7	7.2.2	121	25	flagged:SEIMHIU
-	lenition	phós → pós	Nár	Nár pós sé riamh?	Nár phós sé riamh?	10	10.4.2	187	4	flagged:BACHOIR
+	lenition	phós → pós	Nár	Nár pós sé riamh?	Nár phós sé riamh?	10	10.4.2	187	4	flagged:SEIMHIU
 	lenition	tháinig → táinig	nár	An bhfuil aon duine nár táinig abhaile ón gceolchoirm fós?	An bhfuil aon duine nár tháinig abhaile ón gceolchoirm fós?	11	11.6.2(a)(ii)	212	24	flagged:CAIGHDEAN
 	lenition	thug → tug	nár	Sin an bhean nár tug mé leabhar di.	Sin an bhean nár thug mé leabhar di.	11	11.6.2(a)(ii)	212	17	flagged:CAIGHDEAN
 	lenition	fhearr → fearr	Nárbh	Nárbh fearr gluaisteán ná rothar?	Nárbh fhearr gluaisteán ná rothar?	7	7.1.1	115	6	flagged:SEIMHIU
@@ -4065,8 +4065,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dheachthas → deachthas	ní	ní deachthas	ní dheachthas	5	Tábla 5X	99	3	-
 	lenition	dhearna → dearna	ní	ní dearna mé	ní dhearna mé	5	Tábla 5R	93	3	flagged:SEIMHIU
 	lenition	dhearna → dearna	ní	ní dearna sé	ní dhearna sé	5	Tábla 5R	93	3	flagged:SEIMHIU
-	lenition	dhearna → dearna	ní	ní dearna sí	ní dhearna sí	5	Tábla 5R	93	3	flagged:BACHOIR
-	lenition	dhearna → dearna	ní	ní dearna siad	ní dhearna siad	5	Tábla 5R	93	3	flagged:BACHOIR
+	lenition	dhearna → dearna	ní	ní dearna sí	ní dhearna sí	5	Tábla 5R	93	3	flagged:SEIMHIU
+	lenition	dhearna → dearna	ní	ní dearna siad	ní dhearna siad	5	Tábla 5R	93	3	flagged:SEIMHIU
 	lenition	dhearna → dearna	ní	ní dearna sibh	ní dhearna sibh	5	Tábla 5R	93	3	flagged:SEIMHIU
 	lenition	dhearna → dearna	ní	ní dearna tú	ní dhearna tú	5	Tábla 5R	93	3	flagged:SEIMHIU
 	lenition	dhearna → dearna	Ní	Ní dearna mé aon ní nár chuí liom.	Ní dhearna mé aon ní nár chuí liom.	11	11.8.3	215	3	flagged:SEIMHIU

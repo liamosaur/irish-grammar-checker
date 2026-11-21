@@ -106,6 +106,9 @@ describe('planReplacement', () => {
     assert.equal(applyPlan('na gCE', 'cé', 3, 6), 'na cé'); // an abbreviation is not mutated
     assert.equal(applyPlan('a sharú', 'shárú', 2, 7), 'a shárú'); // already mutated: as given
   });
+  it('"sa n-eachtra" + "san": the eclipsis goes too', () => {
+    assert.equal(applyPlan('Gortaíodh ceathrar sa n-eachtra.', 'san', 19, 31), 'Gortaíodh ceathrar san eachtra.');
+  });
   it('é, í, iad after the copula ní take h', () => {
     assert.equal(applyPlan('Ní sé i bhfeidhm', 'é', 0, 6), 'Ní hé i bhfeidhm');
   });

@@ -616,6 +616,13 @@ n[Dd]eire:IONADAI{ndeireadh}
 # catch this before following rule
 <NFCS>[Ss]háith</NFCS> <A pl="n" gnt="n">[Ss]é</A>:CAIGHDEAN{sháigh sé}
 <NFCS>[Ss]háith</NFCS> <P>([Mm]é|[Ss]í|[Ss]ibh|[Tt]ú)</P>:CAIGHDEAN{sháigh}
+# CO17 11.3.1(f), 11.9, 5.1.8: the dependent past of déan is lenited after ní and eclipsed after a
+# (indirect), nach, go, an, mura, sula; unmutated it is read as the noun dearna, but a subject
+# pronoun after it shows it is the verb (Ní dearna mé; Cad ina thaobh a dearna tú sin?)
+# Before the adjective rules: sé after dearna is tagged as the number too (An dearna sé ...?),
+# so it is matched as a plain word.
+[Nn]í <N>dearna</N> ([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh):SEIMHIU
+([Aa]|[Nn]ach|[Gg]o|[Aa]n|[Mm]ura|[Ss]ula) <N>dearna</N> ([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh):URU
 # CB p.16 #9.a  (needs shallow parse) -- subsumes CB p.17 #9.gh after <S>
 #. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>NONCOMPOUND</NFCS> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU @adj-fem
@@ -2572,6 +2579,11 @@ dhó:IONADAI{dó}
 # CB p.132 #4
 #. Ba mhaith liom gur bhfágann daoine óga an scoil agus iad ullmhaithe.
 <C>[Gg]ur</C> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{go}
+# A root form after gur is a past tense without its lenition (gur tuig sé: the SEIMHIU rule
+# below), not the imperative; except for the irregular verbs, whose imperative is not the past
+# stem (CO17 5.4): the next rule reports those.
+  <E><C>[Gg]ur</C> <V p="y" t="ord">ANYTHING</V></E>:OK
+<C>[Gg]ur</C> <V p="y" t="ord">([Aa]bair|[Bb]eir|[Bb]í|[Cc]lois|[Cc]luin|[Dd]éan|[Ff]aigh|[Ff]eic|[Tt]abhair|[Tt]ar|[Tt]éigh)</V>:BACHOIR{go}
 # CB p.133 #12.a
 #. Bhraith mé gur fuair mé boladh trom tais uathu.
 <C>[Gg]ur</C> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{go}
@@ -3129,6 +3141,8 @@ dhó:IONADAI{dó}
 # Gaelscoil/Bóthar/Pobal/Ceantar ~ ~
   <T>na</T> <N pl="n" gnt="n" gnd="m">bhFál</N>:OK
 # CB p.77 #8.h; note "na haon" is ok in genitive; CB p.24, 11.b.iii
+# CO17 10.12.3: na (the genitive feminine) puts h before aon (costas na haon fhuinneoige amháin).
+<T>[Nn]a</T> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="y" gnd="f">ANYTHING</N>:PREFIXH @number-h
 <T>[Nn]a</T> aon:BACHOIR{an}
 <T>[Nn]a</T> [Dd]h?á:BACHOIR{an dá}
 <T>[Nn]a</T> fiche|tríocha|daichead|caoga|seasca|seachtó|ochtó|nócha:BACHOIR{an}
@@ -3217,6 +3231,10 @@ dhó:IONADAI{dó}
 <N pl="n" gnt="n" gnd="m">[Nn]aonúr</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # CB p.132 #4 (implicit), OD nach/nár
 [Nn]ár <VNOTPASTSUBJ>ANYTHING</VNOTPASTSUBJ>:BACHOIR{nach}
+# As for gur: a root form after nár is a past tense without its lenition (Nár pós sé riamh?),
+# except for the irregular verbs (CO17 5.4).
+  <E>[Nn]ár <V p="y" t="ord">ANYTHING</V></E>:OK
+[Nn]ár <V p="y" t="ord">([Aa]bair|[Bb]eir|[Bb]í|[Cc]lois|[Cc]luin|[Dd]éan|[Ff]aigh|[Ff]eic|[Tt]abhair|[Tt]ar|[Tt]éigh)</V>:BACHOIR{nach}
 # CB p.133 #12.a
 [Nn]ár <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{nach}
 # CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V), p.132 #5
@@ -3360,6 +3378,8 @@ dhó:IONADAI{dó}
 # CB p.24 #11.a.viii, LGG p.112
 #. Eoghan Ó Anluain a thabharfaidh léacht deiridh na comhdhála.
 <Y>Ó</Y> <Y>INITIALVOWEL</Y>:PREFIXH
+# ó (from, since) before a month, not the surname Ó (Ó Iúil 2010 i leith).
+  <E><Y>Ó</Y> <Y>(Eanáir|Aibreán|Iúil)</Y></E>:OK
 # CB p.133 #9 (with "má"), OD ó^4.II
 #. Ach anois ó cuimhním air, bhí ardán coincréite sa pháirc.
 <C>[Óó]</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -4399,6 +4419,9 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
 # lacunae:
 #. Tá siad ag éileamh go n-íocfaí iad as a gcuid costais agus iad mbun traenála.
 <N>ECLIPSED</N>:NIURU @noun-eclipsis
+# After a conjunction that eclipses (sula, mura, go, nach, dá) the word is a verb read as a
+# noun (sula n-éagann do cháin).
+  <C>([Ss]ula|[Mm]ura|[Gg]o|[Nn]ach|[Dd]á)</C> <E><N>ECLIPSED</N></E>:OK
 # this exception is too broad (allows "i mb'ábhar", etc.) but errors
 # with such words are caught above with a tighter rule requiring "go","dá",etc.
   <N>INITIALMBAPOST</N>:OK
@@ -4585,11 +4608,6 @@ CLAUSESTART <V p="y" t="gnáth">UNLENITED(inn|teá|tá|tí)</V>:SEIMHIU @verb-in
 CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]ise|[Ss]eisean|[Ss]ise|[Ss]iadsan|[Ss]inne|[Ss]ibhse)</P>:SEIMHIU
 # CO17 4.8.1: ní ba lenites the comparative (ní ba mhó); before a vowel or f it is ní b' (ní b'fhearr)
 <R>[Nn]í ba</R> <A>([BbCcDdGgMmPpTt][^Hh']|[Ss][lnraeiouáéíóú])ANYTHING</A>:SEIMHIU
-# CO17 11.3.1(f), 11.9, 5.1.8: the dependent past of déan is lenited after ní and eclipsed after a
-# (indirect), nach, go, an, mura, sula; unmutated it is read as the noun dearna, but a subject
-# pronoun after it shows it is the verb (Ní dearna mé; Cad ina thaobh a dearna tú sin?)
-[Nn]í <N>dearna</N> <P>([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh)</P>:SEIMHIU
-([Aa]|[Nn]ach|[Gg]o|[Aa]n|[Mm]ura|[Ss]ula) <N>dearna</N> <P>([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh)</P>:URU
 # CO17 10.11.2, 11.2.1(f): the set phrases as a chéile, de réir a chéile
 <S>([Aa]s|[Dd]e réir)</S> <D>[Aa]</D> <N>céile</N>:SEIMHIU
 # CO17 8.2.2: the object form thú after a verb that has its subject (Chonaic mé thú; Aithním thú;

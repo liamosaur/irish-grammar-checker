@@ -66,7 +66,7 @@ export interface Plan {
 export function planReplacement(line: string, range: { y: number; from: number; to: number }, replacement: string): Plan | null {
   const chars = Array.from(line);
   if (range.from < 0 || range.to <= range.from || range.to > chars.length) return null;
-  const sa = planSa(chars, range, replacement) ?? planMa(chars, range, replacement);
+  const sa = planSa(chars, range, replacement) ?? planMa(chars, range, replacement) ?? planSan(chars, range, replacement);
   if (sa) return sa;
   const tokens: { from: number; to: number }[] = [];
   for (let i = range.from; i < range.to; i++) {
@@ -185,6 +185,20 @@ function planSa(chars: string[], range: { y: number; from: number; to: number },
   const word = matchCase(flagged.trim(), noun.san ? 'san' : 'sa') + next[1] + noun.word;
   const lead = Array.from(/^\s*/.exec(flagged)![0]).length;
   return { range: { y: range.y, from: range.from + lead, to: range.to + Array.from(next[0]).length }, word };
+}
+
+/**
+ * "sa n-eachtra" -> "san eachtra": san before a vowel, and the eclipsis of the noun goes (it is
+ * not eclipsed after sa). Null unless the flagged words are sa and an eclipsed vowel, and the
+ * replacement san.
+ */
+function planSan(chars: string[], range: { y: number; from: number; to: number }, replacement: string): Plan | null {
+  const flagged = chars.slice(range.from, range.to).join('');
+  const m = /^(\s*)(sa)(\s+)(\S+?)(\s*)$/iu.exec(flagged);
+  const noun = m && uneclipse(m[4]);
+  if (!m || !noun || !isVowel(noun[0]) || !/^san$/i.test(replacement.trim())) return null;
+  const lead = Array.from(m[1]).length;
+  return { range: { y: range.y, from: range.from + lead, to: range.to - Array.from(m[5]).length }, word: matchCase(m[2], 'san') + m[3] + noun };
 }
 
 /**

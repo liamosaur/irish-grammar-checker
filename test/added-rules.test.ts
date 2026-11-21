@@ -276,6 +276,16 @@ const cases: Case[] = [
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
   // the special plural after a number (CO17 9.3.2); the ocht rule lacked </N> and never fired
   { section: '9.3.2', text: 'Bhí ocht n-orlach ann.', rule: 'BACHOIR', words: 'ocht n-orlach', fixed: 'Bhí ocht n-orlaí ann.' },
+  // Book examples with a mutation taken out (test/caighdean/variants.tsv): a root form after gur or
+  // nár is a past tense without its lenition (it was BACHOIR{go} / BACHOIR{nach}, whose fix gave
+  // go tuig, nach pós)
+  { section: '10.4.2', text: 'Sílim gur tuig sé mé.', rule: 'SEIMHIU', words: 'gur tuig', fixed: 'Sílim gur thuig sé mé.' },
+  { section: '10.4.2', text: 'Nár pós sé riamh?', rule: 'SEIMHIU', words: 'Nár pós', fixed: 'Nár phós sé riamh?' },
+  // dearna with sé tagged as the number six (it was SEIMHIU on the adjective)
+  { section: '8.2.4', text: 'An dearna sé an dinnéar?', rule: 'URU', words: 'An dearna sé', fixed: 'An ndearna sé an dinnéar?' },
+  { section: 'Tábla 5R', text: 'ní dearna sé', rule: 'SEIMHIU', words: 'ní dearna sé', fixed: 'ní dhearna sé' },
+  // na (genitive feminine) + aon: h, not "an" (it was BACHOIR{an})
+  { section: '9.3.7', text: 'costas na aon fhuinneoige amháin', rule: 'PREFIXH', words: 'na aon fhuinneoige', fixed: 'costas na haon fhuinneoige amháin' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
