@@ -16,6 +16,8 @@ export interface MorphRuleJson {
   rootpos: string;
   replpos: string;
   poscompiled: string | null;
+  /** The rule finds the standard word but not the form the text needs (a plural it has no model for): its note offers no fix. */
+  nofix?: true;
 }
 
 export interface TokenRuleJson {
@@ -65,4 +67,6 @@ export interface GrammarError {
   reason?: string;
   /** The last of the flagged words when the tagger took several words as one (Baile Átha Cliath). */
   unit?: string;
+  /** The note names the standard word, but not the form to put in the text: it offers no fix. */
+  noFix?: true;
 }

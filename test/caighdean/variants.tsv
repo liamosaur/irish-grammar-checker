@@ -3088,8 +3088,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhfuil → bfuil	Cá	Cá bfuil an bhean ar bronnadh céim uirthi?	Cá bhfuil an bhean ar bronnadh céim uirthi?	11	11.6.1(b)(ii)	211	3	flagged:MICHEART
 	lenition	bhfuil → bfuil	Cá	Cá bfuil an madra a fuair sí?	Cá bhfuil an madra a fuair sí?	11	11.1.4	203	3	flagged:MICHEART
 	lenition	fhad → fad	Cá	Cá fad a bhí sibh ann?	Cá fhad a bhí sibh ann?	11	11.9	217	3	flagged:SEIMHIU
-	lenition	mhéad → méad	Cá	Cá méad stát atá in SAM?	Cá mhéad stát atá in SAM?	10	10.6.4	189	3	flagged:CAIGHDEAN
-	lenition	mhéad → méad	Cá	Cá méad leabhar atá agat?	Cá mhéad leabhar atá agat?	11	11.9	217	3	flagged:CAIGHDEAN
+	lenition	mhéad → méad	Cá	Cá méad stát atá in SAM?	Cá mhéad stát atá in SAM?	10	10.6.4	189	3	flagged:SEIMHIU
+	lenition	mhéad → méad	Cá	Cá méad leabhar atá agat?	Cá mhéad leabhar atá agat?	11	11.9	217	3	flagged:SEIMHIU
 	lenition	chuige → cuige	cad	cad cuige	cad chuige	6	6.1.1(d)	107	4	-
 	lenition	chuige → cuige	Cad	Cad cuige a gcraolfadh an stáisiún raidió popcheol?	Cad chuige a gcraolfadh an stáisiún raidió popcheol?	11	11.6.1(b)(i)	210	4	-
 	lenition	chuige → cuige	Cad	Cad cuige a ndearna tú sin?	Cad chuige a ndearna tú sin?	11	11.9	218	4	-
@@ -3105,7 +3105,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Phóil → Póil	carr	An bhfaca tú carr Póil Mhic Cearáin?	An bhfaca tú carr Phóil Mhic Cearáin?	10	10.2.11	182	18	-
 	lenition	chomh → comh	Cé	Cé comh minic a bhíonn cóisir agaibh sa teach?	Cé chomh minic a bhíonn cóisir agaibh sa teach?	11	11.9	217	3	flagged:CAIGHDEAN
 	lenition	chomh → comh	Cé	Cé comh minic is a bhíonn cóisir agaibh sa teach?	Cé chomh minic is a bhíonn cóisir agaibh sa teach?	11	11.9	217	3	flagged:CAIGHDEAN
-	lenition	mhéad → méad	Cé	Cé méad a fuair tú mar íocaíocht?	Cé mhéad a fuair tú mar íocaíocht?	11	11.9	217	3	flagged:CAIGHDEAN
+	lenition	mhéad → méad	Cé	Cé méad a fuair tú mar íocaíocht?	Cé mhéad a fuair tú mar íocaíocht?	11	11.9	217	3	flagged:SEIMHIU
 	lenition	cheolchoirm → ceolchoirm	céad	a céad ceolchoirm	a céad cheolchoirm	9	9.5.1	160	7	flagged:SEIMHIU
 	lenition	thiománaí → tiománaí	ceadúnas	ceadúnas tiománaí an tacsaí	ceadúnas thiománaí an tacsaí	3	3.1.6	39	9	-
 	lenition	bhád → bád	ceithre	ceithre bád	ceithre bhád	9	9.3.1	145	8	flagged:SEIMHIU
@@ -3300,8 +3300,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fheabhas → feabhas	Dá	Dá feabhas é, níor éirigh an gnó leis.	Dá fheabhas é, níor éirigh an gnó leis.	4	4.8.3	66	3	-
 	lenition	ghlice → glice	Dá	Dá glice é, níor éirigh an gnó leis.	Dá ghlice é, níor éirigh an gnó leis.	4	4.8.3	66	3	flagged:SEIMHIU
 	lenition	ghránna → gránna	Dá	Dá gránna é, caithfear glacadh leis.	Dá ghránna é, caithfear glacadh leis.	4	4.8.3	66	3	flagged:SEIMHIU
-	lenition	mhéad → méad	dá	dá méad airgead a bhí aici	dá mhéad airgead a bhí aici	4	4.8.3	66	3	flagged:CAIGHDEAN
-	lenition	mhéad → méad	Dá	Dá méad dúil a bhí aici ann, níor cheannaigh sí sa deireadh é.	Dá mhéad dúil a bhí aici ann, níor cheannaigh sí sa deireadh é.	4	4.8.3	66	3	flagged:CAIGHDEAN
+	lenition	mhéad → méad	dá	dá méad airgead a bhí aici	dá mhéad airgead a bhí aici	4	4.8.3	66	3	flagged:SEIMHIU
+	lenition	mhéad → méad	Dá	Dá méad dúil a bhí aici ann, níor cheannaigh sí sa deireadh é.	Dá mhéad dúil a bhí aici ann, níor cheannaigh sí sa deireadh é.	4	4.8.3	66	3	flagged:SEIMHIU
 	lenition	shuaraí → suaraí	Dá	Dá suaraí é, caithfear glacadh leis.	Dá shuaraí é, caithfear glacadh leis.	4	4.8.3	66	3	flagged:SEIMHIU
 	lenition	theach → teach	dá	luach an dá teach bheaga	luach an dá theach bheaga	9	9.3.7	150	12	flagged:SEIMHIU
 	lenition	theach → teach	dá	Ní mór doirse an dá teach bheaga a chur faoi ghlas.	Ní mór doirse an dá theach bheaga a chur faoi ghlas.	10	10.3.1	183	20	flagged:SEIMHIU

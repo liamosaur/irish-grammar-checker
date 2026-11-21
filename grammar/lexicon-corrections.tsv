@@ -12,9 +12,10 @@
 # source that gives it (focloir.ie, FGB or CO17), or the build stops. Lines
 # starting with # are comments.
 #
-# Tags written =form mark a word in the word list as a spelling the standard does
-# not use: it is taken out of the word list and added to the non-standard forms,
-# with form as the correction.
+# Tags written =form mark a spelling the standard does not use, with form as the
+# correction (several separated by ", "). A word in the
+# word list is taken out of it; a word in the non-standard table gets this
+# correction in place of the table's; any other word needs a cited source.
 #
 # Reference: CO17 = Gramadach na Gaeilge: An Caighdeán Oifigiúil, 2017.
 
@@ -198,3 +199,7 @@ d'amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun
 m'amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: m'athrú
 b'amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: b'athrú
 ranna	<N pl="y" gnt="n" gnd="f"><N pl="y" gnt="y" gnd="f">	teanglann (grammar database), roinn f2: pl. ranna, gpl. ranna; no dictionary gives ranna as a genitive singular (focloir.ie rann m1, gs. rainn), so that tag is dropped
+cuala	=chuala	CO17 Tábla 5Q: chuala mé (the past of clois is lenited). The table gave cuail (FGB: cuail, f = cual, firewood), a far rarer word than the verb.
+feice	=bhfeice, fheice	CO17 Tábla 5T: go bhfeice tú (the subjunctive of feic); both mutated forms, as the table has faca: bhfaca, fhaca. The table gave feac (FGB feac1: Var f, gs. feice, spade), a far rarer word than the verb.
+cuaigh	=chuaigh	CO17 Tábla 5X: chuaigh mé (the past of téigh is lenited). Without this a spelling rule read it as cuach.
+daingniúcháin	=daingnithe	teanglann (grammar database) daingniú: gs. and pl. daingnithe; FGB daingniú1 gives daingniúchán as a variant (Var: ~chán m), of which this is the gs. and pl. The table gave the headword daingniú.

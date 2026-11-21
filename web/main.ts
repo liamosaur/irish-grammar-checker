@@ -302,7 +302,7 @@ function formatMessage(msg: string, v?: ErrorView): DocumentFragment {
 }
 
 function listItem(v: ErrorView): HTMLLIElement {
-  const replaceable = !!v.range && QUOTES_REPLACEMENT.has(v.rule);
+  const replaceable = !!v.range && QUOTES_REPLACEMENT.has(v.rule) && !v.noFix;
   const flagged = v.range ? sliceRange(checkedText, v.range) : null;
   // What the rule asks for, as the full flagged text: the genitive for "genitive required", the mutated form for "Lenition missing", ...
   const before = v.range ? Array.from(checkedText.split('\n')[v.range.y] ?? '').slice(0, v.range.from).join('') : '';

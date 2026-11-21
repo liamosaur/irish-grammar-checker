@@ -192,11 +192,11 @@ export class Gramadoir {
     return got && (!got.includes('<E') || got.startsWith('<E msg="MOIRF{')) ? joined : null;
   }
 
-  private lookup(original: string, current: string, level: number, posans: PosAns): string {
+  private lookup(original: string, current: string, level: number, posans: PosAns, nofix = false): string {
     posans.v = this.cleanLookup(current);
     if (posans.v) {
       if (level === 0) return `<E msg="MOIRF{${current}}"><X>${original}</X></E>`;
-      if (level === 1) return `<E msg="CAIGHDEAN{${this.withoutHyphen(original) ?? current}}"><X>${original}</X></E>`;
+      if (level === 1) return `<E msg="CAIGHDEAN{${this.withoutHyphen(original) ?? current}}"${nofix ? ' fix="n"' : ''}><X>${original}</X></E>`;
       if (level === 2) return `<E msg="DROCHMHOIRF{${current}}"><X>${original}</X></E>`;
       return '<X>';
     }
@@ -205,7 +205,7 @@ export class Gramadoir {
     if (e !== undefined) {
       if (level === -1) return `<E msg="CAIGHDEAN{${e}}"><X>${original}</X></E>`;
       if (level === 0) return `<E msg="CAIGHMOIRF{${e}}"><X>${original}</X></E>`;
-      if (level === 1) return `<E msg="CAIGHDEAN{${current} (${e})}"><X>${original}</X></E>`;
+      if (level === 1) return `<E msg="CAIGHDEAN{${current} (${e})}"${nofix ? ' fix="n"' : ''}><X>${original}</X></E>`;
       return `<E msg="DROCHMHOIRF{${current} (${e})}"><X>${original}</X></E>`;
     }
     const er = this.earraidi.get(current);
@@ -237,14 +237,14 @@ export class Gramadoir {
     });
   }
 
-  private tagRecurse(original: string, current: string, level: number, posans: PosAns, maxdepth: number): string {
-    let ans = this.lookup(original, current, level, posans);
+  private tagRecurse(original: string, current: string, level: number, posans: PosAns, maxdepth: number, nofix = false): string {
+    let ans = this.lookup(original, current, level, posans, nofix);
     if (maxdepth === 0) return '';
     if (ans) return ans;
     for (const rule of this.morph) {
       if (!rule.re.test(current)) continue;
       const newcurrent = this.applyMorph(rule, current);
-      ans = this.tagRecurse(original, newcurrent, level > rule.src.level ? level : rule.src.level, posans, maxdepth - 1);
+      ans = this.tagRecurse(original, newcurrent, level > rule.src.level ? level : rule.src.level, posans, maxdepth - 1, nofix || !!rule.src.nofix);
       if (ans) {
         if (posans.v !== '<OK>') {
           const temp = posans.v;
@@ -648,7 +648,7 @@ export class Gramadoir {
           errortext = lastCapture;
         }
 
-        const msgm = /^<E msg="(.+?)"(?: r="([^"]+)")?>$/.exec(thiserror);
+        const msgm = /^<E msg="(.+?)"(?: r="([^"]+)")?( fix="n")?>$/.exec(thiserror);
         if (!msgm) continue;
         const sugg = /^MOLADH\{(.*)\}$/.exec(msgm[1]);
         errors.push({
@@ -665,6 +665,7 @@ export class Gramadoir {
           ...(sugg ? { suggestions: sugg[1].split(', ') } : {}),
           ...(msgm[2] ? { reason: msgm[2] } : {}),
           ...(unit && / /.test(unit.trim()) ? { unit: stripEntities(unit.trim()) } : {}),
+          ...(msgm[3] ? { noFix: true as const } : {}),
         });
       }
     }

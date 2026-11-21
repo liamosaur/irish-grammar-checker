@@ -30,6 +30,8 @@ export interface ErrorView {
   reason?: string;
   /** The last flagged token when it is several words (see GrammarError). */
   unit?: string;
+  /** The note names the standard word but not the form to put in the text: no fix offered. */
+  noFix?: true;
 }
 
 export interface Piece {
@@ -83,6 +85,7 @@ export function analyse(text: string, errors: CheckedError[]): { views: ErrorVie
       range: aligned && e.fromy === e.toy ? { y: e.fromy, from: e.fromx, to: e.tox + 1 } : undefined,
       ...(e.reason ? { reason: e.reason } : {}),
       ...(e.unit ? { unit: e.unit } : {}),
+      ...(e.noFix ? { noFix: true as const } : {}),
     });
     if (!aligned) return;
     for (let y = e.fromy; y <= e.toy; y++) {

@@ -290,6 +290,13 @@ const cases: Case[] = [
   // Átha gCliath, chun gcinn)
   { section: '3.3.11', text: 'Tá an-chuid foirgnimh cháiliúla i Baile Átha Cliath.', rule: 'URU', words: 'i Baile Átha Cliath', fixed: 'Tá an-chuid foirgnimh cháiliúla i mBaile Átha Cliath.' },
   { section: '3.3.1', text: 'luas ár dul chun cinn', rule: 'URU', words: 'ár dul chun cinn', fixed: 'luas ár ndul chun cinn' },
+  // méad after cá, cé, dá: lenition (it was CAIGHDEAN{méid, mhéid})
+  { section: '11.9', text: 'Cá méad leabhar atá agat?', rule: 'SEIMHIU', words: 'Cá méad', fixed: 'Cá mhéad leabhar atá agat?' },
+  { section: '4.8.3', text: 'dá méad airgead a bhí aici', rule: 'SEIMHIU', words: 'dá méad', fixed: 'dá mhéad airgead a bhí aici' },
+  // Unmutated forms of irregular verbs: the mutated form (they were the rare nouns cuail, feac, cuach)
+  { section: 'Tábla 5Q', text: 'cuala mé', rule: 'CAIGHDEAN', words: 'cuala', fixed: 'chuala mé' },
+  { section: 'Tábla 5T', text: 'go feice tú', rule: 'CAIGHDEAN', words: 'feice', fixed: 'go bhfeice tú' },
+  { section: 'Tábla 5X', text: 'cuaigh mé', rule: 'CAIGHDEAN', words: 'cuaigh', fixed: 'chuaigh mé' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,

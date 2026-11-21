@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { Gramadoir } from '../src/engine.ts';
 import { loadData } from '../src/node-data.ts';
 import { analyse, type ErrorView } from '../web/annotate.ts';
-import { applyCorrection, matchCase, planReplacement, proposeFix, QUOTES_REPLACEMENT, quotedOptions, quotedParts, sliceRange } from '../web/corrections.ts';
+import { applyCorrection, firstFix, matchCase, planReplacement, proposeFix, QUOTES_REPLACEMENT, quotedOptions, quotedParts, sliceRange } from '../web/corrections.ts';
 import { foldForEngine } from '../web/fold.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -140,6 +140,13 @@ describe('quotedOptions', () => {
   it('after a (direct or indirect relative), and for other words, offers them all', () => {
     assert.deepEqual(note('Non-standard form of /dtug, thug/', 'an fear a tug é', 'tug'), ['dtug', 'thug']);
     assert.deepEqual(note('Non-standard form of /méid, mhéid/', 'Cá méad atá ann?', 'méad'), ['méid', 'mhéid']);
+  });
+  it('a note that names the standard word but not the form the text needs offers nothing', () => {
+    const line = 'Léirigh na péintéireachtaí, ar dhóigh gháirsiúil.';
+    const from = line.indexOf('péintéireachtaí');
+    const v = { rule: 'CAIGHDEAN', msg: 'Non-standard form of /péintéireacht/', suggestions: [], range: { y: 0, from, to: from + 'péintéireachtaí'.length }, noFix: true as const };
+    assert.deepEqual(quotedOptions(v, line), []);
+    assert.equal(firstFix(v, line), null);
   });
 });
 

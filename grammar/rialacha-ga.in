@@ -3015,6 +3015,9 @@ dhó:IONADAI{dó}
 #. Más mhian leat tuilleadh eolais a fháil, scríobh chugainn.
 <V cop="y">[Mm]ás</V> <[AN]>LENITED</[AN]>:NISEIMHIU
   <V cop="y">[Mm]ás</V> <A pl="n" gnt="n">[Dd]há</A>:OK
+# CO17 4.8.3, 10.6.4, 11.9: méad is lenited after cá, cé and dá (dá mhéad airgead)
+#. Cá mhéad leabhar atá agat?
+([Cc][áé]|[Dd]á) <N pl="n" gnt="n" gnd="m">[Mm]éad</N>:SEIMHIU
 # OD méad
 #. Tá caitheamh na hola ag dul i méad i gcónaí.
 <N pl="n" gnt="n" gnd="m">[Mm]h?éad</N>:CAIGHDEAN{méid, mhéid}

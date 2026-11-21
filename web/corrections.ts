@@ -492,16 +492,18 @@ export function withLastWord(flagged: string, word: string): string | null {
 }
 
 /** What a note needs for its buttons. */
-export interface NoteLike { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number }; unit?: string }
+export interface NoteLike { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number }; unit?: string; noFix?: true }
 
 /**
  * The words a note quotes as replacements that are offered as buttons, in order. With `line`
  * (the note's line), a word-list note whose standard forms are only the flagged word mutated
  * (tug: /dtug, thug/; faca: /bhfaca, fhaca/) offers only the form the particle before it calls
- * for (Ar tug -> Ar thug; An faca -> An bhfaca), or none if no offered form fits.
+ * for (Ar tug -> Ar thug; An faca -> An bhfaca), or none if no offered form fits. None for a
+ * note that names the standard word but not the form the text needs (noFix: péintéireachtaí,
+ * /péintéireacht/).
  */
 export function quotedOptions(v: NoteLike, line?: string): string[] {
-  if (!QUOTES_REPLACEMENT.has(v.rule)) return [];
+  if (!QUOTES_REPLACEMENT.has(v.rule) || v.noFix) return [];
   const all = [...v.msg.matchAll(/\/([^/]+)\//g)].flatMap((m) => quotedParts(m[1]).filter((p) => p.option).map((p) => p.text));
   if (line === undefined || !v.range) return all;
   const chars = Array.from(line);
@@ -536,6 +538,7 @@ function mutationAfter(before: string): 'eclipse' | 'lenite' | null {
  */
 export function proposals(v: NoteLike, flagged: string, before = ''): string[] {
   const out: string[] = [];
+  if (v.noFix) return out;
   for (const w of v.fixes ?? []) { const p = withLastWord(flagged, w); if (p !== null) out.push(p); }
   if (!out.length) { const p = proposeFix(v.rule, flagged, before, v.unit); if (p !== null) out.push(p); }
   return out;

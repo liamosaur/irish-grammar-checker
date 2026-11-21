@@ -786,7 +786,9 @@ thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 # start derivational morphology
 ([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>	<&>
 acht$			ach		0	<A pl="n" gnt="n".*>	<N pl="n" gnt="n" gnd="f">
-([ao])chtaí$		$1cht		1	<N pl="n" gnt="n".*>	<&>
+# a plural in -achtaí the dictionaries do not give (péintéireachtaí): flagged as a form of
+# the singular, with no fix, since no plural is given to suggest
+([ao])chtaí$		$1cht		1	<N pl="n" gnt="n".*>	<&>	nofix
 íocht$			íoch		0	<A pl="n" gnt="n".*>	<N pl="n" gnt="n" gnd="f">
 úlachta?$		úil		0	<A pl="n" gnt="n".*>	<&> # CO p.120
 úchái?n$		ú		0	<N.*>	<&>

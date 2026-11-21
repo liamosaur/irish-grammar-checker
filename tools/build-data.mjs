@@ -109,12 +109,16 @@ for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '')
   const [word, tags, reason = ''] = line.split('\t');
   if (!word || !tags) throw new Error(`${where}: expected word<TAB>tags<TAB>reason`);
   if (/[^\u0000-ÿ]/.test(word + tags)) throw new Error(`${where}: characters outside Latin-1`);
-  // =form: a word in the word list that the standard spells otherwise. It is taken out of the
-  // word list (no code chars) and reported as non-standard, with form as the correction.
+  // =form: a spelling the standard does not use, with form as the correction (several forms
+  // separated by ", "). A word in the word list is taken out of it (no code chars). A word already
+  // in the non-standard table gets this correction in place of the table's. Any other word is
+  // new, and the reason must cite its source.
   if (tags.startsWith('=')) {
-    if (!lex.some((tier) => Object.hasOwn(tier, word))) throw new Error(`${where}: ${word} is not in the word list`);
-    corrections[word] = '';
-    nonstandard[word] = tags.slice(1).trim().replace(/ /g, '_');
+    const forms = tags.slice(1).trim();
+    if (lex.some((tier) => Object.hasOwn(tier, word))) corrections[word] = '';
+    else if (Object.hasOwn(eile, word)) delete eile[word];
+    else if (!/^(focloir\.ie|FGB|CO17)\b/.test(reason)) throw new Error(`${where}: ${word} is in neither the word list nor the non-standard table; its reason must start with its source (focloir.ie, FGB or CO17)`);
+    nonstandard[word] = forms.replace(/ /g, '_');
     continue;
   }
   // A word not in the word list is added to it. If it is in the non-standard forms table, the
@@ -163,9 +167,11 @@ const morph = [];
 for (const raw of latin1Lines('morph.bs')) {
   const line = raw.replace(/#.*$/, '');
   if (!/\S/.test(line)) continue;
-  const m = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)\s+(<[^>]+>)/.exec(line);
+  // An optional last field, nofix: the rule finds the standard word but not the form the text
+  // needs, so its note offers no fix.
+  const m = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)\s+(<[^>]+>)(?:\s+(nofix)\b)?/.exec(line);
   if (!m) throw new Error('bad morph line: ' + raw);
-  const [, patt, repl, level, rootpos, replpos] = m;
+  const [, patt, repl, level, rootpos, replpos, nofix] = m;
   // tokenise repl
   const parts = [];
   const re = /\\([lL])\$([1-9])|\$([1-9])|([^$\\]+)|\\(.)/g;
@@ -183,6 +189,7 @@ for (const raw of latin1Lines('morph.bs')) {
   }
   morph.push({
     re: fixClass(patt), parts, level: Number(level), rootpos, replpos, poscompiled,
+    ...(nofix ? { nofix: true } : {}),
   });
 }
 write('morph.json', morph);
