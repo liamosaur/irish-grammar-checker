@@ -678,6 +678,8 @@ n[Dd]eire:IONADAI{ndeireadh}
 # CO17 1.1.5(e): Dé replaces the article for a particular day (Dé Céadaoin seo caite), so not both
 <T>[Aa]n</T> <N>Dé ANYTHING</N>:BADART
 <S>FUSEDPREP</S> <N>Dé ANYTHING</N>:BADART
+# Déardaoin already contains Dé (Dé + ardaoin): not Dé Déardaoin
+<N>[Dd]é</N> <N>Déardaoin</N>:BACHOIR{Déardaoin}
 ######## Lenition of an indefinite genitive after a feminine singular noun
 # CO17 10.2.7 lists every case where it is not lenited, (a) to (m). Some depend on
 # what the nouns mean (the second is a person, animal or other living thing, or a
@@ -5320,6 +5322,8 @@ háirithe:INPHRASE{go háirithe}
 # after the copula the noun or adjective is the predicate and seo/sin/úd the subject pronoun
 # (CO17 7.1.1: Is fíor sin; Mura féidir sin a dhéanamh; gur gá sin)
 <V cop="y">ANYTHING</V> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+# Dé replaces the article before a day (CO17 1.1.5(e): Dé Luain seo chugainn; Déardaoin seo)
+<E><N>(Dé ANYTHING|Déardaoin)</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:NEEDART
 <[ADN]>ANYTHING</[ADN]> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 <T>ANYTHING</T> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
