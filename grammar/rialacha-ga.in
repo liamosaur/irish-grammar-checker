@@ -4616,6 +4616,7 @@ CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]
 <P>([Éé]|[Íí]|[Ii]ad|[Mm]é|[Tt]hú|[Ss]inn|[Ss]ibh|[Mm]uid)</P> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
 <N>ANYTHING</N> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
 <O>ANYTHING</O> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
+<[AR]>ANYTHING</[AR]> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
 # CO17 7.3.1, 7.3.4: the past and conditional copula cár and murar lenite (Cár thairbhe duit é?;
 # Murar chomhalta cláraithe é)
 ([Cc]ár|[Mm]urar) <[AN]>UNLENITED</[AN]>:SEIMHIU
@@ -4623,6 +4624,9 @@ CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]
 [Dd]á b'ANYTHING:URU
 # má lenites (Má bhí leabhar ann riamh); bí there is read as a noun
 [Mm]á [Bb]í:SEIMHIU
+# CO17 6.1.1(d): cén includes the article, which lenites a feminine noun (Cén chaoi a bhfuil tú?), but
+# not d, t (cén deoch) or s (cén tslí)
+<Q>[Cc]én</Q> <N pl="n" gnt="n" gnd="f">UNLENITEDBCFGMP</N>:SEIMHIU
 # a + bí is the relative with the past (an t-airgead a bhí aige; Maidin sách fuar a bhí ann): no
 # imperative follows a; bí is read as a noun here
 <[DGU]>[Aa]</[DGU]> <[NV]>[Bb]í</[NV]>:SEIMHIU

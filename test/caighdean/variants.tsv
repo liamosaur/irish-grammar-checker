@@ -2184,11 +2184,11 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chumann → cumann	a	a cumann	a chumann	2	2.2.3	25	2	flagged:WEAKSEIMHIUVOC
 	lenition	chupáin → cupáin	a	Chuaigh sé i gcomhair a cupáin tae.	Chuaigh sé i gcomhair a chupáin tae.	3	3.1.2	37	24	-
 	lenition	chur → cur	a	Tá siad ag moladh a cur chuige ó mhínigh sé dóibh é.	Tá siad ag moladh a chur chuige ó mhínigh sé dóibh é.	3	3.3.1	45	20	-
-	lenition	chur → cur	a	Teastaíonn uathu cláir nua-aimseartha a cur in ionad seanchláir gan mhaith.	Teastaíonn uathu cláir nua-aimseartha a chur in ionad seanchláir gan mhaith.	3	3.3.10	52	40	-
+	lenition	chur → cur	a	Teastaíonn uathu cláir nua-aimseartha a cur in ionad seanchláir gan mhaith.	Teastaíonn uathu cláir nua-aimseartha a chur in ionad seanchláir gan mhaith.	3	3.3.10	52	40	flagged:SEIMHIU
 	lenition	chur → cur	a	Bhí orthu an fhéile a cur ar siúl ag deireadh an tsamhraidh fhliuch.	Bhí orthu an fhéile a chur ar siúl ag deireadh an tsamhraidh fhliuch.	4	4.4.1	60	22	flagged:SEIMHIU
 	lenition	chur → cur	a	Luadh an dáta faoinarbh fhéidir litir a cur faoi bhráid an Aire.	Luadh an dáta faoinarbh fhéidir litir a chur faoi bhráid an Aire.	7	7.3.2	127	40	flagged:SEIMHIU
-	lenition	chur → cur	a	Ní mór doirse an dá theach bheaga a cur faoi ghlas.	Ní mór doirse an dá theach bheaga a chur faoi ghlas.	10	10.3.1	183	36	-
-	lenition	chur → cur	a	Ní mór lipéid shothuigthe a cur ar earraí glantacháin.	Ní mór lipéid shothuigthe a chur ar earraí glantacháin.	10	10.3.1	183	28	-
+	lenition	chur → cur	a	Ní mór doirse an dá theach bheaga a cur faoi ghlas.	Ní mór doirse an dá theach bheaga a chur faoi ghlas.	10	10.3.1	183	36	flagged:SEIMHIU
+	lenition	chur → cur	a	Ní mór lipéid shothuigthe a cur ar earraí glantacháin.	Ní mór lipéid shothuigthe a chur ar earraí glantacháin.	10	10.3.1	183	28	flagged:SEIMHIU
 	lenition	chur → cur	a	Níl a fhios aici conas cnaipe a cur ar chóta.	Níl a fhios aici conas cnaipe a chur ar chóta.	10	10.2.5	173	32	flagged:SEIMHIU
 	lenition	chur → cur	a	An maith leat an chaoi atáim a cur ar an seomra?	An maith leat an chaoi atáim a chur ar an seomra?	11	11.3.1(h)	208	31	-
 	lenition	dhá → dá	a	a dá bhfeirm	a dhá bhfeirm	8	8.3.3	134	2	flagged:CUPLA
@@ -2242,8 +2242,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dhuine → duine	a	a duine chuí	a dhuine chuí	4	4.7	64	2	flagged:WEAKSEIMHIUVOC
 	lenition	dhúnadh → dúnadh	a	Bhí na fir shlándála ar tí na doirse a dúnadh.	Bhí na fir shlándála ar tí na doirse a dhúnadh.	3	3.3.2	45	39	-
 	lenition	fháil → fáil	a	foghlaim a fáil	foghlaim a fháil	3	3.3.3	46	11	flagged:SEIMHIU
-	lenition	fháil → fáil	a	Ba ghá dóibh dréimire ní b’fhearr a fáil anuraidh.	Ba ghá dóibh dréimire ní b’fhearr a fháil anuraidh.	6	6.1.1(f)	108	36	-
-	lenition	fháil → fáil	a	Ba ghá dóibh dréimire níos fearr a fáil anuraidh.	Ba ghá dóibh dréimire níos fearr a fháil anuraidh.	6	6.1.1(f)	108	35	-
+	lenition	fháil → fáil	a	Ba ghá dóibh dréimire ní b’fhearr a fáil anuraidh.	Ba ghá dóibh dréimire ní b’fhearr a fháil anuraidh.	6	6.1.1(f)	108	36	flagged:SEIMHIU
+	lenition	fháil → fáil	a	Ba ghá dóibh dréimire níos fearr a fáil anuraidh.	Ba ghá dóibh dréimire níos fearr a fháil anuraidh.	6	6.1.1(f)	108	35	flagged:SEIMHIU
 	lenition	fháil → fáil	a	Dá mba mhaith leat é, d’fhéadfainn é a fáil duit.	Dá mba mhaith leat é, d’fhéadfainn é a fháil duit.	7	7.3.5	129	39	flagged:SEIMHIU
 	lenition	fháil → fáil	a	Cheannaigh sí an gúna a bhí mé ag iarraidh a fáil	Cheannaigh sí an gúna a bhí mé ag iarraidh a fháil	11	11.3.1(b)	205	45	flagged:SEIMHIU
 	lenition	fháil → fáil	a	Cheannaigh sí an gúna a raibh mé ag iarraidh é a fáil.	Cheannaigh sí an gúna a raibh mé ag iarraidh é a fháil.	11	11.3.1(b)	205	49	flagged:SEIMHIU
@@ -2298,7 +2298,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mháthair → máthair	a	a máthair imníoch	a mháthair imníoch	4	4.7	64	2	flagged:WEAKSEIMHIUVOC
 	lenition	mhéadú → méadú	a	Is é an aidhm atá leis líon na mac léinn a méadú.	Is é an aidhm atá leis líon na mac léinn a mhéadú.	8	8.2.6	132	43	flagged:SEIMHIU
 	lenition	mhéadú → méadú	a	Cliceáil faoi dhó ar na híomhánna chun iad a méadú.	Cliceáil faoi dhó ar na híomhánna chun iad a mhéadú.	10	10.11.1	193	45	flagged:SEIMHIU
-	lenition	mheas → meas	a	Déanfar na gnéithe an-tábhachtach sin a meas.	Déanfar na gnéithe an-tábhachtach sin a mheas.	4	4.3.6	60	40	-
+	lenition	mheas → meas	a	Déanfar na gnéithe an-tábhachtach sin a meas.	Déanfar na gnéithe an-tábhachtach sin a mheas.	4	4.3.6	60	40	flagged:SEIMHIU
 	lenition	mheas → meas	a	Fuair mé é in áit a meas mé a bhfaighinn é	Fuair mé é in áit a mheas mé a bhfaighinn é	11	11.4.3	209	20	flagged:SEIMHIU
 	lenition	mheasann → measann	a	Cén dóigh a measann tú a ndéanfar an obair sin?	Cén dóigh a mheasann tú a ndéanfar an obair sin?	11	11.4.3	209	12	flagged:SEIMHIU
 	lenition	mheascadh → meascadh	a	Déan 500g de phlúr bán agus 250g de shiúcra mín a meascadh i mbabhla.	Déan 500g de phlúr bán agus 250g de shiúcra mín a mheascadh i mbabhla.	3	3.3.7	50	50	-
@@ -2378,7 +2378,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	thiocfaidh → tiocfaidh	a	Cén uair a tiocfaidh sí anall arís?	Cén uair a thiocfaidh sí anall arís?	6	Tábla 6B	110	11	flagged:SEIMHIU
 	lenition	thiomáineann → tiomáineann	a	An bhfaca tú an gluaisteán a tiomáineann sí?	An bhfaca tú an gluaisteán a thiomáineann sí?	10	10.4.1	186	29	flagged:CLAOCHLU
 	lenition	thiomáint → tiomáint	a	Sin an cineál cairr atá sé a tiomáint.	Sin an cineál cairr atá sé a thiomáint.	11	11.2.1(c)	204	29	flagged:SEIMHIU
-	lenition	thionól → tionól	a	Moladh cruinnithe a tionól i ngach contae.	Moladh cruinnithe a thionól i ngach contae.	10	10.7	190	20	-
+	lenition	thionól → tionól	a	Moladh cruinnithe a tionól i ngach contae.	Moladh cruinnithe a thionól i ngach contae.	10	10.7	190	20	flagged:SEIMHIU
 	lenition	thit → tit	a	Ní ansin a tit mé.	Ní ansin a thit mé.	7	7.2.5	124	11	flagged:CLAOCHLU
 	lenition	thit → tit	a	An cuimhin leat an lá a tit an crann?	An cuimhin leat an lá a thit an crann?	11	11.2.1(e)	204	24	flagged:CLAOCHLU
 	lenition	thóg → tóg	a	Ní raibh mé sásta lena fhad a tóg sé.	Ní raibh mé sásta lena fhad a thóg sé.	8	8.3.8	136	30	flagged:CLAOCHLU
@@ -3143,14 +3143,14 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	sheachtú → seachtú	ceithre	ceithre seachtú	ceithre sheachtú	9	9.6.3	166	8	flagged:SEIMHIU
 	lenition	thrídéagú → trídéagú	ceithre	ceithre trídéagú	ceithre thrídéagú	9	9.6.1	163	8	-
 	lenition	thríochadú → tríochadú	ceithre	ceithre tríochadú	ceithre thríochadú	9	9.6.3	166	8	flagged:SEIMHIU
-	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú, a athair beag?	Cén chaoi a bhfuil tú, a athair beag?	4	4.3.3	59	4	-
-	lenition	chaoi → caoi	cén	cén caoi	cén chaoi	6	6.1.1(d)	107	4	-
-	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú?	Cén chaoi a bhfuil tú?	6	6.1.1(d)	107	4	-
-	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú?	Cén chaoi a bhfuil tú?	11	11.3.1(h)	208	4	-
-	lenition	chaoi → caoi	Cén	Cén caoi ar tharla a leithéid?	Cén chaoi ar tharla a leithéid?	11	11.9	218	4	-
-	lenition	chaoi → caoi	Cén	Cén caoi is dóigh leat ar tharla a leithéid?	Cén chaoi is dóigh leat ar tharla a leithéid?	11	11.4.3	209	4	-
+	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú, a athair beag?	Cén chaoi a bhfuil tú, a athair beag?	4	4.3.3	59	4	flagged:SEIMHIU
+	lenition	chaoi → caoi	cén	cén caoi	cén chaoi	6	6.1.1(d)	107	4	flagged:SEIMHIU
+	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú?	Cén chaoi a bhfuil tú?	6	6.1.1(d)	107	4	flagged:SEIMHIU
+	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú?	Cén chaoi a bhfuil tú?	11	11.3.1(h)	208	4	flagged:SEIMHIU
+	lenition	chaoi → caoi	Cén	Cén caoi ar tharla a leithéid?	Cén chaoi ar tharla a leithéid?	11	11.9	218	4	flagged:SEIMHIU
+	lenition	chaoi → caoi	Cén	Cén caoi is dóigh leat ar tharla a leithéid?	Cén chaoi is dóigh leat ar tharla a leithéid?	11	11.4.3	209	4	flagged:SEIMHIU
 	lenition	fhad → fad	Cén	Cén fad a mhair an cheolchoirm?	Cén fhad a mhair an cheolchoirm?	11	11.9	217	4	-
-	lenition	fhoirmle → foirmle	Cén	Cén foirmle atá agat trínarb éasca an cheist a fhreagairt?	Cén fhoirmle atá agat trínarb éasca an cheist a fhreagairt?	7	7.3.2	126	4	-
+	lenition	fhoirmle → foirmle	Cén	Cén foirmle atá agat trínarb éasca an cheist a fhreagairt?	Cén fhoirmle atá agat trínarb éasca an cheist a fhreagairt?	7	7.3.2	126	4	flagged:SEIMHIU
 	lenition	fhuar → fuar	chaisleán	ón chaisleán fuar	ón chaisleán fhuar	1	1.7.3	16	13	flagged:SEIMHIU
 	lenition	ghlais → glais	chapaill	Ar bhuail tú le húinéir an chapaill glais?	Ar bhuail tú le húinéir an chapaill ghlais?	10	10.3.1	183	36	flagged:SEIMHIU
 	lenition	mhear → mear	chapaill	Labhair mé le húinéir an chapaill mear.	Labhair mé le húinéir an chapaill mhear.	4	4.4.1	61	34	flagged:SEIMHIU

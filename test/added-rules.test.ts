@@ -187,6 +187,9 @@ const cases: Case[] = [
   { section: '7.2.2', text: 'Dúirt Eoin go mba cheart é a díol.', rule: 'SEIMHIU', words: 'é a díol', fixed: 'Dúirt Eoin go mba cheart é a dhíol.' },
   { section: '7.2.3', text: 'Sin an carr ba cheart duit a ceannach.', rule: 'SEIMHIU', words: 'duit a ceannach', fixed: 'Sin an carr ba cheart duit a cheannach.' },
   { section: '7.3.1', text: 'Cár tairbhe duit é?', rule: 'SEIMHIU', words: 'Cár tairbhe', fixed: 'Cár thairbhe duit é?' },
+  // CO17 chapters 6 and 2 review
+  { section: '6.1.1(d)', text: 'Cén caoi a bhfuil tú?', rule: 'SEIMHIU', words: 'Cén caoi', fixed: 'Cén chaoi a bhfuil tú?' },
+  { section: '6.1.1(f)', text: 'Ba ghá dóibh dréimire níos fearr a fáil.', rule: 'SEIMHIU', words: 'níos fearr a fáil', fixed: 'Ba ghá dóibh dréimire níos fearr a fháil.' },
   { section: '7.3.4', text: 'Murar comhalta cláraithe é, ní raibh aon seans aige.', rule: 'SEIMHIU', words: 'Murar comhalta', fixed: 'Murar chomhalta cláraithe é, ní raibh aon seans aige.' },
   { section: '7.3.5', text: "Dá b'fhear saibhir é, thabharfadh sé síntiús.", rule: 'URU', words: "Dá b'fhear", fixed: "Dá mb'fhear saibhir é, thabharfadh sé síntiús." },
   { section: '8.6.3', text: "Rinne sé d'aon gnó é.", rule: 'SEIMHIU', words: "d'aon gnó", fixed: "Rinne sé d'aon ghnó é." },
