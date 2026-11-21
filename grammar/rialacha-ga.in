@@ -4586,6 +4586,11 @@ CLAUSESTART <V p="y" t="gnáth">UNLENITED(inn|teá|tá|tí)</V>:SEIMHIU
 <V p="y" t="caite">([CcFfPpTt][^Hh']|[Bb][^HhPp']|[Dd][^HhTt']|[Gg][^HhCc']|[Mm][^HhBb']|[Ss][lnraeiouáéíóú])[a-záéíóú]*</V> <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]ise|[Ss]eisean|[Ss]ise|[Ss]iadsan|[Ss]inne|[Ss]ibhse)</P>:SEIMHIU
 <E><V p="y" t="caite">([Dd]ú[a-záéíóú]*|[Dd]éar[a-záéíóú]*|[Dd]eir[a-záéíóú]*|[Ff]ua[a-záéíóú]*)</V> <P>ANYTHING</P></E>:OK
 CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]ise|[Ss]eisean|[Ss]ise|[Ss]iadsan|[Ss]inne|[Ss]ibhse)</P>:SEIMHIU
+# CO17 4.8.1: ní ba lenites the comparative (ní ba mhó); before a vowel or f it is ní b' (ní b'fhearr)
+<R>[Nn]í ba</R> <A>([BbCcDdGgMmPpTt][^Hh']|[Ss][lnraeiouáéíóú])ANYTHING</A>:SEIMHIU
+# a + bí is the relative with the past (an t-airgead a bhí aige; Maidin sách fuar a bhí ann): no
+# imperative follows a; bí is read as a noun here
+<[DGU]>[Aa]</[DGU]> <[NV]>[Bb]í</[NV]>:SEIMHIU
 # the imperative bí takes no noun phrase (Bí cúramach; Bí ann; Bí i do chodladh), so before the
 # article, gach or a noun the past was meant (Bí na fir ann for Bhí na fir ann; CO17 5.1.7)
 CLAUSESTART [Bb]í <T>ANYTHING</T>:SEIMHIU

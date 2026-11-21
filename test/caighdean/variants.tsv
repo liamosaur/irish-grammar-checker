@@ -2016,44 +2016,44 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhfuil → bfuil	a	Sin an dóigh a bfuil sé anois.	Sin an dóigh a bhfuil sé anois.	11	11.9	218	15	flagged:MICHEART
 	lenition	bhfuil → bfuil	a	Tabhair sin don bhuachaill a bfuil slaghdán air.	Tabhair sin don bhuachaill a bhfuil slaghdán air.	11	11.1.5	203	29	flagged:MICHEART
 	lenition	bhfuilimid → bfuilimid	a	Sin é an ní a bfuilimid chun é a dhíol.	Sin é an ní a bhfuilimid chun é a dhíol.	11	11.6.1(b)(i)	210	14	flagged:DROCHMHOIRF
-	lenition	bhí → bí	a	Ba iad na hailtirí a bí i mbun an scrúdaithe.	Ba iad na hailtirí a bhí i mbun an scrúdaithe.	1	1.5.1	11	21	-
+	lenition	bhí → bí	a	Ba iad na hailtirí a bí i mbun an scrúdaithe.	Ba iad na hailtirí a bhí i mbun an scrúdaithe.	1	1.5.1	11	21	flagged:SEIMHIU
 	lenition	bhí → bí	a	Cé a bí a dhéanamh cáineadh?	Cé a bhí a dhéanamh cáineadh?	3	3.3.4	47	5	flagged:SEIMHIU
 	lenition	bhí → bí	a	Cé a bí a dhéanamh díscaoileadh?	Cé a bhí a dhéanamh díscaoileadh?	3	3.3.4	47	5	flagged:SEIMHIU
 	lenition	bhí → bí	a	Cé a bí a dhéanamh fuirseadh?	Cé a bhí a dhéanamh fuirseadh?	3	3.3.4	47	5	flagged:SEIMHIU
 	lenition	bhí → bí	a	Cé a bí a dhéanamh múineadh?	Cé a bhí a dhéanamh múineadh?	3	3.3.4	47	5	flagged:SEIMHIU
 	lenition	bhí → bí	a	D’imigh siad leo nuair a bí an uair an chloig caite.	D’imigh siad leo nuair a bhí an uair an chloig caite.	3	3.1.7	39	25	flagged:SEIMHIU
-	lenition	bhí → bí	a	Rith siad trasna páirceanna a bí lán de bhláthanna beaga.	Rith siad trasna páirceanna a bhí lán de bhláthanna beaga.	3	3.3.10	52	30	-
-	lenition	bhí → bí	a	Thosaigh siad ag díol milseáin a bí an-bhlasta.	Thosaigh siad ag díol milseáin a bhí an-bhlasta.	3	3.3.9	51	33	-
-	lenition	bhí → bí	a	A dheartháir dílis, bhí a fhios agam go maith gur tú a bí ann.	A dheartháir dílis, bhí a fhios agam go maith gur tú a bhí ann.	4	4.3.3	59	55	-
-	lenition	bhí → bí	a	dá mhéad airgead a bí aici	dá mhéad airgead a bhí aici	4	4.8.3	66	19	-
-	lenition	bhí → bí	a	Dá mhéad dúil a bí aici ann, níor cheannaigh sí sa deireadh é.	Dá mhéad dúil a bhí aici ann, níor cheannaigh sí sa deireadh é.	4	4.8.3	66	16	-
-	lenition	bhí → bí	a	Is aige siúd a bí an t-airgead.	Is aige siúd a bhí an t-airgead.	4	4.10	67	15	-
-	lenition	bhí → bí	a	Maidin sách fuar a bí ann.	Maidin sách fuar a bhí ann.	4	4.3.5	59	19	-
-	lenition	bhí → bí	a	Ní chreidfeá a achrannaí a bí an áit.	Ní chreidfeá a achrannaí a bhí an áit.	4	4.8.3	66	27	-
+	lenition	bhí → bí	a	Rith siad trasna páirceanna a bí lán de bhláthanna beaga.	Rith siad trasna páirceanna a bhí lán de bhláthanna beaga.	3	3.3.10	52	30	flagged:SEIMHIU
+	lenition	bhí → bí	a	Thosaigh siad ag díol milseáin a bí an-bhlasta.	Thosaigh siad ag díol milseáin a bhí an-bhlasta.	3	3.3.9	51	33	flagged:SEIMHIU
+	lenition	bhí → bí	a	A dheartháir dílis, bhí a fhios agam go maith gur tú a bí ann.	A dheartháir dílis, bhí a fhios agam go maith gur tú a bhí ann.	4	4.3.3	59	55	flagged:SEIMHIU
+	lenition	bhí → bí	a	dá mhéad airgead a bí aici	dá mhéad airgead a bhí aici	4	4.8.3	66	19	flagged:SEIMHIU
+	lenition	bhí → bí	a	Dá mhéad dúil a bí aici ann, níor cheannaigh sí sa deireadh é.	Dá mhéad dúil a bhí aici ann, níor cheannaigh sí sa deireadh é.	4	4.8.3	66	16	flagged:SEIMHIU
+	lenition	bhí → bí	a	Is aige siúd a bí an t-airgead.	Is aige siúd a bhí an t-airgead.	4	4.10	67	15	flagged:SEIMHIU
+	lenition	bhí → bí	a	Maidin sách fuar a bí ann.	Maidin sách fuar a bhí ann.	4	4.3.5	59	19	flagged:SEIMHIU
+	lenition	bhí → bí	a	Ní chreidfeá a achrannaí a bí an áit.	Ní chreidfeá a achrannaí a bhí an áit.	4	4.8.3	66	27	flagged:SEIMHIU
 	lenition	bhí → bí	a	Ní chreidfeá a dhonacht a bí an áit.	Ní chreidfeá a dhonacht a bhí an áit.	4	4.8.3	66	26	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Ní chreidfeá a olcas a bí an áit.	Ní chreidfeá a olcas a bhí an áit.	4	4.8.3	66	23	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Ní chreidfeá a shleamhaine a bí an áit.	Ní chreidfeá a shleamhaine a bhí an áit.	4	4.8.3	66	29	flagged:CLAOCHLU
-	lenition	bhí → bí	a	Ní chreidfeá a uaigní a bí an áit.	Ní chreidfeá a uaigní a bhí an áit.	4	4.8.3	66	24	other:NOGENITIVE
-	lenition	bhí → bí	a	Tine bhreá the a bí ann.	Tine bhreá the a bhí ann.	4	4.6.2	63	17	-
-	lenition	bhí → bí	a	Ba aici a bí an ceart.	Ba aici a bhí an ceart.	7	7.2.1	117	10	-
+	lenition	bhí → bí	a	Ní chreidfeá a uaigní a bí an áit.	Ní chreidfeá a uaigní a bhí an áit.	4	4.8.3	66	24	flagged:SEIMHIU
+	lenition	bhí → bí	a	Tine bhreá the a bí ann.	Tine bhreá the a bhí ann.	4	4.6.2	63	17	flagged:SEIMHIU
+	lenition	bhí → bí	a	Ba aici a bí an ceart.	Ba aici a bhí an ceart.	7	7.2.1	117	10	flagged:SEIMHIU
 	lenition	bhí → bí	a	Ba ann a bí sé	Ba ann a bhí sé	7	7.2.1	116	9	flagged:CLAOCHLU
-	lenition	bhí → bí	a	Dúirt sise gurb é Sorcha an t-ainm a bí uirthi féin	Dúirt sise gurb é Sorcha an t-ainm a bhí uirthi féin	7	7.2.2	118	37	-
+	lenition	bhí → bí	a	Dúirt sise gurb é Sorcha an t-ainm a bí uirthi féin	Dúirt sise gurb é Sorcha an t-ainm a bhí uirthi féin	7	7.2.2	118	37	flagged:SEIMHIU
 	lenition	bhí → bí	a	Is ag ceannach bainne a bí mé.	Is ag ceannach bainne a bhí mé.	7	7.1.1	114	24	flagged:CLAOCHLU
-	lenition	bhí → bí	a	Is aici a bí an ceart.	Is aici a bhí an ceart.	7	7.1.1	114	10	-
-	lenition	bhí → bí	a	Is buachaill darbh ainm Gearóid a bí i láthair.	Is buachaill darbh ainm Gearóid a bhí i láthair.	7	7.3.2	127	34	-
-	lenition	bhí → bí	a	Má ba dhuine macánta é, b’ait an gnó a bí ar siúl aige.	Má ba dhuine macánta é, b’ait an gnó a bhí ar siúl aige.	7	7.3.4	129	39	-
-	lenition	bhí → bí	a	Má ba í a bí ann, níor aithin sí mé.	Má ba í a bhí ann, níor aithin sí mé.	7	7.3.4	129	10	-
-	lenition	bhí → bí	a	Murarbh éan é, b’ialtóg a bí ann.	Murarbh éan é, b’ialtóg a bhí ann.	7	7.3.4	129	26	-
-	lenition	bhí → bí	a	Níor bheag an méid a bí le scrúdú.	Níor bheag an méid a bhí le scrúdú.	7	7.2.5	125	21	-
-	lenition	bhí → bí	a	Níorbh é sin an cineál comórtais a bí ann in 1998.	Níorbh é sin an cineál comórtais a bhí ann in 1998.	7	7.1.1	114	35	-
+	lenition	bhí → bí	a	Is aici a bí an ceart.	Is aici a bhí an ceart.	7	7.1.1	114	10	flagged:SEIMHIU
+	lenition	bhí → bí	a	Is buachaill darbh ainm Gearóid a bí i láthair.	Is buachaill darbh ainm Gearóid a bhí i láthair.	7	7.3.2	127	34	flagged:SEIMHIU
+	lenition	bhí → bí	a	Má ba dhuine macánta é, b’ait an gnó a bí ar siúl aige.	Má ba dhuine macánta é, b’ait an gnó a bhí ar siúl aige.	7	7.3.4	129	39	flagged:SEIMHIU
+	lenition	bhí → bí	a	Má ba í a bí ann, níor aithin sí mé.	Má ba í a bhí ann, níor aithin sí mé.	7	7.3.4	129	10	flagged:SEIMHIU
+	lenition	bhí → bí	a	Murarbh éan é, b’ialtóg a bí ann.	Murarbh éan é, b’ialtóg a bhí ann.	7	7.3.4	129	26	flagged:SEIMHIU
+	lenition	bhí → bí	a	Níor bheag an méid a bí le scrúdú.	Níor bheag an méid a bhí le scrúdú.	7	7.2.5	125	21	flagged:SEIMHIU
+	lenition	bhí → bí	a	Níorbh é sin an cineál comórtais a bí ann in 1998.	Níorbh é sin an cineál comórtais a bhí ann in 1998.	7	7.1.1	114	35	flagged:SEIMHIU
 	lenition	bhí → bí	a	Ba éard a bí mé a rá go mbeidh sé críochnaithe go luath.	Ba éard a bhí mé a rá go mbeidh sé críochnaithe go luath.	8	8.6.3	140	10	flagged:CLAOCHLU
 	lenition	bhí → bí	a	Bhí carr ag mo mháthair nuair a bí sí óg.	Bhí carr ag mo mháthair nuair a bhí sí óg.	8	8.3.6	135	32	flagged:SEIMHIU
-	lenition	bhí → bí	a	An-drochrud a bí sa bhean sin	An-drochrud a bhí sa bhean sin	10	10.2.12	182	14	-
+	lenition	bhí → bí	a	An-drochrud a bí sa bhean sin	An-drochrud a bhí sa bhean sin	10	10.2.12	182	14	flagged:SEIMHIU
 	lenition	bhí → bí	a	Ba mheicneoir í nuair a bí sí óg.	Ba mheicneoir í nuair a bhí sí óg.	10	10.2.13	182	24	flagged:SEIMHIU
 	lenition	bhí → bí	a	D'úsáidtí pinn tobair nuair a bí seisean ar scoil.	D'úsáidtí pinn tobair nuair a bhí seisean ar scoil.	10	10.2.8	179	30	flagged:SEIMHIU
-	lenition	bhí → bí	a	Is dóigh leis gur ghadaí a bí ann	Is dóigh leis gur ghadaí a bhí ann	10	10.2.13	182	27	-
+	lenition	bhí → bí	a	Is dóigh leis gur ghadaí a bí ann	Is dóigh leis gur ghadaí a bhí ann	10	10.2.13	182	27	flagged:SEIMHIU
 	lenition	bhí → bí	a	Is i dteach an tsagairt paróiste a bí an cruinniú.	Is i dteach an tsagairt paróiste a bhí an cruinniú.	10	10.2.9	180	35	flagged:CLAOCHLU
-	lenition	bhí → bí	a	Níor fhéad sé cur síos a dhéanamh ar pé rud a bí ag cur isteach air.	Níor fhéad sé cur síos a dhéanamh ar pé rud a bhí ag cur isteach air.	10	10.3.2	184	46	-
+	lenition	bhí → bí	a	Níor fhéad sé cur síos a dhéanamh ar pé rud a bí ag cur isteach air.	Níor fhéad sé cur síos a dhéanamh ar pé rud a bhí ag cur isteach air.	10	10.3.2	184	46	flagged:SEIMHIU
 	lenition	bhí → bí	a	Níor thrácht sé ar cad a bí le déanamh.	Níor thrácht sé ar cad a bhí le déanamh.	10	10.5.2	187	25	flagged:SEIMHIU
 	lenition	bhí → bí	a	Thug sé tuairisc ar cé a bí i láthair.	Thug sé tuairisc ar cé a bhí i láthair.	10	10.5.2	187	25	flagged:SEIMHIU
 	lenition	bhí → bí	a	Ba leis-sean a bí mé ag caint.	Ba leis-sean a bhí mé ag caint.	11	11.8.4	216	15	flagged:CLAOCHLU
@@ -2938,8 +2938,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	ghá → gá	Ba	Ba gá dóibh dréimire níos fearr a fháil anuraidh.	Ba ghá dóibh dréimire níos fearr a fháil anuraidh.	6	6.1.1(f)	108	3	flagged:SEIMHIU
 	lenition	ghá → gá	Ba	Ba gá dóibh leaba páiste a cheannach dá ngarmhac.	Ba ghá dóibh leaba páiste a cheannach dá ngarmhac.	10	10.2.7	176	3	flagged:SEIMHIU
 	lenition	ghá → gá	Ba	Ba gá dom imeacht roimh dheireadh an chluiche.	Ba ghá dom imeacht roimh dheireadh an chluiche.	10	10.2.1	171	3	flagged:SEIMHIU
-	lenition	ghile → gile	ba	Bhí na braillíní ní ba gile ná an sneachta.	Bhí na braillíní ní ba ghile ná an sneachta.	6	6.1.1(f)	108	23	-
-	lenition	ghile → gile	ba	Bhí siad ní ba gile ná an sneachta.	Bhí siad ní ba ghile ná an sneachta.	6	6.1.1(f)	108	15	-
+	lenition	ghile → gile	ba	Bhí na braillíní ní ba gile ná an sneachta.	Bhí na braillíní ní ba ghile ná an sneachta.	6	6.1.1(f)	108	23	flagged:SEIMHIU
+	lenition	ghile → gile	ba	Bhí siad ní ba gile ná an sneachta.	Bhí siad ní ba ghile ná an sneachta.	6	6.1.1(f)	108	15	flagged:SEIMHIU
 	lenition	mhaith → maith	Ba	Ba maith liom labhairt le tuismitheoirí an bhuachalla chiúin.	Ba mhaith liom labhairt le tuismitheoirí an bhuachalla chiúin.	4	4.4.1	60	3	flagged:SEIMHIU
 	lenition	mhaith → maith	ba	Cad é ba maith leat?	Cad é ba mhaith leat?	7	7.2.3	122	9	flagged:SEIMHIU
 	lenition	mheasa → measa	ba	Ba é an ceann ba measa de na scannáin uile a chonaiceamar é.	Ba é an ceann ba mheasa de na scannáin uile a chonaiceamar é.	3	3.1.11	41	17	flagged:SEIMHIU

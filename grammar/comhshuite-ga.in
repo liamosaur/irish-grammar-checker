@@ -509,6 +509,8 @@ na bhfud:<N pl="y" gnt="y" gnd="m">
 # can't do INPHRASE since it's also "nectar"
 neachtar acu:<P>
 [Nn]í ba:<R>
+# the same before a vowel or f (CO17 4.8.1: ní b'fhearr, ní b'óige)
+[Nn]í b'[a-záéíóú]+:<R>
 [Nn]í hamháin:<U>
 [Nn]í hamhlaidh:<U>
 # infrequent
