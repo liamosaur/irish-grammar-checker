@@ -114,6 +114,9 @@ execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.
 // a masculine genitive singular, a plural in a slender consonant) and a genitive noun: an adjective
 // there may describe the first noun (feiste comharthaíochta cheadaithe; CO17 4.2). The genitive pair
 // may carry a hint of its own (WEAKSEIMHIUGEN), so the context sits outside the match.
+// AFTERNOUNANDADJS, a first word, matches after the same nouns and one or more adjectives, with or
+// without commas between them: every adjective in the list agrees with the noun, and a vowel-initial
+// one can't show lenition (seirbhís ghairmiúil, éifeachtach, chúirtéiseach; CO17 4.2).
 // AFTERMANNERNOUN, a first word, matches after one of the nouns of CO17 11.3.1(h)
 // (áit, bealach, caoi, cúis, dóigh, fáth, réasún, slí, treo), kept out of the mark.
 // VNLATER, a last word, matches when a + a verbal noun follows in the same clause, at most 10
@@ -132,10 +135,15 @@ const VNLATER_WORDS = [' <[A-DF-Z][^>]*>VNLATER</[A-DF-Z]>', ' (?:<[/A-DF-Z][^>]
 // The word as compiled in rialacha, and in aonchiall (where a word may still carry
 // several tags).
 const startWords = (w) => [`<[A-DF-Z][^>]*>${w}</[A-DF-Z]> `, `(?:<[/A-DF-Z][^>]*>)+${w}</[A-DF-Z]> `];
+// A noun that lenites an adjective after it: a feminine singular, a masculine genitive singular, a
+// plural in a slender consonant.
+const LENITINGNOUN = '(?:<E[^>]*>)?<N (?:pl="n" gnt="n" gnd="f"|pl="n" gnt="y" gnd="m"|pl="y" gnt="n"[^>]*(?=>[^<]*[eéií][^aeiouáéíóú<]+<))[^>]*>[^<]+</N>';
+const ADJ = '(?:<E[^>]*>)?<A[^>]*>[^<]+</A>(?:</E>)?';
 const STARTS = {
   CLAUSESTART: '(?<=(?:<line>|[.,;:!?("\']) )',
   AFTERFEMNAME: '(?<=<N pl="n" gnt="n" gnd="f">[^<]+</N> <E[^>]*><X>[A-ZÁÉÍÓÚ][^<]*</X></E> )',
-  AFTERNOUNANDGEN: '(?<=(?:<E[^>]*>)?<N (?:pl="n" gnt="n" gnd="f"|pl="n" gnt="y" gnd="m"|pl="y" gnt="n"[^>]*(?=>[^<]*[eéií][^aeiouáéíóú<]+<))[^>]*>[^<]+</N> (?:<E[^>]*>)?<N[^>]* gnt="y"[^>]*>[^<]+</N>(?:</E>)? )',
+  AFTERNOUNANDGEN: `(?<=${LENITINGNOUN} (?:<E[^>]*>)?<N[^>]* gnt="y"[^>]*>[^<]+</N>(?:</E>)? )`,
+  AFTERNOUNANDADJS: `(?<=${LENITINGNOUN}(?:</E>)? (?:${ADJ},? )+)`,
   AFTERMANNERNOUN: '(?<=<N[^>]*>(?:h?[Áá]it|[Bb]h?ealach|g?[Cc]h?aoi|[Cc]h?úis|[Dd]h?óigh|[Ff]h?áth|[Rr]éasún|t?[Ss]lí|[Tt]reo)</N> )',
 };
 for (const name of ['rialacha', 'aonchiall']) {

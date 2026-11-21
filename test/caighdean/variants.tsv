@@ -2414,7 +2414,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chathair → cathair	agus	Tá tithe aici ar fud Bhaile Átha Cliath agus cathair Chorcaí.	Tá tithe aici ar fud Bhaile Átha Cliath agus chathair Chorcaí.	10	10.2.6	175	45	-
 	lenition	phictiúir → pictiúir	agus	Tá idir fhocail agus pictiúir sa leabhar.	Tá idir fhocail agus phictiúir sa leabhar.	10	10.2.5	174	21	-
 	lenition	chaithfeadh → caithfeadh	aige,	Dá mbeadh an t-airgead aige, caithfeadh sé é.	Dá mbeadh an t-airgead aige, chaithfeadh sé é.	10	10.8.2	191	29	-
-	lenition	shuimiúla → suimiúla	ailt	ailt suimiúla thábhachtacha fhada	ailt shuimiúla thábhachtacha fhada	4	4.2.1	57	5	other:NISEIMHIU
+	lenition	shuimiúla → suimiúla	ailt	ailt suimiúla thábhachtacha fhada	ailt shuimiúla thábhachtacha fhada	4	4.2.1	57	5	-
 	lenition	fhlaithiúil → flaithiúil	aintín	a aintín flaithiúil	a aintín fhlaithiúil	4	4.7	64	9	flagged:SEIMHIU
 	lenition	ghalánta → galánta	aintín	a aintín galánta	a aintín ghalánta	4	4.7	64	9	-
 	lenition	Bhallstáit → Ballstáit	Airí	Tagann Airí Ballstáit AE le chéile sa Chomhairle.	Tagann Airí Bhallstáit AE le chéile sa Chomhairle.	3	3.2.2	42	12	-
@@ -4297,7 +4297,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhfuinneog → bfuinneog	seacht	seacht bfuinneog mhóra	seacht bhfuinneog mhóra	9	9.3.3	147	7	flagged:DROCHMHOIRF
 	lenition	chugainn → cugainn	Seo	Seo cugainn an bhean isteach.	Seo chugainn an bhean isteach.	6	6.1.1(j)	108	4	-
 	lenition	chugainn → cugainn	seo	Cuirfear tús le seacht gclár faisnéise nua Dé Luain seo cugainn.	Cuirfear tús le seacht gclár faisnéise nua Dé Luain seo chugainn.	10	10.6.3	188	56	-
-	lenition	thábhachtacha → tábhachtacha	shuimiúla	ailt shuimiúla tábhachtacha fhada	ailt shuimiúla thábhachtacha fhada	4	4.2.1	57	15	other:NISEIMHIU
+	lenition	thábhachtacha → tábhachtacha	shuimiúla	ailt shuimiúla tábhachtacha fhada	ailt shuimiúla thábhachtacha fhada	4	4.2.1	57	15	-
 	lenition	chun → cun	sí	Tá sí cun pósadh go luath.	Tá sí chun pósadh go luath.	3	3.3.3	46	6	flagged:CAIGHDEAN
 	lenition	thall → tall	sí	Chuaigh, tá sí tall le seachtain.	Chuaigh, tá sí thall le seachtain.	6	Tábla 6B	110	15	flagged:CAIGHDEAN
 	lenition	thíos → tíos	sí	Tá sí tíos staighre.	Tá sí thíos staighre.	6	Tábla 6A	110	6	-

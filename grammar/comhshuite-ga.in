@@ -499,6 +499,9 @@ Mh?eán Fómhair:<N pl="n" gnt="n" gnd="m">
 # Taken as one adjective, like mór le rá above, so that the rules for a
 # single adjective leave it alone.
 [Cc]h?othrom [Ll]e [Dd]áta:<A pl="n" gnt="n">
+# the same for ar líne (acmhainní ar líne; an acmhainn ar líne seo, where seo closes the
+# noun phrase the article opens)
+[Aa]r [Ll]íne:<A pl="n" gnt="n">
 # infrequent
 [Mm]ugadh magadh:<N pl="n" gnt="n">
 Mh?uir nIocht:<N pl="n" gnt="n" gnd="f">

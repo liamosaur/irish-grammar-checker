@@ -7,6 +7,7 @@
 | `data/bunamo-overlay.json`, `data/forms.json`, `data/verbal-nouns.json` (derived from BuNaMo) | Open Database License (ODbL) 1.0, see [LICENSE-ODbL.txt](LICENSE-ODbL.txt); individual contents under the Database Contents License (DbCL) 1.0 |
 | `test/caighdean/ch01.json` … `ch11.json`, and the `original` column of `test/caighdean/variants.tsv`: example sentences quoted verbatim from *An Caighdeán Oifigiúil* (2017) | © Houses of the Oireachtas; re-used with acknowledgement, see [An Caighdeán Oifigiúil](#an-caighdeán-oifigiúil-2017) below |
 | `test/gaois/confirmed.tsv`: the sentences (column 4), verbatim Irish legislation from the Gaois parallel corpus | Creative Commons Attribution 4.0 (CC BY 4.0), see [Gaois](#gaois-parallel-corpus-of-legislation) below. The verdicts in the other columns are the project's (GPL) |
+| `test/coimisineir/confirmed.tsv`: the sentences (column 4), verbatim from publications of An Coimisinéir Teanga, via the ELRC corpora | © An Coimisinéir Teanga; distributed as open public sector information (PSI), see [An Coimisinéir Teanga](#an-coimisinéir-teanga) below. The verdicts in the other columns are the project's (GPL) |
 | everything else: the code, `data/lexicon.json` (the An Gramadóir 0.70 lexicon), the other files in `data/` (including `data/legacy-0.70/` and `data/overlay-decisions.tsv`), the tests and the tools | GNU General Public License, version 2 or (at your option) any later version, see [COPYING](COPYING) |
 
 The BuNaMo-derived data is kept in its own files and is not merged into any
@@ -119,10 +120,28 @@ This is not the official text of any Act or statutory instrument, nor an officia
 restatement. Gaois provides the corpus as a language resource only, not as an
 authoritative legal resource (<https://www.gaois.ie/en/corpora/parallel/disclaimer>).
 
+## An Coimisinéir Teanga
+
+The sentences in `test/coimisineir/confirmed.tsv` are segments, unchanged, of the web
+pages, reference documents, reports and press releases of An Coimisinéir Teanga, from
+three corpora that the European Language Resource Coordination distributes through
+ELRC-SHARE (<https://www.elrc-share.eu>) and OPUS (<https://opus.nlpl.eu/>): ELRC-780
+(The Coimisinéir Teanga Bilingual Web Corpus), ELRC-784 (Bilingual Corpus of Reference
+Documents) and ELRC-801 (Bilingual Corpus of Reports and Press Releases), all released
+under the licence "open under PSI" (the re-use of public sector information). The text
+is © An Coimisinéir Teanga, a statutory office whose role is to promote and safeguard
+the use of Irish; it is used here, with this acknowledgement, for a tool that furthers
+that use.
+
+> Sentences from publications of An Coimisinéir Teanga, from the ELRC corpora
+> ELRC-780, ELRC-784 and ELRC-801 (ELRC-SHARE, OPUS; J. Tiedemann, 2012, *Parallel Data,
+> Tools and Interfaces in OPUS*, LREC 2012).
+
 ## Sources consulted but not included
 
 The review decisions in `data/overlay-decisions.tsv` and the word-list corrections in
-`grammar/lexicon-corrections.tsv` were checked against *Foclóir Gaeilge-Béarla* (Ó Dónaill,
-1977) on <https://www.teanglann.ie>, and the hyphenation decisions against *An Caighdeán
-Oifigiúil* (2017, section 2.1.7). No text or data from the dictionary is included; only
+`grammar/lexicon-corrections.tsv` were checked against the *New English-Irish Dictionary*
+(Foras na Gaeilge) on <https://www.focloir.ie> and *Foclóir Gaeilge-Béarla* (Ó Dónaill, 1977) on
+<https://www.teanglann.ie>, and the hyphenation decisions against *An Caighdeán
+Oifigiúil* (2017, section 2.1.7). No text or data from the dictionaries is included; only
 the resulting decisions are.

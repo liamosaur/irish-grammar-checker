@@ -111,6 +111,22 @@ const cases: Case[] = [
   { section: '3.1.2', text: 'Chonaic mé fear sin inné.', rule: 'NEEDART', words: 'fear sin', fixed: 'Chonaic mé an fear sin inné.' },
   { section: '1.1.5(a)', text: 'Tháinig an Ombudsman isteach.', rule: 'PREFIXT', words: 'an Ombudsman', fixed: 'Tháinig an tOmbudsman isteach.' },
   { section: '1.1.4', text: 'Léigh mé na athbhreithnithe go léir.', rule: 'PREFIXH', words: 'na athbhreithnithe', fixed: 'Léigh mé na hathbhreithnithe go léir.' },
+  // a list of adjectives after a masculine noun: a lenited one is still reported
+  { section: '4.2', text: 'Chonaic mé fear láidir, chiallmhar inné.', rule: 'NISEIMHIU', words: 'chiallmhar', fixed: 'Chonaic mé fear láidir, ciallmhar inné.' },
+  // ar líne is one adjective; without the article, seo still needs it
+  { section: '3.1.2', text: 'Tá acmhainn ar líne seo ar fáil.', rule: 'NEEDART', words: 'acmhainn ar líne seo', fixed: null },
+  // an ordinal may follow any preposition; an ordinary adjective is still reported
+  { section: '9.5', text: 'Thug sé do mór é.', rule: 'CUPLA', words: 'do mór', fixed: null },
+  // after the possessive dár (de/do + ár) a missing eclipsis is still reported; the particle dár takes a past verb
+  { section: '8.3.5', text: 'Thugamar dár páistí é.', rule: 'URU', words: 'dár páistí', fixed: 'Thugamar dár bpáistí é.' },
+  // céanna does not inflect; an adjective that does is still reported in the nominative
+  { section: '4.3', text: 'Bhí sé ann oíche na gaoithe mór.', rule: 'GENITIVE', words: 'na gaoithe mór', fixed: null },
+  // after gan a noun qualified by an adjective is not lenited; a verbal adjective starting its own phrase does not count
+  { section: '1.2', text: 'Bhí sé gan bhia maith.', rule: 'NISEIMHIU', words: 'gan bhia maith', fixed: 'Bhí sé gan bia maith.' },
+  // the article with Márta, Bealtaine, Meitheamh, Samhain and Nollaig after mí, and not with the others
+  { section: '1.1.5(f)', text: 'Bhí sé ann i mí Bealtaine.', rule: 'NEEDART', words: 'mí Bealtaine', fixed: null },
+  { section: '1.1.5(f)', text: 'Bhí sé ann i mí an Deireadh Fómhair.', rule: 'BADART', words: 'mí an Deireadh Fómhair', fixed: null },
+  { section: '1.1.5(f)', text: 'Bhí sé ann i mí an Mheán Fómhair.', rule: 'BADART', words: 'mí an Mheán Fómhair', fixed: null },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported

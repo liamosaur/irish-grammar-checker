@@ -1,0 +1,30 @@
+# Sentences published by An Coimisinéir Teanga, extracted unchanged from the ELRC parallel
+# corpora ELRC-780 (web pages), ELRC-784 (reference documents) and ELRC-801 (reports and press
+# releases), distributed by ELRC-SHARE (https://www.elrc-share.eu) and OPUS
+# (https://opus.nlpl.eu/) under the licence "open under PSI" (re-use of public sector
+# information). © An Coimisinéir Teanga. See NOTICE.md.
+# The verdicts (column 1) are the project's: ok = the checker's flag (column 2) was wrong;
+# wrong = the source has that error; unsure = undecided. Column 5, if present, notes a flag
+# not yet fixed. Run by test/gaois.test.ts.
+verdict	rule	source	sentence
+wrong	CLAOCHLU	ELRC-801	Chuir an Roinn tuairisc iomlán ar fáil mar fhreagra ar an ceisteanna a bhí ardaithe ag an imscrúdú, mar aon le cáipéisí tacaíochta, faoi mar a bhí iarrtha.
+wrong	BACHOIR	ELRC-780	Tá an 'pacáiste foghlaim ghníomhaíochta' seo dátheangach go hiomlán agus áirítear ann leabhar don mhúinteoir, póstaeir, CD Rom, DVD de ghearrthóga físe agus an acmhainní ar líne seo.
+wrong	NISEIMHIU	ELRC-784	Ón nGaeltacht a tháinig 26% de na gearáin agus tháinig na 74% eile ó cheantair lasmuigh den Ghaeltacht, ardú bheag ó anuraidh.
+wrong	NISEIMHIU	ELRC-801	Mar phrionsabal ginearálta ní ghéillim don argóint nach féidir córais teicneolaíochta a chur ar fáil go chomhuaineach sa dá theanga oifigiúla.
+wrong	NISEIMHIU	ELRC-801	Baineann na critéir chéanna atá thuasluaite faoi fhoilsiú tuarascála bhliantúla le cuntais iniúchta agus ráitis airgeadais freisin.
+wrong	NISEIMHIU	ELRC-780	Ceart dlíthiúil a bheith ag gach duine teacht ar fhaisnéis oifigiúil atá i seilbh comhlachta phoiblí agus bhaineann leis féin nó léi féin.
+wrong	NEEDART	ELRC-784	Thug an Roinn aghaidh ar ábhar seo agus í ag tabhairt freagra ar an dréacht-tuarascáil.
+wrong	SEIMHIU	ELRC-784	Thuairisc an Chomhairle go raibh iarrachtaí déanta aici nithe áirithe a thabhairt chun cinn lena gealltanais a chomhlíonadh go dtí na caighdeáin cuí.
+wrong	SEIMHIU	ELRC-801	Dá bhrí sin, chonacthas dom nach raibh de rogha agam ach imscrúdú a thionscnamh sa chás le teacht ar fhionnachtana agus ar mholtaí, dá mba cuí.
+wrong	BACHOIR	ELRC-780	Tá na comhlachtaí poiblí sin liostáilte thíos faoi na hainmneacha agus leis na cúramaí a bhí orthu nuair a daingníodh a gcuid scéimeanna.
+wrong	MIMHOIRF	ELRC-784	Chuir sé an-díoma orm chomh maith a laghad post lena mbaineann riachtanas Gaeilge a aithníodh taobh istigh de Ranna Rialtais.
+ok	NEEDART	ELRC-780	Tá an 'pacáiste foghlaim ghníomhaíochta' seo dátheangach go hiomlán agus áirítear ann leabhar don mhúinteoir, póstaeir, CD Rom, DVD de ghearrthóga físe agus an acmhainní ar líne seo.
+ok	NISEIMHIU	ELRC-780	Tá rún daingean ag Oifig an Choimisinéara Teanga seirbhís ghairmiúil, éifeachtach, chúirtéiseach a chur ar fáil dár gcustaiméirí go léir.
+ok	CUPLA	ELRC-784	Léiríonn an Cuntas Caipitil an chuid sin den ioncam atá gan amúchadh a úsáideadh le sócmhainní seasta a cheannach.
+ok	CUPLA	ELRC-801	Ina ainneoin sin thug ÚBN le fios go dtugann sé faoi dhul i gcion ar thríú páirtithe chun an reachtaíocht ábhartha a chomhlíonadh de bharr a thiomantais don Acht.
+ok	CUPLA	ELRC-780	Tá na díolúintí sin ann chun eolas íogair a chosaint i gcásanna ina bhféadfaí dochar a dhéanamh don Stát nó do thríú páirtí dá scaoilfí an t-eolas sin.
+ok	NOGENITIVE	ELRC-784	Feictear dom gur chóir do Ranna Rialtais a bheith ag taispeáint ceannaireachta ar an ábhar seo agus a bheith fadradharcach ina gcur chuige.
+ok	NOGENITIVE	ELRC-801	An t-aon eisceacht dó seo ná comharthaí a bhí ar bhóithre a tógadh faoi scéim CPP agus inar fheidhmigh ÚBN mar an t-údarás bóithre.
+ok	GENITIVE	ELRC-801	Ba léir gur forbraíodh an doiciméad seo mar dhoiciméad oibre i mí Feabhra 2014 agus go raibh an leagan críochnaitheach ar fáil i mí Bealtaine na bliana céanna.
+ok	NISEIMHIU	ELRC-784	Foireann gan Ghaeilge curtha i mbun dualgais sa scoil.
+wrong	BADART	ELRC-784	Rinneadh cinneadh Rialtais i mí an Aibreáin gan dul ar aghaidh leis an bplean a bhí ann an Oifig seo a chónascadh le hOifig an Ombudsman.

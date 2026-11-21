@@ -106,7 +106,7 @@ const nonstandard = {};
 for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '').split('\n').entries()) {
   if (!/\S/.test(line) || line.startsWith('#')) continue;
   const where = `${localLexicon}:${i + 1}`;
-  const [word, tags] = line.split('\t');
+  const [word, tags, reason = ''] = line.split('\t');
   if (!word || !tags) throw new Error(`${where}: expected word<TAB>tags<TAB>reason`);
   if (/[^\u0000-ÿ]/.test(word + tags)) throw new Error(`${where}: characters outside Latin-1`);
   // =form: a word in the word list that the standard spells otherwise. It is taken out of the
@@ -117,11 +117,12 @@ for (const [i, line] of fs.readFileSync(localLexicon, 'utf8').replace(/\r/g, '')
     nonstandard[word] = tags.slice(1).trim().replace(/ /g, '_');
     continue;
   }
-  // A word not in the word list is accepted only if it is in the non-standard forms table: the
-  // correction says it is standard, so it is removed from there and added to the word list.
+  // A word not in the word list is added to it. If it is in the non-standard forms table, the
+  // correction says it is standard, so it is removed from there. Otherwise it is a new word, and the
+  // reason must cite the dictionary or the standard that gives it.
   if (!lex.some((tier) => Object.hasOwn(tier, word))) {
-    if (!Object.hasOwn(eile, word)) throw new Error(`${where}: ${word} is neither in the word list nor a non-standard form`);
-    delete eile[word];
+    if (Object.hasOwn(eile, word)) delete eile[word];
+    else if (!/^(focloir\.ie|FGB|CO17)\b/.test(reason)) throw new Error(`${where}: ${word} is not in the word list; a new word's reason must start with its source (focloir.ie, FGB or CO17)`);
   }
   const list = tags.match(/<[^>]+>/g) ?? [];
   if (list.join('') !== tags.trim()) throw new Error(`${where}: tags must be written <...><...>`);

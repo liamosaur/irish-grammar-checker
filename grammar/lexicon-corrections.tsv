@@ -5,10 +5,11 @@
 #
 # One word per line, tab-separated: the word, its tags (as in ga/pos-ga.txt,
 # written one after another), and the reason. The tags replace all the word's
-# tags; the word keeps its frequency tier. A word not in the word list must be in
-# the table of non-standard forms (data/eile.json): the correction says it
-# is standard, so it is removed from that table and added to the word list (in
-# the rarest tier). Any other word not in the word list stops the build. Lines
+# tags; the word keeps its frequency tier. A word not in the word list is added
+# to it (in the rarest tier). If it is in the table of non-standard forms
+# (data/eile.json), the correction says it is standard, so it is removed from
+# that table. Otherwise it is a new word, and its reason must start with the
+# source that gives it (focloir.ie, FGB or CO17), or the build stops. Lines
 # starting with # are comments.
 #
 # Tags written =form mark a word in the word list as a spelling the standard does
@@ -189,3 +190,11 @@ pháirtnéirí	<N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	FGB: páirtn
 bpáirtnéir	<N pl="n" gnt="n" gnd="m">	FGB: páirtnéir, m = páirtí 3 (a synonym, not a variant); the genitive and plural of the -éir nouns, tagged as the word list tags bpéintéir
 bpáirtnéara	<N pl="n" gnt="y" gnd="m">	FGB: páirtnéir, m = páirtí 3 (a synonym, not a variant); the genitive and plural of the -éir nouns, tagged as the word list tags bpéintéara
 bpáirtnéirí	<N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	FGB: páirtnéir, m = páirtí 3 (a synonym, not a variant); the genitive and plural of the -éir nouns, tagged as the word list tags bpéintéirí
+# A word the word list lacks
+amúchadh	<N pl="n" gnt="n" gnd="m"><V p="n" t="caite">	focloir.ie: amúchadh, the verbal noun of amúch, and a masculine noun (finance: amortisation); also the past autonomous of amúch, the reading the morphology gave it
+hamúchadh	<N pl="n" gnt="n" gnd="m" h="y">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: hathrú
+n-amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: n-athrú
+d'amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: d'athrú
+m'amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: m'athrú
+b'amúchadh	<N pl="n" gnt="n" gnd="m">	focloir.ie: amúchadh, m (the verbal noun of amúch); the mutated form, tagged as the word list tags the same form of athrú: b'athrú
+ranna	<N pl="y" gnt="n" gnd="f"><N pl="y" gnt="y" gnd="f">	teanglann (grammar database), roinn f2: pl. ranna, gpl. ranna; no dictionary gives ranna as a genitive singular (focloir.ie rann m1, gs. rainn), so that tag is dropped

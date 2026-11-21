@@ -600,10 +600,20 @@ CLAUSESTART <B>[Ss]é</B> <N>ANYTHING</N>:<A pl="n" gnt="n">
 <B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
 RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 <S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+# the same after inar, lenar, faoinar, ónar, trínar matched as a plain word, since here they are
+# often still ambiguous with the copula (inar fheidhmigh ÚBN).
+(faoi|i|le|ó|trí)nar <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+# dár is also de/do + ár, which eclipses (dár dtástáil); the particle dár lenites the past verb
+# (Gach duine dár chuir tú in aithne dom) and leaves a vowel unmutated (dár iarr sé), and the past
+# autonomous (dár tugadh), where the possessive would have eclipsed (dár n-úsáideoirí).
+[Dd]ár <B><Z>ANYPAST</Z>LENITED</B>:<V p="y" t="caite">
+[Dd]ár <B><Z>ANYPAST</Z>INITIALVOWEL</B>:<V p="y" t="caite">
 # leave out "r-form" verbal particle "ar" entirely here!
 [Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 RFORMCONJ <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 <S>RFORMPREP</S> <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
+(faoi|i|le|ó|trí)nar <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
+[Dd]ár <B><Z>ANYPASTAUT</Z>UNECLIPSEDCONS</B>:<V p="n" t="caite">
 # "r-form" verbal particle "ar" here is handled with negative rule below
 [Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 # OK if before something that is definitely a verb: 

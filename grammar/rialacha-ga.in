@@ -670,6 +670,11 @@ n[Dd]eire:IONADAI{ndeireadh}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(foinn|ceoil)</N>:SEIMHIU
 # from Pádraig Ó Mianáin, Fánaíocht corrections
 <N pl="n" gnt="n" gnd="f">Inis</N> <N pl="n" gnt="y" gnd="f">Glóire</N>:BACHOIR{Inis Gluaire}
+# CO17 1.1.5(f): the article is used with the months Márta, Bealtaine, Meitheamh, Samhain and
+# Nollaig after mí, and not with the others (mí an Mhárta, mí Aibreáin); the fixed san Aibreán
+# has no mí. Before the lenition rules below, which would otherwise mark mí Bealtaine first.
+<N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <T>ANYTHING</T> <N>(Eanáir|Fh?eabhra|Aibreái?n|Iúil|Lúnasa|Mh?eán|Dh?eireadh|Mh?eán Fómhair|n?Dh?eireadh Fómhair)</N>:BADART
+<N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <N>(Mh?árta|Bh?ealtaine|Mh?eithimh|Mh?eitheamh|Sh?amhain|Sh?amhna|Nollai?g)</N>:NEEDART
 ######## Lenition of an indefinite genitive after a feminine singular noun
 # CO17 10.2.7 lists every case where it is not lenited, (a) to (m). Some depend on
 # what the nouns mean (the second is a person, animal or other living thing, or a
@@ -2390,6 +2395,9 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
 <S>[Gg]an</S> <N>LENITED</N> <C>ná</C>:NISEIMHIU
 <S>[Gg]an</S> <N>LENITED</N> <[AO]>ANYTHING</[AO]>:NISEIMHIU
+# a verbal adjective with a prepositional phrase after it starts a phrase of its own, describing an
+# earlier noun, so the noun after gan is not qualified (Foireann gan Ghaeilge curtha i mbun dualgais)
+<E><S>[Gg]an</S> <N>LENITED</N> <A>ANYTHINGth?[ae]</A></E> <S>ANYTHING</S>:OK
 <S>[Gg]an</S> <N>LENITED</N> dá <N pl="n" gnt="n" gnd="m">laghad</N>:NISEIMHIU
 <S>[Gg]an</S> <N>LENITED</N> <R>ar bith</R>:NISEIMHIU
 <S>[Gg]an</S> <N>LENITED</N> <R>go brách</R>:NISEIMHIU
@@ -2978,9 +2986,6 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <N>Mhic</N> <Y>LENITEDCAPCG</Y>:NIDARASEIMHIU
 <Y>Mhig</Y> <Y>CAPITALUNLENITEDNOTCG</Y>:SEIMHIU
 <Y>Mhig</Y> <Y>LENITEDCAPCG</Y>:NIDARASEIMHIU
-# LGG p.202
-<N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <T>ANYTHING</T> <N>(Eanáir|Fh?eabhra|Aibreái?n|Iúil|Lúnasa|Mh?eán|Dh?eireadh)</N>:BADART
-<N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <N>(Mh?árta|Bh?ealtaine|Mh?eithimh|Mh?eitheamh|Sh?amhain|Sh?amhna|Nollai?g)</N>:NEEDART
 # CB p.5 #17
 #. Comhlíon mo aitheanta agus mairfidh tú beo.
 <D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m'}
@@ -4686,6 +4691,10 @@ AFTERNOUNANDGEN <E><A>LENITED</A></E>:OK
 # Two adjectives joined by agus, nó or ná take the same lenition (ráitis bhréagacha nó
 # mhíthreoracha; CO17 4.2).
 <A>LENITED</A> <C>([Aa]gus|[Nn]ó|[Nn]á)</C> <E><A>LENITED</A></E>:OK
+# A list of adjectives, with or without commas: each agrees with the noun, and a vowel-initial
+# one shows no lenition (seirbhís ghairmiúil, éifeachtach, chúirtéiseach; CO17 4.2).
+# AFTERNOUNANDADJS: see tools/generate-rules.mjs.
+AFTERNOUNANDADJS <E><A>LENITED</A></E>:OK
 # ceist shimplí ach thábhachtach
 <NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <C>ach</C> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 <N pl="n" gnt="n" gnd="m">LENITED</N> <E><A pl="n" gnt="n">LENITED</A></E>:OK
@@ -4775,8 +4784,9 @@ AFTERNOUNANDGEN <E><A>LENITED</A></E>:OK
 <S>ANYTHING</S> <A pl="n" gnt="n">([Aa]on|[Dd]há|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|naoi|n?[Dd]h?eich|g?[Cc]h?éad|[Mm]h?íle)</A>:OK
 # fused or not; den thrí chéad...   le trí chéad bliain...
 <S>ANYTHING</S> <A pl="n" gnt="n">CHEADCOMPOUND</A>:OK
-# sa dara...
-<S>FUSEDPREP</S> <A>ORDINALADJ</A>:OK
+# an ordinal opens a noun phrase after any preposition, with or without the article
+# (sa dara...; do thríú páirtí; ar thríú páirtithe)
+<S>ANYTHING</S> <A>(ORDINALADJ|[Dd]h?ara)</A>:OK
 # ba bhreá linn é sin ó b'annamh linn dul amach.
 <S>ANYTHING</S> <A>INITIALBAPOST</A>:OK
 # dá + adjective, reported as an unusual combination.
@@ -4837,6 +4847,8 @@ AFTERNOUNANDGEN <E><A>LENITED</A></E>:OK
 <V>BIVERB</V> <N>ANYTHING</N> <N>ANYTHING</N> <N>ANYTHING</N> <E><T>ANYTHING</T> <NGS>ANYTHING</NGS> <A>ANYTHING</A></E> CLAUSEEND:OK
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">COMPOUND</A>:OK
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">UNBOUNDADJ</A>:OK
+# céanna does not inflect (na bliana céanna, an fhir chéanna); its lenition is checked elsewhere
+<T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">[Cc]h?éanna</A>:OK
 <T>ANYTHING</T> <NGS>ANYTHING</NGS> <A pl="n" gnt="n">[Aa]raon</A>:OK
 ######
 # This is related to the rule above: CB p.61 #4
