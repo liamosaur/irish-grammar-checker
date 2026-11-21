@@ -74,9 +74,20 @@ export function planReplacement(line: string, range: { y: number; from: number; 
     if (tokens.length && tokens[tokens.length - 1].to === i) tokens[tokens.length - 1].to = i + 1;
     else tokens.push({ from: i, to: i + 1 });
   }
-  const words = replacement.trim().split(/\s+/).length;
+  const rep = replacement.trim().split(/\s+/);
+  const words = rep.length;
   let from = range.from;
   let to = range.to;
+  // "go mo" with "go dtí": the replacement begins with the first flagged word and the rest of it is
+  // nothing like the other flagged words (not a respelling: cé mhéad -> cé mhéid), so it stands
+  // for the first word (go mo theach -> go dtí mo theach).
+  const flaggedWords = tokens.map((t) => chars.slice(t.from, t.to).join('').toLowerCase());
+  const unlike = (a: string, b: string) => editDistance(a, b) >= 0.8 * Math.max(Array.from(a).length, Array.from(b).length);
+  if (tokens.length > 1 && words > 1 && words === tokens.length && rep[0].toLowerCase() === flaggedWords[0]
+    && flaggedWords.slice(1).every((w) => rep.slice(1).every((r) => unlike(w, r)))) {
+    const original = chars.slice(tokens[0].from, tokens[0].to).join('');
+    return { range: { y: range.y, from: tokens[0].from, to: tokens[0].to }, word: matchCase(original, replacement) };
+  }
   if (tokens.length > 1 && words < tokens.length) {
     let best = Infinity;
     for (let i = 0; i < tokens.length; i++) {
@@ -403,23 +414,40 @@ export function withLastWord(flagged: string, word: string): string | null {
   return m ? m[1] + word + m[3] : null;
 }
 
+/** What a note needs for its buttons. */
+export interface NoteLike { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number } }
+
+/** The words a note quotes as replacements (each is a button in its message), in order. */
+export function quotedOptions(v: NoteLike): string[] {
+  if (!QUOTES_REPLACEMENT.has(v.rule)) return [];
+  return [...v.msg.matchAll(/\/([^/]+)\//g)].flatMap((m) => quotedParts(m[1]).filter((p) => p.option).map((p) => p.text));
+}
+
+/**
+ * The flagged text as the rule asks for it, one per button after the message: the last word
+ * replaced by each form from the word-form table (the genitive, ...), or else the change the
+ * rule names (lenition, ...).
+ */
+export function proposals(v: NoteLike, flagged: string): string[] {
+  const out: string[] = [];
+  for (const w of v.fixes ?? []) { const p = withLastWord(flagged, w); if (p !== null) out.push(p); }
+  if (!out.length) { const p = proposeFix(v.rule, flagged); if (p !== null) out.push(p); }
+  return out;
+}
+
+/** The corrections a note offers apart from spelling suggestions: its quoted words, then its proposals. */
+export function notePlans(v: NoteLike, line: string): Plan[] {
+  if (!v.range) return [];
+  const plans: Plan[] = [];
+  for (const w of quotedOptions(v)) { const p = planReplacement(line, v.range, w); if (p) plans.push(p); }
+  const flagged = sliceRange(line, { ...v.range, y: 0 }); // `line` is the flagged line only
+  if (flagged !== null) for (const p of proposals(v, flagged)) plans.push({ range: v.range, word: p });
+  return plans;
+}
+
 /** The first correction a note offers (what its first button does), or null if it offers none. */
-export function firstFix(
-  v: { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number } },
-  line: string,
-): Plan | null {
+export function firstFix(v: NoteLike, line: string): Plan | null {
   if (!v.range) return null;
   if (v.suggestions.length) return planReplacement(line, v.range, v.suggestions[0]);
-  if (QUOTES_REPLACEMENT.has(v.rule)) {
-    const quoted = /\/([^/]+)\//.exec(v.msg)?.[1];
-    const word = quoted && quotedParts(quoted).find((p) => p.option)?.text;
-    return word ? planReplacement(line, v.range, word) : null;
-  }
-  const flagged = sliceRange(line, v.range);
-  if (flagged !== null && v.fixes?.length) {
-    const phrase = withLastWord(flagged, v.fixes[0]);
-    if (phrase !== null) return { range: v.range, word: phrase };
-  }
-  const fixed = flagged === null ? null : proposeFix(v.rule, flagged);
-  return fixed === null ? null : { range: v.range, word: fixed };
+  return notePlans(v, line)[0] ?? null;
 }

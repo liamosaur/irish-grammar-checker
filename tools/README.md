@@ -94,7 +94,12 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   many reported errors it makes, and which marks each exception removes. Snapshots record
   behaviour, not correctness: keep them local (`.sources/review/baseline/`).
 - `fix-check.ts`: applies the first one-click fix of every error in the same sentences, checks
-  again, and lists by rule the fixes that leave an error on the words they changed.
+  again, and sorts each fix: ok; next step (a note is left for another word: fine, one note is
+  one change); rechanged (following the notes left changes a word this fix changed: the fix
+  changed the wrong word or gave the wrong form); not cleared. Rechanged is the count to bring
+  down. The later steps follow the checker's own fixes, so a rechanged fix is a lead to read,
+  not a verdict; and a wrong word the checker accepts counts as ok. `--out fixes.tsv` writes
+  every fix with its later steps.
 
 ## Reasons
 

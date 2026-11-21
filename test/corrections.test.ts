@@ -94,6 +94,12 @@ describe('planReplacement', () => {
     assert.equal(plan('ar son na daoine', 3, 6, 'ar son'), null);
     assert.equal(applyPlan('ar shon na daoine', 'ar son', 3, 7), 'ar son na daoine');
   });
+  it('a replacement that begins with the first flagged word stands for that word (go mo + go dtí)', () => {
+    assert.equal(applyPlan('go mo theach', 'go dtí', 0, 5), 'go dtí mo theach');
+    assert.equal(applyPlan("go m'inchinn", 'go dtí'), "go dtí m'inchinn");
+    // not when the rest is a respelling of the other flagged word
+    assert.equal(applyPlan('Cé mhéad', 'cé mhéid'), 'Cé mhéid');
+  });
   it('offers nothing when the result would be the same text', () => {
     assert.equal(plan('maidir le oideachas', 0, 6, 'maidir le'), null);
   });

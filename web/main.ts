@@ -1,6 +1,6 @@
 import { analyse, type CheckedError, type ErrorView } from './annotate.ts';
 import { APP_NAME, WARN_CHARS } from './config.ts';
-import { applyCorrection, type Plan, planReplacement, proposeFix, QUOTES_REPLACEMENT, quotedParts, sliceRange, withLastWord } from './corrections.ts';
+import { applyCorrection, type Plan, planReplacement, proposals, QUOTES_REPLACEMENT, quotedParts, sliceRange } from './corrections.ts';
 import { EXAMPLES } from './examples.ts';
 import { unreadableCount } from './fold.ts';
 import { reasonFor } from './reasons.ts';
@@ -295,12 +295,8 @@ function listItem(v: ErrorView): HTMLLIElement {
   const replaceable = !!v.range && QUOTES_REPLACEMENT.has(v.rule);
   const flagged = v.range ? sliceRange(checkedText, v.range) : null;
   // What the rule asks for, as the full flagged text: the genitive for "genitive required", the mutated form for "Lenition missing", ...
-  const proposals: string[] = [];
-  if (flagged !== null) {
-    for (const w of v.fixes) { const p = withLastWord(flagged, w); if (p !== null) proposals.push(p); }
-    if (!proposals.length) { const p = proposeFix(v.rule, flagged); if (p !== null) proposals.push(p); }
-  }
-  const standalone = v.suggestions.length > 0 || replaceable || proposals.length > 0; // message sits beside the row button, not inside it
+  const fixes = flagged === null ? [] : proposals(v, flagged);
+  const standalone = v.suggestions.length > 0 || replaceable || fixes.length > 0; // message sits beside the row button, not inside it
   const li = document.createElement('li');
   li.className = 'err';
   li.dataset.idx = String(v.idx);
@@ -333,7 +329,7 @@ function listItem(v: ErrorView): HTMLLIElement {
     });
     msg.append('?');
   } else msg.append(' – ', formatMessage(v.msg, replaceable ? v : undefined));
-  proposals.forEach((proposal, i) => {
+  fixes.forEach((proposal, i) => {
     const fix = document.createElement('button');
     fix.className = 'sugg-word';
     fix.lang = 'ga';
