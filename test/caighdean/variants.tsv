@@ -1273,25 +1273,25 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	bhí → bí		bí siad	bhí siad	5	Tábla 5P	91	0	flagged:SEIMHIU
 	lenition	bhí → bí		bí sibh	bhí sibh	5	Tábla 5P	91	0	flagged:SEIMHIU
 	lenition	bhí → bí		bí tú	bhí tú	5	Tábla 5P	91	0	-
-	lenition	bhí → bí		bí an dáréag ann	bhí an dáréag ann	9	9.4.2	154	0	-
-	lenition	Bhí → Bí		Bí aithne mhaith agam ar an Seabhac	Bhí aithne mhaith agam ar an Seabhac	1	1.1.2	1	0	-
-	lenition	Bhí → Bí		Bí an Béarla go maith aici.	Bhí an Béarla go maith aici.	1	1.1.5(n)	5	0	-
-	lenition	Bhí → Bí		Bí an ghrian ag baint na súl asam	Bhí an ghrian ag baint na súl asam	1	1.1.1	1	0	-
-	lenition	Bhí → Bí		Bí an tSionainn le feiceáil ón eitleán.	Bhí an tSionainn le feiceáil ón eitleán.	1	1.1.5(h)	3	0	-
-	lenition	Bhí → Bí		Bí an tUachtarán Mhic Róibín le feiceáil sa ghrianghraf.	Bhí an tUachtarán Mhic Róibín le feiceáil sa ghrianghraf.	1	1.1.5(c)	2	0	-
-	lenition	Bhí → Bí		Bí mála an duine ag na páistí scoile.	Bhí mála an duine ag na páistí scoile.	1	1.1.5(k)	4	0	-
+	lenition	bhí → bí		bí an dáréag ann	bhí an dáréag ann	9	9.4.2	154	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí aithne mhaith agam ar an Seabhac	Bhí aithne mhaith agam ar an Seabhac	1	1.1.2	1	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an Béarla go maith aici.	Bhí an Béarla go maith aici.	1	1.1.5(n)	5	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an ghrian ag baint na súl asam	Bhí an ghrian ag baint na súl asam	1	1.1.1	1	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an tSionainn le feiceáil ón eitleán.	Bhí an tSionainn le feiceáil ón eitleán.	1	1.1.5(h)	3	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an tUachtarán Mhic Róibín le feiceáil sa ghrianghraf.	Bhí an tUachtarán Mhic Róibín le feiceáil sa ghrianghraf.	1	1.1.5(c)	2	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí mála an duine ag na páistí scoile.	Bhí mála an duine ag na páistí scoile.	1	1.1.5(k)	4	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí mé ag caint leis Dé Céadaoin seo caite.	Bhí mé ag caint leis Dé Céadaoin seo caite.	1	1.1.5(e)	2	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí ocras orm	Bhí ocras orm	1	1.1.5(l)	5	0	-
+	lenition	Bhí → Bí		Bí ocras orm	Bhí ocras orm	1	1.1.5(l)	5	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí a gcairde ag beannú a bpósta.	Bhí a gcairde ag beannú a bpósta.	3	3.3.4	48	0	-
-	lenition	Bhí → Bí		Bí an eagraíocht ag cur tionscadail chun cinn.	Bhí an eagraíocht ag cur tionscadail chun cinn.	3	3.3.5	48	0	-
-	lenition	Bhí → Bí		Bí an madra ar thóir éan sa pháirc.	Bhí an madra ar thóir éan sa pháirc.	3	3.3.12	54	0	-
-	lenition	Bhí → Bí		Bí bus fhoireann Chorcaí ann.	Bhí bus fhoireann Chorcaí ann.	3	3.3.1	44	0	-
-	lenition	Bhí → Bí		Bí gach duine den teaghlach i láthair.	Bhí gach duine den teaghlach i láthair.	3	3.1.2	37	0	-
-	lenition	Bhí → Bí		Bí gach ríomhaire de chuid na cuideachta briste.	Bhí gach ríomhaire de chuid na cuideachta briste.	3	3.1.11	41	0	-
+	lenition	Bhí → Bí		Bí an eagraíocht ag cur tionscadail chun cinn.	Bhí an eagraíocht ag cur tionscadail chun cinn.	3	3.3.5	48	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an madra ar thóir éan sa pháirc.	Bhí an madra ar thóir éan sa pháirc.	3	3.3.12	54	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí bus fhoireann Chorcaí ann.	Bhí bus fhoireann Chorcaí ann.	3	3.3.1	44	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí gach duine den teaghlach i láthair.	Bhí gach duine den teaghlach i láthair.	3	3.1.2	37	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí gach ríomhaire de chuid na cuideachta briste.	Bhí gach ríomhaire de chuid na cuideachta briste.	3	3.1.11	41	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí mé ar an Earagail inné.	Bhí mé ar an Earagail inné.	3	3.1.3	38	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí na fir shlándála ar tí na doirse a dhúnadh.	Bhí na fir shlándála ar tí na doirse a dhúnadh.	3	3.3.2	45	0	-
-	lenition	Bhí → Bí		Bí na léirsitheoirí ag diúltú imeacht.	Bhí na léirsitheoirí ag diúltú imeacht.	3	3.3.4	47	0	-
-	lenition	Bhí → Bí		Bí scata báid iascaigh sa chuan.	Bhí scata báid iascaigh sa chuan.	3	3.3.11	53	0	-
+	lenition	Bhí → Bí		Bí na fir shlándála ar tí na doirse a dhúnadh.	Bhí na fir shlándála ar tí na doirse a dhúnadh.	3	3.3.2	45	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí na léirsitheoirí ag diúltú imeacht.	Bhí na léirsitheoirí ag diúltú imeacht.	3	3.3.4	47	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí scata báid iascaigh sa chuan.	Bhí scata báid iascaigh sa chuan.	3	3.3.11	53	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé ag cur báistí i gCorcaigh.	Bhí sé ag cur báistí i gCorcaigh.	3	3.3.5	49	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé ag cur báistí.	Bhí sé ag cur báistí.	3	3.3.5	49	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé ag moladh scannáin a mbeadh spéis agam iontu.	Bhí sé ag moladh scannáin a mbeadh spéis agam iontu.	3	3.3.9	51	0	flagged:SEIMHIU
@@ -1304,47 +1304,47 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Bhí → Bí		Bí siad ag gabháil fhoinn sa teach.	Bhí siad ag gabháil fhoinn sa teach.	3	3.3.5	49	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí siad ag gabháil fhoinn.	Bhí siad ag gabháil fhoinn.	3	3.3.5	49	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí siad i mbun ceoil ar an tsráid.	Bhí siad i mbun ceoil ar an tsráid.	3	3.3.12	54	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí an traein folamh.	Bhí an traein folamh.	4	4.11	67	0	other:SEIMHIU
-	lenition	Bhí → Bí		Bí boladh an aráin dhoinn ar fud an tí.	Bhí boladh an aráin dhoinn ar fud an tí.	4	4.4.1	61	0	-
-	lenition	Bhí → Bí		Bí gach duine i bhfabhar an fheachtais thionsclaíoch.	Bhí gach duine i bhfabhar an fheachtais thionsclaíoch.	4	4.4.1	60	0	-
-	lenition	Bhí → Bí		Bí na daoine uaisle i láthair inné.	Bhí na daoine uaisle i láthair inné.	4	4.4.3	62	0	-
+	lenition	Bhí → Bí		Bí an traein folamh.	Bhí an traein folamh.	4	4.11	67	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí boladh an aráin dhoinn ar fud an tí.	Bhí boladh an aráin dhoinn ar fud an tí.	4	4.4.1	61	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí gach duine i bhfabhar an fheachtais thionsclaíoch.	Bhí gach duine i bhfabhar an fheachtais thionsclaíoch.	4	4.4.1	60	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí na daoine uaisle i láthair inné.	Bhí na daoine uaisle i láthair inné.	4	4.4.3	62	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí orthu an fhéile a chur ar siúl ag deireadh an tsamhraidh fhliuch.	Bhí orthu an fhéile a chur ar siúl ag deireadh an tsamhraidh fhliuch.	4	4.4.1	60	0	-
-	lenition	Bhí → Bí		Bí sciorta, cóta agus scaif ghorm uirthi.	Bhí sciorta, cóta agus scaif ghorm uirthi.	4	4.2.1	57	0	-
-	lenition	Bhí → Bí		Bí an seomra suite sé mhéadar ar fad.	Bhí an seomra suite sé mhéadar ar fad.	6	6.1.1(h)	108	0	-
+	lenition	Bhí → Bí		Bí sciorta, cóta agus scaif ghorm uirthi.	Bhí sciorta, cóta agus scaif ghorm uirthi.	4	4.2.1	57	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an seomra suite sé mhéadar ar fad.	Bhí an seomra suite sé mhéadar ar fad.	6	6.1.1(h)	108	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí muid gann i mbainne.	Bhí muid gann i mbainne.	6	6.1.1(i)	108	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí na braillíní ní ba ghile ná an sneachta.	Bhí na braillíní ní ba ghile ná an sneachta.	6	6.1.1(f)	108	0	-
-	lenition	Bhí → Bí		Bí na braillíní níos gile ná an sneachta.	Bhí na braillíní níos gile ná an sneachta.	6	6.1.1(f)	108	0	-
+	lenition	Bhí → Bí		Bí na braillíní ní ba ghile ná an sneachta.	Bhí na braillíní ní ba ghile ná an sneachta.	6	6.1.1(f)	108	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí na braillíní níos gile ná an sneachta.	Bhí na braillíní níos gile ná an sneachta.	6	6.1.1(f)	108	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí orm teacht anoir arís.	Bhí orm teacht anoir arís.	6	Tábla 6B	110	0	-
 	lenition	Bhí → Bí		Bí siad duine gearr.	Bhí siad duine gearr.	6	6.1.1(i)	108	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí siad ní ba ghile ná an sneachta.	Bhí siad ní ba ghile ná an sneachta.	6	6.1.1(f)	108	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sibh beagnach in am.	Bhí sibh beagnach in am.	6	6.1.1(e)	107	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí fóram ann trínar ghnách leis an bhfoireann ceisteanna a ardú.	Bhí fóram ann trínar ghnách leis an bhfoireann ceisteanna a ardú.	7	7.3.2	127	0	-
+	lenition	Bhí → Bí		Bí fóram ann trínar ghnách leis an bhfoireann ceisteanna a ardú.	Bhí fóram ann trínar ghnách leis an bhfoireann ceisteanna a ardú.	7	7.3.2	127	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí mise den tuairim nár mhiste leis cabhrú leat.	Bhí mise den tuairim nár mhiste leis cabhrú leat.	7	7.2.2	121	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí na milseáin ba dheise ite sular shroich mé an chóisir.	Bhí na milseáin ba dheise ite sular shroich mé an chóisir.	7	7.1.1	114	0	-
+	lenition	Bhí → Bí		Bí na milseáin ba dheise ite sular shroich mé an chóisir.	Bhí na milseáin ba dheise ite sular shroich mé an chóisir.	7	7.1.1	114	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé i dteannta an dreama ónarb áil leis teitheadh.	Bhí sé i dteannta an dreama ónarb áil leis teitheadh.	7	7.3.2	126	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí buaite agam murach ise.	Bhí buaite agam murach ise.	8	8.2.5	132	0	-
-	lenition	Bhí → Bí		Bí caipín ar a ceann.	Bhí caipín ar a ceann.	8	8.3.6	135	0	-
-	lenition	Bhí → Bí		Bí carr ag mo mháthair nuair a bhí sí óg.	Bhí carr ag mo mháthair nuair a bhí sí óg.	8	8.3.6	135	0	-
-	lenition	Bhí → Bí		Bí hata ar a cheann.	Bhí hata ar a cheann.	8	8.3.6	135	0	-
+	lenition	Bhí → Bí		Bí caipín ar a ceann.	Bhí caipín ar a ceann.	8	8.3.6	135	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí carr ag mo mháthair nuair a bhí sí óg.	Bhí carr ag mo mháthair nuair a bhí sí óg.	8	8.3.6	135	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí hata ar a cheann.	Bhí hata ar a cheann.	8	8.3.6	135	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé dár gcuardach.	Bhí sé dár gcuardach.	8	8.3.5	135	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí an crann crónghiúise chomh hard le foirgneamh tríocha urlár.	Bhí an crann crónghiúise chomh hard le foirgneamh tríocha urlár.	10	10.12.1	195	0	-
-	lenition	Bhí → Bí		Bí an dá bhronntanas oscailte aici.	Bhí an dá bhronntanas oscailte aici.	10	10.3.3	185	0	-
-	lenition	Bhí → Bí		Bí an páiste ina dhúiseacht idir meán oíche agus breacadh an lae.	Bhí an páiste ina dhúiseacht idir meán oíche agus breacadh an lae.	10	10.2.5	174	0	-
+	lenition	Bhí → Bí		Bí an crann crónghiúise chomh hard le foirgneamh tríocha urlár.	Bhí an crann crónghiúise chomh hard le foirgneamh tríocha urlár.	10	10.12.1	195	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an dá bhronntanas oscailte aici.	Bhí an dá bhronntanas oscailte aici.	10	10.3.3	185	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí an páiste ina dhúiseacht idir meán oíche agus breacadh an lae.	Bhí an páiste ina dhúiseacht idir meán oíche agus breacadh an lae.	10	10.2.5	174	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí an-dea-aimsir ann an samhradh sin	Bhí an-dea-aimsir ann an samhradh sin	10	10.2.12	182	0	-
-	lenition	Bhí → Bí		Bí bia an fichiú fear le dáileadh fós.	Bhí bia an fichiú fear le dáileadh fós.	10	10.3.2	184	0	-
-	lenition	Bhí → Bí		Bí ceol na n-éan le cloisteáil ar fud na coille.	Bhí ceol na n-éan le cloisteáil ar fud na coille.	10	10.6.1	188	0	-
-	lenition	Bhí → Bí		Bí cruinniú aici le hoifigigh thithíochta as Meiriceá.	Bhí cruinniú aici le hoifigigh thithíochta as Meiriceá.	10	10.2.8	179	0	-
-	lenition	Bhí → Bí		Bí eagla orthu go ndéanfaí an t-éiceachóras a scriosadh.	Bhí eagla orthu go ndéanfaí an t-éiceachóras a scriosadh.	10	10.9.1	192	0	-
-	lenition	Bhí → Bí		Bí glacadh forleathan leis an tuairim sin faoi dheireadh na haoise seo caite.	Bhí glacadh forleathan leis an tuairim sin faoi dheireadh na haoise seo caite.	10	10.11.1	193	0	-
+	lenition	Bhí → Bí		Bí bia an fichiú fear le dáileadh fós.	Bhí bia an fichiú fear le dáileadh fós.	10	10.3.2	184	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí ceol na n-éan le cloisteáil ar fud na coille.	Bhí ceol na n-éan le cloisteáil ar fud na coille.	10	10.6.1	188	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí cruinniú aici le hoifigigh thithíochta as Meiriceá.	Bhí cruinniú aici le hoifigigh thithíochta as Meiriceá.	10	10.2.8	179	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí eagla orthu go ndéanfaí an t-éiceachóras a scriosadh.	Bhí eagla orthu go ndéanfaí an t-éiceachóras a scriosadh.	10	10.9.1	192	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí glacadh forleathan leis an tuairim sin faoi dheireadh na haoise seo caite.	Bhí glacadh forleathan leis an tuairim sin faoi dheireadh na haoise seo caite.	10	10.11.1	193	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí mise anseo sular tháinig Seán.	Bhí mise anseo sular tháinig Seán.	10	10.4.2	187	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí scamaill mhóra dhubha sa spéir.	Bhí scamaill mhóra dhubha sa spéir.	10	10.3.1	183	0	-
-	lenition	Bhí → Bí		Bí scéal de chuid Phádraic Uí Chonaire á léamh aici.	Bhí scéal de chuid Phádraic Uí Chonaire á léamh aici.	10	10.2.11	181	0	-
-	lenition	Bhí → Bí		Bí scíth coicíse de dhíth uirthi tar éis na hoibre.	Bhí scíth coicíse de dhíth uirthi tar éis na hoibre.	10	10.2.7	178	0	-
-	lenition	Bhí → Bí		Bí scuaine gluaisteán trí mhíle ar fhad sa tranglam tráchta.	Bhí scuaine gluaisteán trí mhíle ar fhad sa tranglam tráchta.	10	10.2.7	176	0	-
+	lenition	Bhí → Bí		Bí scamaill mhóra dhubha sa spéir.	Bhí scamaill mhóra dhubha sa spéir.	10	10.3.1	183	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí scéal de chuid Phádraic Uí Chonaire á léamh aici.	Bhí scéal de chuid Phádraic Uí Chonaire á léamh aici.	10	10.2.11	181	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí scíth coicíse de dhíth uirthi tar éis na hoibre.	Bhí scíth coicíse de dhíth uirthi tar éis na hoibre.	10	10.2.7	178	0	flagged:SEIMHIU
+	lenition	Bhí → Bí		Bí scuaine gluaisteán trí mhíle ar fhad sa tranglam tráchta.	Bhí scuaine gluaisteán trí mhíle ar fhad sa tranglam tráchta.	10	10.2.7	176	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé ag fanacht ag doras an tí tábhairne.	Bhí sé ag fanacht ag doras an tí tábhairne.	10	10.2.9	180	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí sé i bpriacal a anama.	Bhí sé i bpriacal a anama.	10	10.6.4	189	0	flagged:SEIMHIU
 	lenition	Bhí → Bí		Bí siad ag imirt i gcoinne Scoil Naomh Fionnbarra.	Bhí siad ag imirt i gcoinne Scoil Naomh Fionnbarra.	10	10.2.10	181	0	flagged:SEIMHIU
-	lenition	Bhí → Bí		Bí iníon na mná sin ar an teilifís aréir.	Bhí iníon na mná sin ar an teilifís aréir.	11	11.3.1(d)	207	0	-
+	lenition	Bhí → Bí		Bí iníon na mná sin ar an teilifís aréir.	Bhí iníon na mná sin ar an teilifís aréir.	11	11.3.1(d)	207	0	flagged:SEIMHIU
 	lenition	bhídís → bídís		bídís	bhídís	5	Tábla 5P	91	0	-
 	lenition	bhímis → bímis		bímis	bhímis	5	Tábla 5P	91	0	-
 	lenition	bhínn → bínn		bínn	bhínn	5	Tábla 5P	91	0	flagged:CAIGHDEAN

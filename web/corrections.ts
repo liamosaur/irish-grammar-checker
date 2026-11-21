@@ -354,6 +354,11 @@ export function proposeFix(rule: string, flagged: string): string | null {
     const m = /^(\s*)(\S+)(\s+(?:mé|sé|sí|siad|sinn|muid|sibh|mise|seisean|sise|siadsan|sinne|sibhse)\s*)$/i.exec(flagged);
     if (m) { const changed = FIXES[rule](m[2]); return changed === null ? null : m[1] + changed + m[3]; }
   }
+  // Bí before a noun phrase is the past missing its lenition (Bí na fir -> Bhí na fir).
+  if (rule === 'SEIMHIU') {
+    const m = /^(\s*)(bí)(\s[\s\S]*)$/i.exec(flagged);
+    if (m) return m[1] + matchCase(m[2], 'bhí') + m[3];
+  }
   // Lenition after a (the vocative, a fhios agam): the word after a, which may not be the last
   // ("A daoine uaisle" -> "A dhaoine uaisle").
   if (rule === 'SEIMHIU' || rule === 'WEAKSEIMHIUVOC') {
