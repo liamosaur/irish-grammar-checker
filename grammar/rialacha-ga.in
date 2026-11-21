@@ -3425,7 +3425,7 @@ h?[Oo]cht <N pl="n" gnt="n" gnd="m">g[Cc]eann</N>:BACHOIR{gcinn}
 h?[Oo]cht <N pl="n" gnt="n" gnd="m">g[Cc]loigeann</N>:BACHOIR{gcloigne}
 h?[Oo]cht <N pl="n" gnt="n" gnd="f">g[Cc]uairt</N>:BACHOIR{gcuarta}
 h?[Oo]cht <N pl="n" gnt="n" gnd="m">bh[Ff]iche</N>:BACHOIR{bhfichid}
-h?[Oo]cht <N pl="n" gnt="n" gnd="m">n-orlach:BACHOIR{n-orlaí}
+h?[Oo]cht <N pl="n" gnt="n" gnd="m">n-orlach</N>:BACHOIR{n-orlaí}
 h?[Oo]cht <N pl="n" gnt="n" gnd="f">b[Pp]ingin</N>:BACHOIR{bpingine}
 h?[Oo]cht <N pl="n" gnt="n" gnd="f">[Ss]cilling</N>:BACHOIR{scillinge}
 h?[Oo]cht <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
@@ -3458,9 +3458,6 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <N>[Oo]íche</N> <N pl="n" gnt="n">DAYOFTHEWEEK</N>:NIGA{Dé}
 # CUPLA error otherwise
 <S>[Aa]g</S> <V p="n" t="caite">oileadh</V>:CAIGHDEAN{ag oiliúint}
-# suggested by P. Ó Mianáin during standardization of EID texts 
-<T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">oiread</N> <C>agus</C>:BACHOIR{a oiread agus}
-<T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">oiread</N> <V cop="y">is</V>::BACHOIR{a oiread is}
 # corpus
 <NFCS>([mdnh]?'?Ollainn|[mdnh]?'?Ostair)</NFCS>:NEEDART
 <T>[Aa]n</T> <E><NFCS>ANYTHING</NFCS></E>:OK

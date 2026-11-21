@@ -16,8 +16,8 @@ s/CAPITALUNLENITEDNOTCG/(?:[BDFMPT][^Hh']|S[lnraeiouáéíóú]|bhF)[^<]*/g;
 s/CAPITALUNLENITED/(?:[BCDFGMPT][^Hh']|S[lnraeiouáéíóú]|bhF)[^<]*/g;
 s/CAPITALLENITED/[BCDFGMPST][Hh][^<]+/g;
 s/CAPITAL/[A-ZÁÉÍÓÚ][^<]*/g;
-s/CAPVOWEL/[AEIOUÁÉÍÓÚ][^<]*/g;
 s/CAPVOWELWITHH/h[AEIOUÁÉÍÓÚ][^<]*/g;
+s/CAPVOWEL/[AEIOUÁÉÍÓÚ][^<]*/g;
 s/LENITEDFUTURE/[Gg]heo[^<]+/g;
 s/ABAIRPAST/[Dd]ú(?:irt|ra[dm]ar|radh)/g;
 # actually this is PResent, FUture, but also imperfect, conditional!

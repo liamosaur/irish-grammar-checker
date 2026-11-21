@@ -273,6 +273,8 @@ const cases: Case[] = [
   { section: '11.6.1(c)', text: 'Dá ndéanann sé é, beidh áthas orm.', rule: 'WEAKBACHOIRMA', words: 'Dá ndéanann', fixed: 'Má dhéanann sé é, beidh áthas orm.' },
   // an old dative outside its set phrase
   { section: '2.3.3(b)', text: 'Bhí gealaigh ann.', rule: 'NODATIVE', words: 'gealaigh', fixed: null },
+  // the special plural after a number (CO17 9.3.2); the ocht rule lacked </N> and never fired
+  { section: '9.3.2', text: 'Bhí ocht n-orlach ann.', rule: 'BACHOIR', words: 'ocht n-orlach', fixed: 'Bhí ocht n-orlaí ann.' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
