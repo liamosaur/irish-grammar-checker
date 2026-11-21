@@ -4595,6 +4595,34 @@ CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]
 ([Aa]|[Nn]ach|[Gg]o|[Aa]n|[Mm]ura|[Ss]ula) <N>dearna</N> <P>([Mm]é|[Tt]ú|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh)</P>:URU
 # CO17 10.11.2, 11.2.1(f): the set phrases as a chéile, de réir a chéile
 <S>([Aa]s|[Dd]e réir)</S> <D>[Aa]</D> <N>céile</N>:SEIMHIU
+# CO17 8.2.2: the object form thú after a verb that has its subject (Chonaic mé thú; Aithním thú;
+# Ní aithnímse thusa); not after the copula (Is tú an fear)
+<V p="y" t="(láith|caite|fáist|coinn|gnáth)">ANYTHING</V> <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh)</P> <P>([Tt]ú|[Tt]usa)</P>:SEIMHIU
+<V p="y" t="láith">ANYTHING([ií]m|[ií]mse|[ií]mid|[ií]midne)</V> <P>([Tt]ú|[Tt]usa)</P>:SEIMHIU
+<V p="y" t="fáist">ANYTHING([ií]mid|[ií]midne)</V> <P>([Tt]ú|[Tt]usa)</P>:SEIMHIU
+<V p="y" t="caite">ANYTHING(amar|amarne|omar|omarne)</V> <P>([Tt]ú|[Tt]usa)</P>:SEIMHIU
+<V p="y" t="(coinn|gnáth)">ANYTHING([ií]nn|[ií]nnse|[ií]mis)</V> <P>([Tt]ú|[Tt]usa)</P>:SEIMHIU
+# CO17 8.3.1-8.3.4: a with -san/-sean or seisean/siadsan is his or their, which lenite or eclipse:
+# unmutated it is wrong either way (a chapallsan, a gcapallsan; a gheansaí seisean, a dteach siadsan)
+<D>[Aa]</D> <N>UNMUTATEDse?an</N>:CLAOCHLU
+<D>[Aa]</D> <N>UNMUTATED</N> <P>([Ss]eisean|[Ss]iadsan)</P>:CLAOCHLU
+# CO17 8.5.1, 8.6.3: set phrases (mar gheall ar; d'aon ghnó)
+<C>[Mm]ar</C> <N>geall</N>:SEIMHIU
+<N>[Dd]'aon</N> <N>gnó</N>:SEIMHIU
+# CO17 7.2.2, 7.3.2, 3.3.2: a before a verbal noun lenites it (é a dhíol; teach a cheannach; litir a
+# chur faoi bhráid an Aire). VNPLAIN: a verbal noun that takes lenition, unlenited (src/engine.ts).
+# After an object pronoun, a noun or a prepositional pronoun (ba cheart duit a cheannach) only, so not
+# the possessive her (a díol féin).
+<P>([Éé]|[Íí]|[Ii]ad|[Mm]é|[Tt]hú|[Ss]inn|[Ss]ibh|[Mm]uid)</P> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
+<N>ANYTHING</N> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
+<O>ANYTHING</O> <[DSU]>[Aa]</[DSU]> <N>VNPLAIN</N>:SEIMHIU
+# CO17 7.3.1, 7.3.4: the past and conditional copula cár and murar lenite (Cár thairbhe duit é?;
+# Murar chomhalta cláraithe é)
+([Cc]ár|[Mm]urar) <[AN]>UNLENITED</[AN]>:SEIMHIU
+# CO17 7.3.5: dá before b' eclipses it (Dá mb'fhear saibhir é)
+[Dd]á b'ANYTHING:URU
+# má lenites (Má bhí leabhar ann riamh); bí there is read as a noun
+[Mm]á [Bb]í:SEIMHIU
 # a + bí is the relative with the past (an t-airgead a bhí aige; Maidin sách fuar a bhí ann): no
 # imperative follows a; bí is read as a noun here
 <[DGU]>[Aa]</[DGU]> <[NV]>[Bb]í</[NV]>:SEIMHIU

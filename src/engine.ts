@@ -676,15 +676,24 @@ export class Gramadoir {
  */
 function withVerbalNouns(words: string[]): (rule: RuleJson) => RuleJson {
   const forms = new Set<string>();
+  const unlenited = new Set<string>();
   for (const w of words) {
     forms.add(w);
-    if (/^([bcdfgmpt][^h]|s[aeiouáéíóúlnr])/.test(w)) forms.add(`${w[0]}h${w.slice(1)}`);
+    if (/^([bcdfgmpt][^h]|s[aeiouáéíóúlnr])/.test(w)) {
+      forms.add(`${w[0]}h${w.slice(1)}`);
+      unlenited.add(w);
+    }
   }
-  const esc = [...forms].map((w) => toLatin1(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).sort((a, b) => b.length - a.length);
-  const alt = esc.length ? `(?:${esc.join('|')})` : '(?!)';
+  const alternation = (set: Set<string>): string => {
+    const esc = [...set].map((w) => toLatin1(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).sort((a, b) => b.length - a.length);
+    return esc.length ? `(?:${esc.join('|')})` : '(?!)';
+  };
+  const alt = alternation(forms);
+  // VNPLAIN: the verbal nouns that take lenition, unlenited (cur, díol, ceannach), for a + VN.
+  const altUnlenited = alternation(unlenited);
   const fix = (r: RuleJson): RuleJson => ({
     ...r,
-    re: r.re.includes('VERBALNOUN') ? r.re.split('VERBALNOUN').join(alt) : r.re,
+    re: r.re.split('VNPLAIN').join(altUnlenited).split('VERBALNOUN').join(alt),
     ...(r.then ? { then: r.then.map(fix) } : {}),
   });
   return fix;

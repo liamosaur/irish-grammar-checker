@@ -350,6 +350,12 @@ export function proposeFix(rule: string, flagged: string): string | null {
   }
   // A past verb with its subject pronoun (Socraigh sí -> Shocraigh sí, Ól sé -> D'ól sé): the
   // change goes on the verb.
+  // But tú as the object, after a subject pronoun or a synthetic ending, is the word that takes
+  // the lenition (Chonaic mé tú -> Chonaic mé thú; Aithním tú -> Aithním thú).
+  if (rule === 'SEIMHIU') {
+    const m = /^([\s\S]*?(?:\b(?:mé|sé|sí|siad|sinn|muid|sibh)|(?:[ií]m|[ií]mid|amar|omar|[ií]mis|[ií]nn)(?:se|ne)?)\s+)(tú|tusa)(\s*)$/i.exec(flagged);
+    if (m) return m[1] + matchCase(m[2], 'th' + m[2].slice(1).toLowerCase()) + m[3];
+  }
   // The same for a verb after a particle (Ní dearna mé -> Ní dhearna mé; Mura cuire tú -> Mura gcuire tú).
   if (rule === 'SEIMHIU' || rule === 'PREFIXD' || rule === 'URU') {
     const m = /^([\s\S]*?)(\S+)(\s+(?:mé|tú|sé|sí|siad|sinn|muid|sibh|mise|seisean|sise|siadsan|sinne|sibhse)\s*)$/i.exec(flagged);
