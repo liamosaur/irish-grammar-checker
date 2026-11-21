@@ -597,6 +597,9 @@ export class Gramadoir {
           thiserror = nested[2];
           errorregex = nested[3];
         }
+        // The marked words' last token, when the tagger took several words as one (i Baile Átha
+        // Cliath: the eclipsis goes on Baile, the unit's first word).
+        const unit = /([^<>]+)<\/[A-Z]>\s*$/.exec(errorregex)?.[1];
         prefix = regexify(prefix);
         errorregex = regexify(errorregex);
         errorregex = errorregex.replace(/\[\^[^\]]+\]\*$/, '');
@@ -661,6 +664,7 @@ export class Gramadoir {
           errortext,
           ...(sugg ? { suggestions: sugg[1].split(', ') } : {}),
           ...(msgm[2] ? { reason: msgm[2] } : {}),
+          ...(unit && / /.test(unit.trim()) ? { unit: stripEntities(unit.trim()) } : {}),
         });
       }
     }

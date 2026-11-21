@@ -63,4 +63,6 @@ export interface GrammarError {
   suggestions?: string[];
   /** Why the rule applies: an id in data/reasons.json (grammar/reasons.tsv), when the rule has one. */
   reason?: string;
+  /** The last of the flagged words when the tagger took several words as one (Baile Átha Cliath). */
+  unit?: string;
 }

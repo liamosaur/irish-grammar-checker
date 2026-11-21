@@ -286,6 +286,10 @@ const cases: Case[] = [
   { section: 'Tábla 5R', text: 'ní dearna sé', rule: 'SEIMHIU', words: 'ní dearna sé', fixed: 'ní dhearna sé' },
   // na (genitive feminine) + aon: h, not "an" (it was BACHOIR{an})
   { section: '9.3.7', text: 'costas na aon fhuinneoige amháin', rule: 'PREFIXH', words: 'na aon fhuinneoige', fixed: 'costas na haon fhuinneoige amháin' },
+  // A unit of several words (comhshuite): the fix mutates its first word (it changed the last:
+  // Átha gCliath, chun gcinn)
+  { section: '3.3.11', text: 'Tá an-chuid foirgnimh cháiliúla i Baile Átha Cliath.', rule: 'URU', words: 'i Baile Átha Cliath', fixed: 'Tá an-chuid foirgnimh cháiliúla i mBaile Átha Cliath.' },
+  { section: '3.3.1', text: 'luas ár dul chun cinn', rule: 'URU', words: 'ár dul chun cinn', fixed: 'luas ár ndul chun cinn' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,

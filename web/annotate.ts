@@ -28,6 +28,8 @@ export interface ErrorView {
   aligned: boolean;
   /** Why the rule applies: an id in data/reasons.json, when the rule has one. */
   reason?: string;
+  /** The last flagged token when it is several words (see GrammarError). */
+  unit?: string;
 }
 
 export interface Piece {
@@ -80,6 +82,7 @@ export function analyse(text: string, errors: CheckedError[]): { views: ErrorVie
       aligned,
       range: aligned && e.fromy === e.toy ? { y: e.fromy, from: e.fromx, to: e.tox + 1 } : undefined,
       ...(e.reason ? { reason: e.reason } : {}),
+      ...(e.unit ? { unit: e.unit } : {}),
     });
     if (!aligned) return;
     for (let y = e.fromy; y <= e.toy; y++) {

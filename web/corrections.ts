@@ -371,9 +371,10 @@ const FIXES: Record<string, (w: string) => string | null> = {
 
 /**
  * The flagged text with the rule applied to its last word, or null if that cannot be worked out.
- * `before` is the text of the line before the flagged words (le before n-íoc).
+ * `before` is the text of the line before the flagged words (le before n-íoc); `unit` the last
+ * flagged token when the tagger took several words as one (GrammarError.unit).
  */
-export function proposeFix(rule: string, flagged: string, before = ''): string | null {
+export function proposeFix(rule: string, flagged: string, before = '', unit?: string): string | null {
   // "Definite article required": add the plain article. The rules that look at the result
   // then sort out the rest (sa, na, the mutation), one click at a time.
   if (rule === 'NEEDART') return flagged.trim() ? `an ${flagged}` : null;
@@ -464,6 +465,14 @@ export function proposeFix(rule: string, flagged: string, before = ''): string |
   }
   const fix = FIXES[rule];
   if (!fix) return null;
+  // The last token is several words taken as one (i Baile Átha Cliath, ár dul chun cinn): the
+  // mutation goes on its first word (i mBaile Átha Cliath, ár ndul chun cinn).
+  const at = unit ? flagged.toLowerCase().lastIndexOf(unit.toLowerCase()) : -1;
+  if (unit && at >= 0 && !flagged.slice(at + unit.length).trim()) {
+    const first = /^\S+/.exec(unit)![0];
+    const changed = fix(flagged.slice(at, at + first.length));
+    return changed === null ? null : flagged.slice(0, at) + changed + flagged.slice(at + first.length);
+  }
   const m = /^([\s\S]*?)(\S+)(\s*)$/.exec(flagged);
   if (!m) return null;
   const changed = fix(m[2]);
@@ -483,7 +492,7 @@ export function withLastWord(flagged: string, word: string): string | null {
 }
 
 /** What a note needs for its buttons. */
-export interface NoteLike { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number } }
+export interface NoteLike { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number }; unit?: string }
 
 /**
  * The words a note quotes as replacements that are offered as buttons, in order. With `line`
@@ -528,7 +537,7 @@ function mutationAfter(before: string): 'eclipse' | 'lenite' | null {
 export function proposals(v: NoteLike, flagged: string, before = ''): string[] {
   const out: string[] = [];
   for (const w of v.fixes ?? []) { const p = withLastWord(flagged, w); if (p !== null) out.push(p); }
-  if (!out.length) { const p = proposeFix(v.rule, flagged, before); if (p !== null) out.push(p); }
+  if (!out.length) { const p = proposeFix(v.rule, flagged, before, v.unit); if (p !== null) out.push(p); }
   return out;
 }
 
