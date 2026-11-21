@@ -7,7 +7,7 @@
 //   rechanged    following the notes left (up to 3 steps) changes a word this fix changed: the fix
 //                changed the wrong word or gave the wrong form (an bean bheag -> an bean beag, then
 //                an bhean bheag again; le n-íoc -> le íoc, then le híoc). These are the ones to fix.
-//   not-cleared  the same rule still flags the changed words, and no later step rechanges them.
+//   not-cleared  the same rule still flags the changed words and offers no further fix.
 //
 // The later steps follow the checker's own fixes, which may be wrong too: a rechanged fix is a
 // lead, to be read, not a verdict.
@@ -83,12 +83,16 @@ for (const [set, s] of inputs()) {
     let group: Group = 'ok';
     const steps: string[] = [];
     if (first.length) {
-      group = first.some((n) => n.rule === v.rule) ? 'not-cleared' : 'next-step';
+      group = 'next-step';
       let left = first;
       for (let round = 0; round < 3 && left.length; round++) {
         const n = left.find((x) => firstFix(x, cur.join('')));
         const p = n && firstFix(n, cur.join(''));
-        if (!n || !p) break;
+        if (!n || !p) {
+          // A note of the same rule is left on the changed words and offers nothing more.
+          if (round === 0 && left.some((x) => x.rule === v.rule && overlaps(x.range!, mine))) group = 'not-cleared';
+          break;
+        }
         const next = applyCorrection(cur.join(''), p.range, p.word);
         if (next === null) break;
         const nextChars = Array.from(next);
@@ -98,7 +102,12 @@ for (const [set, s] of inputs()) {
         while (wa > 0 && isWordChar(cur[wa - 1])) wa--;
         while (wb < cur.length && isWordChar(cur[wb])) { wb++; wn++; }
         steps.push(`${n.rule}: ${cur.slice(wa, wb).join('')} -> ${nextChars.slice(wa, wn).join('')}`);
-        if (overlaps({ from: c.from, to: Math.max(c.oldTo, c.from + 1) }, mine)) { group = 'rechanged'; break; }
+        // A change inside a word this fix changed (an insertion right before it, "an" before
+        // hIndia, does not count).
+        const inserted = nextChars.slice(c.from, c.newTo).join('');
+        const touched = c.oldTo > c.from ? overlaps({ from: c.from, to: c.oldTo }, mine)
+          : c.from > mine.from && c.from < mine.to || c.from === mine.from && !/\s$/.test(inserted);
+        if (touched) { group = 'rechanged'; break; }
         mine = shift(mine, c);
         region = shift(region, c);
         cur = nextChars;

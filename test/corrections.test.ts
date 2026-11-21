@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { Gramadoir } from '../src/engine.ts';
 import { loadData } from '../src/node-data.ts';
 import { analyse, type ErrorView } from '../web/annotate.ts';
-import { applyCorrection, matchCase, planReplacement, QUOTES_REPLACEMENT, quotedParts, sliceRange } from '../web/corrections.ts';
+import { applyCorrection, matchCase, planReplacement, proposeFix, QUOTES_REPLACEMENT, quotedOptions, quotedParts, sliceRange } from '../web/corrections.ts';
 import { foldForEngine } from '../web/fold.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -100,6 +100,15 @@ describe('planReplacement', () => {
     // not when the rest is a respelling of the other flagged word
     assert.equal(applyPlan('Cé mhéad', 'cé mhéid'), 'Cé mhéid');
   });
+  it('a replacement for one word keeps the mutation the word had', () => {
+    assert.equal(applyPlan('a chulghairm', 'cúlghairm', 2, 12), 'a chúlghairm');
+    assert.equal(applyPlan('i gconaí', 'cónaí', 2, 8), 'i gcónaí');
+    assert.equal(applyPlan('na gCE', 'cé', 3, 6), 'na cé'); // an abbreviation is not mutated
+    assert.equal(applyPlan('a sharú', 'shárú', 2, 7), 'a shárú'); // already mutated: as given
+  });
+  it('é, í, iad after the copula ní take h', () => {
+    assert.equal(applyPlan('Ní sé i bhfeidhm', 'é', 0, 6), 'Ní hé i bhfeidhm');
+  });
   it('offers nothing when the result would be the same text', () => {
     assert.equal(plan('maidir le oideachas', 0, 6, 'maidir le'), null);
   });
@@ -112,6 +121,35 @@ describe('planReplacement', () => {
     const p = plan(line, from, to, w)!;
     return applyCorrection(line, p.range, p.word)!;
   }
+});
+
+describe('quotedOptions', () => {
+  const note = (msg: string, line: string, word: string) => {
+    const from = line.indexOf(word);
+    return quotedOptions({ rule: 'CAIGHDEAN', msg, suggestions: [], range: { y: 0, from, to: from + word.length } }, line);
+  };
+  it('offers only the mutated form the particle before the word calls for', () => {
+    assert.deepEqual(note('Non-standard form of /dtug, thug/', 'Ar tug tú é?', 'tug'), ['thug']);
+    assert.deepEqual(note('Non-standard form of /bhfaca, fhaca/', 'An faca tú é?', 'faca'), ['bhfaca']);
+    assert.deepEqual(note('Non-standard form of /dtug, thug/', 'Tug sé dom é.', 'Tug'), ['thug']); // no particle
+    assert.deepEqual(note('Non-standard form of /dhearnadh/', 'go dearnadh é', 'dearnadh'), []); // none fits
+  });
+  it('after a (direct or indirect relative), and for other words, offers them all', () => {
+    assert.deepEqual(note('Non-standard form of /dtug, thug/', 'an fear a tug é', 'tug'), ['dtug', 'thug']);
+    assert.deepEqual(note('Non-standard form of /méid, mhéid/', 'Cá méad atá ann?', 'méad'), ['méid', 'mhéid']);
+  });
+});
+
+describe('proposeFix with the words before', () => {
+  it('unnecessary eclipsis on a vowel after le: h instead (le n-íoc -> le híoc)', () => {
+    assert.equal(proposeFix('NIURU', 'n-íoc', 'táille le '), 'híoc');
+    assert.equal(proposeFix('NIURU', 'n-íoc', 'táille '), 'íoc');
+  });
+  it('d\' after a particle: the particle\'s own mutation', () => {
+    assert.equal(proposeFix('NIDEE', "ina d'athródh"), 'ina n-athródh');
+    assert.equal(proposeFix('NIDEE', "gur d'fhoghlaim"), 'gur fhoghlaim');
+    assert.equal(proposeFix('NIDEE', "a d'fheithicil"), 'a fheithicil'); // a does not say which
+  });
 });
 
 describe('matchCase', () => {

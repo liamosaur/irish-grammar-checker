@@ -74,6 +74,9 @@ export function planReplacement(line: string, range: { y: number; from: number; 
     if (tokens.length && tokens[tokens.length - 1].to === i) tokens[tokens.length - 1].to = i + 1;
     else tokens.push({ from: i, to: i + 1 });
   }
+  if (tokens.length === 1 && !/\s/.test(replacement.trim())) {
+    replacement = keepMutation(chars.slice(tokens[0].from, tokens[0].to).join(''), replacement.trim());
+  }
   const rep = replacement.trim().split(/\s+/);
   const words = rep.length;
   let from = range.from;
@@ -134,9 +137,38 @@ export function planReplacement(line: string, range: { y: number; from: number; 
     while (gap < chars.length && /[ \t]/.test(chars[gap])) gap++;
     if (gap > to && gap < chars.length && /\p{L}/u.test(chars[gap])) to = gap;
   }
+  // After the copula ní, é, í, iad and ea take h (Ní sé -> Ní hé).
+  if (/^(é|í|iad|ea)$/i.test(replacement.trim()) && /(^|\s)ní\s+$/i.test(chars.slice(0, from).join(''))) replacement = `h${replacement.trim()}`;
   const original = chars.slice(from, to).join('');
   const word = matchCase(original, replacement);
   return word === original ? null : { range: { y: range.y, from, to }, word }; // a button that changes nothing is not offered
+}
+
+/** The initial mutation a word shows, and its form without it; null if it shows none. */
+function mutationOf(w: string): { plain: string; apply: (w: string) => string | null } | null {
+  const ecl = uneclipse(w);
+  if (ecl !== null) return { plain: ecl, apply: eclipse };
+  const t = unTPrefix(w);
+  if (t !== null) return { plain: t, apply: tPrefix };
+  if (/^d['’]./i.test(w)) return { plain: w.slice(2), apply: dPrefix };
+  const h = unHPrefix(w);
+  if (h !== null) return { plain: h, apply: hPrefix };
+  const len = unlenite(w);
+  if (len !== null) return { plain: len, apply: lenite };
+  return null;
+}
+
+/**
+ * A replacement for one word from the word list (the standard spelling: chulghairm ->
+ * cúlghairm) is given as the plain form; the word keeps the mutation it had in the text (a
+ * chulghairm -> a chúlghairm; i gconaí -> i gcónaí). Only when the replacement shows no mutation
+ * of its own and begins with the same letter as the word without its mutation.
+ */
+export function keepMutation(original: string, replacement: string): string {
+  const m = mutationOf(original);
+  if (!m || mutationOf(replacement) || lc(m.plain[0]) !== lc(replacement[0])) return replacement;
+  if (allCaps(m.plain)) return replacement; // an abbreviation (na gCE): not a word to mutate
+  return m.apply(replacement) ?? replacement;
 }
 
 /**
@@ -323,8 +355,11 @@ const FIXES: Record<string, (w: string) => string | null> = {
   NICLAOCHLU: (w) => unlenite(w) ?? uneclipse(w) ?? unTPrefix(w) ?? unHPrefix(w),
 };
 
-/** The flagged text with the rule applied to its last word, or null if that cannot be worked out. */
-export function proposeFix(rule: string, flagged: string): string | null {
+/**
+ * The flagged text with the rule applied to its last word, or null if that cannot be worked out.
+ * `before` is the text of the line before the flagged words (le before n-íoc).
+ */
+export function proposeFix(rule: string, flagged: string, before = ''): string | null {
   // "Definite article required": add the plain article. The rules that look at the result
   // then sort out the rest (sa, na, the mutation), one click at a time.
   if (rule === 'NEEDART') return flagged.trim() ? `an ${flagged}` : null;
@@ -358,6 +393,25 @@ export function proposeFix(rule: string, flagged: string): string | null {
     const m = /^(\s*)(\S+)(\s+)(\S+)([\s\S]*)$/.exec(flagged);
     if (!m || lc(m[2]) !== 'na') return null;
     return m[1] + matchCase(m[2], 'ná') + m[3] + (hPrefix(m[4]) ?? m[4]) + m[5];
+  }
+  // "Unnecessary eclipsis" on a vowel after a word that puts h before a vowel: the h goes in
+  // where the n- comes out (le n-íoc -> le híoc).
+  if (rule === 'NIURU') {
+    const m = /^([\s\S]*?)(\S+)(\s*)$/.exec(flagged);
+    const plain = m && uneclipse(m[2]);
+    if (m && plain && isVowel(plain[0]) && /(?:^|\s)(?:le|go|na|chomh)\s+$/i.test(before + m[1])) return m[1] + (hPrefix(plain) ?? plain) + m[3];
+  }
+  // d' after a particle: the verb takes the particle's own mutation instead. The particles
+  // ending in r and ní lenite (already shown by fh-; a vowel is unchanged); the others eclipse
+  // (ina d'athródh -> ina n-athródh), except interrogative an before a vowel (An íosfá).
+  if (rule === 'NIDEE') {
+    const m = /^(\s*)(\S+)(\s+)(\S+)(\s*)$/.exec(flagged);
+    const verb = m && unDPrefix(m[4]);
+    if (!m || verb === null) return null;
+    const p = m[2].toLowerCase();
+    // a (his, her, their, or the relative) does not say which.
+    const eclipses = !/r$/.test(p) && p !== 'ní' && p !== 'a' && !(p === 'an' && isVowel(verb[0]));
+    return m[1] + m[2] + m[3] + (eclipses ? eclipse(verb) ?? verb : verb) + m[5];
   }
   // A past verb with its subject pronoun (Socraigh sí -> Shocraigh sí, Ól sé -> D'ól sé): the
   // change goes on the verb.
@@ -417,10 +471,39 @@ export function withLastWord(flagged: string, word: string): string | null {
 /** What a note needs for its buttons. */
 export interface NoteLike { rule: string; msg: string; suggestions: string[]; fixes?: string[]; range?: { y: number; from: number; to: number } }
 
-/** The words a note quotes as replacements (each is a button in its message), in order. */
-export function quotedOptions(v: NoteLike): string[] {
+/**
+ * The words a note quotes as replacements that are offered as buttons, in order. With `line`
+ * (the note's line), a word-list note whose standard forms are only the flagged word mutated
+ * (tug: /dtug, thug/; faca: /bhfaca, fhaca/) offers only the form the particle before it calls
+ * for (Ar tug -> Ar thug; An faca -> An bhfaca), or none if no offered form fits.
+ */
+export function quotedOptions(v: NoteLike, line?: string): string[] {
   if (!QUOTES_REPLACEMENT.has(v.rule)) return [];
-  return [...v.msg.matchAll(/\/([^/]+)\//g)].flatMap((m) => quotedParts(m[1]).filter((p) => p.option).map((p) => p.text));
+  const all = [...v.msg.matchAll(/\/([^/]+)\//g)].flatMap((m) => quotedParts(m[1]).filter((p) => p.option).map((p) => p.text));
+  if (line === undefined || !v.range) return all;
+  const chars = Array.from(line);
+  const flagged = chars.slice(v.range.from, v.range.to).join('').trim().toLowerCase();
+  const kind = (w: string) => uneclipse(w) !== null ? 'eclipse' : unlenite(w) !== null ? 'lenite' : null;
+  const plainOf = (w: string) => (uneclipse(w) ?? unlenite(w) ?? '').toLowerCase();
+  if (/\s/.test(flagged) || !all.length || !all.every((o) => kind(o) && plainOf(o) === flagged)) return all;
+  const wanted = mutationAfter(chars.slice(0, v.range.from).join(''));
+  return wanted ? all.filter((o) => kind(o) === wanted) : all;
+}
+
+/** Verbal particles that eclipse, and those that lenite (the dependent forms after them). */
+const ECLIPSING_PARTICLES = new Set(['an', 'go', 'nach', 'cá', 'dá', 'mura', 'sula']);
+const LENITING_PARTICLES = new Set(['ní', 'níor', 'nár', 'ar', 'gur', 'cár', 'murar', 'sular', 'má']);
+
+/**
+ * The mutation a verb takes after the text before it: the particle's, or lenition (the
+ * independent form) when no particle comes before it. Null after a (direct or indirect relative).
+ */
+function mutationAfter(before: string): 'eclipse' | 'lenite' | null {
+  const prev = /(\S+)\s*$/.exec(before)?.[1].toLowerCase();
+  if (prev === 'a') return null;
+  if (prev && ECLIPSING_PARTICLES.has(prev)) return 'eclipse';
+  if (prev && LENITING_PARTICLES.has(prev)) return 'lenite';
+  return 'lenite'; // no particle
 }
 
 /**
@@ -428,10 +511,10 @@ export function quotedOptions(v: NoteLike): string[] {
  * replaced by each form from the word-form table (the genitive, ...), or else the change the
  * rule names (lenition, ...).
  */
-export function proposals(v: NoteLike, flagged: string): string[] {
+export function proposals(v: NoteLike, flagged: string, before = ''): string[] {
   const out: string[] = [];
   for (const w of v.fixes ?? []) { const p = withLastWord(flagged, w); if (p !== null) out.push(p); }
-  if (!out.length) { const p = proposeFix(v.rule, flagged); if (p !== null) out.push(p); }
+  if (!out.length) { const p = proposeFix(v.rule, flagged, before); if (p !== null) out.push(p); }
   return out;
 }
 
@@ -439,9 +522,9 @@ export function proposals(v: NoteLike, flagged: string): string[] {
 export function notePlans(v: NoteLike, line: string): Plan[] {
   if (!v.range) return [];
   const plans: Plan[] = [];
-  for (const w of quotedOptions(v)) { const p = planReplacement(line, v.range, w); if (p) plans.push(p); }
+  for (const w of quotedOptions(v, line)) { const p = planReplacement(line, v.range, w); if (p) plans.push(p); }
   const flagged = sliceRange(line, { ...v.range, y: 0 }); // `line` is the flagged line only
-  if (flagged !== null) for (const p of proposals(v, flagged)) plans.push({ range: v.range, word: p });
+  if (flagged !== null) for (const p of proposals(v, flagged, Array.from(line).slice(0, v.range.from).join(''))) plans.push({ range: v.range, word: p });
   return plans;
 }
 

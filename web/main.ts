@@ -1,6 +1,6 @@
 import { analyse, type CheckedError, type ErrorView } from './annotate.ts';
 import { APP_NAME, WARN_CHARS } from './config.ts';
-import { applyCorrection, type Plan, planReplacement, proposals, QUOTES_REPLACEMENT, quotedParts, sliceRange } from './corrections.ts';
+import { applyCorrection, type Plan, planReplacement, proposals, QUOTES_REPLACEMENT, quotedOptions, quotedParts, sliceRange } from './corrections.ts';
 import { EXAMPLES } from './examples.ts';
 import { unreadableCount } from './fold.ts';
 import { reasonFor } from './reasons.ts';
@@ -279,8 +279,18 @@ function formatMessage(msg: string, v?: ErrorView): DocumentFragment {
       q.textContent = m[1];
       frag.append(q);
     } else {
+      const offered = quotedOptions(v, v.range ? checkedText.split('\n')[v.range.y] ?? '' : undefined);
       for (const part of quotedParts(m[1])) {
         if (!part.option) { frag.append(part.text); continue; }
+        if (!offered.includes(part.text)) {
+          // a form the words before it rule out (Ar tug: /dtug, thug/): shown, not offered
+          const q = document.createElement('span');
+          q.className = 'tok';
+          q.lang = 'ga';
+          q.textContent = part.text;
+          frag.append(q);
+          continue;
+        }
         const q = replaceButton(v, part.text);
         frag.append(q);
       }
@@ -295,7 +305,8 @@ function listItem(v: ErrorView): HTMLLIElement {
   const replaceable = !!v.range && QUOTES_REPLACEMENT.has(v.rule);
   const flagged = v.range ? sliceRange(checkedText, v.range) : null;
   // What the rule asks for, as the full flagged text: the genitive for "genitive required", the mutated form for "Lenition missing", ...
-  const fixes = flagged === null ? [] : proposals(v, flagged);
+  const before = v.range ? Array.from(checkedText.split('\n')[v.range.y] ?? '').slice(0, v.range.from).join('') : '';
+  const fixes = flagged === null ? [] : proposals(v, flagged, before);
   const standalone = v.suggestions.length > 0 || replaceable || fixes.length > 0; // message sits beside the row button, not inside it
   const li = document.createElement('li');
   li.className = 'err';
