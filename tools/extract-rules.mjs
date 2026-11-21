@@ -5,12 +5,12 @@
 // the one generate-rules.mjs assembles from the upstream source.
 //
 // Usage: node tools/extract-rules.mjs <path/to/Gramadoir.pm> <outDir>
+// (generate-rules.mjs imports extractRules instead.)
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const [, , src, outDir] = process.argv;
-const text = fs.readFileSync(src, 'latin1');
-const lines = text.split(/\r?\n/);
+export const RULE_FILES = ['aonchiall', 'comhshuite', 'giorr', 'rialacha', 'unigram'];
 
 // Split "s/PAT/REPL/FLAGS;" on unescaped slashes.
 function parseSubst(line) {
@@ -67,7 +67,7 @@ function classify(sub) {
   return { re: pat, flags: sub.flags, kind: 'UNSUPPORTED', repl: sub.repl };
 }
 
-function block(name) {
+function block(lines, name) {
   const start = lines.findIndex((l) => l === `sub ${name}`);
   if (start < 0) throw new Error('missing sub ' + name);
   const out = [];
@@ -92,14 +92,30 @@ function block(name) {
   return { rules: out, odd };
 }
 
-fs.mkdirSync(outDir, { recursive: true });
-const summary = {};
-for (const name of ['aonchiall', 'comhshuite', 'giorr', 'rialacha', 'unigram']) {
-  const { rules, odd } = block(name);
-  const bad = rules.filter((r) => r.kind === 'UNSUPPORTED');
-  summary[name] = { total: rules.length, unsupported: bad.length, unparsedLines: odd.length };
-  if (bad.length) console.error(name, 'unsupported sample:', bad.slice(0, 3));
-  if (odd.length) console.error(name, 'unparsed sample:', odd.slice(0, 3));
-  fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(rules));
+/**
+ * The rule blocks of a Gramadoir.pm (its text, Latin-1): for each rule file, the rules, plus
+ * those it could not convert (`bad`) and the lines it could not read (`odd`).
+ */
+export function extractRules(text) {
+  const lines = text.split(/\r?\n/);
+  const out = {};
+  for (const name of RULE_FILES) {
+    const { rules, odd } = block(lines, name);
+    out[name] = { rules, odd, bad: rules.filter((r) => r.kind === 'UNSUPPORTED') };
+  }
+  return out;
 }
-console.table(summary);
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const [, , src, outDir] = process.argv;
+  const all = extractRules(fs.readFileSync(src, 'latin1'));
+  fs.mkdirSync(outDir, { recursive: true });
+  const summary = {};
+  for (const [name, { rules, odd, bad }] of Object.entries(all)) {
+    summary[name] = { total: rules.length, unsupported: bad.length, unparsedLines: odd.length };
+    if (bad.length) console.error(name, 'unsupported sample:', bad.slice(0, 3));
+    if (odd.length) console.error(name, 'unparsed sample:', odd.slice(0, 3));
+    fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(rules));
+  }
+  console.table(summary);
+}

@@ -14,8 +14,6 @@ The inputs are not committed. Put them under `.sources/` (git-ignored):
 | `.sources/lingua-0.70` | the CPAN [Lingua-GA-Gramadoir-0.70](https://cpan.metacpan.org/authors/id/S/SC/SCANNELL/Lingua-GA-Gramadoir-0.70.tar.gz) distribution, extracted: the only published source of the word list and the non-standard-form tables |
 | `.sources/bunamo/repo` | checkout of <https://github.com/michmech/BuNaMo> |
 
-Perl is needed for the first step only (it runs the original rule generators).
-
 ```sh
 node tools/generate-rules.mjs .sources/gramadoir data
 node tools/build-data.mjs .sources/lingua-0.70/Lingua-GA-Gramadoir-0.70 data --upstream .sources/gramadoir
@@ -29,8 +27,13 @@ The grammar rules are in `grammar/` and are edited there directly:
 `rialacha-ga.in` (the rules), `aonchiall-ga.in` (the rules that choose between
 a word's possible tags), `comhshuite-ga.in` (phrases tagged as one word) and
 `macra-ga.meta.pl` (the macros, such as `ANYTHING` and `NONCOMPOUND`).
-`generate-rules.mjs` compiles them with the compiler scripts from the An
-Gramadóir checkout. The rules follow *An Caighdeán Oifigiúil* (2017);
+`generate-rules.mjs` compiles them with `rule-compiler.mjs`, a JavaScript version of
+An Gramadóir's Perl compiler scripts that gives the same output, so Perl is not needed.
+It stops on a mistake those scripts passed over silently (an unknown macro, a word
+it can't read, a malformed message, a macro name containing an earlier one, a
+character outside Latin-1 in a rule; comments may contain anything), and writes
+`data/rules/lines.json`, the source line of each compiled rule, for tools.
+`test/rule-compiler.test.ts` checks that `data/rules/` is up to date. The rules follow *An Caighdeán Oifigiúil* (2017);
 `node tools/upstream-diff.mjs .sources/gramadoir` lists the changes since the
 An Gramadóir commit they came from. Rules can also use `CLAUSESTART`,
 `AFTERFEMNAME`, `AFTERMANNERNOUN` (first word), `CLAUSEEND` and `VNLATER` (last word), which the rule

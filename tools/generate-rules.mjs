@@ -1,29 +1,23 @@
-// Rebuilds the rule set, mirroring what An Gramadóir's Makefile-xx.in does
-// (github.com/kscanne/gramadoir), then extracts it to JSON for the TS engine.
+// Rebuilds the rule set, as An Gramadóir's Makefile-xx.in does
+// (github.com/kscanne/gramadoir), and writes it as JSON for the TS engine.
 // The rule files themselves (rialacha, aonchiall, comhshuite) and the macros are
-// in grammar/; everything else (compiler scripts, tagset, giorr, unigram) comes
-// from the An Gramadóir checkout.
-//
-// Perl is only needed here, at data-build time (the original rule "compiler" is a
-// chain of small Perl filter scripts). The runtime engine never uses Perl.
+// in grammar/; the tagset, giorr, unigram and the Gramadoir.pm.in template come
+// from the An Gramadóir checkout. The compiler is tools/rule-compiler.mjs (the
+// Perl filter scripts of the original, in JavaScript), so no Perl is needed.
 //
 // Usage: node tools/generate-rules.mjs <upstream-checkout> <outDir>
-//   env PERL_BIN = perl executable (default: perl)
-import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { extractRules } from './extract-rules.mjs';
+import { aonchiallMeta, checkRules, comhshuiteMeta, gin, macra, parseMacros, rialachaMeta } from './rule-compiler.mjs';
 
 const [, , up, outDir] = process.argv;
 if (!up || !outDir) { console.error('usage: node tools/generate-rules.mjs <upstream-checkout> <outDir>'); process.exit(2); }
-const perl = process.env.PERL_BIN ?? 'perl';
 const here = path.dirname(fileURLToPath(import.meta.url));
 
 // Files are Latin-1; a Windows checkout may have CRLF line endings, upstream is LF.
 const read = (f) => fs.readFileSync(path.join(up, f)).toString('latin1').replace(/\r/g, '');
-const run = (args, input) =>
-  execFileSync(perl, args, { input: Buffer.from(input, 'latin1'), env: { ...process.env, LC_ALL: 'C' }, maxBuffer: 256 * 1024 * 1024 }).toString('latin1');
 
 // Values from ga/configure
 const BDCHARS = 'A-ZÁÉÍÓÚa-záéíóú';
@@ -35,30 +29,36 @@ const attrtags = [
   ...new Set(read('ga/pos-ga.txt').split('\n').filter((l) => /<[A-Z] /.test(l)).map((l) => l.replace(/^[0-9]* <([A-Z]).*/, '$1'))),
 ].sort().join('');
 
-// The rule files: grammar/<name>-ga.in (UTF-8; the compiler works in Latin-1).
+// The macros (grammar/macra-ga.meta.pl, kept in UTF-8): a list of s/NAME/EXPANSION/g; lines.
+const macraSrc = fs.readFileSync(path.join(here, '..', 'grammar', 'macra-ga.meta.pl'), 'utf8').replace(/\r/g, '');
+const macros = parseMacros(macraSrc);
+if (macros.some(([f, t]) => /[^\u0000-ÿ]/.test(f + t))) throw new Error('grammar/macra-ga.meta.pl: a macro with a character outside Latin-1');
+
+// Words that the rules may use besides the macros: filled in below (CLAUSESTART ... VNLATER)
+// or by src/engine.ts when the rules load (VERBALNOUN, VNPLAIN).
+const PLACEHOLDERS = ['CLAUSESTART', 'CLAUSEEND', 'AFTERFEMNAME', 'AFTERNOUNANDGEN', 'AFTERNOUNANDADJS', 'AFTERTEN', 'AFTERMANNERNOUN', 'VNLATER', 'VERBALNOUN', 'VNPLAIN'];
+
+// The rule files: grammar/<name>-ga.in (UTF-8; rules in Latin-1, comments in anything).
 // tools/upstream-diff.mjs lists the changes since the An Gramadóir commit they came from.
+// A mistake that the compiler would pass over silently stops the build (checkRules).
+const problems = checkRules('macros', '', macros, PLACEHOLDERS);
+// The line numbers of each file's rules (every line that is not a comment is one rule).
+const sourceLines = {};
 function readGrammar(name) {
   const file = path.join(here, '..', 'grammar', `${name}-ga.in`);
   const s = fs.readFileSync(file, 'utf8').replace(/\r/g, '');
-  const bad = /[^\u0000-ÿ]/.exec(s);
-  if (bad) throw new Error(`${file}: character outside Latin-1: ${bad[0]}`);
+  problems.push(...checkRules(name, s, macros, PLACEHOLDERS));
+  sourceLines[name] = s.split('\n').flatMap((l, i) => (l === '' || l.startsWith('#') ? [] : [i + 1]));
   return s;
 }
 
-// The macros (grammar/macra-ga.meta.pl): a Perl
-// script with Latin-1 characters in its patterns, kept in UTF-8, so a Latin-1 copy is
-// what Perl runs.
-const macraSrc = fs.readFileSync(path.join(here, '..', 'grammar', 'macra-ga.meta.pl'), 'utf8').replace(/\r/g, '');
-if (/[^\u0000-ÿ]/.test(macraSrc)) throw new Error('grammar/macra-ga.meta.pl: characters outside Latin-1');
-const macra = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'gr-macra-')), 'macra-ga.meta.pl');
-fs.writeFileSync(macra, macraSrc, 'latin1');
-
-// aonchiall / comhshuite / rialacha: .in -> gin -> macra -> <name>.meta.pl
+// aonchiall / comhshuite / rialacha: .in -> gin -> macros -> the file's own step
+const META = { aonchiall: aonchiallMeta, comhshuite: comhshuiteMeta, rialacha: rialachaMeta };
 function generate(name) {
   let s = readGrammar(name);
-  s = run([path.join(up, 'gin.meta.pl'), attrtags], s);
-  s = run(['-p', macra], s);
-  s = run([path.join(up, `${name}.meta.pl`)], s);
+  s = gin(s, attrtags);
+  s = macra(s, macros);
+  s = META[name](s);
   return s.split('\n').map((l) => (l === '' ? l : '\t' + l)).join('\n');
 }
 
@@ -80,6 +80,7 @@ function unigram() {
 }
 
 const gen = { aonchiall: generate('aonchiall'), comhshuite: generate('comhshuite'), giorr: giorr(), rialacha: generate('rialacha'), unigram: unigram() };
+if (problems.length) throw new Error(`${problems.length} problems in grammar/:\n${problems.join('\n')}`);
 
 // Assemble Gramadoir.pm like the Makefile: insert each file after its marker line.
 let pm = read('Gramadoir.pm.in');
@@ -93,12 +94,16 @@ pm = pm.replace(/^# [a-z]* code goes here\n/gm, '');
 // Legacy-encoding step from the Makefile: non-ASCII bytes -> \x{..}
 pm = pm.replace(/[\u0080-ÿ]/g, (c) => `\\x{${c.charCodeAt(0).toString(16)}}`);
 
-fs.mkdirSync(outDir, { recursive: true });
-const asm = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'gr-asm-')), 'Gramadoir.assembled.pm');
-fs.writeFileSync(asm, pm, 'latin1');
+const extracted = extractRules(pm);
+const failures = Object.entries(extracted).flatMap(([name, { odd, bad }]) => [
+  ...odd.map((o) => `${name}: cannot read line ${o.line} of the assembled rules: ${o.text}`),
+  ...bad.map((r) => `${name}: cannot convert: ${r.re.slice(0, 200)}`),
+]);
+if (failures.length) throw new Error(failures.join('\n'));
+
+fs.mkdirSync(path.join(outDir, 'rules'), { recursive: true });
 console.log('attribute tags:', attrtags);
-console.log('assembled', asm, pm.length, 'bytes');
-execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.join(outDir, 'rules')], { stdio: 'inherit' });
+console.table(Object.fromEntries(Object.entries(extracted).map(([name, { rules }]) => [name, { rules: rules.length }])));
 
 // CLAUSEEND, written as the last word of a local rule, matches the end of a
 // clause: punctuation straight after the previous word, or the end of the
@@ -150,8 +155,7 @@ const STARTS = {
   AFTERMANNERNOUN: '(?<=<N[^>]*>(?:h?[Áá]it|[Bb]h?ealach|g?[Cc]h?aoi|[Cc]h?úis|[Dd]h?óigh|[Ff]h?áth|[Rr]éasún|t?[Ss]lí|[Tt]reo)</N> )',
 };
 for (const name of ['rialacha', 'aonchiall']) {
-  const file = path.join(outDir, 'rules', `${name}.json`);
-  const rules = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const rules = extracted[name].rules;
   let n = 0;
   const fix = (rs) => rs.forEach((r) => {
     if (typeof r.re === 'string' && r.re.includes('CLAUSEEND')) {
@@ -181,8 +185,20 @@ for (const name of ['rialacha', 'aonchiall']) {
     if (r.then) fix(r.then);
   });
   fix(rules);
-  if (n) {
-    fs.writeFileSync(file, JSON.stringify(rules));
-    console.log(`${name}: ${n} placeholder replacements`);
-  }
+  if (n) console.log(`${name}: ${n} placeholder replacements`);
 }
+
+for (const [name, { rules }] of Object.entries(extracted)) {
+  fs.writeFileSync(path.join(outDir, 'rules', `${name}.json`), JSON.stringify(rules));
+}
+
+// data/rules/lines.json (for tools, not loaded by the checker): for each rule file in grammar/,
+// the source line of each compiled rule, in the order a walk of the JSON meets them (a rule,
+// then the exceptions in its `then`).
+const lines = {};
+for (const [name, src] of Object.entries(sourceLines)) {
+  const flat = extracted[name].rules.flatMap((r) => [r, ...(r.then ?? [])]);
+  if (flat.length !== src.length) throw new Error(`${name}: ${flat.length} compiled rules for ${src.length} source lines`);
+  lines[name] = src;
+}
+fs.writeFileSync(path.join(outDir, 'rules', 'lines.json'), JSON.stringify(lines));
