@@ -140,6 +140,19 @@ const cases: Case[] = [
   { section: '1.3.2', text: 'Rinne sé mar an céanna.', rule: 'URU', words: 'mar an céanna', fixed: null },
   { section: '1.1.5(e)', text: 'Bhí mé ag caint leis an Dé Céadaoin seo caite.', rule: 'BADART', words: 'an Dé Céadaoin', fixed: null },
   { section: '1.1.5(e)', text: 'Tháinig sé Dé Déardaoin.', rule: 'BACHOIR', words: 'Dé Déardaoin', fixed: 'Tháinig sé Déardaoin.' },
+  // CO17 chapter 5 review: the independent past, conditional and past habitual are lenited
+  { section: '5.1.7', text: 'Siúlamar abhaile.', rule: 'SEIMHIU', words: 'Siúlamar', fixed: 'Shiúlamar abhaile.' },
+  { section: '5.1.7', text: 'Beadh sé sásta.', rule: 'SEIMHIU', words: 'Beadh', fixed: 'Bheadh sé sásta.' },
+  { section: '5.1.7', text: 'Tháinig sé agus ceannaigh sé carr.', rule: 'SEIMHIU', words: 'ceannaigh sé', fixed: null },
+  { section: '5.1.7', text: 'Ól sé an bainne.', rule: 'PREFIXD', words: 'Ól sé', fixed: null },
+  { section: '5.4.5(a)', text: 'Níor fhuair sé é.', rule: 'BACHOIR', words: 'Níor fhuair', fixed: 'Ní bhfuair sé é.' },
+  { section: '5.4.5(b)', text: 'Ní dheirim é sin.', rule: 'NISEIMHIU', words: 'dheirim', fixed: 'Ní deirim é sin.' },
+  { section: '5.1.10', text: 'Táimid muid anseo.', rule: 'MUID', words: 'Táimid muid', fixed: null },
+  // the unmutated subjunctive read as a noun, shown to be a verb by its subject pronoun
+  { section: '5.1.5', text: 'Mura cuire tú, ní bhainfidh tú.', rule: 'URU', words: 'Mura cuire tú', fixed: null },
+  // the relative a + a past that is also a noun or an imperative; m and s take lenition
+  { section: '5.1.8', text: 'Tá an fear a ceannaigh an carr anseo.', rule: 'CLAOCHLU', words: 'a ceannaigh', fixed: null },
+  { section: '5.1.8', text: 'Sin an fear a mol an obair.', rule: 'SEIMHIU', words: 'a mol', fixed: 'Sin an fear a mhol an obair.' },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported

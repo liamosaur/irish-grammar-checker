@@ -756,6 +756,10 @@ a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V p="y" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="y" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="y" t="caite">
 # a <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+# after a noun and a, a word that is a noun or an imperative and is followed by the article is the
+# verb of a relative clause (an fear a ceannaigh an carr): no imperative follows a, and a noun there
+# would be in the genitive. The past, missing its lenition, which the rules then report.
+<N>ANYTHING</N> a <B><Z>NOUNORIMPER</Z>UNLENITED</B> <T>ANYTHING</T>:<V p="y" t="caite">
 <V>ANYTHING</V> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # repeat previous batch for feminine:  "roinn", "úsáid", "chaill", etc. 
 <S>ANYTHING</S> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">

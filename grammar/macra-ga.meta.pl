@@ -279,6 +279,8 @@ s/NFFOUR/<N pl="n" gnt="n" gnd="f".><N pl="n" gnt="y" gnd="f".>/g;
 s/NMADJ/<N pl="n" gnt="n" gnd="m".>(?:<N pl="y" gnt="y" gnd="m".>)?<A pl="n" gnt="n".>(?:<[A-Z][^>]*>)*/g;
 s/NFADJ/<N pl="n" gnt="n" gnd="f".><A pl="n" gnt="n".>(?:<[A-Z][^>]*>)*/g;
 s/NOUNADJ/(?:<N[^>]+>)+<A pl="n" gnt="n".>(?:<[AV][^>]*>)*/g;
+# a noun that is also an imperative, not a past (ceannaigh, bris): the unlenited past looks the same
+s/NOUNORIMPER/(?:<N[^>]+>)+<V p="y" t="ord".>(?:<V p="y" t="caite".>)?/g;
 s/NMVERB/<N pl="n" gnt="n" gnd="m".>(?:<V p="y"[^>]+>)+/g;
 s/NFVERB/<N pl="n" gnt="n" gnd="f".>(?:<V p="y"[^>]+>)+/g;
 s/NMSUBJ/<N pl="n" gnt="n" gnd="m".><V p="." t="foshuit".>/g;
