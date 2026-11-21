@@ -972,7 +972,7 @@ AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
 <NFCS>h?[Aa]dharc</NFCS> <NG>(dhúigh|phúdair)</NG>:OK
 <NFCS>h?[Aa]dharc</NFCS> <NG>(dúigh|púdair)</NG>:SEIMHIU
 # corpus
-<NFCS>([mdnh]?'?Aetóip|[mdnh]?'?Afganastáin|[mdnh]?'?Afraic|[mdnh]?'?Astráil|[mdnh]?'?Áise|[mdnh]?'?Aithin|[mdnh]?'?Airgintín|[mdnh]?'?Araib|[mdnh]?'?Ailgéir)</NFCS>:NEEDART
+<NFCS>([mdnh]?'?Aetóip|[mdnh]?'?Afganastáin|[mdnh]?'?Afraic|[mdnh]?'?Astráil|[mdnh]?'?Áise|[mdnh]?'?Aithin|[mdnh]?'?Airgintín|[mdnh]?'?Araib|[mdnh]?'?Ailgéir|[mdnh]?'?Albáin)</NFCS>:NEEDART
 <T>[Aa]n</T> <E><NFCS>ANYTHING</NFCS></E>:OK
 # tagging error
 <N>San</N> <E><NFCS>ANYTHING</NFCS></E>:OK
@@ -1089,6 +1089,9 @@ AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
 <S>ANYTHING</S> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N></E>:OK
 #. Chinn sé an cruinniú a chur ar an méar fhada (OK).
 <S>ANYTHING</S> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">INITIALM</N></E>:OK
+# CO17 1.1.5(i)B(iv): no article with a masculine name in -ael (Iosrael); before the t- rule below
+<T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">t?Iosrael</N>:BADART
+<S>FUSEDPREP</S> <N pl="n" gnt="n" gnd="m">Iosrael</N>:BADART
 # CB p.22 #8.a
 #. Cad é an chomhairle a thug an ochtapas dó?
 #. An Acht um Chomhionannas Fostaíochta.
@@ -1444,6 +1447,14 @@ INITIALMBAPOST:NIURU
 <Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
 <Q>[Cc]ad</Q> <P>é</P> <VNOTCOP>ANYTHING</VNOTCOP>:BACHOIR{cad é a}
 <Q>[Cc]ad</Q> <P>é</P> <VNOTCOP>JUSTATA</VNOTCOP>:OK
+# CO17 1.1.5(i)B(ii): an Congó takes the article, the exception among masculine names in -ó;
+# (i)C: so do plural names (na Bahámaí)
+<N pl="n" gnt="." gnd="m">g?Ch?ongó</N>:NEEDART
+<T>[Aa]n</T> <E><N pl="n" gnt="." gnd="m">ANYTHING</N></E>:OK
+<S>FUSEDPREP</S> <E><N pl="n" gnt="." gnd="m">ANYTHING</N></E>:OK
+<N pl="y" gnt="." gnd="m">m?Bh?ahámaí</N>:NEEDART
+<T>[Nn]a</T> <E><N pl="y" gnt="." gnd="m">ANYTHING</N></E>:OK
+<S>[Ss]na</S> <E><N pl="y" gnt="." gnd="m">ANYTHING</N></E>:OK
 # FTP81
 <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">(Camarún|Catar|Ceanada|Cireabaití|Cuáit|Cúba)</N>:BADART
 <S>FUSEDPREP</S> <N pl="n" gnt="n" gnd="m">(Chamarún|Chatar|Cheanada|Chireabaití|Chuáit|Chúba)</N>:BADART
@@ -2361,6 +2372,10 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <T>[Aa]n</T> <E><N pl="n" gnt="n" gnd="f">ANYTHING</N></E>:OK
 <S>FUSEDPREP</S> <E><N pl="n" gnt="n" gnd="f">ANYTHING</N></E>:OK
 <E><N pl="n" gnt="n" gnd="f">ANYTHING</N></E> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+# Frainc is also tagged as a name: after the article it lacks lenition, otherwise the article
+<T>[Aa]n</T> <Y>Frainc</Y>:SEIMHIU
+<S>FUSEDPREP</S> <Y>Frainc</Y>:SEIMHIU
+<Y>Frainc</Y>:NEEDART
 <N pl="n" gnt="y" gnd="f">(bhFraince|Fh?raince|bhFionlainne|Fh?ionlainne)</N>:NEEDART
 <T>[Nn]a</T> <E><N pl="n" gnt="y" gnd="f">ANYTHING</N></E>:OK
 # "fhuair" is not in lexicon as verb at all!  (OK after "chan"???)
@@ -2797,6 +2812,14 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis an}
 #. Molann an Coimisiún go maoineofaí scéim chun tacú le na pobail.
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
+# CO17 1.1.4: no hyphen between t and a capital vowel (an tAlbanach); the morphology accepts
+# some such forms through the lower-case word
+<N>t-[AEIOUÁÉÍÓÚ]ANYTHING</N>:NOHYPHEN
+# CO17 1.3.5, 1.6.2: fara before the article is fairis (fairis an ngarda, fairis na gardaí)
+<S>[Ff]ara</S> <T>an</T>:BACHOIR{fairis an}
+<S>[Ff]ara</S> <T>na</T>:BACHOIR{fairis na}
+# CO17 1.3.2: the dative in the fixed mar an gcéanna
+[Mm]ar <T>an</T> <N>[Cc]éanna</N>:URU
 # CB p.84 #8, p.132 #2
 #. Labhraíodh gach duine an fhírinne le a chomharsa.
 #. Le halt 16 i ndáil le hiarratas ar ordú le a meastar gur tugadh toiliú.
@@ -4365,7 +4388,9 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:O
 # with such words are caught above with a tighter rule requiring "go","dá",etc.
 <N>INITIALMBAPOST</N>:OK
 #  "de an gcrann" etc. won't even make it here, caught earlier
-<S>DATIVEPREP</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
+# eclipsis after a preposition + an in the dative (CO17 1.4.1); not gan, which is followed by
+# the nominative (1.3.2: gan an t-uisce)
+<S>([Aa][grs]|[Cc]huig|[Dd][eo]|[Ff]aoi|[Gg]o|[Ll]e|[Óó]|[Ii]n?|[Rr]oimh|[Tt]har|[Tt]ríd?|[Uu]m)</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
 <S>([Ff]airis|[Ll]eis)</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
 #  "san? gcrann/n-eatramh" etc. never gets to this exception, caught earlier
 #. Cruthaíodh an chloch sin go domhain faoin gcrann (OK).

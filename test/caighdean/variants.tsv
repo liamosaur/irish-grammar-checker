@@ -169,7 +169,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	gcéad → céad	an	ar an céad duine	ar an gcéad duine	9	9.5.1	160	6	flagged:CLAOCHLU
 	eclipsis	gcéad → céad	an	leis an céad cheadúnas	leis an gcéad cheadúnas	9	9.5.1	160	8	flagged:CLAOCHLU
 	eclipsis	gceann → ceann	an	Cad mar gheall ar an ceann seo?	Cad mar gheall ar an gceann seo?	8	8.5.1	139	21	flagged:CLAOCHLU
-	eclipsis	gcéanna → céanna	an	mar an céanna	mar an gcéanna	1	1.3.2	7	7	-
+	eclipsis	gcéanna → céanna	an	mar an céanna	mar an gcéanna	1	1.3.2	7	7	flagged:URU
 	eclipsis	gcnoc → cnoc	an	thar an cnoc bán	thar an gcnoc bán	1	1.4.1	8	8	flagged:CLAOCHLU
 	eclipsis	gCoimisinéir → Coimisinéir	an	chuig an Coimisinéir coinsiasach	chuig an gCoimisinéir coinsiasach	1	1.4.1	8	9	flagged:CLAOCHLU
 	eclipsis	gcomhairle → comhairle	an	Tá oifigigh seirbhísí á lorg ag an comhairle faoi láthair.	Tá oifigigh seirbhísí á lorg ag an gcomhairle faoi láthair.	10	10.2.8	179	35	flagged:CLAOCHLU
@@ -2721,9 +2721,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fhoirgnimh → foirgnimh	an	Creideann an t-oifigeach gur cuireadh iarratas ar chead pleanála isteach i leith an foirgnimh sin.	Creideann an t-oifigeach gur cuireadh iarratas ar chead pleanála isteach i leith an fhoirgnimh sin.	11	11.3.1(e)	207	84	flagged:SEIMHIU
 	lenition	fhoirgnimh → foirgnimh	an	Cuireadh iarratas ar chead pleanála isteach i leith an foirgnimh.	Cuireadh iarratas ar chead pleanála isteach i leith an fhoirgnimh.	11	11.3.1(c)	206	55	flagged:SEIMHIU
 	lenition	fhoráil → foráil	an	An bhfuil an foráil sin faoi réir aon chomhaontuithe fostaíochta?	An bhfuil an fhoráil sin faoi réir aon chomhaontuithe fostaíochta?	3	3.3.10	52	13	flagged:SEIMHIU
-	lenition	Fhrainc → Frainc	an	an Frainc	an Fhrainc	1	1.1.5(i)	3	3	-
-	lenition	Fhrainc → Frainc	an	Is tír álainn í an Frainc.	Is tír álainn í an Fhrainc.	1	1.1.5(i)	3	19	-
-	lenition	Fhrainc → Frainc	an	Sroichfidh siad an Frainc maidin Dé Sathairn.	Sroichfidh siad an Fhrainc maidin Dé Sathairn.	10	10.2.10	181	19	-
+	lenition	Fhrainc → Frainc	an	an Frainc	an Fhrainc	1	1.1.5(i)	3	3	flagged:SEIMHIU
+	lenition	Fhrainc → Frainc	an	Is tír álainn í an Frainc.	Is tír álainn í an Fhrainc.	1	1.1.5(i)	3	19	flagged:SEIMHIU
+	lenition	Fhrainc → Frainc	an	Sroichfidh siad an Frainc maidin Dé Sathairn.	Sroichfidh siad an Fhrainc maidin Dé Sathairn.	10	10.2.10	181	19	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	an	an fuinneog	an fhuinneog	1	1.2	6	3	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	an	tríd an fuinneog ghorm	tríd an fhuinneog ghorm	1	1.7.3	16	8	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	an	Ar dhún sé an fuinneog?	Ar dhún sé an fhuinneog?	10	10.2.1	171	14	flagged:SEIMHIU

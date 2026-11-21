@@ -5,5 +5,6 @@
   "CORASSEIMHIU": "This dative follows /Córas an tSéimhithe/ (/ar an bhosca/, /ar an tsuíochán/, /ar an eitleán dhubh/), but elsewhere the text follows /an Córas Lárnach/: keep to one system (CO17 1.7.1)",
   "CORASLARNACH": "This dative follows /an Córas Lárnach/ (/ar an mbosca/, /ar an suíochán/, /ar an eitleán dubh/), but elsewhere the text follows /Córas an tSéimhithe/: keep to one system (CO17 1.7.1)",
   "WEAKBACHOIRAR": "Usually /ar/ here, after áit, fáth, caoi and similar nouns (CO17 11.3.1(h)), but not when the noun is the object of the verb",
-  "WEAKBACHOIRMA": "If dá means \"if\", use /má/ with this tense (dá takes the conditional); but dá is also de or do with the relative a, which takes any tense (CO17 11.6.1(c))"
+  "WEAKBACHOIRMA": "If dá means \"if\", use /má/ with this tense (dá takes the conditional); but dá is also de or do with the relative a, which takes any tense (CO17 11.6.1(c))",
+  "NOHYPHEN": "No hyphen between t and a capital vowel: /an tAlbanach/, /an tAire/ (CO17 1.1.4)"
 }

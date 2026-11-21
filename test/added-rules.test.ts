@@ -127,6 +127,17 @@ const cases: Case[] = [
   { section: '1.1.5(f)', text: 'Bhí sé ann i mí Bealtaine.', rule: 'NEEDART', words: 'mí Bealtaine', fixed: null },
   { section: '1.1.5(f)', text: 'Bhí sé ann i mí an Deireadh Fómhair.', rule: 'BADART', words: 'mí an Deireadh Fómhair', fixed: null },
   { section: '1.1.5(f)', text: 'Bhí sé ann i mí an Mheán Fómhair.', rule: 'BADART', words: 'mí an Mheán Fómhair', fixed: null },
+  // CO17 chapter 1 review: gan + the article takes the nominative, so no eclipsis
+  { section: '1.3.2', text: 'Bhí sé gan an gcarr.', rule: 'NIURU', words: 'gcarr', fixed: 'Bhí sé gan an carr.' },
+  { section: '1.3.5', text: 'Tháinig sé fara na gardaí.', rule: 'BACHOIR', words: 'fara na', fixed: 'Tháinig sé fairis na gardaí.' },
+  { section: '1.1.4', text: 'Labhair an t-Albanach liom.', rule: 'NOHYPHEN', words: 't-Albanach', fixed: null },
+  { section: '1.1.5(i)', text: 'Is tír álainn í Frainc.', rule: 'NEEDART', words: 'Frainc', fixed: null },
+  { section: '1.1.5(i)', text: 'Is tír álainn í an Frainc.', rule: 'SEIMHIU', words: 'an Frainc', fixed: null },
+  { section: '1.1.5(i)', text: 'Is tír álainn í Albáin.', rule: 'NEEDART', words: 'Albáin', fixed: null },
+  { section: '1.1.5(i)', text: 'Chuaigh sé go dtí Congó.', rule: 'NEEDART', words: 'Congó', fixed: null },
+  { section: '1.1.5(i)', text: 'I Muir Chairib atá Bahámaí.', rule: 'NEEDART', words: 'Bahámaí', fixed: null },
+  { section: '1.1.5(i)', text: 'Chuaigh sé go dtí an Iosrael.', rule: 'BADART', words: 'an Iosrael', fixed: null },
+  { section: '1.3.2', text: 'Rinne sé mar an céanna.', rule: 'URU', words: 'mar an céanna', fixed: null },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported
