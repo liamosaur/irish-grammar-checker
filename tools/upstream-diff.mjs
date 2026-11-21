@@ -23,7 +23,8 @@ for (const name of names.length ? names : Object.keys(FILES)) {
   fs.mkdirSync(path.dirname(upstream), { recursive: true });
   fs.writeFileSync(upstream, fs.readFileSync(path.join(up, 'ga', file)).toString('latin1').replace(/\r/g, ''), 'utf8');
   const ours = path.join(here, '..', 'grammar', file);
-  const r = spawnSync('git', ['diff', '--no-index', '--no-color', upstream, ours], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  // -w: our exceptions (:OK lines) are indented under their rule; that alone is not a change.
+  const r = spawnSync('git', ['diff', '--no-index', '--no-color', '-w', upstream, ours], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
   process.stdout.write(r.stdout);
 }
 fs.rmSync(tmp, { recursive: true, force: true });

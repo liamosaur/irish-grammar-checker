@@ -26,6 +26,8 @@ export interface ErrorView {
   range?: { y: number; from: number; to: number };
   /** False if the engine's position does not match the text (then it is listed, not highlighted). */
   aligned: boolean;
+  /** Why the rule applies: an id in data/reasons.json, when the rule has one. */
+  reason?: string;
 }
 
 export interface Piece {
@@ -77,6 +79,7 @@ export function analyse(text: string, errors: CheckedError[]): { views: ErrorVie
       line: e.fromy + 1,
       aligned,
       range: aligned && e.fromy === e.toy ? { y: e.fromy, from: e.fromx, to: e.tox + 1 } : undefined,
+      ...(e.reason ? { reason: e.reason } : {}),
     });
     if (!aligned) return;
     for (let y = e.fromy; y <= e.toy; y++) {

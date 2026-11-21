@@ -1031,7 +1031,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	h-	haghaidh → aghaidh	le	Sin é an ríomhaire a n-úsáideann an bhean é le aghaidh na hoibre.	Sin é an ríomhaire a n-úsáideann an bhean é le haghaidh na hoibre.	11	11.7.2(b)	213	47	flagged:PREFIXH
 	h-	hAoife → Aoife	le	Dar le Aoife gurb eisean a rinne é	Dar le hAoife gurb eisean a rinne é	7	7.2.2	118	7	flagged:PREFIXH
 	h-	haon → aon	le	Ní ghlacfar le aon iarratas a gheofar tar éis an 7 Márta 2016.	Ní ghlacfar le haon iarratas a gheofar tar éis an 7 Márta 2016.	1	1.1.5(g)	3	15	flagged:PREFIXH
-	h-	haon → aon	le	Ní ghlacfar le aon iarratas tar éis 5 p.m. Dé hAoine.	Ní ghlacfar le haon iarratas tar éis 5 p.m. Dé hAoine.	10	10.12.1	195	15	-
+	h-	haon → aon	le	Ní ghlacfar le aon iarratas tar éis 5 p.m. Dé hAoine.	Ní ghlacfar le haon iarratas tar éis 5 p.m. Dé hAoine.	10	10.12.1	195	15	flagged:PREFIXH
 	h-	hathchúrsáil → athchúrsáil	le	Tá rialacha áirithe i gceist le athchúrsáil páipéir.	Tá rialacha áirithe i gceist le hathchúrsáil páipéir.	10	10.2.7	177	32	flagged:PREFIXH
 	h-	hí → í	le	Chuaigh sé ann le í a phósadh.	Chuaigh sé ann le hí a phósadh.	10	10.13.3	196	18	flagged:PREFIXH
 	h-	hiad → iad	le	Rinne sé riail le iad a smachtú.	Rinne sé riail le hiad a smachtú.	10	10.13.3	196	18	flagged:PREFIXH

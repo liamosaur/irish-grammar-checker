@@ -3,6 +3,7 @@ import { APP_NAME, WARN_CHARS } from './config.ts';
 import { applyCorrection, type Plan, planReplacement, proposeFix, QUOTES_REPLACEMENT, quotedParts, sliceRange, withLastWord } from './corrections.ts';
 import { EXAMPLES } from './examples.ts';
 import { unreadableCount } from './fold.ts';
+import { reasonFor } from './reasons.ts';
 import { applyStrings, currentLocale, localeIsComplete, t, tn } from './strings.ts';
 import type { WorkerRequest, WorkerResponse } from './worker.ts';
 
@@ -361,6 +362,21 @@ function listItem(v: ErrorView): HTMLLIElement {
   btn.addEventListener('click', () => select(v.idx, 'list'));
 
   li.append(row);
+  const why = reasonFor(v.reason);
+  if (why) {
+    // Why the rule applies, below the message: "Why: ... (An Caighdeán Oifigiúil 10.14.1)".
+    const p = document.createElement('p');
+    p.className = 'why';
+    const label = document.createElement('span');
+    label.className = 'why-label';
+    label.textContent = `${t('why.label')} `;
+    const text = document.createElement('span');
+    text.lang = why.lang;
+    text.append(formatMessage(why.text)); // Irish words in an English text are written /like this/
+    p.append(label, text);
+    if (why.co17) p.append(' ', t('why.ref', { section: why.co17 }));
+    li.append(p);
+  }
   return li;
 }
 

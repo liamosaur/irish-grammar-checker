@@ -61,4 +61,6 @@ export interface GrammarError {
   errortext: string;
   /** Replacement suggestions for an unknown word (only with the fixSpelling option), most likely first. */
   suggestions?: string[];
+  /** Why the rule applies: an id in data/reasons.json (grammar/reasons.tsv), when the rule has one. */
+  reason?: string;
 }

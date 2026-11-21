@@ -85,6 +85,14 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   dative of Córas an tSéimhithe), and a phrase taken as one word can widen a reported span (*ón cur i gcéill*).
 - `browser-smoke.mjs`: checks a sentence in the built site in headless Edge or Chrome.
 
+## Reasons
+
+`grammar/reasons.tsv` explains why a rule applies, with its section of *An Caighdeán Oifigiúil*
+(id, section, English, Irish). A rule names one after its message (`:SEIMHIU @adj-fem`); the
+build checks that every id exists and is used, and writes `data/rules/reasons.json`, which the
+interface shows under the message ("Why: ..."). In the English text, Irish words are written
+`/like this/`; the Irish examples are copied from the book.
+
 ## Searching published Irish
 
 `gaois-corpus.mjs` builds a local search corpus from the Gaois parallel corpus of Irish

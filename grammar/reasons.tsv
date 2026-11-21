@@ -1,0 +1,55 @@
+# Why a rule applies: shown with the rule's message in the interface. A rule in rialacha-ga.in
+# names one after its message (:PREFIXH @ni-h-pronoun). Columns: id, the CO17 section(s), the
+# explanation in English, the explanation in Irish (written by Liam; until then the English is
+# shown). In the English, Irish words are written /like this/ (shown in bold, marked as Irish).
+# One line per reason; tabs between columns.
+id	co17	en	ga
+ni-h-pronoun	10.13.1, 10.13.2	After /ní/ (the copula) and /cé/, h goes before the personal pronouns /é/, /í/, /ea/ and /iad/ (/ní hé/, /ní hiad/, /cé hí?/), and after /ní/ before the demonstratives /éard/, /eo/, /in/ and /iúd/ (/ní heo/, /ní hin/).
+ni-h-word	10.11.8, 10.12.2, 10.13.2	After /ní/ (the copula), h goes before a vowel only on a closed list of words: the nouns of 10.11.8 (/ní hiontas/, /ní haithnid duit/), the adjectives and adverbs of 10.12.2 (/ní hamháin/, /ní hionann/, /ní hamhlaidh/) and the demonstratives /éard/, /eo/, /in/ and /iúd/ (/ní heo/).
+ordinal-h	10.11.2(a)	An ordinal number (/dara/, /tríú/, /ceathrú/ ...) puts h before a noun beginning with a vowel: /an dara heochair/, /an t-ochtú heagrán/. /céad/ is the exception: /an chéad áit/.
+na-imperative	10.14.1	The negative particle of the imperative is /ná/, and it puts h before a vowel: /ná habair/, /ná himigh/.
+art-fem	10.2.1(a)	After the article /an/, a feminine noun in the nominative singular is lenited, unless it begins with d, t or s: /an bhean/, /an fhuinneog/.	
+art-masc-nom	10.2.1	After the article /an/, a masculine noun is not lenited in the nominative singular (/an fear/). It is lenited in the genitive singular (/mac an fhir/) and, after some prepositions, in the dative.	
+art-t-vowel	10.9.1	After the article /an/, a masculine noun beginning with a vowel takes /t-/ in the nominative singular (/an t-asal/, /an t-eitleán/), and so do /aon/, /aonú/, /ochtó/, /ochtódú/ and /ochtú/ (/an t-aonú háit déag/, /an t-ochtú cluiche/).	
+art-t-s	10.10.1	After the article /an/, s followed by a vowel or by l, n or r takes t where another consonant would be lenited: a feminine noun in the nominative singular (/an tslat/, /an tsreang/) and a masculine noun in the genitive singular (/deireadh an tséasúir/, /eochair an tsiopadóra/).	
+na-h	10.11.1	After the article /na/, h goes before a vowel in the genitive singular of a feminine noun and in the plural: /lár na heitilte/, /na huimhreacha/.	
+den-don	10.2.1(c), 1.4.1	After /den/, /don/ and /sa/, the noun is lenited unless it begins with d, t or s: /den chrann/, /don chuideachta/, /sa pháirc/.	
+prep-lenition	10.2.5(a)	The prepositions /de/, /do/, /faoi/, /ionsar/, /mar/, /ó/, /roimh/, /trí/ and /um/ lenite the noun after them: /de thaisme/, /faoi bhord/, /ó bhéal/, /roimh mhaidin/.	
+de-do	10.2.5(a), 10.2.3(a)	The prepositions /de/ and /do/ lenite the noun after them (/de thaisme/, /do bhuachaillí/), and so does /do/ meaning "your" (/do theach/).	
+de-do-apostrophe	10.2.5(a)	/de/ and /do/ are shortened to /d'/ before a vowel, or before f followed by a vowel: /d'athair Sheáin/, /d'fhoghlaimeoirí Gaeilge/ (but /do Fhrancaigh/).	
+ar-lenition	10.2.5(b)	/ar/ usually lenites the noun after it (/ar bhád/, /ar chlé/), but not in phrases that say where or in what state something is, such as /ar ball/, /ar fáil/, /ar siúl/, /ar meisce/. Check whether this is one of those.	
+gan-lenition	10.2.5(c)	/gan/ lenites a noun that has nothing qualifying it, unless it begins with d, t, s or f: /gan mhoill/, /gan chosaint/. A qualified noun, a definite proper name and a verbal noun are not lenited: /gan pingin rua/, /gan Micheál/, /gan géilleadh/.	
+le-h	10.11.3, 10.12.1, 10.13.3	/le/, and /go/ meaning "to", put h before a noun beginning with a vowel (/le hÁine/, /go hAlasca/); /le/, /go/ and /chomh/ put h before an adjective or adverb beginning with a vowel (/chomh hard le haon chapall/, /Tá sé go hálainn/).	
+i-eclipsis	10.6.4(a)	The preposition /i/ eclipses the word after it: /i mbaile/, /i bpáirc/. Before a vowel it is written /in/: /in Éirinn/.	
+in-before-consonant	10.6.4(a)	Before a consonant the preposition is /i/, with eclipsis (/i mbaile/). /in/ is written before a vowel, and before /bhur/, /dhá/ and /go leor/, titles, abbreviations, foreign place names that have not been Gaelicised, and years in figures: /in dhá áit/, /in Birmingham/, /in 1998/.	
+aon-lenition	10.2.3(c), 10.2.4(a)	/aon/, and /céad/ meaning "first", lenite the noun after them unless it begins with d, t or s: /aon bhia/, /an chéad bhróg/, but /aon duine/, /an chéad teach/.	
+poss-plural-eclipsis	10.6.2	The possessives /ár/, /bhur/ and /a/ meaning "their" eclipse the noun after them: /ár n-athair/, /bhur bpáistí/.	
+noun-eclipsis	10.6	A noun is eclipsed only in certain places: after /i/; after /ár/, /bhur/ and /a/ ("their"); after the numbers /seacht/ to /deich/; after the article in the genitive plural; and after the article and some prepositions in the dative (/ar an gcapall/).	
+adj-fem	10.3.1(a)	An adjective after a feminine singular noun (nominative or dative) is lenited: /bean mhór/, /feoil bhlasta/.	
+adj-masc-gen	10.3.1(b)	An adjective after a masculine noun in the genitive singular is lenited: /mac fir mhóir/, /úinéir an chapaill ghlais/.	
+adj-slender-plural	10.3.1(c)	An adjective after a plural noun ending in a slender consonant is lenited: /fir mhóra/.	
+adj-number	10.3.1(d)	An adjective is lenited after a noun with /dhá/ before it, and after a singular noun with a number from /trí/ to /deich/ before it: /dhá bhó bhána/, /trí bhád mhóra/.	
+adj-lenition	10.3.1	An adjective is lenited after a feminine singular noun (/bean mhór/), after a masculine noun in the genitive singular (/mac fir mhóir/), after a plural noun ending in a slender consonant (/fir mhóra/) and after certain numbers; otherwise it is not.	
+gen-after-fem	10.2.7	An indefinite noun in the genitive after a feminine singular noun is usually lenited: /cloch shneachta/, /uirlis cheoil/. 10.2.7 lists the exceptions (a) to (m); some depend on meaning (a person, a part of something), so check whether one applies.	
+gen-after-plural	10.2.8	An indefinite noun in the genitive after a plural noun ending in a slender consonant is usually lenited: /dualgais bhreise/, /ceadúnais ghnó/. 10.2.8 lists the exceptions (a) to (f), so check whether one applies.	
+verb-independent	10.4.1(a), 5.1.7	In the past tense, the past habitual and the conditional, the verb is lenited even with no particle before it: /mhol mé/, /shábháil sí/, /théidís/, /chuideodh sé/. (/abair/ is never lenited: /dúirt siad/.)	
+d-past	10.15	Where a consonant would be lenited, a verb beginning with a vowel, or with f, takes /d'/ in the past tense, the past habitual and the conditional: /d'ól sé/, /d'fhágamar/, /d'imeoinn/.	
+verb-after-particle	10.4.2	The verb is lenited after /ní/, /níor/, /ar/, /cár/, /dár/, /gur/, /murar/, /nár/ and /sular/: /ní fhaca sé/, /níor fhéad mé/, /sílim gur thuig sé/.	
+verb-after-a-ma	10.4.1(b)	The verb is lenited after the direct relative /a/ and after /má/ and /ó/ ("since"): /an bhean a ghlanfaidh an áit/, /má bhíonn sé ann/.	
+verb-no-lenition	10.4	In the present, the future and the imperative, a verb is lenited only after a particle that lenites it, such as /ní/, /má/ or the direct relative /a/.	
+verb-relative-eclipsis	10.8.1(a)	The verb is eclipsed after the indirect relative /a/ and after /nach/: /an bhean a dtagann a páistí ar scoil/, /an fear nach gcuirtear cúram air/.	
+verb-eclipsis	10.8	A verb is eclipsed only after the particles that eclipse it: /an/, /cá/, /dá/, /go/, /mura/, /nach/, /sula/ and the indirect relative /a/ (/an mbeidh/, /go bhféadfaidh sé/).	
+relative-a	10.4.1(b), 10.8.1(a)	After the relative particle /a/, the verb is lenited when /a/ is the direct relative (/an bhean a ghlanfaidh an áit/) and eclipsed when it is the indirect relative (/an bhean a dtagann a páistí ar scoil/).	
+number-eclipsis	10.6.3	/seacht/, /ocht/, /naoi/ and /deich/ eclipse the noun after them: /seacht ndícheall/, /ocht gcinn/, /naoi mbliana/, /deich n-eachtra/.	
+number-lenition	10.2.4(b), 10.2.4(c)	/dhá/, and /trí/, /ceithre/, /cúig/ and /sé/, lenite the noun after them: /dhá chrann/, /trí bhád/, /ceithre bhó/. The exceptions are the nouns with a special plural form after numbers (9.3.2).	
+tri-lenition	10.2.5(a), 10.2.4(c)	/trí/ lenites the noun after it, both as the preposition ("through") and as the number ("three": /trí bhád/).	
+vn-a-lenition	10.2.5(a)	/a/ before a verbal noun (it stands for /do/) lenites it: /obair a dhéanamh/.	
+art-masc-gen	10.2.1(b)	After the article /an/, a masculine noun in the genitive singular is lenited unless it begins with d, t or s: /mac an fhir/, /geata an choláiste/.	
+copula-lenition	10.2.13, 10.3.6	The past and conditional forms of the copula (/ba/, /níor/, /ar/, /nár/, /gur/, /dá mba/ ...) lenite the noun or adjective after them: /Ba dhuine mór é/, /Ba dheas uait é/, /Ar mhaith leat é?/	
+dative-article	1.4, 1.7, 10.6.1(a)	After a preposition and the article, a noun in the dative singular is eclipsed (/ar an gcapall/) or, in Córas an tSéimhithe, lenited (/ar an chapall/).	
+vocative	10.2.2	The vocative particle /a/ lenites the noun: /a dhuine chóir/, /a chairde na páirte/. If /a/ here means "her", the noun is not lenited, so check which it is.	
+possessive-lenition	10.2.3(a)	The possessives /mo/, /do/ and /a/ meaning "his" lenite the noun after them: /mo mhac/, /do theach/, /a pheann/.	
+deag-lenition	10.3.4	/déag/ is lenited after a singular noun ending in a vowel, and after /dó/: /trí bhó dhéag/, /cúig lá dhéag/, /a dó dhéag/.	
+number-h	10.12.3	/a/ and /na/ put h before a number beginning with a vowel: /ceacht a haon/, /na hocht gcinn/.	
+ca-h	10.11.4	/cá/ puts h before a noun beginning with a vowel: /cá háit?/, /cá huair/.	
+art-gen-plural	10.6.1(b)	After the article /na/, a noun in the genitive plural is eclipsed: /seolta na mbád beag/, /scoil na gcailíní óga/.	

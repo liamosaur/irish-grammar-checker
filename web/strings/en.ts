@@ -54,6 +54,8 @@ export const en = {
   'err.sr': 'Note {n}',
   'sugg.apply': 'Replace with {word}',
   'sugg.label': 'Did you mean',
+  'why.label': 'Why:',
+  'why.ref': '(An Caighdeán Oifigiúil {section})',
 
   'how.title': 'How it works',
   'how.1': 'Write or paste Irish text and press Check.',

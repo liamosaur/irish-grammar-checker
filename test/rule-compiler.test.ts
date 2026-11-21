@@ -34,6 +34,13 @@ describe('checkRules reports what the compiler would drop or misread', () => {
   it('a character outside Latin-1 in a rule', () => {
     assert.match(check('rialacha', '<T>an</T> ’sin:SEIMHIU\n').join(), /outside Latin-1/);
   });
+  it('an exception that is not indented, or indented without a rule above it', () => {
+    const top = '[Nn]í <E><X>hin</X></E>:OK\n';
+    assert.deepEqual(check('rialacha', `${top}<T>an</T> <N>x</N>:SEIMHIU\n# comment\n  <T>an</T> <E><N>x</N></E>:OK\n  <S>ag</S> <E><N>x</N></E>:OK\n`), []);
+    assert.match(check('rialacha', `${top}<T>an</T> <N>x</N>:SEIMHIU\n<T>an</T> <E><N>x</N></E>:OK\n`).join(), /indent it/);
+    assert.match(check('rialacha', `${top}<T>an</T> <N>x</N>:SEIMHIU\n\n  <T>an</T> <E><N>x</N></E>:OK\n`).join(), /must follow an error rule/);
+    assert.match(check('rialacha', `${top}  <T>an</T> <N>x</N>:SEIMHIU\n`).join(), /only an :OK exception is indented/);
+  });
   it('a macro name containing an earlier one', () => {
     const clash = parseMacros('s/CAPVOWEL/[AEIOU][^<]*/g;\ns/CAPVOWELWITHH/h[AEIOU][^<]*/g;\n');
     assert.match(checkRules('macros', '', clash, []).join(), /CAPVOWEL is substituted inside CAPVOWELWITHH/);
@@ -44,6 +51,16 @@ describe('the compiled rules', () => {
   it('compiles an error rule with its exceptions', () => {
     const out = rialachaMeta(gin('<T>an</T> <N>x</N>:SEIMHIU\n<T>an</T> <E><N>x</N></E>:OK\n', 'ANOPV'));
     assert.match(out, /^if \(s\/\(\?<!\[<>\]\)\(.*\)\(\?!\[<>\]\)\/<E msg="SEIMHIU">\$1<\\\/E>\/g\) \{\ns\/.*strip_errors\(\$1\);\/eg;\n\}\n$/);
+  });
+
+  it('a rule\'s reason (:MSG @id) reaches the reported error', async () => {
+    const { Gramadoir } = await import('../src/engine.ts');
+    const { loadData } = await import('../src/node-data.ts');
+    const reasons = JSON.parse(fs.readFileSync(path.join(root, 'data', 'rules', 'reasons.json'), 'utf8'));
+    // The negative imperative written na (CO17 10.14.1; the case in test/added-rules.test.ts).
+    const [e] = new Gramadoir(loadData(path.join(root, 'data'))).grammaticalErrors('Na abair é.');
+    assert.equal(e.reason, 'na-imperative');
+    assert.equal(reasons[e.reason!].co17, '10.14.1');
   });
 
   const upstream = path.join(root, '.sources', 'gramadoir');

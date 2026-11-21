@@ -101,6 +101,22 @@ const failures = Object.entries(extracted).flatMap(([name, { odd, bad }]) => [
 ]);
 if (failures.length) throw new Error(failures.join('\n'));
 
+// An exception (an :OK indented under a rule) removes only a mark with its rule's message. The
+// original strips whatever mark it finds, and runs over the whole sentence once its rule has
+// matched anywhere in it, so it could remove another rule's mark (the CUPLA exceptions removed
+// the PREFIXH of le aon). The exceptions at the top of the file, after no rule, still take any.
+let bound = 0;
+for (const r of extracted.rialacha.rules) {
+  if (!r.then) continue;
+  const msg = /^<E msg="([A-Z]+)/.exec(r.repl ?? '')?.[1];
+  if (!msg) throw new Error(`rialacha: exceptions after a rule without a message: ${r.re.slice(0, 120)}`);
+  for (const t of r.then) {
+    if (t.kind !== 'strip_errors' || !t.re.includes('<E[^>]*>')) throw new Error(`rialacha: an exception that is not an :OK: ${t.re.slice(0, 120)}`);
+    t.re = t.re.replace('<E[^>]*>', `<E msg="${msg}[{"][^>]*>`);
+    bound++;
+  }
+}
+console.log(`rialacha: ${bound} exceptions bound to their rule's message`);
 fs.mkdirSync(path.join(outDir, 'rules'), { recursive: true });
 console.log('attribute tags:', attrtags);
 console.table(Object.fromEntries(Object.entries(extracted).map(([name, { rules }]) => [name, { rules: rules.length }])));
@@ -188,6 +204,33 @@ for (const name of ['rialacha', 'aonchiall']) {
   if (n) console.log(`${name}: ${n} placeholder replacements`);
 }
 
+// Reasons (grammar/reasons.tsv: id, CO17 section, English, Irish): why a rule applies, shown with
+// its message. A rule names one after its message (:SEIMHIU @gen-after-fem); the mark then carries
+// it as r="gen-after-fem". data/rules/reasons.json is what the interface reads.
+const reasonRows = fs.readFileSync(path.join(here, '..', 'grammar', 'reasons.tsv'), 'utf8').replace(/\r/g, '').split('\n')
+  .filter((l) => l && !l.startsWith('#')).slice(1).map((l) => l.split('\t'));
+const reasons = {};
+for (const [id, co17, en, ga] of reasonRows) {
+  if (!/^[a-z0-9-]+$/.test(id ?? '') || !en) throw new Error(`grammar/reasons.tsv: a row needs an id (a-z, 0-9, -) and English text: ${id}`);
+  if (reasons[id]) throw new Error(`grammar/reasons.tsv: ${id} twice`);
+  reasons[id] = { co17: co17 || undefined, en, ga: ga || undefined };
+}
+const used = new Set();
+const withReason = (rs) => rs.forEach((r) => {
+  if (r.repl) {
+    r.repl = r.repl.replace(/<E msg="([^"]*) @([a-z0-9-]+)">/, (_, msg, id) => {
+      if (!reasons[id]) problems.push(`rialacha: no reason ${id} in grammar/reasons.tsv (message ${msg})`);
+      used.add(id);
+      return `<E msg="${msg}" r="${id}">`;
+    });
+  }
+  if (r.then) withReason(r.then);
+});
+withReason(extracted.rialacha.rules);
+for (const id of Object.keys(reasons)) if (!used.has(id)) problems.push(`grammar/reasons.tsv: ${id} is not used by any rule`);
+if (problems.length) throw new Error(`${problems.length} problems in grammar/:\n${problems.join('\n')}`);
+fs.mkdirSync(path.join(outDir, 'rules'), { recursive: true });
+fs.writeFileSync(path.join(outDir, 'rules', 'reasons.json'), JSON.stringify(reasons));
 for (const [name, { rules }] of Object.entries(extracted)) {
   fs.writeFileSync(path.join(outDir, 'rules', `${name}.json`), JSON.stringify(rules));
 }

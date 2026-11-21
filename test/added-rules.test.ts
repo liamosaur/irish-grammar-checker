@@ -13,6 +13,7 @@
 // confirmed it, by adding `reviewed: true`; until then it runs as a todo (it is checked
 // and reported, but does not fail the suite).
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import path from 'node:path';
 import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -84,7 +85,7 @@ const cases: Case[] = [
   { section: '3.3.1(b)', text: 'Rinne sé an chur síos.', rule: 'NISEIMHIU', words: 'an chur síos', fixed: 'Rinne sé an cur síos.' },
   { section: '3.3.1(b)', text: 'Bhí an éirí amach ann.', rule: 'PREFIXT', words: 'an éirí amach', fixed: 'Bhí an t-éirí amach ann.' },
   // h after le, as before, but not on an abbreviation (see clean)
-  { section: '10.11.1', text: 'Tá sé le Aoife.', rule: 'PREFIXH', words: 'le Aoife', fixed: 'Tá sé le hAoife.' },
+  { section: '10.11.3', text: 'Tá sé le Aoife.', rule: 'PREFIXH', words: 'le Aoife', fixed: 'Tá sé le hAoife.' },
   // the genitive after a compound preposition, as before, unless a + verbal noun follows (see clean)
   { section: '3.3.2(a)', text: 'Cuideachta áitiúil atá i mbun an teach.', rule: 'GENITIVE', words: 'i mbun an teach', fixed: null },
   // an adjective after a feminine noun is lenited, as before (the ag + verbal noun exception does not apply)
@@ -299,6 +300,30 @@ describe('errors reported by the rules we added', () => {
       assert.equal(plan ? applyCorrection(c.text, plan.range, plan.word) : null, c.fixed);
     });
   }
+});
+
+// The reason shown with an error (grammar/reasons.tsv) and the section a case is filed under:
+// 10.13.2 is matched by a reason citing 10.13.2 or 10.13; 10.6.4(a)(ii) by one citing 10.6.4(a).
+// A mismatch is listed, not failed: a general reason (an t- before a masculine vowel, 10.9.1) is
+// often right for a case filed under the specific section it came from (9.4.3(b), an t-ochtar).
+// Read the list when assigning reasons; it found a case filed under the wrong section.
+describe('the reasons shown and the sections cited', () => {
+  it('cases whose reason cites another section', (t) => {
+    const reasons: Record<string, { co17?: string }> = JSON.parse(fs.readFileSync(path.join(root, 'data', 'rules', 'reasons.json'), 'utf8'));
+    const bare = (s: string) => s.replace(/^Tábla /, '').trim();
+    const covers = (cited: string, section: string) => {
+      const a = bare(cited), b = bare(section);
+      return b === a || b.startsWith(a + '.') || b.startsWith(a + '(') || a.startsWith(b + '(');
+    };
+    const wrong: string[] = [];
+    for (const c of cases) {
+      const v = complaints(c.text)[0];
+      if (!v?.reason || v.rule !== c.rule) continue;
+      const cited = (reasons[v.reason]?.co17 ?? '').split(',');
+      if (!cited.some((s) => covers(s, c.section))) wrong.push(`${c.text} (${c.section}): ${v.reason} cites ${cited.join(',')}`);
+    }
+    for (const w of wrong) t.diagnostic(w);
+  });
 });
 
 describe('correct sentences near those rules are not flagged', () => {

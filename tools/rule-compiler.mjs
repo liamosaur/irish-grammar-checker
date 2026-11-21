@@ -96,7 +96,8 @@ export function parseMacros(src) {
  *   macro or one of `placeholders`, or a tag suffix (<NFCS>) that is not a tag shorthand;
  * - a rule that the word pattern of gin does not cover in full (a word containing "<" or an
  *   unbalanced tag would be dropped);
- * - an action that is not a message (rialacha: NAME, NAME{...} or OK; aonchiall: <TAG> or !<TAG>;
+ * - an action that is not a message (rialacha: NAME, NAME{...} or OK, a message optionally
+ *   followed by " @reason"; aonchiall: <TAG> or !<TAG>;
  *   comhshuite: <TAG>), such as ::NAME;
  * - a character outside Latin-1 in a rule (the checker folds its input to Latin-1, so the rule
  *   could never match). Comments may contain any character.
@@ -113,8 +114,31 @@ export function checkRules(name, text, macros, placeholders) {
   }
   const known = new Set([...names, ...placeholders]);
   const shorthands = new Set(names.filter((n) => n.startsWith('*')).map((n) => n.slice(1, -1)));
-  const ACTION = { rialacha: /^(OK|[A-Z]+(\{.*\})?) *$/, aonchiall: /^(<[A-Z][^>]*>|!<.+>) *$/, comhshuite: /^<[A-Z][^>]*> *$/ };
+  const ACTION = { rialacha: /^(OK|[A-Z]+(\{.*\})?( @[a-z0-9-]+)?) *$/, aonchiall: /^(<[A-Z][^>]*>|!<.+>) *$/, comhshuite: /^<[A-Z][^>]*> *$/ };
   const TOKEN = /(?<= )(<E>)?(<B><Z>(?:(?:<[^>]+>)+|[^<>]+)<\/Z>[^<]+<\/B>|<[^/][^>]*>[^<]+<\/[^>]+>|[^<> ]+)(<\/E>)?(?= )/g;
+  // rialacha: an :OK line after an error rule (or after another such :OK) is an exception to that
+  // rule and runs only if the rule matched; it is indented two spaces. An :OK with no rule before
+  // it (the block at the top, after the tagger's own messages) is not. This mirrors how
+  // rialacha.meta.pl attaches them, so the indentation shows what the compiler does.
+  let prevRule = false; // the last line was an error rule, or an exception attached to one
+  let started = false; // a line other than a comment has been seen
+  text.split('\n').forEach((line, i) => {
+    if (name !== 'rialacha' || line.startsWith('#')) return;
+    const where = `${name}-ga.in:${i + 1}`;
+    const ok = /:OK *$/.test(line);
+    const indented = line.startsWith('  ');
+    if (line === '') { started = true; prevRule = false; return; }
+    if (ok) {
+      const attached = prevRule;
+      if (attached && !indented) problems.push(`${where}: this :OK is an exception to the rule above it: indent it two spaces`);
+      if (!attached && indented) problems.push(`${where}: an indented :OK must follow an error rule or another of its exceptions (no blank line between)`);
+      if (!attached && started) problems.push(`${where}: an :OK that is not an exception to a rule belongs in the block at the top of the file`);
+    } else if (indented || /^\s/.test(line)) {
+      problems.push(`${where}: only an :OK exception is indented`);
+    }
+    if (!ok) prevRule = true;
+    started = started || !ok;
+  });
   text.split('\n').forEach((line, i) => {
     if (line.startsWith('#') || line === '') return;
     const where = `${name}-ga.in:${i + 1}`;

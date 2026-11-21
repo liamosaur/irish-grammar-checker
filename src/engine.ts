@@ -645,7 +645,7 @@ export class Gramadoir {
           errortext = lastCapture;
         }
 
-        const msgm = /^<E msg="(.+)">$/.exec(thiserror);
+        const msgm = /^<E msg="(.+?)"(?: r="([^"]+)")?>$/.exec(thiserror);
         if (!msgm) continue;
         const sugg = /^MOLADH\{(.*)\}$/.exec(msgm[1]);
         errors.push({
@@ -660,6 +660,7 @@ export class Gramadoir {
           errorlength: errortext.length,
           errortext,
           ...(sugg ? { suggestions: sugg[1].split(', ') } : {}),
+          ...(msgm[2] ? { reason: msgm[2] } : {}),
         });
       }
     }
