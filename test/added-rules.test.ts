@@ -160,6 +160,17 @@ const cases: Case[] = [
   { section: '9.3.10(c)', text: 'Tá fiche a dhá bád sa chuan.', rule: 'BACHOIR', words: 'a dhá', fixed: 'Tá fiche a dó bád sa chuan.' },
   { section: '9.6.1', text: 'Tá ceithre cúigiú den obair déanta.', rule: 'SEIMHIU', words: 'ceithre cúigiú', fixed: 'Tá ceithre chúigiú den obair déanta.' },
   { section: '9.6.1', text: 'Tá naoi deichiú den obair déanta.', rule: 'URU', words: 'naoi deichiú', fixed: 'Tá naoi ndeichiú den obair déanta.' },
+  // CO17 chapter 10 review
+  { section: '10.2.5', text: 'Socraigh sí gan géilleadh.', rule: 'SEIMHIU', words: 'Socraigh sí', fixed: null },
+  { section: '10.2.5', text: 'Bí mise anseo inné.', rule: 'SEIMHIU', words: 'Bí mise', fixed: null },
+  { section: '10.2.2', text: 'Maith sibh, a feara!', rule: 'WEAKSEIMHIUVOC', words: 'a feara', fixed: 'Maith sibh, a fheara!' },
+  // after seo/sin the article starts a new noun phrase: the nominative takes t- (1.2)
+  { section: '1.2', text: 'Is é sin an ainm atá air.', rule: 'PREFIXT', words: 'an ainm', fixed: 'Is é sin an t-ainm atá air.' },
+  { section: '10.2.8', text: 'Deir sé go fuil na leabhair léite aige.', rule: 'URU', words: 'go fuil', fixed: 'Deir sé go bhfuil na leabhair léite aige.' },
+  { section: '10.6.5', text: 'Cá fios dom?', rule: 'URU', words: 'Cá fios', fixed: 'Cá bhfios dom?' },
+  { section: '10.11.1', text: 'Cliceáil faoi dó ar na híomhánna.', rule: 'SEIMHIU', words: 'faoi dó', fixed: 'Cliceáil faoi dhó ar na híomhánna.' },
+  { section: '10.14.1', text: 'Níl a fios agam.', rule: 'SEIMHIU', words: 'a fios agam', fixed: null },
+  { section: '10.12.3', text: 'Fuair sí bus a aon déag.', rule: 'PREFIXH', words: 'a aon déag', fixed: null },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported

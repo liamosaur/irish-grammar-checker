@@ -4575,6 +4575,25 @@ CLAUSESTART <V p="y" t="gnáth">UNLENITED(inn|teá|tá|tí)</V>:SEIMHIU
 [Aa]r fhuair:BACHOIR{an bhfuair}
 [Gg]ur fhuair:BACHOIR{go bhfuair}
 [Nn]ár fhuair:BACHOIR{nach bhfuair}
+# CO17 10.2.5, 5.1.7: an unlenited past (not eclipsed) with a subject pronoun lacks lenition
+# (Socraigh sí for Shocraigh sí; Bí mise for Bhí mise); abair and fuair are not lenited
+<V p="y" t="caite">([CcFfPpTt][^Hh']|[Bb][^HhPp']|[Dd][^HhTt']|[Gg][^HhCc']|[Mm][^HhBb']|[Ss][lnraeiouáéíóú])[a-záéíóú]*</V> <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]ise|[Ss]eisean|[Ss]ise|[Ss]iadsan|[Ss]inne|[Ss]ibhse)</P>:SEIMHIU
+<E><V p="y" t="caite">([Dd]ú[a-záéíóú]*|[Dd]éar[a-záéíóú]*|[Dd]eir[a-záéíóú]*|[Ff]ua[a-záéíóú]*)</V> <P>ANYTHING</P></E>:OK
+CLAUSESTART [Bb]í <P>([Mm]é|[Ss]é|[Ss]í|[Ss]iad|[Ss]inn|[Mm]uid|[Ss]ibh|[Mm]ise|[Ss]eisean|[Ss]ise|[Ss]iadsan|[Ss]inne|[Ss]ibhse)</P>:SEIMHIU
+# CO17 10.2.2: the vocative a lenites (A dhaoine uaisle, ...; Maith sibh, a fheara!). A hint: a may be
+# the possessive her in apposition (Seán, a mac).
+# Not an eclipsed noun or one with an emphatic suffix, which are the possessive (a bpáircsean; a capallsa)
+CLAUSESTART <D>[Aa]</D> <[NY]>([CcFfPpTt][^Hh']|[Bb][^HhPp']|[Dd][^HhTt']|[Gg][^HhCc']|[Mm][^HhBb']|[Ss][lnraeiouáéíóú])[a-záéíóú]*</[NY]> CLAUSEEND:WEAKSEIMHIUVOC
+<E><D>[Aa]</D> <[NY]>ANYTHING-?s[ae]n?</[NY]></E>:OK
+CLAUSESTART <D>[Aa]</D> <[NY]>([CcFfPpTt][^Hh']|[Bb][^HhPp']|[Dd][^HhTt']|[Gg][^HhCc']|[Mm][^HhBb']|[Ss][lnraeiouáéíóú])[a-záéíóú]*</[NY]> <[AN]>ANYTHING</[AN]> CLAUSEEND:WEAKSEIMHIUVOC
+# CO17 10.2.8, 10.7, 10.14.1: the dependent form of tá is bhfuil (go bhfuil, nach bhfuil, cá bhfuil)
+([Gg]o|[Nn]ach|[Mm]ura|[Cc]á) <N>fuil</N>:URU
+# CO17 10.6.5, 10.11.1, 10.14.1: set phrases (Cá bhfios dom?; faoi dhó; níl a fhios agam)
+[Cc]á <N>fios</N>:URU
+<S>[Ff]aoi</S> <O>dó</O>:SEIMHIU
+<D>[Aa]</D> <N>fios</N> <O>ANYTHING</O>:SEIMHIU
+# CO17 10.12.3: h before aon after the a of a number (bus a haon déag)
+<D>[Aa]</D> <A>[Aa]on [Dd]éag</A>:PREFIXH
 # CO17 9.3.1(f): déag is lenited only after a vowel (ceithre leabhar déag; dhá oíche dhéag)
 <NCS>ANYTHING[bcdfghlmnprst]</NCS> <N pl="n" gnt="n">dhéag</N>:NISEIMHIU
 # CO17 9.3.5(b)(ii): h before ocht after na (na hocht gcapall)

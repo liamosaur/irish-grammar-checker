@@ -7,5 +7,6 @@
   "WEAKBACHOIRAR": "Usually /ar/ here, after áit, fáth, caoi and similar nouns (CO17 11.3.1(h)), but not when the noun is the object of the verb",
   "WEAKBACHOIRMA": "If dá means \"if\", use /má/ with this tense (dá takes the conditional); but dá is also de or do with the relative a, which takes any tense (CO17 11.6.1(c))",
   "NOHYPHEN": "No hyphen between t and a capital vowel: /an tAlbanach/, /an tAire/ (CO17 1.1.4)",
-  "MUID": "The ending already gives the subject: use the synthetic form or muid, not both (/táimid/ or /tá muid/; CO17 5.1.10)"
+  "MUID": "The ending already gives the subject: use the synthetic form or muid, not both (/táimid/ or /tá muid/; CO17 5.1.10)",
+  "WEAKSEIMHIUVOC": "Usually lenited here: the vocative (/a dhaoine uaisle/, /a fheara/), but not if a is the possessive her (Seán, a mac)"
 }

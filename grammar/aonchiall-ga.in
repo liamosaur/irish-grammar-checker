@@ -229,6 +229,8 @@ DECADE <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="f">bheith</N> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <B>[Bb]hí</B>:<V p="y" t="caite">
+# Bí opening a clause is the imperative (Bí cúramach), not the noun
+CLAUSESTART <B><Z>ANYVERB</Z>[Bb]í</B>:<V p="y" t="ord">
 # verbal particle or copula
 <B>[Cc]á</B> <V>ANYTHING</V>:<Q>
 <B>[Cc]á</B> UNECLIPSED:<V cop="y">
@@ -721,6 +723,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>[Ss]na</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # "saol pearsanta an iománaí";  compare PREFIXT rule in rialacha-ga.in
 # "R" for "tabhairt isteach an airgeadra"
+# but not after seo, sin, úd, which end their noun phrase (Is é sin an t-ainm; see below)
+([Ss]eo|[Ss]in|[Úú]d) an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="n" gnd="m">
 <[AR]>ANYTHING</[AR]> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
 <NGEND>ANYTHING</NGEND> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
 # go léir, go fóill
@@ -1016,6 +1020,9 @@ CLAUSESTART <B><Z>WITHVERBTAG</Z>LENITED</B>:!<[^V][^<]*>
 # wait until nár, etc. done; but before :!genitive (gur ceapadh prionsabail...)
 <V cop="y">ANYTHING</V> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <[^ACDNRSTY]>ANYTHING</[^ACDNRSTY]> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
+# seo, sin, úd end a noun phrase (teach an fhir sin), so the article after them starts a new one,
+# not a genitive (Is é sin an t-ainm atá air; Seo an t-ainm)
+([Ss]eo|[Ss]in|[Úú]d) <T>ANYTHING</T> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <[^ACNRSY]>ANYTHING</[^ACNRSY]> <T>ANYTHING</T> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <S>FUSEDPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <S>DATIVEPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">

@@ -295,6 +295,7 @@ export function unBPrefix(w: string): string | null { return /^b'./i.test(w) ? w
 const FIXES: Record<string, (w: string) => string | null> = {
   SEIMHIU: lenite,
   WEAKSEIMHIUGEN: lenite, // a hint: lenition is usual but may not apply (grammar/rialacha-ga.in)
+  WEAKSEIMHIUVOC: lenite, // a hint: the vocative, unless a is the possessive her
   NISEIMHIU: unlenite,
   NIDARASEIMHIU: unlenite,
   URU: eclipse,
@@ -303,7 +304,8 @@ const FIXES: Record<string, (w: string) => string | null> = {
   NIAITCH: unHPrefix,
   PREFIXT: tPrefix,
   NITEE: unTPrefix,
-  PREFIXD: dPrefix,
+  // d' goes before the capital: Fhág -> D'fhág, Ól -> D'ól
+  PREFIXD: (w) => { const c = dPrefix(w.toLowerCase()); return c === null ? null : matchCase(w, c); },
   NIDEE: unDPrefix,
   NIBEE: unBPrefix,
   // "Unnecessary initial mutation" does not say which one, but the word shows it.
@@ -345,6 +347,18 @@ export function proposeFix(rule: string, flagged: string): string | null {
     const m = /^(\s*)(\S+)(\s+)(\S+)([\s\S]*)$/.exec(flagged);
     if (!m || lc(m[2]) !== 'na') return null;
     return m[1] + matchCase(m[2], 'ná') + m[3] + (hPrefix(m[4]) ?? m[4]) + m[5];
+  }
+  // A past verb with its subject pronoun (Socraigh sí -> Shocraigh sí, Ól sé -> D'ól sé): the
+  // change goes on the verb.
+  if (rule === 'SEIMHIU' || rule === 'PREFIXD') {
+    const m = /^(\s*)(\S+)(\s+(?:mé|sé|sí|siad|sinn|muid|sibh|mise|seisean|sise|siadsan|sinne|sibhse)\s*)$/i.exec(flagged);
+    if (m) { const changed = FIXES[rule](m[2]); return changed === null ? null : m[1] + changed + m[3]; }
+  }
+  // Lenition after a (the vocative, a fhios agam): the word after a, which may not be the last
+  // ("A daoine uaisle" -> "A dhaoine uaisle").
+  if (rule === 'SEIMHIU' || rule === 'WEAKSEIMHIUVOC') {
+    const m = /^(\s*a\s+)(\S+)([\s\S]*)$/i.exec(flagged);
+    if (m) { const changed = lenite(m[2]); return changed === null ? null : m[1] + changed + m[3]; }
   }
   const inside = rule === 'PREFIXH' ? hPrefix : rule === 'NISEIMHIU' ? unlenite : null;
   if (inside) {
