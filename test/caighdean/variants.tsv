@@ -12,9 +12,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-ábhar → ábhar	37	37 ábhar shuimiúla	37 n-ábhar shuimiúla	9	9.3.12	153	3	-
 	eclipsis	ngirseach → girseach	49	49 girseach ghalánta	49 ngirseach ghalánta	9	9.4.4	160	3	-
 	eclipsis	n-oíche → oíche	68	68 oíche ghaofara	68 n-oíche ghaofara	9	9.3.12	153	3	-
-	eclipsis	bhfeirmeoir → feirmeoir	7	7 feirmeoir shaibhre	7 bhfeirmeoir shaibhre	9	9.4.4	159	2	flagged:URU
-	eclipsis	n-oíche → oíche	7	7 oíche dhorcha	7 n-oíche dhorcha	9	9.3.8	151	2	flagged:URU
-	eclipsis	n-údar → údar	8	8 údar fhoilsithe	8 n-údar fhoilsithe	9	9.8	169	2	flagged:URU
+	eclipsis	bhfeirmeoir → feirmeoir	7	7 feirmeoir shaibhre	7 bhfeirmeoir shaibhre	9	9.4.4	159	2	-
+	eclipsis	n-oíche → oíche	7	7 oíche dhorcha	7 n-oíche dhorcha	9	9.3.8	151	2	-
+	eclipsis	n-údar → údar	8	8 údar fhoilsithe	8 n-údar fhoilsithe	9	9.8	169	2	-
 	eclipsis	dtroithe → troithe	89	89 troithe cearnacha	89 dtroithe cearnacha	9	9.3.12	153	3	-
 	eclipsis	nduine → duine	99	99 duine ghnóthacha	99 nduine ghnóthacha	9	9.8	170	3	-
 	eclipsis	bhfaca → faca	a	Cá ndeachaigh an fear a faca mé a mhac ag dul isteach san fhoirgneamh?	Cá ndeachaigh an fear a bhfaca mé a mhac ag dul isteach san fhoirgneamh?	11	11.7.2(b)	213	24	flagged:CAIGHDEAN
@@ -727,11 +727,11 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-éan → éan	na	Bhí ceol na éan le cloisteáil ar fud na coille.	Bhí ceol na n-éan le cloisteáil ar fud na coille.	10	10.6.1	188	12	flagged:URU
 	eclipsis	n-éidí → éidí	na	luach na éidí galánta	luach na n-éidí galánta	4	4.7	65	9	flagged:PREFIXH
 	eclipsis	n-iníonacha → iníonacha	na	airgead na iníonacha flaithiúla	airgead na n-iníonacha flaithiúla	4	4.7	65	11	flagged:PREFIXH
-	eclipsis	n-ocht → ocht	na	scéal mhadra na ocht gcos	scéal mhadra na n-ocht gcos	1	1.1.1	1	16	-
-	eclipsis	n-ocht → ocht	na	achar na ocht bpáirc déag mhóra	achar na n-ocht bpáirc déag mhóra	9	9.3.7	150	9	-
-	eclipsis	n-ocht → ocht	na	fuacht na ocht gcloigne maola	fuacht na n-ocht gcloigne maola	9	9.8	169	10	-
-	eclipsis	n-ocht → ocht	na	seolta na ocht mbád bheaga	seolta na n-ocht mbád bheaga	9	9.3.7	150	10	-
-	eclipsis	n-ocht → ocht	na	Rinne sí scéal mhadra na ocht gcos as.	Rinne sí scéal mhadra na n-ocht gcos as.	10	10.7	190	25	-
+	eclipsis	n-ocht → ocht	na	scéal mhadra na ocht gcos	scéal mhadra na n-ocht gcos	1	1.1.1	1	16	flagged:PREFIXH
+	eclipsis	n-ocht → ocht	na	achar na ocht bpáirc déag mhóra	achar na n-ocht bpáirc déag mhóra	9	9.3.7	150	9	flagged:PREFIXH
+	eclipsis	n-ocht → ocht	na	fuacht na ocht gcloigne maola	fuacht na n-ocht gcloigne maola	9	9.8	169	10	flagged:PREFIXH
+	eclipsis	n-ocht → ocht	na	seolta na ocht mbád bheaga	seolta na n-ocht mbád bheaga	9	9.3.7	150	10	flagged:PREFIXH
+	eclipsis	n-ocht → ocht	na	Rinne sí scéal mhadra na ocht gcos as.	Rinne sí scéal mhadra na n-ocht gcos as.	10	10.7	190	25	flagged:PREFIXH
 	eclipsis	n-oibreacha → oibreacha	na	costas na oibreacha	costas na n-oibreacha	1	1.6.3	15	10	flagged:PREFIXH
 	eclipsis	n-údarás → údarás	na	Foilsíodh tuarascálacha na údarás áitiúil.	Foilsíodh tuarascálacha na n-údarás áitiúil.	4	4.3.2	59	27	flagged:URU
 	eclipsis	n-uibheacha → uibheacha	na	an fear sin na uibheacha	an fear sin na n-uibheacha	3	3.1.7	39	15	flagged:PREFIXH
@@ -782,7 +782,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	gcéad → céad	naoi	naoi míle, naoi céad nócha a naoi	naoi míle, naoi gcéad nócha a naoi	9	9.2.2	143	16	-
 	eclipsis	gcéad → céad	naoi	ocht déag míle, naoi céad a haon	ocht déag míle, naoi gcéad a haon	9	9.2.3	144	21	-
 	eclipsis	gcéad → céad	naoi	ocht míle dhéag, naoi céad a haon	ocht míle dhéag, naoi gcéad a haon	9	9.2.3	144	22	-
-	eclipsis	gcéadú → céadú	naoi	naoi céadú	naoi gcéadú	9	9.6.3	166	5	-
+	eclipsis	gcéadú → céadú	naoi	naoi céadú	naoi gcéadú	9	9.6.3	166	5	flagged:URU
 	eclipsis	gcinn → cinn	naoi	leithead na naoi cinn dheasa	leithead na naoi gcinn dheasa	9	9.3.7	150	17	flagged:URU
 	eclipsis	mbád → bád	naoi	naoi bád	naoi mbád	9	9.1.1	141	5	flagged:URU
 	eclipsis	mbád → bád	naoi	naoi bád chostasacha is nócha	naoi mbád chostasacha is nócha	9	9.3.10	152	5	flagged:URU
@@ -794,12 +794,12 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	mBliana → Bliana	Naoi	Cogadh na Naoi Bliana	Cogadh na Naoi mBliana	9	9.3.7	150	15	-
 	eclipsis	n-éan → éan	naoi	Chonaic sé naoi éan sa spéir.	Chonaic sé naoi n-éan sa spéir.	10	10.6.3	188	16	flagged:URU
 	eclipsis	n-ochtdéagú → ochtdéagú	naoi	naoi ochtdéagú	naoi n-ochtdéagú	9	9.6.3	166	5	-
-	eclipsis	n-ochtódú → ochtódú	naoi	naoi ochtódú	naoi n-ochtódú	9	9.6.3	166	5	-
+	eclipsis	n-ochtódú → ochtódú	naoi	naoi ochtódú	naoi n-ochtódú	9	9.6.3	166	5	flagged:URU
 	eclipsis	n-oíche → oíche	naoi	naoi oíche	naoi n-oíche	9	9.3.1	145	5	flagged:URU
 	eclipsis	n-oíche → oíche	naoi	naoi oíche dhéag	naoi n-oíche dhéag	9	9.3.1	145	5	flagged:URU
 	eclipsis	n-oíche → oíche	naoi	naoi oíche dhéag fhuara	naoi n-oíche dhéag fhuara	9	9.3.3	147	5	flagged:URU
 	eclipsis	n-oíche → oíche	naoi	tréimhse naoi oíche	tréimhse naoi n-oíche	9	9.3.6	149	14	flagged:URU
-	eclipsis	ndeichiú → deichiú	naoi	naoi deichiú	naoi ndeichiú	9	9.6.3	166	5	-
+	eclipsis	ndeichiú → deichiú	naoi	naoi deichiú	naoi ndeichiú	9	9.6.3	166	5	flagged:URU
 	eclipsis	nduine → duine	naoi	naoi duine ghnóthacha is nócha	naoi nduine ghnóthacha is nócha	9	9.8	170	5	flagged:URU
 	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sé	ní bhfaigheadh sé	5	Tábla 5S	94	3	flagged:SEIMHIU
 	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sí	ní bhfaigheadh sí	5	Tábla 5S	94	3	flagged:SEIMHIU
@@ -879,7 +879,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	mbliana → bliana	seacht	seacht bliana	seacht mbliana	9	9.3.2	146	7	flagged:URU
 	eclipsis	n-iora → iora	seacht	seacht iora ghlasa dhéag	seacht n-iora ghlasa dhéag	9	9.3.1	145	7	flagged:URU
 	eclipsis	n-iora → iora	seacht	seacht iora ghlasa dhéag fhiáine	seacht n-iora ghlasa dhéag fhiáine	9	9.3.1	145	7	flagged:URU
-	eclipsis	n-ochtú → ochtú	seacht	seacht ochtú	seacht n-ochtú	9	9.6.1	164	7	-
+	eclipsis	n-ochtú → ochtú	seacht	seacht ochtú	seacht n-ochtú	9	9.6.1	164	7	flagged:URU
 	eclipsis	n-oibrí → oibrí	seacht	na seacht oibrí dhéag ghnóthacha	na seacht n-oibrí dhéag ghnóthacha	9	9.8	169	10	flagged:URU
 	eclipsis	n-oibrí → oibrí	seacht	tuarastail na seacht oibrí dhéag ghnóthacha	tuarastail na seacht n-oibrí dhéag ghnóthacha	9	9.8	169	21	flagged:URU
 	eclipsis	n-oíche → oíche	seacht	seacht oíche	seacht n-oíche	9	9.3.1	145	7	flagged:URU
@@ -1117,11 +1117,11 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	h-	híomhánna → íomhánna	na	Cliceáil faoi dhó ar na íomhánna chun iad a mhéadú.	Cliceáil faoi dhó ar na híomhánna chun iad a mhéadú.	10	10.11.1	193	24	flagged:PREFIXH
 	h-	hirisí → irisí	na	as na irisí acadúla	as na hirisí acadúla	1	1.6.2	14	6	flagged:PREFIXH
 	h-	hÍsiltíre → Ísiltíre	na	foireann na Ísiltíre	foireann na hÍsiltíre	1	1.5.2	12	12	flagged:PREFIXH
-	h-	hocht → ocht	na	na ocht bhfuinneog	na hocht bhfuinneog	9	9.3.5	149	3	-
-	h-	hocht → ocht	na	na ocht bhfuinneog déag	na hocht bhfuinneog déag	9	9.3.5	149	3	-
-	h-	hocht → ocht	na	na ocht dtroithe déag	na hocht dtroithe déag	9	9.3.5	149	3	-
-	h-	hocht → ocht	na	na ocht gcapall	na hocht gcapall	9	9.3.5	149	3	-
-	h-	hocht → ocht	na	Cár cheannaigh tú na ocht n-úll dhearga sin?	Cár cheannaigh tú na hocht n-úll dhearga sin?	10	10.12.3	195	21	-
+	h-	hocht → ocht	na	na ocht bhfuinneog	na hocht bhfuinneog	9	9.3.5	149	3	flagged:PREFIXH
+	h-	hocht → ocht	na	na ocht bhfuinneog déag	na hocht bhfuinneog déag	9	9.3.5	149	3	flagged:PREFIXH
+	h-	hocht → ocht	na	na ocht dtroithe déag	na hocht dtroithe déag	9	9.3.5	149	3	flagged:PREFIXH
+	h-	hocht → ocht	na	na ocht gcapall	na hocht gcapall	9	9.3.5	149	3	flagged:PREFIXH
+	h-	hocht → ocht	na	Cár cheannaigh tú na ocht n-úll dhearga sin?	Cár cheannaigh tú na hocht n-úll dhearga sin?	10	10.12.3	195	21	flagged:PREFIXH
 	h-	hógmhná → ógmhná	na	fairis na ógmhná	fairis na hógmhná	1	1.6.2	14	10	flagged:PREFIXH
 	h-	hoibre → oibre	na	Cuideachta áitiúil atá i mbun na oibre.	Cuideachta áitiúil atá i mbun na hoibre.	3	3.3.2	45	33	flagged:PREFIXH
 	h-	hoibre → oibre	na	Céard a rinne siad tar éis na oibre?	Céard a rinne siad tar éis na hoibre?	8	8.5.1	139	30	flagged:PREFIXH
@@ -3130,7 +3130,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chéad → céad	ceithre	trí mhíle dhéag, ceithre céad caoga a dó	trí mhíle dhéag, ceithre chéad caoga a dó	9	9.2.3	144	25	-
 	lenition	chéad → céad	ceithre	tríocha a hocht míle, ceithre céad ochtó a dó	tríocha a hocht míle, ceithre chéad ochtó a dó	9	9.2.3	144	30	-
 	lenition	chúigdéagú → cúigdéagú	ceithre	ceithre cúigdéagú	ceithre chúigdéagú	9	9.6.1	164	8	-
-	lenition	chúigiú → cúigiú	ceithre	ceithre cúigiú	ceithre chúigiú	9	9.1.1	141	8	-
+	lenition	chúigiú → cúigiú	ceithre	ceithre cúigiú	ceithre chúigiú	9	9.1.1	141	8	flagged:SEIMHIU
 	lenition	dhuine → duine	ceithre	ceithre duine is daichead	ceithre dhuine is daichead	9	9.4.1	154	8	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	ceithre	ceithre fuinneog déag mhóra	ceithre fhuinneog déag mhóra	9	9.3.3	147	8	flagged:SEIMHIU
 	lenition	ghirseach → girseach	ceithre	ceithre girseach déag ghalánta	ceithre ghirseach déag ghalánta	9	9.4.4	160	8	flagged:SEIMHIU
@@ -3140,9 +3140,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhíle → míle	ceithre	ceithre míle is seachtó, daichead a hocht	ceithre mhíle is seachtó, daichead a hocht	9	9.2.3	144	8	-
 	lenition	mhíle → míle	ceithre	ceithre míle, seacht gcéad tríocha a trí	ceithre mhíle, seacht gcéad tríocha a trí	9	9.2.2	143	8	-
 	lenition	mhíle → míle	ceithre	naoi gcéad seachtó is ceithre míle, trí chéad daichead a cúig	naoi gcéad seachtó is ceithre mhíle, trí chéad daichead a cúig	9	9.2.3	144	30	-
-	lenition	sheachtú → seachtú	ceithre	ceithre seachtú	ceithre sheachtú	9	9.6.3	166	8	-
+	lenition	sheachtú → seachtú	ceithre	ceithre seachtú	ceithre sheachtú	9	9.6.3	166	8	flagged:SEIMHIU
 	lenition	thrídéagú → trídéagú	ceithre	ceithre trídéagú	ceithre thrídéagú	9	9.6.1	163	8	-
-	lenition	thríochadú → tríochadú	ceithre	ceithre tríochadú	ceithre thríochadú	9	9.6.3	166	8	-
+	lenition	thríochadú → tríochadú	ceithre	ceithre tríochadú	ceithre thríochadú	9	9.6.3	166	8	flagged:SEIMHIU
 	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú, a athair beag?	Cén chaoi a bhfuil tú, a athair beag?	4	4.3.3	59	4	-
 	lenition	chaoi → caoi	cén	cén caoi	cén chaoi	6	6.1.1(d)	107	4	-
 	lenition	chaoi → caoi	Cén	Cén caoi a bhfuil tú?	Cén chaoi a bhfuil tú?	6	6.1.1(d)	107	4	-
@@ -3251,8 +3251,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chéad → céad	cúig	cúig mhíle is fiche, cúig céad fiche is ocht leabhar shuimiúla	cúig mhíle is fiche, cúig chéad fiche is ocht leabhar shuimiúla	9	9.3.11	153	26	-
 	lenition	chéad → céad	cúig	fiche a cúig míle, cúig céad fiche a hocht leabhar suimiúil	fiche a cúig míle, cúig chéad fiche a hocht leabhar suimiúil	9	9.3.11	153	24	-
 	lenition	chéad → céad	cúig	sé mhíle, cúig céad caoga a haon	sé mhíle, cúig chéad caoga a haon	9	9.2.2	143	15	-
-	lenition	cheathrú → ceathrú	cúig	cúig ceathrú	cúig cheathrú	9	9.6.3	166	5	-
-	lenition	dhaicheadú → daicheadú	cúig	cúig daicheadú	cúig dhaicheadú	9	9.6.3	166	5	-
+	lenition	cheathrú → ceathrú	cúig	cúig ceathrú	cúig cheathrú	9	9.6.3	166	5	flagged:SEIMHIU
+	lenition	dhaicheadú → daicheadú	cúig	cúig daicheadú	cúig dhaicheadú	9	9.6.3	166	5	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	cúig	cúig fuinneog bhriste is caoga	cúig fhuinneog bhriste is caoga	9	9.8	170	5	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	cúig	cúig fuinneog dhúnta is caoga	cúig fhuinneog dhúnta is caoga	9	9.3.10	152	5	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	cúig	cúig fuinneog mhóra	cúig fhuinneog mhóra	9	9.3.3	147	5	flagged:SEIMHIU
@@ -3262,7 +3262,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhilliún → milliún	cúig	cúig milliún	cúig mhilliún	9	9.2.2	143	5	flagged:SEIMHIU
 	lenition	mhilliúnú → milliúnú	cúig	cúig milliúnú	cúig mhilliúnú	9	9.6.3	166	5	flagged:SEIMHIU
 	lenition	pheann → peann	cúig	na cúig peann is seasca	na cúig pheann is seasca	9	9.3.10	152	8	flagged:SEIMHIU
-	lenition	shéú → séú	cúig	cúig séú	cúig shéú	9	9.1.1	141	5	-
+	lenition	shéú → séú	cúig	cúig séú	cúig shéú	9	9.1.1	141	5	flagged:SEIMHIU
 	lenition	theach → teach	cúig	cúig teach tábhairne dhéag	cúig theach tábhairne dhéag	9	9.3.1	145	5	flagged:SEIMHIU
 	lenition	chóir → cóir	cúis	Dúirt siad nach ndéanfaí an próiseas a athrú gan cúis cóir.	Dúirt siad nach ndéanfaí an próiseas a athrú gan cúis chóir.	10	10.2.5	174	54	flagged:SEIMHIU
 	lenition	ghearáin → gearáin	cúis	cúis gearáin	cúis ghearáin	5	Tábla 5EE	104	5	flagged:WEAKSEIMHIUGEN

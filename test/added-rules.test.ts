@@ -153,6 +153,13 @@ const cases: Case[] = [
   // the relative a + a past that is also a noun or an imperative; m and s take lenition
   { section: '5.1.8', text: 'Tá an fear a ceannaigh an carr anseo.', rule: 'CLAOCHLU', words: 'a ceannaigh', fixed: null },
   { section: '5.1.8', text: 'Sin an fear a mol an obair.', rule: 'SEIMHIU', words: 'a mol', fixed: 'Sin an fear a mhol an obair.' },
+  // CO17 chapter 9 review
+  { section: '9.3.1(f)', text: 'Tá ceithre leabhar dhéag agam.', rule: 'NISEIMHIU', words: 'leabhar dhéag', fixed: 'Tá ceithre leabhar déag agam.' },
+  { section: '9.3.5(b)', text: 'Dún na ocht bhfuinneog.', rule: 'PREFIXH', words: 'na ocht', fixed: 'Dún na hocht bhfuinneog.' },
+  { section: '9.3.9(a)', text: 'Tá fiche bhád sa chuan.', rule: 'NISEIMHIU', words: 'fiche bhád', fixed: 'Tá fiche bád sa chuan.' },
+  { section: '9.3.10(c)', text: 'Tá fiche a dhá bád sa chuan.', rule: 'BACHOIR', words: 'a dhá', fixed: 'Tá fiche a dó bád sa chuan.' },
+  { section: '9.6.1', text: 'Tá ceithre cúigiú den obair déanta.', rule: 'SEIMHIU', words: 'ceithre cúigiú', fixed: 'Tá ceithre chúigiú den obair déanta.' },
+  { section: '9.6.1', text: 'Tá naoi deichiú den obair déanta.', rule: 'URU', words: 'naoi deichiú', fixed: 'Tá naoi ndeichiú den obair déanta.' },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported

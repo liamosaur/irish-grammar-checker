@@ -117,6 +117,8 @@ execFileSync(process.execPath, [path.join(here, 'extract-rules.mjs'), asm, path.
 // AFTERNOUNANDADJS, a first word, matches after the same nouns and one or more adjectives, with or
 // without commas between them: every adjective in the list agrees with the noun, and a vowel-initial
 // one can't show lenition (seirbhís ghairmiúil, éifeachtach, chúirtéiseach; CO17 4.2).
+// AFTERTEN, a first word, matches after one of the tens (fiche ... nócha), kept out of the mark
+// (fiche a dhá: only a dhá is marked, CO17 9.3.10(c)(ii)).
 // AFTERMANNERNOUN, a first word, matches after one of the nouns of CO17 11.3.1(h)
 // (áit, bealach, caoi, cúis, dóigh, fáth, réasún, slí, treo), kept out of the mark.
 // VNLATER, a last word, matches when a + a verbal noun follows in the same clause, at most 10
@@ -144,6 +146,7 @@ const STARTS = {
   AFTERFEMNAME: '(?<=<N pl="n" gnt="n" gnd="f">[^<]+</N> <E[^>]*><X>[A-ZÁÉÍÓÚ][^<]*</X></E> )',
   AFTERNOUNANDGEN: `(?<=${LENITINGNOUN} (?:<E[^>]*>)?<N[^>]* gnt="y"[^>]*>[^<]+</N>(?:</E>)? )`,
   AFTERNOUNANDADJS: `(?<=${LENITINGNOUN}(?:</E>)? (?:${ADJ},? )+)`,
+  AFTERTEN: '(?<=<[AN][^>]*>(?:[Ff]iche|[Tt]ríocha|[Dd]aichead|[Cc]aoga|[Ss]easca|[Ss]eachtó|[Oo]chtó|[Nn]ócha)</[AN]> )',
   AFTERMANNERNOUN: '(?<=<N[^>]*>(?:h?[Áá]it|[Bb]h?ealach|g?[Cc]h?aoi|[Cc]h?úis|[Dd]h?óigh|[Ff]h?áth|[Rr]éasún|t?[Ss]lí|[Tt]reo)</N> )',
 };
 for (const name of ['rialacha', 'aonchiall']) {

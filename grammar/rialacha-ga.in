@@ -904,9 +904,12 @@ DECADE <NP>ANYTHING</NP>:UATHA
 #. Tá seacht lampa air agus seacht píopa ar gach ceann díobh.
 <[^Y]>ECLIPSINGNUMBER</[^Y]> <N>UNECLIPSED</N>:URU
 # no lenition in these exceptions!
-<[^Y]>ECLIPSINGNUMBER</[^Y]> <N>(Eanáir|Feabhra|Aibreán|Bealtaine|Iúil|Deireadh)</N>:OK
+<[^Y]>ECLIPSINGNUMBER</[^Y]> <N>(Eanáir|Feabhra|Aibreán|Bealtaine|Iúil|Deireadh|Deireadh Fómhair)</N>:OK
+# not after a number in figures, often a reference (alt 7) rather than a count
+<E><A>[0-9]+</A> <N>ANYTHING</N></E>:OK
 # This catches sh-, mh- since UNECLIPSED only matches eclipsable consonants
 <[^Y]>ECLIPSINGNUMBER</[^Y]> <N>LENITED</N>:NISEIMHIU
+<E><A>[0-9]+</A> <N>ANYTHING</N></E>:OK
 ##############################################################################
 #   Rules A->Z begin here...
 #   AAAAAAAAAA
@@ -4572,6 +4575,21 @@ CLAUSESTART <V p="y" t="gnáth">UNLENITED(inn|teá|tá|tí)</V>:SEIMHIU
 [Aa]r fhuair:BACHOIR{an bhfuair}
 [Gg]ur fhuair:BACHOIR{go bhfuair}
 [Nn]ár fhuair:BACHOIR{nach bhfuair}
+# CO17 9.3.1(f): déag is lenited only after a vowel (ceithre leabhar déag; dhá oíche dhéag)
+<NCS>ANYTHING[bcdfghlmnprst]</NCS> <N pl="n" gnt="n">dhéag</N>:NISEIMHIU
+# CO17 9.3.5(b)(ii): h before ocht after na (na hocht gcapall)
+<T>[Nn]a</T> <A>[Oo]cht</A>:PREFIXH
+# CO17 9.3.9(a): no initial change after the tens (fiche bád; caoga císte)
+<[AN]>([Ff]iche|[Tt]ríocha|[Dd]aichead|[Cc]aoga|[Ss]easca|[Ss]eachtó|[Oo]chtó|[Nn]ócha)</[AN]> <N>LENITED</N>:NISEIMHIU
+# CO17 9.3.10(c)(ii): in the Córas Simplithe, dó and ceathair after a ten (fiche a dó bád)
+AFTERTEN <D>a</D> <A>dhá</A>:BACHOIR{a dó}
+AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
+# CO17 9.6.1(b), (c), (iii): a fraction is counted like a noun: lenition after 3-6 (ceithre
+# chúigdéagú), eclipsis after 7-10 (seacht n-ochtú); but fichiú is not lenited (trí fichiú), and
+# treana is left as it is after 3-6 (trí treana)
+<A>(d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é)</A> <A>UNLENITEDú</A>:SEIMHIU
+<E><A>ANYTHING</A> <A>[Ff]ichiú</A></E>:OK
+<A>ECLIPSINGNUMBER</A> <A>UNECLIPSEDú</A>:URU
 # CB p.18-19 converse of #11-13
 #. In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní.
 #. Chuirfear in iúl do dhaoine gurb é sin an aidhm atá againn.
