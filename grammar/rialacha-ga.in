@@ -675,6 +675,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 # has no mí. Before the lenition rules below, which would otherwise mark mí Bealtaine first.
 <N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <T>ANYTHING</T> <N>(Eanáir|Fh?eabhra|Aibreái?n|Iúil|Lúnasa|Mh?eán|Dh?eireadh|Mh?eán Fómhair|n?Dh?eireadh Fómhair)</N>:BADART
 <N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <N>(Mh?árta|Bh?ealtaine|Mh?eithimh|Mh?eitheamh|Sh?amhain|Sh?amhna|Nollai?g)</N>:NEEDART
+# CO17 1.1.5(e): Dé replaces the article for a particular day (Dé Céadaoin seo caite), so not both
+<T>[Aa]n</T> <N>Dé ANYTHING</N>:BADART
+<S>FUSEDPREP</S> <N>Dé ANYTHING</N>:BADART
 ######## Lenition of an indefinite genitive after a feminine singular noun
 # CO17 10.2.7 lists every case where it is not lenited, (a) to (m). Some depend on
 # what the nouns mean (the second is a person, animal or other living thing, or a

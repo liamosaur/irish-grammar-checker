@@ -138,6 +138,7 @@ const cases: Case[] = [
   { section: '1.1.5(i)', text: 'I Muir Chairib atá Bahámaí.', rule: 'NEEDART', words: 'Bahámaí', fixed: null },
   { section: '1.1.5(i)', text: 'Chuaigh sé go dtí an Iosrael.', rule: 'BADART', words: 'an Iosrael', fixed: null },
   { section: '1.3.2', text: 'Rinne sé mar an céanna.', rule: 'URU', words: 'mar an céanna', fixed: null },
+  { section: '1.1.5(e)', text: 'Bhí mé ag caint leis an Dé Céadaoin seo caite.', rule: 'BADART', words: 'an Dé Céadaoin', fixed: null },
   // the singular after a multiple of ten (9.3.9(a)); a fraction's plural ordinal denominator is allowed (see clean)
   { section: '9.3.9(a)', text: 'Tá caoga cístí milse ann.', rule: 'UATHA', words: 'caoga cístí', fixed: null },
   // sé at the start of a clause before a noun is the number, so the noun's missing lenition is reported
