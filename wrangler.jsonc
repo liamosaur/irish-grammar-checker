@@ -3,5 +3,7 @@
 {
   "name": "irish-grammar-checker",
   "compatibility_date": "2026-11-01",
-  "assets": { "directory": "./dist" }
+  "assets": { "directory": "./dist" },
+  // Branch Previews (`npx wrangler preview`) need this block, even empty: no bindings to override.
+  "previews": {}
 }
