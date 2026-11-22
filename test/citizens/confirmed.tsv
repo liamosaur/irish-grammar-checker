@@ -1,0 +1,12 @@
+# Sentences from the Citizens Information website (www.citizensinformation.ie), extracted
+# unchanged from the ELRC corpus ELRC-2438 (Citizens Information Bilingual Web-Corpus,
+# Processed), distributed by ELRC-SHARE (https://www.elrc-share.eu) and OPUS
+# (https://opus.nlpl.eu/) under the Creative Commons Attribution 4.0 International licence
+# (CC BY 4.0). See NOTICE.md.
+# The verdicts (column 1) are the project's: ok = the checker's flag (column 2) was wrong;
+# wrong = the source has that error; unsure = undecided. Column 5, if present, notes a flag
+# not yet fixed. Run by test/gaois.test.ts.
+verdict	rule	source	sentence
+ok	NIURU	ELRC-2438	Munar ainmnigh tú seiceadóirí i d'uacht, nó muna bhfuil na seiceadóirí in ann nó toilteanach iarratas a dhéanamh ar dheonú ionadaíochta, eisítear cáipéisí ar a dtugar Litreacha Riaracháin (le hUacht).
+wrong	CAIGHDEAN	ELRC-2438	Munar ainmnigh tú seiceadóirí i d'uacht, nó muna bhfuil na seiceadóirí in ann nó toilteanach iarratas a dhéanamh ar dheonú ionadaíochta, eisítear cáipéisí ar a dtugar Litreacha Riaracháin (le hUacht).
+unsure	NIURU	ELRC-2438	Cén uair a ndearnadh dochar don áitreabh?

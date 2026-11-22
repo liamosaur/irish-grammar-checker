@@ -8,6 +8,7 @@
 | `test/caighdean/ch01.json` … `ch11.json`, and the `original` column of `test/caighdean/variants.tsv`: example sentences quoted verbatim from *An Caighdeán Oifigiúil* (2017) | © Houses of the Oireachtas; re-used with acknowledgement, see [An Caighdeán Oifigiúil](#an-caighdeán-oifigiúil-2017) below |
 | `test/gaois/confirmed.tsv`: the sentences (column 4), verbatim Irish legislation from the Gaois parallel corpus | Creative Commons Attribution 4.0 (CC BY 4.0), see [Gaois](#gaois-parallel-corpus-of-legislation) below. The verdicts in the other columns are the project's (GPL) |
 | `test/coimisineir/confirmed.tsv`: the sentences (column 4), verbatim from publications of An Coimisinéir Teanga, via the ELRC corpora | © An Coimisinéir Teanga; distributed as open public sector information (PSI), see [An Coimisinéir Teanga](#an-coimisinéir-teanga) below. The verdicts in the other columns are the project's (GPL) |
+| `test/citizens/confirmed.tsv`: the sentences (column 4), verbatim from the Citizens Information website, via the ELRC corpus ELRC-2438 | Creative Commons Attribution 4.0 (CC BY 4.0), see [Citizens Information](#citizens-information) below. The verdicts in the other columns are the project's (GPL) |
 | everything else: the code, `data/lexicon.json` (the An Gramadóir 0.70 lexicon), the other files in `data/` (including `data/legacy-0.70/` and `data/overlay-decisions.tsv`), the tests and the tools | GNU General Public License, version 2 or (at your option) any later version, see [COPYING](COPYING) |
 
 The BuNaMo-derived data is kept in its own files and is not merged into any
@@ -136,6 +137,22 @@ that use.
 > Sentences from publications of An Coimisinéir Teanga, from the ELRC corpora
 > ELRC-780, ELRC-784 and ELRC-801 (ELRC-SHARE, OPUS; J. Tiedemann, 2012, *Parallel Data,
 > Tools and Interfaces in OPUS*, LREC 2012).
+
+## Citizens Information
+
+The sentences in `test/citizens/confirmed.tsv` are segments, unchanged, of the Irish pages
+of the Citizens Information website (<https://www.citizensinformation.ie>), from the corpus
+ELRC-2438, *Citizens Information Bilingual Web-Corpus (Processed)*, which the European
+Language Resource Coordination distributes through ELRC-SHARE (<https://www.elrc-share.eu>)
+and OPUS (<https://opus.nlpl.eu/ELRC-2438-www.citizensinformat-v1.php>, release v1) under
+the Creative Commons Attribution 4.0 International licence
+(<https://creativecommons.org/licenses/by/4.0/>). Only whole sentences are included; the
+verdict columns beside them are the project's.
+
+> Sentences from the Citizens Information website (www.citizensinformation.ie), from the
+> ELRC corpus ELRC-2438, *Citizens Information Bilingual Web-Corpus (Processed)* (ELRC-SHARE,
+> OPUS; J. Tiedemann, 2012, *Parallel Data, Tools and Interfaces in OPUS*, LREC 2012),
+> CC BY 4.0.
 
 ## Sources consulted but not included
 

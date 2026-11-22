@@ -13,13 +13,16 @@
 //   node tools/rule-baseline.ts diff <old.tsv> <new.tsv>
 //   node tools/rule-baseline.ts fire <out.json>        per rule: how often it fires, by set; per
 //                                                      exception: how often, and which messages it removed
+//   node tools/rule-baseline.ts masks <out.tsv>        pairs of rules where the first one's flag hides
+//                                                      the second's (run without the first, it appears)
 // Options: --gaois <dir> --elrc <dir> (default: the newest .sources/gaois/checkall* and
 // .sources/elrc/check* directories).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Gramadoir } from '../src/engine.ts';
+import { Gramadoir, toLatin1 } from '../src/engine.ts';
 import { loadData } from '../src/node-data.ts';
+import { applyRules, type CompiledRule } from '../src/rules.ts';
 import { foldForEngine } from '../web/fold.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -156,7 +159,81 @@ if (!isMain) {
   const foreign = exceptions.filter((e) => Object.keys(e.stripped!).some((m) => m !== stats.find((s) => s.line === e.parent)!.msg));
   console.log(`${all.length} sentences. Error rules: ${errorRules.length}; fire on real text (gaois, elrc, book): ${errorRules.filter((s) => firesOn(s, (x) => real.has(x))).length}; on anything: ${errorRules.filter((s) => firesOn(s, () => true)).length}.`);
   console.log(`Exceptions after a rule: ${exceptions.length}; ever fire: ${exceptions.filter((s) => firesOn(s, () => true)).length}; ever remove another rule's message: ${foreign.length}${foreign.length ? ` (lines ${foreign.map((f) => f.line).join(', ')})` : ''}.`);
+} else if (cmd === 'masks') {
+  // Where rule order decides the result: for each flag a rule leaves on a sentence, the rules are
+  // run again without that rule, and any other rule's flag that then appears on the same words is
+  // one the first rule was hiding (the first mark wins). Each pair is a place where moving one of
+  // the two rules past the other would change the output.
+  const [outFile] = rest;
+  const data = loadData(path.join(root, 'data'));
+  const lines: Record<string, number[]> = JSON.parse(read('data/rules/lines.json'));
+  const lineOf: number[] = []; // index in rialacha -> source line
+  {
+    let k = 0;
+    data.rules.rialacha = data.rules.rialacha.map((r) => {
+      const line = lines.rialacha[k];
+      lineOf.push(line);
+      k += 1 + (r.then?.length ?? 0);
+      return r.repl ? { ...r, repl: r.repl.replace(/<E msg="([^"]*)"(?: r="[^"]*")?>/, `<E msg="$1" r="L${line}">`) } : r;
+    });
+  }
+  const gr = new Gramadoir(data, { fixSpelling: true });
+  const internal = gr as unknown as { rialacha: CompiledRule[]; getSentencesReal(t: string): string[]; addTagsReal(s: string): string };
+  const compiled = internal.rialacha;
+  const indexOf = new Map(lineOf.map((l, i) => [l, i]));
+  const msgAt = new Map<number, string>();
+  data.rules.rialacha.forEach((r, i) => { const m = /<E msg="([^"{]+)/.exec(r.repl ?? ''); if (m) msgAt.set(lineOf[i], m[1]); });
+
+  type Mark = { line: number; from: number; to: number };
+  /** The rule marks left in a tagged sentence, with their span in its plain text. */
+  const marksOf = (s: string): Mark[] => {
+    const out: Mark[] = [];
+    const open: { line: number | null; from: number }[] = [];
+    let pos = 0;
+    for (const t of s.matchAll(/<[^>]*>|[^<]+/g)) {
+      const tok = t[0];
+      if (!tok.startsWith('<')) { pos += tok.length; continue; }
+      if (tok.startsWith('<E')) open.push({ line: /r="L(\d+)"/.test(tok) ? Number(/r="L(\d+)"/.exec(tok)![1]) : null, from: pos });
+      else if (tok === '</E>') { const o = open.pop(); if (o?.line != null) out.push({ line: o.line, from: o.from, to: pos }); }
+    }
+    return out;
+  };
+  const key = (m: Mark) => `${m.line}@${m.from}-${m.to}`;
+
+  type Pair = { shown: number; hidden: number; count: Record<string, number>; example: string; exampleSet: string };
+  const pairs = new Map<string, Pair>();
+  const real = new Set(['gaois', 'elrc', 'book']);
+  let checked = 0;
+  for (const [set, sentence] of inputs(opt('--gaois'), opt('--elrc'))) {
+    for (const plain of internal.getSentencesReal(toLatin1(foldForEngine(sentence)))) {
+      const tagged = internal.addTagsReal(plain);
+      const base = marksOf(applyRules(tagged, compiled));
+      const baseKeys = new Set(base.map(key));
+      for (const m of base) {
+        const i = indexOf.get(m.line);
+        if (i === undefined) continue;
+        checked++;
+        const without = marksOf(applyRules(tagged, compiled.filter((_, j) => j !== i)));
+        for (const n of without) {
+          if (n.line === m.line || baseKeys.has(key(n)) || n.to <= m.from || n.from >= m.to) continue;
+          const k = `${m.line}>${n.line}`;
+          const p = pairs.get(k) ?? { shown: m.line, hidden: n.line, count: {}, example: '', exampleSet: '' };
+          p.count[set] = (p.count[set] ?? 0) + 1;
+          if (!p.example || (!real.has(p.exampleSet) && real.has(set))) { p.example = sentence; p.exampleSet = set; }
+          pairs.set(k, p);
+        }
+      }
+    }
+  }
+  const total = (p: Pair) => Object.values(p.count).reduce((a, b) => a + b, 0);
+  const rows = [...pairs.values()].sort((a, b) => total(b) - total(a));
+  const tsv = ['shown_line\tshown_msg\thidden_line\thidden_msg\ttotal\tby_set\texample_set\texample',
+    ...rows.map((p) => [p.shown, msgAt.get(p.shown), p.hidden, msgAt.get(p.hidden), total(p),
+      Object.entries(p.count).map(([s, n]) => `${s}:${n}`).join(' '), p.exampleSet, clean(p.example)].join('\t'))];
+  fs.writeFileSync(outFile, tsv.join('\n') + '\n');
+  const onReal = rows.filter((p) => Object.keys(p.count).some((s) => real.has(s)));
+  console.log(`${checked} flags checked; ${rows.length} pairs of rules where the first hides the second (${onReal.length} on real text: gaois, elrc, book) -> ${outFile}`);
 } else {
-  console.error('usage: node tools/rule-baseline.ts snapshot <out.tsv> | diff <old.tsv> <new.tsv> | fire <out.json>');
+  console.error('usage: node tools/rule-baseline.ts snapshot <out.tsv> | diff <old.tsv> <new.tsv> | fire <out.json> | masks <out.tsv>');
   process.exit(2);
 }

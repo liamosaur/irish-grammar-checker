@@ -297,6 +297,16 @@ const cases: Case[] = [
   { section: 'Tábla 5Q', text: 'cuala mé', rule: 'CAIGHDEAN', words: 'cuala', fixed: 'chuala mé' },
   { section: 'Tábla 5T', text: 'go feice tú', rule: 'CAIGHDEAN', words: 'feice', fixed: 'go bhfeice tú' },
   { section: 'Tábla 5X', text: 'cuaigh mé', rule: 'CAIGHDEAN', words: 'cuaigh', fixed: 'chuaigh mé' },
+  // muna is the non-standard spelling of mura (FGB: muna, ~b = mura, -b): only muna is flagged,
+  // not the eclipsis after it
+  { section: '5.1.5', text: 'muna bhfuil sé ann', rule: 'CAIGHDEAN', words: 'muna', fixed: 'mura bhfuil sé ann' },
+  // a feminine noun after a preposition and the article takes the dative rule, not the
+  // nominative one (leis an bhféile, leis an mbunscoil); the message offers no single fix
+  { section: '1.4', text: 'chomh leathan leis an farraige', rule: 'CLAOCHLU', words: 'leis an farraige', fixed: null },
+  // the object of an autonomous verb is thú (the book's sentence with tú for thú)
+  { section: '8.2.2', text: 'An é sin an áit ar rugadh tú?', rule: 'BACHOIR', words: 'rugadh tú', fixed: 'An é sin an áit ar rugadh thú?' },
+  // fail for fáil after ar is reported as such, not as a missing lenition (the rule's own example)
+  { section: 'FGB fáil', text: 'Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún.', rule: 'IONADAI', words: 'ar fail', fixed: 'Tá treoirlínte mionsonraithe curtha ar fáil ag an gCoimisiún.' },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,

@@ -116,6 +116,10 @@ DECADE <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # (an long sí, a fairy ship: CO17 10.2.7). Lowercase only: the interrogative An opens a
 # sentence (An dearna sí ...? is an error for An ndearna).
 (an|na) <B><Z>WITHFINITE</Z>NOTECLIPSED</B> [Ss]í:!<V[^<]*>
+# An unmutated word with an autonomous past reading before tú is that form (saolaíodh tú):
+# the personal past and the imperfect are lenited, and no imperative takes tú. tú is then
+# its object, for thú (CO17 8.2.2: An é sin an áit ar rugadh thú?), reported in rialacha-ga.in.
+<B><Z>ANYPASTAUT</Z>([BbCcDdFfGgPpTt][^hHcCpPtT']|[Mm][^Bbh]|[Ss][lnraeiouáéíóú]|[AaEeIiOoUuÁáÉéÍíÓóÚú])ANYTHING</B> [Tt]ú:<V p="n" t="caite">
 <B><Z>WITHFINITE</Z>ANYTHING</B> (tú|SUBJECTPRONOUN):!<([^V]|V p="n")[^<]*>
 <B><Z>WITHVERBTAG</Z>ANYTHING</B> (mé|muid|sibh|sinn):!<[^V][^<]*>
 # go n-éirí, go n-oibrí, etc. 

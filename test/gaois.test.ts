@@ -1,6 +1,7 @@
 // Real sentences the checker flagged, with a reviewer's verdict on each flag:
 // - test/gaois/confirmed.tsv: Irish legislation (the Gaois parallel corpus, Acts 2009-2011), CC BY 4.0.
 // - test/coimisineir/confirmed.tsv: publications of An Coimisinéir Teanga (ELRC corpora), PSI.
+// - test/citizens/confirmed.tsv: the Citizens Information website (ELRC-2438), CC BY 4.0.
 // See the notice at the top of each file and NOTICE.md.
 // - ok: the flag was wrong; the sentence must not get that message.
 // - wrong: the source has the error; the message must still be given.
@@ -18,7 +19,7 @@ import { analyse } from '../web/annotate.ts';
 import { foldForEngine } from '../web/fold.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const FILES = { 'Gaois legislation': 'test/gaois/confirmed.tsv', 'Coimisinéir Teanga': 'test/coimisineir/confirmed.tsv' };
+const FILES = { 'Gaois legislation': 'test/gaois/confirmed.tsv', 'Coimisinéir Teanga': 'test/coimisineir/confirmed.tsv', 'Citizens Information': 'test/citizens/confirmed.tsv' };
 type Row = { file: string; verdict: string; rule: string; source: string; text: string; known?: string };
 const read = (file: string): Row[] => fs.readFileSync(path.join(root, file), 'utf8')
   .split(/\r?\n/)

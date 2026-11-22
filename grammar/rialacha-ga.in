@@ -1004,7 +1004,12 @@ AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
   <T>[Nn]a</T> <E><NFGS>ANYTHING</NFGS></E>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. An bhfuil aon uachtar reoite ar an cuntar?
-<S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU @dative-article
+#. Chuir mé céad punt chuig an banaltra.
+#. Beirim mo mhionn dar an beart a rinne Dia le mo shinsir.
+#. Tá do scrios chomh leathan leis an farraige.
+#. Agus tháinig scéin air roimh an pobal seo ar a líonmhaireacht.
+#. Chuir sé iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
+<S>([Aa][grs]|[Cc]huig|[Dd]ar|[Ff]airis|[Ii]onsar|[Ll]eis|[Rr]oimh|[Tt]har|[Tt]ríd|[Uu]m)</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU @dative-article
 # CB p.17 #9.h  (feminine handled by more general rule)
 <S>[Aa][grs]</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
   <S>[Aa][grs]</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
@@ -1246,11 +1251,13 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # thart ar chúig/chéad ...
 <S>[Aa]r</S> <A>UNLENITED</A>:SEIMHIU
   <S>[Aa]r</S> <A>[Gg]ach</A>:OK
+# fail for fáil (ar fáil, ag fáil, le fáil), before the lenition hint after ar
+#. Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún.
+<S>([Aa][rg]|[Ll]e)</S> <N pl="n" gnt="n" gnd="f">[Ff]ail</N>:IONADAI{fáil}
 # CB p.13 #4.b
 # Lots of exceptions in comhshuite of course.
-# As a side-benefit, since "fail", "domhain", "fead", etc. aren't explicit
+# As a side-benefit, since "domhain", "fead", etc. aren't explicit
 # exceptions, these are caught here as errors:
-#. Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún.
 #. Bhí cead againn fanacht ag obair ar an talamh ar fead trí mhí.
 #. Tá sé an chéad suíomh gréasán ar bronnadh teastas air (OK).
 #. Cosc a bheith ar cic a thabhairt don sliotar.
@@ -1664,9 +1671,6 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 # CB p.24 #11.b.ii, LGG p.113
 #. Tá sé chomh iontach le sneachta dearg.
 <R>[Cc]homh</R> <A pl="n" gnt="n">INITIALVOWEL</A>:PREFIXH
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Chuir mé céad punt chuig an banaltra.
-<S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.14 Note; "~ bheith' not in corpus so no exception
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
 <S>[Cc]huig</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
@@ -1892,9 +1896,6 @@ g?[Cc]h?úig <NP>ANYTHING</NP>:UATHA
   <E><N pl="n" gnt="n" gnd="f">ANYTHING</N></E> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 <N pl="n" gnt="y" gnd="f">(n?Dh?anmhairge|n?Dh?amaisce)</N>:NEEDART
   <T>[Nn]a</T> <E><N pl="n" gnt="y" gnd="f">ANYTHING</N></E>:OK
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Beirim mo mhionn dar an beart a rinne Dia le mo shinsir.
-<S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h  (feminine handled by more general rule)
 <S>[Dd]ar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
   <S>[Dd]ar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
@@ -2266,7 +2267,6 @@ dhó:IONADAI{dó}
 <N>fh?aid</N> <V cop="y">is</V>:IONADAI{fad is}
 <N>fh?aid</N> a:IONADAI{fad a}
 # corpus work
-<S>([Aa][rg]|[Ll]e)</S> <N pl="n" gnt="n" gnd="f">[Ff]ail</N>:IONADAI{fáil}
 <S>[Aa]</S> <N pl="n" gnt="n" gnd="f">fhail</N>:IONADAI{a fháil}
 <D>[Áá]</D> <N pl="n" gnt="n" gnd="f">fhail</N>:IONADAI{á fháil}
 <D>[Áá]</D> <N pl="n" gnt="n" gnd="f">bhfail</N>:IONADAI{á bhfáil}
@@ -2793,8 +2793,6 @@ dhó:IONADAI{dó}
   <U>[Nn]í</U> <E><V p="y" t="coinn">[Ii]ompódh</V></E>:OK
 # exception to "lenite gen. after fem."
 <NFCS>h?ionga</NFCS> <NG>LENITED</NG>:NISEIMHIU
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h  (feminine handled by more general rule)
 <S>[Ii]onsar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
   <S>[Ii]onsar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
@@ -2902,9 +2900,6 @@ dhó:IONADAI{dó}
 <T>[Aa]n</T> <V>leagadh</V>:IONADAI{an leagan}
 <S>[Aa]g</S> <V>leagadh</V>:IONADAI{ag leagan}
 <S>[Ll]e</S> <V>leagadh</V>:IONADAI{le leagan}
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Tá do scrios chomh leathan leis an farraige.
-<S>([Ff]airis|[Ll]eis)</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU @dative-article
 # CB p.17 #9.h  (feminine handled by more general rule)
 <S>([Ff]airis|[Ll]eis)</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
   <S>([Ff]airis|[Ll]eis)</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
@@ -3606,9 +3601,6 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 <[DST]>ANYTHING</[DST]> <V>riaradh</V>:IONADAI{riar}
 # exception to "lenite gen. after fem."
 <N pl="n" gnt="n" gnd="f">([Rr]ogha|[Rr]inn)</N> <NG>LENITED</NG>:NISEIMHIU
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Agus tháinig scéin air roimh an pobal seo ar a líonmhaireacht.
-<S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.13 #4.a
 #. Is gaiste é eagla roimh daoine.
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU @prep-lenition
@@ -3942,9 +3934,6 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 <N pl="y" gnt="n" gnd="m">Thearmainn</N> <N pl="n" gnt="y" gnd="f">Chathrach</N>:CAIGHDEAN{Thearmann Caithreach}
 #  the next rule should stay commented; caught by NIURU rule
 # <T>na</T> <N>dteorann</N>:IONADAI{dteorainneacha}
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Chuir sé iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
-[Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h  (feminine handled by more general rule)
 <S>[Tt]har</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
   <S>[Tt]har</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
@@ -4060,8 +4049,6 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
 # NGBC p.184, CB p.76 #8.a (implicitly); needs disambig.
 # d?[Tt]h?rí <NP>ANYTHING</NP>:UATHA
 # d?[Tt]h?rí <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Tt]ríd</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.6 #2 _singular_ article only; corpus
 #. Feidhmeoidh an ciste coimisiúnaithe tríd na foilsitheoirí go príomha.
 <S>[Tt]ríd</S> <T>na</T>:BACHOIR{trí na}
@@ -4162,8 +4149,6 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
 <S>[Uu]m</S> <N>UNLENITEDCDFGST</N>:SEIMHIU
 #. Bhíodh an dinnéar acu um mheán lae.
 <S>[Uu]m</S> <N>LENITEDBMP</N>:NISEIMHIU
-# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h  (feminine handled by more general rule)
 <S>[Uu]m</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
   <S>[Uu]m</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNBOUNDADJ</A>:OK
@@ -4198,6 +4183,12 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
 #   obviously can't match on <VPRES>BROADENDING</VPRES> since we only want -ann
 #   so we need the various macros below...
 #############################################################################
+# CO17 8.2.2: the object of a verb is thú (molaim thú), after an autonomous verb too (An é sin
+# an áit ar rugadh thú?)
+<V p="n" t="[^"]+">ANYTHING</V> <P>[Tt]ú</P>:BACHOIR{thú}
+# not before a + verbal noun, where the pronoun is the object of the verbal noun (Féadfar tú a
+# áireamh): CO17 8.2.2 does not cover it
+  <E><V p="n" t="[^"]+">ANYTHING</V> <P>[Tt]ú</P></E> [Aa]:OK
 # present
 <V>BROADFIRSTPRES</V> <P>mé</P>:SYNTHETIC{-aim}
 <V>SLENDERFIRSTPRES</V> <P>mé</P>:SYNTHETIC{-im}
@@ -4425,6 +4416,8 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
 # After a conjunction that eclipses (sula, mura, go, nach, dá) the word is a verb read as a
 # noun (sula n-éagann do cháin).
   <C>([Ss]ula|[Mm]ura|[Gg]o|[Nn]ach|[Dd]á)</C> <E><N>ECLIPSED</N></E>:OK
+# muna, the non-standard spelling of mura (FGB: muna, ~b = mura, -b), is tagged <X>; it eclipses too
+  <X>[Mm]una</X> <E><N>ECLIPSED</N></E>:OK
 # this exception is too broad (allows "i mb'ábhar", etc.) but errors
 # with such words are caught above with a tighter rule requiring "go","dá",etc.
   <N>INITIALMBAPOST</N>:OK
@@ -4466,6 +4459,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
   <Q>[Aa]n</Q> <E><V>ECLIPSEDDT</V></E>:OK
   <Q>[Aa]n</Q> <E><V>ECLIPSEDBCFGP</V></E>:OK
   <C>([Dd]á|[Gg]o|[Mm]ura|[Ss]ula)</C> <E><V>ECLIPSED</V></E>:OK
+  <X>[Mm]una</X> <E><V>ECLIPSED</V></E>:OK
   <S>NONRFORMPREP</S> <E><V>ECLIPSED</V></E>:OK
 # CB p.133 #12.e
   <U>[Nn]í</U> <E><V>FAIGHECLIPSED</V></E>:OK
@@ -4724,6 +4718,7 @@ AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
 #. Nuair a raibh mé óg.
 <V>DEPENDENT</V>:ABSOLUTE
   <C>NONRFORMCONJ</C> <E><V>DEPENDENT</V></E>:OK
+  <X>[Mm]una</X> <E><V>DEPENDENT</V></E>:OK
   <S>NONRFORMPREP</S> <E><V>DEPENDENT</V></E>:OK
 #. An clapsholas a raibh mé ag dréim leis (OK).
   <[HU]>[Aa]</[HU]> <E><V>DEPENDENT</V></E>:OK

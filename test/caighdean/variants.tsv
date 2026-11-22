@@ -119,7 +119,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfaca → faca	An	An faca tú carr Phóil Mhic Cearáin?	An bhfaca tú carr Phóil Mhic Cearáin?	10	10.2.11	182	3	flagged:CAIGHDEAN
 	eclipsis	bhfaca → faca	An	An faca tú eireaball an tsionnaigh?	An bhfaca tú eireaball an tsionnaigh?	10	10.10.1	192	3	flagged:CAIGHDEAN
 	eclipsis	bhfaca → faca	An	An faca tú an cóta nua a fuair mé?	An bhfaca tú an cóta nua a fuair mé?	11	11.7.1(a)	213	3	flagged:CAIGHDEAN
-	eclipsis	bhfarraige → farraige	an	thar an farraige chiúin	thar an bhfarraige chiúin	1	1.4.1	8	8	flagged:SEIMHIU
+	eclipsis	bhfarraige → farraige	an	thar an farraige chiúin	thar an bhfarraige chiúin	1	1.4.1	8	8	flagged:CLAOCHLU
 	eclipsis	bhfasach → fasach	an	leis an fasach cruinn	leis an bhfasach cruinn	1	1.4.1	8	8	flagged:CLAOCHLU
 	eclipsis	bhfear → fear	an	ag an fear maith	ag an bhfear maith	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	bhfear → fear	an	ag an fear beag	ag an bhfear beag	4	4.7	64	6	flagged:CLAOCHLU
@@ -127,9 +127,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfear → fear	an	Labhair leis an fear sin is uncail leat.	Labhair leis an bhfear sin is uncail leat.	7	7.2.3	122	16	flagged:CLAOCHLU
 	eclipsis	bhfeiceann → feiceann	An	An feiceann tú an pháirc úd thall?	An bhfeiceann tú an pháirc úd thall?	4	4.10	67	3	flagged:URU
 	eclipsis	bhfeiceann → feiceann	An	An feiceann tú an fear amach?	An bhfeiceann tú an fear amach?	6	6.1.1(j)	108	3	flagged:URU
-	eclipsis	bhféile → féile	an	Cuireadh tús leis an féile seachtaine le hócáid i dteach an Mhéara.	Cuireadh tús leis an bhféile seachtaine le hócáid i dteach an Mhéara.	10	10.2.7	178	21	flagged:SEIMHIU
+	eclipsis	bhféile → féile	an	Cuireadh tús leis an féile seachtaine le hócáid i dteach an Mhéara.	Cuireadh tús leis an bhféile seachtaine le hócáid i dteach an Mhéara.	10	10.2.7	178	21	flagged:CLAOCHLU
 	eclipsis	bhfoireann → foireann	an	Tá siad ag tabhairt aghaidh ar an foireann eile anois.	Tá siad ag tabhairt aghaidh ar an bhfoireann eile anois.	3	3.3.5	48	34	flagged:CLAOCHLU
-	eclipsis	bhfoireann → foireann	an	Bhí fóram ann trínar ghnách leis an foireann ceisteanna a ardú.	Bhí fóram ann trínar ghnách leis an bhfoireann ceisteanna a ardú.	7	7.3.2	127	36	flagged:SEIMHIU
+	eclipsis	bhfoireann → foireann	an	Bhí fóram ann trínar ghnách leis an foireann ceisteanna a ardú.	Bhí fóram ann trínar ghnách leis an bhfoireann ceisteanna a ardú.	7	7.3.2	127	36	flagged:CLAOCHLU
 	eclipsis	bhfuair → fuair	An	An fuair tú cuid den airgead?	An bhfuair tú cuid den airgead?	3	3.1.10	40	3	flagged:URU
 	eclipsis	bhfuair → fuair	An	An fuair sé barraíocht bia?	An bhfuair sé barraíocht bia?	10	10.2.7	176	3	flagged:URU
 	eclipsis	bhfuair → fuair	An	An fuair tú aon bheart sa phost?	An bhfuair tú aon bheart sa phost?	10	10.2.3	172	3	flagged:URU
@@ -159,7 +159,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	bhfuil → fuil	An	An fuil a fhios agat cén tráth a bhfoilseofar é?	An bhfuil a fhios agat cén tráth a bhfoilseofar é?	11	11.3.1(g)	208	3	flagged:SEIMHIU
 	eclipsis	bhfuil → fuil	An	An fuil a fhios agat cén tráth a fhoilseofar é?	An bhfuil a fhios agat cén tráth a fhoilseofar é?	11	11.2.1(e)	204	3	flagged:SEIMHIU
 	eclipsis	bhfuil → fuil	An	An fuil aon duine nár tháinig abhaile ón gceolchoirm fós?	An bhfuil aon duine nár tháinig abhaile ón gceolchoirm fós?	11	11.6.2(a)(ii)	212	3	flagged:SEIMHIU
-	eclipsis	bhfuinneog → fuinneog	an	tríd an fuinneog ghorm	tríd an bhfuinneog ghorm	1	1.4.1	8	8	flagged:SEIMHIU
+	eclipsis	bhfuinneog → fuinneog	an	tríd an fuinneog ghorm	tríd an bhfuinneog ghorm	1	1.4.1	8	8	flagged:CLAOCHLU
 	eclipsis	bpáirc → páirc	an	as an páirc chéanna	as an bpáirc chéanna	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	bPiarsach → Piarsach	an	Dán leis an Piarsach is ea A Éin Bhig.	Dán leis an bPiarsach is ea A Éin Bhig.	10	10.3.1	183	12	-
 	eclipsis	bpróiseas → próiseas	an	Tá súil ag na Náisiúin Aontaithe go mbeidh dea-thoradh ar an próiseas.	Tá súil ag na Náisiúin Aontaithe go mbeidh dea-thoradh ar an bpróiseas.	3	3.2.1	42	61	flagged:CLAOCHLU
@@ -185,12 +185,12 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	gcuideachta → cuideachta	an	ag an cuideachta bheag	ag an gcuideachta bheag	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	mbád → bád	an	Mheas mé go mba ar an bád a tháinig siad	Mheas mé go mba ar an mbád a tháinig siad	7	7.2.2	120	22	flagged:CLAOCHLU
 	eclipsis	mbád → bád	an	Is ar an bád a chuaigh sí go hÁrainn.	Is ar an mbád a chuaigh sí go hÁrainn.	10	10.11.3	193	9	flagged:CLAOCHLU
-	eclipsis	mbainis → bainis	an	roimh an bainis bheag	roimh an mbainis bheag	1	1.4.1	8	9	flagged:SEIMHIU
+	eclipsis	mbainis → bainis	an	roimh an bainis bheag	roimh an mbainis bheag	1	1.4.1	8	9	flagged:CLAOCHLU
 	eclipsis	mbainis → bainis	an	Bhuail mé le bhur gcairde ag an bainis.	Bhuail mé le bhur gcairde ag an mbainis.	10	10.6.2	188	32	flagged:CLAOCHLU
-	eclipsis	mbáisteach → báisteach	an	leis an báisteach throm	leis an mbáisteach throm	1	1.4.1	8	8	flagged:SEIMHIU
+	eclipsis	mbáisteach → báisteach	an	leis an báisteach throm	leis an mbáisteach throm	1	1.4.1	8	8	flagged:CLAOCHLU
 	eclipsis	mbean → bean	an	ar an bean shaibhir	ar an mbean shaibhir	1	1.4.1	8	6	flagged:CLAOCHLU
-	eclipsis	mbean → bean	an	chuig an bean ghairmiúil	chuig an mbean ghairmiúil	1	1.4.1	8	9	flagged:SEIMHIU
-	eclipsis	mbean → bean	an	fairis an bean chairdiúil	fairis an mbean chairdiúil	1	1.4.1	8	10	flagged:SEIMHIU
+	eclipsis	mbean → bean	an	chuig an bean ghairmiúil	chuig an mbean ghairmiúil	1	1.4.1	8	9	flagged:CLAOCHLU
+	eclipsis	mbean → bean	an	fairis an bean chairdiúil	fairis an mbean chairdiúil	1	1.4.1	8	10	flagged:CLAOCHLU
 	eclipsis	mbean → bean	an	ag an bean bheag	ag an mbean bheag	4	4.2.2	57	6	flagged:CLAOCHLU
 	eclipsis	mbean → bean	an	ar an bean bheag	ar an mbean bheag	4	4.2.4	58	6	flagged:CLAOCHLU
 	eclipsis	mbean → bean	an	An raibh ionadh ar an bean ar tháinig a mac abhaile ón Astráil?	An raibh ionadh ar an mbean ar tháinig a mac abhaile ón Astráil?	11	11.6.1(b)(ii)	211	22	flagged:CLAOCHLU
@@ -200,10 +200,10 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	mbeidh → beidh	An	An beidh cupán tae agat?	An mbeidh cupán tae agat?	10	10.8.2	191	3	flagged:URU
 	eclipsis	mBille → Bille	an	um an Bille fada	um an mBille fada	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	mbíonn → bíonn	An	An bíonn sé ag scríobh leabhair staire?	An mbíonn sé ag scríobh leabhair staire?	3	3.3.9	51	3	flagged:URU
-	eclipsis	mbliain → bliain	an	Baineann na ráitis airgeadais leis an bliain dar chríoch an 31 Nollaig 2014.	Baineann na ráitis airgeadais leis an mbliain dar chríoch an 31 Nollaig 2014.	1	1.1.5(g)	3	38	flagged:SEIMHIU
+	eclipsis	mbliain → bliain	an	Baineann na ráitis airgeadais leis an bliain dar chríoch an 31 Nollaig 2014.	Baineann na ráitis airgeadais leis an mbliain dar chríoch an 31 Nollaig 2014.	1	1.1.5(g)	3	38	flagged:CLAOCHLU
 	eclipsis	mbosca → bosca	an	ar an bosca dearg	ar an mbosca dearg	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	mbuachaill → buachaill	an	leis an buachaill ciúin	leis an mbuachaill ciúin	4	4.7	64	8	flagged:CLAOCHLU
-	eclipsis	mbunscoil → bunscoil	an	Tá carrchlós díreach in aice leis an bunscoil.	Tá carrchlós díreach in aice leis an mbunscoil.	10	10.2.12	182	37	flagged:SEIMHIU
+	eclipsis	mbunscoil → bunscoil	an	Tá carrchlós díreach in aice leis an bunscoil.	Tá carrchlós díreach in aice leis an mbunscoil.	10	10.2.12	182	37	flagged:CLAOCHLU
 	eclipsis	mbus → bus	an	D’imigh siúd leis an bus	D’imigh siúd leis an mbus	8	8.6.1	140	21	flagged:CLAOCHLU
 	eclipsis	ndeachaigh → deachaigh	An	An deachaigh Áine anonn go Sasana inné?	An ndeachaigh Áine anonn go Sasana inné?	6	Tábla 6B	110	3	flagged:NEAMHCHOIT
 	eclipsis	ndeachaigh → deachaigh	An	An deachaigh Áine sall go Sasana inné?	An ndeachaigh Áine sall go Sasana inné?	6	Tábla 6B	110	3	flagged:NEAMHCHOIT
@@ -221,7 +221,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	ngiúiré → giúiré	an	Cén treoir a tugadh don dáréag ar an giúiré?	Cén treoir a tugadh don dáréag ar an ngiúiré?	10	10.3.3	185	37	flagged:CLAOCHLU
 	eclipsis	ngleann → gleann	an	as an gleann mór	as an ngleann mór	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	ngnáth → gnáth	an	Tá na fostaithe ag iarraidh tuarastail as an gnáth.	Tá na fostaithe ag iarraidh tuarastail as an ngnáth.	3	3.3.9	51	45	flagged:CLAOCHLU
-	eclipsis	ngníomhaireacht → gníomhaireacht	an	um an gníomhaireacht reachtúil	um an ngníomhaireacht reachtúil	1	1.4.1	8	6	flagged:SEIMHIU
+	eclipsis	ngníomhaireacht → gníomhaireacht	an	um an gníomhaireacht reachtúil	um an ngníomhaireacht reachtúil	1	1.4.1	8	6	flagged:CLAOCHLU
 	eclipsis	ngnó → gnó	an	leis an gnó a dhéanamh	leis an ngnó a dhéanamh	1	1.3.3	7	8	flagged:CLAOCHLU
 	eclipsis	gcúl → cúl	ar	d'ainneoin an chéim ar cúl	d'ainneoin an chéim ar gcúl	3	3.3.1	45	23	flagged:IONADAI
 	eclipsis	gcúl → cúl	ar	de dheasca an tsracfhéachaint ar cúl	de dheasca an tsracfhéachaint ar gcúl	3	3.3.1	45	33	flagged:IONADAI
@@ -2435,17 +2435,17 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chun → cun	amach	An ndeachaigh sé amach cun iad a cheannach?	An ndeachaigh sé amach chun iad a cheannach?	8	8.2.5	132	23	flagged:CAIGHDEAN
 	lenition	Ghaeilge → Gaeilge	amhráin	Bhuail mé le fear ar chum a mhac amhráin Gaeilge.	Bhuail mé le fear ar chum a mhac amhráin Ghaeilge.	11	11.6.1(b)(ii)	211	41	-
 	lenition	cháiliúla → cáiliúla	amhránaithe	beirt amhránaithe cáiliúla	beirt amhránaithe cháiliúla	9	9.4.3	158	18	flagged:SEIMHIU
-	lenition	bhainis → bainis	an	roimh an bainis bheag	roimh an bhainis bheag	1	1.7.3	16	9	flagged:SEIMHIU
+	lenition	bhainis → bainis	an	roimh an bainis bheag	roimh an bhainis bheag	1	1.7.3	16	9	flagged:CLAOCHLU
 	lenition	bhainis → bainis	an	Beidh an bainis sin mór.	Beidh an bhainis sin mór.	4	4.11	67	9	flagged:SEIMHIU
-	lenition	bháisteach → báisteach	an	leis an báisteach throm	leis an bháisteach throm	1	1.7.3	16	8	flagged:SEIMHIU
+	lenition	bháisteach → báisteach	an	leis an báisteach throm	leis an bháisteach throm	1	1.7.3	16	8	flagged:CLAOCHLU
 	lenition	Bhanríon → Banríon	an	Is í an Banríon Elsa a Dó atá sa scannán.	Is í an Bhanríon Elsa a Dó atá sa scannán.	1	1.1.5(c)	2	8	flagged:SEIMHIU
 	lenition	Bhaváir → Baváir	an	an Baváir	an Bhaváir	1	1.1.5(i)	3	3	flagged:SEIMHIU
 	lenition	bheainín → beainín	an	an beainín bheag	an bheainín bheag	2	2.5.2	32	3	flagged:SEIMHIU
 	lenition	bheainín → beainín	an	teach an beainín bhig	teach an bheainín bhig	2	2.5.2	32	9	flagged:SEIMHIU
 	lenition	bhealaigh → bealaigh	an	Chuir sí ola ar dhoras an bealaigh chúng.	Chuir sí ola ar dhoras an bhealaigh chúng.	4	4.4.1	61	26	flagged:SEIMHIU
 	lenition	bhean → bean	an	ar an bean shaibhir	ar an bhean shaibhir	1	1.7.3	16	6	flagged:CLAOCHLU
-	lenition	bhean → bean	an	chuig an bean ghairmiúil	chuig an bhean ghairmiúil	1	1.7.3	16	9	flagged:SEIMHIU
-	lenition	bhean → bean	an	fairis an bean chairdiúil	fairis an bhean chairdiúil	1	1.7.3	16	10	flagged:SEIMHIU
+	lenition	bhean → bean	an	chuig an bean ghairmiúil	chuig an bhean ghairmiúil	1	1.7.3	16	9	flagged:CLAOCHLU
+	lenition	bhean → bean	an	fairis an bean chairdiúil	fairis an bhean chairdiúil	1	1.7.3	16	10	flagged:CLAOCHLU
 	lenition	bhean → bean	an	an bean bheag	an bhean bheag	4	4.7	64	3	flagged:SEIMHIU
 	lenition	bhean → bean	an	an bean ghairmiúil	an bhean ghairmiúil	4	4.7	64	3	flagged:SEIMHIU
 	lenition	bhean → bean	an	An bhfuil an bean sin saibhir?	An bhfuil an bhean sin saibhir?	4	4.11	67	13	flagged:SEIMHIU
@@ -2690,7 +2690,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fhadhb → fadhb	an	an fadhb	an fhadhb	3	3.1.2	37	3	flagged:SEIMHIU
 	lenition	fhadhb → fadhb	an	Réiteoidh na hoifigigh teicneolaíochta faisnéise an fadhb.	Réiteoidh na hoifigigh teicneolaíochta faisnéise an fhadhb.	10	10.2.8	180	52	flagged:SEIMHIU
 	lenition	fhaisnéis → faisnéis	an	Luaigh, tá an faisnéis i lár fhomhír (i).	Luaigh, tá an fhaisnéis i lár fhomhír (i).	3	3.3.1	44	14	flagged:SEIMHIU
-	lenition	fharraige → farraige	an	thar an farraige chiúin	thar an fharraige chiúin	1	1.7.3	16	8	flagged:SEIMHIU
+	lenition	fharraige → farraige	an	thar an farraige chiúin	thar an fharraige chiúin	1	1.7.3	16	8	flagged:CLAOCHLU
 	lenition	fhasach → fasach	an	leis an fasach chruinn	leis an fhasach chruinn	1	1.7.3	16	8	flagged:CLAOCHLU
 	lenition	fheachtais → feachtais	an	Bhí gach duine i bhfabhar an feachtais thionsclaíoch.	Bhí gach duine i bhfabhar an fheachtais thionsclaíoch.	4	4.4.1	60	29	flagged:SEIMHIU
 	lenition	fhear → fear	an	ag an fear mhaith	ag an fhear mhaith	1	1.7.3	16	6	flagged:CLAOCHLU
@@ -2725,7 +2725,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Fhrainc → Frainc	an	Is tír álainn í an Frainc.	Is tír álainn í an Fhrainc.	1	1.1.5(i)	3	19	flagged:SEIMHIU
 	lenition	Fhrainc → Frainc	an	Sroichfidh siad an Frainc maidin Dé Sathairn.	Sroichfidh siad an Fhrainc maidin Dé Sathairn.	10	10.2.10	181	19	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	an	an fuinneog	an fhuinneog	1	1.2	6	3	flagged:SEIMHIU
-	lenition	fhuinneog → fuinneog	an	tríd an fuinneog ghorm	tríd an fhuinneog ghorm	1	1.7.3	16	8	flagged:SEIMHIU
+	lenition	fhuinneog → fuinneog	an	tríd an fuinneog ghorm	tríd an fhuinneog ghorm	1	1.7.3	16	8	flagged:CLAOCHLU
 	lenition	fhuinneog → fuinneog	an	Ar dhún sé an fuinneog?	Ar dhún sé an fhuinneog?	10	10.2.1	171	14	flagged:SEIMHIU
 	lenition	Ghaeilge → Gaeilge	an	an Gaeilge	an Ghaeilge	1	1.1.5(n)	5	3	flagged:SEIMHIU
 	lenition	ghairdín → gairdín	an	tríd an gairdín bhreá	tríd an ghairdín bhreá	1	1.7.3	16	8	flagged:CLAOCHLU
@@ -2745,7 +2745,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	ghloine → gloine	an	an gloine dheireanach den fhíon dearg	an ghloine dheireanach den fhíon dearg	3	3.1.11	41	3	flagged:SEIMHIU
 	lenition	Ghlóir → Glóir	an	an Glóir	an Ghlóir	1	1.1.5(j)	4	3	flagged:SEIMHIU
 	lenition	Ghlóir → Glóir	an	Dúradh an Glóir i lár an Aifrinn.	Dúradh an Ghlóir i lár an Aifrinn.	1	1.1.5(j)	4	10	flagged:SEIMHIU
-	lenition	ghníomhaireacht → gníomhaireacht	an	um an gníomhaireacht reachtúil	um an ghníomhaireacht reachtúil	1	1.7.3	16	6	flagged:SEIMHIU
+	lenition	ghníomhaireacht → gníomhaireacht	an	um an gníomhaireacht reachtúil	um an ghníomhaireacht reachtúil	1	1.7.3	16	6	flagged:CLAOCHLU
 	lenition	Ghníomhaireacht → Gníomhaireacht	An	An Gníomhaireacht um Thacaíocht Teaghlaigh	An Ghníomhaireacht um Thacaíocht Teaghlaigh	1	1.1.3	1	3	flagged:SEIMHIU
 	lenition	ghrian → grian	an	Bhí an grian ag baint na súl asam	Bhí an ghrian ag baint na súl asam	1	1.1.1	1	7	flagged:SEIMHIU
 	lenition	ghrian → grian	an	Is gile an grian ná an ghealach agus ná na pláinéid.	Is gile an ghrian ná an ghealach agus ná na pláinéid.	7	7.1.1	115	11	flagged:SEIMHIU
@@ -4201,7 +4201,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhaidin → maidin	roimh	Críochnóidh sí an obair roimh maidin.	Críochnóidh sí an obair roimh mhaidin.	10	10.2.5	173	30	flagged:SEIMHIU
 	lenition	theacht → teacht	roimh	Tá siad ag maisiú na dtithe roimh teacht an tsamhraidh.	Tá siad ag maisiú na dtithe roimh theacht an tsamhraidh.	10	10.6.1	188	34	flagged:SEIMHIU
 	lenition	dhéag → déag	rua	ceithre mhadra rua déag	ceithre mhadra rua dhéag	9	9.3.1	145	19	-
-	lenition	thú → tú	rugadh	An é sin an áit ar rugadh tú?	An é sin an áit ar rugadh thú?	8	8.2.2	131	26	-
+	lenition	thú → tú	rugadh	An é sin an áit ar rugadh tú?	An é sin an áit ar rugadh thú?	8	8.2.2	131	26	flagged:BACHOIR
 	lenition	bhaile → baile	sa	Fan sa baile, más amhlaidh is fearr leat é.	Fan sa bhaile, más amhlaidh is fearr leat é.	7	7.3.4	128	7	flagged:SEIMHIU
 	lenition	bhaile → baile	sa	Ní raibh sé sa baile ó fuarthas ciontach é.	Ní raibh sé sa bhaile ó fuarthas ciontach é.	10	10.4.1	186	15	flagged:SEIMHIU
 	lenition	bhean → bean	sa	An-drochrud a bhí sa bean sin	An-drochrud a bhí sa bhean sin	10	10.2.12	182	21	flagged:SEIMHIU
