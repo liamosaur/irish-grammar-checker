@@ -60,7 +60,7 @@ export const en = {
   'how.title': 'How it works',
   'how.1': 'Write or paste Irish text and press Check.',
   'how.2': 'Passages that may contain a mistake are highlighted. Select one, or its note below, to see what the checker noticed.',
-  'how.3': 'You can click on the suggested change and your text will be updated with the suggestion.',
+  'how.3': 'Where a change is suggested, you can click on it and your text will be updated with the suggestion.',
   'how.limits.h': 'Worth knowing',
   'how.limits.1': 'It follows a long list of written grammar rules. These rules are not perfect - it can miss mistakes and sometimes flag text that is fine. If you notice any mistakes, [I\'d love to hear about them](https://github.com/liamosaur/irish-grammar-checker/issues)!',
   'how.limits.2': 'Treat it as a learning tool. If you need text to be professionally proofed, engage the services of a professional proofer/translator.',
@@ -73,11 +73,12 @@ export const en = {
   'about.title': 'About',
   'about.what': 'A grammar checker for Irish. It marks words and phrases that look wrong, such as a missing or unnecessary mutation, a repeated word or a non-standard spelling, and says why. [It may make mistakes](#how).',
   'about.author': 'This website was made by [Liam O](https://bsky.app/profile/liamosar.bsky.social).',
-  'about.credits.1': 'This tool is a port of [An Gramadóir](https://cadhan.com/gramadoir/foirm-en.html), the Irish grammar checker written by Kevin P. Scannell, available at [github.com/kscanne/gramadoir](https://github.com/kscanne/gramadoir). The grammar rules and most of the word list come from his work. It is a derivative work, released under the GNU General Public License, version 2 or (at your option) any later version.',
+  'about.credits.1': 'This tool is originally based on [An Gramadóir](https://cadhan.com/gramadoir/foirm-en.html), the Irish grammar checker written by Kevin P. Scannell, available at [github.com/kscanne/gramadoir](https://github.com/kscanne/gramadoir). The word list mostly comes from his work. Gramadóir is based on grammar rules from the 1994 Christian Brothers Grammar textbook. The grammar rules in this version are based instead on Caighdeán Oifigiúil 2017. It is a derivative work, released under the GNU General Public License, version 2 or (at your option) any later version.',
   'about.credits.2': 'The word list also contains information from the Irish National Morphology Database (Bunachar Náisiúnta Moirfeolaíochta), © Foras na Gaeilge, available at [github.com/michmech/BuNaMo](https://github.com/michmech/BuNaMo). The database is made available under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1.0/), and its individual contents under the [Database Contents License 1.0](https://opendatacommons.org/licenses/dbcl/1.0/). Only word forms, which forms belong to the same word (for example, which is the genitive of which), and grammatical tags derived from them are used.',
   'about.source': 'The source code of this site is at [github.com/liamosaur/irish-grammar-checker](https://github.com/liamosaur/irish-grammar-checker).',
   'about.how':'For how to use the checker, and its limits, see [How it works](#how).',
-  'about.credits.3': 'This site is not affiliated with or endorsed by Kevin P. Scannell, the original An Gramadóir project, or Foras na Gaeilge.',
+  'about.credits.co17': 'The explanations shown with each error cite and quote An Caighdeán Oifigiúil (2017), © Houses of the Oireachtas.',
+  'about.credits.3': 'This site is not affiliated with or endorsed by Kevin P. Scannell, the original An Gramadóir project, Foras na Gaeilge, or the Houses of the Oireachtas.',
 } as const;
 
 export type StringKey = keyof typeof en;
