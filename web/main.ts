@@ -23,8 +23,10 @@ const show = (el: HTMLElement, on: boolean) => { el.hidden = !on; };
 
 document.documentElement.lang = localeIsComplete() ? currentLocale() : 'en';
 applyStrings();
-document.title = t('page.title');
-$('brand').textContent = APP_NAME;
+// DEV BRANCH ONLY (caighdean-rules preview builds): revert this commit before merging into main.
+const WIP = 'Caighdeán Oifigiúil work-in-progress version';
+document.title = `${t('page.title')} – ${WIP}`;
+$('brand').textContent = `${APP_NAME} – ${WIP}`;
 $('brand').setAttribute('aria-label', t('nav.home'));
 
 let exampleAt = Math.floor(Math.random() * EXAMPLES.length);
