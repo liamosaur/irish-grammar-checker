@@ -433,6 +433,25 @@ annotated.addEventListener('keydown', (e) => {
   select(shown[next], 'key');
 });
 
+// The checked text looks like a text box, so "Select all" (Android's context menu, Ctrl+A) and a
+// drag that starts in it should stay inside it; on a plain element the browser selects the page.
+let selectingInText = false;
+document.addEventListener('pointerdown', (e) => { selectingInText = annotated.contains(e.target as Node); }, true);
+annotated.addEventListener('focusin', () => { selectingInText = true; });
+annotated.addEventListener('focusout', (e) => { if (!annotated.contains(e.relatedTarget as Node | null)) selectingInText = false; });
+document.addEventListener('selectionchange', () => {
+  const sel = getSelection();
+  if (!selectingInText || !sel?.rangeCount || $('results').hidden) return;
+  const r = sel.getRangeAt(0);
+  if (annotated.contains(r.commonAncestorContainer) || !r.intersectsNode(annotated)) return;
+  const inner = document.createRange();
+  inner.selectNodeContents(annotated);
+  if (r.compareBoundaryPoints(Range.START_TO_START, inner) > 0) inner.setStart(r.startContainer, r.startOffset);
+  if (r.compareBoundaryPoints(Range.END_TO_END, inner) < 0) inner.setEnd(r.endContainer, r.endOffset);
+  sel.removeAllRanges();
+  sel.addRange(inner);
+});
+
 function backToEditor(focus: boolean) {
   show($('results'), false);
   show($('editor'), true);
