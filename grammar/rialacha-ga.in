@@ -4793,6 +4793,19 @@ AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
   <S>COMPOUND</S> <A>ANYTHING</A> <E><A>LENITED</A></E>:OK
 # nó a chomhionann, a bheag nó a mhór
   <D>[Aa]</D> <E><A>LENITED</A></E>:OK
+# CO17 10.2.5(a): after a preposition that lenites, the lenition is the preposition's, and the word
+# is used as a noun (mar chleithiúnach agat).
+  <[CS]>([Dd][eo]|[Ff]aoi|[Ii]onsar|[Mm]ar|[Óó]|[Rr]oimh|[Tt]rí|[Uu]m)</[CS]> <E><A>LENITED</A></E>:OK
+# CO17 10.2.4(a): aon lenites the noun after it (an t-aon cheart), which may be tagged as an adjective.
+  <[AN]>(t-)?[Aa]on</[AN]> <E><A>LENITED</A></E>:OK
+# After a word not in the app's dictionary, its gender and number are unknown (pháirtnéireacht
+# shibhialta); that word has a message of its own.
+  <X>ANYTHING</X> <E><A>LENITED</A></E>:OK
+  <X>ANYTHING</X> <A>ANYTHING</A> <E><A>LENITED</A></E>:OK
+# A verb in the present or past is followed by its subject, not an adjective: a lenited adjective
+# after a word tagged so shows that the word is a noun (seirbhísí sláinte agus cúraim shóisialta;
+# leabhair chuntais chuí). Not the imperative, as an adjective follows bí (Bí cúramach).
+  <V p="y" t="(láith|caite)">ANYTHING</V> <E><A>LENITED</A></E>:OK
 ######## dá and a with the comparative form of an adjective (CO17 4.8.3)
 # Dá chríonna é, ...; Dá oilte é, ...; Ní chreidfeá a uaigní a bhí an áit;
 # B'aoibhinn liom a bhinne a labhair sí. dá lenites the adjective (dá
@@ -4878,6 +4891,9 @@ AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
 # caidrimh choigríche chláraithe): the adjective describes the first noun (CO17 4.2). AFTERNOUNANDGEN:
 # see tools/generate-rules.mjs.
   AFTERNOUNANDGEN <E><A>LENITED</A></E>:OK
+# The same with the adjective joined to the genitive by agus, nó or ná: both describe the first
+# noun (comhairle dlí nó ghairmiúil; pinsin ceirde agus phearsanta; CO17 4.2).
+  AFTERNOUNANDGEN <C>([Aa]gus|[Nn]ó|[Nn]á)</C> <E><A>LENITED</A></E>:OK
   <NFCS>ANYTHING</NFCS> <NG>ANYTHING</NG> <E><A pl="n" gnt="n">LENITED</A></E>:OK
 # Two adjectives joined by agus, nó or ná take the same lenition (ráitis bhréagacha nó
 # mhíthreoracha; CO17 4.2).
@@ -5492,3 +5508,64 @@ háirithe:INPHRASE{go háirithe}
   <S>[Ss]na</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
   <Q>[Cc]én</Q> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
   <V cop="y">ANYTHING</V> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+# CO17 1.5.1(a), 3.1.9, 3.3.12(a): a noun that depends on another noun is in the genitive (Is cóta
+# mná é; Is údar leabhar í; An leabhar múinteora scoile é seo?). A hint: the rules cannot tell such
+# a noun from one with a role of its own (the object of a verb: Tugann an clár deis do dhaoine; the
+# object before a + verbal noun, CO17 3.3.2(a): Rinne mé iarracht scéal a scríobh). The engine drops
+# the mark when the second noun has a genitive reading anywhere in the word list (soilse ceo;
+# imeachtaí dlí: src/engine.ts), so it is shown only where the form is the nominative alone. Last in
+# the file, so that it masks no other rule. The exceptions are the places where CO17 3.3 uses the
+# nominative instead of the genitive, and other structures with two nouns side by side.
+<N>[a-záéíóú]NONCOMPOUND</N> <NCS>[a-záéíóú]NONCOMPOUND</NCS>:WEAKGENITIVE @gen-after-noun
+# the subject and the object of a verb (fhaigheann an mháthair bás)
+  <V>ANYTHING</V> <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+  <V>ANYTHING</V> <T>ANYTHING</T> <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+# a genitive ends the noun phrase it qualifies, so a nominative after it starts a phrase of its
+# own, usually the object (Is féidir le sealbhóirí tí dramhaíl ... a fhágáil; Ghlac deich gcinn de
+# chumainn foirgníochta páirt sa suirbhé; 2 spúnóg bhoird mil)
+  <E><N pl="." gnt="y" gnd=".">ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+# at the start of a clause the first word is often an imperative the word list also has as a noun
+# (Chun iarratas a dhéanamh, comhlánaigh foirm iarratais)
+  CLAUSESTART <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+# 3.3.2(a): the object before a + verbal noun (Rinne mé iarracht scéal a scríobh)
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> VNLATER:OK
+# 3.3.1: a noun with a definite genitive after it is not inflected (Sin í eochair theach Ghráinne;
+# Tá an meicneoir ag deisiú dhoras a ghluaisteáin; Chuir sé réalta órga ag bun cheacht gach linbh;
+# 3.1.6: Fágadh na heochracha in oifig chuntasóir úinéir an tsiopa)
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> <[TD]>ANYTHING</[TD]>:OK
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> [Gg]ach:OK
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> CAPITAL:OK
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> <N>ANYTHING</N> <T>ANYTHING</T>:OK
+# 3.3.1(a)(v): a number or a letter after the noun (Fuair sé bus uimhir a dó dhéag)
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> <A>[Aa] ANYTHING</A>:OK
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> <A>POSITIVEINT</A>:OK
+# a time phrase is an adverbial of its own (An osclóidh tú an oifig maidin amárach?)
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> ([Aa]márach|[Ii]nné|[Ii]nniu|[Aa]nocht|[Aa]réir):OK
+# 3.3.5, 3.3.9: after a verbal noun, a noun with a word after it that qualifies it or completes
+# the phrase (Bíonn siad ag casadh ceol tíre ar an Aoine; Tá an Chomhairle Contae ag ullmhú scéim
+# den sórt sin; Is ag baint leas as an gcóras atá siad; Tá sé ag cuardach scéal a scríobh sé
+# anuraidh). Without one it is in the genitive (1.5.1(b): ag réiteach an dinnéir).
+  <E><N>VERBALNOUN</N> <NCS>ANYTHING</NCS></E> <[^C]>ANYTHING</[^C]>:OK
+# 3.3.10: the same after a compound preposition (Tá sí ag obair ann de bhun conradh leis an Roinn)
+  <S>ANYTHING</S> <E><N>PREPHEADNOUN</N> <NCS>ANYTHING</NCS></E> <[^C]>ANYTHING</[^C]>:OK
+# the second noun opening a compound preposition (Chonaic mé cearc bradáin san uisce taobh leis an
+# gcora éisc)
+  <E><N>ANYTHING</N> <NCS>(PREPHEADNOUN|taobh)</NCS></E> <[OS]>ANYTHING</[OS]>:OK
+# a verbal noun as the second noun has a clause of its own (an cinneadh dul ag obair; cúnamh do
+# lánúin teacht ar chomhaontú)
+  <E><N>ANYTHING</N> <NCS>VERBALNOUN</NCS></E>:OK
+# a noun with an adverb after it is a phrase of its own (taobh istigh de 28 lá)
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> <R>ANYTHING</R>:OK
+# de or do shortened before a vowel (16 bliana d'aois: CO17 10.2.5(a))
+  <E><N>ANYTHING</N> <NCS>[DdBbMm]'ANYTHING</NCS></E>:OK
+# numbers and words of quantity, which have forms of their own after them (9.3.9: fiche bliain;
+# meáchan fiche leabhar mór; 9.4.2, 9.4.3: moltaí bheirt chumadóirí; 9.5: an t-ochtú cuid; 9.3.1:
+# dhá mhí dhéag; an t-aon eisceacht; ceachtar dlíodóir; cúpla eisceacht)
+  <E><N>ANYTHING</N> <NCS>(fiche|tríocha|daichead|caoga|seasca|seachtó|ochtó|nócha|m?[Bb]h?eirt|[Dd]h?éag|g?[Cc]h?eachtar)</NCS></E>:OK
+  <E><N>(fiche|tríocha|daichead|caoga|seasca|seachtó|ochtó|nócha|(t-)?aonú|dara|tríú|ceathrú|cúigiú|séú|seachtú|(t-)?ochtú|naoú|deichiú|fichiú|tríochadú|daicheadú|caogadú|seascadú|seachtódú|(t-)?ochtódú|nóchadú|ceathrachadú|céadú|míliú|milliúnú|(t-)?[Aa]on|g?[Cc]h?eachtar|m?[Bb]h?eirte?|g?[Cc]h?úpla)</N> <NCS>ANYTHING</NCS></E>:OK
+# set phrases: mar shampla, ina measc (for example, among them) before a list; tráth as an
+# adverb (tráth nach déanaí ná); gnáth written apart from the noun it goes with
+  <E><N>shampla</N> <NCS>ANYTHING</NCS></E>:OK
+  <E><N>measc</N> <NCS>ANYTHING</NCS></E>:OK
+  <E><N>ANYTHING</N> <NCS>d?[Tt]h?ráth</NCS></E>:OK
+  <E><N>gh?náth</N> <NCS>ANYTHING</NCS></E>:OK

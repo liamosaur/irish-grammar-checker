@@ -51,6 +51,9 @@ s/ALLGENITIVEPREPS/(?:[Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna
 # the genitive there.
 s/VNCLAUSEPREP/(?:[Tt]ar éis|[Cc]hun|[Ll]e linn|[Aa]r tí|[Ii] mbun|[Ii] ndiaidh|[Dd]'fhonn|[Ii] gcás|[Ii]n ionad|[Dd]'ainneoin)/g;
 s/GENITIVEPREP/(?:[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
+# The noun of a compound preposition (de bhun, thar ceann, ar son, i gcás, in ionad, i dteannta,
+# le haghaidh, faoi chomhair, i ndiaidh, tar éis, ...): CO17 1.5.1(c), 3.3.10.
+s/PREPHEADNOUN/(?:bh?un|ch?eann|son|gcás|ionad|dteannta|haghaidh|gcomhair|ch?omhair|bhfeighil|dtaca|dtaobh|thaobh|mbun|bhfianaise|dtreo|ndiaidh|éis|leith|bharr|lár|aice|measc|gcoinne|éadan|gcaitheamh|ndáil|bhfochair|dtrátha|réir|thuairim|bhráid|lorg|thóir|linn|fud|bhfeidhm)/g;
 s/IRREGULARPAST/(?:raibh|dtáinig|dtug|ndearnadh|gcuala|bhfuair)/g;
 # separate fuarthas to avoid "fuaraíodh", etc.
 s/PASTNORFORMLEN/(?:(?:[Dd]úi?r|[Rr]ai?bh|[Ff]uair|[Ff]hac|[Dd]heach|[Dd]hearna)[^<]*|[Ff]uarthas)/g;

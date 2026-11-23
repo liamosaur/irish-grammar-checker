@@ -391,7 +391,7 @@ function listItem(v: ErrorView): HTMLLIElement {
     p.textContent = t('sugg.none');
     li.append(p);
   }
-  // 3. Why the rule applies: "Why: ... (An Caighdeán Oifigiúil 10.14.1)".
+  // 3. Why the rule applies: "Why: ... (CO17 10.14.1)".
   const why = reasonFor(v.reason, v.rule, v.arg, v.words);
   if (why) {
     const p = document.createElement('p');

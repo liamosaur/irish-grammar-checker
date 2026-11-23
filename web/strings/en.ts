@@ -60,7 +60,7 @@ export const en = {
   /* unreviewed */ 'sugg.label': 'Did you mean',
   /* reviewed */ 'sugg.none': 'No suggested spelling could be found.',
   /* unreviewed */ 'why.label': 'Why:',
-  /* unreviewed */ 'why.ref': '(An Caighdeán Oifigiúil {section})',
+  /* unreviewed */ 'why.ref': '(CO17 {section})',
 
   /* unreviewed */ 'how.title': 'How it works',
   /* unreviewed */ 'how.1': 'Write or paste Irish text and press Check.',
@@ -78,7 +78,7 @@ export const en = {
   /* unreviewed */ 'about.title': 'About',
   /* unreviewed */ 'about.what': 'A grammar checker for Irish. It marks words and phrases that look wrong, such as a missing or unnecessary mutation, a repeated word or a non-standard spelling, and says why. [It may make mistakes](#how).',
   /* unreviewed */ 'about.author': 'This website was made by [Liam O](https://bsky.app/profile/liamosar.bsky.social).',
-  /* unreviewed */ 'about.credits.1': 'This tool is originally based on [An Gramadóir](https://cadhan.com/gramadoir/foirm-en.html), the Irish grammar checker written by Kevin P. Scannell, available at [github.com/kscanne/gramadoir](https://github.com/kscanne/gramadoir). The word list mostly comes from his work. Gramadóir is based on grammar rules from the 1994 Christian Brothers Grammar textbook. The grammar rules in this version are based instead on Caighdeán Oifigiúil 2017. It is a derivative work, released under the GNU General Public License, version 2 or (at your option) any later version.',
+  /* unreviewed */ 'about.credits.1': 'This tool is originally based on [An Gramadóir](https://cadhan.com/gramadoir/foirm-en.html), the Irish grammar checker written by Kevin P. Scannell, available at [github.com/kscanne/gramadoir](https://github.com/kscanne/gramadoir). The word list mostly comes from his work. Gramadóir is based on grammar rules from the 1994 Christian Brothers Grammar textbook. The grammar rules in this version are based instead on An Caighdeán Oifigiúil (2017), called CO17 in the explanations. It is a derivative work, released under the GNU General Public License, version 2 or (at your option) any later version.',
   /* unreviewed */ 'about.credits.2': 'The word list also contains information from the Irish National Morphology Database (Bunachar Náisiúnta Moirfeolaíochta), © Foras na Gaeilge, available at [github.com/michmech/BuNaMo](https://github.com/michmech/BuNaMo). The database is made available under the [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1.0/), and its individual contents under the [Database Contents License 1.0](https://opendatacommons.org/licenses/dbcl/1.0/). Only word forms, which forms belong to the same word (for example, which is the genitive of which), and grammatical tags derived from them are used.',
   /* unreviewed */ 'about.source': 'The source code of this site is at [github.com/liamosaur/irish-grammar-checker](https://github.com/liamosaur/irish-grammar-checker).',
   /* unreviewed */ 'about.how':'For how to use the checker, and its limits, see [How it works](#how).',

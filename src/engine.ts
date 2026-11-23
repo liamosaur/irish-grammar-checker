@@ -844,6 +844,14 @@ export class Gramadoir {
     return this.focail.some((t) => t.has(cand) || t.has(cand.toLowerCase())) ? cand : w;
   }
 
+  /** Every reading of the word (all paths of the clean pass) is a singular nominative noun. */
+  private nominativeNounOnly(w: string): boolean {
+    const tagged = this.tagOneWordClean(w);
+    const tags = /^<B><Z>(.*)<\/Z>/.exec(tagged)?.[1] ?? /^<[^>]+>/.exec(tagged)?.[0] ?? '';
+    const all = [...tags.matchAll(/<[^>]+>/g)].map((m) => m[0]);
+    return all.length > 0 && all.every((t) => t.startsWith('<N pl="n" gnt="n"'));
+  }
+
   grammaticalErrors(textIn: string): GrammarError[] {
     const text = toLatin1(textIn);
     const pristine = tidyInput(text);
@@ -945,6 +953,10 @@ export class Gramadoir {
         }
         if (this.opts.namedParts) msgm[1] = this.tidyParts(msgm[1], errortext);
         if (!this.opts.derivedWords && /^(MOIRF|MOIRFREIMIR)\{/.test(msgm[1])) continue;
+        // WEAKGENITIVE (grammar/rialacha-ga.in): only where every reading of the second word in the
+        // word list is a singular nominative noun; a form that is also a genitive (ceo, dlí,
+        // gluaisteán) may be correct, and one with another part of speech (linn) may not be a noun.
+        if (/^WEAKGENITIVE\b/.test(msgm[1]) && !this.nominativeNounOnly(errortext.split(' ').pop() ?? '')) continue;
         errors.push({
           fromy,
           fromx,

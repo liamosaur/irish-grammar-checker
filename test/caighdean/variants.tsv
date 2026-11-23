@@ -3650,7 +3650,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	dhearga → dearga	gcinn	na seacht gcinn dearga	na seacht gcinn dhearga	9	9.8	169	16	flagged:SEIMHIU
 	lenition	dheasa → deasa	gcinn	leithead na naoi gcinn deasa	leithead na naoi gcinn dheasa	9	9.3.7	150	23	flagged:SEIMHIU
 	lenition	fhichead → fichead	gcinn	Seacht gcinn fichead de ghearrscéalta atá sa chnuasach.	Seacht gcinn fhichead de ghearrscéalta atá sa chnuasach.	10	10.3.4	185	13	-
-	lenition	theas → teas	gcósta	Tá teach acu ar an gcósta teas.	Tá teach acu ar an gcósta theas.	6	Tábla 6B	110	26	-
+	lenition	theas → teas	gcósta	Tá teach acu ar an gcósta teas.	Tá teach acu ar an gcósta theas.	6	Tábla 6B	110	26	flagged:WEAKGENITIVE
 	lenition	bheag → beag	gcuideachta	ag an gcuideachta beag	ag an gcuideachta bheag	1	1.4.1	8	18	flagged:SEIMHIU
 	lenition	bhád → bád	gcúig	bádóirí na gcúig bád déag bheaga	bádóirí na gcúig bhád déag bheaga	9	9.8	169	17	flagged:SEIMHIU
 	lenition	fhuinneog → fuinneog	gcúig	ag dúnadh na gcúig fuinneog ghlasa	ag dúnadh na gcúig fhuinneog ghlasa	9	9.3.7	150	19	flagged:SEIMHIU
@@ -3725,7 +3725,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fhiú → fiú	gurbh	Dúirt sí gurbh fiú labhairt léi	Dúirt sí gurbh fhiú labhairt léi	10	10.2.13	182	15	flagged:SEIMHIU
 	lenition	bhainisteoir → bainisteoir	haghaidh	D’fhág mé nóta le haghaidh bainisteoir na hoifige.	D’fhág mé nóta le haghaidh bhainisteoir na hoifige.	3	3.3.1	44	27	-
 	lenition	dhíscaoileadh → díscaoileadh	haghaidh	Tá obair ar bun le haghaidh díscaoileadh CTT.	Tá obair ar bun le haghaidh dhíscaoileadh CTT.	3	3.2.2	42	28	-
-	lenition	thart → tart	haistear	Scríobh sí leabhar álainn faoina haistear tart timpeall na hEorpa.	Scríobh sí leabhar álainn faoina haistear thart timpeall na hEorpa.	10	10.11.7	194	42	-
+	lenition	thart → tart	haistear	Scríobh sí leabhar álainn faoina haistear tart timpeall na hEorpa.	Scríobh sí leabhar álainn faoina haistear thart timpeall na hEorpa.	10	10.11.7	194	42	flagged:WEAKGENITIVE
 	lenition	bhródúla → bródúla	hAlbanaigh	na hAlbanaigh bródúla	na hAlbanaigh bhródúla	1	1.6.1	13	14	flagged:SEIMHIU
 	lenition	bhileoige → bileoige	haon	tús na haon bileoige glaine amháin	tús na haon bhileoige glaine amháin	9	9.8	169	12	flagged:SEIMHIU
 	lenition	bhliana → bliana	haon	tréimhse na haon bliana fada amháin	tréimhse na haon bhliana fada amháin	9	9.3.7	150	17	flagged:SEIMHIU
@@ -3792,8 +3792,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	chugam → cugam	isteach	Tar isteach cugam!	Tar isteach chugam!	6	Tábla 6A	110	12	-
 	lenition	Fhéile → Féile	Lá	Is ar Lá Féile Bríde a rugadh í.	Is ar Lá Fhéile Bríde a rugadh í.	10	10.2.10	181	9	-
 	lenition	thar → tar	labhairt	Bíonn sé ag labhairt tar ceann an pholaiteora.	Bíonn sé ag labhairt thar ceann an pholaiteora.	11	11.2.1(f)	205	21	-
-	lenition	theas → teas	lámh	thiar lámh teas	thiar lámh theas	6	Tábla 6C	111	11	-
-	lenition	theas → teas	lámh	thiar theas lámh teas	thiar theas lámh theas	6	Tábla 6C	111	17	-
+	lenition	theas → teas	lámh	thiar lámh teas	thiar lámh theas	6	Tábla 6C	111	11	flagged:WEAKGENITIVE
+	lenition	theas → teas	lámh	thiar theas lámh teas	thiar theas lámh theas	6	Tábla 6C	111	17	flagged:WEAKGENITIVE
 	lenition	thiar → tiar	lámh	theas lámh tiar	theas lámh thiar	6	Tábla 6C	111	11	flagged:CAIGHDEAN
 	lenition	thiar → tiar	lámh	thiar theas lámh tiar	thiar theas lámh thiar	6	Tábla 6C	111	17	flagged:CAIGHDEAN
 	lenition	fhomhír → fomhír	lár	Luaigh, tá an fhaisnéis i lár fomhír (i).	Luaigh, tá an fhaisnéis i lár fhomhír (i).	3	3.3.1	44	30	-

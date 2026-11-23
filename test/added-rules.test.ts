@@ -250,6 +250,12 @@ const cases: Case[] = [
   { section: '11.3.1(h)', text: 'Cén fáth a chuaigh siad ann?', rule: 'RELATIVE', words: 'a chuaigh', fixed: null },
   // a hint after áit, fáth, caoi ...: ar unless the noun is the verb's object
   { section: '11.3.1(h)', text: 'Cén áit a chuir tú é?', rule: 'WEAKBACHOIRAR', words: 'a chuir', fixed: 'Cén áit ar chuir tú é?' },
+  // Citizens Information and Gaois: a nominative noun after the noun it depends on (a hint; no fix offered)
+  { section: '1.5.1(a)', text: 'Íocann an Stát an naíonra nó an tseirbhís cúram lae as na huaireanta COLÓ sin trí mheán táille caipitíochta.', rule: 'WEAKGENITIVE', words: 'tseirbhís cúram', fixed: null },
+  { section: '1.5.1(a)', text: 'Má roghnaíonn tú teach altranais príobháideach, íocfaidh tú an ranníocaíocht chuig an soláthraí teach altranais gach seachtain agus íocfaidh an Stát an t-iarmhéid ar do shon.', rule: 'WEAKGENITIVE', words: 'soláthraí teach', fixed: null },
+  { section: '1.5.1(a)', text: 'Beidh táille sa bhreis ar shearmanas pháirtnéireacht shibhialta a reáchtáiltear i suíomh seachas oifig an Chláraitheora.', rule: 'WEAKGENITIVE', words: 'shearmanas pháirtnéireacht', fixed: null },
+  { section: '1.5.1(a)', text: 'Teorainn a chur le méid faoiseamh áirithe a mbaineann pearsana aonair áirithe a thuilleann mór-ioncam leas astu.', rule: 'WEAKGENITIVE', words: 'méid faoiseamh', fixed: null },
+  { section: '1.5.1(a)', text: 'Oibreacha a dhéanann difear do shainghné déanmhas cosanta nó déanmhas cosanta beartaithe.', rule: 'WEAKGENITIVE', words: 'shainghné déanmhas', fixed: null },
   // a masculine genitive plural after na, but not a nominative
   { section: '2.1.3(b)', text: 'Tá na neach anseo.', rule: 'NOGENITIVE', words: 'Tá na neach', fixed: null },
   // a hyphen after fo- that 2.1.7(d) does not call for: the fix keeps the prefix
@@ -322,6 +328,15 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   // to lenite after a number or a feminine noun
   { text: 'Ní foláir oibleagáid faoin alt seo a chomhlíonadh laistigh den tréimhse 5 lá díreach i ndiaidh an lae a dtagann sí i gceist.', note: 'díreach i ndiaidh: adverb, after a number in figures' },
   { text: 'Má thoilíonn siad go léir amhlaidh, beidh éifeacht leis an rogha díreach tar éis an toiliú is déanaí de na toilithe sin a thabhairt.', note: 'díreach tar éis: adverb, after a feminine noun' },
+  // Gaois and Citizens Information: a lenited adjective whose lenition is correct but which the
+  // general adjective rule (NISEIMHIU adj-lenition) reported
+  { text: 'Iarratas ar shásamh i leith comhchónaitheora cháilithe atá i gcleithiúnas go heacnamaíoch.', note: 'after a word not in the dictionary: its gender is unknown' },
+  { text: 'Tiocfaidh an Coinbhinsiún seo i bhfeidhm trí mhí tar éis a dhaingnithe thar ceann dhá Ard-Pháirtí Chonarthacha.', note: 'after a word not in the dictionary: its gender is unknown' },
+  { text: 'Bhí sé riachtanach roimh 2007 go mbeadh an duine seo gaolmhar leat nó mar chleithiúnach agat, féach thíos.', note: 'mar lenites the adjective used as a noun (10.2.5(a))' },
+  { text: 'Is é an t-aon cheart a bheidh agat ar shásamh ná sa chás go ndíoltar an carr le locht a chuirfeadh daoine a bheadh á tiomáint i gcontúirt.', note: 'aon lenites ceart, the noun (10.2.4(a))' },
+  { text: 'Dualgas iniúchóirí mura bhfuil leabhair chuntais chuí á gcoimeád.', note: 'chuntais is the genitive noun, not the verb: chuí after it' },
+  { text: 'Tá eolas maidir le gearán a dhéanamh maidir le seirbhísí sláinte agus cúraim shóisialta ag healthcomplaints.ie.', note: 'cúraim is the genitive of cúram, not a verb' },
+  { text: 'Má theastaíonn comhairle dlí nó ghairmiúil eile uait, ba cheart duit dul i gcomhairle le duine a bhain na cáilíochtaí cearta amach.', note: 'adjective joined by nó to the genitive after a feminine noun (4.2)' },
 ];
 
 let engine: Gramadoir | undefined;

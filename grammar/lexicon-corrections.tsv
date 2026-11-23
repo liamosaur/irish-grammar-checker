@@ -220,3 +220,12 @@ bpónaí	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" g
 # list had it only as an adjective, so before a preposition it was checked as one (5 lá díreach
 # i ndiaidh). grammar/aonchiall-ga.in picks the adverb before a preposition.
 díreach	<A pl="n" gnt="n"><R>	FGB díreach2 a1, sense 2: "(As adv.) Just, exact(ly)" (~ ag an doras)
+
+# páirtnéireacht (partnership of a couple: páirtnéireacht shibhialta), f3, is a standard word; the
+# plural is left out, as the dictionary gives none.
+páirtnéireacht	<N pl="n" gnt="n" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht
+pháirtnéireacht	<N pl="n" gnt="n" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht
+bpáirtnéireacht	<N pl="n" gnt="n" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht
+páirtnéireachta	<N pl="n" gnt="y" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht, gs -achta (3rd declension)
+pháirtnéireachta	<N pl="n" gnt="y" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht, gs -achta (3rd declension)
+bpáirtnéireachta	<N pl="n" gnt="y" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht, gs -achta (3rd declension)

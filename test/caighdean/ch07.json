@@ -204,7 +204,7 @@
   {"section":"7.3.2","page":126,"text":"Is í sin an oifig inar mian léi a bheith ag obair."},
   {"section":"7.3.2","page":126,"text":"Is foirgneamh é sin inarb annamh ar cuairt é."},
   {"section":"7.3.2","page":126,"text":"Is iomaí córas atá ar fáil lenar féidir rialú a dhéanamh."},
-  {"section":"7.3.2","page":126,"text":"Dúirt sí a rogha rud, ar neamhchead don té lenarb olc."},
+  {"section":"7.3.2","page":126,"text":"Dúirt sí a rogha rud, ar neamhchead don té lenarb olc.","known":"WEAKGENITIVE: a rogha rud, rogha + a noun (whatever one chooses), not a noun depending on rogha"},
   {"section":"7.3.2","page":126,"text":"Beidh siad i scríbhinn nó i bhfoirm ónar féidir taifead scríofa a tháirgeadh."},
   {"section":"7.3.2","page":126,"text":"Bhí sé i dteannta an dreama ónarb áil leis teitheadh."},
   {"section":"7.3.2","page":126,"text":"Faightear réidh le gach meán eile trínar féidir aon ní den sórt sin a scriosadh."},
