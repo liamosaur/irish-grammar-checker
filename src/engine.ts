@@ -74,6 +74,64 @@ export interface GramadoirOptions {
    * the root, so the parity tests turn it off.
    */
   hyphenFix?: boolean;
+  /**
+   * Leave alone a word with a digit in it that is not in the word list (9rn, 2km, CO2, RFA1): the
+   * unknown-word messages only ever flagged times, units and form codes. On by default; the Perl
+   * library flags them, so the parity tests turn it off.
+   */
+  skipDigitWords?: boolean;
+  /**
+   * With fixSpelling: for an unknown word that the one-edit suggestions miss (GRAM, ANAITHNID),
+   * suggest words that differ from it in fadas and at most one more edit (mhuinteorí -> mhúinteoirí,
+   * Eoals -> eolas). Only for words of four or more letters with a lower-case letter in them, as
+   * abbreviations (km, RF) give only chance matches. On by default; not in the Perl library.
+   */
+  fadaSuggestions?: boolean;
+  /**
+   * With fixSpelling: for an unknown word that the other suggestions miss, a prefix the morphology
+   * knows (comh-, ath-, neamh-) followed by a root one edit away from a word in the word list
+   * (comhchónatheoir -> comhchónaitheoir). Such words are built by the morphology rather than
+   * listed, so the one-edit search over the word list cannot find them. On by default; not in the
+   * Perl library.
+   */
+  prefixSuggestions?: boolean;
+  /**
+   * A word read as a compound of two listed words (COMHFHOCAL) whose second part could be lenited
+   * but is not: flagged COMHSEIMHIU with the lenited compound (ríomhprionta -> ríomhphrionta). The
+   * second part of a compound is lenited except for d, t or s after d, n, t, l or s (CO17 2.1.7,
+   * 10.2.12, 10.3.5: antráth, catsúil). On by default; not in the Perl library.
+   */
+  compoundLenition?: boolean;
+  /**
+   * Report a word that splits into two listed words, one of them a non-standard form, as
+   * COMHCHAIGH ("may be a non-standard compound"). Off by default: the splits were nearly all
+   * chance (dhreacht+adh, truailli+teach), and without them the word gets the unknown-word
+   * messages and their spelling suggestions (truaillitheach). On in the Perl library.
+   */
+  nonStandardCompounds?: boolean;
+  /**
+   * Messages name the words a word is formed from as the dictionary lists them: a prefixed word
+   * is reported as MOIRFREIMIR (comh and gnéis) instead of MOIRF, and the root of MOIRF and the
+   * second part of COMHFHOCAL are shown without the lenition the first part gives them
+   * (ghnéis -> gnéis). On by default; not in the Perl library.
+   */
+  namedParts?: boolean;
+  /**
+   * A rare word (NEAMHCHOIT) is reported only when it looks like a mistake for a commoner word:
+   * one edit away from a word in a more frequent tier of the word list that is not rare itself,
+   * offered as the suggestion (beith -> bheith, rata -> ráta). A rare word with no such neighbour
+   * is left alone: the checker is for grammar, and a rare word is not an error. On by default;
+   * not in the Perl library, which reports every rare word.
+   */
+  rareNeedsMatch?: boolean;
+  /**
+   * Report a word not in the word list that the morphology reads as a regular formation from a
+   * listed word: a prefix (MOIRF, MOIRFREIMIR with namedParts: comhghnéis, comh + gnéis) or an
+   * ending (cuimsiúcháin, from cuimsiú). Off by default: the prefix rules check the lenition and
+   * hyphen, so such a word is almost always correct, and the flag is information, not a grammar
+   * error. On in the Perl library.
+   */
+  derivedWords?: boolean;
 }
 
 function toMap(o: Record<string, string>): Map<string, string> {
@@ -105,9 +163,11 @@ export class Gramadoir {
   private alphabetCache: string[] | null = null;
   private foldedAlphabetCache: string[] | null = null;
   private foldIndex: Map<string, string[]>[] | null = null;
+  private fadaIndex: Map<string, string[]>[] | null = null;
+  private firstPartCache: Map<string, boolean> | null = null;
 
   constructor(data: GramadoirData, opts: GramadoirOptions = {}) {
-    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, ...opts };
+    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, skipDigitWords: true, fadaSuggestions: true, prefixSuggestions: true, compoundLenition: true, nonStandardCompounds: false, namedParts: true, rareNeedsMatch: true, derivedWords: false, ...opts };
     this.focail = data.lexicon.map(toMap);
     this.eile = toMap(data.eile);
     this.earraidi = toMap(data.earraidi);
@@ -196,7 +256,7 @@ export class Gramadoir {
     posans.v = this.cleanLookup(current);
     if (posans.v) {
       if (level === 0) return `<E msg="MOIRF{${current}}"><X>${original}</X></E>`;
-      if (level === 1) return `<E msg="CAIGHDEAN{${this.withoutHyphen(original) ?? current}}"${nofix ? ' fix="n"' : ''}><X>${original}</X></E>`;
+      if (level === 1) return `<E msg="${nofix ? 'NODICTPLURAL' : 'CAIGHDEAN'}{${this.withoutHyphen(original) ?? current}}"${nofix ? ' fix="n"' : ''}><X>${original}</X></E>`;
       if (level === 2) return `<E msg="DROCHMHOIRF{${current}}"><X>${original}</X></E>`;
       return '<X>';
     }
@@ -205,7 +265,7 @@ export class Gramadoir {
     if (e !== undefined) {
       if (level === -1) return `<E msg="CAIGHDEAN{${e}}"><X>${original}</X></E>`;
       if (level === 0) return `<E msg="CAIGHMOIRF{${e}}"><X>${original}</X></E>`;
-      if (level === 1) return `<E msg="CAIGHDEAN{${current} (${e})}"${nofix ? ' fix="n"' : ''}><X>${original}</X></E>`;
+      if (level === 1) return `<E msg="${nofix ? 'NODICTPLURAL' : 'CAIGHDEAN'}{${current} (${e})}"${nofix ? ' fix="n"' : ''}><X>${original}</X></E>`;
       return `<E msg="DROCHMHOIRF{${current} (${e})}"><X>${original}</X></E>`;
     }
     const er = this.earraidi.get(current);
@@ -314,6 +374,48 @@ export class Gramadoir {
     return ans ? this.tagsFor(word, ans) : '';
   }
 
+  /**
+   * The compound with its second part lenited, when that part could be lenited but is not and the
+   * standard lenites it (see the compoundLenition option); '' otherwise.
+   */
+  private compoundUnlenited(l: string, r: string, sep: string, word: string): string {
+    if (!this.opts.compoundLenition) return '';
+    if (!/^([bcdfgmpt][^h']|s[aeiouáéíóúlnr])/i.test(r) || r === r.toUpperCase()) return '';
+    const dental = /[dntls]$/i.test(l);
+    if (dental && /^[dts]/i.test(r)) return '';
+    // Only after a first part the word list shows in lenited compounds (príomh-, iar-, gnáth-), so
+    // that a misspelling split at a chance point (athchur+sála, láim+seáil) is not read as one ...
+    if (!this.lenitingFirstPart(l.toLowerCase(), dental)) return '';
+    // ... and not when the whole word is one edit from a listed word (lagdaithe: laghdaithe).
+    for (let t = 0; t < this.focail.length; t++) if (this.nearMisses(word, t, RE_CAPITAL.test(word)).length) return '';
+    return `${l}${sep}${r[0]}h${r.slice(1)}`;
+  }
+
+  /**
+   * Whether `l` is a first part the word list shows in lenited compounds: at least ten listed
+   * words are `l` + a lenited consonant, more than twice as many as `l` + an unlenited one (d, t and
+   * s left out after d, n, t, l or s).
+   */
+  private lenitingFirstPart(l: string, dental: boolean): boolean {
+    this.firstPartCache ??= new Map();
+    const hit = this.firstPartCache.get(l);
+    if (hit !== undefined) return hit;
+    let len = 0, un = 0;
+    const seen = new Set<string>();
+    for (const tier of this.focail) for (const w0 of tier.keys()) {
+      const w = w0.toLowerCase();
+      if (!w.startsWith(l) || w.length < l.length + 3 || seen.has(w)) continue;
+      seen.add(w);
+      const r = w.slice(l.length);
+      if (dental && /^[dts]/.test(r)) continue;
+      if (/^([bcdfgmpt]h|sh[aeiouáéíóúlnr])/.test(r)) len++;
+      else if (/^([bcdfgmpt][^h]|s[aeiouáéíóúlnr])/.test(r)) un++;
+    }
+    const ok = len >= 10 && len > 2 * un;
+    this.firstPartCache.set(l, ok);
+    return ok;
+  }
+
   private tagAsCompound(word: string): string {
     const dummy: PosAns = { v: '' };
     const dm = /^([^-]+)-(.*)$/.exec(word);
@@ -323,8 +425,10 @@ export class Gramadoir {
       const t1 = this.tagRecurse(l, l, -1, dummy, 2);
       const t2 = this.tagRecurse(r, r, -1, dummy, 2);
       if (t1 && t2) {
+        const len = !t1.includes('<E') && !t2.includes('<E') ? this.compoundUnlenited(l, r, '-', word) : '';
+        if (len) return `<E msg="COMHSEIMHIU{${len}}"><X>${word}</X></E>`;
         if (!t1.includes('<E') && !t2.includes('<E')) return `<E msg="COMHFHOCAL{${l}+${r}}"><X>${word}</X></E>`;
-        return `<E msg="COMHCHAIGH{${l}+${r}}"><X>${word}</X></E>`;
+        return this.opts.nonStandardCompounds ? `<E msg="COMHCHAIGH{${l}+${r}}"><X>${word}</X></E>` : '';
       }
     } else {
       const len = word.length;
@@ -335,8 +439,10 @@ export class Gramadoir {
           const tl = this.tagRecurse(l, l, -1, dummy, 2);
           const tr = this.tagRecurse(r, r, -1, dummy, 2);
           if (tl && tr) {
+            const len = !tl.includes('<E') && !tr.includes('<E') ? this.compoundUnlenited(l, r, '', word) : '';
+            if (len) return `<E msg="COMHSEIMHIU{${len}}"><X>${word}</X></E>`;
             if (!tl.includes('<E') && !tr.includes('<E')) return `<E msg="COMHFHOCAL{${l}+${r}}"><X>${word}</X></E>`;
-            return `<E msg="COMHCHAIGH{${l}+${r}}"><X>${word}</X></E>`;
+            return this.opts.nonStandardCompounds ? `<E msg="COMHCHAIGH{${l}+${r}}"><X>${word}</X></E>` : '';
           }
         }
       }
@@ -437,6 +543,98 @@ export class Gramadoir {
     return this.foldIndex[t];
   }
 
+  /**
+   * Words of the word list that differ from `word` in fadas and case and at most one more edit (a
+   * letter swapped with the next, deleted, inserted or substituted), from the most frequent tier
+   * that has any; those differing only in fadas and case first. See the fadaSuggestions option.
+   */
+  fadaNearMisses(word: string): string[] {
+    if (Array.from(word).length < 4 || !/[a-záéíóú]/.test(word)) return [];
+    const fold = (s: string) => s.toLowerCase().replace(/[áéíóú]/g, (c) => 'aeiou'['áéíóú'.indexOf(c)]);
+    if (!this.fadaIndex) {
+      this.fadaIndex = this.focail.map((tier) => {
+        const m = new Map<string, string[]>();
+        for (const w of tier.keys()) {
+          const f = fold(w);
+          const list = m.get(f);
+          if (list) list.push(w); else m.set(f, [w]);
+        }
+        return m;
+      });
+    }
+    const b = fold(word);
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    for (const index of this.fadaIndex) {
+      const rank = new Map<string, number>();
+      const look = (e: string, r: number) => {
+        for (const w of index.get(e) ?? []) if (w !== word && (!rank.has(w) || rank.get(w)! > r)) rank.set(w, r);
+      };
+      look(b, 0);
+      for (let i = 0; i < b.length - 1; i++) look(b.slice(0, i) + b[i + 1] + b[i] + b.slice(i + 2), 1);
+      for (let i = 0; i < b.length; i++) for (const c of letters) if (c !== b[i]) look(b.slice(0, i) + c + b.slice(i + 1), 1);
+      for (let i = 0; i < b.length; i++) look(b.slice(0, i) + b.slice(i + 1), 2);
+      for (let i = 0; i <= b.length; i++) for (const c of letters) look(b.slice(0, i) + c + b.slice(i), 3);
+      if (rank.size) {
+        return [...rank.entries()]
+          .sort((x, y) => x[1] - y[1] || (x[0] < y[0] ? -1 : x[0] > y[0] ? 1 : 0))
+          .map(([w]) => w);
+      }
+    }
+    return [];
+  }
+
+  /**
+   * Prefix + root suggestions for an unknown word (see the prefixSuggestions option): for each way of
+   * splitting off a first part of two or more letters, the one-edit near misses of the rest (from
+   * the most frequent tier that has any), kept only where the morphology reads first part + near
+   * miss as a prefixed word (MOIRF), so the first part must be a prefix it knows.
+   */
+  prefixNearMisses(word: string): string[] {
+    const len = word.length;
+    if (len < 6) return [];
+    const caseless = RE_CAPITAL.test(word);
+    const dummy: PosAns = { v: '' };
+    const found: string[] = [];
+    for (let i = 2; i <= len - 3; i++) {
+      const left = word.slice(0, i);
+      const right = word.slice(i);
+      for (let t = 0; t < this.focail.length; t++) {
+        const roots = this.nearMisses(right, t, caseless);
+        if (!roots.length) continue;
+        for (const r of roots) {
+          const cand = left + r;
+          if (cand !== word && !found.includes(cand) && this.tagRecurse(cand, cand, -1, dummy, 2).startsWith('<E msg="MOIRF{')) found.push(cand);
+        }
+        break;
+      }
+    }
+    return found;
+  }
+
+  /**
+   * For a rare word (see the rareNeedsMatch option): the words one edit away in a more frequent
+   * tier of the word list than the word's own, leaving out those that are rare themselves; from
+   * the most frequent tier that has any.
+   */
+  commonerNearMisses(word: string): string[] {
+    if (word.length <= 2) return [];
+    let own = this.focail.findIndex((t) => t.has(word));
+    if (own < 0) own = this.focail.findIndex((t) => t.has(word.toLowerCase()));
+    if (own < 0) own = this.focail.length;
+    const caseless = RE_CAPITAL.test(word);
+    // the likeliest slips first: a missing fada (rata -> ráta), a missing lenition h (beith ->
+    // bheith), a single letter for a double (chineann -> chinneann); the rest in nearMisses order
+    const fold = (s: string) => s.toLowerCase().replace(/[áéíóú]/g, (c) => 'aeiou'['áéíóú'.indexOf(c)]);
+    const likely = (w: string) =>
+      fold(w) === fold(word) || w.toLowerCase() === `${word[0]}h${word.slice(1)}`.toLowerCase() ||
+      [...w].some((_, i) => w[i] === w[i + 1] && w.slice(0, i) + w.slice(i + 1) === word);
+    for (let t = 0; t < own; t++) {
+      const found = this.nearMisses(word, t, caseless).filter((w) => w.toLowerCase() !== word.toLowerCase() && !/^<F>/.test(this.tagOneWordClean(w)));
+      if (found.length) return [...found.filter(likely), ...found.filter((w) => !likely(w))];
+    }
+    return [];
+  }
+
   private findBadThreeGrams(word: string): string {
     const w = `<${word}>`;
     const end = w.length - 2;
@@ -463,6 +661,7 @@ export class Gramadoir {
   private tagOneWordUncached(word: string): string {
     let ans = this.tagOneWordClean(word);
     if (ans) return ans;
+    if (this.opts.skipDigitWords && /[0-9]/.test(word)) return `<Y>${word}</Y>`;
     ans = this.tagInflected(word);
     if (ans) return ans;
     const dummy: PosAns = { v: '' };
@@ -568,6 +767,83 @@ export class Gramadoir {
     return msgid.replace(/\\\/\\1\\\//g, `/${arg ?? ''}/`).replace(/\\\/([^_\\]+)\\\//g, '/$1/');
   }
 
+  /**
+   * With namedParts: the parts a derived or compound word is reported as, as the dictionary lists
+   * them, so that the message and its explanation can name them. The root loses the lenition
+   * the first part gives it, and a prefix the word's own initial mutation and hyphen:
+   *   MOIRF{ghnéis} for comhghnéis -> MOIRFREIMIR{comh+gnéis}; MOIRF{shlánú} -> MOIRF{slánú}
+   *   COMHFHOCAL{ríomh+phrionta} -> COMHFHOCAL{ríomh+prionta}
+   *   MIMHOIRF{buntaiste (buntáiste)} for míbhuntaiste -> MIMHOIRF{mí+buntaiste (buntáiste)}
+   *   CAIGHMOIRF, DROCHMHOIRF: each alternative unlenited
+   * An ending (cuimsiúcháin, root cuimsiú) or an elision (b'fhéadfadh) is not a prefix.
+   */
+  private tidyParts(msg: string, word: string): string {
+    const m = /^([A-Z]+)\{(.+)\}$/.exec(msg);
+    if (!m) return msg;
+    const [, id, arg] = m;
+    if (id === 'MOIRF') {
+      const front = this.prefixOf(word, arg);
+      return front ? `MOIRFREIMIR{${front}+${this.unlenitedListed(arg)}}` : `MOIRF{${this.unlenitedListed(arg)}}`;
+    }
+    if (id === 'COMHFHOCAL') {
+      const plus = arg.indexOf('+');
+      return plus > 0 ? `COMHFHOCAL{${arg.slice(0, plus)}+${this.unlenitedListed(arg.slice(plus + 1))}}` : msg;
+    }
+    if (id === 'MIMHOIRF') {
+      const p = /^(.+?) \((.+)\)$/.exec(arg);
+      if (!p) return msg;
+      const lenited = /^[bcdfgmpt]/i.test(p[1]) || /^s[aeiouáéíóúlnr]/i.test(p[1]) ? `${p[1][0]}h${p[1].slice(1)}` : p[1];
+      const front = this.prefixOf(word, p[1]) ?? this.prefixOf(word, lenited);
+      return `MIMHOIRF{${front ? front + '+' : ''}${p[1]} (${p[2]})}`;
+    }
+    if (id === 'CAIGHMOIRF' || id === 'DROCHMHOIRF') return `${id}{${arg.split(', ').map((a) => this.unlenitedListed(a)).join(', ')}}`;
+    return msg;
+  }
+
+  /**
+   * The prefix of `word` before `root`: the part in front, without the word's own initial
+   * mutation (chomh-, gcomh-, hath-, t-ath-) or a hyphen; null when there is none, or it is an
+   * elision (b'fhéadfadh) or a single letter. Compared without case or fadas (conai, root conaí).
+   */
+  private prefixOf(word: string, root: string): string | null {
+    const fold = (s: string) => s.toLowerCase().replace(/[áéíóú]/g, (c) => 'aeiou'['áéíóú'.indexOf(c)]);
+    if (word.length <= root.length || !fold(word).endsWith(fold(root))) return null;
+    let front = word.slice(0, word.length - root.length).toLowerCase().replace(/-$/, '');
+    if (/'/.test(front)) return null;
+    front = front
+      .replace(/^[tn]-(?=[aeiouáéíóú])/, '')
+      .replace(/^h(?=[aeiouáéíóú])/, '')
+      .replace(/^t(?=s)/, '')
+      .replace(/^(?:m(?=b)|g(?=c)|n(?=[dg])|d(?=t)|b(?=p)|bh(?=f))/, '')
+      .replace(/^([bcdfgmpst])h/, '$1');
+    return front.length >= 2 ? front : null;
+  }
+
+  /**
+   * MIMHOIRF{buntaiste (buntáiste)} for míbhuntaiste: the word with the incorrect root replaced by
+   * the correct one (míbhuntáiste), the root lenited as it is in the word. None if the root is not
+   * found in the word.
+   */
+  private correctedDerived(msg: string, word: string): string[] {
+    const m = /^MIMHOIRF\{(.+?) \((.+)\)\}$/.exec(msg);
+    if (!m) return [];
+    const lenite = (s: string) => (/^[bcdfgmpt]/i.test(s) || /^s[aeiouáéíóúlnr]/i.test(s) ? `${s[0]}h${s.slice(1)}` : s);
+    // compared without case or fadas: the word may reach the root through a fada rule (conai, root conaí)
+    const fold = (s: string) => s.toLowerCase().replace(/[áéíóú]/g, (c) => 'aeiou'['áéíóú'.indexOf(c)]);
+    for (const [w, r] of [[m[1], m[2]], [lenite(m[1]), lenite(m[2])]]) {
+      if (word.length >= w.length && fold(word).endsWith(fold(w))) return [word.slice(0, word.length - w.length) + r];
+    }
+    return [];
+  }
+
+  /** The word without its lenition (phrionta -> prionta) when the word list has that form. */
+  private unlenitedListed(w: string): string {
+    const m = /^([bcdfgmpstBCDFGMPST])h(.+)$/.exec(w);
+    if (!m) return w;
+    const cand = m[1] + m[2];
+    return this.focail.some((t) => t.has(cand) || t.has(cand.toLowerCase())) ? cand : w;
+  }
+
   grammaticalErrors(textIn: string): GrammarError[] {
     const text = toLatin1(textIn);
     const pristine = tidyInput(text);
@@ -651,6 +927,24 @@ export class Gramadoir {
         const msgm = /^<E msg="(.+?)"(?: r="([^"]+)")?( fix="n")?>$/.exec(thiserror);
         if (!msgm) continue;
         const sugg = /^MOLADH\{(.*)\}$/.exec(msgm[1]);
+        const unknown = !sugg && this.opts.fixSpelling && /^(GRAM|ANAITHNID)\b/.test(msgm[1]);
+        let fada = unknown && this.opts.fadaSuggestions ? this.fadaNearMisses(errortext) : [];
+        if (unknown && !fada.length && this.opts.prefixSuggestions) fada = this.prefixNearMisses(errortext);
+        if (this.opts.namedParts && /^MIMHOIRF\{/.test(msgm[1])) fada = this.correctedDerived(msgm[1], errortext);
+        // DROCHMHOIRF names the corrected word itself when no prefix was stripped (chomlíonann:
+        // chomhlíonann); offer it then, in the word's case. A root after a prefix is no fix.
+        const droch = this.opts.namedParts ? /^DROCHMHOIRF\{([^,{}]+)\}$/.exec(msgm[1]) : null;
+        if (droch && Math.abs(droch[1].length - errortext.length) <= 2 && droch[1].slice(0, 2).toLowerCase() === errortext.slice(0, 2).toLowerCase()) {
+          fada = [/^[A-ZÁÉÍÓÚ]/.test(errortext) ? droch[1][0].toUpperCase() + droch[1].slice(1) : droch[1]];
+        }
+        if (this.opts.rareNeedsMatch && /^NEAMHCHOIT\b/.test(msgm[1])) {
+          // a capital after the first word is a name (Applus Car Testing Service), not a slip
+          const midSentence = /\S/.test(plain.slice(0, Math.max(0, offset)));
+          fada = midSentence && /^[A-ZÁÉÍÓÚ]/.test(errortext) ? [] : this.commonerNearMisses(errortext);
+          if (!fada.length) continue;
+        }
+        if (this.opts.namedParts) msgm[1] = this.tidyParts(msgm[1], errortext);
+        if (!this.opts.derivedWords && /^(MOIRF|MOIRFREIMIR)\{/.test(msgm[1])) continue;
         errors.push({
           fromy,
           fromx,
@@ -662,7 +956,7 @@ export class Gramadoir {
           contextoffset: offset,
           errorlength: errortext.length,
           errortext,
-          ...(sugg ? { suggestions: sugg[1].split(', ') } : {}),
+          ...(sugg ? { suggestions: sugg[1].split(', ') } : fada.length ? { suggestions: fada } : {}),
           ...(msgm[2] ? { reason: msgm[2] } : {}),
           ...(unit && / /.test(unit.trim()) ? { unit: stripEntities(unit.trim()) } : {}),
           ...(msgm[3] ? { noFix: true as const } : {}),

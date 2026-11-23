@@ -28,6 +28,16 @@ describe('quotedParts', () => {
     assert.equal(quotedParts('conaí (cónaí)').map((p) => p.text).join(''), 'conaí (cónaí)');
   });
 
+  it('alternatives can be joined by "or" (CAIGHDEAN): /a/, /b/ or /c/', () => {
+    assert.deepEqual(quotedParts('Bruiséil, Bruiséile', true), [
+      { text: 'Bruiséil', option: true },
+      { text: ' or ', option: false },
+      { text: 'Bruiséile', option: true },
+    ]);
+    assert.equal(quotedParts('a, b, c', true).map((p) => p.text).join(''), 'a, b or c');
+    assert.equal(quotedParts('a, b').map((p) => p.text).join(''), 'a, b');
+  });
+
   it('multi-word choices stay whole', () => {
     assert.deepEqual(quotedParts('an bhean').map((p) => p.text), ['an bhean']);
   });
@@ -239,9 +249,8 @@ describe('corrections with the real engine', () => {
 
   it('"conai": only the correct form cónaí is offered, and it is what gets inserted', () => {
     const v = views('conai')[0];
-    const choices = quotedParts(/\/([^/]+)\//.exec(v.msg)![1]).filter((p) => p.option).map((p) => p.text);
-    assert.deepEqual(choices, ['cónaí']);
-    assert.equal(fix('conai', v, choices[0]), 'cónaí');
+    assert.deepEqual(v.suggestions, ['cónaí']);
+    assert.equal(fix('conai', v, v.suggestions[0]), 'cónaí');
   });
 
   it('an unknown word offers engine suggestions that replace it', () => {

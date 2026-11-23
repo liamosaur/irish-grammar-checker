@@ -241,11 +241,15 @@ for (const name of ['rialacha', 'aonchiall']) {
 const reasonRows = fs.readFileSync(path.join(here, '..', 'grammar', 'reasons.tsv'), 'utf8').replace(/\r/g, '').split('\n')
   .filter((l) => l && !l.startsWith('#')).slice(1).map((l) => l.split('\t'));
 const reasons = {};
-for (const [id, co17, en, ga] of reasonRows) {
+const reasonStatus = { unreviewed: 0, reviewed: 0 };
+for (const [id, status, co17, en, ga] of reasonRows) {
   if (!/^[a-z0-9-]+$/.test(id ?? '') || !en) throw new Error(`grammar/reasons.tsv: a row needs an id (a-z, 0-9, -) and English text: ${id}`);
+  if (!(status in reasonStatus)) throw new Error(`grammar/reasons.tsv: ${id}: status ${status} is not unreviewed or reviewed`);
   if (reasons[id]) throw new Error(`grammar/reasons.tsv: ${id} twice`);
+  reasonStatus[status]++;
   reasons[id] = { co17: co17 || undefined, en, ga: ga || undefined };
 }
+console.log(`reasons: ${reasonStatus.unreviewed} unreviewed, ${reasonStatus.reviewed} reviewed`);
 const used = new Set();
 const withReason = (rs) => rs.forEach((r) => {
   if (r.repl) {
@@ -258,10 +262,22 @@ const withReason = (rs) => rs.forEach((r) => {
   if (r.then) withReason(r.then);
 });
 withReason(extracted.rialacha.rules);
+// grammar/messages.tsv's fourth column: the reason shown with a message whose rule names none
+// (CAIGHDEAN from the word list). data/rules/message-reasons.json maps each message name to it.
+const messageReasons = {};
+for (const row of fs.readFileSync(path.join(here, '..', 'grammar', 'messages.tsv'), 'utf8').replace(/\r/g, '').split('\n')
+  .filter((l) => l && !l.startsWith('#')).slice(1)) {
+  const [ids, , , id] = row.split('\t');
+  if (!id) continue;
+  if (!reasons[id]) problems.push(`grammar/messages.tsv: ${ids}: no reason ${id} in grammar/reasons.tsv`);
+  used.add(id);
+  for (const name of ids.split('=')) messageReasons[name] = id;
+}
 for (const id of Object.keys(reasons)) if (!used.has(id)) problems.push(`grammar/reasons.tsv: ${id} is not used by any rule`);
 if (problems.length) throw new Error(`${problems.length} problems in grammar/:\n${problems.join('\n')}`);
 fs.mkdirSync(path.join(outDir, 'rules'), { recursive: true });
 fs.writeFileSync(path.join(outDir, 'rules', 'reasons.json'), JSON.stringify(reasons));
+fs.writeFileSync(path.join(outDir, 'rules', 'message-reasons.json'), JSON.stringify(messageReasons));
 for (const [name, { rules }] of Object.entries(extracted)) {
   fs.writeFileSync(path.join(outDir, 'rules', `${name}.json`), JSON.stringify(rules));
 }

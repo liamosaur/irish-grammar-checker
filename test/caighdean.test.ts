@@ -59,7 +59,7 @@ const chapters = fs.readdirSync(dir).filter((f) => /^ch\d+\.json$/.test(f)).sort
 
 // Messages about the word list rather than grammar: a word the database lacks says
 // nothing about whether the sentence breaks a rule of the chapter.
-const LEXICON_ONLY = new Set(['ANAITHNID', 'ANKOTHVOS', 'UNKNOWN', 'MOLADH', 'GRAM', 'MOIRF', 'COMHFHOCAL', 'COMHCHAIGH']);
+const LEXICON_ONLY = new Set(['ANAITHNID', 'ANKOTHVOS', 'UNKNOWN', 'MOLADH', 'GRAM', 'MOIRF', 'MOIRFREIMIR', 'COMHFHOCAL', 'COMHCHAIGH']);
 
 let engine: Gramadoir | undefined;
 function complaints(text: string): { rule: string; text: string }[] {

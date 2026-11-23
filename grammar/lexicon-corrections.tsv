@@ -9,7 +9,7 @@
 # to it (in the rarest tier). If it is in the table of non-standard forms
 # (data/eile.json), the correction says it is standard, so it is removed from
 # that table. Otherwise it is a new word, and its reason must start with the
-# source that gives it (focloir.ie, FGB or CO17), or the build stops. Lines
+# source that gives it (focloir.ie, FGB or CO17, or Liam (date) for his own decision), or the build stops. Lines
 # starting with # are comments.
 #
 # Tags written =form mark a spelling the standard does not use, with form as the
@@ -203,3 +203,20 @@ cuala	=chuala	CO17 Tábla 5Q: chuala mé (the past of clois is lenited). The tab
 feice	=bhfeice, fheice	CO17 Tábla 5T: go bhfeice tú (the subjunctive of feic); both mutated forms, as the table has faca: bhfaca, fhaca. The table gave feac (FGB feac1: Var f, gs. feice, spade), a far rarer word than the verb.
 cuaigh	=chuaigh	CO17 Tábla 5X: chuaigh mé (the past of téigh is lenited). Without this a spelling rule read it as cuach.
 daingniúcháin	=daingnithe	teanglann (grammar database) daingniú: gs. and pl. daingnithe; FGB daingniú1 gives daingniúchán as a variant (Var: ~chán m), of which this is the gs. and pl. The table gave the headword daingniú.
+
+# Abbreviations
+etc	<Y>	Liam (2026-11-23): not flagged; tagged as the word list tags srl
+
+# póna (pound, enclosure), m4: the word list has it only as a rare word, so it was reported
+# as uncommon (an póna madraí); its plural pónaí only as the singular noun pónaí
+póna	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	teanglann.ie/en/gram/póna: m4, gs póna, pl pónaí; tagged as cóta
+phóna	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	teanglann.ie/en/gram/póna: m4, gs póna, pl pónaí; tagged as cóta
+bpóna	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m">	teanglann.ie/en/gram/póna: m4, gs póna, pl pónaí; tagged as cóta
+pónaí	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	teanglann.ie/en/gram/póna, /pónaí: pl of póna, and pónaí m4 sg; tagged as cótaí and as the singular
+phónaí	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	teanglann.ie/en/gram/póna, /pónaí: pl of póna, and pónaí m4 sg; tagged as cótaí and as the singular
+bpónaí	<N pl="n" gnt="n" gnd="m"><N pl="n" gnt="y" gnd="m"><N pl="y" gnt="n" gnd="m"><N pl="y" gnt="y" gnd="m">	teanglann.ie/en/gram/póna, /pónaí: pl of póna, and pónaí m4 sg; tagged as cótaí and as the singular
+
+# díreach is also an adverb, "just, exactly" (díreach ag an doras, díreach i ndiaidh): the word
+# list had it only as an adjective, so before a preposition it was checked as one (5 lá díreach
+# i ndiaidh). grammar/aonchiall-ga.in picks the adverb before a preposition.
+díreach	<A pl="n" gnt="n"><R>	FGB díreach2 a1, sense 2: "(As adv.) Just, exact(ly)" (~ ag an doras)

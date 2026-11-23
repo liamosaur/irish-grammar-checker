@@ -1,0 +1,90 @@
+# The messages shown when a rule fires, in English. Columns: id, status, en, reason. The id is a rule's
+# message name (SEIMHIU); names joined by = share one message (CUPLA=KESUNYANS).
+# Status of the English text:
+#   inherited   from An Gramadóir 0.70 (share/messages.bs), unchanged; the build checks that
+#               it still matches upstream word for word
+#   unreviewed  written or changed by Claude, not yet approved by Liam
+#   reviewed    approved by Liam (inherited or written by Claude)
+# To improve an inherited message, change its text and mark it unreviewed until Liam approves it.
+# In the text, /like this/ (or \/like this\/) marks Irish words; \/\1\/ is the word the rule
+# supplies. reason (optional): the id of a row in grammar/reasons.tsv, shown with the message when
+# its rule names no reason of its own. Latin-1 only. One line per message; tabs between columns.
+id	status	en	reason
+NEAMHCHOIT=NAMMENOWGH=UNCOMMON	reviewed	In the app's dictionary, but rarely used	rare-word
+DUBAILTE	inherited	Repeated word
+CUPLA=KESUNYANS	inherited	Unusual combination of words
+IOLRA	inherited	The plural form is required here
+UATHA	inherited	The singular form is required here
+AIDIOLRA	inherited	Plural adjective required
+BREISCHEIM	inherited	Comparative adjective required
+NEEDART	inherited	Definite article required
+BADART	inherited	Unnecessary use of the definite article
+ONEART	inherited	No need for the first definite article
+NOGENITIVE	inherited	Unnecessary use of the genitive case
+GENITIVE	inherited	The genitive case is required here
+PRESENT	inherited	You should use the present tense here
+CONDITIONAL	inherited	You should use the conditional here
+NOSUBJ	inherited	It seems unlikely that you intended to use the subjunctive here
+INPHRASE	inherited	Usually used in the set phrase \/\1\/
+BACHOIR=EWNHEANS	inherited	You should use \/\1\/ here instead
+CAIGHDEAN	reviewed	The more standard form is \/\1\/	non-standard-form
+CAIGHMOIRF	reviewed	Not in the app's dictionary. Probably from a non-standard form of \/\1\/	from-non-standard
+DROCHMHOIRF	unreviewed	Not in the app's dictionary. Possibly from an incorrect spelling of \/\1\/	from-incorrect
+ANAITHNID=ANKOTHVOS=UNKNOWN	reviewed	Possibly misspelled or foreign word	unknown-word
+MOLADH	reviewed	Possibly misspelled word	near-miss
+IONADAI	reviewed	In the app's dictionary, but \/\1\/ is more common in standard Irish	more-usual
+MOIRF	reviewed	Not in the app's dictionary. Probably from the root \/\1\/	formed-from-root
+NIGA	inherited	The word \/\1\/ is not needed
+MICHEART	reviewed	Likely incorrect spelling of \/\1\/	common-incorrect
+MIMHOIRF	reviewed	Not in the app's dictionary. Likely incorrect spelling	from-common-incorrect
+COMHFHOCAL	reviewed	Not in the app's dictionary. Possibly a compound word	possible-compound
+COMHCHAIGH	inherited	Not in database but may be a non-standard compound \/\1\/?
+GRAM	reviewed	Possibly misspelled or foreign word	unlikely-sequence
+GENDER=GENRE	inherited	Gender disagreement
+NUMBER=NOMBRE	inherited	Number disagreement
+CASE	inherited	Case disagreement
+# Irish
+PREFIXH	inherited	Prefix \/h\/ missing
+PREFIXT	inherited	Prefix \/t\/ missing
+PREFIXD	inherited	Prefix \/d'\/ missing
+NIAITCH	inherited	Unnecessary prefix \/h\/
+NITEE	inherited	Unnecessary prefix \/t\/
+NIDEE	inherited	Unnecessary prefix \/d'\/
+NIBEE	inherited	Unnecessary prefix \/b'\/
+NICLAOCHLU	inherited	Unnecessary initial mutation
+CLAOCHLU	inherited	Initial mutation missing
+NISEIMHIU	reviewed	Likely unnecessary lenition (\/séimhiú\/)
+NIDARASEIMHIU	inherited	The second lenition is unnecessary
+WEAKSEIMHIU	inherited	Often the preposition \/\1\/ causes lenition, but this case is unclear
+SEIMHIU	reviewed	Likely missing lenition (\/séimhiú\/)
+NIURU	inherited	Unnecessary eclipsis
+URU	inherited	Eclipsis missing
+NODATIVE	inherited	The dative is used only in special phrases
+RELATIVE	inherited	The dependent form of the verb is required here
+ABSOLUTE	inherited	Unnecessary use of the dependent form of the verb
+SYNTHETIC	inherited	The synthetic (combined) form, ending in \/\1\/, is often used here
+# Rules not in An Gramadóir
+NODICTPLURAL	reviewed	Not in the app's dictionary. A possible plural of \/\1\/
+COMHSEIMHIU	unreviewed	Lenition missing on the second part of the compound: \/\1\/	compound-lenition
+MOIRFREIMIR	reviewed	Not in the app's dictionary. Probably a word with a prefix	formed-with-prefix
+WEAKSEIMHIUGEN	unreviewed	Usually lenited here, but not if the second noun is a person, an animal or other living thing, or a part of one, or if the first noun is part of the second
+WEAKBACHOIRIN	unreviewed	Usually i with eclipsis here (i mBostún), but in is correct before a foreign place name that has not been Gaelicised (in Mumbai)
+NAIMPER	unreviewed	The negative of the imperative is /ná/ (with h before a vowel: ná habair)
+CORASSEIMHIU	unreviewed	This dative follows /Córas an tSéimhithe/ (/ar an bhosca/, /ar an tsuíochán/, /ar an eitleán dhubh/), but elsewhere the text follows /an Córas Lárnach/: keep to one system (CO17 1.7.1)
+CORASLARNACH	unreviewed	This dative follows /an Córas Lárnach/ (/ar an mbosca/, /ar an suíochán/, /ar an eitleán dubh/), but elsewhere the text follows /Córas an tSéimhithe/: keep to one system (CO17 1.7.1)
+WEAKBACHOIRAR	unreviewed	Usually /ar/ here, after áit, fáth, caoi and similar nouns (CO17 11.3.1(h)), but not when the noun is the object of the verb
+WEAKBACHOIRMA	unreviewed	If dá means "if", use /má/ with this tense (dá takes the conditional); but dá is also de or do with the relative a, which takes any tense (CO17 11.6.1(c))
+NOHYPHEN	unreviewed	No hyphen between t and a capital vowel: /an tAlbanach/, /an tAire/ (CO17 1.1.4)
+MUID	unreviewed	The ending already gives the subject: use the synthetic form or muid, not both (/táimid/ or /tá muid/; CO17 5.1.10)
+WEAKSEIMHIUVOC	unreviewed	Usually lenited here: the vocative (/a dhaoine uaisle/, /a fheara/), but not if a is the possessive her (Seán, a mac)
+WEAKNOUNVERB	unreviewed	A lenited noun opening a clause before the article: if a verb is meant, use the verb (/Thuairiscigh an Chomhairle/, not /Thuairisc an Chomhairle/)
+# Cornish language (not used for Irish)
+NESSATREYLYANS	inherited	Second (soft) mutation missing
+TRESSATREYLYANS	inherited	Third (breathed) mutation missing
+PESWARATREYLYANS	inherited	Fourth (hard) mutation missing
+PYMPESTREYLYANS	inherited	Fifth (mixed) mutation missing
+PYMPESTREYLYANSTH	inherited	Fifth (mixed) mutation after 'th missing
+# Welsh language (not used for Irish)
+LLAES	inherited	Aspirate mutation missing
+# Igbo language (not used for Irish)
+VOWELHARMONY	inherited	This word violates the rules of Igbo vowel harmony

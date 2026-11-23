@@ -100,3 +100,14 @@ describe('web UI helpers (current data)', () => {
     });
   }
 });
+
+describe('interface text status', () => {
+  it('every entry in web/strings/en.ts starts with its status', async () => {
+    const { en } = await import('../web/strings/en.ts');
+    const src = fs.readFileSync(path.join(root, 'web', 'strings', 'en.ts'), 'utf8');
+    const entries = [...src.matchAll(/^\s*(?:\/\* *(\w+) *\*\/ *)?'([^']+)':/gm)];
+    assert.deepEqual(entries.map((m) => m[2]).sort(), Object.keys(en).sort(), 'one line per key');
+    const bad = entries.filter((m) => !['unreviewed', 'reviewed'].includes(m[1] ?? '')).map((m) => m[2]);
+    assert.deepEqual(bad, [], 'each needs /* unreviewed */ or /* reviewed */ before its key');
+  });
+});

@@ -35,7 +35,7 @@ const out = opt('--out');
 const gr = new Gramadoir(loadData(path.join(root, 'data')), { fixSpelling: false });
 const forms = new Forms(JSON.parse(fs.readFileSync(path.join(root, 'data', 'forms.json'), 'utf8')));
 /** Notes about the word itself (unknown, rare, a spelling): left out. */
-const LEXICAL = new Set(['ANAITHNID', 'NEAMHCHOIT', 'MOLADH', 'GRAM', 'MOIRF', 'COMHFHOCAL', 'COMHCHAIGH']);
+const LEXICAL = new Set(['ANAITHNID', 'NEAMHCHOIT', 'MOLADH', 'GRAM', 'MOIRF', 'MOIRFREIMIR', 'COMHFHOCAL', 'COMHCHAIGH']);
 
 const check = (line: string): ErrorView[] => {
   const errs = gr.grammaticalErrors(foldForEngine(line)) as CheckedError[];

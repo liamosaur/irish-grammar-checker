@@ -1,0 +1,54 @@
+# Prefixes the morphology strips (comh-, iar-, neamh-, ...): a word not in the word list is read
+# as prefix + a listed word, reported as MOIRF ("formed from the root ..."). The build expands each
+# row into rules of grammar/morph-ga.txt at its @PREFIXES marker (the late ones at @PREFIXES-LATE).
+# Each row follows the same CO17 rules, so they are written once (tools/build-data.mjs):
+#   - the second part is lenited (10.2.12, 10.3.5: deargbhuile, beagmhaith) ...
+#   - ... except d, t or s after d, n, t, l or s (10.2.12, 10.3.5: antráth, seansaighdiúir)
+#   - s is lenited only before a vowel, l, n or r (sh-); other consonants are never lenited
+#   - a hyphen between two vowels (2.1.7(a): mí-ádh, ró-olc)
+#   - a hyphen between the same consonants (2.1.7(b): droch-chaint, gearr-rás, gnáth-thuarastal)
+# A prefix starting with a vowel may also take h-. Columns, tab-separated:
+#   prefix   the prefix
+#   pos      the parts of speech of the root it attaches to: AN, ANV or N
+#   min      the fewest letters the root may have, so that a short word is not read as prefix +
+#            fragment (empty: no minimum)
+#   flags    space-separated, the exceptions (- for none):
+#     hyphen        always written with a hyphen (2.1.7(f): an-, dea-)
+#     wrong:2       the unlenited (or wrongly lenited) form is reported as non-standard (an-dhuine)
+#     same:none     no hyphen rule for the same consonant; the root's first letter is left to rules
+#                   written by hand in morph-ga.txt (ath-, frith- before t; comh- before m and n)
+#     exclude:XY    letters the generated rules leave to hand-written ones (comh-: mh, n -> có-)
+#     other:[...]   the root may start only with these letters, unlenited (ain-), or a lenited
+#                   b, c, f, g, m, p
+#     vowel:both    before a vowel, with or without a hyphen (neamh-aistear, neamhaithne)
+#     vowel:nohyphen2[:letters]  before a vowel without the hyphen is non-standard; the letters
+#                   are the vowels this applies to (ró-: not i, as several Dinneen words have rói-)
+#     late:plain    the rules for an unlenited root go at @PREFIXES-LATE, after the verb-ending
+#                   standardisations, so that foluíonn is not read as fo + luíonn
+prefix	pos	min	flags
+an	AN		hyphen wrong:2
+dea	AN		hyphen wrong:2
+ain	AN		other:[deéiílnrst]
+ath	ANV		same:none exclude:t
+comh	ANV		same:none exclude:mn
+do	AN	3	late:plain
+droch	AN		-
+fíor	ANV		-
+for	ANV		-
+fo	ANV	3	late:plain
+frith	ANV		same:none exclude:t
+iar	ANV		-
+il	AN	3	-
+im	ANV	3	-
+in	AN	3	late:plain
+leas	AN	3	-
+mí	ANV	3	vowel:nohyphen2
+neamh	ANV		vowel:both
+príomh	N		-
+réamh	ANV		-
+rí	ANV	3	-
+ró	AN	3	vowel:nohyphen2:aeouáéíóú
+sain	ANV		-
+sean	AN	3	-
+so	AN	3	-
+tras	ANV		exclude:n

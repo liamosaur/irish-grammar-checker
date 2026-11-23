@@ -26,7 +26,7 @@ import { foldForEngine } from '../web/fold.ts';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 // As in test/caighdean.test.ts: messages about the word list, not grammar.
-const LEXICON_ONLY = new Set(['ANAITHNID', 'ANKOTHVOS', 'UNKNOWN', 'MOLADH', 'GRAM', 'MOIRF', 'COMHFHOCAL', 'COMHCHAIGH']);
+const LEXICON_ONLY = new Set(['ANAITHNID', 'ANKOTHVOS', 'UNKNOWN', 'MOLADH', 'GRAM', 'MOIRF', 'MOIRFREIMIR', 'COMHFHOCAL', 'COMHCHAIGH']);
 
 type Case = { section: string; text: string; rule: string; words: string; fixed: string | null; reviewed?: boolean };
 const NOT_REVIEWED = 'not yet reviewed: add reviewed: true once the case is confirmed';
@@ -307,6 +307,10 @@ const cases: Case[] = [
   { section: '8.2.2', text: 'An é sin an áit ar rugadh tú?', rule: 'BACHOIR', words: 'rugadh tú', fixed: 'An é sin an áit ar rugadh thú?' },
   // fail for fáil after ar is reported as such, not as a missing lenition (the rule's own example)
   { section: 'FGB fáil', text: 'Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún.', rule: 'IONADAI', words: 'ar fail', fixed: 'Tá treoirlínte mionsonraithe curtha ar fáil ag an gCoimisiún.' },
+  // the second part of a compound is lenited after a first part the word list shows in lenited
+  // compounds (Citizens Information sentences)
+  { section: '10.2.12', text: 'Is forbhreathnú é seo a leanas ar na príomhforálacha den dlí a bhaineann leis na caighdeáin sin.', rule: 'COMHSEIMHIU', words: 'príomhforálacha', fixed: 'Is forbhreathnú é seo a leanas ar na príomhfhorálacha den dlí a bhaineann leis na caighdeáin sin.' },
+  { section: '10.2.12', text: "Is féidir le céile colscartha nó iar-páirtnéirí sibhialta iarratas a dhéanamh sa chúirt ar ordú cothabhála nó ar leagan d'ordú cothabhála tar éis don fhoraithne colscartha/díscaoilte a bheith deonta.", rule: 'COMHSEIMHIU', words: 'iar-páirtnéirí', fixed: "Is féidir le céile colscartha nó iar-pháirtnéirí sibhialta iarratas a dhéanamh sa chúirt ar ordú cothabhála nó ar leagan d'ordú cothabhála tar éis don fhoraithne colscartha/díscaoilte a bheith deonta." },
 ];
 
 // Correct sentences close to what the rules above (and our exceptions) are about,
@@ -314,6 +318,10 @@ const cases: Case[] = [
 // note says what each guards against.
 const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Tharla sé le linn an cluiche a imirt.', note: 'nominative before a + verbal noun, though the genitive is spelt the same', reviewed: true },
+  // Gaois: díreach before a preposition is the adverb (FGB díreach2, sense 2), not an adjective
+  // to lenite after a number or a feminine noun
+  { text: 'Ní foláir oibleagáid faoin alt seo a chomhlíonadh laistigh den tréimhse 5 lá díreach i ndiaidh an lae a dtagann sí i gceist.', note: 'díreach i ndiaidh: adverb, after a number in figures' },
+  { text: 'Má thoilíonn siad go léir amhlaidh, beidh éifeacht leis an rogha díreach tar éis an toiliú is déanaí de na toilithe sin a thabhairt.', note: 'díreach tar éis: adverb, after a feminine noun' },
 ];
 
 let engine: Gramadoir | undefined;

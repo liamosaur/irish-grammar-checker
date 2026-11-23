@@ -23,7 +23,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const rows = readVariants(fs.readFileSync(path.join(root, 'test', 'caighdean', 'variants.tsv'), 'utf8'))
   .filter((r) => r.verdict === 'wrong' || r.verdict === 'ok');
 
-const LEXICON_ONLY = new Set(['ANAITHNID', 'ANKOTHVOS', 'UNKNOWN', 'MOLADH', 'GRAM', 'MOIRF', 'COMHFHOCAL', 'COMHCHAIGH']);
+const LEXICON_ONLY = new Set(['ANAITHNID', 'ANKOTHVOS', 'UNKNOWN', 'MOLADH', 'GRAM', 'MOIRF', 'MOIRFREIMIR', 'COMHFHOCAL', 'COMHCHAIGH']);
 let engine: Gramadoir | undefined;
 const complaints = (text: string) => {
   engine ??= new Gramadoir(loadData(path.join(root, 'data')), { fixSpelling: true });

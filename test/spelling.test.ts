@@ -35,7 +35,7 @@ let current: Gramadoir, currentLex: Record<string, string>[];
 before(() => {
   const l = loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false });
   const c = loadData(dataDir);
-  legacy = new Gramadoir(l, { fixSpelling: true, hyphenFix: false });
+  legacy = new Gramadoir(l, { fixSpelling: true, hyphenFix: false, skipDigitWords: false, fadaSuggestions: false, prefixSuggestions: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, derivedWords: true });
   current = new Gramadoir(c, { fixSpelling: true });
   legacyLex = l.lexicon as unknown as Record<string, string>[];
   currentLex = c.lexicon as unknown as Record<string, string>[];
@@ -149,7 +149,7 @@ describe('suggestions equal a brute-force scan of the lexicon', () => {
 // ------------------------------------------------------------------ behaviours
 
 describe('spelling suggestions: behaviour', () => {
-  const off = () => new Gramadoir(loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false }), { hyphenFix: false });
+  const off = () => new Gramadoir(loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false }), { hyphenFix: false, skipDigitWords: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, derivedWords: true });
 
   it('is off by default, as in the Perl library', () => {
     assert.ok(!off().grammaticalErrors('An bhfuil uachtar roeite agattt?').some((e) => e.ruleId.includes('MOLADH')));
@@ -183,5 +183,24 @@ describe('spelling suggestions: behaviour', () => {
   it('suggestions are only added for words that are otherwise unknown', () => {
     assert.deepEqual(legacy.grammaticalErrors('Tá an madra mór.').map((e) => e.ruleId), []);
     assert.ok(!legacy.grammaticalErrors('Tá an madra mór.').some((e) => e.suggestions));
+  });
+});
+
+// Judgements of which spelling is right are Liam's: these run as todos until he confirms them.
+const UNCONFIRMED = 'not yet reviewed: drop the todo once the spelling verdict is confirmed';
+
+describe('spelling suggestions beyond the Perl library', () => {
+  const sugg = (text: string, word: string) => current.grammaticalErrors(text).find((e) => e.errortext === word)?.suggestions;
+
+  it('a prefix + a root one edit away from a listed word (Citizens Information)', { todo: UNCONFIRMED }, () => {
+    const text = 'Is comhchónatheoir duine a chónaíonn i gcaidreamh caidreamhach agus domhain le duine den ghnéas céanna nó den ghnéas eile nach céile, páirtnéir sibhialta, nó muintir an duine sin é/í.';
+    assert.deepEqual(sugg(text, 'comhchónatheoir'), ['comhchónaitheoir']);
+  });
+
+  it('sain- does not lenite d, t or s (CO17 10.2.12): saintrealamh is read as sain + trealamh, so not flagged (Citizens Information)', { todo: UNCONFIRMED }, () => {
+    const text = 'Tá sé de chumhacht ag an údarás áitiúil scrúdú a dhéanamh ar Ghearáin maidir le torann sa chomharsanacht agus tá saintrealamh aige freisin a dhéanann leibhéil torainn a thomhas.';
+    const shown = new Gramadoir(loadData(dataDir), { fixSpelling: true, derivedWords: true });
+    assert.ok(shown.grammaticalErrors(text).some((e) => e.errortext === 'saintrealamh' && e.ruleId.endsWith('/MOIRFREIMIR{sain+trealamh}')));
+    assert.ok(!current.grammaticalErrors(text).some((e) => e.errortext === 'saintrealamh'));
   });
 });

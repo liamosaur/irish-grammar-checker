@@ -28,6 +28,8 @@ export interface ErrorView {
   aligned: boolean;
   /** Why the rule applies: an id in data/reasons.json, when the rule has one. */
   reason?: string;
+  /** The rule's {argument} (the word its message quotes), with spaces restored. */
+  arg?: string;
   /** The last flagged token when it is several words (see GrammarError). */
   unit?: string;
   /** The note names the standard word but not the form to put in the text: no fix offered. */
@@ -49,6 +51,8 @@ const squash = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 /** Same comparison for both sides: what the engine would have seen. */
 const seen = (s: string) => squash(latin1(foldForEngine(s)));
+
+const argOf = (e: GrammarError): string | undefined => /\{(.*)\}$/s.exec(e.ruleId)?.[1].replace(/_/g, ' ');
 
 export function ruleOf(e: GrammarError): string {
   return e.ruleId.replace(/^Lingua::GA::Gramadoir\//, '').replace(/\{.*$/s, '');
@@ -84,6 +88,7 @@ export function analyse(text: string, errors: CheckedError[]): { views: ErrorVie
       aligned,
       range: aligned && e.fromy === e.toy ? { y: e.fromy, from: e.fromx, to: e.tox + 1 } : undefined,
       ...(e.reason ? { reason: e.reason } : {}),
+      ...(argOf(e) !== undefined ? { arg: argOf(e) } : {}),
       ...(e.unit ? { unit: e.unit } : {}),
       ...(e.noFix ? { noFix: true as const } : {}),
     });

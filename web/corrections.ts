@@ -2,7 +2,12 @@
 // of main.ts so they can be tested without a browser.
 
 /** Rules whose message quotes the word that should replace the flagged one. */
-export const QUOTES_REPLACEMENT = new Set(['MICHEART', 'BACHOIR', 'WEAKBACHOIRAR', 'WEAKBACHOIRMA', 'CAIGHDEAN', 'IONADAI', 'MIMHOIRF', 'INPHRASE']);
+// MIMHOIRF quotes only the root (buntaiste, buntáiste); the engine offers the corrected word as a
+// suggestion instead (míbhuntáiste).
+export const QUOTES_REPLACEMENT = new Set(['MICHEART', 'BACHOIR', 'WEAKBACHOIRAR', 'WEAKBACHOIRMA', 'CAIGHDEAN', 'IONADAI', 'INPHRASE', 'COMHSEIMHIU']);
+
+/** Messages whose quoted alternatives are shown joined by "or" (/Bruiséil/ or /Bruiséile/). */
+export const OR_JOINED = new Set(['CAIGHDEAN', 'IONADAI', 'CAIGHMOIRF', 'DROCHMHOIRF']);
 
 export interface Part {
   text: string;
@@ -16,7 +21,7 @@ export interface Part {
  * derived (itself still a mistake) followed by the correct one in brackets, so only
  * the bracketed word is offered.
  */
-export function quotedParts(quoted: string): Part[] {
+export function quotedParts(quoted: string, or = false): Part[] {
   const m = /^(.+?)\s*\(([^()]+)\)$/.exec(quoted.trim());
   if (m) {
     return [
@@ -28,8 +33,9 @@ export function quotedParts(quoted: string): Part[] {
   // "méid, mhéid" is two alternatives, never one text to insert. A lone "X" stands for
   // words the rule cannot name ("á X"), so such an entry is shown but not offered.
   const parts: Part[] = [];
-  quoted.split(/,\s*/).forEach((alt, i) => {
-    if (i) parts.push({ text: ', ', option: false });
+  const alts = quoted.split(/,\s*/);
+  alts.forEach((alt, i) => {
+    if (i) parts.push({ text: or && i === alts.length - 1 ? ' or ' : ', ', option: false });
     parts.push({ text: alt, option: !/(^|\s)X(\s|$)/.test(alt) });
   });
   return parts;

@@ -395,6 +395,11 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>iompair</B>:<N pl="n" gnt="y" gnd="m">
 # not "yam" :)
 <B>[Ii]onam</B>:<O>
+# díreach before a preposition is the adverb "just, exactly" (FGB díreach2, sense 2: díreach ag
+# an doras; díreach i ndiaidh), which modifies the prepositional phrase, not the noun before it.
+<B>[Dd]íreach</B> <S>ANYTHING</S>:<R>
+# elsewhere the adjective (bóthar díreach), not the ADJADV adverb below
+<B>[Dd]íreach</B>:<A pl="n" gnt="n">
 # amháin, siar, thiar, thuaidh, etc; iontach only prominent exception
 <B>iontach</B>:<A pl="n" gnt="n">
 <B><Z>ADJADV</Z>ANYTHING</B>:<R>

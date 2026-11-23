@@ -740,6 +740,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	ndaoine → daoine	na	i measc na daoine	i measc na ndaoine	1	1.6.3	15	11	flagged:URU
 	eclipsis	ndaoine → daoine	na	ar son na daoine cuí	ar son na ndaoine cuí	4	4.7	65	10	flagged:URU
 	eclipsis	ndaoine → daoine	na	clann na daoine córa	clann na ndaoine córa	4	4.7	65	9	-
+	eclipsis	ndeich → deich	na	achar na deich ngairdín chlocharacha	achar na ndeich ngairdín chlocharacha	9	9.3.7	150	9	-
 	eclipsis	ndobrónach → dobrónach	na	a shólás na dobrónach	a shólás na ndobrónach	2	2.2.3	25	12	flagged:URU
 	eclipsis	ngaibhne → gaibhne	na	obair na gaibhne dubha	obair na ngaibhne dubha	4	4.2.5	58	9	-
 	eclipsis	ngardaí → gardaí	na	hataí na gardaí cróga	hataí na ngardaí cróga	4	4.7	65	9	-
@@ -801,6 +802,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	eclipsis	n-oíche → oíche	naoi	tréimhse naoi oíche	tréimhse naoi n-oíche	9	9.3.6	149	14	flagged:URU
 	eclipsis	ndeichiú → deichiú	naoi	naoi deichiú	naoi ndeichiú	9	9.6.3	166	5	flagged:URU
 	eclipsis	nduine → duine	naoi	naoi duine ghnóthacha is nócha	naoi nduine ghnóthacha is nócha	9	9.8	170	5	flagged:URU
+	eclipsis	ngairdín → gairdín	ndeich	achar na ndeich gairdín chlocharacha	achar na ndeich ngairdín chlocharacha	9	9.3.7	150	16	flagged:URU
 	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sé	ní bhfaigheadh sé	5	Tábla 5S	94	3	flagged:SEIMHIU
 	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sí	ní bhfaigheadh sí	5	Tábla 5S	94	3	flagged:SEIMHIU
 	eclipsis	bhfaigheadh → faigheadh	ní	ní faigheadh sibh	ní bhfaigheadh sibh	5	Tábla 5S	94	3	flagged:SEIMHIU
@@ -2729,7 +2731,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	fhuinneog → fuinneog	an	Ar dhún sé an fuinneog?	Ar dhún sé an fhuinneog?	10	10.2.1	171	14	flagged:SEIMHIU
 	lenition	Ghaeilge → Gaeilge	an	an Gaeilge	an Ghaeilge	1	1.1.5(n)	5	3	flagged:SEIMHIU
 	lenition	ghairdín → gairdín	an	tríd an gairdín bhreá	tríd an ghairdín bhreá	1	1.7.3	16	8	flagged:CLAOCHLU
-	lenition	Ghaorthaidh → Gaorthaidh	an	Is i mBéal Átha an Gaorthaidh a bunaíodh Coláiste na Mumhan.	Is i mBéal Átha an Ghaorthaidh a bunaíodh Coláiste na Mumhan.	10	10.6.4	189	19	flagged:NEAMHCHOIT
+	lenition	Ghaorthaidh → Gaorthaidh	an	Is i mBéal Átha an Gaorthaidh a bunaíodh Coláiste na Mumhan.	Is i mBéal Átha an Ghaorthaidh a bunaíodh Coláiste na Mumhan.	10	10.6.4	189	19	-
 	lenition	ghaoth → gaoth	an	Tá an gaoth chun séideadh níos measa.	Tá an ghaoth chun séideadh níos measa.	3	3.3.3	46	6	flagged:SEIMHIU
 	lenition	ghaoth → gaoth	an	Tá an gaoth anoir is an fhearthainn aniar air.	Tá an ghaoth anoir is an fhearthainn aniar air.	6	6.1.1(j)	108	6	flagged:SEIMHIU
 	lenition	ghaoth → gaoth	an	Leag an gaoth é.	Leag an ghaoth é.	8	8.2.5	132	8	flagged:SEIMHIU
@@ -4013,6 +4015,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	ghnóthacha → gnóthacha	nduine	naoi nduine gnóthacha is nócha	naoi nduine ghnóthacha is nócha	9	9.8	170	12	flagged:SEIMHIU
 	lenition	chun → cun	ndul	luas ár ndul cun cinn	luas ár ndul chun cinn	3	3.3.1	45	13	flagged:CAIGHDEAN
 	lenition	chrosta → crosta	ngabhar	úinéir seacht ngabhar crosta	úinéir seacht ngabhar chrosta	9	9.3.6	149	22	-
+	lenition	chlocharacha → clocharacha	ngairdín	achar na ndeich ngairdín clocharacha	achar na ndeich ngairdín chlocharacha	9	9.3.7	150	25	-
 	lenition	ghalánta → galánta	ngirseach	49 ngirseach galánta	49 ngirseach ghalánta	9	9.4.4	160	13	-
 	lenition	shaora → saora	ngluaisteán	17 ngluaisteán saora	17 ngluaisteán shaora	9	9.3.8	151	15	flagged:SEIMHIU
 	lenition	bhreá → breá	ngrian	faoin ngrian breá	faoin ngrian bhreá	1	1.4.1	8	13	flagged:SEIMHIU

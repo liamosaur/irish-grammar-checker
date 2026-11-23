@@ -49,7 +49,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const verbose = args.includes('--verbose');
   const abs = path.resolve(file);
   const text = fs.readFileSync(abs, 'utf8');
-  const gr = new Gramadoir(loadData(path.join(here, '..', 'data', 'legacy-0.70'), path.join(here, '..', 'data'), { overlay: false }), { hyphenFix: false }); // Perl 0.70 oracle
+  const gr = new Gramadoir(loadData(path.join(here, '..', 'data', 'legacy-0.70'), path.join(here, '..', 'data'), { overlay: false }), { hyphenFix: false, skipDigitWords: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, derivedWords: true }); // Perl 0.70 oracle
 
   const perlXml = perlXmlSentences(perlOutput(abs, '--xml', dist));
   const tsXml = gr.xmlStream(text);

@@ -31,7 +31,7 @@ const has = (s: Set<string>, re: RegExp) => [...s].some((t) => re.test(t));
 before(() => {
   const l = loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false });
   const n = loadData(dataDir, undefined, { lexiconCorrections: false }); // the BuNaMo overlay alone, without grammar/lexicon-corrections.tsv
-  legacy = new Gramadoir(l);
+  legacy = new Gramadoir(l, { derivedWords: true }); // the 0.70 reporting, derived words included
   now = new Gramadoir(n);
   legacyLex = l.lexicon as unknown as Tiers;
   nowLex = n.lexicon as unknown as Tiers;

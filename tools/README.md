@@ -43,8 +43,15 @@ and `data/verbal-nouns-extra.json` (built from `grammar/verbal-nouns.tsv`, verba
 `morph-ga.txt`, the morphology rules (read by `build-data.mjs`; level -2, not in
 An Gramadóir 0.70, marks a regular inflection such as an emphatic suffix, which
 `src/engine.ts` accepts without a message for a word not in the word list);
-`extra-messages.json`, the messages for rule ids not in An Gramadóir (merged by
-`build-data.mjs`), and `lexicon-corrections.tsv`, corrections to words' tags
+`prefixes.tsv`, the prefixes the morphology strips (comh-, iar-, neamh-), one row each: the
+build writes their rules into `morph-ga.txt` at `@PREFIXES` and `@PREFIXES-LATE`, applying the
+same CO17 rules to every prefix (lenition, no lenition of d, t, s after d, n, t, l, s, and the
+hyphens of 2.1.7), with the exceptions in the row's flags;
+`messages.tsv`, the English text of every message (id, status, en, reason; read by
+`build-data.mjs`, which writes `data/messages.json`, and upstream's own text to
+`data/legacy-0.70/messages.json` for the parity tests; status as in *Text status* below; the
+optional reason is a `reasons.tsv` id shown with the message when its rule names none, written by
+`generate-rules.mjs` to `data/rules/message-reasons.json`), and `lexicon-corrections.tsv`, corrections to words' tags
 in the word list (or standard words upstream lists only as non-standard forms,
 which are then removed from `data/eile.json`, or words the standard spells otherwise, which are moved there), which `build-data.mjs` turns into `data/lexicon-corrections.json`,
 applied when the checker loads, after the BuNaMo overlay and kept separate from it
@@ -79,7 +86,7 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
   except for spelling suggestions; for those, see `perl-wsl.sh`.
 - `make-golden.ts`, `make-golden-spelling.ts`: record new Perl output as test fixtures.
 - `drift.mjs`: agreement with the expected output in upstream `ga/triail.xml`
-  (currently 460 of 479 sentences identical). Some differences are intended: the
+  (currently 458 of 479 sentences identical). Some differences are intended (*an-scanradh*, a regular prefix formation, is not reported): the
   rules in `grammar/` follow *An Caighdeán Oifigiúil* where upstream does not
   (e.g. *Ní hamháin*, *in 1982*, *mórsheisear iníonacha*, *chuig an banaltra*, *leis an farraige*, *thar an cuid*
   (the dative rule, not the nominative feminine one), *ar fail* (*fáil*, not lenition), and *ag an tsiopa*, the
@@ -105,10 +112,31 @@ cp <tmp>/rules/aonchiall.json <tmp>/rules/rialacha.json data/legacy-0.70/rules/
 ## Reasons
 
 `grammar/reasons.tsv` explains why a rule applies, with its section of *An Caighdeán Oifigiúil*
-(id, section, English, Irish). A rule names one after its message (`:SEIMHIU @adj-fem`); the
-build checks that every id exists and is used, and writes `data/rules/reasons.json`, which the
+(id, status, section, English, Irish). A rule names one after its message (`:SEIMHIU @adj-fem`);
+the build checks that every id exists and is used, and writes `data/rules/reasons.json`, which the
 interface shows under the message ("Why: ..."). In the English text, Irish words are written
-`/like this/`; the Irish examples are copied from the book.
+`/like this/`; the Irish examples are copied from the book. A reason can also explain a message
+(`messages.tsv`, fourth column), for flags that come from the word list rather than a rule; in it,
+`/\1/` is the word the message quotes, and for CAIGHDEAN alternatives are shown joined by "or".
+
+## Text status
+
+Each message in `grammar/messages.tsv` and each reason in `grammar/reasons.tsv` records the status
+of its English text, so that what has been reviewed can be tracked while the wording improves:
+
+- `inherited`: from An Gramadóir 0.70 (`share/messages.bs`), unchanged (messages only). The build
+  checks that an inherited message still matches upstream word for word, and that every upstream
+  message has a row.
+- `unreviewed`: written or changed by Claude, not yet approved.
+- `reviewed`: approved by the maintainer, whether inherited or written by Claude.
+
+To improve an inherited message, change its text and mark it `unreviewed`. The builds print the
+counts (`messages 78 names; 59 inherited, 11 unreviewed, 0 reviewed`). The status is not shown in
+the interface.
+
+The interface text in `web/strings/en.ts` carries the same status as a comment before each key
+(`/* unreviewed */ 'btn.check': 'Check',`); none of it is inherited. `test/web.test.ts` checks
+that every key has one.
 
 ## Searching published Irish
 

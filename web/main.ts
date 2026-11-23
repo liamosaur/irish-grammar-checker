@@ -1,6 +1,6 @@
 import { analyse, type CheckedError, type ErrorView } from './annotate.ts';
 import { APP_NAME, WARN_CHARS } from './config.ts';
-import { applyCorrection, type Plan, planReplacement, proposals, QUOTES_REPLACEMENT, quotedOptions, quotedParts, sliceRange } from './corrections.ts';
+import { applyCorrection, OR_JOINED, type Plan, planReplacement, proposals, QUOTES_REPLACEMENT, quotedOptions, quotedParts, sliceRange } from './corrections.ts';
 import { EXAMPLES } from './examples.ts';
 import { unreadableCount } from './fold.ts';
 import { reasonFor } from './reasons.ts';
@@ -198,6 +198,8 @@ $('clear').addEventListener('click', () => { input.value = ''; updateCount(); se
 // ----------------------------------------------------------------- results
 
 const SHOW_SUGGESTIONS = 3;
+// Unknown words with no near match in the word list: the suggestion line says none was found.
+const SPELLING_UNKNOWN = new Set(['ANAITHNID', 'GRAM']);
 let views: ErrorView[] = [];
 let selected = -1;
 let multiLine = false;
@@ -268,21 +270,26 @@ function replaceButton(v: ErrorView, replacement: string, stop = false): HTMLBut
 }
 
 /** Message text with the /word/ parts the engine uses to quote Irish words set apart (as buttons when `v` can take them). */
-function formatMessage(msg: string, v?: ErrorView): DocumentFragment {
+function formatMessage(msg: string, v?: ErrorView, or = false): DocumentFragment {
   const frag = document.createDocumentFragment();
   const re = /\/([^/]+)\//g;
   let at = 0;
+  const tok = (text: string) => {
+    const q = document.createElement('span');
+    q.className = 'tok';
+    q.lang = 'ga';
+    q.textContent = text;
+    return q;
+  };
   for (let m = re.exec(msg); m; m = re.exec(msg)) {
     if (m.index > at) frag.append(msg.slice(at, m.index));
     if (!v) {
-      const q = document.createElement('span');
-      q.className = 'tok';
-      q.lang = 'ga';
-      q.textContent = m[1];
-      frag.append(q);
+      // alternatives joined by "or" (/Bruiséil/ or /Bruiséile/) where the message offers either
+      if (or) for (const part of quotedParts(m[1], true)) frag.append(part.option ? tok(part.text) : part.text);
+      else frag.append(tok(m[1]));
     } else {
       const offered = quotedOptions(v, v.range ? checkedText.split('\n')[v.range.y] ?? '' : undefined);
-      for (const part of quotedParts(m[1])) {
+      for (const part of quotedParts(m[1], or)) {
         if (!part.option) { frag.append(part.text); continue; }
         if (!offered.includes(part.text)) {
           // a form the words before it rule out (Ar tug: /dtug, thug/): shown, not offered
@@ -309,7 +316,7 @@ function listItem(v: ErrorView): HTMLLIElement {
   // What the rule asks for, as the full flagged text: the genitive for "genitive required", the mutated form for "Lenition missing", ...
   const before = v.range ? Array.from(checkedText.split('\n')[v.range.y] ?? '').slice(0, v.range.from).join('') : '';
   const fixes = flagged === null ? [] : proposals(v, flagged, before);
-  const standalone = v.suggestions.length > 0 || replaceable || fixes.length > 0; // message sits beside the row button, not inside it
+  const standalone = replaceable; // message sits beside the row button, not inside it
   const li = document.createElement('li');
   li.className = 'err';
   li.dataset.idx = String(v.idx);
@@ -326,23 +333,22 @@ function listItem(v: ErrorView): HTMLLIElement {
   words.textContent = v.words;
   const msg = document.createElement('span');
   msg.className = 'msg';
-  if (v.suggestions.length) {
-    // One line: “ta” – Did you mean tá?
-    msg.append(' – ', t('sugg.label'), ' ');
-    v.suggestions.slice(0, SHOW_SUGGESTIONS).forEach((w, i) => {
-      if (i) msg.append(', ');
-      if (v.range) msg.append(replaceButton(v, w, true));
-      else {
-        const s = document.createElement('span');
-        s.className = 'sugg-word';
-        s.lang = 'ga';
-        s.textContent = w;
-        msg.append(s);
-      }
-    });
-    msg.append('?');
-  } else msg.append(' – ', formatMessage(v.msg, replaceable ? v : undefined));
-  fixes.forEach((proposal, i) => {
+  // 1. The message. A message that quotes the replacement (CAIGHDEAN, BACHOIR) offers it in place.
+  msg.append(' – ', formatMessage(v.msg, replaceable ? v : undefined, OR_JOINED.has(v.rule)));
+  // 2. The suggestions, on a line of their own: "Did you mean tá?" Words like the unknown one
+  // (MOLADH, GRAM), or the form the rule asks for (the lenited word for "Lenition missing").
+  const offers: HTMLElement[] = [];
+  v.suggestions.slice(0, SHOW_SUGGESTIONS).forEach((w) => {
+    if (v.range) offers.push(replaceButton(v, w));
+    else {
+      const s = document.createElement('span');
+      s.className = 'sugg-word';
+      s.lang = 'ga';
+      s.textContent = w;
+      offers.push(s);
+    }
+  });
+  fixes.forEach((proposal) => {
     const fix = document.createElement('button');
     fix.className = 'sugg-word';
     fix.lang = 'ga';
@@ -350,7 +356,7 @@ function listItem(v: ErrorView): HTMLLIElement {
     fix.textContent = proposal;
     fix.title = t('sugg.apply', { word: proposal });
     fix.addEventListener('click', () => applyPlan({ range: v.range!, word: proposal }));
-    msg.append(i ? ', ' : ': ', fix);
+    offers.push(fix);
   });
   const where = document.createElement('span');
   where.className = 'where';
@@ -371,9 +377,23 @@ function listItem(v: ErrorView): HTMLLIElement {
   btn.addEventListener('click', () => select(v.idx, 'list'));
 
   li.append(row);
-  const why = reasonFor(v.reason);
+  if (offers.length) {
+    const p = document.createElement('p');
+    p.className = 'sugg';
+    p.append(`${t('sugg.label')} `);
+    offers.forEach((o, i) => p.append(i === 0 ? '' : i === offers.length - 1 ? ' or ' : ', ', o));
+    p.append('?');
+    li.append(p);
+  } else if (SPELLING_UNKNOWN.has(v.rule)) {
+    // An unknown word with no near match says so, so the missing line isn't read as an oversight.
+    const p = document.createElement('p');
+    p.className = 'sugg';
+    p.textContent = t('sugg.none');
+    li.append(p);
+  }
+  // 3. Why the rule applies: "Why: ... (An Caighdeán Oifigiúil 10.14.1)".
+  const why = reasonFor(v.reason, v.rule, v.arg, v.words);
   if (why) {
-    // Why the rule applies, below the message: "Why: ... (An Caighdeán Oifigiúil 10.14.1)".
     const p = document.createElement('p');
     p.className = 'why';
     const label = document.createElement('span');
@@ -381,7 +401,7 @@ function listItem(v: ErrorView): HTMLLIElement {
     label.textContent = `${t('why.label')} `;
     const text = document.createElement('span');
     text.lang = why.lang;
-    text.append(formatMessage(why.text)); // Irish words in an English text are written /like this/
+    text.append(formatMessage(why.text, undefined, OR_JOINED.has(v.rule))); // Irish words in an English text are written /like this/
     p.append(label, text);
     if (why.co17) p.append(' ', t('why.ref', { section: why.co17 }));
     li.append(p);
