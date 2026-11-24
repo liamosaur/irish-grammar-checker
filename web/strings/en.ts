@@ -66,7 +66,8 @@ export const en = {
   'how.limits.4': 'Everything runs in your browser, and your text never leaves it. The grammar checking algorithm does not use generative AI.',
   'how.about': 'For credits and licences, see [About](#about).',
 
-  'footer.credit': 'Based on [An Gramadóir](https://github.com/kscanne/gramadoir) by Kevin P. Scannell.',
+  'footer.credit': 'Based on [An Gramadóir](https://github.com/kscanne/gramadoir) by Kevin P. Scannell, which uses grammar rules from the textbook Christian Brothers Grammar, 1994.',
+  'footer.co': 'Click [here](https://co.grammar.irish) to try out a work-in-progress version that has enhanced messages and uses grammar rules from An Caighdeán Oifigiúil.',
 
   'about.title': 'About',
   'about.what': 'A grammar checker for Irish. It marks words and phrases that look wrong, such as a missing or unnecessary mutation, a repeated word or a non-standard spelling, and says why. [It may make mistakes](#how).',
