@@ -896,13 +896,16 @@ n[Dd]eire:IONADAI{ndeireadh}
 #. Cad é mar a tá tú?
 [Aa] <V>JUSTTA</V>:BACHOIR{atá}
 [Aa]n <A>[Gg]hnách</A>:IONADAI{an ghnáth}
-<A>POSITIVEINT</A> <NP>ANYTHING</NP>:UATHA
+<A>POSITIVEINT</A> <NP>ANYTHING</NP>:UATHA @singular-after-number
 # The special plurals used after numbers (CO17 9.3.2, Tábla 9G: 89 dtroithe
 # cearnacha), and orlaí.
   <A>POSITIVEINT</A> <NP>(SPECIALPLDEAG|n-orlaí|h?orlaí)</NP>:OK
+# A year (1800-2099) is not a count: the noun after it is not counted (An tAcht um Chlárú
+# Sibhialta 2004 athruithe ar chuid de na rialacha).
+  <E><A>(1[89]|20)[0-9][0-9]</A> <NP>ANYTHING</NP></E>:OK
 # CO17 9.3.9(a): after a multiple of ten the noun is singular (caoga císte milis;
 # seachtó bliain fhada).
-DECADE <NP>ANYTHING</NP>:UATHA
+DECADE <NP>ANYTHING</NP>:UATHA @singular-after-number
 # A fraction's denominator is an ordinal, plural after the numerator (tríocha a trí
 # de chaoga seachtuithe: 9.6.1).
   <E>DECADE <NP>ANYTHINGuithe</NP></E>:OK
@@ -1638,7 +1641,7 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N pl="n" gnt="n" gnd="f">[Tt]hroigh</N>:BACHOIR{troithe}
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N pl="n" gnt="n" gnd="f">[Uu]bh</N>:BACHOIR{uibhe}
 # NGBC p.184, CB p.76 #8.a
-<A pl="n" gnt="n">g?[Cc]h?eithre</A> <NP>ANYTHING</NP>:UATHA
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <NP>ANYTHING</NP>:UATHA @singular-after-number
   <A pl="n" gnt="n">g?[Cc]h?eithre</A> <NP>(bliana|cinn|cloigne|fichid|horlaí|huaire|troithe)</NP>:OK
 # CB p.22 #8 (implicit), corpus confirms -- never on adj. "t-aon" in corpus...
 #. Cén amhránaí is fearr leat?
@@ -1840,7 +1843,7 @@ g?[Cc]h?úig <N pl="n" gnt="n" gnd="f">[Ss]heachtain</N>:BACHOIR{seachtaine}
 g?[Cc]h?úig <N pl="n" gnt="n" gnd="f">[Tt]hroigh</N>:BACHOIR{troithe}
 g?[Cc]h?úig <N pl="n" gnt="n" gnd="f">[Uu]bh</N>:BACHOIR{uibhe}
 # NGBC p.184, CB p.76 #8.a
-g?[Cc]h?úig <NP>ANYTHING</NP>:UATHA
+g?[Cc]h?úig <NP>ANYTHING</NP>:UATHA @singular-after-number
   g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
 # CO17 9.4.3(a): a noun after a personal number is in the genitive plural, which for a
@@ -2070,7 +2073,7 @@ n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">d[Tt]roigh</N>:BACHOIR{dtroithe}
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">n-ubh</N>:BACHOIR{n-uibhe}
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
-n?[Dd]h?eich <NP>ANYTHING</NP>:UATHA
+n?[Dd]h?eich <NP>ANYTHING</NP>:UATHA @singular-after-number
   n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 # CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
@@ -2171,8 +2174,8 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
   <A pl="n" gnt="n">[Aa]on</A> <E><N>[Dd]áréag</N></E>:OK
   <A pl="n" gnt="n">[Cc]h?éad</A> <E><N>[Dd]áréag</N></E>:OK
 # NGBC p.184, CB p.76 #8.a
-<A pl="n" gnt="n">[Dd]há</A> <NP>ANYTHING</NP>:UATHA
-<T>[Aa]n</T> [Dd]á <NP>ANYTHING</NP>:UATHA
+<A pl="n" gnt="n">[Dd]há</A> <NP>ANYTHING</NP>:UATHA @singular-after-number
+<T>[Aa]n</T> [Dd]á <NP>ANYTHING</NP>:UATHA @singular-after-number
 # corpus; see caighdean training texts
 <N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="m">Luain</N>:BACHOIR{Dé Luain}
 <N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="f">Máirt</N>:BACHOIR{Dé Máirt}
@@ -3228,7 +3231,7 @@ dhó:IONADAI{dó}
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="m">n-orlach</N>:BACHOIR{n-orlaí}
 # NGBC p.184, CB p.76 #8.a
-<[^Y]>[Nn]aoi</[^Y]> <NP>ANYTHING</NP>:UATHA
+<[^Y]>[Nn]aoi</[^Y]> <NP>ANYTHING</NP>:UATHA @singular-after-number
   <[^Y]>[Nn]aoi</[^Y]> <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 <[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 # CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
@@ -3476,7 +3479,7 @@ h?[Oo]cht <N pl="n" gnt="n" gnd="f">d[Tt]roigh</N>:BACHOIR{dtroithe}
 h?[Oo]cht <N pl="n" gnt="n" gnd="f">n-ubh</N>:BACHOIR{n-uibhe}
 h?[Oo]cht <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
-h?[Oo]cht <NP>ANYTHING</NP>:UATHA
+h?[Oo]cht <NP>ANYTHING</NP>:UATHA @singular-after-number
   h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 h?[Oo]cht <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 # CO17 9.3.4(b): not after a special plural form ending in a vowel or a broad consonant (naoi mbliana fada).
@@ -3772,7 +3775,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 <A pl="n" gnt="n">[Ss]h?é</A> <N pl="n" gnt="n" gnd="f">[Tt]hroigh</N>:BACHOIR{troithe}
 <A pl="n" gnt="n">[Ss]h?é</A> <N pl="n" gnt="n" gnd="f">[Uu]bh</N>:BACHOIR{uibhe}
 # NGBC p.184, CB p.76 #8.a
-<A pl="n" gnt="n">[Ss]h?é</A> <NP>ANYTHING</NP>:UATHA
+<A pl="n" gnt="n">[Ss]h?é</A> <NP>ANYTHING</NP>:UATHA @singular-after-number
   <A pl="n" gnt="n">[Ss]h?é</A> <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 # CB p.14 Note
 #. Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach.
@@ -3799,7 +3802,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 [Ss]h?eacht <N pl="n" gnt="n" gnd="f">n-ubh</N>:BACHOIR{n-uibhe}
 [Ss]h?eacht <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
-[Ss]h?eacht <NP>ANYTHING</NP>:UATHA
+[Ss]h?eacht <NP>ANYTHING</NP>:UATHA @singular-after-number
   [Ss]h?eacht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire|n-orlaí|dtroithe)</NP>:OK
 # idiom in OD cúram
   [Ss]h?eacht <N pl="y" gnt="n" gnd="m">gcúraimí</N>:OK

@@ -13,8 +13,8 @@ id	status	en	reason
 NEAMHCHOIT=NAMMENOWGH=UNCOMMON	reviewed	In the app's dictionary, but rarely used	rare-word
 DUBAILTE	inherited	Repeated word
 CUPLA=KESUNYANS	inherited	Unusual combination of words
-IOLRA	inherited	The plural form is required here
-UATHA	inherited	The singular form is required here
+IOLRA	reviewed	Likely the noun should be plural
+UATHA	reviewed	Likely the noun should be singular
 AIDIOLRA	inherited	Plural adjective required
 BREISCHEIM	inherited	Comparative adjective required
 NEEDART	inherited	Definite article required

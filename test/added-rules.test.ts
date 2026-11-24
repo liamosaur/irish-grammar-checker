@@ -336,6 +336,8 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   // to lenite after a number or a feminine noun
   { text: 'Ní foláir oibleagáid faoin alt seo a chomhlíonadh laistigh den tréimhse 5 lá díreach i ndiaidh an lae a dtagann sí i gceist.', note: 'díreach i ndiaidh: adverb, after a number in figures' },
   { text: 'Má thoilíonn siad go léir amhlaidh, beidh éifeacht leis an rogha díreach tar éis an toiliú is déanaí de na toilithe sin a thabhairt.', note: 'díreach tar éis: adverb, after a feminine noun' },
+  // Citizens Information: a year in figures is not a count, so the plural after it stands
+  { text: 'Rinne An tAcht um Chlárú Sibhialta 2004 athruithe ar chuid de na rialacha maidir le clárú breithe.', note: '2004 is the year of the Act' },
   // Citizens Information: a genitive after a noun takes no t- (CO17 10.9.1(a)); a + a verbal noun takes no d'
   { text: "Rialacha Cláraíonn an comhlacht a n-íocann tú cíos líne leo do rogha gan ' glaonna fuara ' a fháil ar Bhunachar Sonraí an Eolaire Náisiúnta.", note: 'an Eolaire: the genitive, which is spelt like the nominative' },
   { text: 'Féadfaidh tú leanúint le do chárta éagtha a úsáid fad a bhíonn athbhreithniú ar bun, a fhad agus a bhíonn baint agat sa phróiseas athbhreithnithe.', note: "a úsáid: a + verbal noun, not the relative with the past (a d'úsáid)" },
