@@ -30,7 +30,7 @@ function quoted(rule: string | undefined, arg = ''): string {
 /**
  * The explanation for a reason id (or, without one, for the message `rule`) in the interface
  * language (English if it has no Irish yet). \1 in the text is the word the rule quotes (`arg`),
- * \0 the flagged words (`words`). For a word reported as its parts (PARTS: comh+gnéis,
+ * \0 the flagged words (`words`), \3 the last of them (acmhainn in Ní acmhainn). For a word reported as its parts (PARTS: comh+gnéis,
  * mí+buntaiste (buntáiste)), \1 is the parts joined by " + " and \2 the correct form in brackets.
  */
 export function reasonFor(id: string | undefined, rule?: string, arg?: string, words?: string): { text: string; lang: string; co17?: string } | null {
@@ -44,6 +44,7 @@ export function reasonFor(id: string | undefined, rule?: string, arg?: string, w
     .replace(/\/\\0\//g, `/${words ?? ''}/`)
     .replace(/\/\\1\//g, one)
     .replace(/\/\\2\//g, `/${p ? p[2] : ''}/`)
+    .replace(/\/\\3\//g, `/${(words ?? '').trim().split(/\s+/).pop() ?? ''}/`)
     .replace(/\\1/g, arg ?? '');
   if (currentLocale() === 'ga' && r.ga) return { text: fill(r.ga), lang: 'ga', co17: r.co17 };
   return { text: fill(r.en), lang: 'en', co17: r.co17 };

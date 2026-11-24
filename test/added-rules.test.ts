@@ -250,6 +250,9 @@ const cases: Case[] = [
   { section: '11.3.1(h)', text: 'Cén fáth a chuaigh siad ann?', rule: 'RELATIVE', words: 'a chuaigh', fixed: null },
   // a hint after áit, fáth, caoi ...: ar unless the noun is the verb's object
   { section: '11.3.1(h)', text: 'Cén áit a chuir tú é?', rule: 'WEAKBACHOIRAR', words: 'a chuir', fixed: 'Cén áit ar chuir tú é?' },
+  // Citizens Information: a plural after dhá to sé, which take the singular (reported as missing lenition before)
+  { section: '9.3.1(h)', text: "Déanann an tAcht um Eagrú Ama Oibre 1997 foráil do bhunshaoire íoctha de cheithre seachtainí in aghaidh na bliana, ach d'fhéadfadh cearta breise a bheith i gconradh an fhostaí.", rule: 'UATHA', words: 'cheithre seachtainí', fixed: null },
+  { section: '9.3.1(h)', text: 'Caithfidh tú an achainí a fhíorú trí Mhionnscríbhinn, in éineacht le deimhnithe FITNESS sínithe ag 6 ball den ghairm dlí agus ag sé Ceannairí den phobal gnó áitiúil.', rule: 'UATHA', words: 'sé Ceannairí', fixed: null },
   // Citizens Information and Gaois: a nominative noun after the noun it depends on (a hint; no fix offered)
   { section: '1.5.1(a)', text: 'Íocann an Stát an naíonra nó an tseirbhís cúram lae as na huaireanta COLÓ sin trí mheán táille caipitíochta.', rule: 'WEAKGENITIVE', words: 'tseirbhís cúram', fixed: null },
   { section: '1.5.1(a)', text: 'Má roghnaíonn tú teach altranais príobháideach, íocfaidh tú an ranníocaíocht chuig an soláthraí teach altranais gach seachtain agus íocfaidh an Stát an t-iarmhéid ar do shon.', rule: 'WEAKGENITIVE', words: 'soláthraí teach', fixed: null },

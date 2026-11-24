@@ -202,7 +202,6 @@ const SHOW_SUGGESTIONS = 3;
 const SPELLING_UNKNOWN = new Set(['ANAITHNID', 'GRAM']);
 let views: ErrorView[] = [];
 let selected = -1;
-let multiLine = false;
 const marksFor = new Map<number, HTMLElement[]>();
 
 function showResults(text: string, errors: CheckedError[]) {
@@ -239,7 +238,6 @@ function showResults(text: string, errors: CheckedError[]) {
   // Summary and notes
   const n = errors.length;
   $('summary').textContent = n === 0 ? t('result.none') : tn('result.count', n);
-  multiLine = text.includes('\n');
   $('text-group').textContent = n === 0 ? t('text.group.none') : tn('text.group', n);
   show($('note-none'), n === 0);
   show(list, n > 0);
@@ -358,16 +356,12 @@ function listItem(v: ErrorView): HTMLLIElement {
     fix.addEventListener('click', () => applyPlan({ range: v.range!, word: proposal }));
     offers.push(fix);
   });
-  const where = document.createElement('span');
-  where.className = 'where';
-  where.textContent = t('list.line', { n: v.line });
   // Suggestion buttons cannot live inside another button, so for those notes the message sits beside it.
   const row = document.createElement('div');
   row.className = 'err-row';
   const inside = standalone ? row : btn;
   btn.append(sr, words);
   if (standalone) row.append(btn, msg); else { btn.append(msg); row.append(btn); }
-  if (multiLine) inside.append(' ', where);
   if (!v.aligned) {
     const warn = document.createElement('span');
     warn.className = 'unaligned';

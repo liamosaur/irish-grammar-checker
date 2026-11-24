@@ -113,7 +113,6 @@ mark.active { background: var(--mark-active); }
 .words { color: var(--ink); font-weight: 600; font-family: var(--serif); font-size: 1.05rem; }
 .words::before { content: "\201C"; }
 .words::after { content: "\201D"; }
-.where { color: var(--muted); font-size: .8rem; }
 .sugg { margin: -.5rem .25rem 1rem; }
 .why { margin: -.5rem .25rem 1rem; font-size: .9rem; color: var(--muted); }
 .sugg + .why { margin-top: -.5rem; }

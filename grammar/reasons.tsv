@@ -7,8 +7,12 @@
 #   reviewed    approved by Liam
 # One line per reason; tabs between columns.
 id	status	co17	en	ga
-ni-h-pronoun	unreviewed	10.13.1, 10.13.2	After /ní/ (the copula) and /cé/, h goes before the personal pronouns /é/, /í/, /ea/ and /iad/ (/ní hé/, /ní hiad/, /cé hí?/), and after /ní/ before the demonstratives /éard/, /eo/, /in/ and /iúd/ (/ní heo/, /ní hin/).
-ni-h-word	unreviewed	10.11.8, 10.12.2, 10.13.2	After /ní/ (the copula), h goes before a vowel only on a closed list of words: the nouns of CO17 10.11.8 (/ní hiontas/, /ní haithnid duit/), the adjectives and adverbs of 10.12.2 (/ní hamháin/, /ní hionann/, /ní hamhlaidh/) and the demonstratives /éard/, /eo/, /in/ and /iúd/ (/ní heo/).
+ni-h-pronoun	reviewed	10.13.1	In /\0/, /ní/ is the copula, and /\3/ is a personal pronoun, which takes h after /ní/.	
+ni-h-demonstrative	reviewed	10.13.2	In /\0/, /ní/ is the copula, and /\3/ is a demonstrative, which takes h after /ní/.	
+ce-h-pronoun	reviewed	10.13.1	In /\0/, /\3/ is a personal pronoun, which takes h after /cé/.	
+ni-h-noun	reviewed	10.11.8	In /\0/, /ní/ is the copula. CO17 10.11.8 lists /\3/ among the nouns that take h after /ní/.	
+ni-h-adj	reviewed	10.12.2	In /\0/, /ní/ is the copula. CO17 10.12.2 lists /\3/ among the adjectives and adverbs that take h after /ní/.	
+ni-h-phrase	reviewed	10.11.8(c)	In /\0/, /ní/ is the copula. CO17 gives this set phrase with h on the noun after /ní/.	
 ordinal-h	unreviewed	10.11.2(a)	An ordinal number (/dara/, /tríú/, /ceathrú/ ...) puts h before a noun beginning with a vowel: /an dara heochair/, /an t-ochtú heagrán/. /céad/ is the exception: /an chéad áit/.
 na-imperative	unreviewed	10.14.1	The negative particle of the imperative is /ná/, and it puts h before a vowel: /ná habair/, /ná himigh/.
 art-fem	unreviewed	10.2.1(a)	After the article /an/, a feminine noun in the nominative singular is lenited, unless it begins with d, t or s: /an bhean/, /an fhuinneog/.	
@@ -33,8 +37,8 @@ adj-masc-gen	unreviewed	10.3.1(b)	An adjective after a masculine noun in the gen
 adj-slender-plural	unreviewed	10.3.1(c)	An adjective after a plural noun ending in a slender consonant is lenited: /fir mhóra/.	
 adj-number	unreviewed	10.3.1(d)	An adjective is lenited after a noun with /dhá/ before it, and after a singular noun with a number from /trí/ to /deich/ before it: /dhá bhó bhána/, /trí bhád mhóra/.	
 adj-lenition	unreviewed	10.3.1	An adjective is lenited after a feminine singular noun (/bean mhór/), after a masculine noun in the genitive singular (/mac fir mhóir/), after a plural noun ending in a slender consonant (/fir mhóra/) and after certain numbers; otherwise it is not.	
-gen-after-fem	unreviewed	10.2.7	An indefinite noun in the genitive after a feminine singular noun is usually lenited: /cloch shneachta/, /uirlis cheoil/. CO17 10.2.7 lists the exceptions (a) to (m); some depend on meaning (a person, a part of something), so check whether one applies.	
-gen-after-plural	unreviewed	10.2.8	An indefinite noun in the genitive after a plural noun ending in a slender consonant is usually lenited: /dualgais bhreise/, /ceadúnais ghnó/. CO17 10.2.8 lists the exceptions (a) to (f), so check whether one applies.	
+gen-after-fem	reviewed	10.2.7	In /\0/, the second noun is an indefinite genitive after a feminine singular noun, and is then usually lenited: /cloch shneachta/, /uirlis cheoil/. CO17 10.2.7 lists the exceptions, some of which depend on meaning.	
+gen-after-plural	reviewed	10.2.8	In /\0/, the second noun is an indefinite genitive after a plural noun ending in a slender consonant, and is then usually lenited: /dualgais bhreise/, /ceadúnais ghnó/. CO17 10.2.8 lists the exceptions.	
 verb-independent	unreviewed	10.4.1(a), 5.1.7	In the past tense, the past habitual and the conditional, the verb is lenited even with no particle before it: /mhol mé/, /shábháil sí/, /théidís/, /chuideodh sé/. (/abair/ is never lenited: /dúirt siad/.)	
 d-past	unreviewed	10.15	Where a consonant would be lenited, a verb beginning with a vowel, or with f, takes /d'/ in the past tense, the past habitual and the conditional: /d'ól sé/, /d'fhágamar/, /d'imeoinn/.	
 verb-after-particle	unreviewed	10.4.2	The verb is lenited after /ní/, /níor/, /ar/, /cár/, /dár/, /gur/, /murar/, /nár/ and /sular/: /ní fhaca sé/, /níor fhéad mé/, /sílim gur thuig sé/.	
@@ -44,8 +48,7 @@ verb-relative-eclipsis	unreviewed	10.8.1(a)	The verb is eclipsed after the indir
 verb-eclipsis	unreviewed	10.8	A verb is eclipsed only after the particles that eclipse it: /an/, /cá/, /dá/, /go/, /mura/, /nach/, /sula/ and the indirect relative /a/ (/an mbeidh/, /go bhféadfaidh sé/).	
 relative-a	unreviewed	10.4.1(b), 10.8.1(a)	After the relative particle /a/, the verb is lenited when /a/ is the direct relative (/an bhean a ghlanfaidh an áit/) and eclipsed when it is the indirect relative (/an bhean a dtagann a páistí ar scoil/).	
 number-eclipsis	unreviewed	10.6.3	/seacht/, /ocht/, /naoi/ and /deich/ eclipse the noun after them: /seacht ndícheall/, /ocht gcinn/, /naoi mbliana/, /deich n-eachtra/.	
-number-lenition	unreviewed	10.2.4(b), 10.2.4(c)	/dhá/, and /trí/, /ceithre/, /cúig/ and /sé/, lenite the noun after them: /dhá chrann/, /trí bhád/, /ceithre bhó/. The exceptions are the nouns with a special plural form after numbers (CO17 9.3.2).	
-tri-lenition	unreviewed	10.2.5(a), 10.2.4(c)	/trí/ lenites the noun after it, both as the preposition ("through") and as the number ("three": /trí bhád/).	
+number-lenition	reviewed	10.2.4(b), 10.2.4(c), 9.3.2	In /\0/, the noun follows /dhá/, /trí/, /ceithre/, /cúig/ or /sé/, which lenite the singular noun after them: /dhá chrann/, /trí bhád/, /ceithre bhó/. CO17 9.3.2 lists the nouns with a special form after numbers, which are not lenited: /trí seachtaine/, /ceithre cinn déag/.	
 vn-a-lenition	unreviewed	10.2.5(a)	/a/ before a verbal noun (it stands for /do/) lenites it: /obair a dhéanamh/.	
 art-masc-gen	unreviewed	10.2.1(b)	After the article /an/, a masculine noun in the genitive singular is lenited unless it begins with d, t or s: /mac an fhir/, /geata an choláiste/.	
 copula-lenition	unreviewed	10.2.13, 10.3.6	The past and conditional forms of the copula (/ba/, /níor/, /ar/, /nár/, /gur/, /dá mba/ ...) lenite the noun or adjective after them: /Ba dhuine mór é/, /Ba dheas uait é/, /Ar mhaith leat é?/	

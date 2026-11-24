@@ -101,7 +101,7 @@ sin sin:OK
 ######## h before a vowel after the copula ní
 # After the copula ní, h goes before a vowel on the pronouns (ní hé) and on a
 # closed list of words: nouns in CO17 10.11.8 and Table 10E, adjectives and
-# adverbs in 10.12.2 (the macro NIHWORDS), demonstratives in 10.13.2. Nothing
+# adverbs in 10.12.2 (the macros NIHNOUNS and NIHADJS), demonstratives in 10.13.2. Nothing
 # else takes it (Ní amadán é; Ní Eoin is ainm dom; Ní eolas oideachas): the
 # NIAITCH rules.
 # CO17 10.13.2: ní hin. The word list has hin as a non-standard form of sin, so this
@@ -1531,7 +1531,7 @@ INITIALMBAPOST:NIURU
 <Q>[Cc]é</Q> <N pl="n" gnt="n" gnd="m">rud</N>:BACHOIR{céard}
 # CB p.24 #11.c
 #. Cé iad na fir seo ag fanacht farat?
-<Q>[Cc]é</Q> <P>INITIALVOWEL</P>:PREFIXH @ni-h-pronoun
+<Q>[Cc]é</Q> <P>INITIALVOWEL</P>:PREFIXH @ce-h-pronoun
 # OD ea^1.5b, LGG p.114 -- literary form, not in corpus at all
 #. Cé ea, rachaidh mé ann leat (OK).
   <Q>[Cc]é</Q> <P>ea</P>:OK
@@ -1588,7 +1588,8 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>airde</N>:BACHOIR{hairde}
 # CB p.13 #3.f, p.76 #8.b
 #. Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
-<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>UNLENITED</N>:SEIMHIU @number-lenition
+# CO17 9.3.1(h): the singular noun is lenited; a plural is reported by the UATHA rule further on.
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <NS>UNLENITED</NS>:SEIMHIU @number-lenition
 # OD dúil "Lit."
 #. Tá sé tuigthe aige go bhfuil na ceithre dúile ann (OK).
   <T>[Nn]a</T> <E><A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>[Dd]úile</N></E>:OK
@@ -1792,7 +1793,8 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 g?[Cc]h?úig uaire?:BACHOIR{huaire}
 # CB p.13 #3.f, p.76 #8.b
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
-g?[Cc]h?úig <N>UNLENITED</N>:SEIMHIU @number-lenition
+# CO17 9.3.1(h): the singular noun is lenited; a plural is reported by the UATHA rule further on.
+g?[Cc]h?úig <NS>UNLENITED</NS>:SEIMHIU @number-lenition
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
   g?[Cc]h?úig <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Pp]ingine|[Ss]eachtaine|[Tt]roithe)</N>:OK
@@ -2099,6 +2101,8 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 #. Rug sí greim ar mo dhá gualainn agus an fhearg a bhí ina súile.
 #. Bhí an dá taobh seo dá phearsantacht le feiceáil go soiléir.
 <A pl="n" gnt="n">[Dd]h?á</A> UNLENITED:SEIMHIU @number-lenition
+# CO17 9.3.1(h): only the singular noun; a plural is reported by the UATHA rule further on.
+  <E><A pl="n" gnt="n">[Dd]h?á</A> <NP>ANYTHING</NP></E>:OK
 # CB p.13 #3.d
 #. Bhí Eibhlín ar a dhá glúin (OK).
   <D>([Aa]|[Áá]r|[Bb]hur)</D> <E><A pl="n" gnt="n">[Dd]há</A> UNLENITED</E>:OK
@@ -3289,21 +3293,24 @@ dhó:IONADAI{dó}
   <U>[Nn]í</U> <VNOPAUT>ABAIRPRFU</VNOPAUT>:OK
 # CB p.24 #11.c
 #. Ní iad sin do phíopaí ar an tábla!
+# CO17 10.13.2: the demonstratives (ní héard, ní heo, ní hin, ní hiúd), before the personal pronouns
+# below (10.13.1), so that each gets its own explanation.
+<V cop="y">[Nn]í</V> <P>(éard|eo|in|iúd)</P>:PREFIXH @ni-h-demonstrative
 <V cop="y">[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH @ni-h-pronoun
 # (ní heo: eo and heo are tagged as pronouns in grammar/lexicon-corrections.tsv, so
 # the rules for ní + pronoun cover them.)
 # h missing on one of the listed words after the copula. The copula tag keeps
 # this off the noun ní, "thing" (aon ní amháin). in is left out: after ní it is
 # usually the preposition (Ní in Éirinn a rugadh é).
-<V cop="y">[Nn]í</V> <[ANR]>NIHWORDS</[ANR]>:PREFIXH @ni-h-word
+<V cop="y">[Nn]í</V> <[ANR]>NIHNOUNS</[ANR]>:PREFIXH @ni-h-noun
+<V cop="y">[Nn]í</V> <[ANR]>NIHADJS</[ANR]>:PREFIXH @ni-h-adj
 # CO17 8.6.2: eo and iúd (for seo and siúd) are not used after is.
 <V cop="y">[Ii]s</V> <P>eo</P>:BACHOIR{seo}
 <V cop="y">[Ii]s</V> <P>iúd</P>:BACHOIR{siúd}
-<V cop="y">[Nn]í</V> <P>(éard|iúd)</P>:PREFIXH @ni-h-word
 # CO17 10.11.8(c): the two proverbs.
-<V cop="y">[Nn]í</V> <N>(aithne|eolas)</N> [Gg]o haontíos:PREFIXH @ni-h-word
+<V cop="y">[Nn]í</V> <N>(aithne|eolas)</N> [Gg]o haontíos:PREFIXH @ni-h-phrase
 # CO17 Table 10E (summary of 10.11.8) also gives ní huair chairde í.
-<V cop="y">[Nn]í</V> <N>uair</N> <N>chairde</N>:PREFIXH @ni-h-word
+<V cop="y">[Nn]í</V> <N>uair</N> <N>chairde</N>:PREFIXH @ni-h-phrase
 # pre-standard form; catch here before "NISEIMHIU" rule that follows for clarity
 <V cop="y">[Nn]í</V> <N pl="n" gnt="n" gnd="f">fhuil</N>:CAIGHDEAN{níl}
 # converse of CB p.16 #7, no lenition after present/future copula
@@ -3718,7 +3725,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 <A pl="n" gnt="n">[Ss]é</A> uaire?:BACHOIR{huaire}
 # CB p.13 #3.f, p.76 #8.b
 #. Céard atá ann ná sé cathaoirleach coiste.
-<A pl="n" gnt="n">[Ss]h?é</A> <N>UNLENITED</N>:SEIMHIU @number-lenition
+# CO17 9.3.1(h): the singular noun is lenited; a plural is reported by the UATHA rule further on.
+<A pl="n" gnt="n">[Ss]h?é</A> <NS>UNLENITED</NS>:SEIMHIU @number-lenition
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
   <A pl="n" gnt="n">[Ss]h?é</A> <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Pp]ingine|[Ss]eachtaine|[Tt]roithe)</N>:OK
@@ -4014,9 +4022,13 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
   <E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
   <E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
   <E><S>[Tt]rí</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
-# CB p.13 #3.f, p.76 #8.b (<A>trí</A>) p.13 #4.a (<S>trí</S>)
-#. Gabhfaidh siad trí muir na hÉigipte.
-d?[Tt]h?rí <N>UNLENITED</N>:SEIMHIU @tri-lenition
+# CO17 10.2.5(a): the preposition trí lenites the noun after it, singular or plural (Gabhfaidh
+# siad trí muir na hÉigipte: trí mhuir).
+<S>[Tt]rí</S> <N>UNLENITED</N>:SEIMHIU @prep-lenition
+# CO17 9.3.1(h), 10.2.4(c): the number trí lenites the singular noun after it (trí bhád). The number
+# takes the singular, so a plural after trí is the preposition, above; grammar/aonchiall-ga.in
+# takes trí as the number after the article or a preposition and before a special plural form.
+<A pl="n" gnt="n">d?[Tt]h?rí</A> <NS>UNLENITED</NS>:SEIMHIU @number-lenition
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta/pingine/scillinge/uibhe in OD
 # troithe, orlaí: see GGBC 9.4
   d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Pp]ingine|[Ss]eachtaine|[Tt]roithe)</N>:OK
@@ -4471,7 +4483,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
 <A pl="n" gnt="n" h="y">ANYTHING</A>:NIAITCH
 # The words in the list take h after the copula, whether tagged as adjective
 # or noun (CO17 10.11.8(a), (b), Table 10E; 10.12.2).
-  <V cop="y">[Nn]í</V> <E><A pl="n" gnt="n" h="y">hNIHWORDS</A></E>:OK
+  <V cop="y">[Nn]í</V> <E><A pl="n" gnt="n" h="y">h(NIHNOUNS|NIHADJS)</A></E>:OK
 # CB p.24 #11.b
 #. Dún do bhéal, a mhiúil na haon chloiche (OK)!
   <T>[Nn]a</T> <E><A pl="n" gnt="n" h="y">(haon|hocht)</A></E>:OK
@@ -4499,7 +4511,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SE
   [Cc]é|[Nn]í|[Ll]e|[Pp]é <E><PWITHH>ANYTHING</PWITHH></E>:OK
 #. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
 <NWITHH>ANYTHING</NWITHH>:NIAITCH
-  <V cop="y">[Nn]í</V> <E><NWITHH>hNIHWORDS</NWITHH></E>:OK
+  <V cop="y">[Nn]í</V> <E><NWITHH>h(NIHNOUNS|NIHADJS)</NWITHH></E>:OK
 # CO17 Table 10E: ní huair chairde í. Only in this phrase does uair take h.
   <V cop="y">[Nn]í</V> <E><NWITHH>huair</NWITHH></E> <N>chairde</N>:OK
 # "Dé hAoine" now in comhshuite

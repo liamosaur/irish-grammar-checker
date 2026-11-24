@@ -241,7 +241,13 @@ s/VNUNITGEN/(?:[Cc]h(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]h
 s/VNUNIT/(?:g?[Cc]h?(?:ur (?:[Ss]íos|[Cc]huige|[Ii] gcéill|[Ii] láthair|[Cc]hun cinn)|éim [Aa]r gcúl)|n?[Dd]h?ul [Cc]hun cinn|d?[Tt]h?(?:eacht [Ii] bhfeidhm|abhairt (?:[Aa]mach|[Ss]uas))|(?:n-)?[Éé]irí (?:[Aa]mach|[Ii]n airde)|t?[Ss]h?racfhéachaint [Aa]r gcúl|[Ll]eagan [Aa]mach)/g;
 # The words that take h after the copula ní (CO17 10.11.8, Table 10E, 10.12.2).
 # (grammar/rialacha-ga.in)
-s/NIHWORDS/(?:áibhéil|áil|éigean|eol|ionadh|iontas|ualach|acmhainn|aitheanta|aithnid|éadáil|ealaín|amháin|aon|ionann|iondúil|amhlaidh|annamh|eagal|oircheas)/g;
+# The words that take h after the copula ní, one list per section of CO17.
+# CO17 10.11.8(a), (b): the nouns áibhéil, ionadh, iontas, ualach, and the noun of the copula phrases
+# acmhainn do, áil le, aitheanta do, aithnid do, éadáil le, ealaín do, éigean do, eol do.
+s/NIHNOUNS/(?:áibhéil|ionadh|iontas|ualach|acmhainn|áil|aitheanta|aithnid|éadáil|ealaín|éigean|eol)/g;
+# CO17 10.12.2(a), (b): the adjectives amháin, aon, ionann, iondúil, the adverbs amhlaidh, annamh,
+# and the adjective of the copula phrases eagal do/le, oircheas do.
+s/NIHADJS/(?:amháin|aon|ionann|iondúil|amhlaidh|annamh|eagal|oircheas)/g;
 # The multiples of ten from fiche to nócha, with any initial mutation (CO17
 # 9.3.9). (grammar/rialacha-ga.in, grammar/aonchiall-ga.in)
 s/DECADE/(?:(?:bh)?[Ff]iche|d?[Tt]h?ríocha|n?[Dd]h?aichead|g?[Cc]h?aoga|[Ss]easca|[Ss]eachtó|h?[Oo]chtó|n?[Nn]ócha)/g;

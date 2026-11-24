@@ -118,6 +118,7 @@ interface shows under the message ("Why: ..."). In the English text, Irish words
 `/like this/`; the Irish examples are copied from the book. A reason can also explain a message
 (`messages.tsv`, fourth column), for flags that come from the word list rather than a rule; in it,
 `/\1/` is the word the message quotes, and for CAIGHDEAN alternatives are shown joined by "or".
+In any reason, `/\0/` is the flagged words and `/\3/` the last of them (*acmhainn* in *Ní acmhainn*).
 
 ## Text status
 
