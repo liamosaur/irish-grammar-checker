@@ -4479,15 +4479,15 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	Thacaíocht → Tacaíocht	um	An Ghníomhaireacht um Tacaíocht Teaghlaigh	An Ghníomhaireacht um Thacaíocht Teaghlaigh	1	1.1.3	1	22	flagged:SEIMHIU
 	lenition	thráthnóna → tráthnóna	um	Déanfaidh mé um tráthnóna é má bhíonn deis agam.	Déanfaidh mé um thráthnóna é má bhíonn deis agam.	5	5.1.9	70	16	flagged:SEIMHIU
 	t-	t-acht → acht	an	Baineann an acht leasaithe le gach uile fheithicil inneallghluaiste.	Baineann an t-acht leasaithe le gach uile fheithicil inneallghluaiste.	3	3.1.2	37	12	flagged:PREFIXT
-	t-	t-agallamh → agallamh	an	Cuireadh an agallamh ar an mbean sin.	Cuireadh an t-agallamh ar an mbean sin.	11	11.3.1(c)	206	12	flagged:PREFIXT
-	t-	t-agallamh → agallamh	an	Sin í an bhean ar ar cuireadh an agallamh.	Sin í an bhean ar ar cuireadh an t-agallamh.	11	11.3.1(c)	206	33	flagged:PREFIXT
+	t-	t-agallamh → agallamh	an	Cuireadh an agallamh ar an mbean sin.	Cuireadh an t-agallamh ar an mbean sin.	11	11.3.1(c)	206	12	flagged:WEAKPREFIXT
+	t-	t-agallamh → agallamh	an	Sin í an bhean ar ar cuireadh an agallamh.	Sin í an bhean ar ar cuireadh an t-agallamh.	11	11.3.1(c)	206	33	flagged:WEAKPREFIXT
 	t-	t-agallamh → agallamh	an	Sin í an bhean ar cuireadh an agallamh uirthi.	Sin í an bhean ar cuireadh an t-agallamh uirthi.	11	11.3.1(c)	206	30	flagged:PREFIXT
 	t-	t-ainm → ainm	an	Dúirt sise gurb é Sorcha an ainm a bhí uirthi féin	Dúirt sise gurb é Sorcha an t-ainm a bhí uirthi féin	7	7.2.2	118	28	flagged:PREFIXT
 	t-	t-ainm → ainm	an	Is é sin an ainm faoina ndíolann sé earraí ar líne.	Is é sin an t-ainm faoina ndíolann sé earraí ar líne.	10	10.8.1	191	12	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Níl aon duine ag bagairt an airgead a thógáil ar ais.	Níl aon duine ag bagairt an t-airgead a thógáil ar ais.	3	3.3.2	45	28	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Is aige siúd a bhí an airgead.	Is aige siúd a bhí an t-airgead.	4	4.10	67	22	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Ní bhfuair sé an airgead fós.	Ní bhfuair sé an t-airgead fós.	5	5.4.5(a)	88	17	flagged:PREFIXT
-	t-	t-airgead → airgead	an	An é Micheál a chaill an airgead?	An é Micheál a chaill an t-airgead?	8	8.2.5	132	25	flagged:PREFIXT
+	t-	t-airgead → airgead	an	An é Micheál a chaill an airgead?	An é Micheál a chaill an t-airgead?	8	8.2.5	132	25	flagged:WEAKPREFIXT
 	t-	t-airgead → airgead	an	Cá bhfuair tú an airgead?	Cá bhfuair tú an t-airgead?	10	10.9.1	192	17	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Dá mbeadh an airgead aige, chaithfeadh sé é.	Dá mbeadh an t-airgead aige, chaithfeadh sé é.	10	10.8.2	191	13	flagged:PREFIXT
 	t-	t-airgead → airgead	an	Is ón gcomhar creidmheasa a fuair mé an airgead.	Is ón gcomhar creidmheasa a fuair mé an t-airgead.	11	11.8.4	216	40	flagged:PREFIXT
@@ -4554,7 +4554,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	t-	t-ochtú → ochtú	an	an ochtú madra is nócha	an t-ochtú madra is nócha	9	9.5.2	161	3	flagged:PREFIXT
 	t-	t-ochtú → ochtú	an	B'in é an ochtú cluiche aici i mbliana.	B'in é an t-ochtú cluiche aici i mbliana.	10	10.9.1	192	10	flagged:PREFIXT
 	t-	t-ochtú → ochtú	an	Tá an ochtú heagrán den iris ar fáil anois.	Tá an t-ochtú heagrán den iris ar fáil anois.	10	10.11.2	193	6	flagged:PREFIXT
-	t-	t-ocras → ocras	an	Is maith an t-anlann an ocras.	Is maith an t-anlann an t-ocras.	1	1.1.5(l)	4	24	flagged:PREFIXT
+	t-	t-ocras → ocras	an	Is maith an t-anlann an ocras.	Is maith an t-anlann an t-ocras.	1	1.1.5(l)	4	24	flagged:WEAKPREFIXT
 	t-	t-oifigeach → oifigeach	an	an oifigeach feidhmiúcháin	an t-oifigeach feidhmiúcháin	3	3.1.6	39	3	flagged:PREFIXT
 	t-	t-oifigeach → oifigeach	an	an oifigeach riaracháin	an t-oifigeach riaracháin	3	3.1.6	39	3	flagged:PREFIXT
 	t-	t-oifigeach → oifigeach	an	Creideann an oifigeach gur cuireadh iarratas ar chead pleanála isteach i leith an fhoirgnimh sin.	Creideann an t-oifigeach gur cuireadh iarratas ar chead pleanála isteach i leith an fhoirgnimh sin.	11	11.3.1(e)	207	13	flagged:PREFIXT
@@ -4583,7 +4583,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	t-	tAthair → Athair	an	an Athair Peadar Ua Laoghaire	an tAthair Peadar Ua Laoghaire	1	1.1.5(c)	2	3	flagged:PREFIXT
 	t-	tAthair → Athair	an	Ba é an Athair Peadar Ua Laoghaire a scríobh an dráma An Sprid.	Ba é an tAthair Peadar Ua Laoghaire a scríobh an dráma An Sprid.	1	1.1.5(c)	2	8	flagged:PREFIXT
 	t-	tIonad → Ionad	an	Cá bhfuil an Ionad Nuálaíochta Gnó?	Cá bhfuil an tIonad Nuálaíochta Gnó?	3	3.3.12	53	13	flagged:PREFIXT
-	t-	tOileánach → Oileánach	An	Cé a scríobh An Oileánach?	Cé a scríobh An tOileánach?	1	1.1.2	1	16	flagged:PREFIXT
+	t-	tOileánach → Oileánach	An	Cé a scríobh An Oileánach?	Cé a scríobh An tOileánach?	1	1.1.2	1	16	flagged:WEAKPREFIXT
 	t-	tsagairt → sagairt	an	Is i dteach an sagairt paróiste a bhí an cruinniú.	Is i dteach an tsagairt paróiste a bhí an cruinniú.	10	10.2.9	180	15	flagged:PREFIXT
 	t-	tsailéad → sailéad	an	as an sailéad bhlasta	as an tsailéad bhlasta	1	1.7.4	17	6	other:NISEIMHIU
 	t-	tsainchomhairleoir → sainchomhairleoir	an	um an sainchomhairleoir chruinn	um an tsainchomhairleoir chruinn	1	1.7.4	17	6	other:NISEIMHIU

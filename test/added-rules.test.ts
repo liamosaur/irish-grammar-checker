@@ -250,6 +250,11 @@ const cases: Case[] = [
   { section: '11.3.1(h)', text: 'Cén fáth a chuaigh siad ann?', rule: 'RELATIVE', words: 'a chuaigh', fixed: null },
   // a hint after áit, fáth, caoi ...: ar unless the noun is the verb's object
   { section: '11.3.1(h)', text: 'Cén áit a chuir tú é?', rule: 'WEAKBACHOIRAR', words: 'a chuir', fixed: 'Cén áit ar chuir tú é?' },
+  // Citizens Information: t- after a noun, a hint, as the noun may be its genitive (here d'fhoireann an
+  // ospidéil, so the fix offered is not the correction)
+  { section: '10.9.1(a)', text: "Tugtar an fhoirm seo don mháthair san ospidéal agus ba chóir é a chomhlánú agus thabhairt ar ais d'fhoireann an ospidéal sula scaoiltear amach í.", rule: 'WEAKPREFIXT', words: 'an ospidéal', fixed: "Tugtar an fhoirm seo don mháthair san ospidéal agus ba chóir é a chomhlánú agus thabhairt ar ais d'fhoireann an t-ospidéal sula scaoiltear amach í." },
+  // Citizens Information: the object before a + a verbal noun is nominative after a noun too (CO17 3.3.2(a))
+  { section: '3.3.2(a)', text: 'Má tá an praghas níos lú, tá tú fós faoi dhliteanas an easnamh a aisíoc.', rule: 'PREFIXT', words: 'an easnamh', fixed: 'Má tá an praghas níos lú, tá tú fós faoi dhliteanas an t-easnamh a aisíoc.' },
   // Citizens Information: a plural after dhá to sé, which take the singular (reported as missing lenition before)
   { section: '9.3.1(h)', text: "Déanann an tAcht um Eagrú Ama Oibre 1997 foráil do bhunshaoire íoctha de cheithre seachtainí in aghaidh na bliana, ach d'fhéadfadh cearta breise a bheith i gconradh an fhostaí.", rule: 'UATHA', words: 'cheithre seachtainí', fixed: null },
   { section: '9.3.1(h)', text: 'Caithfidh tú an achainí a fhíorú trí Mhionnscríbhinn, in éineacht le deimhnithe FITNESS sínithe ag 6 ball den ghairm dlí agus ag sé Ceannairí den phobal gnó áitiúil.', rule: 'UATHA', words: 'sé Ceannairí', fixed: null },
@@ -331,6 +336,9 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   // to lenite after a number or a feminine noun
   { text: 'Ní foláir oibleagáid faoin alt seo a chomhlíonadh laistigh den tréimhse 5 lá díreach i ndiaidh an lae a dtagann sí i gceist.', note: 'díreach i ndiaidh: adverb, after a number in figures' },
   { text: 'Má thoilíonn siad go léir amhlaidh, beidh éifeacht leis an rogha díreach tar éis an toiliú is déanaí de na toilithe sin a thabhairt.', note: 'díreach tar éis: adverb, after a feminine noun' },
+  // Citizens Information: a genitive after a noun takes no t- (CO17 10.9.1(a)); a + a verbal noun takes no d'
+  { text: "Rialacha Cláraíonn an comhlacht a n-íocann tú cíos líne leo do rogha gan ' glaonna fuara ' a fháil ar Bhunachar Sonraí an Eolaire Náisiúnta.", note: 'an Eolaire: the genitive, which is spelt like the nominative' },
+  { text: 'Féadfaidh tú leanúint le do chárta éagtha a úsáid fad a bhíonn athbhreithniú ar bun, a fhad agus a bhíonn baint agat sa phróiseas athbhreithnithe.', note: "a úsáid: a + verbal noun, not the relative with the past (a d'úsáid)" },
   // Gaois and Citizens Information: a lenited adjective whose lenition is correct but which the
   // general adjective rule (NISEIMHIU adj-lenition) reported
   { text: 'Iarratas ar shásamh i leith comhchónaitheora cháilithe atá i gcleithiúnas go heacnamaíoch.', note: 'after a word not in the dictionary: its gender is unknown' },

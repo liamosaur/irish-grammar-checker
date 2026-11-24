@@ -1135,6 +1135,24 @@ AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
 # them, where they keep the nominative form (cístí an ochtar báicéirí; gaois an
 # ochtó cloigeann maol).
   <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]cht(ar|ó)</N></E> <N>ANYTHING</N>:OK
+# CO17 1.5.1(a), 10.9.1: after a noun, the article and a masculine noun are usually its genitive,
+# which takes no t- (Bunachar Sonraí an Eolaire), but may be a subject or object (Is maith an
+# t-anlann an t-ocras): reported as the hint below, not here. AFTERHEADNOUN: see tools/generate-rules.mjs.
+  AFTERHEADNOUN <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
+# CO17 3.3.2(a): before a + a verbal noun the noun is its object, in the nominative even after a
+# noun governed by a preposition (faoi dhliteanas an t-easnamh a aisíoc), so a missing t- is an
+# error there, not a hint. Not when the first noun has no preposition before it: the object is
+# then the whole phrase, and the noun after the article its genitive (Gníomhaire an Iasachtaí a
+# cheangal); the hint below takes those.
+AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N> VNLATER:PREFIXT @art-t-vowel
+  <[^S]>ANYTHING</[^S]> <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
+  CLAUSESTART <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
+# The hint: missing t- after a noun, unless the noun is in the genitive. The engine drops it when
+# the noun has a genitive reading of the same form (an Eolaire: src/engine.ts).
+AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:WEAKPREFIXT @art-t-gen
+# CO17 3.3.1(b)(i), Tábla 9T: as for the rule above (an éirí in airde; an ochtar báicéirí)
+  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
+  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]cht(ar|ó)</N></E> <N>ANYTHING</N>:OK
 # "aon/ocht" rules are the same as the Noun rules above
 <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT @art-t-vowel
   <S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
@@ -4755,6 +4773,11 @@ AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
   [Aa]n <E><VDEE>INITIALVOWEL</VDEE></E>:OK
 # "ní" always lenites
   [Nn]í <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
+# a + a verbal noun (Féadfaidh tú leanúint le do chárta éagtha a úsáid): after a, a word that is
+# also a verbal noun is taken as one unless a pronoun follows it, the subject of a past verb
+# after the relative a (a d'úsáid sé).
+  [Aa] <E><VDEE>VERBALNOUN</VDEE></E> <[^P]>ANYTHING</[^P]>:OK
+  [Aa] <E><VDEE>VERBALNOUN</VDEE></E> CLAUSEEND:OK
 # Now the converse: don't allow "d'" after verbal particles (má, ó, etc. OK)
 #  Should check eclipsing particles too since URU rules don't catch "d'"
 #  (easier this way when dealing with nouns: "i d'áit" is OK)

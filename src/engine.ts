@@ -957,6 +957,10 @@ export class Gramadoir {
         // word list is a singular nominative noun; a form that is also a genitive (ceo, dlí,
         // gluaisteán) may be correct, and one with another part of speech (linn) may not be a noun.
         if (/^WEAKGENITIVE\b/.test(msgm[1]) && !this.nominativeNounOnly(errortext.split(' ').pop() ?? '')) continue;
+        // WEAKPREFIXT (grammar/rialacha-ga.in): a noun that is also a genitive singular of the same
+        // form (an Eolaire) is correct as the genitive, which takes no t-. (A genitive plural of the
+        // same form, as in ospidéal, does not count: after the singular article it is singular.)
+        if (/^WEAKPREFIXT\b/.test(msgm[1]) && /pl="n" gnt="y"/.test(this.tagOneWordClean(errortext.split(' ').pop() ?? ''))) continue;
         errors.push({
           fromy,
           fromx,

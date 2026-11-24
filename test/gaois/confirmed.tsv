@@ -44,7 +44,7 @@ ok	INPHRASE	Uimhir 24 de 2009	Féadfaidh an gnóthas a fhaigheann cúiteamh seir
 wrong	INPHRASE	Uimhir 41 de 2011	Cinnteoidh an Bord go ndéanfar treoirlínte arna n-ullmhú aige faoin alt seo a fhoilsiú ar an modh forordaithe a luaithe is indéantatar éis na treoirlínte a ullmhú.
 ok	NEEDART	Uimhir 1 de 2010	Mura féidir sin a dhéanamh, bunófar Binse nua de réir Roinn 2 den Chaibidil seo.
 ok	NEEDART	Uimhir 1 de 2010	Féadfaidh an Binse, má mheasann sé gur gá sin sna himthosca, forghníomhú na dámhachtana a bhac fad a bheidh a chinneadh ar feitheamh.
-ok	PREFIXT	Uimhir 7 de 2010	Déantar, le síniú an Chomhaontaithe agus an MT ag [cuir isteach an t-ainm], Gobharnóir Bhanc na Gréige, Gníomhaire an Iasachtaí a cheangal go dlíthiúil bailí.	the genitive between a noun and a + verbal noun is read as the object (questions.md)
+ok	PREFIXT	Uimhir 7 de 2010	Déantar, le síniú an Chomhaontaithe agus an MT ag [cuir isteach an t-ainm], Gobharnóir Bhanc na Gréige, Gníomhaire an Iasachtaí a cheangal go dlíthiúil bailí.
 ok	PREFIXT	Uimhir 5 de 2010	Biúró an Ombudsman um Sheirbhísí Airgeadais.
 ok	CUPLA	Uimhir 7 de 2010	Daingniúchán atá i síniú an Chomhaontaithe Sannta seo ag na hIasachtóirí ag gach duine acu go bhfuair siad fógra i dtaobh na sanntaí dá dtagraítear anseo.	sanntaí is in the word list only as a verb; an obscure legal plural, not pursued
 ok	NIAITCH	Uimhir 2 de 2011	Líníochtaí den fhorbairt arna n-ullmhú go gairmiúil mar aon leis na hathbhreithnithe is déanaí ar na líníochtaí den déanmhas nó de na déanmhais arna n-ullmhú ag an bhfoireann deartha.

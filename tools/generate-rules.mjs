@@ -36,7 +36,7 @@ if (macros.some(([f, t]) => /[^\u0000-ÿ]/.test(f + t))) throw new Error('gramma
 
 // Words that the rules may use besides the macros: filled in below (CLAUSESTART ... VNLATER)
 // or by src/engine.ts when the rules load (VERBALNOUN, VNPLAIN).
-const PLACEHOLDERS = ['CLAUSESTART', 'CLAUSEEND', 'AFTERFEMNAME', 'AFTERNOUNANDGEN', 'AFTERNOUNANDADJS', 'AFTERTEN', 'AFTERMANNERNOUN', 'VNLATER', 'VERBALNOUN', 'VNPLAIN'];
+const PLACEHOLDERS = ['CLAUSESTART', 'CLAUSEEND', 'AFTERFEMNAME', 'AFTERNOUNANDGEN', 'AFTERNOUNANDADJS', 'AFTERTEN', 'AFTERMANNERNOUN', 'AFTERHEADNOUN', 'VNLATER', 'VERBALNOUN', 'VNPLAIN'];
 
 // The rule files: grammar/<name>-ga.in (UTF-8; rules in Latin-1, comments in anything).
 // tools/upstream-diff.mjs lists the changes since the An Gramadóir commit they came from.
@@ -173,6 +173,9 @@ console.table(Object.fromEntries(Object.entries(extracted).map(([name, { rules }
 // (fiche a dhá: only a dhá is marked, CO17 9.3.10(c)(ii)).
 // AFTERMANNERNOUN, a first word, matches after one of the nouns of CO17 11.3.1(h)
 // (áit, bealach, caoi, cúis, dóigh, fáth, réasún, slí, treo), kept out of the mark.
+// AFTERHEADNOUN, a first word, matches after a noun that is not straight after a verb (a verb and a noun
+// may be the verb and its subject, with an object next): where a noun after it is usually its
+// genitive (Bunachar Sonraí an Eolaire; CO17 1.5.1(a)). The noun is kept out of the mark.
 // VNLATER, a last word, matches when a + a verbal noun follows in the same clause, at most 10
 // words on (CO17 3.3.2(a): tar éis an Coinbhinsiún seo a shíniú; le linn an tseirbhís ar mhaithe
 // leis an leas eacnamaíoch i gcoitinne a oibriú). No punctuation and no personal verb in between;
@@ -199,6 +202,7 @@ const STARTS = {
   AFTERNOUNANDGEN: `(?<=${LENITINGNOUN} (?:<E[^>]*>)?<N[^>]* gnt="y"[^>]*>[^<]+</N>(?:</E>)? )`,
   AFTERNOUNANDADJS: `(?<=${LENITINGNOUN}(?:</E>)? (?:${ADJ},? )+)`,
   AFTERTEN: '(?<=<[AN][^>]*>(?:[Ff]iche|[Tt]ríocha|[Dd]aichead|[Cc]aoga|[Ss]easca|[Ss]eachtó|[Oo]chtó|[Nn]ócha)</[AN]> )',
+  AFTERHEADNOUN: '(?<=(?:(?:<line>|[.,;:!?("\']) |(?:<E[^>]*>)?<(?!V)[A-DF-Z][^>]*>[^<]+</[A-DF-Z]>(?:</E>)? )(?:<E[^>]*>)?<N[^>]*>[^<]+</N>(?:</E>)? )',
   AFTERMANNERNOUN: '(?<=<N[^>]*>(?:h?[Áá]it|[Bb]h?ealach|g?[Cc]h?aoi|[Cc]h?úis|[Dd]h?óigh|[Ff]h?áth|[Rr]éasún|t?[Ss]lí|[Tt]reo)</N> )',
 };
 for (const name of ['rialacha', 'aonchiall']) {

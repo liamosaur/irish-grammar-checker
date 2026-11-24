@@ -44,12 +44,13 @@ GENDER=GENRE	inherited	Gender disagreement
 NUMBER=NOMBRE	inherited	Number disagreement
 CASE	inherited	Case disagreement
 # Irish
-PREFIXH	inherited	Prefix \/h\/ missing
-PREFIXT	inherited	Prefix \/t\/ missing
-PREFIXD	inherited	Prefix \/d'\/ missing
-NIAITCH	inherited	Unnecessary prefix \/h\/
-NITEE	inherited	Unnecessary prefix \/t\/
-NIDEE	inherited	Unnecessary prefix \/d'\/
+PREFIXH	reviewed	Likely missing h
+PREFIXT	reviewed	Likely missing t
+WEAKPREFIXT	reviewed	Possibly missing t, but not if the noun is in the genitive	
+PREFIXD	reviewed	Likely missing d'
+NIAITCH	reviewed	Likely unnecessary h
+NITEE	reviewed	Likely unnecessary t
+NIDEE	reviewed	Likely unnecessary d'
 NIBEE	inherited	Unnecessary prefix \/b'\/
 NICLAOCHLU	inherited	Unnecessary initial mutation
 CLAOCHLU	inherited	Initial mutation missing
@@ -57,8 +58,8 @@ NISEIMHIU	reviewed	Likely unnecessary lenition (\/séimhiú\/)
 NIDARASEIMHIU	inherited	The second lenition is unnecessary
 WEAKSEIMHIU	inherited	Often the preposition \/\1\/ causes lenition, but this case is unclear
 SEIMHIU	reviewed	Likely missing lenition (\/séimhiú\/)
-NIURU	inherited	Unnecessary eclipsis
-URU	inherited	Eclipsis missing
+NIURU	reviewed	Likely unnecessary eclipsis (\/urú\/)
+URU	reviewed	Likely missing eclipsis (\/urú\/)
 NODATIVE	inherited	The dative is used only in special phrases
 RELATIVE	inherited	The dependent form of the verb is required here
 ABSOLUTE	inherited	Unnecessary use of the dependent form of the verb
