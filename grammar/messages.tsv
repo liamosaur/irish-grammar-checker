@@ -45,8 +45,9 @@ NUMBER=NOMBRE	inherited	Number disagreement
 CASE	inherited	Case disagreement
 # Irish
 PREFIXH	reviewed	Likely missing h
-PREFIXT	reviewed	Likely missing t
-WEAKPREFIXT	reviewed	Possibly missing t, but not if the noun is in the genitive	
+PREFIXT	reviewed	Likely missing t-
+PREFIXTS	reviewed	Likely missing t
+WEAKPREFIXT	reviewed	Possibly missing t-, but not if the noun is in the genitive	
 PREFIXD	reviewed	Likely missing d'
 NIAITCH	reviewed	Likely unnecessary h
 NITEE	reviewed	Likely unnecessary t

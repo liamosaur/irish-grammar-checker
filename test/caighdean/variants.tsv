@@ -4584,63 +4584,63 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	t-	tAthair → Athair	an	Ba é an Athair Peadar Ua Laoghaire a scríobh an dráma An Sprid.	Ba é an tAthair Peadar Ua Laoghaire a scríobh an dráma An Sprid.	1	1.1.5(c)	2	8	flagged:PREFIXT
 	t-	tIonad → Ionad	an	Cá bhfuil an Ionad Nuálaíochta Gnó?	Cá bhfuil an tIonad Nuálaíochta Gnó?	3	3.3.12	53	13	flagged:PREFIXT
 	t-	tOileánach → Oileánach	An	Cé a scríobh An Oileánach?	Cé a scríobh An tOileánach?	1	1.1.2	1	16	flagged:WEAKPREFIXT
-	t-	tsagairt → sagairt	an	Is i dteach an sagairt paróiste a bhí an cruinniú.	Is i dteach an tsagairt paróiste a bhí an cruinniú.	10	10.2.9	180	15	flagged:PREFIXT
+	t-	tsagairt → sagairt	an	Is i dteach an sagairt paróiste a bhí an cruinniú.	Is i dteach an tsagairt paróiste a bhí an cruinniú.	10	10.2.9	180	15	flagged:PREFIXTS
 	t-	tsailéad → sailéad	an	as an sailéad bhlasta	as an tsailéad bhlasta	1	1.7.4	17	6	other:NISEIMHIU
 	t-	tsainchomhairleoir → sainchomhairleoir	an	um an sainchomhairleoir chruinn	um an tsainchomhairleoir chruinn	1	1.7.4	17	6	other:NISEIMHIU
 	t-	tsaineolaí → saineolaí	an	fairis an saineolaí lách	fairis an tsaineolaí lách	1	1.7.4	17	10	-
 	t-	tsalann → salann	an	leis an salann bhán	leis an tsalann bhán	1	1.7.4	17	8	other:NISEIMHIU
 	t-	tsamhradh → samhradh	an	roimh an samhradh fhada	roimh an tsamhradh fhada	1	1.7.4	17	9	other:NISEIMHIU
-	t-	tsamhraidh → samhraidh	an	Bhí orthu an fhéile a chur ar siúl ag deireadh an samhraidh fhliuch.	Bhí orthu an fhéile a chur ar siúl ag deireadh an tsamhraidh fhliuch.	4	4.4.1	60	50	flagged:PREFIXT
-	t-	tsamhraidh → samhraidh	an	Tá siad ag maisiú na dtithe roimh theacht an samhraidh.	Tá siad ag maisiú na dtithe roimh theacht an tsamhraidh.	10	10.6.1	188	45	flagged:PREFIXT
-	t-	tsaoil → saoil	an	tús an saoil	tús an tsaoil	1	1.5.2	12	7	flagged:PREFIXT
-	t-	tsaoire → saoire	an	as an saoire bhliantúil	as an tsaoire bhliantúil	1	1.7.4	17	6	flagged:PREFIXT
-	t-	tsaoirse → saoirse	an	an saoirse	an tsaoirse	1	1.1.4	1	3	flagged:PREFIXT
-	t-	tsatailít → satailít	an	chuig an satailít mhór	chuig an tsatailít mhór	1	1.7.4	17	9	flagged:PREFIXT
-	t-	tseachtain → seachtain	an	roimh an seachtain mhór	roimh an tseachtain mhór	1	1.7.4	17	9	flagged:PREFIXT
-	t-	tseachtain → seachtain	an	Thit go leor báisteach throm an seachtain seo caite.	Thit go leor báisteach throm an tseachtain seo caite.	3	3.3.11	53	32	flagged:PREFIXT
-	t-	tseachtair → seachtair	an	scoil an seachtair	scoil an tseachtair	9	9.4.2	155	9	flagged:PREFIXT
+	t-	tsamhraidh → samhraidh	an	Bhí orthu an fhéile a chur ar siúl ag deireadh an samhraidh fhliuch.	Bhí orthu an fhéile a chur ar siúl ag deireadh an tsamhraidh fhliuch.	4	4.4.1	60	50	flagged:PREFIXTS
+	t-	tsamhraidh → samhraidh	an	Tá siad ag maisiú na dtithe roimh theacht an samhraidh.	Tá siad ag maisiú na dtithe roimh theacht an tsamhraidh.	10	10.6.1	188	45	flagged:PREFIXTS
+	t-	tsaoil → saoil	an	tús an saoil	tús an tsaoil	1	1.5.2	12	7	flagged:PREFIXTS
+	t-	tsaoire → saoire	an	as an saoire bhliantúil	as an tsaoire bhliantúil	1	1.7.4	17	6	flagged:PREFIXTS
+	t-	tsaoirse → saoirse	an	an saoirse	an tsaoirse	1	1.1.4	1	3	flagged:PREFIXTS
+	t-	tsatailít → satailít	an	chuig an satailít mhór	chuig an tsatailít mhór	1	1.7.4	17	9	flagged:PREFIXTS
+	t-	tseachtain → seachtain	an	roimh an seachtain mhór	roimh an tseachtain mhór	1	1.7.4	17	9	flagged:PREFIXTS
+	t-	tseachtain → seachtain	an	Thit go leor báisteach throm an seachtain seo caite.	Thit go leor báisteach throm an tseachtain seo caite.	3	3.3.11	53	32	flagged:PREFIXTS
+	t-	tseachtair → seachtair	an	scoil an seachtair	scoil an tseachtair	9	9.4.2	155	9	flagged:PREFIXTS
 	t-	tseachtar → seachtar	an	long an seachtar bádóirí	long an tseachtar bádóirí	9	9.4.3	158	8	-
 	t-	tseachtar → seachtar	an	long an seachtar bádóirí óga	long an tseachtar bádóirí óga	9	9.4.3	159	8	-
 	t-	tseachtar → seachtar	an	oifig an seachtar tréidlianna	oifig an tseachtar tréidlianna	9	9.4.3	157	9	-
 	t-	tSeachtar → Seachtar	an	Scoil an Seachtar Laoch	Scoil an tSeachtar Laoch	9	9.4.3	157	9	-
 	t-	tSeanadóir → Seanadóir	an	chuig an Seanadóir nuacheaptha	chuig an tSeanadóir nuacheaptha	1	1.7.4	17	9	-
-	t-	tSeanaid → Seanaid	an	Cén tslí a dtoghtar comhaltaí an Seanaid?	Cén tslí a dtoghtar comhaltaí an tSeanaid?	11	11.9	218	33	flagged:PREFIXT
-	t-	tseanbhean → seanbhean	an	fairis an seanbhean shaibhir	fairis an tseanbhean shaibhir	1	1.7.4	17	10	flagged:PREFIXT
-	t-	tseanmháthair → seanmháthair	an	ag an seanmháthair bhocht	ag an tseanmháthair bhocht	1	1.7.4	17	6	flagged:PREFIXT
-	t-	tSeapáin → Seapáin	an	an Seapáin	an tSeapáin	1	1.2	6	3	flagged:PREFIXT
+	t-	tSeanaid → Seanaid	an	Cén tslí a dtoghtar comhaltaí an Seanaid?	Cén tslí a dtoghtar comhaltaí an tSeanaid?	11	11.9	218	33	flagged:PREFIXTS
+	t-	tseanbhean → seanbhean	an	fairis an seanbhean shaibhir	fairis an tseanbhean shaibhir	1	1.7.4	17	10	flagged:PREFIXTS
+	t-	tseanmháthair → seanmháthair	an	ag an seanmháthair bhocht	ag an tseanmháthair bhocht	1	1.7.4	17	6	flagged:PREFIXTS
+	t-	tSeapáin → Seapáin	an	an Seapáin	an tSeapáin	1	1.2	6	3	flagged:PREFIXTS
 	t-	tSeapánach → Seapánach	an	ag an Seapánach chliste	ag an tSeapánach chliste	1	1.7.4	17	6	other:NISEIMHIU
-	t-	tSeapánaigh → Seapánaigh	an	pas an Seapánaigh	pas an tSeapánaigh	1	1.5.2	12	7	flagged:PREFIXT
-	t-	tseift → seift	an	tríd an seift chliste	tríd an tseift chliste	1	1.7.4	17	8	flagged:PREFIXT
-	t-	tSéin → Séin	an	an Séin	an tSéin	1	1.1.5(h)	3	3	flagged:PREFIXT
-	t-	tSeineagáil → Seineagáil	an	an Seineagáil	an tSeineagáil	1	1.1.5(i)	3	3	flagged:PREFIXT
-	t-	tseirbhís → seirbhís	an	um an seirbhís mhaith	um an tseirbhís mhaith	1	1.7.4	17	6	flagged:PREFIXT
-	t-	tSeirbhís → Seirbhís	an	Bhain mé úsáid as an Seirbhís Eolais Gnó.	Bhain mé úsáid as an tSeirbhís Eolais Gnó.	3	3.3.12	53	21	flagged:PREFIXT
+	t-	tSeapánaigh → Seapánaigh	an	pas an Seapánaigh	pas an tSeapánaigh	1	1.5.2	12	7	flagged:PREFIXTS
+	t-	tseift → seift	an	tríd an seift chliste	tríd an tseift chliste	1	1.7.4	17	8	flagged:PREFIXTS
+	t-	tSéin → Séin	an	an Séin	an tSéin	1	1.1.5(h)	3	3	flagged:PREFIXTS
+	t-	tSeineagáil → Seineagáil	an	an Seineagáil	an tSeineagáil	1	1.1.5(i)	3	3	flagged:PREFIXTS
+	t-	tseirbhís → seirbhís	an	um an seirbhís mhaith	um an tseirbhís mhaith	1	1.7.4	17	6	flagged:PREFIXTS
+	t-	tSeirbhís → Seirbhís	an	Bhain mé úsáid as an Seirbhís Eolais Gnó.	Bhain mé úsáid as an tSeirbhís Eolais Gnó.	3	3.3.12	53	21	flagged:PREFIXTS
 	t-	tseisear → seisear	an	páistí an seisear ban	páistí an tseisear ban	9	9.4.3	158	10	-
 	t-	tseisear → seisear	an	páistí an seisear ban cumasach	páistí an tseisear ban cumasach	9	9.4.3	159	10	-
-	t-	tseisir → seisir	an	cótaí an seisir	cótaí an tseisir	9	9.4.2	154	9	flagged:PREFIXT
-	t-	tseisir → seisir	an	teach an seisir	teach an tseisir	9	9.4.2	155	9	flagged:PREFIXT
+	t-	tseisir → seisir	an	cótaí an seisir	cótaí an tseisir	9	9.4.2	154	9	flagged:PREFIXTS
+	t-	tseisir → seisir	an	teach an seisir	teach an tseisir	9	9.4.2	155	9	flagged:PREFIXTS
 	t-	tseol → seol	an	thar an seol mhór	thar an tseol mhór	1	1.7.4	17	8	other:NISEIMHIU
-	t-	tSile → Sile	an	an Sile	an tSile	1	1.1.5(i)	3	3	flagged:PREFIXT
-	t-	tSionainn → Sionainn	an	an Sionainn	an tSionainn	1	1.1.5(h)	3	3	flagged:PREFIXT
-	t-	tSionainn → Sionainn	an	Bhí an Sionainn le feiceáil ón eitleán.	Bhí an tSionainn le feiceáil ón eitleán.	1	1.1.5(h)	3	7	flagged:PREFIXT
-	t-	tSionainn → Sionainn	an	thar an Sionainn fhada	thar an tSionainn fhada	1	1.7.4	17	8	flagged:PREFIXT
-	t-	tSionainn → Sionainn	an	an Sionainn	an tSionainn	3	3.1.3	38	3	flagged:PREFIXT
-	t-	tsionnaigh → sionnaigh	an	An bhfaca tú eireaball an sionnaigh?	An bhfaca tú eireaball an tsionnaigh?	10	10.10.1	192	26	flagged:PREFIXT
+	t-	tSile → Sile	an	an Sile	an tSile	1	1.1.5(i)	3	3	flagged:PREFIXTS
+	t-	tSionainn → Sionainn	an	an Sionainn	an tSionainn	1	1.1.5(h)	3	3	flagged:PREFIXTS
+	t-	tSionainn → Sionainn	an	Bhí an Sionainn le feiceáil ón eitleán.	Bhí an tSionainn le feiceáil ón eitleán.	1	1.1.5(h)	3	7	flagged:PREFIXTS
+	t-	tSionainn → Sionainn	an	thar an Sionainn fhada	thar an tSionainn fhada	1	1.7.4	17	8	flagged:PREFIXTS
+	t-	tSionainn → Sionainn	an	an Sionainn	an tSionainn	3	3.1.3	38	3	flagged:PREFIXTS
+	t-	tsionnaigh → sionnaigh	an	An bhfaca tú eireaball an sionnaigh?	An bhfaca tú eireaball an tsionnaigh?	10	10.10.1	192	26	flagged:PREFIXTS
 	t-	tsiopa → siopa	an	An raibh úinéir an siopa in ann cabhrú leat?	An raibh úinéir an tsiopa in ann cabhrú leat?	3	3.1.6	39	19	-
 	t-	tsiopa → siopa	an	Fágadh na heochracha in oifig chuntasóir úinéir an siopa.	Fágadh na heochracha in oifig chuntasóir úinéir an tsiopa.	3	3.1.6	39	51	-
-	t-	tSiria → Siria	an	an Siria	an tSiria	1	1.1.5(i)	3	3	flagged:PREFIXT
-	t-	tslat → slat	an	leis an slat fhada	leis an tslat fhada	1	1.7.4	17	8	flagged:PREFIXT
-	t-	tslí → slí	an	Ní maith liom an slí a bhfuil sé á chur i bhfeidhm.	Ní maith liom an tslí a bhfuil sé á chur i bhfeidhm.	11	11.9	218	17	flagged:PREFIXT
-	t-	tslí → slí	an	Sin é an slí a ndearnadh é.	Sin é an tslí a ndearnadh é.	11	11.3.1(h)	208	9	flagged:PREFIXT
-	t-	tSnaidhm → Snaidhm	an	an Snaidhm	an tSnaidhm	1	1.1.5(h)	3	3	flagged:PREFIXT
+	t-	tSiria → Siria	an	an Siria	an tSiria	1	1.1.5(i)	3	3	flagged:PREFIXTS
+	t-	tslat → slat	an	leis an slat fhada	leis an tslat fhada	1	1.7.4	17	8	flagged:PREFIXTS
+	t-	tslí → slí	an	Ní maith liom an slí a bhfuil sé á chur i bhfeidhm.	Ní maith liom an tslí a bhfuil sé á chur i bhfeidhm.	11	11.9	218	17	flagged:PREFIXTS
+	t-	tslí → slí	an	Sin é an slí a ndearnadh é.	Sin é an tslí a ndearnadh é.	11	11.3.1(h)	208	9	flagged:PREFIXTS
+	t-	tSnaidhm → Snaidhm	an	an Snaidhm	an tSnaidhm	1	1.1.5(h)	3	3	flagged:PREFIXTS
 	t-	tsorcas → sorcas	an	tríd an sorcas mhór	tríd an tsorcas mhór	1	1.7.4	17	8	other:NISEIMHIU
 	t-	tsracfhéachaint → sracfhéachaint	an	de dheasca an sracfhéachaint ar gcúl	de dheasca an tsracfhéachaint ar gcúl	3	3.3.1	45	14	flagged:GENITIVE
-	t-	tsráid → sráid	an	an sráid	an tsráid	1	1.2	6	3	flagged:PREFIXT
-	t-	tsráid → sráid	an	ar an sráid ghlan	ar an tsráid ghlan	1	1.7.4	17	6	flagged:PREFIXT
-	t-	tsráid → sráid	an	Bhí siad i mbun ceoil ar an sráid.	Bhí siad i mbun ceoil ar an tsráid.	3	3.3.12	54	28	flagged:PREFIXT
-	t-	tsraith → sraith	an	Nach í sin an sraith a chraoltaí gach maidin?	Nach í sin an tsraith a chraoltaí gach maidin?	11	11.6.1(a)(i)	210	14	flagged:PREFIXT
-	t-	tsrón → srón	an	Ná bain an srón díom!	Ná bain an tsrón díom!	10	10.10.1	192	11	flagged:PREFIXT
-	t-	tSúdáin → Súdáin	an	an Súdáin	an tSúdáin	1	1.1.5(i)	3	3	flagged:PREFIXT
+	t-	tsráid → sráid	an	an sráid	an tsráid	1	1.2	6	3	flagged:PREFIXTS
+	t-	tsráid → sráid	an	ar an sráid ghlan	ar an tsráid ghlan	1	1.7.4	17	6	flagged:PREFIXTS
+	t-	tsráid → sráid	an	Bhí siad i mbun ceoil ar an sráid.	Bhí siad i mbun ceoil ar an tsráid.	3	3.3.12	54	28	flagged:PREFIXTS
+	t-	tsraith → sraith	an	Nach í sin an sraith a chraoltaí gach maidin?	Nach í sin an tsraith a chraoltaí gach maidin?	11	11.6.1(a)(i)	210	14	flagged:PREFIXTS
+	t-	tsrón → srón	an	Ná bain an srón díom!	Ná bain an tsrón díom!	10	10.10.1	192	11	flagged:PREFIXTS
+	t-	tSúdáin → Súdáin	an	an Súdáin	an tSúdáin	1	1.1.5(i)	3	3	flagged:PREFIXTS
 	t-	tsuíochán → suíochán	an	ar an suíochán fhliuch	ar an tsuíochán fhliuch	1	1.7.4	17	6	other:NISEIMHIU
 	t-	tUachtarán → Uachtarán	an	an Uachtarán Mhic Róibín	an tUachtarán Mhic Róibín	1	1.1.5(c)	2	3	flagged:PREFIXT
 	t-	tUachtarán → Uachtarán	an	Bhí an Uachtarán Mhic Róibín le feiceáil sa ghrianghraf.	Bhí an tUachtarán Mhic Róibín le feiceáil sa ghrianghraf.	1	1.1.5(c)	2	7	flagged:PREFIXT
@@ -4648,15 +4648,15 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	t-	tUachtarán → Uachtarán	an	Is í an Uachtarán an duine is cáiliúla ar bhuail mé léi.	Is í an tUachtarán an duine is cáiliúla ar bhuail mé léi.	11	11.5.2	209	8	flagged:PREFIXT
 	t-	tUltach → Ultach	an	an Ultach	an tUltach	1	1.2	6	3	flagged:PREFIXT
 	t-	t-achar → achar	Cén	Cén achar anseo tú?	Cén t-achar anseo tú?	8	8.5.4	139	4	flagged:PREFIXT
-	t-	tslí → slí	Cén	Cén slí a dtoghtar comhaltaí an tSeanaid?	Cén tslí a dtoghtar comhaltaí an tSeanaid?	11	11.9	218	4	flagged:PREFIXT
+	t-	tslí → slí	Cén	Cén slí a dtoghtar comhaltaí an tSeanaid?	Cén tslí a dtoghtar comhaltaí an tSeanaid?	11	11.9	218	4	flagged:PREFIXTS
 	t-	tsaighdiúir → saighdiúir	den	den saighdiúir shásúil	den tsaighdiúir shásúil	1	1.7.4	17	4	other:NISEIMHIU
-	t-	tslándáil → slándáil	den	den slándáil shóisialach	den tslándáil shóisialach	1	1.7.4	17	4	flagged:PREFIXT
-	t-	tsaoirse → saoirse	don	don saoirse cheart	don tsaoirse cheart	1	1.7.4	17	4	flagged:PREFIXT
+	t-	tslándáil → slándáil	den	den slándáil shóisialach	den tslándáil shóisialach	1	1.7.4	17	4	flagged:PREFIXTS
+	t-	tsaoirse → saoirse	don	don saoirse cheart	don tsaoirse cheart	1	1.7.4	17	4	flagged:PREFIXTS
 	t-	tSeanadóir → Seanadóir	don	don Seanadóir nua	don tSeanadóir nua	1	1.7.4	17	4	-
-	t-	tslí → slí	faoin	faoin slí dhíreach	faoin tslí dhíreach	1	1.7.4	17	6	flagged:PREFIXT
+	t-	tslí → slí	faoin	faoin slí dhíreach	faoin tslí dhíreach	1	1.7.4	17	6	flagged:PREFIXTS
 	t-	tsonrasc → sonrasc	faoin	faoin sonrasc dhéanach	faoin tsonrasc dhéanach	1	1.7.4	17	6	other:NISEIMHIU
 	t-	tsuirbhé → suirbhé	ón	ón suirbhé phearsanta	ón tsuirbhé phearsanta	1	1.7.4	17	3	other:NISEIMHIU
-	t-	tsaotharlann → saotharlann	sa	Tá sí ag obair sa saotharlann taighde.	Tá sí ag obair sa tsaotharlann taighde.	10	10.2.7	176	18	flagged:PREFIXT
-	t-	tseacláid → seacláid	sa	sa seacláid mhilis	sa tseacláid mhilis	1	1.7.4	17	3	flagged:PREFIXT
+	t-	tsaotharlann → saotharlann	sa	Tá sí ag obair sa saotharlann taighde.	Tá sí ag obair sa tsaotharlann taighde.	10	10.2.7	176	18	flagged:PREFIXTS
+	t-	tseacláid → seacláid	sa	sa seacláid mhilis	sa tseacláid mhilis	1	1.7.4	17	3	flagged:PREFIXTS
 	t-	tsoitheach → soitheach	sa	sa soitheach ghorm	sa tsoitheach ghorm	1	1.7.4	17	3	other:NISEIMHIU
-	t-	tsraith → sraith	sa	Tá gach uile chlár sa sraith feicthe aici.	Tá gach uile chlár sa tsraith feicthe aici.	10	10.2.3	172	22	flagged:PREFIXT
+	t-	tsraith → sraith	sa	Tá gach uile chlár sa sraith feicthe aici.	Tá gach uile chlár sa tsraith feicthe aici.	10	10.2.3	172	22	flagged:PREFIXTS

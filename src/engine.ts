@@ -70,8 +70,9 @@ export interface GramadoirOptions {
   datives?: boolean;
   /**
    * For a word whose only fault is a hyphen after a prefix (fo-ráiteas), give the word without it
-   * (foráiteas) as the correction, not the root (ráiteas). On by default; the Perl library gives
-   * the root, so the parity tests turn it off.
+   * (foráiteas) as the correction, not the root (ráiteas); and for the prefix t written without its
+   * hyphen before a lowercase vowel (tospidéal), give t-ospidéal (CO17 1.1.4), not near misses. On
+   * by default; the Perl library gives the root and the near misses, so the parity tests turn it off.
    */
   hyphenFix?: boolean;
   /**
@@ -463,6 +464,11 @@ export class Gramadoir {
     if (!this.opts.fixSpelling) return '';
     const len = word.length;
     if (len <= 2) return '';
+    // CO17 1.1.4: a hyphen between the prefix t and a lowercase vowel (an tospidéal -> an t-ospidéal).
+    // Only when the form with the hyphen is a noun of the word list; not a morphology rule, which
+    // would go on to the non-standard forms of other words (Tamhlachta).
+    const tv = /^t([aeiouáéíóú].*)$/.exec(word);
+    if (tv && this.opts.hyphenFix && /^<N/.test(this.tagOneWordClean(`t-${tv[1]}`))) return `<E msg="CAIGHDEAN{t-${tv[1]}}"><X>${word}</X></E>`;
     const caseless = RE_CAPITAL.test(word);
     for (let t = 0; t < this.focail.length; t++) {
       const found = this.nearMisses(word, t, caseless);

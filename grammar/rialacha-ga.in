@@ -1126,6 +1126,8 @@ AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
 #. Cad é an chomhairle a thug an ochtapas dó?
 #. An Acht um Chomhionannas Fostaíochta.
 <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT @art-t-vowel
+# ochtó is tagged as a noun: the numeral rule below takes it (10.9.1(b)).
+  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]chtó</N></E>:OK
 #. Dath bánbhuí éadrom atá ar an adhmad (OK).
 #  BUT, not OK before common-form prepositions so these must be trapped
 #  elsewhere: see ach, amhail, seachas, etc.
@@ -1157,13 +1159,18 @@ AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:WEAKPREFIX
   <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
   <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]cht(ar|ó)</N></E> <N>ANYTHING</N>:OK
 # "aon/ocht" rules are the same as the Noun rules above
-<T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT @art-t-vowel
+<T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT @art-t-numeral
   <S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
 # CO17 9.3.7(a)(iii), 9.5.4(c): in the genitive singular the article takes no t- before
 # aon, aonú, ochtú, ochtódú, etc. (ainm an aon duine amháin; tús an aonú bliain déag).
 # Taken to be genitive after a noun, as for the verbal-noun units above (and so
 # Ag tosach an ochtú haois déag, but an t-ochtú haois déag in the nominative).
   <N>ANYTHING</N> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
+# CO17 10.9.1(b): ochtó, tagged as a noun, as for the numerals above (an t-ochtó bliain); after a
+# noun it keeps the nominative form, with no t- (Tábla 9T, 9.3.9: gaois an ochtó cloigeann maol).
+<T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]chtó</N>:PREFIXT @art-t-numeral
+  <S>ANYTHING</S> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]chtó</N></E>:OK
+  <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]chtó</N></E>:OK
 # catch before SEIMHIU for clearer message
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">mogha</N>:CAIGHDEAN{an mogh}
 # CB p.12 #1.b
@@ -1173,13 +1180,13 @@ AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:WEAKPREFIX
   <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">[Mm]éid</N>:OK
 # CB p.23 #9
 #. Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad.
-<T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT @art-t-s
+<T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXTS @art-t-s-fem
 #. Ritheann an Sláine tríd an pháirc.
-<T>[Aa]n</T> <Y>Sláine</Y>:PREFIXT
-<T>[Aa]n</T> <Y>Sionainn</Y>:PREFIXT
+<T>[Aa]n</T> <Y>Sláine</Y>:PREFIXTS
+<T>[Aa]n</T> <Y>Sionainn</Y>:PREFIXTS
 # CB p.23 #10
 #. Ní raibh guth an séiléara le clos a thuilleadh.
-<T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">INITIALS</N>:PREFIXT @art-t-s
+<T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">INITIALS</N>:PREFIXTS @art-t-s-gen
 # CB p.6 #1
 #. Tá sin ráite cheana féin acu le muintir an tíre seo.
 <T>[Aa]n</T> <NFGS>ANYTHING</NFGS>:BACHOIR{na}
@@ -1648,7 +1655,7 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <Q>[Cc]én</Q> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 # CB p.23 #9 (implicit article)
 #. Cén slí ar fhoghlaim tú an teanga?
-<Q>[Cc]én</Q> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
+<Q>[Cc]én</Q> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXTS
 # CB p.114 (p.113 typo?  present too?)
 <V cop="y">[Cc]ér</V> INITIALVOWEL:BACHOIR{cérb, cérbh}
 <V cop="y">[Cc]ér</V> LENITEDF:BACHOIR{cérbh}
@@ -2110,7 +2117,7 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 # NOT a rule; See CB p.17 #9.g "need not be aspirated"
 # <S>[Dd][eo]n</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.23 #9 (implicit article)
-<S>[Dd][eo]n</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
+<S>[Dd][eo]n</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXTS
 # CB p.6 #2, LGG p.26
 #. Creidim go raibh siad de an thuairim seo.
 [Dd]e <T>an</T>:BACHOIR{den}
@@ -2359,7 +2366,7 @@ dhó:IONADAI{dó}
 #. Tugadh mioneolas faoin dtionscnamh seo in Eagrán a haon.
 <S>[Ff]aoin</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.23 #9 (implicit article)
-<S>[Ff]aoin</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
+<S>[Ff]aoin</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXTS
 # CB p.132 #5
 <S>[Ff]aoina</S> <VPAST>ANYTHING</VPAST>:BACHOIR{faoinar}
 # CB p.133 #12 irreg. exceptions; lenited ones are wrong but want the clearer
@@ -2553,7 +2560,7 @@ dhó:IONADAI{dó}
   [Gg]o <VPAST>PASTNORFORMLEN</VPAST>:OK
 # CB p.24 #11.a.v, #11.b.ii, LGG p.112-113
 #. Is stáit ilteangacha iad cuid mhór de na stáit sin atá aonteangach go oifigiúil.
-[Gg]o <[AN]>INITIALVOWEL</[AN]>:PREFIXH @le-h
+[Gg]o <[AN]>INITIALVOWEL</[AN]>:PREFIXH @go-h
 #  catch before :URU rule for clearer message
 <C>[Gg]o</C> <V p="y" t="láith">obann</V>:IONADAI{go tobann}
 # CB p.22 7.d, p.132 #4
@@ -3526,7 +3533,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 #. Ná glacaim sos ón thochailt.
 <S>[Óó]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.23 #9 (implicit article)
-<S>[Óó]n</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
+<S>[Óó]n</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXTS
 # CB p.84 #8, p.132 #2
 #. Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh.
 <S>[Óó]n?</S> a:BACHOIR{óna}
@@ -3704,7 +3711,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIM
 #. An bhfuil aon uachtar reoite agat sa seamair?
 #. An bhfuil aon uachtar reoite agat sa scoil (OK)?
 #. An bhfuil aon uachtar reoite agat sa samhradh (OK)?
-<S>[Ss]a</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
+<S>[Ss]a</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXTS
 # CB p.6 #1 (implicitly)
 <S>[Ss]a</S> <NP>ANYTHING</NP>:BACHOIR{sna}
 # helps caighdeán

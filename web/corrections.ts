@@ -366,6 +366,7 @@ const FIXES: Record<string, (w: string) => string | null> = {
   PREFIXH: hPrefix,
   NIAITCH: unHPrefix,
   PREFIXT: tPrefix,
+  PREFIXTS: tPrefix,
   WEAKPREFIXT: tPrefix, // a hint: t- after a noun, unless the noun is in the genitive
   NITEE: unTPrefix,
   // d' goes before the capital: Fhág -> D'fhág, Ól -> D'ól
@@ -405,7 +406,7 @@ export function proposeFix(rule: string, flagged: string, before = '', unit?: st
   // "Maidin shách fuar", "chothrom le dáta": grammar/rialacha-ga.in).
   // "Prefix t missing" after the article: the t goes on the word after "an", which may
   // be the first of a phrase taken as one noun ("an éirí amach" -> "an t-éirí amach").
-  if (rule === 'PREFIXT' || rule === 'WEAKPREFIXT') {
+  if (rule === 'PREFIXT' || rule === 'PREFIXTS' || rule === 'WEAKPREFIXT') {
     const m = /^(\s*an\s+)(\S+)([\s\S]*)$/i.exec(flagged);
     if (m) { const changed = tPrefix(m[2]); return changed === null ? null : m[1] + changed + m[3]; }
   }

@@ -28,7 +28,8 @@ for (const [ctx, want] of expected) {
   const got = new Set();
   for (const e of gr.grammaticalErrors(ctx)) {
     if (e.context !== ctx.replace(/&/g, '&amp;').replace(/"/g, '&quot;') && !ctx.includes(e.errortext)) continue;
-    got.add(`${e.ruleId.replace('Lingua::GA::Gramadoir/', '')}|${e.errortext}`);
+    // PREFIXTS (t before s) is upstream's PREFIXT, split off for its own message (t, not t-)
+    got.add(`${e.ruleId.replace('Lingua::GA::Gramadoir/', '').replace(/^PREFIXTS\b/, 'PREFIXT')}|${e.errortext}`);
   }
   exp += want.size;
   let all = true;
