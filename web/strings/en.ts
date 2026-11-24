@@ -73,6 +73,7 @@ export const en = {
   /* unreviewed */ 'how.about': 'For credits and licences, see [About](#about).',
 
   /* unreviewed */ 'footer.credit': 'Based on [An Gramadóir](https://github.com/kscanne/gramadoir) by Kevin P. Scannell.',
+  /* unreviewed */ 'footer.legacy': 'Click [here](https://grammar.irish) to use the grammar rules based on An Gramadóir (Christian Brothers Grammar, 1994)',
 
   /* unreviewed */ 'about.title': 'About',
   /* unreviewed */ 'about.what': 'A grammar checker for Irish. It marks words and phrases that look wrong, such as a missing or unnecessary mutation, a repeated word or a non-standard spelling, and says why. [It may make mistakes](#how).',
