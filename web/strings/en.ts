@@ -72,7 +72,7 @@ export const en = {
   /* unreviewed */ 'how.limits.4': 'Everything runs in your browser, and your text never leaves it. The grammar checking algorithm does not use generative AI.',
   /* unreviewed */ 'how.about': 'For credits and licences, see [About](#about).',
 
-  /* unreviewed */ 'footer.credit': 'Based on [An Gramadóir](https://github.com/kscanne/gramadoir) by Kevin P. Scannell.',
+  /* unreviewed */ 'footer.credit': 'Based on [An Gramadóir](https://github.com/kscanne/gramadoir) by Kevin P. Scannell, updated to Caighdeán Oifigiúil 2017 grammar rules.',
   /* unreviewed */ 'footer.legacy': 'Click [here](https://grammar.irish) to use the grammar rules based on An Gramadóir (Christian Brothers Grammar, 1994)',
 
   /* unreviewed */ 'about.title': 'About',
