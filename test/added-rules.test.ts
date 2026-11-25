@@ -355,6 +355,10 @@ const cases: Case[] = [
   { section: '10.2.12', text: 'Is forbhreathnú é seo a leanas ar na príomhforálacha den dlí a bhaineann leis na caighdeáin sin.', rule: 'COMHSEIMHIU', words: 'príomhforálacha', fixed: 'Is forbhreathnú é seo a leanas ar na príomhfhorálacha den dlí a bhaineann leis na caighdeáin sin.' },
   // the second of two prefixes is lenited as any root is (made up)
   { section: '2.1.7(c)', text: 'Labhair iar-príomhoide liom.', rule: 'COMHSEIMHIU', words: 'iar-príomhoide', fixed: 'Labhair iar-phríomhoide liom.' },
+  // a root left unlenited after a prefix that is not a word of its own (made up)
+  { section: '2.1.7(c)', text: 'Bhí comh-ceolfhoireann ann.', rule: 'COMHSEIMHIU', words: 'comh-ceolfhoireann', fixed: 'Bhí comh-cheolfhoireann ann.' },
+  { section: '10.2.12', text: 'Cheannaigh mé seancárta.', rule: 'COMHSEIMHIU', words: 'seancárta', fixed: 'Cheannaigh mé seanchárta.' },
+  { section: '2.1.7(e)', text: 'Tá an sean-Cárta agam.', rule: 'COMHSEIMHIU', words: 'sean-Cárta', fixed: 'Tá an sean-Chárta agam.' },
   { section: '10.2.12', text: "Is féidir le céile colscartha nó iar-páirtnéirí sibhialta iarratas a dhéanamh sa chúirt ar ordú cothabhála nó ar leagan d'ordú cothabhála tar éis don fhoraithne colscartha/díscaoilte a bheith deonta.", rule: 'COMHSEIMHIU', words: 'iar-páirtnéirí', fixed: "Is féidir le céile colscartha nó iar-pháirtnéirí sibhialta iarratas a dhéanamh sa chúirt ar ordú cothabhála nó ar leagan d'ordú cothabhála tar éis don fhoraithne colscartha/díscaoilte a bheith deonta." },
 ];
 

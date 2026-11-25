@@ -173,6 +173,8 @@ export class Gramadoir {
   private foldIndex: Map<string, string[]>[] | null = null;
   private fadaIndex: Map<string, string[]>[] | null = null;
   private firstPartCache: Map<string, boolean> | null = null;
+  /** Set while tagAsCompound tags the parts of a word: a part is not read as prefix + unlenited root. */
+  private inCompound = false;
 
   constructor(data: GramadoirData, opts: GramadoirOptions = {}) {
     this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, skipDigitWords: true, fadaSuggestions: true, capsNoNearMiss: true, prefixSuggestions: true, compoundLenition: true, nonStandardCompounds: false, namedParts: true, rareNeedsMatch: true, derivedWords: false, ...opts };
@@ -313,7 +315,11 @@ export class Gramadoir {
       if (!rule.re.test(current)) continue;
       const newcurrent = this.applyMorph(rule, current);
       if (rule.src.compound && !this.compoundRoot(newcurrent)) continue;
+      const lenited = rule.src.lenite ? this.prefixLenited(rule, original, current) : '';
+      if (rule.src.lenite && !lenited) continue;
       ans = this.tagRecurse(original, newcurrent, level > rule.src.level ? level : rule.src.level, posans, maxdepth - 1, nofix || !!rule.src.nofix);
+      // an unlenited root after a prefix: reported only when the root itself is standard
+      if (lenited) ans = ans === '<X>' || ans.startsWith('<E msg="MOIRF{') ? `<E msg="COMHSEIMHIU{${lenited}}"><X>${original}</X></E>` : '';
       if (ans) {
         if (posans.v !== '<OK>') {
           const temp = posans.v;
@@ -398,6 +404,28 @@ export class Gramadoir {
     // ... and not when the whole word is one edit from a listed word (lagdaithe: laghdaithe).
     for (let t = 0; t < this.focail.length; t++) if (this.nearMisses(word, t, RE_CAPITAL.test(word)).length) return '';
     return `${l}${sep}${r[0]}h${r.slice(1)}`;
+  }
+
+  /**
+   * For a rule with the lenite flag (a prefix before a root left unlenited: droch-príomhoide,
+   * sean-Cárta), the word as written with the root lenited (droch-phríomhoide, sean-Chárta), or ''
+   * when the rule does not apply: `current` must be the end of the word as written (earlier rules
+   * only lowercased it or took off a mutation), and the word must not be one edit from a listed
+   * word, as for compoundUnlenited.
+   */
+  private prefixLenited(rule: Morph, original: string, current: string): string {
+    if (!this.opts.compoundLenition || this.inCompound) return '';
+    const m = rule.re.exec(current);
+    if (!m || m[1] === undefined) return '';
+    // where current starts in the word: after a mutation before it (tsean-, n-), or with the h of a
+    // lenited prefix taken out (dhroch-)
+    let off = original.length - current.length;
+    const lc = current.toLowerCase(), olc = original.toLowerCase();
+    if (off === 1 && olc[1] === 'h' && olc[0] + olc.slice(2) === lc) off = 1;
+    else if (off < 0 || olc.slice(off) !== lc) return '';
+    const at = off + m.index + m[0].length - m[1].length + 1;
+    for (let t = 0; t < this.focail.length; t++) if (this.nearMisses(original, t, RE_CAPITAL.test(original)).length) return '';
+    return `${original.slice(0, at)}h${original.slice(at)}`;
   }
 
   /**
@@ -702,7 +730,12 @@ export class Gramadoir {
     const dummy: PosAns = { v: '' };
     ans = this.tagRecurse(word, word, -1, dummy, 6);
     if (ans) return ans;
-    ans = this.tagAsCompound(word);
+    this.inCompound = true;
+    try {
+      ans = this.tagAsCompound(word);
+    } finally {
+      this.inCompound = false;
+    }
     if (ans) return ans;
     ans = this.tagAsNearMiss(word);
     if (ans) return ans;

@@ -20,6 +20,8 @@ export interface MorphRuleJson {
   nofix?: true;
   /** The rule applies only when what it leaves is a compound of two listed words (a prefix before a compound, CO17 2.1.7(c)). */
   compound?: true;
+  /** The root the rule leaves should have been lenited (droch-príomhoide): reported as COMHSEIMHIU with the lenited word. */
+  lenite?: true;
 }
 
 export interface TokenRuleJson {

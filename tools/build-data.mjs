@@ -247,6 +247,14 @@ function expandPrefixes() {
       if (lenited.length) rule(early, `[${lenited.join('')}][^h]`, 2);
       if (!dental && sRules) rule(early, `s[${V}lnr]`, 2);
       if (dental) rule(early, `[${[...unlenitedDentals, ...(sRules ? ['s'] : [])].join('')}]h`, 2);
+    } else {
+      // the root left unlenited where it should be lenited (droch-príomhoide, sean-Cárta): the lenite
+      // flag reports COMHSEIMHIU with the lenited word (src/engine.ts); with or without the hyphen
+      const cls = [...(lenited.length ? [`[${lenited.join('')}][^h]`] : []), ...(!dental && sRules ? [`s[${V}lnr]`] : [])];
+      if (cls.length) {
+        const h = /^[aeiouáéíóú]/.test(p) ? 'h?' : '';
+        late.push(`^${h}${p}-?((?:${cls.join('|')})${'.'.repeat(Math.max(0, Number(min || 0) - 2))})\t$1\t\t0\t${rootpos}\t<&>\tlenite`);
+      }
     }
   });
   // a hyphen between two prefixes (2.1.7(c): comh-cheolfhoireann, sin-seanathair; leas-phríomhoide);
@@ -316,8 +324,9 @@ for (const raw of morphLines) {
   if (!/\S/.test(line)) continue;
   // An optional last field: nofix, the rule finds the standard word but not the form the text
   // needs, so its note offers no fix; compound, the rule applies only when what it leaves is a
-  // compound of two listed words (src/engine.ts).
-  const m = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)\s+(<[^>]+>)(?:\s+(nofix|compound)\b)?/.exec(line);
+  // compound of two listed words; lenite, the root it leaves should have been lenited, reported as
+  // COMHSEIMHIU (src/engine.ts).
+  const m = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)\s+(<[^>]+>)(?:\s+(nofix|compound|lenite)\b)?/.exec(line);
   if (!m) throw new Error('bad morph line: ' + raw);
   const [, patt, repl, level, rootpos, replpos, flag] = m;
   const nofix = flag === 'nofix';
@@ -340,6 +349,7 @@ for (const raw of morphLines) {
     re: fixClass(patt), parts, level: Number(level), rootpos, replpos, poscompiled,
     ...(nofix ? { nofix: true } : {}),
     ...(flag === 'compound' ? { compound: true } : {}),
+    ...(flag === 'lenite' ? { lenite: true } : {}),
   });
 }
 write('morph.json', morph);
