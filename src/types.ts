@@ -18,6 +18,8 @@ export interface MorphRuleJson {
   poscompiled: string | null;
   /** The rule finds the standard word but not the form the text needs (a plural it has no model for): its note offers no fix. */
   nofix?: true;
+  /** The rule applies only when what it leaves is a compound of two listed words (a prefix before a compound, CO17 2.1.7(c)). */
+  compound?: true;
 }
 
 export interface TokenRuleJson {

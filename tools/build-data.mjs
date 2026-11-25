@@ -249,9 +249,25 @@ function expandPrefixes() {
       if (dental) rule(early, `[${[...unlenitedDentals, ...(sRules ? ['s'] : [])].join('')}]h`, 2);
     }
   });
-  // a hyphen between two prefixes (2.1.7(c): comh-cheolfhoireann, sin-seanathair; leas-phríomhoide)
-  const second = rows.filter((p) => !/^(an|dea)$/.test(p)).map((p) => `${p[0]}h?${p.slice(1)}`);
-  early.push(`^h?(${rows.join('|')})-((?:${second.join('|')}).)\t$2\t\t0\t<[ANV].*>\t<&>`);
+  // a hyphen between two prefixes (2.1.7(c): comh-cheolfhoireann, sin-seanathair; leas-phríomhoide);
+  // the second is lenited as any root is (10.2.12): not d, t or s after d, n, t, l or s
+  const lenite = (p, afterDental) => {
+    const c = p[0];
+    if ('bcfgmp'.includes(c) || ('dt'.includes(c) && !afterDental) || (c === 's' && !afterDental && /^s[aeiouáéíóúlnr]/.test(p))) {
+      return `${c}h${p.slice(1)}`;
+    }
+    return p;
+  };
+  for (const afterDental of [false, true]) {
+    const first = rows.filter((p) => /[dntls]$/.test(p) === afterDental);
+    const second = rows.filter((p) => !/^(an|dea)$/.test(p)).map((p) => lenite(p, afterDental));
+    early.push(`^h?(${first.join('|')})-((?:${second.join('|')}).)\t$2\t\t0\t<[ANV].*>\t<&>`);
+    // ... and before a first element that is not in the table (comh-cheolfhoireann: ceol +
+    // fhoireann): the root must itself split into two listed words (the compound flag, src/engine.ts)
+    const plainFirst = first.filter((p) => !/^(an|dea)$/.test(p));
+    const root = afterDental ? '[bcfgmp]h|[dt][^h]|s[^h]' : '[bcdfgmpt]h|sh[aeiouáéíóúlnr]';
+    early.push(`^h?(?:${plainFirst.join('|')})-((?:${root}).)\t$1\t\t0\t<[ANV].*>\t<&>\tcompound`);
+  }
   return { early, late, capital: capitalRules(rows, posOf) };
 }
 
@@ -298,11 +314,13 @@ for (const [marker, rules] of [['@PREFIXES', prefixRules.early], ['@PREFIXES-LAT
 for (const raw of morphLines) {
   const line = raw.replace(/#.*$/, '');
   if (!/\S/.test(line)) continue;
-  // An optional last field, nofix: the rule finds the standard word but not the form the text
-  // needs, so its note offers no fix.
-  const m = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)\s+(<[^>]+>)(?:\s+(nofix)\b)?/.exec(line);
+  // An optional last field: nofix, the rule finds the standard word but not the form the text
+  // needs, so its note offers no fix; compound, the rule applies only when what it leaves is a
+  // compound of two listed words (src/engine.ts).
+  const m = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)\s+(<[^>]+>)(?:\s+(nofix|compound)\b)?/.exec(line);
   if (!m) throw new Error('bad morph line: ' + raw);
-  const [, patt, repl, level, rootpos, replpos, nofix] = m;
+  const [, patt, repl, level, rootpos, replpos, flag] = m;
+  const nofix = flag === 'nofix';
   // tokenise repl
   const parts = [];
   const re = /\\([lL])\$([1-9])|\$([1-9])|([^$\\]+)|\\(.)/g;
@@ -321,6 +339,7 @@ for (const raw of morphLines) {
   morph.push({
     re: fixClass(patt), parts, level: Number(level), rootpos, replpos, poscompiled,
     ...(nofix ? { nofix: true } : {}),
+    ...(flag === 'compound' ? { compound: true } : {}),
   });
 }
 write('morph.json', morph);

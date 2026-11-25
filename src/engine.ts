@@ -312,6 +312,7 @@ export class Gramadoir {
     for (const rule of this.morph) {
       if (!rule.re.test(current)) continue;
       const newcurrent = this.applyMorph(rule, current);
+      if (rule.src.compound && !this.compoundRoot(newcurrent)) continue;
       ans = this.tagRecurse(original, newcurrent, level > rule.src.level ? level : rule.src.level, posans, maxdepth - 1, nofix || !!rule.src.nofix);
       if (ans) {
         if (posans.v !== '<OK>') {
@@ -397,6 +398,24 @@ export class Gramadoir {
     // ... and not when the whole word is one edit from a listed word (lagdaithe: laghdaithe).
     for (let t = 0; t < this.focail.length; t++) if (this.nearMisses(word, t, RE_CAPITAL.test(word)).length) return '';
     return `${l}${sep}${r[0]}h${r.slice(1)}`;
+  }
+
+  /**
+   * Whether `w` (a root after a prefix and hyphen, lenited) is itself a compound: a listed first
+   * part the word list shows in lenited compounds, and a listed second part lenited after it
+   * (cheol + fhoireann in comh-cheolfhoireann, CO17 2.1.7(c): a hyphen between two prefixes).
+   */
+  private compoundRoot(w: string): boolean {
+    for (let i = 3; i < w.length - 2; i++) {
+      const l = w.slice(0, i), r = w.slice(i);
+      const dental = /[dntls]$/.test(l);
+      if (!(/^([bcdfgmpt]h|sh[aeiouáéíóúlnr])/.test(r) || (dental && /^[dts][^h]/.test(r)))) continue;
+      if (this.nocombo.has(l) || this.nocombo.has(r)) continue;
+      if (!this.cleanLookup(l) || !this.cleanLookup(r)) continue;
+      const base = /^([bcdfgmpt]|s)h/.test(l) ? l[0] + l.slice(2) : l;
+      if (this.lenitingFirstPart(base, dental)) return true;
+    }
+    return false;
   }
 
   /**

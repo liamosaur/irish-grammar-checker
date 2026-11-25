@@ -353,6 +353,8 @@ const cases: Case[] = [
   // the second part of a compound is lenited after a first part the word list shows in lenited
   // compounds (Citizens Information sentences)
   { section: '10.2.12', text: 'Is forbhreathnú é seo a leanas ar na príomhforálacha den dlí a bhaineann leis na caighdeáin sin.', rule: 'COMHSEIMHIU', words: 'príomhforálacha', fixed: 'Is forbhreathnú é seo a leanas ar na príomhfhorálacha den dlí a bhaineann leis na caighdeáin sin.' },
+  // the second of two prefixes is lenited as any root is (made up)
+  { section: '2.1.7(c)', text: 'Labhair iar-príomhoide liom.', rule: 'COMHSEIMHIU', words: 'iar-príomhoide', fixed: 'Labhair iar-phríomhoide liom.' },
   { section: '10.2.12', text: "Is féidir le céile colscartha nó iar-páirtnéirí sibhialta iarratas a dhéanamh sa chúirt ar ordú cothabhála nó ar leagan d'ordú cothabhála tar éis don fhoraithne colscartha/díscaoilte a bheith deonta.", rule: 'COMHSEIMHIU', words: 'iar-páirtnéirí', fixed: "Is féidir le céile colscartha nó iar-pháirtnéirí sibhialta iarratas a dhéanamh sa chúirt ar ordú cothabhála nó ar leagan d'ordú cothabhála tar éis don fhoraithne colscartha/díscaoilte a bheith deonta." },
 ];
 
