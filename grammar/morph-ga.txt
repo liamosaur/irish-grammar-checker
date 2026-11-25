@@ -348,10 +348,6 @@ aoí			aoi		1	<.+>	<&>		# from caighdean corpus....
 éaracht		éireacht	1	<N.*>	<&>	# caimiléaracht, srl.
 (..)[au]ig$		$1aigh	1	<.+>	<&>	# tosaig, ghreamuig, máirnéalaig, srl.
 ngc			nc		1	<.+>	<&>		# caighdean corpus, pongc -> ponc
-é(ir[ld])		e$1		1	<.+>	<&>    # CO p.123
-á(i?r[dlnr])		a$1		1	<.+>	<&>    # CO p.123-124
-ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
-ú(i?r[dlnr])		u$1		1	<.+>	<&>    # CO p.123-124
 eó			eo		1	<.+>	<&>    # go leór, aibhleóg, etc.
 áo			ao		1	<.+>	<&>		# Bedell: náoi, etc.
 úa			ua		1	<.+>	<&>		# Bedell: úair, súas, núair, etc.
@@ -795,3 +791,11 @@ leir			léir		2	<.+>	<&>
 ^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú]|[Ff]h)	$1	0	<[ANVY].*>	<&>	# d'Éamonn too
 ^[nt]-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
 ^[nt]([AEIOUÁÉÍÓÚ])	$1		0	<[ANV].*>	<&>
+###############################################################
+#  No long vowel before r + consonant (CO p.123-124). Last, after the prefixes and the
+#  demutation: standard words have the same letters (pictiúrlann), and a mutated compound
+#  (an tseanphictiúrlann) must reach them through t- and sean- first.
+é(ir[ld])		e$1		1	<.+>	<&>    # CO p.123
+á(i?r[dlnr])		a$1		1	<.+>	<&>    # CO p.123-124
+ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
+ú(i?r[dlnr])		u$1		1	<.+>	<&>    # CO p.123-124

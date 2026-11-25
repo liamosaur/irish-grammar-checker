@@ -379,6 +379,9 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Dualgas iniúchóirí mura bhfuil leabhair chuntais chuí á gcoimeád.', note: 'chuntais is the genitive noun, not the verb: chuí after it' },
   { text: 'Tá eolas maidir le gearán a dhéanamh maidir le seirbhísí sláinte agus cúraim shóisialta ag healthcomplaints.ie.', note: 'cúraim is the genitive of cúram, not a verb' },
   { text: 'Má theastaíonn comhairle dlí nó ghairmiúil eile uait, ba cheart duit dul i gcomhairle le duine a bhain na cáilíochtaí cearta amach.', note: 'adjective joined by nó to the genitive after a feminine noun (4.2)' },
+  // Liam (2026-11-25). A compound with a prefix and a mutation reaches its root (pictiúrlann)
+  // before the spelling rule for a long vowel before r + consonant (grammar/morph-ga.txt, end)
+  { text: 'Chuaigh mé go dtí an tseanphictiúrlann.', note: 'an tseanphictiúrlann: t- and sean- + pictiúrlann, not a misspelling', reviewed: true },
 ];
 
 let engine: Gramadoir | undefined;
