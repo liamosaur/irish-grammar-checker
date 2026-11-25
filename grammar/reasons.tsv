@@ -30,6 +30,7 @@ de-do-apostrophe	unreviewed	10.2.5(a)	/de/ and /do/ are shortened to /d'/ before
 ar-lenition	unreviewed	10.2.5(b)	/ar/ usually lenites the noun after it (/ar bhád/, /ar chlé/), but not in phrases that say where or in what state something is, such as /ar ball/, /ar fáil/, /ar siúl/, /ar meisce/. Check whether this is one of those.	
 gan-lenition	unreviewed	10.2.5(c)	/gan/ lenites a noun that has nothing qualifying it, unless it begins with d, t, s or f: /gan mhoill/, /gan chosaint/. A qualified noun, a definite proper name and a verbal noun are not lenited: /gan pingin rua/, /gan Micheál/, /gan géilleadh/.	
 go-h	unreviewed	10.11.3, 10.12.1	In /\0/, /\3/ follows /go/, which puts h on a noun, adjective or adverb that begins with a vowel: /go hÁrainn/, /Tá sé go hálainn/, /go hannamh/.	
+chomh-h	reviewed	10.12.1, 8.6.1	In /\0/, /\3/ follows /chomh/, which puts h on an adjective or adverb that begins with a vowel: /chomh hard le haon chapall/, /chomh híseal sin/.	
 le-h	reviewed	10.11.3, 10.12.1, 10.13.3	In /\0/, /\3/ follows the preposition /le/, which puts h on a noun, adjective or pronoun that begins with a vowel: /le hoibrithe eile/, /le haon iarratas/, /le hiad a smachtú/.	
 i-eclipsis	unreviewed	10.6.4(a)	The preposition /i/ eclipses the word after it: /i mbaile/, /i bpáirc/. Before a vowel it is written /in/: /in Éirinn/.	
 in-before-consonant	unreviewed	10.6.4(a)	Before a consonant the preposition is /i/, with eclipsis (/i mbaile/). /in/ is written before a vowel, and before /bhur/, /dhá/ and /go leor/, titles, abbreviations, foreign place names that have not been Gaelicised, and years in figures: /in dhá áit/, /in Birmingham/, /in 1998/.	
@@ -51,6 +52,7 @@ verb-no-lenition	unreviewed	10.4	In the present, the future and the imperative, 
 verb-relative-eclipsis	unreviewed	10.8.1(a)	The verb is eclipsed after the indirect relative /a/ and after /nach/: /an bhean a dtagann a páistí ar scoil/, /an fear nach gcuirtear cúram air/.	
 verb-eclipsis	unreviewed	10.8	A verb is eclipsed only after the particles that eclipse it: /an/, /cá/, /dá/, /go/, /mura/, /nach/, /sula/ and the indirect relative /a/ (/an mbeidh/, /go bhféadfaidh sé/).	
 relative-a	unreviewed	10.4.1(b), 10.8.1(a)	After the relative particle /a/, the verb is lenited when /a/ is the direct relative (/an bhean a ghlanfaidh an áit/) and eclipsed when it is the indirect relative (/an bhean a dtagann a páistí ar scoil/).	
+uair-direct	unreviewed	11.2.1(d)	The direct relative /a/ always follows /nuair/ and /uair/, not the indirect /ar/: /nuair a bheidh deis agam/, /an uair a chuamar/.	
 number-eclipsis	unreviewed	10.6.3	/seacht/, /ocht/, /naoi/ and /deich/ eclipse the noun after them: /seacht ndícheall/, /ocht gcinn/, /naoi mbliana/, /deich n-eachtra/.	
 number-lenition	reviewed	10.2.4(b), 10.2.4(c), 9.3.2	In /\0/, the noun follows /dhá/, /trí/, /ceithre/, /cúig/ or /sé/, which lenite the singular noun after them: /dhá chrann/, /trí bhád/, /ceithre bhó/. CO17 9.3.2 lists the nouns with a special form after numbers, which are not lenited: /trí seachtaine/, /ceithre cinn déag/.	
 singular-after-number	reviewed	9.3.1(h), 9.3.1(i), 9.3.2	In /\0/, /\3/ is plural, but a noun after a number is singular: /trí bhád/, /seacht gcnámh/. CO17 9.3.2 lists the nouns with a special form after numbers, such as /trí seachtaine/.	
@@ -64,7 +66,7 @@ deag-lenition	unreviewed	10.3.4	/déag/ is lenited after a singular noun ending 
 number-h	unreviewed	10.12.3	/a/ and /na/ put h before a number beginning with a vowel: /ceacht a haon/, /na hocht gcinn/.	
 ca-h	unreviewed	10.11.4	/cá/ puts h before a noun beginning with a vowel: /cá háit?/, /cá huair/.	
 art-gen-plural	unreviewed	10.6.1(b)	After the article /na/, a noun in the genitive plural is eclipsed: /seolta na mbád beag/, /scoil na gcailíní óga/.	
-non-standard-form	reviewed		Detected as a non-standard word. It may be an older spelling, a dialect form or a common misspelling. Modern dictionaries would likely give /\1/.	
+non-standard-form	unreviewed		/\0/ may be an older spelling, a dialect form or an incorrect spelling. Modern dictionaries would likely give /\1/.	
 unlikely-sequence	reviewed		The sequence of characters /\1/ is highly unlikely in Irish.	
 near-miss	reviewed		This word isn't in the app's dictionary. The suggestions are dictionary words that differ from it by one letter: added, left out, changed or swapped.	
 unknown-word	reviewed		This word isn't in the app's dictionary. It may be misspelled, a foreign word, or a correct word the dictionary doesn't have.	
@@ -79,3 +81,4 @@ from-non-standard	reviewed		/\0/ may be formed from an older spelling, a dialect
 from-incorrect	reviewed		/\0/ is similar to a common misspelling.	
 from-common-incorrect	reviewed		/\0/ may be from /\1/, which is a common incorrect spelling of /\2/.	
 gen-after-noun	reviewed	1.5.1(a), 3.3	In /\0/, the second noun may depend on the first, and is then usually in the genitive: /Is cóta mná é/. CO17 3.3 lists where the nominative is used instead: /Bíonn siad ag casadh ceol tíre ar an Aoine/.	
+gen-after-noun-art	reviewed	1.5.1, 1.5.2	/\3/ follows the article and another noun. A noun that depends on the noun before it is in the genitive: /Cár fhág tú eochair an chairr?/, /hata an fhir/, /doras an tí/. It stays in the nominative when it has a role of its own, such as the subject or object of a verb.	

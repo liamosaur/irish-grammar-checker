@@ -493,9 +493,14 @@ export function sliceRange(text: string, range: { y: number; from: number; to: n
   return line === undefined ? null : Array.from(line).slice(range.from, range.to).join('');
 }
 
-/** The flagged text with its last word replaced: ("ar chúl an doras", "dorais") -> "ar chúl an dorais". */
+/**
+ * The flagged text with its last words replaced, as many as `word` has: ("ar chúl an doras",
+ * "dorais") -> "ar chúl an dorais"; a feminine genitive changes the article too: ("ag íoc an
+ * Cháin", "na Cánach") -> "ag íoc na Cánach".
+ */
 export function withLastWord(flagged: string, word: string): string | null {
-  const m = /^([\s\S]*?)(\S+)(\s*)$/.exec(flagged);
+  const n = word.trim().split(/\s+/).length;
+  const m = new RegExp(`^([\\s\\S]*?)(\\S+(?:\\s+\\S+){${n - 1}})(\\s*)$`).exec(flagged);
   return m ? m[1] + word + m[3] : null;
 }
 

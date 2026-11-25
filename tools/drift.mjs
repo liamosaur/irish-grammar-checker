@@ -10,13 +10,17 @@ import { loadData } from '../src/node-data.ts';
 
 const xml = fs.readFileSync(process.argv[2], 'utf8');
 const unent = (s) => s.replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+// GRAM (unlikely letters) and ANAITHNID (unknown word) give the same message ("Possibly misspelled or
+// foreign word"); which one a word gets is not drift (an abbreviation in capitals, OK in the test
+// sentences, is ANAITHNID here: the capsNoNearMiss option of src/engine.ts)
+const unknown = (id) => id.replace(/^GRAM\{[^}]*\}/, 'ANAITHNID');
 const expected = new Map(); // context -> Set("ruleId|errortext")
 for (const m of xml.matchAll(/<error ([^>]*?)\/>/g)) {
   const a = Object.fromEntries([...m[1].matchAll(/(\w+)="([^"]*)"/g)].map((x) => [x[1], x[2]]));
   const ctx = unent(a.context);
   const text = unent(a.context).slice(Number(a.contextoffset), Number(a.contextoffset) + Number(a.errorlength));
   if (!expected.has(ctx)) expected.set(ctx, new Set());
-  expected.get(ctx).add(`${a.ruleId.replace('Lingua::GA::Gramadoir/', '')}|${text}`);
+  expected.get(ctx).add(`${unknown(a.ruleId.replace('Lingua::GA::Gramadoir/', ''))}|${text}`);
 }
 
 const dataDir = process.env.DATA_DIR ?? 'data';
@@ -29,7 +33,7 @@ for (const [ctx, want] of expected) {
   for (const e of gr.grammaticalErrors(ctx)) {
     if (e.context !== ctx.replace(/&/g, '&amp;').replace(/"/g, '&quot;') && !ctx.includes(e.errortext)) continue;
     // PREFIXTS (t before s) is upstream's PREFIXT, split off for its own message (t, not t-)
-    got.add(`${e.ruleId.replace('Lingua::GA::Gramadoir/', '').replace(/^PREFIXTS\b/, 'PREFIXT')}|${e.errortext}`);
+    got.add(`${unknown(e.ruleId.replace('Lingua::GA::Gramadoir/', '').replace(/^PREFIXTS\b/, 'PREFIXT'))}|${e.errortext}`);
   }
   exp += want.size;
   let all = true;

@@ -27,7 +27,7 @@ CONDITIONAL	inherited	You should use the conditional here
 NOSUBJ	inherited	It seems unlikely that you intended to use the subjunctive here
 INPHRASE	inherited	Usually used in the set phrase \/\1\/
 BACHOIR=EWNHEANS	inherited	You should use \/\1\/ here instead
-CAIGHDEAN	reviewed	The more standard form is \/\1\/	non-standard-form
+CAIGHDEAN	unreviewed	Likely a non-standard form of \/\1\/	non-standard-form
 CAIGHMOIRF	reviewed	Not in the app's dictionary. Probably from a non-standard form of \/\1\/	from-non-standard
 DROCHMHOIRF	unreviewed	Not in the app's dictionary. Possibly from an incorrect spelling of \/\1\/	from-incorrect
 ANAITHNID=ANKOTHVOS=UNKNOWN	reviewed	Possibly misspelled or foreign word	unknown-word
@@ -90,4 +90,4 @@ PYMPESTREYLYANSTH	inherited	Fifth (mixed) mutation after 'th missing
 LLAES	inherited	Aspirate mutation missing
 # Igbo language (not used for Irish)
 VOWELHARMONY	inherited	This word violates the rules of Igbo vowel harmony
-WEAKGENITIVE	reviewed	Possibly the second noun should be in the genitive	
+WEAKGENITIVE	reviewed	\/\1\/ possibly should be in the genitive	

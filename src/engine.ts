@@ -89,6 +89,13 @@ export interface GramadoirOptions {
    */
   fadaSuggestions?: boolean;
   /**
+   * With fixSpelling: no one-edit suggestions and no unlikely-letters message (GRAM) for an unknown
+   * word written all in capitals, an abbreviation (COLÓ, SIMI, FCPS), for which both are chance
+   * (COLÓ -> Colm; GRAM{^CO}), as fadaSuggestions found for km, RF; it gets the unknown-word
+   * message. On by default; the Perl library gives them, so the parity tests turn it off.
+   */
+  capsNoNearMiss?: boolean;
+  /**
    * With fixSpelling: for an unknown word that the other suggestions miss, a prefix the morphology
    * knows (comh-, ath-, neamh-) followed by a root one edit away from a word in the word list
    * (comhchónatheoir -> comhchónaitheoir). Such words are built by the morphology rather than
@@ -168,7 +175,7 @@ export class Gramadoir {
   private firstPartCache: Map<string, boolean> | null = null;
 
   constructor(data: GramadoirData, opts: GramadoirOptions = {}) {
-    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, skipDigitWords: true, fadaSuggestions: true, prefixSuggestions: true, compoundLenition: true, nonStandardCompounds: false, namedParts: true, rareNeedsMatch: true, derivedWords: false, ...opts };
+    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, skipDigitWords: true, fadaSuggestions: true, capsNoNearMiss: true, prefixSuggestions: true, compoundLenition: true, nonStandardCompounds: false, namedParts: true, rareNeedsMatch: true, derivedWords: false, ...opts };
     this.focail = data.lexicon.map(toMap);
     this.eile = toMap(data.eile);
     this.earraidi = toMap(data.earraidi);
@@ -470,6 +477,7 @@ export class Gramadoir {
     const tv = /^t([aeiouáéíóú].*)$/.exec(word);
     if (tv && this.opts.hyphenFix && /^<N/.test(this.tagOneWordClean(`t-${tv[1]}`))) return `<E msg="CAIGHDEAN{t-${tv[1]}}"><X>${word}</X></E>`;
     const caseless = RE_CAPITAL.test(word);
+    if (this.opts.capsNoNearMiss && word === word.toUpperCase() && word !== word.toLowerCase()) return '';
     for (let t = 0; t < this.focail.length; t++) {
       const found = this.nearMisses(word, t, caseless);
       if (found.length) return `<E msg="MOLADH{${found.join(', ')}}"><X>${word}</X></E>`;
@@ -642,6 +650,8 @@ export class Gramadoir {
   }
 
   private findBadThreeGrams(word: string): string {
+    // an abbreviation in capitals (COLÓ: GRAM{^CO}) matches the lowercase letter sequences only by chance
+    if (this.opts.capsNoNearMiss && word === word.toUpperCase() && word !== word.toLowerCase()) return '';
     const w = `<${word}>`;
     const end = w.length - 2;
     for (let i = 0; i < end; i++) {
@@ -962,7 +972,32 @@ export class Gramadoir {
         // WEAKGENITIVE (grammar/rialacha-ga.in): only where every reading of the second word in the
         // word list is a singular nominative noun; a form that is also a genitive (ceo, dlí,
         // gluaisteán) may be correct, and one with another part of speech (linn) may not be a noun.
-        if (/^WEAKGENITIVE\b/.test(msgm[1]) && !this.nominativeNounOnly(errortext.split(' ').pop() ?? '')) continue;
+        // After the article (eochair an chairr) only a genitive singular reading counts (the singular
+        // article rules out the plural and other parts of speech), and only as written: a masculine
+        // genitive after an is lenited or takes t (genitiveAfterAn), so úinéir an siopa is still
+        // reported (an tsiopa), and a feminine one has na (teanga an Ghaeilge: na Gaeilge).
+        // Without the article, not when the first word is also an imperative, which the second is
+        // then the object of (comhlánaigh foirm; abair bliain): the second person singular, the
+        // root; the third person in -adh/-odh is spelt like many nouns (ag riaradh scéim).
+        if (/^WEAKGENITIVE\b/.test(msgm[1])) {
+          const words = errortext.split(' ');
+          const last = words.pop() ?? '';
+          const first = words.pop() ?? '';
+          const afterArticle = /^an$/i.test(first);
+          if (afterArticle ? /pl="n" gnt="y" gnd="m"/.test(this.tagOneWordClean(last)) && genitiveAfterAn(last) : !this.nominativeNounOnly(last)) continue;
+          // After the article, the word before it is the first noun (kept out of the mark). After a
+          // particle of the past tense, ar included, a word that is also a past verb is the verb, and
+          // the noun its subject (Sin í an bhean ar ghoid an gadaí a carr).
+          if (afterArticle) {
+            const before = plain.slice(0, Math.max(0, offset)).trim().split(/\s+/);
+            const head = before.pop() ?? '';
+            const particle = (before.pop() ?? '').toLowerCase();
+            if (/^(ar|níor|nár|gur|cár|dár|murar|sular)$/.test(particle) && /<V p="y" t="caite"/.test(this.tagOneWordClean(head))) continue;
+          }
+          if (!afterArticle && /<V p="y" t="ord"/.test(this.tagOneWordClean(first)) && !/[ao]dh$/i.test(first)) continue;
+          // the message names the noun (/athrú/ possibly should be in the genitive)
+          if (!msgm[1].includes('{')) msgm[1] += `{${last}}`;
+        }
         // WEAKPREFIXT (grammar/rialacha-ga.in): a noun that is also a genitive singular of the same
         // form (an Eolaire) is correct as the genitive, which takes no t-. (A genitive plural of the
         // same form, as in ospidéal, does not count: after the singular article it is singular.)
@@ -990,6 +1025,18 @@ export class Gramadoir {
 }
 
 // ---------------------------------------------------------------- helpers
+
+/**
+ * Whether `word`, after the article an, has the first letter of a masculine genitive singular (CO17
+ * 10.9.1, Tábla 1F): b c f g m p lenited (an fhile), t before s + a vowel, sl, sn, sr (an tsiopa),
+ * any other letter unchanged (an Eolaire, an rí).
+ */
+export function genitiveAfterAn(word: string): boolean {
+  const w = word.toLowerCase();
+  const base = w.replace(/^t(?=s)/, '').replace(/^([bcdfgmpst])h/, '$1');
+  const expected = /^[bcfgmp]/.test(base) ? `${base[0]}h${base.slice(1)}` : /^s([aeiouáéíóú]|[lnr])/.test(base) ? `t${base}` : base;
+  return w === expected;
+}
 
 /**
  * The rule with the VERBALNOUN placeholder (a word in grammar/*.in) replaced by the verbal nouns,

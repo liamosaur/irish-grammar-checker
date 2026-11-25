@@ -95,7 +95,11 @@ export class Forms {
     }
   }
 
-  /** Replacements for the last word of `flagged` that the rule asks for, or [] if there are none to offer. */
+  /**
+   * Replacements for the last word of `flagged` that the rule asks for, or [] if there are none to
+   * offer. A feminine genitive after the singular article replaces the article too (an Cháin ->
+   * na Cánach: CO17 1.5.2, bun na sráide).
+   */
   fixesFor(rule: string, flagged: string): string[] {
     const tokens = flagged.trim().split(/\s+/);
     const last = tokens[tokens.length - 1];
@@ -109,6 +113,9 @@ export class Forms {
         lookups = g ? [g === 'f' ? this.aGenFem : this.aGenMasc, this.nGen, this.nGenPl] : [this.nGen, this.nGenPl];
         break;
       }
+      // the hint for a noun after another noun (cóta mná; eochair an chairr): the genitive singular,
+      // with the mutation the noun already has (redo below) or, after the article, the article's
+      case 'WEAKGENITIVE': lookups = [this.nGen]; break;
       case 'NOGENITIVE': lookups = [this.nNomFromGen, this.nNomPlFromGenPl]; break;
       case 'UATHA': lookups = [this.nSg]; break;
       case 'IOLRA': lookups = [this.nPl]; break;
@@ -127,7 +134,10 @@ export class Forms {
         const out: string[] = [];
         for (const h of hits.values()) {
           const moved = afterArticle && h.role !== 'adj' ? articleForm(h.w, h.role, h.gender) : redo(h.w);
-          if (moved !== null && moved.toLowerCase() !== last.toLowerCase() && !out.includes(moved)) out.push(matchCase(last, moved));
+          if (moved === null || moved.toLowerCase() === last.toLowerCase()) continue;
+          const femGen = afterArticle && prev!.toLowerCase() === 'an' && h.role === 'gsg' && h.gender === 'f';
+          const fix = femGen ? `${matchCase(prev!, 'na')} ${matchCase(last, moved)}` : matchCase(last, moved);
+          if (!out.includes(fix)) out.push(fix);
         }
         if (out.length) return out.slice(0, 3);
       }

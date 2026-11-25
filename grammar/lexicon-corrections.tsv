@@ -229,3 +229,11 @@ bpáirtnéireacht	<N pl="n" gnt="n" gnd="f">	focloir.ie: páirtnéireacht, f3 (o
 páirtnéireachta	<N pl="n" gnt="y" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht, gs -achta (3rd declension)
 pháirtnéireachta	<N pl="n" gnt="y" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht, gs -achta (3rd declension)
 bpáirtnéireachta	<N pl="n" gnt="y" gnd="f">	focloir.ie: páirtnéireacht, f3 (of a couple); the word list had it only as a non-standard form of páirtíocht; tagged as páirtíocht, gs -achta (3rd declension)
+# léir: the adjective only. BuNaMo adds a feminine noun, which teanglann.ie (FGB léir) gives only in
+# phrases (go léir: grammar/comhshuite-ga.in); as a noun it was read as the first noun before the
+# article after the copula (ón am ar léir an locht).
+léir	<A pl="n" gnt="n"><A pl="n" gnt="y" gnd="m">	teanglann.ie (FGB léir): the noun only in phrases (Liam, 2026-11-25)
+# soiléar: FGB gives it only as = siléar (cellar), but in real text it is the adjective soiléir
+# misspelt (go soiléar, atá soiléar: all five in the ELRC sets); both stay, the adjective first,
+# as the fix takes the first.
+soiléar	=soiléir, siléar	FGB soiléar = siléar; soiléir first, the adjective it is in real text (ELRC sets)

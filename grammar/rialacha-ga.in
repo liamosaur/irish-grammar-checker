@@ -113,6 +113,16 @@ sin sin:OK
 <X>ealú</X>:MICHEART{éalú}
 <S>[Aa]g</S> <X>[Mm]arbhadh</X>:CAIGHDEAN{ag marú}
 <X>[Mm]arbhadh</X>:CAIGHDEAN{maraíodh}
+# FGB fáisceadh: 1. the past autonomous of fáisc; 2. = fáscadh, the verbal noun (FGB fáisc: vn.
+# fáscadh). As a verbal noun it is the non-standard form, known by its context, as marbhadh above:
+# after ag, after á (his, her, their: á fháscadh, á fáscadh, á bhfáscadh), and after a unless a pronoun
+# follows, the subject of the past habitual (a d'fháisceadh sé)
+<S>[Aa]g</S> fáisceadh:CAIGHDEAN{ag fáscadh}
+[Aa] fháisceadh:CAIGHDEAN{a fháscadh}
+  <E>[Aa] fháisceadh</E> <P>ANYTHING</P>:OK
+[Áá] fháisceadh:CAIGHDEAN{á fháscadh}
+[Áá] fáisceadh:CAIGHDEAN{á fáscadh}
+[Áá] bhfáisceadh:CAIGHDEAN{á bhfáscadh}
 <X>[Mm]ur</X> <N>ANYTHING</N>:CAIGHDEAN{bhur}
 <X>[Mm]ur</X>:CAIGHDEAN{mura}
 <T>[Nn]a</T> <X>n?[Gg]h?naithe</X>:CAIGHDEAN{na gnóthaí}
@@ -1152,12 +1162,6 @@ AFTERMANNERNOUN <H>[Aa]</H> <VPAST>ANYTHING</VPAST>:WEAKBACHOIRAR
 AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N> VNLATER:PREFIXT @art-t-vowel
   <[^S]>ANYTHING</[^S]> <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
   CLAUSESTART <N>ANYTHING</N> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
-# The hint: missing t- after a noun, unless the noun is in the genitive. The engine drops it when
-# the noun has a genitive reading of the same form (an Eolaire: src/engine.ts).
-AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:WEAKPREFIXT @art-t-gen
-# CO17 3.3.1(b)(i), Tábla 9T: as for the rule above (an éirí in airde; an ochtar báicéirí)
-  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
-  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]cht(ar|ó)</N></E> <N>ANYTHING</N>:OK
 # "aon/ocht" rules are the same as the Noun rules above
 <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT @art-t-numeral
   <S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
@@ -1697,9 +1701,10 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 # is usually do + a + chéad.)
   <T>[Aa]n</T> <A pl="n" gnt="n">[Dd]á</A> <E><A pl="n" gnt="n">[Cc]héad</A> <N>ANYTHING</N></E>:OK
 <A pl="n" gnt="n">[Cc]héad</A> <N>LENITEDDST</N>:NIDARASEIMHIU
-# CB p.24 #11.b.ii, LGG p.113
+# CO17 10.12.1: chomh puts h before an adjective or adverb that begins with a vowel (chomh hard le
+# haon chapall); the word list tags the adverbs (annamh) as adjectives.
 #. Tá sé chomh iontach le sneachta dearg.
-<R>[Cc]homh</R> <A pl="n" gnt="n">INITIALVOWEL</A>:PREFIXH
+<R>[Cc]homh</R> <A pl="n" gnt="n">INITIALVOWEL</A>:PREFIXH @chomh-h
 # CB p.14 Note; "~ bheith' not in corpus so no exception
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
 <S>[Cc]huig</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
@@ -4737,6 +4742,13 @@ AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
 # gheobh*, gheofar always OK
 #. Ar an láithreán seo gheofar foclóirí agus liostaí téarmaíochta (OK).
   <VNOLEN>LENITEDFUTURE</VNOLEN>:OK
+# CO17 11.2.1(d): the direct relative always follows nuair and uair (nuair a bheidh deis agam; An
+# cuimhin leat an uair a chuamar go dtí an Spáinn?), not the indirect ar, which 11.3.1(g) allows
+# only after the other time nouns (an lá ar thit an crann). Only before a verb: uair ar bith.
+[Nn]uair [Aa]r:BACHOIR{nuair a} @uair-direct
+  <E>[Nn]uair [Aa]r</E> <[^V]>ANYTHING</[^V]>:OK
+[Uu]air [Aa]r:BACHOIR{uair a} @uair-direct
+  <E>[Uu]air [Aa]r</E> <[^V]>ANYTHING</[^V]>:OK
 # CB p.132 #3; dependent forms of verb <=> dependent clause
 #  keep these near bottom so "níor fhacthas/raibh" gives "BACHOIR{ní}"
 #  instead of silly "no need for relative form"
@@ -4746,6 +4758,8 @@ AFTERTEN <D>a</D> <A>ceithre</A>:BACHOIR{a ceathair}
 <S>RFORMPREP</S> <VPAST>ABSPASTVERB</VPAST>:RELATIVE
 #. Níor rinneadh a leithéid le fada agus ní raibh aon slat tomhais acu.
 [Aa]r|[Cc]ár|[Nn]ár|[Nn]íor <VPAST>ABSPASTVERB</VPAST>:RELATIVE
+# after nuair and uair the rule above reports ar itself (an uair ar chuamar: a chuamar)
+  [Nn]?[Uu]air <E>[Aa]r <VPAST>ABSPASTVERB</VPAST></E>:OK
 #. Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás.
 <C>NONRFORMCONJ</C> <V>ABSNONPASTVERB</V>:RELATIVE
 #. Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair.
@@ -5558,13 +5572,22 @@ háirithe:INPHRASE{go háirithe}
 # a noun from one with a role of its own (the object of a verb: Tugann an clár deis do dhaoine; the
 # object before a + verbal noun, CO17 3.3.2(a): Rinne mé iarracht scéal a scríobh). The engine drops
 # the mark when the second noun has a genitive reading anywhere in the word list (soilse ceo;
-# imeachtaí dlí: src/engine.ts), so it is shown only where the form is the nominative alone. Last in
-# the file, so that it masks no other rule. The exceptions are the places where CO17 3.3 uses the
+# imeachtaí dlí: src/engine.ts), so it is shown only where the form is the nominative alone. Near the
+# end of the file, so that it masks no other rule; before the hints for a noun after the article,
+# whose marks would hide the words its exceptions look at (úinéir an tsiopa). The exceptions are the places where CO17 3.3 uses the
 # nominative instead of the genitive, and other structures with two nouns side by side.
 <N>[a-záéíóú]NONCOMPOUND</N> <NCS>[a-záéíóú]NONCOMPOUND</NCS>:WEAKGENITIVE @gen-after-noun
 # the subject and the object of a verb (fhaigheann an mháthair bás)
   <V>ANYTHING</V> <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
   <V>ANYTHING</V> <T>ANYTHING</T> <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+# and so when the subject has a word before it or is two nouns joined by nó (Ní fhaigheann gach
+# duine foirm sa phost; Má dhéanann fostóir nó soláthraí pinsin ranníocaíocht ar do shon); not
+# after bí, which takes no object (AFTEROBJECTVERB). Not a preposition phrase after the subject:
+# the noun after the verb may be its object (a dhéanann difear don mhéid dleachta stampála).
+  AFTEROBJECTVERB <[ADT]>ANYTHING</[ADT]> <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+  AFTEROBJECTVERB <N>ANYTHING</N> <C>ANYTHING</C> <N>ANYTHING</N> <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E>:OK
+# the object of tabhair X do (tugann lipéid ar bhia eolas duit)
+  <E><N>ANYTHING</N> <NCS>ANYTHING</NCS></E> <O>ANYTHING</O>:OK
 # a genitive ends the noun phrase it qualifies, so a nominative after it starts a phrase of its
 # own, usually the object (Is féidir le sealbhóirí tí dramhaíl ... a fhágáil; Ghlac deich gcinn de
 # chumainn foirgníochta páirt sa suirbhé; 2 spúnóg bhoird mil)
@@ -5614,3 +5637,58 @@ háirithe:INPHRASE{go háirithe}
   <E><N>measc</N> <NCS>ANYTHING</NCS></E>:OK
   <E><N>ANYTHING</N> <NCS>d?[Tt]h?ráth</NCS></E>:OK
   <E><N>gh?náth</N> <NCS>ANYTHING</NCS></E>:OK
+# CO17 1.5.1, 1.5.2: a noun after the article that depends on the noun before it is in the
+# genitive (Cár fhág tú eochair an chairr?; hata an fhir; doras an tí). A hint, as for the rule
+# without the article at the end of the file: the rules cannot tell such a noun from one with a
+# role of its own. The engine drops the mark when the noun has a genitive singular reading of the
+# same form (an Eolaire: src/engine.ts). At the end of the file, so that it masks no other rule
+# (ag obair an son: INPHRASE ar son), but before the t- hint, which it replaces where the noun has
+# a genitive of its own (clárú an athraithe, not clárú an t-athrú). The first noun is kept out
+# of the mark (AFTERHEADNOUN), so that a rule on it is not masked (ar bhás an duine). Lowercase an
+# only: a capital An after a noun starts a new heading in run-together text.
+AFTERHEADNOUN <T>an</T> <NCS>ANYTHING</NCS>:WEAKGENITIVE @gen-after-noun-art
+# at the start of a clause the first word is often an imperative the word list also has as a noun
+  CLAUSESTART <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+# CO17 1.5.2: a noun with a definite genitive after it has no article (hata an fhir), so after a
+# noun that has one, or a possessive (follows den, don, sa, ...; a, mo, ...), the noun is not its genitive but has a role
+# of its own (Tabharfaidh an cláraitheoir an t-eolas; Socraíonn an Roinn Coimirce Sóisialaí an
+# t-uasleibhéal cíosa; Is cuid den dámhachtain an cinneadh sin). X: a noun flagged as a non-standard
+# form (Cuirfidh an t-oibritheoir líonra an t-údarás ar an eolas)
+  <T>ANYTHING</T> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+  <T>ANYTHING</T> <[NX]>ANYTHING</[NX]> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+  <T>ANYTHING</T> <[NX]>ANYTHING</[NX]> <[AN]>ANYTHING</[AN]> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+  <S>FUSEDPREP</S> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+  <D>ANYTHING</D> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+# a verb, its subject and its object (rialaíonn dlíthe an próiseas; Labhraíodh gach duine an
+# fhírinne); not after bí, which takes no object (go mbeidh clárú an athrú: clárú an athraithe)
+  AFTEROBJECTVERB <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+  AFTEROBJECTVERB <[ADT]>ANYTHING</[ADT]> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+# 3.3.2(a): the object before a + verbal noun (the t- rule above reports a missing t- there)
+  <E><T>an</T> <NCS>ANYTHING</NCS></E> VNLATER:OK
+# a genitive ends the noun phrase it qualifies, so a noun after it starts a phrase of its own
+  <N pl="." gnt="y" gnd=".">ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+# a time phrase is an adverbial of its own: the time nouns of CO17 11.2.1(d), (e) (an uair, an
+# tráth, an mhaidin, an dáta, an oíche, an t-am; An cuimhin leat an lá a thit an crann?) and
+# 3.3.11 (Thit go leor báisteach throm an tseachtain seo caite), and an bhliain, an mhí, an tráthnóna
+  <E><T>an</T> <NCS>(uair|tráth|mhaidin|dáta|oíche|t-am|lá|tseachtain|bhliain|mhí|tráthnóna)</NCS></E>:OK
+# 9.3.7: aon before a noun is the numeral, not a noun (an t-aon eadránaí amháin)
+  <E><T>an</T> <NCS>t?-?aon</NCS></E> <N>ANYTHING</N>:OK
+# 3.3.2(a): the object of a + verbal noun comes before it (chun an tuilleamh a chinneadh), so a
+# noun after it is not its genitive (chun a chinneadh an tuilleamh)
+  <S>[Aa]</S> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+# after a verbal particle the first word is the verb, which the word list also has as a noun
+# (Sin í an bhean ar ar cuireadh an t-agallamh); and so with a pronoun object after the subject
+# (Cheannaigh mé leabhar nua ar mhol an léirmheastóir é)
+  <U>ANYTHING</U> <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+  <E><T>an</T> <NCS>ANYTHING</NCS></E> <P>ANYTHING</P>:OK
+# 7.1: the subject of the copula comes last (Ní le Sorcha an ceann sin; Ní hualach do dhuine an
+# fhoghlaim; Is dona linn an briseadh seo)
+  AFTERCOPULA <N>ANYTHING</N> <E><T>an</T> <NCS>ANYTHING</NCS></E>:OK
+# 3.3.1(b)(i): a verbal-noun unit is not inflected (ag moladh an teacht i bhfeidhm)
+  <E><T>an</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
+# The hint: missing t- after a noun, unless the noun is in the genitive. The engine drops it when
+# the noun has a genitive reading of the same form (an Eolaire: src/engine.ts).
+AFTERHEADNOUN <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:WEAKPREFIXT @art-t-gen
+# CO17 3.3.1(b)(i), Tábla 9T: as for the rule above (an éirí in airde; an ochtar báicéirí)
+  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">VNUNIT</N></E>:OK
+  <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">[Oo]cht(ar|ó)</N></E> <N>ANYTHING</N>:OK

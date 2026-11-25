@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { Gramadoir } from '../src/engine.ts';
 import { loadData } from '../src/node-data.ts';
 import { analyse } from '../web/annotate.ts';
-import { applyCorrection, firstFix } from '../web/corrections.ts';
+import { applyCorrection, firstFix, withLastWord } from '../web/corrections.ts';
 import { foldForEngine } from '../web/fold.ts';
 import { addFixes, Forms } from '../web/forms.ts';
 
@@ -59,10 +59,11 @@ const CAIGHDEAN: [string, string, string, string][] = [
   ['GENITIVE', 'tús an saol', 'tsaoil', 'tús an tsaoil'],
   ['GENITIVE', 'pas an Seapánach', 'tSeapánaigh', 'pas an tSeapánaigh'],
   ['GENITIVE', 'pas an Albanach', 'Albanaigh', 'pas an Albanaigh'],
-  // 1F genitive singular, feminine ("na"): none before consonants, h- before vowels
-  ['GENITIVE', 'leac an fhuinneog', 'fuinneoige', 'leac na fuinneoige'],
-  ['GENITIVE', 'bun an sráid', 'sráide', 'bun na sráide'],
-  ['GENITIVE', 'timpeall an áit', 'háite', 'timpeall na háite'],
+  // 1F genitive singular, feminine ("na"): none before consonants, h- before vowels; the article
+  // changes with the noun
+  ['GENITIVE', 'leac an fhuinneog', 'na fuinneoige', 'leac na fuinneoige'],
+  ['GENITIVE', 'bun an sráid', 'na sráide', 'bun na sráide'],
+  ['GENITIVE', 'timpeall an áit', 'na háite', 'timpeall na háite'],
   // 1I genitive plural ("na"): eclipsis, n- before vowels
   ['GENITIVE', 'trasna na cnoic', 'gcnoc', 'trasna na gcnoc'],
   ['GENITIVE', 'leaca na fuinneoga', 'bhfuinneog', 'leaca na bhfuinneog'],
@@ -87,6 +88,7 @@ describe('the first letter after the article follows An Caighdeán Oifigiúil', 
   for (const [rule, flagged, want, example] of CAIGHDEAN) {
     it(`${rule} "${flagged}" -> ${want} (${example})`, () => {
       assert.equal(forms.fixesFor(rule, flagged)[0], want);
+      assert.ok(withLastWord(flagged, want)?.endsWith(example), `${withLastWord(flagged, want)}`);
     });
   }
 });
@@ -108,6 +110,30 @@ describe('genitive and plural fixes against the real engine', () => {
     const fixed = applyCorrection(line, plan.range, plan.word)!;
     assert.equal(fixed, 'Scriúáil sé an glas seo ar chúl an dorais.');
     assert.ok(!views(fixed).some((x) => x.rule === 'GENITIVE'));
+  });
+
+  it('the hint for a noun after another noun and the article offers its genitive (CO17 1.5.1, 1.5.2)', () => {
+    // Citizens Information sentences (test/added-rules.test.ts); a feminine noun takes na with it
+    const cases: [string, string][] = [
+      ["Tugtar an fhoirm seo don mháthair san ospidéal agus ba chóir é a chomhlánú agus thabhairt ar ais d'fhoireann an ospidéal sula scaoiltear amach í.", "d'fhoireann an ospidéil sula"],
+      ['go dtí go mbeidh clárú an athrú úinéireachta imithe tríd.', 'clárú an athraithe úinéireachta'],
+      ['Cruthófar é seo trí chónaí inríofa a bheith orthu in Éirinn ar feadh 3 bliana as na 4 bliana roimh bhreith an leanbh.', 'roimh bhreith an linbh.'],
+      ['Ní gá go bhfuil na páistí i dteideal an chuid eile.', 'i dteideal na coda eile.'],
+      ['Déanfar scrúdú ar do charr chun a chinntiú go bhfuil tú ag íoc an Cháin chláraithe feithiclí ceart.', 'ag íoc na Cánach chláraithe'],
+      ["Má rinne tú go leor ranníocaíochtaí ÁSPC i rith do bhlianta oibre, ag aois 66 d'fhéadfá a bheith i dteideal an Pinsean Stáit (ranníocach) a fháil.", 'i dteideal an Phinsin Stáit'],
+      ["Íocaíocht chnapshuime bunaithe ar phá an fostaí is ea an íocaíocht reachtúil iomarcaíochta.", 'ar phá an fhostaí is'],
+      ["Chun an méid sin a mheas, ba ghá féachaint ar an dualgas a bhí leagtha ar an Roinn de thoradh an méid a bhí daingnithe ina scéim teanga.", 'de thoradh na méide a bhí'],
+      // without the article (cóta mná): the genitive, keeping the noun's own first letter
+      ['Íocann an Stát táille chaipitíochta le gach naíonra agus seirbhís cúram lae atá páirteach sa scéim.', 'seirbhís cúraim lae'],
+      ['Ba chóir duit gearán a chur isteach a fhéadann a bheith agat faoin gcaoi a bhfuiltear ag riaradh scéim éigin don Ombudsman Pinsin.', 'ag riaradh scéime éigin'],
+    ];
+    for (const [line, want] of cases) {
+      const v = views(line).find((x) => x.rule === 'WEAKGENITIVE')!;
+      const plan = firstFix(v, line)!;
+      const fixed = applyCorrection(line, plan.range, plan.word)!;
+      assert.ok(fixed.includes(want), fixed);
+      assert.ok(!views(fixed).some((x) => x.rule === 'WEAKGENITIVE'), fixed);
+    }
   });
 
   it("most of these fixes on the checker's own test texts make their error go away", () => {

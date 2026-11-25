@@ -988,7 +988,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	h-	hiadsan → iadsan	Cé	Cé iadsan?	Cé hiadsan?	8	8.5.3	139	3	flagged:PREFIXH
 	h-	heitleán → eitleán	ceathrú	an cúig chéad seasca is ceathrú eitleán	an cúig chéad seasca is ceathrú heitleán	9	9.5.3	162	32	-
 	h-	hoileán → oileán	ceathrú	an trí mhíle dhéag is ceathrú oileán	an trí mhíle dhéag is ceathrú hoileán	9	9.5.3	162	30	-
-	h-	hard → ard	chomh	Bhí an crann crónghiúise chomh ard le foirgneamh tríocha urlár.	Bhí an crann crónghiúise chomh hard le foirgneamh tríocha urlár.	10	10.12.1	195	31	flagged:PREFIXH
+wrong	h-	hard → ard	chomh	Bhí an crann crónghiúise chomh ard le foirgneamh tríocha urlár.	Bhí an crann crónghiúise chomh hard le foirgneamh tríocha urlár.	10	10.12.1	195	31	flagged:PREFIXH
 	h-	híseal → íseal	chomh	chomh íseal seo	chomh híseal seo	8	8.6.1	140	6	flagged:PREFIXH
 	h-	híseal → íseal	chomh	chomh íseal sin	chomh híseal sin	8	8.6.1	140	6	flagged:PREFIXH
 	h-	híseal → íseal	chomh	chomh íseal siúd	chomh híseal siúd	8	8.6.1	140	6	flagged:PREFIXH
@@ -2758,9 +2758,9 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	mhaise → maise	an	Gura maith an maise dó é.	Gura maith an mhaise dó é.	7	7.4	130	14	flagged:SEIMHIU
 	lenition	mhaise → maise	an	Nár dhána an maise dó é!	Nár dhána an mhaise dó é!	7	7.2.1	117	13	flagged:SEIMHIU
 	lenition	Mhárta → Márta	an	Is i mí an Márta a bheidh an Cháisc i mbliana.	Is i mí an Mhárta a bheidh an Cháisc i mbliana.	1	1.1.5(d)	2	11	-
-	lenition	Mhárta → Márta	an	Tá an Cháisc i mí an Márta seachas mí Aibreáin i mbliana.	Tá an Cháisc i mí an Mhárta seachas mí Aibreáin i mbliana.	1	1.1.5(f)	2	21	-
+	lenition	Mhárta → Márta	an	Tá an Cháisc i mí an Márta seachas mí Aibreáin i mbliana.	Tá an Cháisc i mí an Mhárta seachas mí Aibreáin i mbliana.	1	1.1.5(f)	2	21	flagged:WEAKGENITIVE
 	lenition	mháthair → máthair	an	an máthair imníoch	an mháthair imníoch	4	4.7	64	3	flagged:SEIMHIU
-	lenition	Mhéara → Méara	an	Cuireadh tús leis an bhféile seachtaine le hócáid i dteach an Méara.	Cuireadh tús leis an bhféile seachtaine le hócáid i dteach an Mhéara.	10	10.2.7	178	62	-
+	lenition	Mhéara → Méara	an	Cuireadh tús leis an bhféile seachtaine le hócáid i dteach an Méara.	Cuireadh tús leis an bhféile seachtaine le hócáid i dteach an Mhéara.	10	10.2.7	178	62	flagged:WEAKGENITIVE
 	lenition	mhí → mí	an	an mí fhada	an mhí fhada	4	4.7	64	3	flagged:SEIMHIU
 	lenition	mhí-áidh → mí-áidh	an	Deirtear gur comhartha an mí-áidh an long sí a fheiceáil.	Deirtear gur comhartha an mhí-áidh an long sí a fheiceáil.	10	10.2.7	178	26	flagged:SEIMHIU
 	lenition	mhír → mír	an	an mír	an mhír	1	1.1.1	1	3	flagged:SEIMHIU
@@ -2776,7 +2776,7 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	lenition	pháirc → páirc	an	Sin í an páirc a dteastaíonn uainn fál a thógáil idir í agus an bóthar.	Sin í an pháirc a dteastaíonn uainn fál a thógáil idir í agus an bóthar.	11	11.3.1(e)	207	9	flagged:SEIMHIU
 	lenition	pháirc → páirc	an	Teastaíonn uainn fál a thógáil idir an páirc sin agus an bóthar.	Teastaíonn uainn fál a thógáil idir an pháirc sin agus an bóthar.	11	11.3.1(e)	207	39	flagged:SEIMHIU
 	lenition	pháiste → páiste	an	beach cealgtha an páiste	beach cealgtha an pháiste	3	3.3.1	45	18	-
-	lenition	pháiste → páiste	an	Cad a tharla do bhronntanas an páiste i ndiaidh na cóisire?	Cad a tharla do bhronntanas an pháiste i ndiaidh na cóisire?	10	10.2.1	171	31	-
+	lenition	pháiste → páiste	an	Cad a tharla do bhronntanas an páiste i ndiaidh na cóisire?	Cad a tharla do bhronntanas an pháiste i ndiaidh na cóisire?	10	10.2.1	171	31	flagged:WEAKGENITIVE
 	lenition	pheileadóra → peileadóra	an	ainm an peileadóra chlúitigh	ainm an pheileadóra chlúitigh	4	4.7	64	8	flagged:SEIMHIU
 	lenition	Phó → Pó	an	an Pó	an Phó	1	1.1.5(h)	3	3	-
 	lenition	phobail → pobail	an	Bhí sé i mbéal an pobail de thoradh amhrán dar teideal An Dreoilín.	Bhí sé i mbéal an phobail de thoradh amhrán dar teideal An Dreoilín.	3	3.3.10	52	18	flagged:SEIMHIU
@@ -4626,8 +4626,8 @@ verdict	kind	change	before	variant	original	chapter	section	page	at	checker
 	t-	tSionainn → Sionainn	an	thar an Sionainn fhada	thar an tSionainn fhada	1	1.7.4	17	8	flagged:PREFIXTS
 	t-	tSionainn → Sionainn	an	an Sionainn	an tSionainn	3	3.1.3	38	3	flagged:PREFIXTS
 	t-	tsionnaigh → sionnaigh	an	An bhfaca tú eireaball an sionnaigh?	An bhfaca tú eireaball an tsionnaigh?	10	10.10.1	192	26	flagged:PREFIXTS
-	t-	tsiopa → siopa	an	An raibh úinéir an siopa in ann cabhrú leat?	An raibh úinéir an tsiopa in ann cabhrú leat?	3	3.1.6	39	19	-
-	t-	tsiopa → siopa	an	Fágadh na heochracha in oifig chuntasóir úinéir an siopa.	Fágadh na heochracha in oifig chuntasóir úinéir an tsiopa.	3	3.1.6	39	51	-
+	t-	tsiopa → siopa	an	An raibh úinéir an siopa in ann cabhrú leat?	An raibh úinéir an tsiopa in ann cabhrú leat?	3	3.1.6	39	19	flagged:WEAKGENITIVE
+	t-	tsiopa → siopa	an	Fágadh na heochracha in oifig chuntasóir úinéir an siopa.	Fágadh na heochracha in oifig chuntasóir úinéir an tsiopa.	3	3.1.6	39	51	flagged:WEAKGENITIVE
 	t-	tSiria → Siria	an	an Siria	an tSiria	1	1.1.5(i)	3	3	flagged:PREFIXTS
 	t-	tslat → slat	an	leis an slat fhada	leis an tslat fhada	1	1.7.4	17	8	flagged:PREFIXTS
 	t-	tslí → slí	an	Ní maith liom an slí a bhfuil sé á chur i bhfeidhm.	Ní maith liom an tslí a bhfuil sé á chur i bhfeidhm.	11	11.9	218	17	flagged:PREFIXTS

@@ -250,9 +250,36 @@ const cases: Case[] = [
   { section: '11.3.1(h)', text: 'Cén fáth a chuaigh siad ann?', rule: 'RELATIVE', words: 'a chuaigh', fixed: null },
   // a hint after áit, fáth, caoi ...: ar unless the noun is the verb's object
   { section: '11.3.1(h)', text: 'Cén áit a chuir tú é?', rule: 'WEAKBACHOIRAR', words: 'a chuir', fixed: 'Cén áit ar chuir tú é?' },
-  // Citizens Information: t- after a noun, a hint, as the noun may be its genitive (here d'fhoireann an
-  // ospidéil, so the fix offered is not the correction)
-  { section: '10.9.1(a)', text: "Tugtar an fhoirm seo don mháthair san ospidéal agus ba chóir é a chomhlánú agus thabhairt ar ais d'fhoireann an ospidéal sula scaoiltear amach í.", rule: 'WEAKPREFIXT', words: 'an ospidéal', fixed: "Tugtar an fhoirm seo don mháthair san ospidéal agus ba chóir é a chomhlánú agus thabhairt ar ais d'fhoireann an t-ospidéal sula scaoiltear amach í." },
+  // Citizens Information: a noun after the article that depends on the noun before it, in the
+  // nominative instead of the genitive (CO17 1.5.1, 1.5.2); a hint; its fix (the genitive) is tested in test/forms.test.ts
+  { section: '1.5.1', text: "Tugtar an fhoirm seo don mháthair san ospidéal agus ba chóir é a chomhlánú agus thabhairt ar ais d'fhoireann an ospidéal sula scaoiltear amach í.", rule: 'WEAKGENITIVE', words: 'an ospidéal', fixed: null },
+  // the clause only: the sentence's other flag (NIDEE: words are missing before d'fheithicil) is
+  // not this rule's. After bí, which takes no object (clárú an athraithe)
+  { section: '1.5.1', text: "go dtí go mbeidh clárú an athrú úinéireachta imithe tríd.", rule: 'WEAKGENITIVE', words: 'an athrú', fixed: null },
+  { section: '1.5.1', text: "Cruthófar é seo trí chónaí inríofa a bheith orthu in Éirinn ar feadh 3 bliana as na 4 bliana roimh bhreith an leanbh.", rule: 'WEAKGENITIVE', words: 'an leanbh', fixed: null },
+  { section: '1.5.1', text: "Ní gá go bhfuil na páistí i dteideal an chuid eile.", rule: 'WEAKGENITIVE', words: 'an chuid', fixed: null },
+  { section: '1.5.1', text: "Déanfar scrúdú ar do charr chun a chinntiú go bhfuil tú ag íoc an Cháin chláraithe feithiclí ceart.", rule: 'WEAKGENITIVE', words: 'an Cháin', fixed: null },
+  { section: '1.5.1', text: "Má rinne tú go leor ranníocaíochtaí ÁSPC i rith do bhlianta oibre, ag aois 66 d'fhéadfá a bheith i dteideal an Pinsean Stáit (ranníocach) a fháil.", rule: 'WEAKGENITIVE', words: 'an Pinsean', fixed: null },
+  // Citizens Information, Coimisinéir Teanga: a noun spelt like its genitive, without the first letter
+  // the genitive takes after an (CO17 10.9.1, Tábla 1F: an fhostaí) or the article na (na méide)
+  { section: '1.5.1', text: "Íocaíocht chnapshuime bunaithe ar phá an fostaí is ea an íocaíocht reachtúil iomarcaíochta.", rule: 'WEAKGENITIVE', words: 'an fostaí', fixed: null },
+  { section: '1.5.1', text: "Chun an méid sin a mheas, ba ghá féachaint ar an dualgas a bhí leagtha ar an Roinn de thoradh an méid a bhí daingnithe ina scéim teanga.", rule: 'WEAKGENITIVE', words: 'an méid', fixed: null },
+  // Coimisinéir Teanga: fáisceadh as the verbal noun, which FGB gives as = fáscadh (FGB fáisc: vn.
+  // fáscadh); it was read as a past verb and asked for d'. The part after brúscar, which has a flag
+  // of its own (the sentence: Is féidir trealamh mór a úsáid le brúscar a fháisceadh agus ...)
+  { section: 'FGB', text: 'a fháisceadh agus mar sin a thoirt a laghdú.', rule: 'CAIGHDEAN', words: 'a fháisceadh', fixed: 'a fháscadh agus mar sin a thoirt a laghdú.' },
+  // made up: the same after á (his, her, their)
+  { section: 'FGB', text: 'Bhí sé á fháisceadh.', rule: 'CAIGHDEAN', words: 'á fháisceadh', fixed: 'Bhí sé á fháscadh.' },
+  { section: 'FGB', text: 'Bhí sí á fáisceadh.', rule: 'CAIGHDEAN', words: 'á fáisceadh', fixed: 'Bhí sí á fáscadh.' },
+  { section: 'FGB', text: 'Bhí siad á bhfáisceadh.', rule: 'CAIGHDEAN', words: 'á bhfáisceadh', fixed: 'Bhí siad á bhfáscadh.' },
+  // Gaois (Acts): the indirect ar after uair, where CO17 11.2.1(d) has the direct relative; the part of
+  // the sentence around it (the sentence has ón uair a thosaigh before it, and another flag)
+  { section: '11.2.1(d)', text: "nó ón uair ar déileáladh leis, de bhua fheidhmiú an ailt seo roimhe sin, mar dhuine a thosaigh á seoladh", rule: 'BACHOIR', words: 'uair ar', fixed: "nó ón uair a déileáladh leis, de bhua fheidhmiú an ailt seo roimhe sin, mar dhuine a thosaigh á seoladh" },
+  // made up, from the CO17 11.2.1(d) examples
+  { section: '11.2.1(d)', text: "An cuimhin leat an uair ar chuamar go dtí an Spáinn?", rule: 'BACHOIR', words: 'uair ar', fixed: "An cuimhin leat an uair a chuamar go dtí an Spáinn?" },
+  { section: '11.2.1(d)', text: "An cuimhin leat an uair ar thit an crann?", rule: 'BACHOIR', words: 'uair ar', fixed: "An cuimhin leat an uair a thit an crann?" },
+  { section: '11.2.1(d)', text: "Inseoidh mé an scéal duit nuair ar tháinig sé.", rule: 'BACHOIR', words: 'nuair ar', fixed: "Inseoidh mé an scéal duit nuair a tháinig sé." },
+  { section: '11.2.1(d)', text: "Nuair ar tháinig sé abhaile, bhí sé tuirseach.", rule: 'BACHOIR', words: 'Nuair ar', fixed: "Nuair a tháinig sé abhaile, bhí sé tuirseach." },
   // Citizens Information: the object before a + a verbal noun is nominative after a noun too (CO17 3.3.2(a))
   { section: '3.3.2(a)', text: 'Má tá an praghas níos lú, tá tú fós faoi dhliteanas an easnamh a aisíoc.', rule: 'PREFIXT', words: 'an easnamh', fixed: 'Má tá an praghas níos lú, tá tú fós faoi dhliteanas an t-easnamh a aisíoc.' },
   // Citizens Information: the prefix t written without its hyphen before a lowercase vowel (CO17 1.1.4)
