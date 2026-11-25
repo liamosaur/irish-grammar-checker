@@ -35,7 +35,7 @@ let current: Gramadoir, currentLex: Record<string, string>[];
 before(() => {
   const l = loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false });
   const c = loadData(dataDir);
-  legacy = new Gramadoir(l, { fixSpelling: true, hyphenFix: false, skipDigitWords: false, fadaSuggestions: false, prefixSuggestions: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, capsNoNearMiss: false, derivedWords: true });
+  legacy = new Gramadoir(l, { fixSpelling: true, hyphenFix: false, skipDigitWords: false, fadaSuggestions: false, prefixSuggestions: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, capsNoNearMiss: false, derivedWords: true, pluralHint: false });
   current = new Gramadoir(c, { fixSpelling: true });
   legacyLex = l.lexicon as unknown as Record<string, string>[];
   currentLex = c.lexicon as unknown as Record<string, string>[];
@@ -149,7 +149,7 @@ describe('suggestions equal a brute-force scan of the lexicon', () => {
 // ------------------------------------------------------------------ behaviours
 
 describe('spelling suggestions: behaviour', () => {
-  const off = () => new Gramadoir(loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false }), { hyphenFix: false, skipDigitWords: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, capsNoNearMiss: false, derivedWords: true });
+  const off = () => new Gramadoir(loadData(path.join(dataDir, 'legacy-0.70'), dataDir, { overlay: false }), { hyphenFix: false, skipDigitWords: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, capsNoNearMiss: false, derivedWords: true, pluralHint: false });
 
   it('is off by default, as in the Perl library', () => {
     assert.ok(!off().grammaticalErrors('An bhfuil uachtar roeite agattt?').some((e) => e.ruleId.includes('MOLADH')));

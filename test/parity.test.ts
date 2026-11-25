@@ -19,7 +19,7 @@ describe('parity with the Perl engine (golden files)', () => {
   let gr: Gramadoir;
   before(() => {
     // Perl 0.70 is the oracle, so use the 0.70 rules/morphology overlaid on the shared data.
-    gr = new Gramadoir(loadData(path.join(root, 'data', 'legacy-0.70'), path.join(root, 'data'), { overlay: false }), { hyphenFix: false, skipDigitWords: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, capsNoNearMiss: false, derivedWords: true });
+    gr = new Gramadoir(loadData(path.join(root, 'data', 'legacy-0.70'), path.join(root, 'data'), { overlay: false }), { hyphenFix: false, skipDigitWords: false, compoundLenition: false, nonStandardCompounds: true, namedParts: false, rareNeedsMatch: false, capsNoNearMiss: false, derivedWords: true, pluralHint: false });
   });
 
   for (const f of fs.readdirSync(goldenDir).filter((x) => x.endsWith('.json'))) {

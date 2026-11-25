@@ -140,6 +140,11 @@ export interface GramadoirOptions {
    * error. On in the Perl library.
    */
   derivedWords?: boolean;
+  /**
+   * Report NOGENITIVE as a hint, WEAKNOGENITIVE, when the genitive may be a plural the dictionary
+   * doesn't list (le déanmhais; see grammaticalErrors). On by default; not in the Perl library.
+   */
+  pluralHint?: boolean;
 }
 
 function toMap(o: Record<string, string>): Map<string, string> {
@@ -165,6 +170,8 @@ export class Gramadoir {
   private giorr: CompiledRule[];
   private rialacha: CompiledRule[];
   private unigram: CompiledRule[];
+  /** Genitive singulars (lower case) whose every noun in BuNaMo has a plural spelt differently. */
+  private genitiveNotPlural = new Set<string>();
   private opts: Required<GramadoirOptions>;
   private memo = new Map<string, string>();
   // spelling suggestions (built lazily)
@@ -177,7 +184,7 @@ export class Gramadoir {
   private inCompound = false;
 
   constructor(data: GramadoirData, opts: GramadoirOptions = {}) {
-    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, skipDigitWords: true, fadaSuggestions: true, capsNoNearMiss: true, prefixSuggestions: true, compoundLenition: true, nonStandardCompounds: false, namedParts: true, rareNeedsMatch: true, derivedWords: false, ...opts };
+    this.opts = { unigramTagging: true, fixSpelling: false, datives: false, hyphenFix: true, skipDigitWords: true, fadaSuggestions: true, capsNoNearMiss: true, prefixSuggestions: true, compoundLenition: true, nonStandardCompounds: false, namedParts: true, rareNeedsMatch: true, derivedWords: false, pluralHint: true, ...opts };
     this.focail = data.lexicon.map(toMap);
     this.eile = toMap(data.eile);
     this.earraidi = toMap(data.earraidi);
@@ -201,6 +208,16 @@ export class Gramadoir {
     this.giorr = data.rules.giorr.map(compileRule);
     this.rialacha = data.rules.rialacha.map(vn).map(compileRule);
     this.unigram = data.rules.unigram.map(compileRule);
+    // cineál: cineáil, cineálacha. Not when another noun's genitive is spelt the same and has no
+    // plural, or the same plural (fear: fir, fir).
+    const maybePlural = new Set<string>();
+    for (const row of data.nouns ?? []) {
+      const [, gsg = '', npl = ''] = row.split('|');
+      const gs = gsg.split(',').filter(Boolean).map((w) => w.toLowerCase());
+      const pl = npl.split(',').filter(Boolean).map((w) => w.toLowerCase());
+      for (const g of gs) (pl.length && !pl.includes(g) ? this.genitiveNotPlural : maybePlural).add(g);
+    }
+    for (const g of maybePlural) this.genitiveNotPlural.delete(g);
   }
 
   // ---------------------------------------------------------------- sentences
@@ -1054,6 +1071,22 @@ export class Gramadoir {
         // form (an Eolaire) is correct as the genitive, which takes no t-. (A genitive plural of the
         // same form, as in ospidéal, does not count: after the singular article it is singular.)
         if (/^WEAKPREFIXT\b/.test(msgm[1]) && /pl="n" gnt="y"/.test(this.tagOneWordClean(errortext.split(' ').pop() ?? ''))) continue;
+        // NOGENITIVE (grammar/rialacha-ga.in) is a hint, WEAKNOGENITIVE, when the noun is a masculine
+        // genitive singular ending in a slender consonant: a first-declension noun's nominative plural
+        // is spelt the same (CO17 2.1.3(b)(i), Tábla 2B: na fir, hata an fhir), and the dictionaries
+        // (FGB, focloir.ie, 2026-11-25) give no plural for many nouns
+        // that real text uses in the plural (le déanmhais, do pháistí le míchumais, na speansais).
+        // Not after the singular article (an, or a preposition joined with it: don, sa, ón...), where
+        // a plural cannot follow (chuig an úinéara, don chomhshaoil), nor when BuNaMo gives the noun
+        // a plural spelt differently (faoi chineáil: cineálacha).
+        if (this.opts.pluralHint && /^NOGENITIVE\b/.test(msgm[1])) {
+          const words = errortext.split(' ');
+          const last = words.pop() ?? '';
+          const before = (words.pop() ?? '').toLowerCase();
+          if (/[eéií][^aeiouáéíóú]+$/i.test(last) && /<N pl="n" gnt="y" gnd="m"/.test(this.tagOneWordClean(last))
+            && !/^(an|den|don|sa|san|insan|faoin|ón)$/.test(before)
+            && !unmutatedForms(last).some((w) => this.genitiveNotPlural.has(w))) msgm[1] = msgm[1].replace(/^NOGENITIVE/, 'WEAKNOGENITIVE');
+        }
         errors.push({
           fromy,
           fromx,
@@ -1077,6 +1110,21 @@ export class Gramadoir {
 }
 
 // ---------------------------------------------------------------- helpers
+
+/**
+ * A word in lower case and the forms it may have without an initial mutation: lenition (chineáil),
+ * eclipsis (bhfeidhmiúcháin, n-aighnis), h or t before a vowel (hamhrais, t-ioncaim). For looking a
+ * word up in a list of unmutated forms, so a wrong guess finds nothing.
+ */
+function unmutatedForms(word: string): string[] {
+  const w = word.toLowerCase();
+  const out = [w];
+  if (/^[bcdfgmpst]h/.test(w)) out.push(w[0] + w.slice(2));
+  const ecl = /^(?:bhf|mb|gc|nd|ng|bp|dt|n-)(.*)$/.exec(w);
+  if (ecl) out.push(w.startsWith('bhf') ? 'f' + ecl[1] : w.startsWith('n-') ? ecl[1] : w.slice(1));
+  if (/^(?:h|t-)[aeiouáéíóú]/.test(w)) out.push(w.replace(/^(?:h|t-)/, ''));
+  return out;
+}
 
 /**
  * Whether `word`, after the article an, has the first letter of a masculine genitive singular (CO17

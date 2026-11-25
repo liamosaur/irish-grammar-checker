@@ -116,7 +116,7 @@ export class Forms {
       // the hint for a noun after another noun (cóta mná; eochair an chairr): the genitive singular,
       // with the mutation the noun already has (redo below) or, after the article, the article's
       case 'WEAKGENITIVE': lookups = [this.nGen]; break;
-      case 'NOGENITIVE': lookups = [this.nNomFromGen, this.nNomPlFromGenPl]; break;
+      case 'NOGENITIVE': case 'WEAKNOGENITIVE': lookups = [this.nNomFromGen, this.nNomPlFromGenPl]; break;
       case 'UATHA': lookups = [this.nSg]; break;
       case 'IOLRA': lookups = [this.nPl]; break;
       case 'AIDIOLRA': lookups = [this.aPl]; break;

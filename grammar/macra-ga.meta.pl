@@ -228,6 +228,7 @@ s/ANYCOPULA/(?:<[^>]+>)*<V cop="y".>(?:<[^>]+>)*/g;
 # one with an imperative.
 s/PERSONALPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;
 s/WITHFINITE/(?:<[^>]+>)*<V p="y"[^>]*>(?:<[^>]+>)*/g;
+s/WITHNOUNANDVERB/(?:<[^>]+>)*<N [^>]*>(?:<[^>]+>)*<V p=[^>]*>(?:<[^>]+>)*/g;
 s/WITHVERBTAG/(?:<[^>]+>)*<V p=[^>]*>(?:<[^>]+>)*/g;
 s/WITHIMPER/(?:<[^>]+>)*<V p="y" t="ord".>(?:<[^>]+>)*/g;
 # A word with a past-tense verb among its tags.

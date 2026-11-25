@@ -452,6 +452,11 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
 <B>[Mm]h?óra</B>:<A pl="y" gnt="n">
 <T>[Nn]a</T> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
+# A word that is a noun or a verb, followed by the article and a noun read only as a genitive,
+# is the noun with its genitive: the subject or object of a verb is not in the genitive
+# (... ná cleachtadh an leighis; agus náisiúnaigh na hEilvéise). Before ná, so that ná is then the
+# conjunction, not the particle of the imperative.
+<B><Z>WITHNOUNANDVERB</Z>ANYTHING</B> <T>ANYTHING</T> <NG>ANYTHING</NG>:!<V[^<]*>
 <B>[Nn]á</B> <V>ANYTHING</V>:<U>
 # note that next rule is disjoint from previous (so don't put <U> in next one)
 [Nn]á <B><Z>ANYIMPER</Z>ANYTHING</B>:<V p="y" t="ord">
@@ -828,6 +833,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>na</T> <B><Z>ANYNFONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+# Not before a and a verbal noun, whose object the noun is, in the nominative (CO17 3.3.2(a)):
+# ar an Uachtarán an Dáil a lánscor.
+<NGEND>ANYTHING</NGEND> <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B> [Aa] VERBALNOUN:<N pl="n" gnt="n" gnd="f">
 <NGEND>ANYTHING</NGEND> <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -910,6 +918,10 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>ANYTHING</B> <P>SUBJECTPRONOUN</P>:!<[^V][^<]*>
 # A lenited word with a verb reading at the start of a clause is the verb (sb. mholfaí,
 # bhristí: CO17 Táblaí 5B, 5C): nothing there lenites a noun or an adjective.
+# Not when the next word is a noun read only as a genitive singular, which is not the subject
+# or object of a verb: the word is then a noun, lenited by a word before the comma, as in a list
+# (faoi bheith ag obair ar scor, cháin ioncaim srl.).
+CLAUSESTART <B><Z>WITHNOUNANDVERB</Z>LENITED</B> <N pl="n" gnt="y" gnd="[mf]">ANYTHING</N>:!<V[^<]*>
 CLAUSESTART <B><Z>WITHVERBTAG</Z>LENITED</B>:!<[^V][^<]*>
 # next rule kills possibility of catching "de a:BACHOIR{dá}"
 # Bhain sé de a bhróga. 

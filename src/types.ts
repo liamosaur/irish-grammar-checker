@@ -45,6 +45,11 @@ export interface GramadoirData {
    * VERBALNOUN placeholder in rules. Absent: the placeholder matches nothing.
    */
   verbalNouns?: string[];
+  /**
+   * BuNaMo's nouns (the n rows of data/forms.json: "nsg|gsg|npl|gpl|gender"), for the plural hint
+   * (GramadoirOptions.pluralHint). Absent: every genitive the hint's pattern fits may be a plural.
+   */
+  nouns?: string[];
   rules: {
     aonchiall: RuleJson[];
     comhshuite: RuleJson[];

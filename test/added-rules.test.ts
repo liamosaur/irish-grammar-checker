@@ -98,6 +98,15 @@ const cases: Case[] = [
   { section: '10.2.1', text: 'Tharla sé le linn an cluiche.', rule: 'SEIMHIU', words: 'an cluiche', fixed: 'Tharla sé le linn an chluiche.' },
   // a simple preposition that does not take the genitive, as before (d'ainneoin now does)
   { section: '3.3.2(b)', text: 'Chuaigh sé ar na scoile.', rule: 'NOGENITIVE', words: 'ar na scoile', fixed: null },
+  // a masculine genitive singular in a slender consonant is spelt like a first-declension plural
+  // (2.1.3(b)(i)), which the dictionaries don't give for many nouns: a hint, without the article
+  // or after na (Gaois, Citizens Information); after the singular article it is still an error
+  { section: '2.1.3(b)(i)', text: 'Deireadh a chur le hamhrais.', rule: 'WEAKNOGENITIVE', words: 'le hamhrais', fixed: null, reviewed: true },
+  { section: '2.1.3(b)(i)', text: 'Tá cártaí páirceála Eorpacha ar fáil do dhaoine le míchumais áirithe agus do dhaoine atá cláraithe dall, is cuma más tiománaithe nó paisinéirí iad.', rule: 'WEAKNOGENITIVE', words: 'le míchumais', fixed: null, reviewed: true },
+  { section: '2.1.3(b)(i)', text: "Is féidir cuid de na speansais oibre a bhaint as d'ioncam sula meastar é le haghaidh cánach.", rule: 'WEAKNOGENITIVE', words: 'na speansais', fixed: null, reviewed: true },
+  // still an error when BuNaMo gives the noun a plural spelt differently (cineál: cineálacha)
+  { section: '2.1.3(b)(i)', text: 'Is féidir leat a thuilleadh a léamh faoi chineáil tionóntachtaí anseo.', rule: 'NOGENITIVE', words: 'faoi chineáil', fixed: null, reviewed: true },
+  { section: '1.4.1', text: 'Ról an Bhainc Ceannais na hÉireann Tá ról ag an Bhainc Ceannais na hÉireann i bhforálacha an Achta um Chosaint Tomhaltóirí 2007 a fhorfheidhmiú i réimse na seirbhísí airgeadais.', rule: 'NOGENITIVE', words: 'ag an Bhainc', fixed: null, reviewed: true },
   // a lenited adjective after a masculine noun and a trade name is still reported
   { section: '3.1.5', text: 'Bhí an fear Excel chéanna ann.', rule: 'NISEIMHIU', words: 'chéanna', fixed: 'Bhí an fear Excel céanna ann.' },
   // t- on aon, aonú, ochtú, ochtar, ochtó after an in the nominative, as before; not in the genitive after a noun (see clean)
@@ -390,6 +399,13 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   { text: 'Chuaigh mé go dtí an tseanphictiúrlann.', note: 'an tseanphictiúrlann: t- and sean- + pictiúrlann, not a misspelling', reviewed: true },
   // A prefix keeps its hyphen before a capital (2.1.7(e)). Citizens Information: Liam (2026-11-25)
   { text: 'Sula ndéanfaidh tú iarratas chun do chárta atá as feidhm a athnuachan ar líne, cuimhnigh do shean-Chárta a bheith ar láimh agat.', note: 'shean-Chárta: prefix, hyphen, capital', reviewed: true },
+  // Citizens Information: a lenited word after a comma, before a noun read only as a genitive, is
+  // the noun (grammar/aonchiall-ga.in), here lenited by faoi before the comma
+  { text: 'Féach ag dul ar scor ón obair le tuilleadh eolais faoi bheith ag obair ar scor, cháin ioncaim srl.', note: 'cháin ioncaim: the noun cáin and its genitive, lenited by faoi in the list' },
+  // Citizens Information: a word that is a noun or a verb, before the article and a noun read only
+  // as a genitive, is the noun with its genitive (grammar/aonchiall-ga.in)
+  { text: 'Is í príomhaidhm na Comhairle ná cleachtadh an leighis agus an altranais tréidliachta a rialáil chun leasa an phobail.', note: 'ná cleachtadh an leighis: ná the conjunction, cleachtadh the noun' },
+  { text: 'Sásaíonn saoránaigh an AE/an LEE agus náisiúnaigh na hEilvéise atá ag obair in Éirinn, an coinníoll gnáthchónaithe do shochar Linbh.', note: 'náisiúnaigh na hEilvéise: the plural noun and its genitive' },
   // Gaois
   { text: 'An Príomh-Bhord agus na boird réigiúnacha a dhíscaoileadh.', note: 'Príomh-Bhord: prefix, hyphen, capital (2.1.7(e))' },
   { text: 'Conarthaí áirithe a chaomhnú agus tagairtí don iar-Údarás a oiriúnú.', note: 'iar-Údarás: iar before a capital, hyphen optional (2.1.7 Nóta)' },

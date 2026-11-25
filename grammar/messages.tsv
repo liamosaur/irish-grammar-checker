@@ -21,6 +21,7 @@ NEEDART	inherited	Definite article required
 BADART	inherited	Unnecessary use of the definite article
 ONEART	inherited	No need for the first definite article
 NOGENITIVE	inherited	Unnecessary use of the genitive case
+WEAKNOGENITIVE	reviewed	Possibly unnecessary use of the genitive case, but not if the noun is plural	
 GENITIVE	inherited	The genitive case is required here
 PRESENT	inherited	You should use the present tense here
 CONDITIONAL	inherited	You should use the conditional here

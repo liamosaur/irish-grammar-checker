@@ -197,6 +197,7 @@ self.onmessage = (ev: MessageEvent<WorkerRequest>) => {
     engine = new Gramadoir({
       lexicon, eile, earraidi, pos, token, morph, grams, nocombo, messages,
       verbalNouns: [...verbalNouns, ...verbalNounsExtra], // BuNaMo's (ODbL, a separate file) and ours
+      nouns: formsData.n, // BuNaMo's noun forms, for the plural hint
       rules: { aonchiall, comhshuite, giorr, rialacha, unigram },
     }, { fixSpelling: true, datives: true }); // suggest similar words for unknown words; mark a mix of dative systems
     post({ type: 'ready' });
