@@ -382,6 +382,12 @@ const clean: { text: string; note: string; reviewed?: boolean }[] = [
   // Liam (2026-11-25). A compound with a prefix and a mutation reaches its root (pictiúrlann)
   // before the spelling rule for a long vowel before r + consonant (grammar/morph-ga.txt, end)
   { text: 'Chuaigh mé go dtí an tseanphictiúrlann.', note: 'an tseanphictiúrlann: t- and sean- + pictiúrlann, not a misspelling', reviewed: true },
+  // A prefix keeps its hyphen before a capital (2.1.7(e)). Citizens Information: Liam (2026-11-25)
+  { text: 'Sula ndéanfaidh tú iarratas chun do chárta atá as feidhm a athnuachan ar líne, cuimhnigh do shean-Chárta a bheith ar láimh agat.', note: 'shean-Chárta: prefix, hyphen, capital', reviewed: true },
+  // Gaois
+  { text: 'An Príomh-Bhord agus na boird réigiúnacha a dhíscaoileadh.', note: 'Príomh-Bhord: prefix, hyphen, capital (2.1.7(e))' },
+  { text: 'Conarthaí áirithe a chaomhnú agus tagairtí don iar-Údarás a oiriúnú.', note: 'iar-Údarás: iar before a capital, hyphen optional (2.1.7 Nóta)' },
+  { text: 'Is iad a bheidh sa Rúnaíocht Ard-Rúnaí, Leas-Ard-Rúnaí amháin nó níos mó agus foireann.', note: 'Leas-Ard-Rúnaí: two prefixes before a title (2.1.7(e), Nóta: an Leas-Phríomh-Aire)' },
 ];
 
 let engine: Gramadoir | undefined;

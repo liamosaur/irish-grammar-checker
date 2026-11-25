@@ -174,7 +174,7 @@ function expandPrefixes() {
   const text = fs.readFileSync(file, 'utf8').replace(/\r/g, '');
   if (/[^\u0000-ÿ]/.test(text)) throw new Error('grammar/prefixes.tsv: character outside Latin-1');
   const V = 'aeiouáéíóú';
-  const early = [], late = [], rows = [];
+  const early = [], late = [], rows = [], posOf = new Map();
   let header = true;
   text.split('\n').forEach((line, i) => {
     if (!line.trim() || line.startsWith('#')) return;
@@ -192,6 +192,7 @@ function expandPrefixes() {
       flags.set(k, v.join(':'));
     }
     rows.push(p);
+    posOf.set(p, pos);
     const rootpos = pos === 'N' ? '<N.*>' : `<[${pos}].*>`;
     const head = `^${/^[aeiouáéíóú]/.test(p) ? 'h?' : ''}${p}${flags.has('hyphen') ? '-' : ''}`;
     // the root has at least min letters: dots after the pattern's own letters (a class is one
@@ -251,7 +252,36 @@ function expandPrefixes() {
   // a hyphen between two prefixes (2.1.7(c): comh-cheolfhoireann, sin-seanathair; leas-phríomhoide)
   const second = rows.filter((p) => !/^(an|dea)$/.test(p)).map((p) => `${p[0]}h?${p.slice(1)}`);
   early.push(`^h?(${rows.join('|')})-((?:${second.join('|')}).)\t$2\t\t0\t<[ANV].*>\t<&>`);
-  return { early, late };
+  return { early, late, capital: capitalRules(rows, posOf) };
+}
+
+// A prefix before a capital keeps its hyphen (2.1.7(e): an Ard-Chúirt, an Príomh-Bhreitheamh; do
+// shean-Chárta): the prefix, in any mutated form, is stripped before the capital is lowercased, so
+// that the hyphen is not read as an unwanted one. The capital follows the same lenition rules as
+// any root (10.2.12); an unlenited one is left to the rules after.
+function capitalRules(rows, posOf) {
+  const ECLIPSIS = { b: 'm', c: 'g', d: 'n', f: 'bh', g: 'n', p: 'b', t: 'd' };
+  const mutated = (p) => {
+    const c = p[0], rest = p.slice(1), cc = `[${c}${c.toUpperCase()}]`;
+    if (/[aeiouáéíóú]/.test(c)) return `(?:[hnt]-?)?${cc}${rest}`; // hIar-, t-iar-
+    if (c === 's') return `t?${cc}h?${rest}`; // shean-, tSean-
+    if (ECLIPSIS[c]) return `(?:${ECLIPSIS[c]})?${cc}h?${rest}`; // phríomh-, bPríomh-
+    return `${cc}${rest}`;
+  };
+  const V = 'AEIOUÁÉÍÓÚLNR', v = 'aeiouáéíóúlnr';
+  const root = (dental) => (dental
+    ? `[${V}]|[BCFGMP]h|[DT][^h]|S[^h]`
+    : `[${V}]|[BCDFGMPT]h|Sh[${v}]|S[^${v}h]`);
+  const groups = new Map();
+  for (const p of rows) {
+    const key = `${posOf.get(p)}\t${/[dntls]$/.test(p)}`;
+    groups.set(key, [...(groups.get(key) ?? []), mutated(p)]);
+  }
+  return [...groups].map(([key, alts]) => {
+    const [pos, dental] = key.split('\t');
+    const rootpos = pos === 'N' ? '<N.*>' : `<[${pos}].*>`;
+    return `^(?:${alts.join('|')})-(${root(dental === 'true')})\t$1\t\t0\t${rootpos}\t<&>`;
+  });
 }
 const prefixRules = expandPrefixes();
 const morphLines = [];
@@ -259,9 +289,10 @@ for (const raw of latin1Lines('morph.bs')) {
   const marker = raw.trim();
   if (marker === '@PREFIXES') morphLines.push(...prefixRules.early);
   else if (marker === '@PREFIXES-LATE') morphLines.push(...prefixRules.late);
+  else if (marker === '@PREFIXES-CAPITAL') morphLines.push(...prefixRules.capital);
   else morphLines.push(raw);
 }
-for (const [marker, rules] of [['@PREFIXES', prefixRules.early], ['@PREFIXES-LATE', prefixRules.late]]) {
+for (const [marker, rules] of [['@PREFIXES', prefixRules.early], ['@PREFIXES-LATE', prefixRules.late], ['@PREFIXES-CAPITAL', prefixRules.capital]]) {
   if (rules.length && !latin1Lines('morph.bs').some((l) => l.trim() === marker)) throw new Error(`grammar/morph-ga.txt: no ${marker} marker`);
 }
 for (const raw of morphLines) {

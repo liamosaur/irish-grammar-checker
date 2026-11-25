@@ -1,6 +1,7 @@
 # Prefixes the morphology strips (comh-, iar-, neamh-, ...): a word not in the word list is read
 # as prefix + a listed word, reported as MOIRF ("formed from the root ..."). The build expands each
-# row into rules of grammar/morph-ga.txt at its @PREFIXES marker (the late ones at @PREFIXES-LATE).
+# row into rules of grammar/morph-ga.txt at its @PREFIXES marker (the late ones at @PREFIXES-LATE; those for a capital after the
+# hyphen, 2.1.7(e), at @PREFIXES-CAPITAL).
 # Each row follows the same CO17 rules, so they are written once (tools/build-data.mjs):
 #   - the second part is lenited (10.2.12, 10.3.5: deargbhuile, beagmhaith) ...
 #   - ... except d, t or s after d, n, t, l or s (10.2.12, 10.3.5: antráth, seansaighdiúir)

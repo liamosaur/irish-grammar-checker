@@ -42,6 +42,9 @@
 ^M([^bB])		m$1		-1	<.+>	<&>
 ^N([^dDgG])		n$1		-1	<.+>	<&>
 ^T([^sS])		t$1		-1	<.+>	<&>
+# a prefix before a capital, which keeps its hyphen (CO17 2.1.7(e)): the build writes these from
+# grammar/prefixes.tsv, before the capital is lowercased below
+@PREFIXES-CAPITAL
 (...)-([A-ZÁÉÍÓÚ])	$1-\l$2		-1	<.+>	<&> 	# Príomh-Aire
 ^b'([AEIOUÁÉÍÓÚF])	b'\l$1		-1	<.+>	<&>
 ^bP([A-ZÁÉÍÓÚ'-]+)$	bP\L$1		-1	<.+>	<&>	# bPRÍOMH-AIRE
